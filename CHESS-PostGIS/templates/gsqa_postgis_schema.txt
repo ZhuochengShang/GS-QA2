@@ -1,0 +1,178 @@
+Table: pois
+Description: points of interest.
+Columns:
+- id: integer primary row identifier
+- geometry: geography geometry in EPSG:4326
+- poi_name: POI name
+- osm_id: OSM feature id
+- amenity: OSM amenity category
+- cuisine: cuisine type for food-related POIs
+- leisure: OSM leisure category
+- historic: historic feature type
+- description: free text description
+- tourism: OSM tourism category
+- information: information feature type
+- wheelchair: wheelchair accessibility
+- building: building type
+- fee: fee indicator
+- opening_hours: opening hours
+- operator: operator name
+- sport: sport type
+- website: website URL
+- capacity: capacity value
+- shop: shop category
+- internet_access: internet access tag
+- phone: phone number
+- takeaway: takeaway availability
+- drive_through: drive-through availability
+- museum: museum type
+- official_name: official name
+- healthcare: healthcare type
+- outdoor_seating: outdoor seating availability
+- delivery: delivery availability
+- toilets: toilets availability
+- parking: parking availability
+- emergency: emergency service tag
+- artwork_type: artwork type
+- restaurant: restaurant tag
+- sports: sports tag
+- zoo: zoo tag
+- wholesale: wholesale tag
+- school_type: school type
+- pastry_shop: pastry shop tag
+- hairdresser: hairdresser tag
+- resort: resort tag
+- fast_food: fast food tag
+- wikidata: Wikidata id
+- addr_state: state address tag
+- addr_city: city address tag
+- addr_postcode: postcode address tag
+- addr_street: street address tag
+- addr_housenumber: house number address tag
+
+Table: lakes
+Description: lakes, rivers, waterbodies, waterways.
+Columns:
+- id: integer primary row identifier
+- geometry: geography geometry in EPSG:4326
+- lake_name: lake or waterbody name
+- wikidata: Wikidata id
+- waterway: OSM waterway category
+- water: OSM water category
+- oneway: one-way tag
+- wetland: wetland type
+- wikipedia: Wikipedia reference
+- is_in: containing place tag
+- man_made: man-made water feature tag
+- seasonal: seasonal tag
+- accuracy: accuracy tag
+- official_name: official name
+- fishing: fishing tag
+- addr_country: country address tag
+- addr_state: state address tag
+- addr_county: county address tag
+- addr_city: city address tag
+- addr_postcode: postcode address tag
+- addr_street: street address tag
+- addr_housenumber: house number address tag
+
+Table: parks
+Description: parks, gardens, green spaces.
+Columns:
+- id: integer primary row identifier
+- geometry: geography geometry in EPSG:4326
+- park_name: park name
+- osm_id: OSM feature id
+- wikidata: Wikidata id
+- wikipedia: Wikipedia reference
+- addr_country: country address tag
+- addr_state: state address tag
+- addr_county: county address tag
+- addr_city: city address tag
+- addr_postcode: postcode address tag
+- addr_street: street address tag
+- addr_housenumber: house number address tag
+- operator: operator name
+- leisure: OSM leisure category
+- sport: sport type
+- area: area metadata
+- historic: historic tag
+- old_name: old name
+- short_name: short name
+- hunting: hunting tag
+- heritage: heritage tag
+- ele: elevation metadata
+- ALAND: land area metadata
+- AWATER: water area metadata
+- trees: tree metadata
+- primary_use: primary use
+- secondary_use: secondary use
+- other_use: other use
+- note: free text note
+- county: county metadata
+- golf: golf tag
+- acres: acres metadata
+- elevation: elevation metadata
+- park: park category
+- tourism: tourism category
+- camping: camping tag
+
+Table: roads
+Description: roads, paths, walkways, bikeways.
+Columns:
+- id: integer primary row identifier
+- geometry: geography geometry in EPSG:4326
+- road_name: road name
+- wikidata: Wikidata id
+- wikipedia: Wikipedia reference
+- highway: OSM highway category
+- sidewalk: sidewalk tag
+- foot: foot access tag
+- bicycle: bicycle access tag
+- cycleway: cycleway tag
+- oneway: one-way tag
+- access: access tag
+- maxspeed: speed limit
+- lanes: lane count
+- horse: horse access tag
+- hgv: heavy goods vehicle access tag
+- maxheight: maximum height
+- expressway: expressway tag
+- railway: railway tag
+- historic: historic tag
+- bridge: bridge tag
+- is_in: containing place tag
+- addr_country: country address tag
+- addr_state: state address tag
+- addr_county: county address tag
+- addr_city: city address tag
+- addr_postcode: postcode address tag
+- addr_street: street address tag
+- addr_housenumber: house number address tag
+
+Table: regions
+Description: administrative region boundaries such as cities, counties, and states.
+Columns:
+- id: integer primary row identifier
+- geometry: geography geometry in EPSG:4326
+- region_name: region name
+- border_type: boundary or region type
+- wikidata: Wikidata id
+- wikipedia: Wikipedia reference
+- place: OSM place category
+- is_in: containing place tag
+- admin_level: administrative level
+- population: population metadata
+- official_name: official name
+- postal_code: postal code
+- capital: capital tag
+- timezone: timezone
+
+Rules:
+- Use only these five tables for GS-QA vector questions.
+- geometry columns are PostGIS geography values in EPSG:4326.
+- Use ST_DWithin for within-distance predicates in meters.
+- Use ST_Distance for metric distances.
+- Use ST_Intersects for within-region filtering.
+- Cast geography to geometry only for geometry-only functions.
+- Do not use raster tables, ca-suffixed tables, or PostGIS metadata tables.

@@ -1,0 +1,36 @@
+.DS_Store
+__pycache__/
+*.pyc
+*.pyo
+*.log
+.env
+.env.*
+config.ini
+
+# Generated outputs and caches
+cache/
+baselines/cache/
+results/
+chess_sql_results/
+address_cache/
+preprocess.log
+question_times.csv
+
+# Large database/vector artifacts
+*.sqlite
+*.sqlite3
+*.db
+*_chroma/
+vector_entities_chroma/
+dem_patches_gdal_chroma/
+osm_vectorstore_minilm/
+context_vector_db/
+preprocessed/
+
+# Archives/checksums
+*.tar.gz
+*.zip
+*.sha256
+
+# Local notebooks/checkpoints
+.ipynb_checkpoints/

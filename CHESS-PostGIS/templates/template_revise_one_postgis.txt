@@ -1,0 +1,61 @@
+Fix the provided SQL query so it correctly answers the geospatial raster question.
+
+DATABASE SCHEMA:
+{DATABASE_SCHEMA}
+
+GS-QA / RASTER CONTEXT:
+{GSQA_TABLE_DESCRIPTIONS}
+
+POSTGIS EXAMPLES:
+{POSTGIS_EXAMPLES}
+
+Question:
+{QUESTION}
+
+Hint:
+{HINT}
+
+Previous SQL:
+{QUERY}
+
+Execution result:
+{RESULT}
+
+RULES:
+- Use public.dem_us for all raster and terrain computations.
+- Use pois, lakes, parks, roads, or regions only to obtain geometry referenced in the question.
+- Do not use vector tables for the final numeric terrain answer except as geometry sources or spatial filters.
+- Never invent coordinates or external data.
+- If the hint or structured context provides WKT, use it directly.
+- If geometry is required and no WKT is provided, derive it from the appropriate vector table.
+- Resolve named entities by type:
+  - POIs and amenities -> pois
+  - rivers, lakes, waterbodies -> lakes
+  - parks and gardens -> parks
+  - roads and highways -> roads
+  - cities, states, counties, administrative places -> regions
+- Queries must match the provided table names and columns.
+- Queries must be compatible with PostgreSQL and PostGIS.
+- Use only columns explicitly listed for each table.
+- Do not use `addr_state` or `addr_city` on `regions`.
+- To disambiguate places in `regions`, use `region_name`, `border_type`, `wikidata`, `wikipedia`, or spatial intersection with another `regions` row.
+- All vector `geometry` columns are of type `geography`.
+- For raster operations, cast vector geography to geometry with `geometry::geometry` when needed.
+- Use `ILIKE` with `%` for flexible string matching.
+- Do not include geometry in the final output unless the question explicitly asks for it.
+- Output only one SQL block inside `<FINAL_ANSWER>...</FINAL_ANSWER>`.
+
+ALWAYS:
+- Fix invalid syntax, invalid clause order, and incomplete SQL fragments first.
+- Use ST_Clip before aggregation if geometry is provided.
+- Use ST_Intersects to filter raster tiles.
+- Avoid unnecessary joins.
+- Return a single scalar result when possible.
+- If a named feature must be resolved first, isolate that lookup in a CTE and then apply raster analysis against the resulting geometry.
+- Treat band 1 as elevation.
+- Do not assume the DEM already stores derived terrain products like slope.
+- If slope, aspect, or steepness is requested, derive it from the DEM before summarizing.
+- Do not include any explanation or extra text.
+
+Return the corrected SQL only:
+<FINAL_ANSWER>...</FINAL_ANSWER>

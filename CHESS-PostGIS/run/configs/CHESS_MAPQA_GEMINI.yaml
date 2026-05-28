@@ -1,0 +1,21 @@
+setting_name: CHESS_MAPQA_GEMINI
+
+team_agents:
+  candidate_generator:
+    engine: 'gemini-2.5-flash'
+    tools:
+      generate_candidate:
+        generator_configs:
+          - template_name: 'generate_candidate_mapqa_postgis'
+            engine_config:
+              engine_name: 'gemini-2.5-flash'
+              temperature: 0.2
+            parser_name: 'generate_candidate_gemini_markdown_cot'
+            sampling_count: 1
+
+      revise:
+        template_name: 'revise_mapqa_postgis'
+        engine_config:
+          engine_name: 'gemini-2.5-flash'
+          temperature: 0.0
+        parser_name: 'revise_new'

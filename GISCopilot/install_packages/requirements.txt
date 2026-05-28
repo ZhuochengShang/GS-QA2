@@ -1,0 +1,16 @@
+numpy==2.0.2:numpy
+openai==2.8.1:openai
+networkx==3.2.1:networkx
+pyvis:pyvis
+langchain_openai:langchain_openai
+langchain_community:langchain_community
+toml:toml
+tomli==2.0.1:tomli
+geopandas==1.0.1:geopandas
+pandas==2.3.0:pandas
+pydantic:pydantic
+langchain:langchain
+seaborn:seaborn
+rasterio==1.4.3:rasterio
+
+

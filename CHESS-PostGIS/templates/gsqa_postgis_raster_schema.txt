@@ -1,0 +1,164 @@
+GS-QA PostGIS schema for raster and raster-vector runs.
+
+Use these tables only:
+- public.pois
+- public.lakes
+- public.parks
+- public.roads
+- public.regions
+- public.dem_us
+
+Vector tables:
+
+Table: pois
+Description: points of interest.
+Columns:
+- id: integer primary row identifier
+- geometry: geography geometry in EPSG:4326
+- poi_name: POI name
+- wikidata: Wikidata id
+- wikipedia: Wikipedia reference
+- addr_state: state address tag
+- addr_city: city address tag
+- amenity: OSM amenity category
+- cuisine: cuisine type
+- leisure: OSM leisure category
+- tourism: OSM tourism category
+- takeaway: takeaway availability
+- drive_through: drive-through availability
+- museum: museum type
+- healthcare: healthcare type
+- outdoor_seating: outdoor seating availability
+- emergency: emergency service tag
+- restaurant: restaurant tag
+
+Table: lakes
+Description: lakes, rivers, waterbodies, waterways.
+Columns:
+- id: integer primary row identifier
+- geometry: geography geometry in EPSG:4326
+- lake_name: lake or waterbody name
+- wikidata: Wikidata id
+- wikipedia: Wikipedia reference
+- addr_country: country address tag
+- addr_state: state address tag
+- addr_county: county address tag
+- addr_city: city address tag
+- addr_postcode: postcode address tag
+- addr_street: street address tag
+- addr_housenumber: house number address tag
+- waterway: OSM waterway category
+- water: OSM water category
+
+Table: parks
+Description: parks, gardens, green spaces.
+Columns:
+- id: integer primary row identifier
+- geometry: geography geometry in EPSG:4326
+- park_name: park name
+- wikidata: Wikidata id
+- wikipedia: Wikipedia reference
+- leisure: OSM leisure category
+- park: park category
+- tourism: tourism category
+
+Table: roads
+Description: roads, paths, walkways, bikeways.
+Columns:
+- id: integer primary row identifier
+- geometry: geography geometry in EPSG:4326
+- road_name: road name
+- wikidata: Wikidata id
+- wikipedia: Wikipedia reference
+- highway: OSM highway category
+- sidewalk: sidewalk tag
+- foot: foot access tag
+- bicycle: bicycle access tag
+- cycleway: cycleway tag
+
+Table: regions
+Description: administrative region boundaries such as cities, counties, and states.
+Columns:
+- id: integer primary row identifier
+- geometry: geography geometry in EPSG:4326
+- region_name: region name
+- border_type: boundary or region type
+- wikidata: Wikidata id
+- wikipedia: Wikipedia reference
+
+Raster table:
+
+Table: public.dem_us
+Description: ASTER GDEM Version 3 elevation raster tiles for the contiguous U.S. study area.
+Columns:
+- rid: integer raster tile identifier
+- rast: PostGIS raster tile; band 1 stores elevation values in meters
+- filename: source ASTER GDEM tile filename, for example ASTGTMV003_N24W075_dem.tif
+
+DEM metadata:
+- table: public.dem_us
+- PostGIS tile row count: 265950
+- spatial reference: EPSG:4326
+- extent: POLYGON((-126.000138888889 23.99986111111112,-126.000138888889 50.0001388888889,-65.99986111111112 50.0001388888889,-65.99986111111112 23.99986111111112,-126.000138888889 23.99986111111112))
+- bands: 1
+- band 1 meaning: elevation in meters
+- band 1 pixel type: 16BSI
+- tile size: 256 x 256 pixels
+- pixel scale: 0.000277777777777778 degrees in X and -0.000277777777777778 degrees in Y
+- no-data value: not stored in metadata; pass TRUE to exclude no-data where PostGIS functions support it
+- source filename pattern: ASTGTMV003_NxxWxxx_dem.tif / ASTGTMV003_NxxExxx_dem.tif
+
+PostGIS raster rules:
+- Use public.dem_us for all raster and terrain computations.
+- Use vector tables only to resolve geometry or filter named features.
+- Use filename only for provenance/debugging; do not use filename to answer terrain questions unless the question explicitly asks about source files.
+- Vector geometry columns are geography values in EPSG:4326.
+- Cast vector geography to geometry for raster functions, for example regions.geometry::geometry.
+- Use ST_Intersects(d.rast, geom) to select DEM tiles that overlap a geometry.
+- Use ST_Value(d.rast, 1, point_geom) for point elevation.
+- Use ST_Clip(d.rast, 1, geom, TRUE) before aggregating over a polygon or buffered line.
+- Use ST_SummaryStats(..., 1, TRUE) for min, max, mean, count, and sum over clipped rasters.
+- Derive slope, aspect, or steepness from band 1; do not assume separate slope or aspect raster columns exist.
+- For ST_Slope and ST_Aspect output pixel type, use only '32BF' unless there is a clear reason to use '64BF'. Never invent pixel type strings such as '3DDDA'.
+- Return scalar numeric answers unless the question explicitly asks for names or geometries.
+- Do not use raster_columns, raster_overviews, topology, TIGER, ca-suffixed tables, or external datasets.
+
+Useful patterns:
+
+Point elevation:
+SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT(-121.655715 36.720859)', 4326)) AS elevation_m
+FROM public.dem_us AS d
+WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT(-121.655715 36.720859)', 4326))
+LIMIT 1;
+
+Mean elevation in a named region:
+WITH area AS (
+  SELECT geometry::geometry AS geom
+  FROM regions
+  WHERE region_name ILIKE '%Riverside%'
+  LIMIT 1
+),
+tiles AS (
+  SELECT ST_Clip(d.rast, 1, a.geom, TRUE) AS rast
+  FROM public.dem_us AS d
+  CROSS JOIN area AS a
+  WHERE ST_Intersects(d.rast, a.geom)
+)
+SELECT AVG((ST_SummaryStats(rast, 1, TRUE)).mean) AS mean_elevation_m
+FROM tiles;
+
+Maximum elevation intersecting a vector feature:
+WITH feature AS (
+  SELECT geometry::geometry AS geom
+  FROM parks
+  WHERE park_name ILIKE '%Example%'
+  LIMIT 1
+),
+tiles AS (
+  SELECT ST_Clip(d.rast, 1, f.geom, TRUE) AS rast
+  FROM public.dem_us AS d
+  CROSS JOIN feature AS f
+  WHERE ST_Intersects(d.rast, f.geom)
+)
+SELECT MAX((ST_SummaryStats(rast, 1, TRUE)).max) AS max_elevation_m
+FROM tiles;

@@ -1,0 +1,118 @@
+Convert the provided user question to a SQL query using a query-plan guided approach.
+
+Target SQL dialect: {SQL_DIALECT_LABEL}
+
+The following are the GS-QA tables that exist in the database:
+
+Table 1: pois
+contains the points of interest
+Columns: id, geometry, poi_name, wikidata, wikipedia,
+         addr_state, addr_city,
+         amenity, leisure, tourism, cuisine, museum, healthcare,
+         takeaway, drive_through, outdoor_seating, emergency, restaurant
+
+Table 2: lakes
+contains lakes, rivers, waterbodies, etc.
+Columns: id, geometry, lake_name, wikidata, wikipedia,
+         addr_country, addr_state, addr_county, addr_city, addr_postcode, addr_street, addr_housenumber,
+         waterway, water
+
+Table 3: parks
+contains parks, gardens, etc.
+Columns: id, geometry, park_name, wikidata, wikipedia,
+         leisure, park, tourism
+NOTE: parks has no address columns. To filter parks by location, use ST_Intersects with regions.
+
+Table 4: roads
+contains roads, walkways, etc.
+Columns: id, geometry, road_name, wikidata, wikipedia,
+         highway, sidewalk, foot, bicycle, cycleway
+NOTE: roads has no address columns. To filter roads by location, use ST_Intersects with regions.
+
+Table 5: regions
+contains administrative region boundaries such as cities, counties, and states.
+Columns: id, geometry, region_name, border_type, wikidata, wikipedia
+NOTE: regions has no poi_name, amenity, leisure, tourism, or address columns. Use it only for spatial boundary lookups.
+
+Column exclusivity rules:
+- poi_name belongs to pois only.
+- lake_name belongs to lakes only.
+- park_name belongs to parks only.
+- road_name belongs to roads only.
+- region_name belongs to regions only.
+- Address columns such as addr_state, addr_city, and addr_county exist only in pois and lakes.
+- Category columns are table-specific:
+  - amenity, tourism, cuisine, healthcare -> pois only
+  - leisure -> pois and parks
+  - waterway, water -> lakes only
+  - highway, sidewalk, foot, bicycle, cycleway -> roads only
+  - park -> parks only
+  - border_type -> regions only
+
+Common OSM tag values:
+- amenity: restaurant, fast_food, cafe, hospital, university, pharmacy, bank, school, fuel, parking
+- leisure: park, garden, golf_course, nature_reserve, common, marina, stadium, sports_centre, recreation_ground, pitch, playground
+- tourism: hotel, museum, attraction, viewpoint, zoo, aquarium, gallery, artwork, bed_and_breakfast, theme_park, camp_site
+- highway: motorway, primary, secondary, tertiary, residential, footway, cycleway, pedestrian, track, road, path, unclassified
+- waterway: river, canal, stream, drain, ditch
+- water: lake, reservoir, bay, harbour, pond, river
+
+PostGIS spatial function reference:
+- All geometry columns store geography type.
+- ST_Intersects(a, b): use for within-region or overlap queries.
+- ST_Contains(a, b), ST_Within(a, b), ST_Touches(a, b), ST_Crosses(a, b), ST_Covers(a, b), ST_Disjoint(a, b): use for spatial relationships when the question asks for them.
+- ST_DWithin(a, b, meters): use for within-distance questions.
+- ST_Distance(a, b): returns distance in meters for geography.
+- ST_Length(geom::geography), ST_Area(geom::geography), ST_Perimeter(geom::geography): use for metric measurements.
+- ST_Centroid(geom), ST_Buffer(geom, meters), ST_Envelope(geom), ST_ConvexHull(geom), ST_Union(geom), ST_Collect(geom): use when the question requires derived geometry.
+- ST_GeomFromText(wkt, srid) and ST_MakePoint(lon, lat): construct geometry only when coordinates are provided in the question or hint.
+- ST_Azimuth(origin, target): bearing in radians clockwise from north; wrap with degrees() for degrees.
+- For nearest-neighbor questions, use ORDER BY geometry <-> other_geometry ASC LIMIT 1 when possible; otherwise use ORDER BY ST_Distance(...) ASC LIMIT 1.
+
+Direction ranges in degrees:
+- North: 0-22.5 and 337.5-360
+- Northeast: 22.5-67.5
+- East: 67.5-112.5
+- Southeast: 112.5-157.5
+- South: 157.5-202.5
+- Southwest: 202.5-247.5
+- West: 247.5-292.5
+- Northwest: 292.5-337.5
+
+Named location lookup rules:
+- For a named POI, use a subquery such as:
+  (SELECT geometry FROM pois WHERE poi_name ILIKE '%<name>%' LIMIT 1)
+- For a named region, state, county, or city, use a subquery such as:
+  (SELECT geometry FROM regions WHERE region_name ILIKE '%<name>%' LIMIT 1)
+- Do not hardcode coordinates unless the question or hint explicitly provides coordinates.
+
+SQL requirements:
+- Match the table names and columns provided in the schema.
+- Every column used must exist in the table being queried.
+- Use only functions and syntax available in {SQL_DIALECT_LABEL}.
+- If the question is spatial, generate {SPATIAL_EXTENSION_LABEL}-compatible SQL.
+- In PostGIS mode, do not use SQLite syntax, SQLite functions, or SpatiaLite-only patterns.
+- Cast geography columns to geometry for geometry-only functions such as ST_X, ST_Y, ST_Centroid, and ST_Transform.
+- Use ILIKE and '%' for flexible string matching unless the hint requires an exact match.
+- Do not include geometry in SELECT output unless the question explicitly asks for geometry or location coordinates.
+- Only select the property the user asks for, such as name, location, distance, direction, count, area, or length.
+- Use metric units. Distances in GS-QA questions are usually meters after conversion from kilometers.
+- Do not replace explicit spatial requirements with city/state equality matching.
+- Prefer ST_Intersects with regions for filtering parks, roads, and other non-address tables by location.
+- Avoid unnecessary joins and nested queries, but use CTEs when they make named-location lookup clearer.
+- The final query must be complete and syntactically valid.
+
+Database schema:
+{DATABASE_SCHEMA}
+
+Question:
+{QUESTION}
+
+Hint:
+{HINT}
+
+Make a brief internal query plan: identify the output column, source table, filters, named-location lookup, and spatial predicate. Then return the final SQL query only inside the XML delimiter.
+
+<FINAL_ANSWER>
+SQL_QUERY_HERE
+</FINAL_ANSWER>

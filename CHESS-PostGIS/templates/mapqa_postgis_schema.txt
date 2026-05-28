@@ -1,0 +1,60 @@
+MapQA PostGIS schema.
+
+Use these tables only:
+- public.planet_osm_point
+- public.planet_osm_line
+- public.planet_osm_polygon
+
+Important: geometry columns are named way and are stored as EPSG:3857 geometry, not EPSG:4326 geography.
+For accurate meter distances/radius predicates, use ST_Transform(way, 4326)::geography.
+
+Table: planet_osm_point
+Description: point features and POIs.
+Columns:
+- osm_id: bigint OpenStreetMap id
+- name: text feature name
+- amenity: text OSM amenity category
+- shop: text retail category
+- tourism: text tourism category
+- leisure: text leisure category
+- highway: text highway/transport point category
+- railway: text railway/stop category
+- historic: text historic category
+- sport: text sport category
+- operator: text operator name
+- way: geometry point in EPSG:3857
+
+Table: planet_osm_line
+Description: streets, roads, railways, paths, and other line features.
+Columns:
+- osm_id: bigint OpenStreetMap id
+- name: text street/path name
+- highway: text road/path category
+- railway: text railway category
+- tracktype: text track type
+- way: geometry line in EPSG:3857
+
+Table: planet_osm_polygon
+Description: polygon/area features. MapQA negative osm_ids often refer to this table.
+Columns:
+- osm_id: bigint OpenStreetMap id, often negative for polygons/relations
+- name: text feature name
+- amenity: text amenity category
+- shop: text retail category
+- tourism: text tourism category
+- leisure: text leisure category
+- historic: text historic category
+- sport: text sport category
+- way: geometry polygon in EPSG:3857
+
+MapQA SQL rules:
+- Do not use GS-QA tables: pois, parks, roads, lakes, regions, dem_us.
+- Do not use a tags column; it does not exist.
+- Use supplied osm_id values from the hint whenever available.
+- For amenity/type lookup, select COALESCE(amenity, shop, tourism, leisure, highway, railway, historic, sport).
+- For nearest-neighbor, prefer ORDER BY candidate.way <-> ref.way LIMIT 1.
+- For meter distance, use ST_Distance(ST_Transform(a.way,4326)::geography, ST_Transform(b.way,4326)::geography).
+- For within-radius, use ST_DWithin(ST_Transform(a.way,4326)::geography, ST_Transform(b.way,4326)::geography, meters).
+- For polygon references, use ST_Centroid(way) as a point-like reference geometry.
+- For street intersections, use planet_osm_line and ILIKE on street names. Use ST_Intersection when lines intersect; use ST_ClosestPoint or ST_DWithin fallback when they do not.
+- Return a single answer column when possible.

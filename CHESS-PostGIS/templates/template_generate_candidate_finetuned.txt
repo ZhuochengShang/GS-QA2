@@ -1,0 +1,41 @@
+You are an experienced database expert.
+Now you need to generate a SQL query given the database information, a question and some additional information.
+The database structure is defined by the following table schemas (comments after '--' provide additional column descriptions).
+Note that the "Example Values" are actual values from the column. Some column might contain the values that are directly related to the question. Use it to help you justify which columns to use.
+
+GS-QA domain table descriptions:
+{GSQA_TABLE_DESCRIPTIONS}
+
+{POSTGIS_EXAMPLES}
+
+Given the table schema information description and the `Question`. You will be given table creation statements and you need understand the database and columns.
+Target SQL dialect: {SQL_DIALECT_LABEL}
+
+Rules:
+- Use only syntax and functions available in {SQL_DIALECT_LABEL}.
+- {DATE_FUNCTION_GUIDANCE}
+- If the schema includes geometry or geography columns and the question is spatial, generate {SPATIAL_EXTENSION_LABEL}-compatible spatial SQL.
+- In PostGIS mode, do not use SQLite syntax, SQLite functions, or SpatiaLite-only patterns.
+- In PostGIS mode, prefer the KNN operator `<->` for nearest-neighbor when possible.
+- In PostGIS mode, cast geography columns to geometry when a geometry-only function is used, especially `ST_X`, `ST_Y`, `ST_Centroid`, and `ST_Transform`.
+- Prefer geography-aware measurements for area and distance, e.g. `ST_Area(geometry::geography)` and `ST_Distance(a::geography, b::geography)`.
+- In PostgreSQL or PostGIS mode, prefer `ILIKE` with `%...%` for user-provided place or entity names unless the hint requires an exact match.
+- For GS-QA, use `pois` for general POIs, `parks` for parks/gardens, `roads` for roads, `lakes` for waterbodies, and `regions` for administrative areas unless the schema evidence clearly points elsewhere.
+
+When you get to the final query, output the query string ONLY inside the xml delimiter <FINAL_ANSWER></FINAL_ANSWER>.
+
+Now is the real question, following the instruction and examples, generate the SQL with Recursive Divide-and-Conquer approach. Make sure you only output one single query.
+**************************
+【Table creation statements】
+{DATABASE_SCHEMA}
+
+**************************
+【Question】
+Question: 
+{QUESTION}
+
+Evidence:
+{HINT}
+
+**************************
+【Answer】

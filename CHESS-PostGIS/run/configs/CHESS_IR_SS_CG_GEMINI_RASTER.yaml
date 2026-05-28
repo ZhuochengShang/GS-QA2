@@ -1,0 +1,66 @@
+setting_name: CHESS_IR_SS_CG_GEMINI_RASTER
+
+team_agents:
+  information_retriever:
+    engine: 'gemini-2.5-flash'
+    tools:
+      extract_keywords:
+        template_name: 'extract_keywords'
+        engine_config:
+          engine_name: 'gemini-2.5-flash'
+          temperature: 0.2
+        parser_name: 'python_list_output_parser'
+      retrieve_entity: {}
+      retrieve_context:
+        top_k: 5
+
+  schema_selector:
+    engine: 'gemini-2.5-flash'
+    tools:
+      filter_column:
+        template_name: 'filter_column'
+        engine_config:
+          engine_name: 'gemini-2.5-flash'
+          temperature: 0.0
+        parser_name: 'filter_column'
+
+      select_tables:
+        mode: 'ask_model'
+        template_name: 'select_tables'
+        engine_config:
+          engine_name: 'gemini-2.5-flash'
+          temperature: 0.0
+        parser_name: 'select_tables'
+
+      select_columns:
+        mode: 'ask_model'
+        template_name: 'select_columns'
+        engine_config:
+          engine_name: 'gemini-2.5-flash'
+          temperature: 0.0
+        parser_name: 'select_columns'
+
+  candidate_generator:
+    engine: 'gemini-2.5-flash'
+    tools:
+      generate_candidate:
+        generator_configs:
+          - template_name: 'generate_candidate_one_postgis'
+            engine_config:
+              engine_name: 'gemini-2.5-flash'
+              temperature: 0.3
+            parser_name: 'generate_candidate_gemini_markdown_cot'
+            sampling_count: 1
+          - template_name: 'generate_candidate_two_postgis'
+            engine_config:
+              engine_name: 'gemini-2.5-flash'
+              temperature: 0.3
+            parser_name: 'generate_candidate_gemini_markdown_cot'
+            sampling_count: 1
+
+      revise:
+        template_name: 'revise_one_postgis'
+        engine_config:
+          engine_name: 'gemini-2.5-flash'
+          temperature: 0.0
+        parser_name: 'revise_new'

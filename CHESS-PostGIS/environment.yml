@@ -1,0 +1,12 @@
+name: chess-postgis
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - setuptools
+  - wheel
+  - sqlite
+  - pip:
+      - -r requirements.txt
+      - psycopg[binary]==3.2.9
