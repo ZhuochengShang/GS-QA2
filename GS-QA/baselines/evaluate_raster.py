@@ -52,25 +52,21 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import os
+import re
 import statistics
-import string
+from collections import Counter
 from pathlib import Path
 from typing import Any
 
-import nltk
-from nltk.tokenize import word_tokenize
-from nltk.corpus import stopwords
-
-nltk.download("punkt",     quiet=True)
-nltk.download("punkt_tab", quiet=True)
-nltk.download("stopwords", quiet=True)
-_STOP = set(stopwords.words("english"))
-
+from pyproj import Geod
 
 # ---------------------------------------------------------------------------
 # Metric routing table  (source_stem substring → metric config)
 # ---------------------------------------------------------------------------
+
+GEOD = Geod(ellps="WGS84")
 
 # Each entry: (metric_type, tolerance_value, tolerance_unit)
 # Checked in order — first match wins.
@@ -107,7 +103,7 @@ ANSWER_TYPE_MAP: list[tuple[str, str, float, str]] = [
     ("yes-no",              "exact",     0.0,   "label"),
     ("name",                "token_f1",  0.8,   "f1"),
     ("coverage",            "absolute",  5.0,   "pp"),
-    ("mean elevation",      "absolute",  5.0,   "m"),
+    ("mean elevation",      "absolute",  10.0,  "m"),
     ("elevation",           "absolute",  10.0,  "m"),
     ("aspect",              "angular",   5.0,   "deg"),
     ("slope",               "absolute",  5.0,   "deg"),
@@ -139,26 +135,20 @@ def get_metric_config(
 # ---------------------------------------------------------------------------
 
 def _normalize_tokens(s: str) -> tuple[str, ...]:
-    try:
-        tokens = word_tokenize(str(s))
-    except Exception:
-        tokens = str(s).split()
-    return tuple(
-        w.lower() for w in tokens
-        if w not in string.punctuation and w.lower() not in _STOP
-    )
+    return tuple(re.findall(r"[a-z0-9]+", str(s).lower()))
 
 
 def token_f1(pred: str, gold: str) -> tuple[float, float, float]:
-    pt = set(_normalize_tokens(pred))
-    gt = set(_normalize_tokens(gold))
+    pt = Counter(_normalize_tokens(pred))
+    gt = Counter(_normalize_tokens(gold))
     if not pt or not gt:
         return 0.0, 0.0, 0.0
     common = pt & gt
     if not common:
         return 0.0, 0.0, 0.0
-    p   = len(common) / len(pt)
-    r   = len(common) / len(gt)
+    common_count = sum(common.values())
+    p   = common_count / sum(pt.values())
+    r   = common_count / sum(gt.values())
     f1  = 2 * p * r / (p + r)
     return p, r, f1
 
@@ -221,6 +211,231 @@ def extract_text(rows: list[dict]) -> str | None:
 
 
 # ---------------------------------------------------------------------------
+# Ground-truth-aware component evaluation
+# ---------------------------------------------------------------------------
+
+NAME_FIELDS = (
+    "answer", "answer_name", "higher_poi", "steeper_poi",
+    "name", "poi_name", "road_name", "park_name", "lake_name", "region_name",
+)
+
+COMPONENT_SPECS: dict[str, list[tuple[str, str, tuple[str, ...], float, str]]] = {
+    # raster-only
+    "aspect+poi": [("aspect", "angular", ("aspect_degrees", "aspect"), 5.0, "deg")],
+    "avg_slope+area": [("slope", "absolute", ("slope_degrees", "avg_slope", "slope"), 5.0, "deg")],
+    "elevation+coverage": [("coverage", "absolute", ("coverage_percent", "coverage", "percent", "percentage"), 5.0, "pp")],
+    "elevation+poi": [("elevation", "absolute", ("elevation", "elevation_m"), 10.0, "m")],
+    "elevation_compare+two_pois": [("name", "token_f1", ("higher_poi", "higher_location", "higher_place", "answer_name", "name"), 0.8, "f1")],
+    "elevation_diff+two_pois": [("elevation_difference", "absolute", ("elevation_difference_m", "elevation_difference", "difference"), 10.0, "m")],
+    "elevation_max+region": [("elevation", "absolute", ("max_elevation", "elevation", "max"), 10.0, "m")],
+    "elevation_mean+region": [("elevation", "absolute", ("mean_elevation", "mean", "elevation"), 10.0, "m")],
+    "elevation_min+region": [("elevation", "absolute", ("min_elevation", "elevation", "min"), 10.0, "m")],
+    "elevation_range+region": [("elevation", "absolute", ("elevation_range", "range", "elevation"), 10.0, "m")],
+    "elevation_threshold+poi": [("label", "exact", ("answer",), 0.0, "label")],
+    "max_slope+area": [("slope", "absolute", ("max_slope", "slope_degrees", "slope"), 5.0, "deg")],
+    "min_slope+area": [("slope", "absolute", ("min_slope", "slope_degrees", "slope"), 5.0, "deg")],
+    "nearest_high_terrain+poi": [("distance", "relative", ("distance_m", "distance"), 0.05, "%")],
+    "nearest_low_terrain+poi": [("distance", "relative", ("distance_m", "distance"), 0.05, "%")],
+    "ruggedness+poi": [("ruggedness", "relative", ("tri_value", "ruggedness", "ruggedness_index"), 0.05, "%")],
+    "slope+compare_route": [("name", "token_f1", ("answer_name", "answer", "name"), 0.8, "f1")],
+    "slope+poi": [("slope", "absolute", ("slope_degrees", "slope"), 5.0, "deg")],
+    "slope+route": [("slope", "absolute", ("slope_degrees", "avg_slope", "slope"), 5.0, "deg")],
+    # raster-vector: terrain values are filters unless explicitly requested
+    "elevation_average+name": [("name", "token_f1_set", NAME_FIELDS, 0.8, "f1")],
+    "elevation_compare_categories+name": [("name", "token_f1", ("answer_name", "answer", "name"), 0.8, "f1")],
+    "elevation_count_threshold+count": [("count", "relative", ("count",), 0.05, "%")],
+    "elevation_lowest_n_poi+name": [("name", "token_f1_set", NAME_FIELDS, 0.8, "f1")],
+    "elevation_proximity_zone+name": [("name", "token_f1_set", NAME_FIELDS, 0.8, "f1")],
+    "slope_condition+name": [("name", "token_f1_set", NAME_FIELDS, 0.8, "f1")],
+    "slope_steepest_n_poi+name": [("name", "token_f1_set", NAME_FIELDS, 0.8, "f1")],
+    # extended compound outputs
+    "intersects_area_max+name+max_elevation": [
+        ("name", "token_f1", NAME_FIELDS, 0.8, "f1"),
+        ("elevation", "absolute", ("max_elevation", "max_elev", "elevation"), 10.0, "m"),
+    ],
+    "intersects_area_total+area+avg_slope": [
+        ("area", "relative", ("area", "computed_area"), 0.05, "%"),
+        ("slope", "absolute", ("avg_slope", "slope"), 5.0, "deg"),
+    ],
+    "intersects_length_max+name+slope": [
+        ("name", "token_f1", NAME_FIELDS, 0.8, "f1"),
+        ("slope", "absolute", ("slope_degrees", "slope_deg", "slope"), 5.0, "deg"),
+    ],
+    "knn+distance+slope": [
+        ("name", "token_f1", NAME_FIELDS, 0.8, "f1"),
+        ("distance", "relative", ("dist_m", "distance_m", "distance"), 0.05, "%"),
+        ("slope", "absolute", ("slope_deg", "slope_degrees", "slope"), 5.0, "deg"),
+    ],
+    "range+count+elevation_condition": [("count", "relative", ("count",), 0.05, "%")],
+    "range+distance+elevation": [
+        ("distance", "relative", ("distance", "distance_m", "dist_m"), 0.05, "%"),
+        ("elevation", "absolute", ("elevation", "elevation_m"), 10.0, "m"),
+    ],
+    "range+loc+elevation_condition": [("location", "location", ("geometry",), 5.0, "m")],
+    "range+name+elevation_condition": [("name", "token_f1_set", NAME_FIELDS, 0.8, "f1")],
+}
+
+
+def _field_value(
+    row: dict[str, Any],
+    aliases: tuple[str, ...],
+    kind: str | None = None,
+    allow_singleton_fallback: bool = True,
+) -> Any:
+    def matches(value: Any) -> bool:
+        if value in (None, ""):
+            return False
+        if kind == "text":
+            return isinstance(value, str)
+        if kind == "number":
+            return _as_number(value) is not None
+        return True
+
+    for alias in aliases:
+        if alias in row and matches(row[alias]):
+            return row[alias]
+    for alias in aliases:
+        for key, value in row.items():
+            if alias in str(key).lower() and matches(value):
+                return value
+    if allow_singleton_fallback:
+        values = [value for value in row.values() if matches(value)]
+        if len(values) == 1:
+            return values[0]
+    return None
+
+
+def _as_number(value: Any) -> float | None:
+    if isinstance(value, bool):
+        return None
+    if isinstance(value, (int, float)):
+        return float(value)
+    match = re.search(r"-?\d+(?:\.\d+)?", str(value).replace(",", ""))
+    return float(match.group(0)) if match else None
+
+
+def _normalize_text(value: Any) -> str:
+    return " ".join(str(value).strip().lower().split())
+
+
+def _point_from_wkt(value: Any) -> tuple[float, float] | None:
+    match = re.search(
+        r"POINT\s*(?:Z\s*)?\(\s*(-?\d+(?:\.\d+)?)\s+(-?\d+(?:\.\d+)?)",
+        str(value), re.I,
+    )
+    if match:
+        return float(match.group(1)), float(match.group(2))
+    try:
+        from shapely import wkb
+        geom = wkb.loads(bytes.fromhex(str(value)))
+        if geom.geom_type == "Point":
+            return float(geom.x), float(geom.y)
+    except (TypeError, ValueError):
+        pass
+    return None
+
+
+def _haversine_m(point_a: tuple[float, float], point_b: tuple[float, float]) -> float:
+    lon1, lat1 = point_a
+    lon2, lat2 = point_b
+    _, _, distance = GEOD.inv(lon1, lat1, lon2, lat2)
+    return abs(distance)
+
+
+def _component_result(
+    pred_row: dict[str, Any],
+    gold_row: dict[str, Any],
+    spec: tuple[str, str, tuple[str, ...], float, str],
+) -> dict[str, Any]:
+    name, metric, aliases, tolerance, unit = spec
+    kind = "text" if metric in ("exact", "token_f1", "location") else "number"
+    allow_singleton_fallback = metric not in ("token_f1",)
+    pred = _field_value(pred_row, aliases, kind=kind, allow_singleton_fallback=allow_singleton_fallback)
+    gold = _field_value(gold_row, aliases, kind=kind, allow_singleton_fallback=allow_singleton_fallback)
+    result = {"component": name, "metric": metric, "tolerance": tolerance, "unit": unit}
+    if metric in ("exact", "token_f1"):
+        if pred is None or gold is None:
+            return {**result, "passed": False, "score": 0.0, "reason": "missing_value"}
+        if metric == "exact":
+            score = float(_normalize_text(pred) == _normalize_text(gold))
+            return {**result, "passed": bool(score), "score": score, "predicted": pred, "gold": gold}
+        _, _, f1 = token_f1(str(pred), str(gold))
+        return {**result, "passed": f1 >= tolerance, "score": round(f1, 4), "predicted": pred, "gold": gold}
+    if metric == "location":
+        pred_point = _point_from_wkt(pred)
+        gold_point = _point_from_wkt(gold)
+        if pred_point is None or gold_point is None:
+            return {**result, "passed": False, "score": None, "reason": "missing_geometry"}
+        error = _haversine_m(pred_point, gold_point)
+        return {**result, "passed": error <= tolerance, "score": round(error, 4), "predicted": pred, "gold": gold}
+    pred_num, gold_num = _as_number(pred), _as_number(gold)
+    if pred_num is None or gold_num is None:
+        return {**result, "passed": False, "score": None, "reason": "non_numeric_output"}
+    if metric == "absolute":
+        error = abs(pred_num - gold_num)
+    elif metric == "angular":
+        delta = abs(pred_num - gold_num) % 360
+        error = min(delta, 360 - delta)
+    else:
+        error = 0.0 if pred_num == gold_num == 0 else (
+            float("inf") if gold_num == 0 else abs(pred_num - gold_num) / abs(gold_num)
+        )
+    return {
+        **result, "passed": error <= tolerance,
+        "score": round(error, 4) if math.isfinite(error) else None,
+        "predicted": pred_num, "gold": gold_num,
+    }
+
+
+def _text_set_result(
+    predicted: list[dict[str, Any]],
+    gold: list[dict[str, Any]],
+    spec: tuple[str, str, tuple[str, ...], float, str],
+) -> dict[str, Any]:
+    name, metric, aliases, tolerance, unit = spec
+    pred_text = "\n".join(
+        str(v) for row in predicted
+        if (v := _field_value(row, aliases, kind="text", allow_singleton_fallback=False)) is not None
+    )
+    gold_text = "\n".join(
+        str(v) for row in gold
+        if (v := _field_value(row, aliases, kind="text", allow_singleton_fallback=False)) is not None
+    )
+    _, _, f1 = token_f1(pred_text, gold_text)
+    return {
+        "component": name, "metric": metric, "tolerance": tolerance, "unit": unit,
+        "passed": bool(pred_text and gold_text and f1 >= tolerance), "score": round(f1, 4),
+        "predicted": pred_text, "gold": gold_text,
+    }
+
+
+def _evaluate_components(
+    source_stem: str,
+    predicted: list[dict[str, Any]],
+    gold: list[dict[str, Any]],
+) -> list[dict[str, Any]] | None:
+    specs = COMPONENT_SPECS.get(source_stem)
+    if specs is None:
+        return None
+    set_specs = [spec for spec in specs if spec[1] == "token_f1_set"]
+    pair_specs = [spec for spec in specs if spec[1] != "token_f1_set"]
+    components = [_text_set_result(predicted, gold, spec) for spec in set_specs]
+    if pair_specs:
+        candidates = [
+            [_component_result(pred_row, gold_row, spec) for spec in pair_specs]
+            for pred_row in predicted for gold_row in gold
+        ]
+        if not candidates:
+            candidates = [[
+                {"component": name, "metric": metric, "tolerance": tolerance, "unit": unit,
+                 "passed": False, "score": None, "reason": "empty_output"}
+                for name, metric, _, tolerance, unit in pair_specs
+            ]]
+        components.extend(max(candidates, key=lambda items: (sum(bool(item["passed"]) for item in items), -sum(item["score"] or 0 for item in items))))
+    return components
+
+
+# ---------------------------------------------------------------------------
 # Per-question evaluation
 # ---------------------------------------------------------------------------
 
@@ -228,7 +443,7 @@ def evaluate_question(record: dict[str, Any]) -> dict[str, Any]:
     source_stem  = record.get("source_stem", "")
     answer_type  = record.get("answer_type", "")
     pred_rows    = (record.get("predicted_exec") or {}).get("output", [])
-    gold_rows    = (record.get("gold_exec")      or {}).get("output", [])
+    gold_rows    = (record.get("gold_exec")      or {}).get("output", []) or record.get("gold_answers", [])
     pred_error   = (record.get("predicted_exec") or {}).get("error", "")
     generation_error = record.get("generation_error", "")
 
@@ -236,6 +451,7 @@ def evaluate_question(record: dict[str, Any]) -> dict[str, Any]:
 
     result: dict[str, Any] = {
         "id":           record.get("id"),
+        "query_type":   record.get("query_type", "unknown"),
         "source_stem":  source_stem,
         "answer_type":  answer_type,
         "metric":       metric,
@@ -248,6 +464,17 @@ def evaluate_question(record: dict[str, Any]) -> dict[str, Any]:
         "score":        0.0,
         "detail":       {},
     }
+
+    components = _evaluate_components(source_stem, pred_rows, gold_rows)
+    if components is not None:
+        result["metric"] = "compound" if len(components) > 1 else components[0]["metric"]
+        result["tolerance"] = None if len(components) > 1 else components[0]["tolerance"]
+        result["unit"] = None if len(components) > 1 else components[0]["unit"]
+        result["correct"] = bool(components) and all(component["passed"] for component in components)
+        scores = [component["score"] for component in components if component.get("score") is not None]
+        result["score"] = round(statistics.mean(scores), 4) if scores else 0.0
+        result["detail"] = {"components": components}
+        return result
 
     # no output → wrong
     if not pred_rows or not gold_rows:
@@ -300,9 +527,8 @@ def evaluate_question(record: dict[str, Any]) -> dict[str, Any]:
         if pred_val is None or gold_val is None:
             result["detail"]["reason"] = "non_numeric_output"
         else:
-            err = abs(pred_val - gold_val)
-            if err > 180:
-                err = 360 - err
+            delta = abs(pred_val - gold_val) % 360
+            err = min(delta, 360 - delta)
             result["correct"] = err <= tolerance
             result["score"]   = round(err, 4)
             result["detail"]  = {
@@ -317,7 +543,14 @@ def evaluate_question(record: dict[str, Any]) -> dict[str, Any]:
         if pred_val is None or gold_val is None:
             result["detail"]["reason"] = "non_numeric_output"
         elif gold_val == 0:
-            result["detail"]["reason"] = "gold_zero"
+            rel_err = 0.0 if pred_val == 0 else float("inf")
+            result["correct"] = pred_val == 0
+            result["score"] = 0.0 if pred_val == 0 else None
+            result["detail"] = {
+                "predicted": round(pred_val, 4),
+                "gold": round(gold_val, 4),
+                "relative_error": result["score"],
+            }
         else:
             rel_err = abs(pred_val - gold_val) / abs(gold_val)
             result["correct"] = rel_err <= tolerance
@@ -370,7 +603,8 @@ def load_cache_results(
                     continue
                 try:
                     rec = json.loads(f.read_text(encoding="utf-8"))
-                    rec.setdefault("query_type", qt)
+                    if rec.get("query_type") in (None, "", "unknown"):
+                        rec["query_type"] = qt
                     records.append(rec)
                 except Exception as exc:
                     print(f"  [warn] could not read {f}: {exc}")
@@ -408,24 +642,24 @@ def evaluate_vector_row(row: dict[str, str]) -> dict[str, Any]:
             correct, score = False, 0.0
 
     elif "angle" in qtype:
-        metric, tol, unit = "angular", 5.0, "deg"
+        metric, tol, unit = "angular", 5.0 / 180.0, "normalized"
         try:
-            # angle_error stored as raw degrees after our fix
-            err     = float(row.get("angle_error", 180))
+            # baselines.py stores GS-QA normalized circular angle error.
+            err     = float(row.get("angle_error", 1.0))
             correct = err <= tol
             score   = round(err, 4)
         except (ValueError, TypeError):
-            correct, score = False, 180.0
+            correct, score = False, 1.0
 
     elif "loc" in qtype:
-        metric, tol, unit = "distance", 5.0, "m"
+        metric, tol, unit = "distance", 5.0 / 500000.0, "normalized"
         try:
-            # distance_error in meters after our fix
-            err     = float(row.get("distance_error", 1e9))
+            # baselines.py stores location error normalized by 500 km.
+            err     = float(row.get("distance_error", 1.0))
             correct = err <= tol
             score   = round(err, 4)
         except (ValueError, TypeError):
-            correct, score = False, 1e9
+            correct, score = False, 1.0
 
     else:  # area, length, count, distance
         metric, tol, unit = "relative", 0.05, "%"
@@ -533,7 +767,7 @@ def build_report(
     lines.append(f"{'='*72}")
     lines.append(f"  Total questions : {overall['total']}")
     lines.append(f"  Correct         : {overall['correct']}")
-    lines.append(f"  Accuracy        : {overall['accuracy']:.3f}" if overall["accuracy"] else "  Accuracy: n/a")
+    lines.append(f"  Accuracy        : {overall['accuracy']:.3f}" if overall["accuracy"] is not None else "  Accuracy: n/a")
     lines.append(f"  SQL gen rate    : {overall['sql_gen_rate']:.2%}" if overall["sql_gen_rate"] else "")
     lines.append(f"  SQL exec rate   : {overall['sql_exec_rate']:.2%}" if overall["sql_exec_rate"] else "")
     lines.append(f"  Timeouts        : {overall['timeouts']}")
@@ -592,6 +826,11 @@ def parse_args() -> argparse.Namespace:
         default="baselines/evaluation",
         help="Where to write evaluation_report.txt and evaluation_summary.json.",
     )
+    parser.add_argument(
+        "--source-stems-file",
+        default=None,
+        help="Optional newline-delimited allowlist of source stems to evaluate.",
+    )
     return parser.parse_args()
 
 
@@ -605,6 +844,16 @@ def main() -> None:
 
     # --- raster / raster-vector / extended ---
     cache_records = load_cache_results(cache_dir, args.provider, args.query_types)
+    if args.source_stems_file:
+        allowed_stems = {
+            line.strip()
+            for line in Path(args.source_stems_file).read_text(encoding="utf-8").splitlines()
+            if line.strip()
+        }
+        cache_records = [
+            record for record in cache_records
+            if record.get("source_stem") in allowed_stems
+        ]
     print(f"  {len(cache_records)} questions loaded")
 
     for rec in cache_records:

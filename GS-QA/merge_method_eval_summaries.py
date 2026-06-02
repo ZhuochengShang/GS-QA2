@@ -159,9 +159,9 @@ def main():
     parser.add_argument("--chess-eval", type=Path, default=Path("CHESS/CHESS_IR_SS_CG_GEMINI/chess_sql_tolerance_eval.csv"))
     parser.add_argument("--output", type=Path, default=Path("baselines/combined_method_eval_summary.csv"))
     parser.add_argument("--numeric-relative-tolerance", type=float, default=0.05)
-    parser.add_argument("--name-f1-tolerance", type=float, default=0.5)
-    parser.add_argument("--location-tolerance-m", type=float, default=500.0)
-    parser.add_argument("--angle-tolerance-deg", type=float, default=22.5)
+    parser.add_argument("--name-f1-tolerance", type=float, default=0.8)
+    parser.add_argument("--location-tolerance-m", type=float, default=5.0)
+    parser.add_argument("--angle-tolerance-deg", type=float, default=5.0)
     args = parser.parse_args()
 
     summaries = []

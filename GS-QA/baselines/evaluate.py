@@ -6,19 +6,43 @@ import time
 import logging
 import os
 import json
-import nltk, string
-from nltk.tokenize import word_tokenize
-nltk.download('punkt')
-nltk.download('stopwords')
-from nltk.corpus import stopwords
-stop_words = set(stopwords.words('english'))
-
 import transformers
 transformers.tokenization_utils.logger.setLevel(logging.ERROR)
 transformers.configuration_utils.logger.setLevel(logging.ERROR)
 transformers.modeling_utils.logger.setLevel(logging.ERROR)
 
+from collections import Counter
 from functools import lru_cache
+
+_session_address_memo = {}
+_session_snapshot_loaded = False
+
+
+def _address_snapshot_path():
+    value = os.environ.get("GSQA_ADDRESS_SNAPSHOT")
+    return None if not value else os.path.abspath(value)
+
+
+def _load_address_snapshot():
+    global _session_snapshot_loaded
+    if _session_snapshot_loaded:
+        return
+    _session_snapshot_loaded = True
+    path = _address_snapshot_path()
+    if path and os.path.exists(path):
+        with open(path, "r") as file:
+            _session_address_memo.update(json.load(file))
+
+
+def _save_address_snapshot():
+    path = _address_snapshot_path()
+    if not path:
+        return
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    tmp_path = path + ".tmp"
+    with open(tmp_path, "w") as file:
+        json.dump(_session_address_memo, file, indent=2, sort_keys=True)
+    os.replace(tmp_path, path)
 
 
 def get_angle_desc(angle):
@@ -28,7 +52,7 @@ def get_angle_desc(angle):
         return 'northeast'
     if 67.5 < angle < 112.5:
         return 'east'
-    if 112.2 <= angle <= 157.5:
+    if 112.5 <= angle <= 157.5:
         return 'southeast'
     if 157.5 < angle < 202.5:
         return 'south'
@@ -42,9 +66,7 @@ def get_angle_desc(angle):
 
 @lru_cache(maxsize=1024)
 def normalize_text(s):
-    tokens = word_tokenize(s)
-    tokens = [word.lower() for word in tokens if (word not in string.punctuation and word.lower() not in stop_words)]
-    return tokens
+    return re.findall(r"[a-z0-9]+", str(s).lower())
 
 
 def evaluate_entity_names(prediction, truth):
@@ -54,14 +76,15 @@ def evaluate_entity_names(prediction, truth):
     if len(pred_tokens) == 0 or len(truth_tokens) == 0:
         return 0, 0, 0, 0  # prec, rec, f1, acc
 
-    common_tokens = set(pred_tokens) & set(truth_tokens)
+    common_tokens = Counter(pred_tokens) & Counter(truth_tokens)
 
     # if there are no common tokens then f1 = 0
     if len(common_tokens) == 0:
         return 0, 0, 0, 0
 
-    prec = len(common_tokens) / len(pred_tokens)
-    rec  = len(common_tokens) / len(truth_tokens)
+    common_count = sum(common_tokens.values())
+    prec = common_count / len(pred_tokens)
+    rec  = common_count / len(truth_tokens)
     f1   = 2 * (prec * rec) / (prec + rec)
     acc  = 1 if f1 >= 0.8 else 0  # Token F1 >= 0.8
     return prec, rec, f1, acc
@@ -79,7 +102,6 @@ def evaluate_location(geod, pred_locs, true_locs):
     return distances, accs
 
 
-@lru_cache(maxsize=None)
 def geocode_address(geocoder, address):
     return geocoder.geocode(address)
 
@@ -87,8 +109,13 @@ def geocode_address(geocoder, address):
 def get_location_by_address(geocoder, address, fails=0):
     """This function returns a location as raw from an address
     will repeat until success"""
+    use_cache = os.environ.get("GSQA_USE_ADDRESS_CACHE", "0") == "1"
+    address_key = str(address)
+    _load_address_snapshot()
+    if not use_cache and address_key in _session_address_memo:
+        return _session_address_memo[address_key]
     cache_path = './address_cache/%s.json' % '_'.join(normalize_text(address)).replace('/', ':')
-    if os.path.exists(cache_path):
+    if use_cache and os.path.exists(cache_path):
         with open(cache_path, 'r') as file:
             text = file.read()
             if text == 'None':
@@ -96,19 +123,24 @@ def get_location_by_address(geocoder, address, fails=0):
             else:
                 return json.loads(text)
     if fails == 5:
-        with open(cache_path, 'w') as file:
-            file.write('None')
+        if use_cache:
+            with open(cache_path, 'w') as file:
+                file.write('None')
+        else:
+            _session_address_memo[address_key] = None
+            _save_address_snapshot()
         return None
     time.sleep(2)
     try:
         obj = geocode_address(geocoder, address)
-        if obj == None:
+        if use_cache:
             with open(cache_path, 'w') as file:
-                file.write('None')
-        else:
-            with open(cache_path, 'w') as file:
-                file.write(json.dumps(obj.raw, indent=2))
-        return None if obj == None else obj.raw
+                file.write('None' if obj is None else json.dumps(obj.raw, indent=2))
+        result = None if obj == None else obj.raw
+        if not use_cache:
+            _session_address_memo[address_key] = result
+            _save_address_snapshot()
+        return result
     except Exception as e:
         print(e)
         time.sleep(2)
@@ -128,17 +160,18 @@ def evaluate_address(predictions, answers):
 def evaluate_angle(predictions, answers):
     scores = []
     accs = []
-    for i in range(len(predictions)):
-        score = abs(predictions[i] - answers[i])
-        if score > 180:
-            score = 360 - score  # raw degrees, not normalized
-        scores.append(score)
-        accs.append(1 if score <= 5 else 0)  # Angular Error <= 5 degrees
+    for pred, true in zip(predictions, answers):
+        difference_deg = abs(float(pred) - float(true)) % 360.0
+        error_deg = min(difference_deg, 360.0 - difference_deg)
+        scores.append(error_deg / 180.0)  # GS-QA normalized angular error
+        accs.append(1 if error_deg <= 5.0 else 0)
     return scores, accs
 
 
 def evaluate_measurement(pred, true):
-    rel_err = abs(true - pred) / true
+    rel_err = 0.0 if pred == true == 0 else (
+        float("inf") if true == 0 else abs(true - pred) / abs(true)
+    )
     acc = 1 if rel_err <= 0.05 else 0  # Relative Error <= 5%
     return rel_err, acc
 
@@ -162,7 +195,7 @@ def get_osm_value(json_obj, value_label):
             return 'northeast'
         if 67.5 < angle < 112.5:
             return 'east'
-        if 112.2 <= angle <= 157.5:
+        if 112.5 <= angle <= 157.5:
             return 'southeast'
         if 157.5 < angle < 202.5:
             return 'south'

@@ -6,9 +6,12 @@ import math
 import re
 from pathlib import Path
 
+from pyproj import Geod
+
 
 NAME_KEYS = ("poi_name", "park_name", "lake_name", "road_name", "region_name", "name")
 NUMERIC_KEYS = ("count", "area", "length", "distance", "?column?", "st_area", "st_length", "st_distance")
+GEOD = Geod(ellps="WGS84")
 
 
 def latest_run_dir(result_dir: Path) -> Path:
@@ -159,13 +162,8 @@ def point_from_wkt(wkt: str):
 def haversine_m(point_a, point_b) -> float:
     lon1, lat1 = point_a
     lon2, lat2 = point_b
-    radius = 6371008.8
-    phi1 = math.radians(lat1)
-    phi2 = math.radians(lat2)
-    dphi = math.radians(lat2 - lat1)
-    dlambda = math.radians(lon2 - lon1)
-    a = math.sin(dphi / 2) ** 2 + math.cos(phi1) * math.cos(phi2) * math.sin(dlambda / 2) ** 2
-    return 2 * radius * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+    _, _, distance = GEOD.inv(lon1, lat1, lon2, lat2)
+    return abs(distance)
 
 
 def points_from_records(records: list[dict]) -> list[tuple[float, float]]:
@@ -269,8 +267,6 @@ def evaluate_question(gold: dict, predicted: dict, args) -> dict:
         err = relative_error(pred, true) if pred is not None and true is not None else float("inf")
         abs_err = abs(pred - true) if pred is not None and true is not None else float("inf")
         passed = err <= args.numeric_relative_tolerance
-        if numeric_key == "count" and math.isfinite(abs_err):
-            passed = passed or abs_err <= args.count_absolute_tolerance
         row.update({
             "attempted": pred is not None,
             "passed": passed,
@@ -405,10 +401,9 @@ def parse_args():
     parser.add_argument("--export-sql", action="store_true")
     parser.add_argument("--evaluate", action="store_true")
     parser.add_argument("--numeric-relative-tolerance", type=float, default=0.05)
-    parser.add_argument("--count-absolute-tolerance", type=float, default=0.0)
-    parser.add_argument("--name-f1-tolerance", type=float, default=0.5)
-    parser.add_argument("--location-tolerance-m", type=float, default=500.0)
-    parser.add_argument("--angle-tolerance-deg", type=float, default=22.5)
+    parser.add_argument("--name-f1-tolerance", type=float, default=0.8)
+    parser.add_argument("--location-tolerance-m", type=float, default=5.0)
+    parser.add_argument("--angle-tolerance-deg", type=float, default=5.0)
     return parser.parse_args()
 
 

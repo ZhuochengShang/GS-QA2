@@ -42,6 +42,8 @@ from langchain_core.messages import HumanMessage, SystemMessage
 from num2words import num2words
 from psycopg.rows import dict_row
 from pyproj import Geod
+from shapely import from_wkt
+from shapely.geometry import shape
 
 # ---------------------------------------------------------------------------
 # Paths
@@ -721,8 +723,31 @@ def get_recursive(data, search_key):
     return out
 
 
+def get_recursive_values(data, search_key):
+    out = []
+    if isinstance(data, dict):
+        for k, v in data.items():
+            if k == search_key:
+                out.append(v)
+            else:
+                out.extend(get_recursive_values(v, search_key))
+    elif isinstance(data, list):
+        for item in data:
+            out.extend(get_recursive_values(item, search_key))
+    return out
+
+
 def improved_f1(new_f1, scores):
     return "F1" not in scores or new_f1 > scores["F1"]
+
+
+def geometry_to_location(value):
+    try:
+        geom = from_wkt(value) if isinstance(value, str) else shape(value)
+        point = geom.centroid
+        return {"lon": point.x, "lat": point.y}
+    except Exception:
+        return None
 
 
 def evaluate_answers(questions, answers, parsed_answers, evaluate_mod, geocoder, geod, prefix):
@@ -794,19 +819,27 @@ def evaluate_answers(questions, answers, parsed_answers, evaluate_mod, geocoder,
             for ans in q["answers"]:
                 v = evaluate_mod.get_osm_value(ans, "address")
                 loc = evaluate_mod.get_osm_value(ans, "location")
-                if v is None:
+                if loc is None:
                     continue
                 for p in parsed_answer:
-                    preds = get_recursive(p, "address")
-                    if not preds:
+                    pred_addresses = get_recursive(p, "address")
+                    pred_geometries = get_recursive_values(p, "geometry")
+                    if not pred_addresses and not pred_geometries:
                         continue
-                    pred = preds[0]
-                    P, R, F1, acc = evaluate_mod.evaluate_entity_names(pred, v)
-                    if improved_f1(F1, scores):
-                        scores.update({"attempted": True, "P": P, "R": R, "F1": F1, "acc": acc})
-                    pred_loc = evaluate_mod.get_location_by_address(geocoder, pred)
+                    if pred_addresses and v is not None:
+                        pred = pred_addresses[0]
+                        P, R, F1, acc = evaluate_mod.evaluate_entity_names(pred, v)
+                        if improved_f1(F1, scores):
+                            scores.update({"attempted": True, "P": P, "R": R, "F1": F1, "acc": acc})
+                    pred_loc = next(
+                        (candidate for candidate in map(geometry_to_location, pred_geometries) if candidate),
+                        None,
+                    )
+                    if pred_loc is None and pred_addresses:
+                        pred_loc = evaluate_mod.get_location_by_address(geocoder, pred_addresses[0])
                     if pred_loc is None:
                         continue
+                    scores["attempted"] = True
                     dist_err_m, dist_acc = evaluate_mod.evaluate_location(geod, [pred_loc], [loc])
                     dist_err_m = dist_err_m[0]
                     dist_acc = dist_acc[0]
@@ -824,7 +857,7 @@ def evaluate_answers(questions, answers, parsed_answers, evaluate_mod, geocoder,
                 for p in parsed_answer:
                     pred_angle = p.get("azimuth_angle", None)
                     try:
-                        pred_angle = int(pred_angle)
+                        pred_angle = float(pred_angle)
                     except Exception:
                         continue
                     pred_desc = evaluate_mod.get_angle_desc(pred_angle)
@@ -848,7 +881,7 @@ def evaluate_answers(questions, answers, parsed_answers, evaluate_mod, geocoder,
                 for p in parsed_answer:
                     pred_v = p.get(mkey, None)
                     try:
-                        pred_v = int(pred_v)
+                        pred_v = float(pred_v)
                     except Exception:
                         continue
                     rel_err, rel_acc = evaluate_mod.evaluate_measurement(pred_v, v)
