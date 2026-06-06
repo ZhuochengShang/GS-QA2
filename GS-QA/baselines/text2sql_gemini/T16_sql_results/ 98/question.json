@@ -1,0 +1,19 @@
+{
+  "question": "Where is restaurant located within 110 kilometers in the forward direction toward the Last House on Mulholland, Los Angeles, CA from Hungry Valley SVRA, Gorman, CA?",
+  "sql": "WITH start_point AS ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Hungry Valley SVRA%' LIMIT 1 ), end_point AS ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Last House on Mulholland%' LIMIT 1 ), azimuth_calc AS ( SELECT sp.geometry AS start_geom, ep.geometry AS end_geom, degrees(ST_Azimuth(sp.geometry, ep.geometry)) AS target_azimuth FROM start_point AS sp, end_point AS ep ) SELECT p.poi_name, p.addr_city, p.addr_state FROM pois AS p, azimuth_calc AS ac WHERE p.amenity = 'restaurant' AND ST_DWithin(p.geometry::geography, ac.start_geom::geography, 110000) -- 110 kilometers AND ABS( (degrees(ST_Azimuth(ac.start_geom, p.geometry)) - ac.target_azimuth + 180 + 360) % 360 - 180 ) <= 45; -- within +/- 45 degrees of the target azimuth",
+  "answers": [],
+  "metadata": {
+    "question_id": 98,
+    "cache_id": 2697,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 11.132,
+    "llm_latency_seconds": 11.132,
+    "prompt_tokens": 1729,
+    "completion_tokens": 303,
+    "total_tokens": 3769,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "operator does not exist: double precision % integer\nLINE 28: ...om, p.geometry)) - ac.target_azimuth + 180 + 360) % 360 - 18...\n                                                              ^\nHINT:  No operator matches the given name and argument types. You might need to add explicit type casts.",
+    "answer_text": ""
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "question": "Where is the closest maritime museum close by Shop One, Rochester, NY?",
+  "sql": "SELECT poi_name, addr_state, addr_city FROM pois WHERE museum = TRUE AND poi_name ILIKE '%maritime%' ORDER BY ST_Distance( pois.geometry::geography, ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Shop One%' AND addr_city ILIKE '%Rochester%' AND addr_state ILIKE '%NY%' LIMIT 1 )::geography ) ASC LIMIT 1;",
+  "answers": [],
+  "metadata": {
+    "question_id": 97,
+    "cache_id": 1396,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 4.719,
+    "llm_latency_seconds": 4.719,
+    "prompt_tokens": 1707,
+    "completion_tokens": 131,
+    "total_tokens": 2575,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "operator does not exist: text = boolean\nLINE 8:   museum = TRUE AND poi_name ILIKE '%maritime%'\n                 ^\nHINT:  No operator matches the given name and argument types. You might need to add explicit type casts.",
+    "answer_text": ""
+  }
+}

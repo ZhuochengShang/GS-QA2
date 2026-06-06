@@ -1,29 +1,38 @@
 # QARV
 
-QARV is a cleaned code-only release bundle for the GS-QA vector/raster
-question-answering experiments, including baseline runners, raster evaluation,
-CHESS-PostGIS adaptation scripts, and GISCopilot integration code.
+QARV is the release bundle for the GS-QA2 vector/raster question-answering
+experiments. It includes benchmark templates, compact result artifacts,
+baseline runners, raster evaluation code, CHESS-PostGIS adaptation scripts,
+and GISCopilot integration code.
 
 ## Contents
 
-- `GS-QA/`: GS-QA baseline runners and evaluation scripts.
+- `GS-QA/`: GS-QA baseline runners, evaluation scripts, QA2 templates, and
+  compact experiment outputs.
+- `GS-QA/benchmark/qa2/`: raster-only, raster-vector, and extended
+  raster-vector question templates.
+- `GS-QA/baselines/evaluation/`: evaluation outputs used to summarize vector
+  and raster accuracy.
+- `GS-QA/baselines/exp_tables/`: aggregate tables for reported metrics.
+- `GS-QA/baselines/text2sql_gemini/`: collected Gemini Text2SQL vector
+  outputs used by the evaluation scripts.
 - `CHESS-PostGIS/`: CHESS adaptation for PostGIS, including raster-aware
   prompts, configs, and collection/evaluation utilities.
 - `GISCopilot/`: cleaned GISCopilot source and GS-QA evaluation helpers.
 
-## Data Not Included
+## Large Data Not Included
 
-Large generated artifacts are intentionally excluded from this code bundle:
+Large data products are intentionally excluded from this repository:
 
-- benchmark question folders
-- model outputs and result caches
-- Chroma vector stores
-- SQLite/PostGIS database dumps
+- raw OSM extracts and DEM raster files
+- PostGIS database dumps
+- Chroma vector stores and embedding indexes
+- full model caches and execution logs
 - address caches and logs
 
-Release large benchmark/data artifacts separately, for example with Git LFS,
-Zenodo, or an institutional data repository. The scripts expect the benchmark
-and database paths to be supplied through command-line arguments or environment
+Release large data artifacts separately, for example with Git LFS, Zenodo, or
+an institutional data repository. The scripts expect raw data, database, and
+index paths to be supplied through command-line arguments or environment
 variables.
 
 ## Required Environment

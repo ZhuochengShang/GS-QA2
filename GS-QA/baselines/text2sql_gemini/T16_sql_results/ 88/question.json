@@ -1,0 +1,19 @@
+{
+  "question": "Where can I find café inside 80 kilometers while progressing from Nokomis Naturescape Garden, Minneapolis, MN toward Radisson Hotel River Falls, River Falls, WI?",
+  "sql": "SELECT poi_name, addr_city, addr_state FROM pois WHERE amenity = 'cafe' AND ST_Intersects( geometry::geography, ST_Buffer( ST_MakeLine( (SELECT geometry FROM parks WHERE park_name ILIKE '%Nokomis Naturescape Garden%' LIMIT 1), (SELECT geometry FROM pois WHERE poi_name ILIKE '%Radisson Hotel River Falls%' LIMIT 1) )::geography, 80000 ) );",
+  "answers": [],
+  "metadata": {
+    "question_id": 88,
+    "cache_id": 2687,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 7.639,
+    "llm_latency_seconds": 7.639,
+    "prompt_tokens": 1727,
+    "completion_tokens": 136,
+    "total_tokens": 3156,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "function st_makeline(geography, geography) does not exist\nLINE 12:       ST_MakeLine(\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "answer_text": ""
+  }
+}

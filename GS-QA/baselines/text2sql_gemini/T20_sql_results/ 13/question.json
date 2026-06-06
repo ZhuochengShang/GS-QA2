@@ -1,0 +1,19 @@
+{
+  "question": "Where is the nearest hotel you’d find going toward Carl E. Johnson Lovers Key State Park, Fort Myers Beach, FL starting at South Venice Lemon Bay Preserve - South Entrance, Venice, FL?",
+  "sql": "WITH start_point AS ( SELECT geometry FROM parks WHERE park_name ILIKE '%South Venice Lemon Bay Preserve - South Entrance%' LIMIT 1 ), end_point AS ( SELECT geometry FROM parks WHERE park_name ILIKE '%Carl E. Johnson Lovers Key State Park%' LIMIT 1 ), path_line AS ( SELECT ST_MakeLine(ST_Centroid(s.geometry), ST_Centroid(e.geometry)) AS geom FROM start_point s, end_point e ) SELECT p.poi_name, p.addr_city, p.addr_state FROM pois p WHERE p.tourism = 'hotel' AND ST_DWithin(p.geometry::geography, (SELECT geom FROM path_line)::geography, 10000) -- Hotels within 10km of the direct path ORDER BY p.geometry::geography <-> (SELECT geometry FROM start_point)::geography LIMIT 1;",
+  "answers": [],
+  "metadata": {
+    "question_id": 13,
+    "cache_id": 1512,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 13.94,
+    "llm_latency_seconds": 13.94,
+    "prompt_tokens": 1732,
+    "completion_tokens": 237,
+    "total_tokens": 4484,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "function st_makeline(geography, geography) does not exist\nLINE 9:     SELECT ST_MakeLine(ST_Centroid(s.geometry), ST_Centroid(...\n                   ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "answer_text": ""
+  }
+}

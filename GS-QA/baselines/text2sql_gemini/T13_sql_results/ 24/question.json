@@ -1,0 +1,19 @@
+{
+  "question": "Can you locate a fast food restaurant within a 180 kilometers radius around Oxbow Park and Zollman Zoo, Byron, MN?",
+  "sql": "SELECT poi_name, addr_city, addr_state FROM pois WHERE amenity = 'fast_food' AND ST_DWithin( geometry::geography, ( SELECT geometry::geography FROM parks WHERE park_name ILIKE '%Oxbow Park and Zollman Zoo%' LIMIT 1 ), 180000 );",
+  "answers": [],
+  "metadata": {
+    "question_id": 24,
+    "cache_id": 2023,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 2.462,
+    "llm_latency_seconds": 2.462,
+    "prompt_tokens": 1720,
+    "completion_tokens": 106,
+    "total_tokens": 2124,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "",
+    "answer_text": ""
+  }
+}

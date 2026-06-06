@@ -1,0 +1,19 @@
+{
+  "question": "Where’s the closest restaurant in the direction from AT&SF NO.940, Bartlesville, OK to Center For Orthopaedic Reconstruction And Excellence, Jenks, OK?",
+  "sql": "WITH start_point AS ( SELECT geometry FROM pois WHERE poi_name ILIKE '%AT&SF NO.940%' AND addr_city ILIKE '%Bartlesville%' AND addr_state ILIKE '%OK%' LIMIT 1 ), end_point AS ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Center For Orthopaedic Reconstruction And Excellence%' AND addr_city ILIKE '%Jenks%' AND addr_state ILIKE '%OK%' LIMIT 1 ), target_direction AS ( SELECT degrees(ST_Azimuth(s.geometry::geography, e.geometry::geography)) AS azimuth FROM start_point s, end_point e ) SELECT p.poi_name, p.addr_state, p.addr_city, p.cuisine FROM pois p, start_point s, target_direction td WHERE p.amenity = 'restaurant' AND ST_DWithin(s.geometry::geography, p.geometry::geography, 100000) -- Search within 100km radius for performance AND LEAST( ABS(degrees(ST_Azimuth(s.geometry::geography, p.geometry::geography)) - td.azimuth), 360 - ABS(degrees(ST_Azimuth(s.geometry::geography, p.geometry::geography)) - td.azimuth) ) <= 15 -- Within +/- 15 degrees of the target direction ORDER BY ST_Distance(s.geometry::geography, p.geometry::geography) ASC LIMIT 1;",
+  "answers": [],
+  "metadata": {
+    "question_id": 47,
+    "cache_id": 1546,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 8.91,
+    "llm_latency_seconds": 8.91,
+    "prompt_tokens": 1730,
+    "completion_tokens": 404,
+    "total_tokens": 3779,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress",
+    "answer_text": ""
+  }
+}

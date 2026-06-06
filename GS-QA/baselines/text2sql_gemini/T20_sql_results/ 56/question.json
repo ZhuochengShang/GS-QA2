@@ -1,0 +1,19 @@
+{
+  "question": "Where is the nearest fast food restaurant along the route from Ganyard Hill Farms, Durham, NC to Johnston County Rugby Park, Wilsons Mills, NC?",
+  "sql": "WITH start_point AS ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Ganyard Hill Farms%' LIMIT 1 ), end_point AS ( SELECT geometry FROM parks WHERE park_name ILIKE '%Johnston County Rugby Park%' LIMIT 1 ), route_corridor AS ( SELECT ST_Buffer(ST_MakeLine(ST_Centroid(sp.geometry), ST_Centroid(ep.geometry))::geography, 1000)::geometry AS geom FROM start_point sp, end_point ep ) SELECT p.poi_name, p.addr_state, p.addr_city FROM pois p, start_point sp_geom WHERE p.amenity = 'fast_food' AND ST_Intersects(p.geometry::geography, (SELECT geom FROM route_corridor)::geography) ORDER BY ST_Distance(p.geometry::geography, sp_geom.geometry::geography) LIMIT 1;",
+  "answers": [],
+  "metadata": {
+    "question_id": 56,
+    "cache_id": 1555,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 9.082,
+    "llm_latency_seconds": 9.082,
+    "prompt_tokens": 1724,
+    "completion_tokens": 243,
+    "total_tokens": 3535,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress",
+    "answer_text": ""
+  }
+}

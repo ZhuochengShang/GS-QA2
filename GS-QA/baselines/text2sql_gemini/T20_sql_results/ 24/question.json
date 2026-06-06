@@ -1,0 +1,19 @@
+{
+  "question": "Where is the nearest hotel while traveling toward Sanders Park, Mount Pleasant, WI from Memory Garden, Mequon, WI?",
+  "sql": "WITH start_point AS ( -- Try to find \"Memory Garden, Mequon, WI\" as a POI SELECT geometry FROM pois WHERE poi_name ILIKE '%Memory Garden%' AND addr_city ILIKE '%Mequon%' AND addr_state ILIKE '%WI%' LIMIT 1 UNION ALL -- If not found as a POI, try to find it as a park within Mequon city SELECT p.geometry FROM parks AS p WHERE p.park_name ILIKE '%Memory Garden%' AND ST_Intersects(p.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Mequon%' AND border_type = 'city' LIMIT 1)) LIMIT 1 ), end_point AS ( -- Find \"Sanders Park, Mount Pleasant, WI\" as a park within Mount Pleasant city SELECT p.geometry FROM parks AS p WHERE p.park_name ILIKE '%Sanders Park%' AND ST_Intersects(p.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Mount Pleasant%' AND border_type = 'city' LIMIT 1)) LIMIT 1 ) SELECT p.poi_name, p.addr_state, p.addr_city, p.amenity, p.leisure, p.tourism, p.cuisine, p.museum, p.healthcare, p.takeaway, p.drive_through, p.outdoor_seating, p.emergency, p.restaurant FROM pois AS p, (SELECT geometry FROM start_point LIMIT 1) AS sp, end_point AS ep WHERE p.tourism = 'hotel' AND sp.geometry IS NOT NULL -- Ensure the start point was found AND ep.geometry IS NOT NULL -- Ensure the end point was found -- Filter for hotels that are closer to the destination than the origin, -- which interprets \"traveling toward\" as being \"on the way\" AND ST_Distance(p.geometry::geography, ep.geometry::geography) < ST_Distance(p.geometry::geography, sp.geometry::geography) ORDER BY -- Order by proximity to the destination to find the nearest among the \"on the way\" hotels p.geometry::geography <-> ep.geometry::geography LIMIT 1;",
+  "answers": [],
+  "metadata": {
+    "question_id": 24,
+    "cache_id": 1523,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 21.526,
+    "llm_latency_seconds": 21.526,
+    "prompt_tokens": 1717,
+    "completion_tokens": 558,
+    "total_tokens": 6342,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "syntax error at or near \"UNION\"\nLINE 5:   UNION ALL\n          ^",
+    "answer_text": ""
+  }
+}

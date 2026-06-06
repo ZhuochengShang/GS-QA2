@@ -1,0 +1,19 @@
+{
+  "question": "Where’s the closest restaurant you hit on the way to William and Ida Friday Institute for Educational Innovation, Raleigh, NC from Ganyard Hill Farms, Durham, NC?",
+  "sql": "WITH origin AS ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Ganyard Hill Farms%' AND addr_city ILIKE '%Durham%' LIMIT 1 ), destination AS ( SELECT geometry FROM pois WHERE poi_name ILIKE '%William and Ida Friday Institute for Educational Innovation%' AND addr_city ILIKE '%Raleigh%' LIMIT 1 ), path_and_origin AS ( SELECT ST_Buffer(ST_MakeLine(origin.geometry, destination.geometry)::geography, 500) AS buffered_path_geom, origin.geometry AS origin_geom FROM origin, destination ) SELECT p.poi_name FROM pois AS p, path_and_origin AS pao WHERE p.amenity = 'restaurant' AND ST_Intersects(p.geometry::geography, pao.buffered_path_geom) ORDER BY ST_Distance(p.geometry::geography, pao.origin_geom::geography) ASC LIMIT 1;",
+  "answers": [],
+  "metadata": {
+    "question_id": 35,
+    "cache_id": 1534,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 5.845,
+    "llm_latency_seconds": 5.845,
+    "prompt_tokens": 1726,
+    "completion_tokens": 244,
+    "total_tokens": 2997,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress",
+    "answer_text": ""
+  }
+}

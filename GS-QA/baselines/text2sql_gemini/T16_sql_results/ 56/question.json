@@ -1,0 +1,19 @@
+{
+  "question": "Where can I find fast food restaurant inside 10 kilometers as I travel from Amazing Air, San Antonio, TX toward the Cross at Kerrville, Kerrville, TX?",
+  "sql": "WITH start_location AS ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Amazing Air%' AND addr_city ILIKE '%San Antonio%' AND addr_state ILIKE '%TX%' LIMIT 1 ), end_location AS ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Cross at Kerrville%' AND addr_city ILIKE '%Kerrville%' AND addr_state ILIKE '%TX%' LIMIT 1 ), travel_corridor AS ( SELECT ST_Buffer(ST_MakeLine(sl.geometry, el.geometry)::geography, 10000) AS corridor_geometry FROM start_location sl, end_location el ) SELECT p.poi_name, p.addr_city, p.addr_state FROM pois p, travel_corridor tc WHERE p.amenity = 'fast_food' AND ST_Intersects(p.geometry::geography, tc.corridor_geometry);",
+  "answers": [],
+  "metadata": {
+    "question_id": 56,
+    "cache_id": 2655,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 5.854,
+    "llm_latency_seconds": 5.854,
+    "prompt_tokens": 1727,
+    "completion_tokens": 255,
+    "total_tokens": 2925,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "function st_makeline(geography, geography) does not exist\nLINE 19:     SELECT ST_Buffer(ST_MakeLine(sl.geometry, el.geometry)::...\n                              ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "answer_text": ""
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "question": "Within 180 kilometers of Go Fish, Rosedale, MD, where can I find a gallery toward Fairfield Inn & Suites by Marriott Harrisburg International Airport, Middletown, PA?",
+  "sql": "WITH origin_point AS ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Go Fish%' AND addr_city ILIKE '%Rosedale%' AND addr_state ILIKE '%MD%' LIMIT 1 ), destination_point AS ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Fairfield Inn & Suites by Marriott Harrisburg International Airport%' AND addr_city ILIKE '%Middletown%' AND addr_state ILIKE '%PA%' LIMIT 1 ), target_azimuth_degrees AS ( SELECT degrees(ST_Azimuth(o.geometry, d.geometry)) AS azimuth FROM origin_point AS o, destination_point AS d ) SELECT p.poi_name, p.addr_city, p.addr_state FROM pois AS p, origin_point AS o, target_azimuth_degrees AS tad WHERE p.tourism ILIKE '%gallery%' AND ST_DWithin(p.geometry::geography, o.geometry::geography, 180000) AND ( -- Calculate the clockwise difference in degrees from the target azimuth to the POI's azimuth -- Normalize the result to be within [0, 360) (degrees(ST_Azimuth(o.geometry, p.geometry)) - tad.azimuth + 360) % 360 <= 45 OR -- Or, if the difference is large, it means the POI is in the other direction (counter-clockwise) -- Check if it's within 45 degrees counter-clockwise (i.e., within 360-45 degrees clockwise) (degrees(ST_Azimuth(o.geometry, p.geometry)) - tad.azimuth + 360) % 360 >= (360 - 45) );",
+  "answers": [],
+  "metadata": {
+    "question_id": 38,
+    "cache_id": 2637,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 15.163,
+    "llm_latency_seconds": 15.163,
+    "prompt_tokens": 1729,
+    "completion_tokens": 435,
+    "total_tokens": 4921,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "operator does not exist: double precision % integer\nLINE 24: ...uth(o.geometry, p.geometry)) - tad.azimuth + 360) % 360 <= 4...\n                                                              ^\nHINT:  No operator matches the given name and argument types. You might need to add explicit type casts.",
+    "answer_text": ""
+  }
+}

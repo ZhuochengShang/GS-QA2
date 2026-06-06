@@ -1,0 +1,19 @@
+{
+  "question": "Where can I find attraction inside 130 kilometers while progressing from English Street Community Garden, New Haven, CT toward Montefiore Medical Center - Wakefield Campus, Bronx, NY?",
+  "sql": "SELECT poi_name, addr_city, addr_state FROM pois WHERE tourism = 'attraction' AND ST_Intersects( geometry::geography, ST_Buffer( ST_MakeLine( (SELECT geometry FROM pois WHERE poi_name ILIKE '%English Street Community Garden%' AND addr_city ILIKE '%New Haven%' AND addr_state ILIKE '%CT%' LIMIT 1), (SELECT geometry FROM pois WHERE poi_name ILIKE '%Montefiore Medical Center - Wakefield Campus%' AND addr_city ILIKE '%Bronx%' AND addr_state ILIKE '%NY%' LIMIT 1) )::geography, 130000 ) );",
+  "answers": [],
+  "metadata": {
+    "question_id": 42,
+    "cache_id": 2641,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 7.838,
+    "llm_latency_seconds": 7.838,
+    "prompt_tokens": 1729,
+    "completion_tokens": 171,
+    "total_tokens": 3179,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "function st_makeline(geography, geography) does not exist\nLINE 8:             ST_MakeLine(\n                    ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "answer_text": ""
+  }
+}

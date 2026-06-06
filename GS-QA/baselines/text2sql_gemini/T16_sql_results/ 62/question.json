@@ -1,0 +1,19 @@
+{
+  "question": "Within 140 kilometers, where can I find a gallery aligned with the route to Fred Crabtree Park, Herndon, VA from Former Gundry/Glass Hospital (Grand Gundry Sanitarium), Baltimore, MD?",
+  "sql": "SELECT poi_name, addr_city, addr_state FROM pois WHERE tourism = 'gallery' AND ST_Intersects( geometry :: geography, ST_Buffer( ST_MakeLine( ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Gundry/Glass Hospital%' AND addr_city ILIKE '%Baltimore%' AND addr_state ILIKE '%MD%' LIMIT 1 ), ( SELECT P.geometry FROM parks AS P WHERE P.park_name ILIKE '%Fred Crabtree Park%' AND ST_Intersects( P.geometry, ( SELECT geometry FROM regions WHERE region_name ILIKE '%Herndon%' AND border_type = 'city' LIMIT 1 ) ) LIMIT 1 ) ) :: geography, 140000 ) );",
+  "answers": [],
+  "metadata": {
+    "question_id": 62,
+    "cache_id": 2661,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 7.551,
+    "llm_latency_seconds": 7.551,
+    "prompt_tokens": 1737,
+    "completion_tokens": 251,
+    "total_tokens": 3206,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "function st_makeline(geography, geography) does not exist\nLINE 11:       ST_MakeLine(\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "answer_text": ""
+  }
+}

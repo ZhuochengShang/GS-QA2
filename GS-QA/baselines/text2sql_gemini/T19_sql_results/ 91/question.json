@@ -1,0 +1,19 @@
+{
+  "question": "Where is the closest beach resort relative to the northwest of Children's Cultural Center of Native America, New York, NY?",
+  "sql": "WITH center_location AS ( SELECT geometry AS center_geom FROM pois WHERE poi_name ILIKE '%Children''s Cultural Center of Native America%' AND addr_city ILIKE '%New York%' AND addr_state ILIKE '%NY%' LIMIT 1 ), beach_resorts AS ( SELECT p.id, p.poi_name, p.geometry FROM pois p WHERE (p.tourism = 'hotel' OR p.amenity = 'hotel') -- Assuming 'hotel' is the closest proxy for 'resort' given available tags AND EXISTS ( SELECT 1 FROM lakes l WHERE ST_DWithin(p.geometry::geography, l.geometry::geography, 500) -- Within 500 meters of a lake/waterbody for 'beach' ) ) SELECT br.poi_name, ST_Distance(br.geometry::geography, cl.center_geom::geography) AS distance_meters FROM beach_resorts br, center_location cl WHERE degrees(ST_Azimuth(ST_Centroid(cl.center_geom), ST_Centroid(br.geometry))) BETWEEN 292.5 AND 337.5 -- Filter for northwest direction (292.5 to 337.5 degrees) ORDER BY ST_Distance(br.geometry::geography, cl.center_geom::geography) ASC LIMIT 1;",
+  "answers": [],
+  "metadata": {
+    "question_id": 91,
+    "cache_id": 1190,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 15.806,
+    "llm_latency_seconds": 15.806,
+    "prompt_tokens": 1717,
+    "completion_tokens": 341,
+    "total_tokens": 4853,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "Task exceeded 344 seconds",
+    "answer_text": ""
+  }
+}

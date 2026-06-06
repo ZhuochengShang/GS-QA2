@@ -1,0 +1,19 @@
+{
+  "question": "Where can I find a takeout restaurant that are within 130 kilometers distance of Arizona Route 66 Museum, Kingman, AZ?",
+  "sql": "SELECT poi_name, addr_city, addr_state FROM pois WHERE restaurant IS NOT NULL AND takeaway = 'yes' AND ST_DWithin( geometry::geography, ( SELECT geometry::geography FROM pois WHERE poi_name ILIKE '%Arizona Route 66 Museum%' LIMIT 1 ), 130000 );",
+  "answers": [],
+  "metadata": {
+    "question_id": 49,
+    "cache_id": 2448,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 2.052,
+    "llm_latency_seconds": 2.052,
+    "prompt_tokens": 1721,
+    "completion_tokens": 107,
+    "total_tokens": 2068,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "",
+    "answer_text": ""
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "question": "Within a 20 kilometers radius, where can I find a fast food restaurant as I head from Hotel UMass, Amherst, MA to Mowry Conservation Area, Smithfield, RI?",
+  "sql": "SELECT p.poi_name, p.addr_city, p.addr_state FROM pois AS p WHERE p.amenity = 'fast_food' AND ST_Intersects( p.geometry :: geography, ST_Buffer( ST_MakeLine( ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Hotel UMass%' LIMIT 1 ), ( SELECT geometry FROM parks WHERE park_name ILIKE '%Mowry Conservation Area%' LIMIT 1 ) ) :: geography, 20000 ) );",
+  "answers": [],
+  "metadata": {
+    "question_id": 72,
+    "cache_id": 2671,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 5.102,
+    "llm_latency_seconds": 5.102,
+    "prompt_tokens": 1730,
+    "completion_tokens": 170,
+    "total_tokens": 2698,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "function st_makeline(geography, geography) does not exist\nLINE 11:       ST_MakeLine(\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "answer_text": ""
+  }
+}

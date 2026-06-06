@@ -1,0 +1,19 @@
+{
+  "question": "Where can I find café within a 120 kilometers radius while heading from Washington Park Botanical Garden, Springfield, IL toward Henry's Rabbit Ranch, Staunton, IL?",
+  "sql": "SELECT poi_name, addr_city, addr_state FROM pois WHERE amenity = 'cafe' AND ST_Intersects( geometry::geography, ST_Buffer( ST_MakeLine( ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Washington Park Botanical Garden%' AND addr_city ILIKE '%Springfield%' AND addr_state ILIKE '%IL%' LIMIT 1 ), ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Henry''s Rabbit Ranch%' AND addr_city ILIKE '%Staunton%' AND addr_state ILIKE '%IL%' LIMIT 1 ) )::geography, 120000 -- 120 kilometers in meters ) );",
+  "answers": [],
+  "metadata": {
+    "question_id": 21,
+    "cache_id": 2620,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 7.22,
+    "llm_latency_seconds": 7.22,
+    "prompt_tokens": 1728,
+    "completion_tokens": 212,
+    "total_tokens": 3078,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "function st_makeline(geography, geography) does not exist\nLINE 12:       ST_MakeLine(\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "answer_text": ""
+  }
+}

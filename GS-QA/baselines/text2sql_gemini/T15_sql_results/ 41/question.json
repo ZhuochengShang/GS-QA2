@@ -1,0 +1,19 @@
+{
+  "question": "Where are a museum positioned toward the northwest of Barrett, the Honors College at ASU, Tempe, AZ and inside 80 kilometers?",
+  "sql": "SELECT poi_name, addr_state, addr_city FROM pois AS museum WHERE museum.tourism = 'museum' AND ST_DWithin( museum.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Barrett, the Honors College at ASU%' LIMIT 1)::geography, 80000 ) AND degrees(ST_Azimuth( (SELECT geometry FROM pois WHERE poi_name ILIKE '%Barrett, the Honors College at ASU%' LIMIT 1), museum.geometry )) BETWEEN 292.5 AND 337.5;",
+  "answers": [],
+  "metadata": {
+    "question_id": 41,
+    "cache_id": 2240,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 3.995,
+    "llm_latency_seconds": 3.995,
+    "prompt_tokens": 1720,
+    "completion_tokens": 159,
+    "total_tokens": 2493,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress",
+    "answer_text": ""
+  }
+}

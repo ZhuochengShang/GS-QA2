@@ -1,0 +1,19 @@
+{
+  "question": "Where is the closest hotel in relation to White Memorial Foundation, Litchfield, CT?",
+  "sql": "SELECT poi_name, addr_city, addr_state, ST_Distance( P.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%White Memorial Foundation%' LIMIT 1)::geography ) AS distance_meters FROM pois AS P WHERE P.tourism = 'hotel' AND P.addr_city ILIKE '%Litchfield%' AND P.addr_state ILIKE '%CT%' ORDER BY distance_meters ASC LIMIT 1;",
+  "answers": [],
+  "metadata": {
+    "question_id": 25,
+    "cache_id": 724,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 3.924,
+    "llm_latency_seconds": 3.924,
+    "prompt_tokens": 1709,
+    "completion_tokens": 133,
+    "total_tokens": 2449,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "",
+    "answer_text": ""
+  }
+}

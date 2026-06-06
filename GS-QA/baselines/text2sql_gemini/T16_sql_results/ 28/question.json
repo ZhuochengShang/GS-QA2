@@ -1,0 +1,19 @@
+{
+  "question": "Within a 140 kilometers distance, where can I find a restaurant on the path toward IDESST Sausalito Portuguese Cultural Center, Sausalito, CA from the View Lounge, San Francisco, CA?",
+  "sql": "SELECT p.poi_name, p.addr_city, p.addr_state FROM pois AS p, ( SELECT geometry FROM pois WHERE poi_name ILIKE '%View Lounge%' AND addr_city ILIKE '%San Francisco%' AND addr_state ILIKE '%CA%' LIMIT 1 ) AS start_point, ( SELECT geometry FROM pois WHERE poi_name ILIKE '%IDESST Sausalito Portuguese Cultural Center%' AND addr_city ILIKE '%Sausalito%' AND addr_state ILIKE '%CA%' LIMIT 1 ) AS end_point WHERE p.amenity = 'restaurant' AND ST_DWithin(p.geometry::geography, start_point.geometry::geography, 140000) AND ST_Intersects(p.geometry::geography, ST_Buffer(ST_MakeLine(start_point.geometry, end_point.geometry)::geography, 1000)) ORDER BY ST_Distance(p.geometry::geography, start_point.geometry::geography);",
+  "answers": [],
+  "metadata": {
+    "question_id": 28,
+    "cache_id": 2627,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 10.809,
+    "llm_latency_seconds": 10.809,
+    "prompt_tokens": 1736,
+    "completion_tokens": 286,
+    "total_tokens": 3900,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "function st_makeline(geography, geography) does not exist\nLINE 29: ...ND ST_Intersects(p.geometry::geography, ST_Buffer(ST_MakeLin...\n                                                              ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "answer_text": ""
+  }
+}

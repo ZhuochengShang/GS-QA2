@@ -1,0 +1,19 @@
+{
+  "question": "Where’s the closest hotel that comes up heading toward the Wright Institute, Berkeley, CA from Strawberry Hill, San Francisco, CA?",
+  "sql": "SELECT poi_name, addr_city, addr_state FROM pois WHERE tourism = 'hotel' ORDER BY geometry <-> ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Wright Institute%' AND addr_city ILIKE '%Berkeley%' AND addr_state ILIKE '%CA%' LIMIT 1 ) LIMIT 1;",
+  "answers": [],
+  "metadata": {
+    "question_id": 64,
+    "cache_id": 1563,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 3.516,
+    "llm_latency_seconds": 3.516,
+    "prompt_tokens": 1719,
+    "completion_tokens": 102,
+    "total_tokens": 2292,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress",
+    "answer_text": ""
+  }
+}

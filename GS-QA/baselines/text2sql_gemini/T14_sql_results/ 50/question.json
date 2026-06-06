@@ -1,0 +1,19 @@
+{
+  "question": "Can you show me an emergency hospital within a 140 kilometers radius of Caldwell Woods, Chicago, IL?",
+  "sql": "SELECT poi_name, addr_state, addr_city, amenity, emergency FROM pois WHERE amenity = 'hospital' AND emergency = 'yes' AND ST_DWithin( pois.geometry::geography, (SELECT P.geometry::geography FROM parks AS P WHERE P.park_name ILIKE '%Caldwell Woods%' AND ST_Intersects(P.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Chicago%' AND border_type = 'city' LIMIT 1)) LIMIT 1 ), 140000 -- 140 kilometers in meters );",
+  "answers": [],
+  "metadata": {
+    "question_id": 50,
+    "cache_id": 2449,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 9.055,
+    "llm_latency_seconds": 9.055,
+    "prompt_tokens": 1715,
+    "completion_tokens": 173,
+    "total_tokens": 3485,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "",
+    "answer_text": ""
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "question": "Where’s the closest museum lying along the route toward Factory Shoals Recreation Park, Covington, GA from Homewood Suites, Atlanta, GA?",
+  "sql": "WITH start_point AS ( SELECT geometry AS geom FROM pois WHERE poi_name ILIKE '%Homewood Suites%' AND addr_city ILIKE '%Atlanta%' AND addr_state ILIKE '%GA%' LIMIT 1 ), end_point AS ( SELECT p.geometry AS geom FROM parks p JOIN regions r ON ST_Intersects(p.geometry::geography, r.geometry::geography) WHERE p.park_name ILIKE '%Factory Shoals Recreation Park%' AND r.region_name ILIKE '%Covington%' AND r.border_type = 'city' LIMIT 1 ), route_corridor AS ( SELECT ST_Buffer(ST_MakeLine(sp.geom, ep.geom)::geography, 1000)::geometry AS corridor_geom FROM start_point sp, end_point ep ) SELECT p.poi_name FROM pois p, start_point sp, route_corridor rc WHERE p.museum = 'yes' AND ST_Intersects(p.geometry::geography, rc.corridor_geom::geography) ORDER BY ST_Distance(p.geometry::geography, sp.geom::geography) ASC LIMIT 1;",
+  "answers": [],
+  "metadata": {
+    "question_id": 54,
+    "cache_id": 1553,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 11.074,
+    "llm_latency_seconds": 11.074,
+    "prompt_tokens": 1721,
+    "completion_tokens": 310,
+    "total_tokens": 3987,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress",
+    "answer_text": ""
+  }
+}

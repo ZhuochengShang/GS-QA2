@@ -1,0 +1,754 @@
+{
+  "question": "Where can I find a golf course within a 50 kilometers distance of Art Clinic, New York, NY?",
+  "sql": "SELECT poi_name FROM pois WHERE leisure = 'golf_course' AND ST_DWithin( geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Art Clinic%' AND addr_city ILIKE '%New York%' AND addr_state ILIKE '%NY%' LIMIT 1)::geography, 50000 ) UNION ALL SELECT park_name FROM parks WHERE leisure = 'golf_course' AND ST_DWithin( geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Art Clinic%' AND addr_city ILIKE '%New York%' AND addr_state ILIKE '%NY%' LIMIT 1)::geography, 50000 );",
+  "answers": [
+    {
+      "id": 9872704,
+      "poi_name": "Players Club Virtual Golf",
+      "osm_id": 5181045735,
+      "amenity": null,
+      "cuisine": null,
+      "leisure": "golf_course",
+      "historic": null,
+      "description": null,
+      "tourism": null,
+      "information": null,
+      "wheelchair": null,
+      "building": null,
+      "fee": null,
+      "opening_hours": null,
+      "operator": null,
+      "sport": null,
+      "website": null,
+      "capacity": null,
+      "shop": null,
+      "internet_access": null,
+      "phone": null,
+      "takeaway": null,
+      "drive_through": null,
+      "museum": null,
+      "official_name": null,
+      "healthcare": null,
+      "outdoor_seating": null,
+      "delivery": null,
+      "toilets": null,
+      "parking": null,
+      "emergency": null,
+      "artwork_type": null,
+      "restaurant": null,
+      "sports": null,
+      "zoo": null,
+      "wholesale": null,
+      "school_type": null,
+      "pastry_shop": null,
+      "hairdresser": null,
+      "resort": null,
+      "fast_food": null,
+      "wikidata": null,
+      "addr_state": null,
+      "addr_city": null,
+      "addr_postcode": null,
+      "addr_street": null,
+      "addr_housenumber": null,
+      "geometry": "POINT(-74.0695578 40.9444376)"
+    },
+    {
+      "id": 10604307,
+      "poi_name": "Peninsula Golf Club",
+      "osm_id": 5616067006,
+      "amenity": null,
+      "cuisine": null,
+      "leisure": "golf_course",
+      "historic": null,
+      "description": null,
+      "tourism": null,
+      "information": null,
+      "wheelchair": null,
+      "building": null,
+      "fee": null,
+      "opening_hours": null,
+      "operator": null,
+      "sport": null,
+      "website": null,
+      "capacity": null,
+      "shop": null,
+      "internet_access": null,
+      "phone": null,
+      "takeaway": null,
+      "drive_through": null,
+      "museum": null,
+      "official_name": null,
+      "healthcare": null,
+      "outdoor_seating": null,
+      "delivery": null,
+      "toilets": null,
+      "parking": null,
+      "emergency": null,
+      "artwork_type": null,
+      "restaurant": null,
+      "sports": null,
+      "zoo": null,
+      "wholesale": null,
+      "school_type": null,
+      "pastry_shop": null,
+      "hairdresser": null,
+      "resort": null,
+      "fast_food": null,
+      "wikidata": null,
+      "addr_state": null,
+      "addr_city": null,
+      "addr_postcode": null,
+      "addr_street": null,
+      "addr_housenumber": null,
+      "geometry": "POINT(-73.4393675 40.6592646)"
+    },
+    {
+      "id": 25351687,
+      "poi_name": "InHome Golf",
+      "osm_id": 10100433578,
+      "amenity": null,
+      "cuisine": null,
+      "leisure": "golf_course",
+      "historic": null,
+      "description": "InHome Golf helps design and build indoor golf simulators across The United States and Canada.",
+      "tourism": null,
+      "information": null,
+      "wheelchair": null,
+      "building": null,
+      "fee": null,
+      "opening_hours": "Mo-Fr 08:00-18:00",
+      "operator": null,
+      "sport": null,
+      "website": "https://inhomegolf.com/home-golf-simulator-new-jersey",
+      "capacity": null,
+      "shop": null,
+      "internet_access": null,
+      "phone": "+1 800-557-5859",
+      "takeaway": null,
+      "drive_through": null,
+      "museum": null,
+      "official_name": null,
+      "healthcare": null,
+      "outdoor_seating": null,
+      "delivery": null,
+      "toilets": null,
+      "parking": null,
+      "emergency": null,
+      "artwork_type": null,
+      "restaurant": null,
+      "sports": null,
+      "zoo": null,
+      "wholesale": null,
+      "school_type": null,
+      "pastry_shop": null,
+      "hairdresser": null,
+      "resort": null,
+      "fast_food": null,
+      "wikidata": null,
+      "addr_state": "NJ",
+      "addr_city": "Lyndhurst",
+      "addr_postcode": "07071",
+      "addr_street": "Wall Street West",
+      "addr_housenumber": "1000",
+      "geometry": "POINT(-74.1058254 40.8069248)"
+    },
+    {
+      "id": 6459740,
+      "poi_name": "Bethpage Black",
+      "osm_id": 2854158382,
+      "amenity": null,
+      "cuisine": null,
+      "leisure": "golf_course",
+      "historic": null,
+      "description": null,
+      "tourism": null,
+      "information": null,
+      "wheelchair": null,
+      "building": null,
+      "fee": null,
+      "opening_hours": null,
+      "operator": null,
+      "sport": null,
+      "website": null,
+      "capacity": null,
+      "shop": null,
+      "internet_access": null,
+      "phone": null,
+      "takeaway": null,
+      "drive_through": null,
+      "museum": null,
+      "official_name": null,
+      "healthcare": null,
+      "outdoor_seating": null,
+      "delivery": null,
+      "toilets": null,
+      "parking": null,
+      "emergency": null,
+      "artwork_type": null,
+      "restaurant": null,
+      "sports": null,
+      "zoo": null,
+      "wholesale": null,
+      "school_type": null,
+      "pastry_shop": null,
+      "hairdresser": null,
+      "resort": null,
+      "fast_food": null,
+      "wikidata": null,
+      "addr_state": null,
+      "addr_city": null,
+      "addr_postcode": null,
+      "addr_street": null,
+      "addr_housenumber": null,
+      "geometry": "POINT(-73.4457528 40.7486553)"
+    },
+    {
+      "id": 2015626,
+      "poi_name": "Merrick Golf Course",
+      "osm_id": 357571314,
+      "amenity": null,
+      "cuisine": null,
+      "leisure": "park",
+      "historic": null,
+      "description": null,
+      "tourism": null,
+      "information": null,
+      "wheelchair": null,
+      "building": null,
+      "fee": null,
+      "opening_hours": null,
+      "operator": null,
+      "sport": null,
+      "website": null,
+      "capacity": null,
+      "shop": null,
+      "internet_access": null,
+      "phone": null,
+      "takeaway": null,
+      "drive_through": null,
+      "museum": null,
+      "official_name": null,
+      "healthcare": null,
+      "outdoor_seating": null,
+      "delivery": null,
+      "toilets": null,
+      "parking": null,
+      "emergency": null,
+      "artwork_type": null,
+      "restaurant": null,
+      "sports": null,
+      "zoo": null,
+      "wholesale": null,
+      "school_type": null,
+      "pastry_shop": null,
+      "hairdresser": null,
+      "resort": null,
+      "fast_food": null,
+      "wikidata": null,
+      "addr_state": null,
+      "addr_city": null,
+      "addr_postcode": null,
+      "addr_street": null,
+      "addr_housenumber": null,
+      "geometry": "POINT(-73.5609609 40.6456578)"
+    },
+    {},
+    {
+      "poi_name": "Rockland Lake Championship Golf Course"
+    },
+    {
+      "poi_name": "Tamarack Country Club"
+    },
+    {
+      "poi_name": "The Ridgewood Country Club"
+    },
+    {
+      "poi_name": "Huntington Country Club"
+    },
+    {
+      "poi_name": "Spook Rock Municipal Golf Course"
+    },
+    {},
+    {
+      "poi_name": "The Woodside Club"
+    },
+    {
+      "poi_name": "Kissena Golf Course"
+    },
+    {
+      "poi_name": "Hackensack Golf Club"
+    },
+    {},
+    {
+      "poi_name": "Lake Isle Country Club"
+    },
+    {
+      "poi_name": "Plainfield Country Club"
+    },
+    {},
+    {
+      "poi_name": "Meadow Brook Club"
+    },
+    {
+      "poi_name": "Sunset Valley Golf Course"
+    },
+    {
+      "poi_name": "Innis Arden Golf Club"
+    },
+    {
+      "poi_name": "Rutgers University Golf Course"
+    },
+    {
+      "poi_name": "Saxon Woods Golf Course"
+    },
+    {
+      "poi_name": "Sun Eagles Golf Course"
+    },
+    {
+      "poi_name": "Greenwich Country Club"
+    },
+    {
+      "poi_name": "City of Glen Cove Golf Course"
+    },
+    {},
+    {
+      "poi_name": "Willowbrook Golf Center"
+    },
+    {
+      "poi_name": "Cherry Valley Golf Course"
+    },
+    {},
+    {
+      "id": 20874279,
+      "poi_name": "Forest Park Golf Course",
+      "osm_id": 8803464279,
+      "amenity": null,
+      "cuisine": null,
+      "leisure": null,
+      "historic": null,
+      "description": null,
+      "tourism": null,
+      "information": null,
+      "wheelchair": null,
+      "building": null,
+      "fee": null,
+      "opening_hours": null,
+      "operator": null,
+      "sport": null,
+      "website": null,
+      "capacity": null,
+      "shop": null,
+      "internet_access": null,
+      "phone": null,
+      "takeaway": null,
+      "drive_through": null,
+      "museum": null,
+      "official_name": null,
+      "healthcare": null,
+      "outdoor_seating": null,
+      "delivery": null,
+      "toilets": null,
+      "parking": null,
+      "emergency": null,
+      "artwork_type": null,
+      "restaurant": null,
+      "sports": null,
+      "zoo": null,
+      "wholesale": null,
+      "school_type": null,
+      "pastry_shop": null,
+      "hairdresser": null,
+      "resort": null,
+      "fast_food": null,
+      "wikidata": "Q111926741",
+      "addr_state": null,
+      "addr_city": null,
+      "addr_postcode": null,
+      "addr_street": null,
+      "addr_housenumber": null,
+      "geometry": "POINT(-76.6940413 39.3246494)"
+    },
+    {
+      "id": 8989282,
+      "poi_name": "Nassau Country Club",
+      "osm_id": 4490863889,
+      "amenity": null,
+      "cuisine": null,
+      "leisure": null,
+      "historic": null,
+      "description": null,
+      "tourism": null,
+      "information": null,
+      "wheelchair": "yes",
+      "building": null,
+      "fee": null,
+      "opening_hours": null,
+      "operator": null,
+      "sport": null,
+      "website": null,
+      "capacity": null,
+      "shop": null,
+      "internet_access": null,
+      "phone": null,
+      "takeaway": null,
+      "drive_through": null,
+      "museum": null,
+      "official_name": null,
+      "healthcare": null,
+      "outdoor_seating": null,
+      "delivery": null,
+      "toilets": null,
+      "parking": null,
+      "emergency": null,
+      "artwork_type": null,
+      "restaurant": null,
+      "sports": null,
+      "zoo": null,
+      "wholesale": null,
+      "school_type": null,
+      "pastry_shop": null,
+      "hairdresser": null,
+      "resort": null,
+      "fast_food": null,
+      "wikidata": null,
+      "addr_state": "NY",
+      "addr_city": "Glen Cove",
+      "addr_postcode": "11542",
+      "addr_street": "Saint Andrews Lane",
+      "addr_housenumber": "30",
+      "geometry": "POINT(-73.6162881 40.869973)"
+    },
+    {
+      "poi_name": "Hendricks Field Golf Course"
+    },
+    {},
+    {
+      "poi_name": "Cold Spring Country Club"
+    },
+    {
+      "poi_name": "Valley Brook Golf Course"
+    },
+    {
+      "poi_name": "Fairmount Country Club"
+    },
+    {
+      "poi_name": "Wykagyl Golf Club"
+    },
+    {
+      "poi_name": "Alpine Country Club"
+    },
+    {
+      "poi_name": "Van Cortlandt Golf Course"
+    },
+    {
+      "id": 25351687,
+      "poi_name": "InHome Golf",
+      "osm_id": 10100433578,
+      "amenity": null,
+      "cuisine": null,
+      "leisure": "golf_course",
+      "historic": null,
+      "description": "InHome Golf helps design and build indoor golf simulators across The United States and Canada.",
+      "tourism": null,
+      "information": null,
+      "wheelchair": null,
+      "building": null,
+      "fee": null,
+      "opening_hours": "Mo-Fr 08:00-18:00",
+      "operator": null,
+      "sport": null,
+      "website": "https://inhomegolf.com/home-golf-simulator-new-jersey",
+      "capacity": null,
+      "shop": null,
+      "internet_access": null,
+      "phone": "+1 800-557-5859",
+      "takeaway": null,
+      "drive_through": null,
+      "museum": null,
+      "official_name": null,
+      "healthcare": null,
+      "outdoor_seating": null,
+      "delivery": null,
+      "toilets": null,
+      "parking": null,
+      "emergency": null,
+      "artwork_type": null,
+      "restaurant": null,
+      "sports": null,
+      "zoo": null,
+      "wholesale": null,
+      "school_type": null,
+      "pastry_shop": null,
+      "hairdresser": null,
+      "resort": null,
+      "fast_food": null,
+      "wikidata": null,
+      "addr_state": "NJ",
+      "addr_city": "Lyndhurst",
+      "addr_postcode": "07071",
+      "addr_street": "Wall Street West",
+      "addr_housenumber": "1000",
+      "geometry": "POINT(-74.1058254 40.8069248)"
+    },
+    {
+      "id": 10604307,
+      "poi_name": "Peninsula Golf Club",
+      "osm_id": 5616067006,
+      "amenity": null,
+      "cuisine": null,
+      "leisure": "golf_course",
+      "historic": null,
+      "description": null,
+      "tourism": null,
+      "information": null,
+      "wheelchair": null,
+      "building": null,
+      "fee": null,
+      "opening_hours": null,
+      "operator": null,
+      "sport": null,
+      "website": null,
+      "capacity": null,
+      "shop": null,
+      "internet_access": null,
+      "phone": null,
+      "takeaway": null,
+      "drive_through": null,
+      "museum": null,
+      "official_name": null,
+      "healthcare": null,
+      "outdoor_seating": null,
+      "delivery": null,
+      "toilets": null,
+      "parking": null,
+      "emergency": null,
+      "artwork_type": null,
+      "restaurant": null,
+      "sports": null,
+      "zoo": null,
+      "wholesale": null,
+      "school_type": null,
+      "pastry_shop": null,
+      "hairdresser": null,
+      "resort": null,
+      "fast_food": null,
+      "wikidata": null,
+      "addr_state": null,
+      "addr_city": null,
+      "addr_postcode": null,
+      "addr_street": null,
+      "addr_housenumber": null,
+      "geometry": "POINT(-73.4393675 40.6592646)"
+    },
+    {},
+    {
+      "poi_name": "Glen Oaks Club"
+    },
+    {
+      "poi_name": "Sprain Lake Golf Course"
+    },
+    {
+      "poi_name": "Maplewood Country Club"
+    },
+    {
+      "poi_name": "Warrenbrook Golf Course"
+    },
+    {
+      "poi_name": "Fairview Country Club"
+    },
+    {
+      "poi_name": "Colonial Springs Golf Club"
+    },
+    {
+      "poi_name": "The Seawane Club"
+    },
+    {
+      "poi_name": "Francis Byrne Golf Course"
+    },
+    {},
+    {
+      "poi_name": "Lido Golf Club"
+    },
+    {
+      "poi_name": "Colonia Country Club"
+    },
+    {},
+    {},
+    {
+      "id": 6603536,
+      "poi_name": "Haworth Country Club",
+      "osm_id": 2970740404,
+      "amenity": null,
+      "cuisine": null,
+      "leisure": null,
+      "historic": null,
+      "description": null,
+      "tourism": null,
+      "information": null,
+      "wheelchair": null,
+      "building": null,
+      "fee": null,
+      "opening_hours": null,
+      "operator": null,
+      "sport": null,
+      "website": null,
+      "capacity": null,
+      "shop": null,
+      "internet_access": null,
+      "phone": null,
+      "takeaway": null,
+      "drive_through": null,
+      "museum": null,
+      "official_name": null,
+      "healthcare": null,
+      "outdoor_seating": null,
+      "delivery": null,
+      "toilets": null,
+      "parking": null,
+      "emergency": null,
+      "artwork_type": null,
+      "restaurant": null,
+      "sports": null,
+      "zoo": null,
+      "wholesale": null,
+      "school_type": null,
+      "pastry_shop": null,
+      "hairdresser": null,
+      "resort": null,
+      "fast_food": null,
+      "wikidata": null,
+      "addr_state": null,
+      "addr_city": null,
+      "addr_postcode": null,
+      "addr_street": null,
+      "addr_housenumber": null,
+      "geometry": "POINT(-74.0074707 40.9610011)"
+    },
+    {},
+    {
+      "poi_name": "Old Oaks Country Club"
+    },
+    {
+      "poi_name": "Creek Club"
+    },
+    {},
+    {
+      "poi_name": "Century Country Club"
+    },
+    {},
+    {
+      "poi_name": "Hyatt Hills Golf Complex"
+    },
+    {
+      "poi_name": "Packanack Golf Club"
+    },
+    {
+      "poi_name": "Metuchen Golf and Country Club"
+    },
+    {
+      "poi_name": "Pinchbrook Golf Course"
+    },
+    {
+      "poi_name": "Hampshire Country Club"
+    },
+    {
+      "poi_name": "Coakley-Russo Memorial Golf Course"
+    },
+    {
+      "poi_name": "Scarsdale Country Club"
+    },
+    {},
+    {
+      "poi_name": "Piping Rock Club"
+    },
+    {
+      "poi_name": "Trump National Golf Club Westchester"
+    },
+    {
+      "poi_name": "Manhattan Woods Golf Club"
+    },
+    {
+      "poi_name": "Rockville Links Golf Club"
+    },
+    {
+      "poi_name": "Canoe Brook Country Club North Course"
+    },
+    {
+      "poi_name": "Maple Moor Golf Course"
+    },
+    {},
+    {
+      "poi_name": "Shackamaxon Country Club"
+    },
+    {
+      "poi_name": "Plainfield West Nine"
+    },
+    {
+      "poi_name": "Doral Arrowwood Golf Course"
+    },
+    {
+      "poi_name": "The Saint Andrew's Golf Club"
+    },
+    {
+      "poi_name": "Rockland Lake Executive Golf Course"
+    },
+    {
+      "poi_name": "Mill River Country Club"
+    },
+    {
+      "poi_name": "Essex County Country Club"
+    },
+    {
+      "poi_name": "Garden City Country Club"
+    },
+    {
+      "poi_name": "North Woodmere Golf Course"
+    },
+    {},
+    {
+      "poi_name": "Richmond County Country Club"
+    },
+    {},
+    {
+      "poi_name": "Eisenhower Park Golf Course"
+    },
+    {
+      "poi_name": "The Golf Club at Middle Bay"
+    },
+    {
+      "poi_name": "Dyker Beach Golf Course"
+    },
+    {
+      "poi_name": "Blind Brook Club"
+    },
+    {
+      "poi_name": "New York Country Club"
+    },
+    {
+      "poi_name": "Twin Willows Par 3 Golf"
+    },
+    {
+      "poi_name": "Ramsey Golf and Country Club"
+    },
+    {
+      "poi_name": "Ramsey Golf and Country Club"
+    },
+    {
+      "poi_name": "Fenway Golf Club"
+    }
+  ],
+  "metadata": {
+    "question_id": 74,
+    "cache_id": 2073,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 5.261,
+    "llm_latency_seconds": 5.261,
+    "prompt_tokens": 1715,
+    "completion_tokens": 185,
+    "total_tokens": 2806,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "",
+    "answer_text": "Players Club Virtual Golf\nPeninsula Golf Club\nInHome Golf\nBethpage Black\nMerrick Golf Course\nRockland Lake Championship Golf Course\nTamarack Country Club\nThe Ridgewood Country Club\nHuntington Country Club\nSpook Rock Municipal Golf Course\nThe Woodside Club\nKissena Golf Course\nHackensack Golf Club\nLake Isle Country Club\nPlainfield Country Club\nMeadow Brook Club\nSunset Valley Golf Course\nInnis Arden Golf Club\nRutgers University Golf Course\nSaxon Woods Golf Course\nSun Eagles Golf Course\nGreenwich Country Club\nCity of Glen Cove Golf Course\nWillowbrook Golf Center\nCherry Valley Golf Course\nForest Park Golf Course\nNassau Country Club\nHendricks Field Golf Course\nCold Spring Country Club\nValley Brook Golf Course\nFairmount Country Club\nWykagyl Golf Club\nAlpine Country Club\nVan Cortlandt Golf Course\nInHome Golf\nPeninsula Golf Club\nGlen Oaks Club\nSprain Lake Golf Course\nMaplewood Country Club\nWarrenbrook Golf Course\nFairview Country Club\nColonial Springs Golf Club\nThe Seawane Club\nFrancis Byrne Golf Course\nLido Golf Club\nColonia Country Club\nHaworth Country Club\nOld Oaks Country Club\nCreek Club\nCentury Country Club\nHyatt Hills Golf Complex\nPackanack Golf Club\nMetuchen Golf and Country Club\nPinchbrook Golf Course\nHampshire Country Club\nCoakley-Russo Memorial Golf Course\nScarsdale Country Club\nPiping Rock Club\nTrump National Golf Club Westchester\nManhattan Woods Golf Club\nRockville Links Golf Club\nCanoe Brook Country Club North Course\nMaple Moor Golf Course\nShackamaxon Country Club\nPlainfield West Nine\nDoral Arrowwood Golf Course\nThe Saint Andrew's Golf Club\nRockland Lake Executive Golf Course\nMill River Country Club\nEssex County Country Club\nGarden City Country Club\nNorth Woodmere Golf Course\nRichmond County Country Club\nEisenhower Park Golf Course\nThe Golf Club at Middle Bay\nDyker Beach Golf Course\nBlind Brook Club\nNew York Country Club\nTwin Willows Par 3 Golf\nRamsey Golf and Country Club\nRamsey Golf and Country Club\nFenway Golf Club"
+  }
+}

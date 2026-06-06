@@ -1,0 +1,504 @@
+{
+  "question": "Can you locate a nature reserve within a 180 kilometers radius around School of Cosmetology, Somerset, KY?",
+  "sql": "SELECT id, poi_name AS name, 'poi' AS type FROM pois WHERE leisure = 'nature_reserve' AND ST_DWithin(geometry::geography, ( SELECT geometry::geography FROM pois WHERE poi_name ILIKE '%School of Cosmetology%' AND addr_city ILIKE '%Somerset%' AND addr_state ILIKE '%KY%' LIMIT 1 ), 180000) UNION ALL SELECT id, park_name AS name, 'park' AS type FROM parks WHERE leisure = 'nature_reserve' AND ST_DWithin(geometry::geography, ( SELECT geometry::geography FROM pois WHERE poi_name ILIKE '%School of Cosmetology%' AND addr_city ILIKE '%Somerset%' AND addr_state ILIKE '%KY%' LIMIT 1 ), 180000);",
+  "answers": [
+    {
+      "id": 16448870,
+      "name": "Hickman Creek Nature Center",
+      "type": "poi"
+    },
+    {
+      "id": 16577488,
+      "name": "Shechem Ministries",
+      "type": "poi"
+    },
+    {
+      "id": 16585705,
+      "name": "Drennon Creek State Nature Preserve",
+      "type": "poi"
+    },
+    {
+      "id": 1033135,
+      "name": "Mammoth Cave",
+      "type": "poi"
+    },
+    {
+      "id": 13104655,
+      "name": "Butterfly Garden",
+      "type": "poi"
+    },
+    {
+      "id": 4462886,
+      "type": "park"
+    },
+    {
+      "id": 4590966,
+      "name": "Buffalo Springs State Game Farm",
+      "type": "park"
+    },
+    {
+      "id": 5014683,
+      "type": "park"
+    },
+    {
+      "id": 5051492,
+      "type": "park"
+    },
+    {
+      "id": 5123528,
+      "name": "Crosby Pothole Refuge",
+      "type": "park"
+    },
+    {
+      "id": 5241844,
+      "name": "Baker Creek Preserve",
+      "type": "park"
+    },
+    {
+      "id": 5289397,
+      "name": "Cranks Creek Wildlife Management Area",
+      "type": "park"
+    },
+    {
+      "id": 5347538,
+      "name": "Wolf Creek National Fish Hatchery Visitor And Environmental Education Center",
+      "type": "park"
+    },
+    {
+      "id": 5355755,
+      "name": "Shelby Trails Park",
+      "type": "park"
+    },
+    {
+      "id": 5456960,
+      "name": "Eagle Bend Fish Hatchery",
+      "type": "park"
+    },
+    {
+      "id": 5820658,
+      "name": "Clay Hill Memorial Forest",
+      "type": "park"
+    },
+    {
+      "id": 5820868,
+      "name": "Turkey Creek Reserve",
+      "type": "park"
+    },
+    {
+      "id": 5827285,
+      "name": "Trotter Bluff Small Wildlife Area",
+      "type": "park"
+    },
+    {
+      "id": 5830946,
+      "name": "River Bluff Wildlife Area",
+      "type": "park"
+    },
+    {
+      "id": 5843061,
+      "name": "Great Smoky Mountains National Park",
+      "type": "park"
+    },
+    {
+      "id": 5845286,
+      "name": "Clay Wildlife Management Area",
+      "type": "park"
+    },
+    {
+      "id": 5849860,
+      "name": "Central Kentucky Wildlife Refuge",
+      "type": "park"
+    },
+    {
+      "id": 5850768,
+      "name": "Otter Creek Outdoor Recreation Area",
+      "type": "park"
+    },
+    {
+      "id": 5863687,
+      "name": "Miller Fork Recreational Preserve",
+      "type": "park"
+    },
+    {
+      "id": 5885219,
+      "name": "Cumberland Gap National Historical Park",
+      "type": "park"
+    },
+    {
+      "id": 5887177,
+      "name": "R. F. Tarter WMA",
+      "type": "park"
+    },
+    {
+      "id": 5894577,
+      "name": "Marrowbone State Forest and Wildlife Management Area",
+      "type": "park"
+    },
+    {
+      "id": 5901908,
+      "name": "Pickett State Forest",
+      "type": "park"
+    },
+    {
+      "id": 2778020,
+      "type": "park"
+    },
+    {
+      "id": 2843415,
+      "name": "Johnson Ridge Small Wild Area",
+      "type": "park"
+    },
+    {
+      "id": 2949240,
+      "name": "Hidden Valley Training Area",
+      "type": "park"
+    },
+    {
+      "id": 3147066,
+      "name": "Graining Fork Nature Preserve",
+      "type": "park"
+    },
+    {
+      "id": 3148591,
+      "name": "Loyston Point Recreation Area",
+      "type": "park"
+    },
+    {
+      "id": 3241755,
+      "name": "Fletcher Ford State Natural Area Preserve",
+      "type": "park"
+    },
+    {
+      "id": 3691992,
+      "type": "park"
+    },
+    {
+      "id": 3836607,
+      "name": "Floracliff Nature Sanctuary",
+      "type": "park"
+    },
+    {
+      "id": 3861674,
+      "name": "Jim Beam Nature Preserve",
+      "type": "park"
+    },
+    {
+      "id": 4043461,
+      "name": "Stone Mountain Natural Area",
+      "type": "park"
+    },
+    {
+      "id": 4073799,
+      "name": "Buck Creek Wildlife Management Area",
+      "type": "park"
+    },
+    {
+      "id": 4137629,
+      "name": "Firebrook Wetlands and Nature Sanctuary",
+      "type": "park"
+    },
+    {
+      "id": 4148118,
+      "type": "park"
+    },
+    {
+      "id": 4195365,
+      "name": "Marion County WMA and State Forest",
+      "type": "park"
+    },
+    {
+      "id": 4660667,
+      "type": "park"
+    },
+    {
+      "id": 4815742,
+      "name": "Grayson Subaru Nature Preserve",
+      "type": "park"
+    },
+    {
+      "id": 5548869,
+      "name": "Pilot Knob State Nature Preserve",
+      "type": "park"
+    },
+    {
+      "id": 5815317,
+      "name": "Fork Bend",
+      "type": "park"
+    },
+    {
+      "id": 5849002,
+      "name": "Graysville Mountain Resource Management Area",
+      "type": "park"
+    },
+    {
+      "id": 5849166,
+      "name": "Berrys Island Ecological Study Area",
+      "type": "park"
+    },
+    {
+      "id": 5874829,
+      "name": "Big Ridge State Park",
+      "type": "park"
+    },
+    {
+      "id": 5911245,
+      "name": "Ijams Nature Center",
+      "type": "park"
+    },
+    {
+      "id": 5923688,
+      "name": "Natural Tunnel State Park",
+      "type": "park"
+    },
+    {
+      "id": 5923927,
+      "name": "Paintsville Lake Wildlife Management Area",
+      "type": "park"
+    },
+    {
+      "id": 5924189,
+      "name": "Hemlock Bluff Small Wild Area",
+      "type": "park"
+    },
+    {
+      "id": 5931252,
+      "name": "Kentucky Ridge State Forest",
+      "type": "park"
+    },
+    {
+      "id": 5931310,
+      "name": "Buckley Wildlife Sanctuary",
+      "type": "park"
+    },
+    {
+      "id": 5936756,
+      "name": "Kentucky Ridge Forest Wildlife Mangement Area",
+      "type": "park"
+    },
+    {
+      "id": 5942066,
+      "name": "Mammoth Cave National Park",
+      "type": "park"
+    },
+    {
+      "id": 5945958,
+      "name": "Tally Wilderness",
+      "type": "park"
+    },
+    {
+      "id": 5946016,
+      "name": "Life Adventure Center",
+      "type": "park"
+    },
+    {
+      "id": 5969918,
+      "name": "Fleming Wildlife Management Area",
+      "type": "park"
+    },
+    {
+      "id": 5969928,
+      "name": "Ashland Wildlife Management Area",
+      "type": "park"
+    },
+    {
+      "id": 5977323,
+      "name": "Carr Creek Lake Wildlife Management Area",
+      "type": "park"
+    },
+    {
+      "id": 5979110,
+      "name": "Miller Welch-Central Kentucky Wild Management Area",
+      "type": "park"
+    },
+    {
+      "id": 5980696,
+      "name": "Pogue Creek Canyon State Natural Area",
+      "type": "park"
+    },
+    {
+      "id": 5988291,
+      "name": "Dennis-Gray WMA",
+      "type": "park"
+    },
+    {
+      "id": 5991790,
+      "name": "Cherokee National Forest",
+      "type": "park"
+    },
+    {
+      "id": 61182,
+      "name": "Butterfly Garden",
+      "type": "park"
+    },
+    {
+      "id": 1033812,
+      "name": "Drennon Creek State Nature Preserve",
+      "type": "park"
+    },
+    {
+      "id": 1658137,
+      "name": "Shechem Ministries",
+      "type": "park"
+    },
+    {
+      "id": 2108391,
+      "name": "Mammoth Cave",
+      "type": "park"
+    },
+    {
+      "id": 2324411,
+      "name": "Hickman Creek Nature Center",
+      "type": "park"
+    },
+    {
+      "id": 2867334,
+      "type": "park"
+    },
+    {
+      "id": 2919625,
+      "name": "Maywoods Environmental and Educational Laboratory",
+      "type": "park"
+    },
+    {
+      "id": 3049189,
+      "type": "park"
+    },
+    {
+      "id": 3094493,
+      "name": "House Mountain Park and State Natural Area",
+      "type": "park"
+    },
+    {
+      "id": 3405188,
+      "name": "Stinging Fork Falls State Natural Area",
+      "type": "park"
+    },
+    {
+      "id": 3434214,
+      "type": "park"
+    },
+    {
+      "id": 3434219,
+      "type": "park"
+    },
+    {
+      "id": 3628876,
+      "name": "Horine Reservation",
+      "type": "park"
+    },
+    {
+      "id": 3687635,
+      "name": "Justin P. Wilson Cumberland Trail State Park",
+      "type": "park"
+    },
+    {
+      "id": 3726908,
+      "name": "Lily Mountain Nature Preserve",
+      "type": "park"
+    },
+    {
+      "id": 3885270,
+      "type": "park"
+    },
+    {
+      "id": 3936912,
+      "name": "Hensley-Pine Mountain Wildlife Management Area",
+      "type": "park"
+    },
+    {
+      "id": 3968549,
+      "name": "Indian Cave Park",
+      "type": "park"
+    },
+    {
+      "id": 4006742,
+      "type": "park"
+    },
+    {
+      "id": 4012903,
+      "name": "Ping-Sinking Valley Wildlife Management Area",
+      "type": "park"
+    },
+    {
+      "id": 4028284,
+      "name": "Justin P. Wilson Cumberland Trail State Park",
+      "type": "park"
+    },
+    {
+      "id": 4067940,
+      "type": "park"
+    },
+    {
+      "id": 4369058,
+      "name": "Mount Roosevelt Wildlife Management Area",
+      "type": "park"
+    },
+    {
+      "id": 4421214,
+      "name": "William Hastie Natural Area",
+      "type": "park"
+    },
+    {
+      "id": 4635635,
+      "name": "Mud Camp Creek Wildlife Management Area",
+      "type": "park"
+    },
+    {
+      "id": 5572156,
+      "type": "park"
+    },
+    {
+      "id": 5828806,
+      "name": "Green River Lake Wildlife Management Area",
+      "type": "park"
+    },
+    {
+      "id": 5852767,
+      "name": "Chuck Swan State Forest",
+      "type": "park"
+    },
+    {
+      "id": 5852896,
+      "type": "park"
+    },
+    {
+      "id": 5870909,
+      "name": "Highlands and Fork Lodge Trail System",
+      "type": "park"
+    },
+    {
+      "id": 5875432,
+      "name": "Ross Creek Wildlife Management Area",
+      "type": "park"
+    },
+    {
+      "id": 5876361,
+      "name": "Flag Rock Recreation Area",
+      "type": "park"
+    },
+    {
+      "id": 5883866,
+      "name": "Marie Myers Park",
+      "type": "park"
+    },
+    {
+      "id": 5905583,
+      "name": "Pendergrass-Murray Recreational Preserve",
+      "type": "park"
+    }
+  ],
+  "metadata": {
+    "question_id": 73,
+    "cache_id": 2072,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 2.545,
+    "llm_latency_seconds": 2.545,
+    "prompt_tokens": 1717,
+    "completion_tokens": 239,
+    "total_tokens": 2127,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "",
+    "answer_text": "Hickman Creek Nature Center\nShechem Ministries\nDrennon Creek State Nature Preserve\nMammoth Cave\nButterfly Garden\n4462886\nBuffalo Springs State Game Farm\n5014683\n5051492\nCrosby Pothole Refuge\nBaker Creek Preserve\nCranks Creek Wildlife Management Area\nWolf Creek National Fish Hatchery Visitor And Environmental Education Center\nShelby Trails Park\nEagle Bend Fish Hatchery\nClay Hill Memorial Forest\nTurkey Creek Reserve\nTrotter Bluff Small Wildlife Area\nRiver Bluff Wildlife Area\nGreat Smoky Mountains National Park\nClay Wildlife Management Area\nCentral Kentucky Wildlife Refuge\nOtter Creek Outdoor Recreation Area\nMiller Fork Recreational Preserve\nCumberland Gap National Historical Park\nR. F. Tarter WMA\nMarrowbone State Forest and Wildlife Management Area\nPickett State Forest\n2778020\nJohnson Ridge Small Wild Area\nHidden Valley Training Area\nGraining Fork Nature Preserve\nLoyston Point Recreation Area\nFletcher Ford State Natural Area Preserve\n3691992\nFloracliff Nature Sanctuary\nJim Beam Nature Preserve\nStone Mountain Natural Area\nBuck Creek Wildlife Management Area\nFirebrook Wetlands and Nature Sanctuary\n4148118\nMarion County WMA and State Forest\n4660667\nGrayson Subaru Nature Preserve\nPilot Knob State Nature Preserve\nFork Bend\nGraysville Mountain Resource Management Area\nBerrys Island Ecological Study Area\nBig Ridge State Park\nIjams Nature Center\nNatural Tunnel State Park\nPaintsville Lake Wildlife Management Area\nHemlock Bluff Small Wild Area\nKentucky Ridge State Forest\nBuckley Wildlife Sanctuary\nKentucky Ridge Forest Wildlife Mangement Area\nMammoth Cave National Park\nTally Wilderness\nLife Adventure Center\nFleming Wildlife Management Area\nAshland Wildlife Management Area\nCarr Creek Lake Wildlife Management Area\nMiller Welch-Central Kentucky Wild Management Area\nPogue Creek Canyon State Natural Area\nDennis-Gray WMA\nCherokee National Forest\nButterfly Garden\nDrennon Creek State Nature Preserve\nShechem Ministries\nMammoth Cave\nHickman Creek Nature Center\n2867334\nMaywoods Environmental and Educational Laboratory\n3049189\nHouse Mountain Park and State Natural Area\nStinging Fork Falls State Natural Area\n3434214\n3434219\nHorine Reservation\nJustin P. Wilson Cumberland Trail State Park\nLily Mountain Nature Preserve\n3885270\nHensley-Pine Mountain Wildlife Management Area\nIndian Cave Park\n4006742\nPing-Sinking Valley Wildlife Management Area\nJustin P. Wilson Cumberland Trail State Park\n4067940\nMount Roosevelt Wildlife Management Area\nWilliam Hastie Natural Area\nMud Camp Creek Wildlife Management Area\n5572156\nGreen River Lake Wildlife Management Area\nChuck Swan State Forest\n5852896\nHighlands and Fork Lodge Trail System\nRoss Creek Wildlife Management Area\nFlag Rock Recreation Area\nMarie Myers Park\nPendergrass-Murray Recreational Preserve"
+  }
+}

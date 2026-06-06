@@ -1,0 +1,19 @@
+{
+  "question": "Where is the nearest restaurant situated on the way toward Best Western Plus Chain Of Lakes Inn & Suites, Leesburg, FL from Hoop-Dee-Doo Musical Revue, FL?",
+  "sql": "WITH origin_poi AS ( SELECT geometry::geography AS geom FROM pois WHERE poi_name ILIKE '%Hoop-Dee-Doo Musical Revue%' LIMIT 1 ), destination_poi AS ( SELECT geometry::geography AS geom FROM pois WHERE poi_name ILIKE '%Best Western Plus Chain Of Lakes Inn & Suites%' LIMIT 1 ), route_line AS ( SELECT ST_MakeLine(o.geom, d.geom) AS line_geom FROM origin_poi o, destination_poi d ), route_corridor AS ( -- Create a 500-meter buffer around the straight line path SELECT ST_Buffer(rl.line_geom, 500) AS corridor_geom FROM route_line rl ) SELECT p.poi_name, p.addr_city, p.addr_state FROM pois p WHERE p.amenity = 'restaurant' AND ST_Intersects(p.geometry::geography, (SELECT corridor_geom FROM route_corridor)) ORDER BY ST_Distance(p.geometry::geography, (SELECT line_geom FROM route_line)) ASC LIMIT 1;",
+  "answers": [],
+  "metadata": {
+    "question_id": 43,
+    "cache_id": 1542,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 8.766,
+    "llm_latency_seconds": 8.766,
+    "prompt_tokens": 1728,
+    "completion_tokens": 293,
+    "total_tokens": 3526,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress",
+    "answer_text": ""
+  }
+}

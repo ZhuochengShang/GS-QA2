@@ -1,0 +1,21 @@
+{
+  "question": "Where’s the closest aquarium relative to Debbie Doolittle's Petting Zoo, Tacoma, WA in the south direction?",
+  "sql": "SELECT poi_name FROM pois WHERE tourism = 'aquarium' AND degrees(ST_Azimuth( (SELECT geometry FROM pois WHERE poi_name ILIKE '%Debbie Doolittle''s Petting Zoo%' AND addr_city ILIKE '%Tacoma%' AND addr_state ILIKE '%WA%' LIMIT 1), geometry )) BETWEEN 157.5 AND 202.5 ORDER BY (SELECT geometry FROM pois WHERE poi_name ILIKE '%Debbie Doolittle''s Petting Zoo%' AND addr_city ILIKE '%Tacoma%' AND addr_state ILIKE '%WA%' LIMIT 1) <-> geometry LIMIT 1;",
+  "answers": [
+    {}
+  ],
+  "metadata": {
+    "question_id": 59,
+    "cache_id": 1158,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 4.088,
+    "llm_latency_seconds": 4.088,
+    "prompt_tokens": 1718,
+    "completion_tokens": 165,
+    "total_tokens": 2534,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "",
+    "answer_text": ""
+  }
+}

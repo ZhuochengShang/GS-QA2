@@ -1,0 +1,19 @@
+{
+  "question": "Where’s the closest museum as you go toward Arsenal Contemporary Art, New York, NY from Children's Hospital at Montefiore, Bronx, NY?",
+  "sql": "WITH origin AS ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Children''s Hospital at Montefiore%' AND addr_city ILIKE '%Bronx%' LIMIT 1 ), destination AS ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Arsenal Contemporary Art%' AND addr_city ILIKE '%New York%' LIMIT 1 ), path_line AS ( SELECT ST_MakeLine(o.geometry, d.geometry) AS geom FROM origin AS o, destination AS d ), path_buffer AS ( SELECT ST_Buffer(geom::geography, 500) AS geom -- Create a 500-meter buffer around the direct path FROM path_line ) SELECT p.poi_name, p.addr_state, p.addr_city FROM pois AS p, origin AS o, destination AS d, path_buffer AS pb WHERE p.tourism = 'museum' -- Filter for museums AND ST_Intersects(p.geometry::geography, pb.geom::geography) -- Museum is within the path buffer AND ST_Distance(p.geometry::geography, d.geometry::geography) < ST_Distance(p.geometry::geography, o.geometry::geography) -- Museum is closer to the destination than the origin (i.e., \"on the way\") ORDER BY ST_Distance(p.geometry::geography, o.geometry::geography) ASC -- Order by distance from the origin to find the closest one LIMIT 1;",
+  "answers": [],
+  "metadata": {
+    "question_id": 48,
+    "cache_id": 1547,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 17.673,
+    "llm_latency_seconds": 17.673,
+    "prompt_tokens": 1724,
+    "completion_tokens": 407,
+    "total_tokens": 5372,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress",
+    "answer_text": ""
+  }
+}

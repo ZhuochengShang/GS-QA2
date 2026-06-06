@@ -1,0 +1,19 @@
+{
+  "question": "Where is the nearest fast food restaurant going from Anvil Arts Studio, Newland, NC toward Minnehaha Falls Guest House, Bat Cave, NC?",
+  "sql": "WITH start_point AS ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Anvil Arts Studio%' AND addr_state ILIKE '%NC%' LIMIT 1 ), end_point AS ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Minnehaha Falls Guest House%' AND addr_state ILIKE '%NC%' LIMIT 1 ), target_azimuth_calc AS ( SELECT degrees(ST_Azimuth(s.geometry, e.geometry)) AS azimuth FROM start_point s, end_point e ), fast_food_candidates AS ( SELECT p.id, p.poi_name, p.geometry, ST_Distance(s.geometry::geography, p.geometry::geography) AS distance_from_start, degrees(ST_Azimuth(s.geometry, p.geometry)) AS restaurant_azimuth FROM pois p, start_point s WHERE p.amenity = 'fast_food' ) SELECT ffc.poi_name FROM fast_food_candidates ffc, target_azimuth_calc tac WHERE -- Calculate the absolute difference between the target azimuth and the restaurant's azimuth from the start point -- Normalize the difference to be between 0 and 180 degrees LEAST( ABS(ffc.restaurant_azimuth - tac.azimuth), 360 - ABS(ffc.restaurant_azimuth - tac.azimuth) ) <= 45 -- Filter for restaurants within +/- 45 degrees of the target direction ORDER BY ffc.distance_from_start ASC LIMIT 1;",
+  "answers": [],
+  "metadata": {
+    "question_id": 39,
+    "cache_id": 1538,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 11.406,
+    "llm_latency_seconds": 11.406,
+    "prompt_tokens": 1723,
+    "completion_tokens": 395,
+    "total_tokens": 4143,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress",
+    "answer_text": ""
+  }
+}

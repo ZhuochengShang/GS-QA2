@@ -1,0 +1,19 @@
+{
+  "question": "Where can I find a stadium in the north direction of Action Behavior Centers - ABA therapy for Autism, Hutto, TX, limited to 180 kilometers?",
+  "sql": "SELECT poi_name FROM pois WHERE leisure = 'stadium' AND ST_DWithin( geometry :: geography, ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Action Behavior Centers - ABA therapy for Autism%' AND addr_city ILIKE '%Hutto%' AND addr_state ILIKE '%TX%' LIMIT 1 ) :: geography, 180000 ) AND ( degrees( ST_Azimuth( ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Action Behavior Centers - ABA therapy for Autism%' AND addr_city ILIKE '%Hutto%' AND addr_state ILIKE '%TX%' LIMIT 1 ), geometry ) ) BETWEEN 0 AND 22.5 OR degrees( ST_Azimuth( ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Action Behavior Centers - ABA therapy for Autism%' AND addr_city ILIKE '%Hutto%' AND addr_state ILIKE '%TX%' LIMIT 1 ), geometry ) ) BETWEEN 337.5 AND 360 );",
+  "answers": [],
+  "metadata": {
+    "question_id": 45,
+    "cache_id": 2244,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 3.745,
+    "llm_latency_seconds": 3.745,
+    "prompt_tokens": 1725,
+    "completion_tokens": 307,
+    "total_tokens": 2473,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress",
+    "answer_text": ""
+  }
+}

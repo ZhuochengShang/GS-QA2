@@ -1,0 +1,19 @@
+{
+  "question": "Where’s the nearest hotel that lies north of Red Wolf Sanctuary, Rising Sun, IN?",
+  "sql": "SELECT poi_name, addr_city, addr_state FROM pois AS P WHERE P.tourism = 'hotel' AND ST_Y(ST_Centroid(P.geometry)) > ST_Y(ST_Centroid(( SELECT geometry FROM pois WHERE poi_name ILIKE '%Red Wolf Sanctuary%' AND addr_city ILIKE '%Rising Sun%' AND addr_state ILIKE '%IN%' LIMIT 1 ))) ORDER BY P.geometry <-> ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Red Wolf Sanctuary%' AND addr_city ILIKE '%Rising Sun%' AND addr_state ILIKE '%IN%' LIMIT 1 ) LIMIT 1;",
+  "answers": [],
+  "metadata": {
+    "question_id": 98,
+    "cache_id": 1197,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 4.164,
+    "llm_latency_seconds": 4.164,
+    "prompt_tokens": 1711,
+    "completion_tokens": 191,
+    "total_tokens": 2585,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress",
+    "answer_text": ""
+  }
+}

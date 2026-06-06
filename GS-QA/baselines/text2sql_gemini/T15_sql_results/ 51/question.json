@@ -1,0 +1,19 @@
+{
+  "question": "Where are a museum found within a 150 kilometers limit in the southwest direction?",
+  "sql": "SELECT poi_name, addr_state, addr_city FROM pois WHERE museum IS NOT NULL AND ST_DWithin( geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%London%' AND border_type = 'city' LIMIT 1)::geography, 150000 ) AND degrees(ST_Azimuth( (SELECT geometry FROM regions WHERE region_name ILIKE '%London%' AND border_type = 'city' LIMIT 1), geometry )) BETWEEN 202.5 AND 247.5;",
+  "answers": [],
+  "metadata": {
+    "question_id": 51,
+    "cache_id": 2250,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 14.798,
+    "llm_latency_seconds": 14.798,
+    "prompt_tokens": 1710,
+    "completion_tokens": 153,
+    "total_tokens": 4407,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress",
+    "answer_text": ""
+  }
+}

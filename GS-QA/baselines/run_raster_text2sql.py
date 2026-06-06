@@ -36,6 +36,8 @@ from typing import Any
 import psycopg
 from openai import OpenAI
 
+from evaluate_raster import evaluate_question
+
 
 # ---------------------------------------------------------------------------
 # System prompt
@@ -192,14 +194,14 @@ ALWAYS:
 # ---------------------------------------------------------------------------
 
 ANSWER_TYPE_TOLERANCES: dict[str, dict[str, float]] = {
-    "mean elevation":       {"abs": 5.0,  "rel": 1e-6},
+    "mean elevation":       {"abs": 10.0, "rel": 1e-6},
     "coverage":             {"abs": 5.0,  "rel": 1e-6},
     "average slope":        {"abs": 5.0,  "rel": 1e-6},
     "minimum slope":        {"abs": 5.0,  "rel": 1e-6},
     "elevation":            {"abs": 10.0, "rel": 1e-6},
     "elevation difference": {"abs": 10.0, "rel": 1e-6},
-    "slope":                {"abs": 10.0, "rel": 1e-6},
-    "aspect":               {"abs": 10.0, "rel": 1e-6},
+    "slope":                {"abs": 5.0,  "rel": 1e-6},
+    "aspect":               {"abs": 5.0,  "rel": 1e-6},
     "distance":             {"abs": 1e-6, "rel": 0.05},
     "area":                 {"abs": 1e-6, "rel": 0.05},
     "count":                {"abs": 1e-6, "rel": 0.05},
@@ -297,6 +299,11 @@ def parse_args() -> argparse.Namespace:
         "--generate-only",
         action="store_true",
         help="Stop after generation + execution; skip compare/summary.",
+    )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Regenerate every question even when prior output artifacts exist.",
     )
     parser.add_argument(
         "--workers",
@@ -914,29 +921,13 @@ def build_stem_summary(
     }
 
     if not args.generate_only:
-        comparisons  = [r.get("comparison", {}) for r in results if r.get("comparison")]
-        exact        = sum(1 for c in comparisons if c.get("exact_match"))
-        typed_list   = [c["typed_metrics"] for c in comparisons if "typed_metrics" in c]
-        numeric_tol  = [t for t in typed_list if t["metric_family"] in ("scalar_numeric", "primary_numeric")]
-        text_exact   = [t for t in typed_list if t["metric_family"] == "primary_text"]
-        rowset       = [t for t in typed_list if t["metric_family"] == "rowset"]
+        evaluations = [r["evaluation"] for r in results if r.get("evaluation")]
         summary["evaluation"] = {
-            "exact_matches":              exact,
-            "numeric_tolerance_accuracy": round(
-                sum(1 for t in numeric_tol if t["within_tolerance"]) / len(numeric_tol), 4
-            ) if numeric_tol else None,
-            "mean_absolute_error":        round(
-                statistics.mean(
-                    t["absolute_error"] for t in numeric_tol
-                    if t.get("absolute_error") is not None
-                ), 4
-            ) if any(t.get("absolute_error") is not None for t in numeric_tol) else None,
-            "text_exact_accuracy":        round(
-                sum(1 for t in text_exact if t["exact_match"]) / len(text_exact), 4
-            ) if text_exact else None,
-            "mean_rowset_f1":             round(
-                statistics.mean(t["f1"] for t in rowset), 4
-            ) if rowset else None,
+            "evaluated_questions": len(evaluations),
+            "correct_questions":   sum(1 for e in evaluations if e.get("correct")),
+            "strict_accuracy":     round(
+                sum(1 for e in evaluations if e.get("correct")) / len(evaluations), 4
+            ) if evaluations else None,
         }
     return summary
 
@@ -961,7 +952,7 @@ def process_question(
     """Process a single question. Opens its own DB connection (thread-safe)."""
     qid    = question["id"]
     cached = load_question_result(stem_dir, qid)
-    if cached is not None and (args.generate_only or "comparison" in cached):
+    if not args.force and cached is not None and (args.generate_only or "evaluation" in cached):
         print(f"  [skip] {qid}")
         return cached
 
@@ -1048,14 +1039,7 @@ def process_question(
     }
 
     if not args.generate_only:
-        record["comparison"] = compare_results(
-            question,
-            predicted_exec["output"],
-            gold_exec["output"],
-            answer_type=question.get("answer_type"),
-            abs_tolerance=args.numeric_abs_tolerance,
-            rel_tolerance=args.numeric_rel_tolerance,
-        )
+        record["evaluation"] = evaluate_question(record)
 
     save_question_result(stem_dir, record)
     return record

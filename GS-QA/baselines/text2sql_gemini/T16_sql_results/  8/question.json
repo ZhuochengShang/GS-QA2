@@ -1,0 +1,19 @@
+{
+  "question": "Where can I find museum inside 30 kilometers while progressing from Super Cichlids Inc, Dover, DE toward Alley Cat, Baltimore, MD?",
+  "sql": "SELECT poi_name, addr_city, addr_state FROM pois WHERE tourism = 'museum' AND ST_Intersects( geometry::geography, ST_Buffer( ST_MakeLine( (SELECT geometry FROM pois WHERE poi_name ILIKE '%Super Cichlids Inc%' AND addr_city ILIKE '%Dover%' AND addr_state ILIKE '%DE%' LIMIT 1), (SELECT geometry FROM pois WHERE poi_name ILIKE '%Alley Cat%' AND addr_city ILIKE '%Baltimore%' AND addr_state ILIKE '%MD%' LIMIT 1) )::geography, 30000 ) );",
+  "answers": [],
+  "metadata": {
+    "question_id": 8,
+    "cache_id": 2607,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 7.465,
+    "llm_latency_seconds": 7.465,
+    "prompt_tokens": 1723,
+    "completion_tokens": 173,
+    "total_tokens": 3126,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "function st_makeline(geography, geography) does not exist\nLINE 12:       ST_MakeLine(\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "answer_text": ""
+  }
+}

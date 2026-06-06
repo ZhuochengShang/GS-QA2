@@ -1,0 +1,21 @@
+{
+  "question": "Can you tell me where the nearest hospital from Maryvale Baseball Park, Phoenix, AZ is located?",
+  "sql": "SELECT poi_name, addr_state, addr_city FROM pois WHERE amenity = 'hospital' ORDER BY geometry <-> ( SELECT geometry FROM parks WHERE park_name ILIKE '%Maryvale Baseball Park%' AND ST_Intersects( geometry, ( SELECT geometry FROM regions WHERE region_name ILIKE '%Phoenix%' AND border_type = 'city' LIMIT 1 )::geography ) LIMIT 1 )::geography LIMIT 1;",
+  "answers": [
+    {}
+  ],
+  "metadata": {
+    "question_id": 11,
+    "cache_id": 710,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 4.783,
+    "llm_latency_seconds": 4.783,
+    "prompt_tokens": 1712,
+    "completion_tokens": 149,
+    "total_tokens": 2605,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "",
+    "answer_text": ""
+  }
+}
