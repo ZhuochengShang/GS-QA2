@@ -28,7 +28,7 @@ To use **GIBD-Services**, you will first need to obtain an GIBD API key [here](h
 
 When using a **GIBD API key**, certain information is logged to help us further improve performance of the GIS Copilot. The following details may be logged:
 
-- User query and AI-generated task breakdown for the specific query  
+- User query and task breakdown for the specific query
 - Selected tools and geoprocessing workflow  
 - Final code generated  
 - Any errors encountered during code execution

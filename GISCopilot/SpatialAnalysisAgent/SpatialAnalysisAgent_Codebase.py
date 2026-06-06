@@ -206,7 +206,7 @@ import os
 current_script_dir = os.path.dirname(os.path.abspath(__file__))
 folder_path  = os.path.join(current_script_dir, 'Tools_Documentation', 'Customized_tools')
 
-# folder_path = r"C:\Users\AKINBOYEWA TEMITOPE\AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins\SpatialAnalysisAgent-master\SpatialAnalysisAgent\Tools_Documentation\Customized_tools"
+# folder_path = r"<QGIS_PROFILE_PLUGINS>\SpatialAnalysisAgent-master\SpatialAnalysisAgent\Tools_Documentation\Customized_tools"
 # def index_tools(folder_path=folder_path):
 # tools_index = []
 # files = list_files_in_folder(folder_path)

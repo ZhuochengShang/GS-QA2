@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-HDFS_DIR="${HDFS_DIR:-/user/zshan011/share_qwen}"
+HDFS_DIR="${HDFS_DIR:-/user/$USER/share_qwen}"
 WORK_DIR="${WORK_DIR:-$HOME/qwen_gsqa_share}"
 
 mkdir -p "$WORK_DIR"

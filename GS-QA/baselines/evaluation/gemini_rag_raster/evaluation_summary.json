@@ -1,8 +1,8 @@
 {
   "input_files": [
-    "/home/zshan011/GS-QA-experiment/GS-QA/baselines/cache/gemini_rag_raster/extended/raster_rag.jsonl",
-    "/home/zshan011/GS-QA-experiment/GS-QA/baselines/cache/gemini_rag_raster/raster_only/raster_rag.jsonl",
-    "/home/zshan011/GS-QA-experiment/GS-QA/baselines/cache/gemini_rag_raster/raster_vector/raster_rag.jsonl"
+    "/baselines/cache/gemini_rag_raster/extended/raster_rag.jsonl",
+    "/baselines/cache/gemini_rag_raster/raster_only/raster_rag.jsonl",
+    "/baselines/cache/gemini_rag_raster/raster_vector/raster_rag.jsonl"
   ],
   "question_count": 680,
   "exact_matches": 0,

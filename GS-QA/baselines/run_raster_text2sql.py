@@ -268,7 +268,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--dem-table",    default="public.dem_us")
     parser.add_argument("--db-host",      default="localhost")
     parser.add_argument("--db-name",      default="gsqa")
-    parser.add_argument("--db-user",      default="zshan011")
+    parser.add_argument("--db-user",      default=os.environ.get("PGUSER", "postgres"))
     parser.add_argument("--db-password",  default="")
     parser.add_argument("--db-port",      type=int, default=5432)
     parser.add_argument(
