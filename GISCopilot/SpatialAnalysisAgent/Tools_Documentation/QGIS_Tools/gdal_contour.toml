@@ -26,7 +26,7 @@ from qgis.core import QgsRasterLayer, QgsProject
 
 def generate_contours():
     input_path = 'D:/input_raster.tif'
-    output_path = 'C:/Users/Output/contours.shp'
+    output_path = 'output/contours.shp'
     raster_layer = QgsRasterLayer(input_path, \"""Input Raster\")
     
     parameters = {

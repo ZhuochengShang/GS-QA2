@@ -23,7 +23,7 @@ from qgis.core import QgsRasterLayer
 def rgb_to_pct():
     # Define the input and output paths
     input_path = 'D:/input_raster.tif'
-    output_path = 'C:/Users/Output/RGB_to_PCT.tif'
+    output_path = 'output/RGB_to_PCT.tif'
     
     # Load the input layer
     input_layer = QgsRasterLayer(input_path, \"""Input RGB Raster\")

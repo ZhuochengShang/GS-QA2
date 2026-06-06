@@ -18,7 +18,7 @@ from qgis.core import QgsProject, QgsVectorLayer
 
 def clip_vector_by_extent():
     input_path = 'D:/input_layer.shp'
-    output_path = 'C:/Users/Output/clipped_output.shp'
+    output_path = 'output/clipped_output.shp'
     # Load the input layer
     input_layer = QgsVectorLayer(input_path, \"""Input Layer\", \"ogr\")
     

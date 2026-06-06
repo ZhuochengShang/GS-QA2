@@ -15,7 +15,7 @@ from qgis.core import QgsVectorLayer, QgsProject
 def apply_style_to_layer():
     input_path = 'D:/input_layer.shp'
     style_path = 'D:/style_file.qml'
-    output_path = 'C:/Users/Output/styled_layer.shp'
+    output_path = 'output/styled_layer.shp'
     
     input_layer = QgsVectorLayer(input_path, \"""Input Layer\", \"ogr\")
     

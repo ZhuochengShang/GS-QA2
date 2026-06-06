@@ -27,7 +27,7 @@ from qgis.core import QgsProject, QgsRasterLayer
 def build_virtual_raster():
     # Define the input and output paths
     input_layers = ['D:/input_raster1.tif', 'D:/input_raster2.tif']  # Example input layers
-    output_dir = 'C:/Users/Output'
+    output_dir = 'output'
     output_file_name = \"""virtual_raster.vrt\"
     output_path = f\"{output_dir}/{output_file_name}\"
     

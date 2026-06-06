@@ -17,7 +17,7 @@ import processing
 from qgis.core import QgsProject, QgsPointCloudLayer
 
 def merge_point_cloud_layers():
-    output_path = 'C:/Users/Output/merged_point_cloud.las'
+    output_path = 'output/merged_point_cloud.las'
     
     layers_to_merge = [
         QgsPointCloudLayer('path_to_point_cloud1.las', 'PointCloud1', 'pdal'),

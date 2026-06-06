@@ -22,7 +22,7 @@ import processing
 def assign_projection_to_point_cloud():
     # Define the input and output paths
     input_path = 'D:/input_point_cloud.las'
-    output_path = 'C:/Users/Output/output_point_cloud.las'
+    output_path = 'output/output_point_cloud.las'
 
     # Load the input point cloud layer
     input_layer = QgsPointCloudLayer(input_path, \"""Input Point Cloud\", \"las\")

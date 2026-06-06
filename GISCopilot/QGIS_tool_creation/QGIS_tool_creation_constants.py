@@ -43,7 +43,7 @@ import processing
 def create_300m_buffer():
     # Define the input and output paths
     input_path = 'D:/input_layer.shp'
-    output_dir = 'C:/Users/Output'
+    output_dir = 'output'
     output_file_name = "HW_Sites_Proj_buffered.shp"
     output_path = f"{output_dir}/{output_file_name}"
     # Load the input layer

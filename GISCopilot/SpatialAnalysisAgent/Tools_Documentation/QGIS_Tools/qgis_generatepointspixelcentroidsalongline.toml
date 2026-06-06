@@ -19,7 +19,7 @@ def generate_points_along_line():
     # Define the input and output paths
     input_raster_path = 'D:/input_raster.tif'
     input_vector_path = 'D:/input_line.shp'
-    output_path = 'C:/Users/Output/points_along_line.shp'
+    output_path = 'output/points_along_line.shp'
 
     # Load the input layers
     input_raster = QgsRasterLayer(input_raster_path, \"""Input Raster\")

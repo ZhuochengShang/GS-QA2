@@ -24,7 +24,7 @@ from qgis.core import QgsProject, QgsVectorLayer
 
 def create_grid():
     # Define the input path and output path
-    output_path = \"""C:/Users/Output/grid_output.shp\"
+    output_path = \"""output/grid_output.shp\"
 
     # Set the parameters for the grid creation
     parameters = {

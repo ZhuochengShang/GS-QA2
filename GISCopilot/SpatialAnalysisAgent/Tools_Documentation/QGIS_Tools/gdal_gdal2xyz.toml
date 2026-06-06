@@ -26,7 +26,7 @@ import processing
 def convert_raster_to_xyz():
     # Define the input and output paths
     input_path = 'D:/input_raster.tif'
-    output_dir = 'C:/Users/Output'
+    output_dir = 'output'
     output_file_name = \"""output_xyz.txt\"
     output_path = f\"{output_dir}/{output_file_name}\"
 

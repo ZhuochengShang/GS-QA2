@@ -56,6 +56,6 @@ def export_layout_to_pdf(output_path):
     processing.run(\"""native:printlayouttopdf\", parameters)
 
 # Define the path for the output PDF
-output_pdf_path = 'C:/Users/Output/My_Layout_Export.pdf'
+output_pdf_path = 'output/My_Layout_Export.pdf'
 # Execute the function
 export_layout_to_pdf(output_pdf_path)"""

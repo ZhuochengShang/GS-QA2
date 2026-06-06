@@ -24,7 +24,7 @@ import processing
 def dissolve_layer():
     # Define the input and output paths
     input_path = 'D:/input_layer.shp'
-    output_dir = 'C:/Users/Output'
+    output_dir = 'output'
     output_file_name = \"""Dissolved_output.shp\"
     output_path = f\"{output_dir}/{output_file_name}\"
     # Load the input layer

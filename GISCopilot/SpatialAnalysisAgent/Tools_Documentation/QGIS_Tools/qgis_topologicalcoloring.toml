@@ -20,7 +20,7 @@ from qgis.core import QgsVectorLayer, QgsProject
 
 def topological_coloring():
     input_path = 'D:/input_polygon.shp'
-    output_dir = 'C:/Users/Output'
+    output_dir = 'output'
     output_file_name = 'Colored_Output.shp'
     output_path = f\"""{output_dir}/{output_file_name}\"
     

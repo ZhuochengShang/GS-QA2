@@ -22,7 +22,7 @@ import processing
 def generate_random_points():
     # Define the input and output paths
     input_path = 'D:/input_polygon_layer.shp'
-    output_dir = 'C:/Users/Output'
+    output_dir = 'output'
     output_file_name = \"""random_points_output.shp\"
     output_path = f\"{output_dir}/{output_file_name}\"
     

@@ -35,7 +35,7 @@ from qgis.core import QgsVectorLayer, QgsProject
 def rasterize_layer():
     # Define the input and output paths
     input_path = 'D:/input_vector_layer.shp'
-    output_path = 'C:/Users/Output/rasterized_output.tif'
+    output_path = 'output/rasterized_output.tif'
 
     # Load the input vector layer
     input_layer = QgsVectorLayer(input_path, \"""Input Layer\", \"ogr\")

@@ -22,7 +22,7 @@ from qgis.core import QgsMeshLayer, QgsProject
 def export_mesh_on_grid():
     # Define the input and output paths
     input_mesh_path = 'D:/input_mesh_layer.mesh'
-    output_dir = 'C:/Users/Output'
+    output_dir = 'output'
     output_file_name = \"""exported_mesh_points.shp\"
     output_path = f\"{output_dir}/{output_file_name}\"
 

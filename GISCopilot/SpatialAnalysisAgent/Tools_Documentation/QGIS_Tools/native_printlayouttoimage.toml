@@ -23,7 +23,7 @@ from qgis.core import QgsProject
 def export_layout_to_image():
     # Define the input layout and output file path
     layout_name = 'MyLayout'
-    output_path = 'C:/Users/Output/layout_image.png'
+    output_path = 'output/layout_image.png'
     
     # Define the parameters
     parameters = {

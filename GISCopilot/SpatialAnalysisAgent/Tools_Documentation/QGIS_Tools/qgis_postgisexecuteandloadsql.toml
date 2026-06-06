@@ -22,7 +22,7 @@ import processing
 from qgis.core import QgsProject, QgsVectorLayer
 
 def execute_and_load_sql():
-    output_path = 'C:/Users/Output/result_layer.gpkg'
+    output_path = 'output/result_layer.gpkg'
 
     # Define the parameters
     parameters = {

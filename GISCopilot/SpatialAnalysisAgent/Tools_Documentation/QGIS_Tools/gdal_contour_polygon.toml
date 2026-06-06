@@ -27,7 +27,7 @@ from qgis.core import QgsRasterLayer, QgsVectorLayer, QgsProject
 
 def generate_contour_polygons():
     input_raster_path = 'D:/input_raster.tif'
-    output_dir = 'C:/Users/Output'
+    output_dir = 'output'
     output_file_name = \"""contour_polygons.shp\"
     output_path = f\"{output_dir}/{output_file_name}\"
 

@@ -25,7 +25,7 @@ import processing
 
 def translate_features():
     input_layer_path = 'D:/path_to_input_layer.shp'
-    output_path = 'C:/Users/Output/translated_features.shp'
+    output_path = 'output/translated_features.shp'
     
     input_layer = QgsVectorLayer(input_layer_path, \"""Input Layer\", \"ogr\")
     
