@@ -1,0 +1,19 @@
+{
+  "question": "Within 100 kilometers of Shavers Creek Environmental Center, Petersburg, PA, where can I find a café toward Vivi on Verbeke, Harrisburg, PA?",
+  "sql": "WITH start_point AS ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Shavers Creek Environmental Center%' AND addr_city ILIKE '%Petersburg%' LIMIT 1 ), end_point AS ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Vivi on Verbeke%' AND addr_city ILIKE '%Harrisburg%' LIMIT 1 ) SELECT P.poi_name FROM pois AS P, start_point AS SP, end_point AS EP WHERE P.amenity = 'cafe' AND ST_DWithin(P.geometry::geography, SP.geometry::geography, 100000) -- Within 100 kilometers (100,000 meters) AND ( -- Calculate the angular difference between the direction from start_point to the cafe -- and the direction from start_point to end_point. -- Filter for cafes that are within a 45-degree cone (22.5 degrees on either side) -- of the target direction. ABS( MOD( degrees(ST_Azimuth(SP.geometry, P.geometry)) - degrees(ST_Azimuth(SP.geometry, EP.geometry)) + 180 + 360, 360 ) - 180 ) < 45 );",
+  "answers": [],
+  "metadata": {
+    "question_id": 10,
+    "cache_id": 2609,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 9.845,
+    "llm_latency_seconds": 9.845,
+    "prompt_tokens": 1726,
+    "completion_tokens": 326,
+    "total_tokens": 3652,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "function mod(double precision, integer) does not exist\nLINE 23:             MOD(\n                     ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "answer_text": ""
+  }
+}

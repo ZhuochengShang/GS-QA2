@@ -1,0 +1,19 @@
+{
+  "question": "Where are a golf course positioned within 170 kilometers relative to Montefiore Medical Center - Wakefield Campus, Bronx, NY in the southwest direction?",
+  "sql": "WITH ref_point AS ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Montefiore Medical Center - Wakefield Campus%' AND addr_city ILIKE '%Bronx%' AND addr_state ILIKE '%NY%' LIMIT 1 ) SELECT poi_name AS name, addr_state, addr_city FROM pois, ref_point WHERE pois.leisure = 'golf_course' AND ST_DWithin(pois.geometry::geography, ref_point.geometry::geography, 170000) AND degrees(ST_Azimuth(ref_point.geometry, pois.geometry)) BETWEEN 202.5 AND 247.5 UNION ALL SELECT park_name AS name, NULL AS addr_state, NULL AS addr_city FROM parks, ref_point WHERE parks.leisure = 'golf_course' AND ST_DWithin(parks.geometry::geography, ref_point.geometry::geography, 170000) AND degrees(ST_Azimuth(ref_point.geometry, parks.geometry)) BETWEEN 202.5 AND 247.5;",
+  "answers": [],
+  "metadata": {
+    "question_id": 16,
+    "cache_id": 2215,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 7.139,
+    "llm_latency_seconds": 7.139,
+    "prompt_tokens": 1723,
+    "completion_tokens": 288,
+    "total_tokens": 3338,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress",
+    "answer_text": ""
+  }
+}

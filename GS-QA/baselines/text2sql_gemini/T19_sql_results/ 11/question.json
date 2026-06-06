@@ -1,0 +1,19 @@
+{
+  "question": "Where is the closest museum relative to the east of John Natsoulas Gallery, Davis, CA?",
+  "sql": "SELECT P.poi_name, P.addr_city, P.addr_state FROM pois AS P WHERE P.tourism = 'museum' AND ST_X(P.geometry) > ST_X( ( SELECT geometry FROM pois WHERE poi_name ILIKE '%John Natsoulas Gallery%' AND addr_city ILIKE '%Davis%' AND addr_state ILIKE '%CA%' LIMIT 1 ) ) ORDER BY ST_Distance( P.geometry::geography, ( SELECT geometry FROM pois WHERE poi_name ILIKE '%John Natsoulas Gallery%' AND addr_city ILIKE '%Davis%' AND addr_state ILIKE '%CA%' LIMIT 1 )::geography ) ASC LIMIT 1;",
+  "answers": [],
+  "metadata": {
+    "question_id": 11,
+    "cache_id": 1110,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 6.711,
+    "llm_latency_seconds": 6.711,
+    "prompt_tokens": 1713,
+    "completion_tokens": 214,
+    "total_tokens": 3031,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "function st_x(geography) does not exist\nLINE 9:   AND ST_X(P.geometry) > ST_X(\n              ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "answer_text": ""
+  }
+}

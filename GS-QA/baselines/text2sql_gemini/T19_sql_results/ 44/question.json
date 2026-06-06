@@ -1,0 +1,19 @@
+{
+  "question": "Where is the nearest nature reserve positioned in the northeast direction of Broadbent Arena, Louisville, KY?",
+  "sql": "SELECT P.park_name FROM parks AS P, ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Broadbent Arena%' AND addr_city ILIKE '%Louisville%' AND addr_state ILIKE '%KY%' LIMIT 1 ) AS Arena WHERE P.leisure = 'nature_reserve' AND degrees(ST_Azimuth(Arena.geometry, P.geometry)) BETWEEN 22.5 AND 67.5 ORDER BY ST_Distance(Arena.geometry::geography, P.geometry::geography) ASC LIMIT 1;",
+  "answers": [],
+  "metadata": {
+    "question_id": 44,
+    "cache_id": 1143,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 4.155,
+    "llm_latency_seconds": 4.155,
+    "prompt_tokens": 1712,
+    "completion_tokens": 153,
+    "total_tokens": 2534,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "ST_Azimuth(geography, geography) is only valid for point inputs",
+    "answer_text": ""
+  }
+}

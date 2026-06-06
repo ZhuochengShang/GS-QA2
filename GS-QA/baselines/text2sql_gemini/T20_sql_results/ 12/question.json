@@ -1,0 +1,19 @@
+{
+  "question": "Where is the nearest restaurant encountered en route to Fred Crabtree Park, Herndon, VA from Rock of the Marne, VA?",
+  "sql": "SELECT p.poi_name, p.addr_city, p.addr_state, p.amenity, p.cuisine FROM pois AS p WHERE p.amenity = 'restaurant' AND ST_Intersects( p.geometry::geography, ST_Buffer( ST_MakeLine( ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Rock of the Marne%' AND addr_state ILIKE '%VA%' LIMIT 1 ), ( SELECT pa.geometry FROM parks AS pa WHERE pa.park_name ILIKE '%Fred Crabtree Park%' AND ST_Intersects( pa.geometry::geography, ( SELECT r.geometry::geography FROM regions AS r WHERE r.region_name ILIKE '%Herndon%' AND r.border_type = 'city' LIMIT 1 ) ) LIMIT 1 ) )::geography, 500 )::geography ) ORDER BY ST_Distance( p.geometry::geography, ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Rock of the Marne%' AND addr_state ILIKE '%VA%' LIMIT 1 )::geography ) LIMIT 1;",
+  "answers": [],
+  "metadata": {
+    "question_id": 12,
+    "cache_id": 1511,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 14.333,
+    "llm_latency_seconds": 14.333,
+    "prompt_tokens": 1718,
+    "completion_tokens": 350,
+    "total_tokens": 4774,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "function st_makeline(geography, geography) does not exist\nLINE 13:       ST_MakeLine(\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "answer_text": ""
+  }
+}

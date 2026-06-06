@@ -1,0 +1,19 @@
+{
+  "question": "Within a radius of 90 kilometers, where can I locate fast food restaurant on the journey from J P Riddle Stadium, Fayetteville, NC to Silk Hope Ruritan Club, Siler City, NC?",
+  "sql": "SELECT poi_name FROM pois WHERE amenity = 'fast_food' AND ST_Intersects(geometry::geography, ST_Buffer(ST_MakeLine( (SELECT geometry FROM pois WHERE poi_name ILIKE '%J P Riddle Stadium%' AND addr_city ILIKE '%Fayetteville%' AND addr_state ILIKE '%NC%' LIMIT 1), (SELECT geometry FROM pois WHERE poi_name ILIKE '%Silk Hope Ruritan Club%' AND addr_city ILIKE '%Siler City%' AND addr_state ILIKE '%NC%' LIMIT 1) )::geography, 90000));",
+  "answers": [],
+  "metadata": {
+    "question_id": 19,
+    "cache_id": 2618,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 2.314,
+    "llm_latency_seconds": 2.314,
+    "prompt_tokens": 1734,
+    "completion_tokens": 151,
+    "total_tokens": 2147,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "function st_makeline(geography, geography) does not exist\nLINE 5: ... AND ST_Intersects(geometry::geography, ST_Buffer(ST_MakeLin...\n                                                             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "answer_text": ""
+  }
+}

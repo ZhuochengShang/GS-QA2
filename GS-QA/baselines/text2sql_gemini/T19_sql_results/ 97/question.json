@@ -1,0 +1,19 @@
+{
+  "question": "Where can I find the closest golf course toward the northeast of Out of Africa Wildlife Park, Camp Verde, AZ?",
+  "sql": "WITH reference_point AS ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Out of Africa Wildlife Park%' LIMIT 1 ) SELECT name FROM ( SELECT poi_name AS name, P.geometry AS geom, ST_Distance(P.geometry::geography, (SELECT geometry FROM reference_point)::geography) AS distance, degrees(ST_Azimuth((SELECT geometry FROM reference_point), P.geometry)) AS bearing FROM pois AS P WHERE P.leisure = 'golf_course' UNION ALL SELECT park_name AS name, P.geometry AS geom, ST_Distance(P.geometry::geography, (SELECT geometry FROM reference_point)::geography) AS distance, degrees(ST_Azimuth((SELECT geometry FROM reference_point), P.geometry)) AS bearing FROM parks AS P WHERE P.leisure = 'golf_course' ) AS combined_golf_courses WHERE bearing BETWEEN 22.5 AND 67.5 -- Northeast range ORDER BY distance ASC LIMIT 1;",
+  "answers": [],
+  "metadata": {
+    "question_id": 97,
+    "cache_id": 1196,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 8.233,
+    "llm_latency_seconds": 8.233,
+    "prompt_tokens": 1715,
+    "completion_tokens": 258,
+    "total_tokens": 3414,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress",
+    "answer_text": ""
+  }
+}

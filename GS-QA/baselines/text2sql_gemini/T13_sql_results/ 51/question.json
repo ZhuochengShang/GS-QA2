@@ -1,0 +1,19 @@
+{
+  "question": "Where are a café available within a 170 kilometers radius of English Street Community Garden, New Haven, CT?",
+  "sql": "SELECT poi_name, addr_city, addr_state FROM pois WHERE amenity = 'cafe' AND ST_DWithin( geometry :: geography, ( SELECT P.geometry :: geography FROM parks AS P WHERE P.park_name ILIKE '%English Street Community Garden%' AND ST_Intersects( P.geometry, ( SELECT geometry FROM regions WHERE region_name ILIKE '%New Haven%' AND border_type = 'city' LIMIT 1 ) ) LIMIT 1 ), 170000 );",
+  "answers": [],
+  "metadata": {
+    "question_id": 51,
+    "cache_id": 2050,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 3.143,
+    "llm_latency_seconds": 3.143,
+    "prompt_tokens": 1716,
+    "completion_tokens": 164,
+    "total_tokens": 2270,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "",
+    "answer_text": ""
+  }
+}

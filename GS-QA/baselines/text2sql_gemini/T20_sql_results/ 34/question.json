@@ -1,0 +1,19 @@
+{
+  "question": "Where’s the closest fast food restaurant on the journey from Sloth Encounters, Hauppauge, NY toward Sculpture Center, Long Island City, NY?",
+  "sql": "SELECT p.poi_name, p.addr_state, p.addr_city, p.amenity FROM pois AS p WHERE p.amenity = 'fast_food' ORDER BY ST_Distance( p.geometry::geography, ST_MakeLine( (SELECT geometry FROM pois WHERE poi_name ILIKE '%Sloth Encounters%' AND addr_city ILIKE '%Hauppauge%' AND addr_state ILIKE '%NY%' LIMIT 1), (SELECT geometry FROM pois WHERE poi_name ILIKE '%Sculpture Center%' AND addr_city ILIKE '%Long Island City%' AND addr_state ILIKE '%NY%' LIMIT 1) )::geography ) ASC LIMIT 1;",
+  "answers": [],
+  "metadata": {
+    "question_id": 34,
+    "cache_id": 1533,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 6.255,
+    "llm_latency_seconds": 6.255,
+    "prompt_tokens": 1724,
+    "completion_tokens": 187,
+    "total_tokens": 2820,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress",
+    "answer_text": ""
+  }
+}

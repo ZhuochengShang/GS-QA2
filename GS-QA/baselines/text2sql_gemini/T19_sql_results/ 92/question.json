@@ -1,0 +1,19 @@
+{
+  "question": "Where is the nearest museum located toward southwest from Bresnan Arena, Mankato, MN?",
+  "sql": "SELECT p.poi_name, p.addr_city, p.addr_state FROM pois AS p, ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Bresnan Arena%' AND addr_city ILIKE '%Mankato%' AND addr_state ILIKE '%MN%' LIMIT 1 ) AS arena WHERE p.tourism = 'museum' AND degrees(ST_Azimuth(arena.geometry, p.geometry)) BETWEEN 202.5 AND 247.5 ORDER BY ST_Distance(arena.geometry::geography, p.geometry::geography) LIMIT 1;",
+  "answers": [],
+  "metadata": {
+    "question_id": 92,
+    "cache_id": 1191,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 3.845,
+    "llm_latency_seconds": 3.845,
+    "prompt_tokens": 1710,
+    "completion_tokens": 166,
+    "total_tokens": 2435,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "sending query failed: another command is already in progress\nanother command is already in progress",
+    "answer_text": ""
+  }
+}

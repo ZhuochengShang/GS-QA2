@@ -1,0 +1,19 @@
+{
+  "question": "Where is the nearest park positioned in the southeast direction of Bowling Green Ballpark, Bowling Green, KY?",
+  "sql": "SELECT P.park_name FROM parks AS P, ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Bowling Green Ballpark%' AND addr_city ILIKE '%Bowling Green%' AND addr_state ILIKE '%KY%' LIMIT 1 ) AS B WHERE degrees(ST_Azimuth(ST_Centroid(B.geometry), ST_Centroid(P.geometry))) BETWEEN 112.5 AND 157.5 ORDER BY B.geometry <-> P.geometry LIMIT 1;",
+  "answers": [],
+  "metadata": {
+    "question_id": 62,
+    "cache_id": 1161,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 4.297,
+    "llm_latency_seconds": 4.297,
+    "prompt_tokens": 1713,
+    "completion_tokens": 149,
+    "total_tokens": 2513,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "ST_Centroid(geography) unhandled geography type",
+    "answer_text": ""
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "question": "Where’s the closest restaurant on the journey from University of the Rockies, Denver, CO toward Molly Brown Summer House, Denver, CO?",
+  "sql": "SELECT poi_name, addr_city, addr_state FROM pois WHERE amenity = 'restaurant' ORDER BY ST_Distance( geometry::geography, ST_MakeLine( ( SELECT geometry FROM pois WHERE poi_name ILIKE '%University of the Rockies%' AND addr_city ILIKE '%Denver%' LIMIT 1 ), ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Molly Brown Summer House%' AND addr_city ILIKE '%Denver%' LIMIT 1 ) )::geography ) ASC LIMIT 1;",
+  "answers": [],
+  "metadata": {
+    "question_id": 15,
+    "cache_id": 1514,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 5.638,
+    "llm_latency_seconds": 5.638,
+    "prompt_tokens": 1720,
+    "completion_tokens": 171,
+    "total_tokens": 2860,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "function st_makeline(geography, geography) does not exist\nLINE 12:     ST_MakeLine(\n             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "answer_text": ""
+  }
+}

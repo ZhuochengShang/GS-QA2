@@ -1,0 +1,19 @@
+{
+  "question": "Where’s the closest fast food restaurant on the journey from Bowditch Middle School Auditorium, Foster City, CA toward Oldest Light Bulb, Livermore, CA?",
+  "sql": "SELECT poi_name, addr_city, addr_state FROM pois WHERE amenity = 'fast_food' ORDER BY ST_Distance( geometry::geography, ST_MakeLine( ( SELECT ST_Centroid(geometry) FROM pois WHERE poi_name ILIKE '%Bowditch Middle School Auditorium%' AND addr_city ILIKE '%Foster City%' LIMIT 1 ), ( SELECT ST_Centroid(geometry) FROM pois WHERE poi_name ILIKE '%Oldest Light Bulb%' AND addr_city ILIKE '%Livermore%' LIMIT 1 ) )::geography ) ASC LIMIT 1;",
+  "answers": [],
+  "metadata": {
+    "question_id": 8,
+    "cache_id": 1507,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 6.182,
+    "llm_latency_seconds": 6.182,
+    "prompt_tokens": 1725,
+    "completion_tokens": 188,
+    "total_tokens": 2905,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "function st_makeline(geography, geography) does not exist\nLINE 12:     ST_MakeLine(\n             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "answer_text": ""
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "question": "Are there a sandwich restaurant situated within 20 kilometers of Baptist Arlington Emergency Department, Arlington, TN?",
+  "sql": "SELECT 1 FROM pois AS sandwich_restaurants WHERE sandwich_restaurants.cuisine ILIKE '%sandwich%' AND sandwich_restaurants.amenity ILIKE '%restaurant%' AND ST_DWithin(sandwich_restaurants.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Baptist Arlington Emergency Department%' LIMIT 1)::geography, 20000) LIMIT 1;",
+  "answers": [
+    {
+      "?column?": 1
+    }
+  ],
+  "metadata": {
+    "question_id": 69,
+    "cache_id": 2468,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 2.153,
+    "llm_latency_seconds": 2.153,
+    "prompt_tokens": 1713,
+    "completion_tokens": 102,
+    "total_tokens": 2043,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "",
+    "answer_text": "1"
+  }
+}

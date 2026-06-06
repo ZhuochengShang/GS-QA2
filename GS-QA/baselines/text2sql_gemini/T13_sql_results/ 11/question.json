@@ -1,0 +1,572 @@
+{
+  "question": "Can you locate a garden within a 170 kilometers radius around Wagner Hotel, New York, NY?",
+  "sql": "SELECT park_name, leisure FROM parks WHERE leisure = 'garden' AND ST_DWithin( geometry::geography, ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Wagner Hotel%' LIMIT 1 )::geography, 170000 );",
+  "answers": [
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "id": 4457352,
+      "park_name": "Reformed Church of Locust Valley Memorial Garden",
+      "osm_id": 1064705101,
+      "wikidata": null,
+      "wikipedia": null,
+      "addr_country": null,
+      "addr_state": null,
+      "addr_county": null,
+      "addr_city": null,
+      "addr_postcode": null,
+      "addr_street": null,
+      "addr_housenumber": null,
+      "operator": null,
+      "leisure": "garden",
+      "sport": null,
+      "area": null,
+      "historic": null,
+      "old_name": null,
+      "short_name": null,
+      "hunting": null,
+      "heritage": null,
+      "ele": null,
+      "ALAND": null,
+      "AWATER": null,
+      "trees": null,
+      "primary_use": null,
+      "secondary_use": null,
+      "other_use": null,
+      "note": null,
+      "county": null,
+      "golf": null,
+      "acres": null,
+      "elevation": null,
+      "park": null,
+      "tourism": null,
+      "camping": null,
+      "geometry": "POLYGON((-73.5871935 40.8833409,-73.5873415 40.8835602,-73.5874415 40.8835162,-73.5873067 40.8832761,-73.5871935 40.8833409))"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "id": 4463327,
+      "park_name": "Imani II Community Garden",
+      "osm_id": 314694632,
+      "wikidata": null,
+      "wikipedia": null,
+      "addr_country": null,
+      "addr_state": null,
+      "addr_county": null,
+      "addr_city": null,
+      "addr_postcode": null,
+      "addr_street": "Schenectady Avenue",
+      "addr_housenumber": "91",
+      "operator": null,
+      "leisure": "garden",
+      "sport": null,
+      "area": null,
+      "historic": null,
+      "old_name": null,
+      "short_name": null,
+      "hunting": null,
+      "heritage": null,
+      "ele": null,
+      "ALAND": null,
+      "AWATER": null,
+      "trees": null,
+      "primary_use": null,
+      "secondary_use": null,
+      "other_use": null,
+      "note": null,
+      "county": null,
+      "golf": null,
+      "acres": null,
+      "elevation": null,
+      "park": null,
+      "tourism": null,
+      "camping": null,
+      "geometry": "POLYGON((-73.9330608 40.6766546,-73.9330741 40.6764826,-73.9330548 40.6764811,-73.9330595 40.6764159,-73.932958 40.6764091,-73.9329385 40.6766493,-73.9330608 40.6766546))"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "id": 4466802,
+      "park_name": "Anne d'Harnoncourt Sculpture Garden",
+      "osm_id": 705047008,
+      "wikidata": null,
+      "wikipedia": null,
+      "addr_country": null,
+      "addr_state": null,
+      "addr_county": null,
+      "addr_city": null,
+      "addr_postcode": null,
+      "addr_street": null,
+      "addr_housenumber": null,
+      "operator": null,
+      "leisure": "garden",
+      "sport": null,
+      "area": null,
+      "historic": null,
+      "old_name": null,
+      "short_name": null,
+      "hunting": null,
+      "heritage": null,
+      "ele": null,
+      "ALAND": null,
+      "AWATER": null,
+      "trees": null,
+      "primary_use": null,
+      "secondary_use": null,
+      "other_use": null,
+      "note": null,
+      "county": null,
+      "golf": null,
+      "acres": null,
+      "elevation": null,
+      "park": null,
+      "tourism": null,
+      "camping": null,
+      "geometry": "POLYGON((-75.18179 39.9668894,-75.1816638 39.9668894,-75.1813935 39.9669529,-75.1813571 39.9670467,-75.1813409 39.9670846,-75.1813234 39.9671257,-75.1812952 39.9672059,-75.1820138 39.9673725,-75.1825599 39.9673979,-75.1826214 39.9673999,-75.1826324 39.9674002,-75.1826665 39.9674007,-75.1827198 39.9674016,-75.1827246 39.9672274,-75.1823995 39.9672221,-75.182404 39.9670579,-75.1820928 39.9670529,-75.18179 39.9668894))"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "id": 4478156,
+      "park_name": "Eagle Street Rooftop Farm",
+      "osm_id": 240199968,
+      "wikidata": null,
+      "wikipedia": null,
+      "addr_country": null,
+      "addr_state": null,
+      "addr_county": null,
+      "addr_city": null,
+      "addr_postcode": null,
+      "addr_street": null,
+      "addr_housenumber": null,
+      "operator": null,
+      "leisure": "garden",
+      "sport": null,
+      "area": null,
+      "historic": null,
+      "old_name": null,
+      "short_name": null,
+      "hunting": null,
+      "heritage": null,
+      "ele": null,
+      "ALAND": null,
+      "AWATER": null,
+      "trees": null,
+      "primary_use": null,
+      "secondary_use": null,
+      "other_use": null,
+      "note": null,
+      "county": null,
+      "golf": null,
+      "acres": null,
+      "elevation": null,
+      "park": null,
+      "tourism": null,
+      "camping": null,
+      "geometry": "POLYGON((-73.9598913 40.7343532,-73.9598689 40.7342152,-73.9595226 40.7342475,-73.9595463 40.7343937,-73.9598188 40.7343683,-73.9598175 40.7343601,-73.9598913 40.7343532))"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "id": 4478869,
+      "park_name": "Urban Agriculture",
+      "osm_id": 379488600,
+      "wikidata": null,
+      "wikipedia": null,
+      "addr_country": null,
+      "addr_state": null,
+      "addr_county": null,
+      "addr_city": null,
+      "addr_postcode": null,
+      "addr_street": null,
+      "addr_housenumber": null,
+      "operator": null,
+      "leisure": "garden",
+      "sport": null,
+      "area": null,
+      "historic": null,
+      "old_name": null,
+      "short_name": null,
+      "hunting": null,
+      "heritage": null,
+      "ele": null,
+      "ALAND": null,
+      "AWATER": null,
+      "trees": null,
+      "primary_use": null,
+      "secondary_use": null,
+      "other_use": null,
+      "note": null,
+      "county": null,
+      "golf": null,
+      "acres": null,
+      "elevation": null,
+      "park": null,
+      "tourism": null,
+      "camping": null,
+      "geometry": "POLYGON((-73.8194122 40.7346294,-73.8194246 40.7345748,-73.8189791 40.7345171,-73.8189668 40.7345718,-73.8194122 40.7346294))"
+    },
+    {
+      "id": 4479212,
+      "park_name": "Waterfront Community Garden",
+      "osm_id": 440481967,
+      "wikidata": null,
+      "wikipedia": null,
+      "addr_country": null,
+      "addr_state": null,
+      "addr_county": null,
+      "addr_city": null,
+      "addr_postcode": null,
+      "addr_street": null,
+      "addr_housenumber": null,
+      "operator": "NYC Parks;NY Botanical Gardens",
+      "leisure": "garden",
+      "sport": null,
+      "area": null,
+      "historic": null,
+      "old_name": null,
+      "short_name": null,
+      "hunting": null,
+      "heritage": null,
+      "ele": null,
+      "ALAND": null,
+      "AWATER": null,
+      "trees": null,
+      "primary_use": null,
+      "secondary_use": null,
+      "other_use": null,
+      "note": null,
+      "county": null,
+      "golf": null,
+      "acres": null,
+      "elevation": null,
+      "park": "garden",
+      "tourism": null,
+      "camping": null,
+      "geometry": "POLYGON((-73.8500399 40.8099704,-73.8502384 40.8097673,-73.8502398 40.8096455,-73.8507279 40.8095775,-73.8507963 40.80988,-73.8500399 40.8099704))"
+    },
+    {
+      "id": 5305230,
+      "park_name": "Serenity Garden",
+      "osm_id": 897285898,
+      "wikidata": null,
+      "wikipedia": null,
+      "addr_country": null,
+      "addr_state": null,
+      "addr_county": null,
+      "addr_city": null,
+      "addr_postcode": null,
+      "addr_street": null,
+      "addr_housenumber": null,
+      "operator": null,
+      "leisure": "garden",
+      "sport": null,
+      "area": null,
+      "historic": null,
+      "old_name": null,
+      "short_name": null,
+      "hunting": null,
+      "heritage": null,
+      "ele": null,
+      "ALAND": null,
+      "AWATER": null,
+      "trees": null,
+      "primary_use": null,
+      "secondary_use": null,
+      "other_use": null,
+      "note": null,
+      "county": null,
+      "golf": null,
+      "acres": null,
+      "elevation": null,
+      "park": null,
+      "tourism": null,
+      "camping": null,
+      "geometry": "POLYGON((-119.1842682 46.1936867,-119.1844533 46.1936246,-119.1845296 46.1937277,-119.1843418 46.1937877,-119.1842682 46.1936867))"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    },
+    {
+      "leisure": "garden"
+    }
+  ],
+  "metadata": {
+    "question_id": 11,
+    "cache_id": 2010,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 4.362,
+    "llm_latency_seconds": 4.362,
+    "prompt_tokens": 1714,
+    "completion_tokens": 93,
+    "total_tokens": 2522,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "",
+    "answer_text": "garden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\nReformed Church of Locust Valley Memorial Garden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\nImani II Community Garden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\nAnne d'Harnoncourt Sculpture Garden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\nEagle Street Rooftop Farm\ngarden\nUrban Agriculture\nWaterfront Community Garden\nSerenity Garden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden\ngarden"
+  }
+}

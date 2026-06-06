@@ -1,0 +1,19 @@
+{
+  "question": "Where’s the closest golf course positioned in the direction of west from Wildlife West Nature Park, Edgewood, NM?",
+  "sql": "WITH park_location AS ( SELECT geometry FROM parks WHERE park_name ILIKE '%Wildlife West Nature Park%' LIMIT 1 ), golf_courses_west AS ( SELECT poi_name AS name, ST_Distance(p.geometry::geography, park_location.geometry::geography) AS distance_meters FROM pois p, park_location WHERE p.leisure = 'golf_course' AND degrees(ST_Azimuth(park_location.geometry, p.geometry)) BETWEEN 247.5 AND 292.5 UNION ALL SELECT park_name AS name, ST_Distance(pa.geometry::geography, park_location.geometry::geography) AS distance_meters FROM parks pa, park_location WHERE pa.leisure = 'golf_course' AND degrees(ST_Azimuth(park_location.geometry, pa.geometry)) BETWEEN 247.5 AND 292.5 ) SELECT name, distance_meters FROM golf_courses_west ORDER BY distance_meters ASC LIMIT 1;",
+  "answers": [],
+  "metadata": {
+    "question_id": 60,
+    "cache_id": 1159,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 6.352,
+    "llm_latency_seconds": 6.352,
+    "prompt_tokens": 1716,
+    "completion_tokens": 269,
+    "total_tokens": 3019,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "ST_Azimuth(geography, geography) is only valid for point inputs",
+    "answer_text": ""
+  }
+}

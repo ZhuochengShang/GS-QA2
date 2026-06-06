@@ -1,0 +1,19 @@
+{
+  "question": "Where’s the nearest university that lies southwest of Proghorn Nature Area, Aurora, CO?",
+  "sql": "WITH target_location AS ( SELECT p.geometry AS geom FROM parks AS p WHERE p.park_name ILIKE '%Proghorn Nature Area%' AND ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Aurora%' AND border_type = 'city' LIMIT 1)::geography) LIMIT 1 ) SELECT p.poi_name FROM pois AS p, target_location AS tl WHERE p.amenity = 'university' AND degrees(ST_Azimuth(tl.geom, p.geometry)) BETWEEN 202.5 AND 247.5 ORDER BY ST_Distance(tl.geom::geography, p.geometry::geography) ASC LIMIT 1;",
+  "answers": [],
+  "metadata": {
+    "question_id": 3,
+    "cache_id": 1102,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 15.581,
+    "llm_latency_seconds": 15.581,
+    "prompt_tokens": 1712,
+    "completion_tokens": 193,
+    "total_tokens": 5058,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "",
+    "answer_text": ""
+  }
+}

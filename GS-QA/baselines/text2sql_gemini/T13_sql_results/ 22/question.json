@@ -1,0 +1,555 @@
+{
+  "question": "Where can I find a golf course inside 80 kilometers from Popcorn Park Animal Refuge, Forked River, NJ?",
+  "sql": "SELECT poi_name FROM pois WHERE leisure = 'golf_course' AND ST_DWithin(geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Popcorn Park Animal Refuge%' AND addr_city ILIKE '%Forked River%' AND addr_state ILIKE '%NJ%' LIMIT 1)::geography, 80000) UNION SELECT park_name FROM parks WHERE leisure = 'golf_course' AND ST_DWithin(geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Popcorn Park Animal Refuge%' AND addr_city ILIKE '%Forked River%' AND addr_state ILIKE '%NJ%' LIMIT 1)::geography, 80000);",
+  "answers": [
+    {
+      "poi_name": "Arthur Hills Championship Course"
+    },
+    {
+      "poi_name": "Ash Brook Golf Course"
+    },
+    {
+      "poi_name": "Atlantic City Golf Club"
+    },
+    {
+      "poi_name": "Bala Golf Course"
+    },
+    {
+      "poi_name": "Ballamor Golf Club"
+    },
+    {
+      "poi_name": "Battleground Country Club"
+    },
+    {
+      "poi_name": "Beacon Hill Country Club"
+    },
+    {
+      "poi_name": "Bel-Aire Golf Course"
+    },
+    {
+      "poi_name": "Bey Lea Golf Course"
+    },
+    {
+      "poi_name": "B L England Golf Course"
+    },
+    {
+      "poi_name": "Blue Heron Pines Golf Club"
+    },
+    {
+      "id": 11162899,
+      "poi_name": "Buena Vista Golf Club",
+      "osm_id": 5934431776,
+      "amenity": null,
+      "cuisine": null,
+      "leisure": "golf_course",
+      "historic": null,
+      "description": null,
+      "tourism": null,
+      "information": null,
+      "wheelchair": null,
+      "building": null,
+      "fee": null,
+      "opening_hours": null,
+      "operator": null,
+      "sport": null,
+      "website": null,
+      "capacity": null,
+      "shop": null,
+      "internet_access": null,
+      "phone": null,
+      "takeaway": null,
+      "drive_through": null,
+      "museum": null,
+      "official_name": null,
+      "healthcare": null,
+      "outdoor_seating": null,
+      "delivery": null,
+      "toilets": null,
+      "parking": null,
+      "emergency": null,
+      "artwork_type": null,
+      "restaurant": null,
+      "sports": null,
+      "zoo": null,
+      "wholesale": null,
+      "school_type": null,
+      "pastry_shop": null,
+      "hairdresser": null,
+      "resort": null,
+      "fast_food": null,
+      "wikidata": null,
+      "addr_state": null,
+      "addr_city": null,
+      "addr_postcode": null,
+      "addr_street": null,
+      "addr_housenumber": null,
+      "geometry": "POINT(-74.8856031 39.5109431)"
+    },
+    {
+      "poi_name": "Bunker Hill Golf Course"
+    },
+    {
+      "poi_name": "Burlington Country Club"
+    },
+    {
+      "poi_name": "Burlington County Golf"
+    },
+    {
+      "poi_name": "Cedar Creek Golf Club"
+    },
+    {
+      "poi_name": "Cherry Valley Country Club"
+    },
+    {
+      "id": 12133531,
+      "poi_name": "Cobblestone Creek Country Club",
+      "osm_id": 6381391425,
+      "amenity": null,
+      "cuisine": null,
+      "leisure": "golf_course",
+      "historic": null,
+      "description": null,
+      "tourism": null,
+      "information": null,
+      "wheelchair": null,
+      "building": null,
+      "fee": null,
+      "opening_hours": "Tu-Su 10:00-18:00",
+      "operator": null,
+      "sport": null,
+      "website": null,
+      "capacity": null,
+      "shop": null,
+      "internet_access": null,
+      "phone": null,
+      "takeaway": null,
+      "drive_through": null,
+      "museum": null,
+      "official_name": null,
+      "healthcare": null,
+      "outdoor_seating": null,
+      "delivery": null,
+      "toilets": null,
+      "parking": null,
+      "emergency": null,
+      "artwork_type": null,
+      "restaurant": null,
+      "sports": null,
+      "zoo": null,
+      "wholesale": null,
+      "school_type": null,
+      "pastry_shop": null,
+      "hairdresser": null,
+      "resort": null,
+      "fast_food": null,
+      "wikidata": null,
+      "addr_state": "NJ",
+      "addr_city": "Lawrence Township",
+      "addr_postcode": "08648",
+      "addr_street": "Lawrence Road",
+      "addr_housenumber": "2170",
+      "geometry": "POINT(-74.7263241 40.2814577)"
+    },
+    {
+      "poi_name": "Colonia Country Club"
+    },
+    {
+      "poi_name": "Colts Neck Golf Club"
+    },
+    {
+      "poi_name": "Commonwealth National Golf Club"
+    },
+    {
+      "poi_name": "Cooper River Driving Range"
+    },
+    {
+      "poi_name": "Cranbury Golf Club"
+    },
+    {
+      "poi_name": "Deal Golf and Country Club"
+    },
+    {
+      "poi_name": "Deerwood Country Club"
+    },
+    {
+      "id": 28545097,
+      "poi_name": "Double Eagle Chip and Put",
+      "osm_id": 11226099749,
+      "amenity": null,
+      "cuisine": null,
+      "leisure": "golf_course",
+      "historic": null,
+      "description": null,
+      "tourism": null,
+      "information": null,
+      "wheelchair": null,
+      "building": null,
+      "fee": null,
+      "opening_hours": null,
+      "operator": "Double Eagle",
+      "sport": null,
+      "website": null,
+      "capacity": null,
+      "shop": null,
+      "internet_access": null,
+      "phone": null,
+      "takeaway": null,
+      "drive_through": null,
+      "museum": null,
+      "official_name": null,
+      "healthcare": null,
+      "outdoor_seating": null,
+      "delivery": null,
+      "toilets": null,
+      "parking": null,
+      "emergency": null,
+      "artwork_type": null,
+      "restaurant": null,
+      "sports": null,
+      "zoo": null,
+      "wholesale": null,
+      "school_type": null,
+      "pastry_shop": null,
+      "hairdresser": null,
+      "resort": null,
+      "fast_food": null,
+      "wikidata": null,
+      "addr_state": null,
+      "addr_city": null,
+      "addr_postcode": null,
+      "addr_street": null,
+      "addr_housenumber": null,
+      "geometry": "POINT(-74.794137 40.200347)"
+    },
+    {
+      "poi_name": "Double Eagle Driving Range"
+    },
+    {
+      "poi_name": "Due Process Stables Golf Course"
+    },
+    {
+      "poi_name": "Eagle Ridge Golf Club"
+    },
+    {
+      "poi_name": "Fishers Glen Driving Range"
+    },
+    {
+      "poi_name": "Five Ponds Gold Course"
+    },
+    {
+      "poi_name": "Flourtown Country Club"
+    },
+    {
+      "poi_name": "Forsgate Country Club"
+    },
+    {
+      "poi_name": "Frog Rock Golf and Country Club"
+    },
+    {
+      "poi_name": "Galloway National Golf Club"
+    },
+    {
+      "poi_name": "Golden Pheasant Golf Course"
+    },
+    {
+      "id": 15646726,
+      "poi_name": "Golf Kings",
+      "osm_id": 7808376352,
+      "amenity": null,
+      "cuisine": null,
+      "leisure": "golf_course",
+      "historic": null,
+      "description": "Indoor Golf Simulator Lounge",
+      "tourism": null,
+      "information": null,
+      "wheelchair": null,
+      "building": null,
+      "fee": null,
+      "opening_hours": "09:00-21:00",
+      "operator": null,
+      "sport": null,
+      "website": "https://golfkingsnj.com/",
+      "capacity": null,
+      "shop": null,
+      "internet_access": null,
+      "phone": "+17328006923",
+      "takeaway": null,
+      "drive_through": null,
+      "museum": null,
+      "official_name": null,
+      "healthcare": null,
+      "outdoor_seating": null,
+      "delivery": null,
+      "toilets": null,
+      "parking": null,
+      "emergency": null,
+      "artwork_type": null,
+      "restaurant": null,
+      "sports": null,
+      "zoo": null,
+      "wholesale": null,
+      "school_type": null,
+      "pastry_shop": null,
+      "hairdresser": null,
+      "resort": null,
+      "fast_food": null,
+      "wikidata": null,
+      "addr_state": "NJ",
+      "addr_city": "Wall",
+      "addr_postcode": null,
+      "addr_street": "State Highway 35",
+      "addr_housenumber": "1825",
+      "geometry": "POINT(-74.0509453 40.1666838)"
+    },
+    {
+      "poi_name": "Golf Land"
+    },
+    {
+      "poi_name": "Greate Bay Resort and Country Club"
+    },
+    {
+      "poi_name": "Greenacres Country Club"
+    },
+    {
+      "poi_name": "Greenbriar Woodlands Golf Club"
+    },
+    {
+      "poi_name": "Green Tree Golf Course"
+    },
+    {
+      "poi_name": "Hanover Golf Club"
+    },
+    {
+      "poi_name": "Harbor Pines Golf Club"
+    },
+    {
+      "poi_name": "Hollywood Golf Club"
+    },
+    {
+      "poi_name": "Hominy Hill Golf Course"
+    },
+    {
+      "poi_name": "Hopewell Valley Golf & Country Club"
+    },
+    {
+      "poi_name": "Howell Park Golf Course"
+    },
+    {
+      "poi_name": "Huntingdon Valley Country Club"
+    },
+    {
+      "poi_name": "Indian Spring Country Club"
+    },
+    {
+      "poi_name": "JC Melrose Country Club"
+    },
+    {
+      "poi_name": "Jericho National Golf Club"
+    },
+    {
+      "poi_name": "John F. Byrne Golf Club"
+    },
+    {
+      "poi_name": "Juniata Golf Course"
+    },
+    {
+      "poi_name": "Karakung Golf Course"
+    },
+    {
+      "poi_name": "Kresson Golf Course"
+    },
+    {
+      "poi_name": "Lakewood Country Club"
+    },
+    {
+      "poi_name": "La Tourette Golf Course"
+    },
+    {
+      "poi_name": "Laurel Creek Golf Course"
+    },
+    {
+      "poi_name": "Lawrenceville School golf course"
+    },
+    {
+      "poi_name": "Linwood Country Club"
+    },
+    {
+      "poi_name": "Little Mill Country Club"
+    },
+    {
+      "poi_name": "Lookaway Golf Club"
+    },
+    {
+      "poi_name": "LuLu Country Club"
+    },
+    {
+      "poi_name": "Makefield Highlands Golf Club"
+    },
+    {
+      "poi_name": "Manufacturers' Golf & Country Club"
+    },
+    {
+      "poi_name": "Mattawang Golf Club"
+    },
+    {
+      "poi_name": "Mays Landing Golf Club"
+    },
+    {
+      "poi_name": "McCullough's Emerald Golf Links"
+    },
+    {
+      "poi_name": "Medford Lakes Country Club"
+    },
+    {
+      "poi_name": "Medford Village Country Club"
+    },
+    {
+      "poi_name": "Mercer Oaks East Golf Course"
+    },
+    {
+      "poi_name": "Mercer Oaks Golf Course"
+    },
+    {
+      "poi_name": "Merchantville Country Club"
+    },
+    {
+      "poi_name": "Metedeconk National Golf Club"
+    },
+    {
+      "poi_name": "Metuchen Golf and Country Club"
+    },
+    {
+      "poi_name": "Middletown Country Club"
+    },
+    {
+      "poi_name": "Moorestown Field Club"
+    },
+    {
+      "id": 4426369,
+      "poi_name": "Mountain View Golf Course",
+      "osm_id": 1581550781,
+      "amenity": null,
+      "cuisine": null,
+      "leisure": "golf_course",
+      "historic": null,
+      "description": null,
+      "tourism": null,
+      "information": null,
+      "wheelchair": null,
+      "building": null,
+      "fee": null,
+      "opening_hours": null,
+      "operator": null,
+      "sport": null,
+      "website": null,
+      "capacity": null,
+      "shop": null,
+      "internet_access": null,
+      "phone": null,
+      "takeaway": null,
+      "drive_through": null,
+      "museum": null,
+      "official_name": null,
+      "healthcare": null,
+      "outdoor_seating": null,
+      "delivery": null,
+      "toilets": null,
+      "parking": null,
+      "emergency": null,
+      "artwork_type": null,
+      "restaurant": null,
+      "sports": null,
+      "zoo": null,
+      "wholesale": null,
+      "school_type": null,
+      "pastry_shop": null,
+      "hairdresser": null,
+      "resort": null,
+      "fast_food": null,
+      "wikidata": null,
+      "addr_state": null,
+      "addr_city": null,
+      "addr_postcode": null,
+      "addr_street": null,
+      "addr_housenumber": null,
+      "geometry": "POINT(-80.406082 38.507436)"
+    },
+    {
+      "poi_name": "Neshaminy Valley Golf Club"
+    },
+    {
+      "poi_name": "Northampton Valley Country Club"
+    },
+    {
+      "poi_name": "North Hills Country Club"
+    },
+    {
+      "poi_name": "Ocean Acres Country Club"
+    },
+    {
+      "poi_name": "Ocean City Golf Course"
+    },
+    {
+      "poi_name": "Ocean County Golf Course at Atlantis"
+    },
+    {
+      "poi_name": "Ocean County Golf Course at Forge Pond"
+    },
+    {
+      "poi_name": "Oxford Valley Public Golf Course"
+    },
+    {
+      "poi_name": "Pebble Creek Golf Club"
+    },
+    {
+      "poi_name": "Pennsauken Country Club"
+    },
+    {
+      "poi_name": "Pine Barrens Golf Club"
+    },
+    {
+      "poi_name": "Pine Brook Golf Course"
+    },
+    {
+      "poi_name": "Pine Hill Golf Club"
+    },
+    {
+      "poi_name": "Pine Valley Country Club"
+    },
+    {
+      "poi_name": "Pitman Golf Course"
+    },
+    {
+      "poi_name": "Plainfield Country Club"
+    },
+    {
+      "poi_name": "Plainfield West Nine"
+    },
+    {
+      "poi_name": "Pomona Golf Club"
+    },
+    {
+      "poi_name": "Princeton Country Club"
+    },
+    {
+      "poi_name": "Raintree Golf Course"
+    },
+    {
+      "poi_name": "Ramblewood Country Club"
+    }
+  ],
+  "metadata": {
+    "question_id": 22,
+    "cache_id": 2021,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 3.141,
+    "llm_latency_seconds": 3.141,
+    "prompt_tokens": 1717,
+    "completion_tokens": 178,
+    "total_tokens": 2253,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "",
+    "answer_text": "Arthur Hills Championship Course\nAsh Brook Golf Course\nAtlantic City Golf Club\nBala Golf Course\nBallamor Golf Club\nBattleground Country Club\nBeacon Hill Country Club\nBel-Aire Golf Course\nBey Lea Golf Course\nB L England Golf Course\nBlue Heron Pines Golf Club\nBuena Vista Golf Club\nBunker Hill Golf Course\nBurlington Country Club\nBurlington County Golf\nCedar Creek Golf Club\nCherry Valley Country Club\nCobblestone Creek Country Club\nColonia Country Club\nColts Neck Golf Club\nCommonwealth National Golf Club\nCooper River Driving Range\nCranbury Golf Club\nDeal Golf and Country Club\nDeerwood Country Club\nDouble Eagle Chip and Put\nDouble Eagle Driving Range\nDue Process Stables Golf Course\nEagle Ridge Golf Club\nFishers Glen Driving Range\nFive Ponds Gold Course\nFlourtown Country Club\nForsgate Country Club\nFrog Rock Golf and Country Club\nGalloway National Golf Club\nGolden Pheasant Golf Course\nGolf Kings\nGolf Land\nGreate Bay Resort and Country Club\nGreenacres Country Club\nGreenbriar Woodlands Golf Club\nGreen Tree Golf Course\nHanover Golf Club\nHarbor Pines Golf Club\nHollywood Golf Club\nHominy Hill Golf Course\nHopewell Valley Golf & Country Club\nHowell Park Golf Course\nHuntingdon Valley Country Club\nIndian Spring Country Club\nJC Melrose Country Club\nJericho National Golf Club\nJohn F. Byrne Golf Club\nJuniata Golf Course\nKarakung Golf Course\nKresson Golf Course\nLakewood Country Club\nLa Tourette Golf Course\nLaurel Creek Golf Course\nLawrenceville School golf course\nLinwood Country Club\nLittle Mill Country Club\nLookaway Golf Club\nLuLu Country Club\nMakefield Highlands Golf Club\nManufacturers' Golf & Country Club\nMattawang Golf Club\nMays Landing Golf Club\nMcCullough's Emerald Golf Links\nMedford Lakes Country Club\nMedford Village Country Club\nMercer Oaks East Golf Course\nMercer Oaks Golf Course\nMerchantville Country Club\nMetedeconk National Golf Club\nMetuchen Golf and Country Club\nMiddletown Country Club\nMoorestown Field Club\nMountain View Golf Course\nNeshaminy Valley Golf Club\nNorthampton Valley Country Club\nNorth Hills Country Club\nOcean Acres Country Club\nOcean City Golf Course\nOcean County Golf Course at Atlantis\nOcean County Golf Course at Forge Pond\nOxford Valley Public Golf Course\nPebble Creek Golf Club\nPennsauken Country Club\nPine Barrens Golf Club\nPine Brook Golf Course\nPine Hill Golf Club\nPine Valley Country Club\nPitman Golf Course\nPlainfield Country Club\nPlainfield West Nine\nPomona Golf Club\nPrinceton Country Club\nRaintree Golf Course\nRamblewood Country Club"
+  }
+}

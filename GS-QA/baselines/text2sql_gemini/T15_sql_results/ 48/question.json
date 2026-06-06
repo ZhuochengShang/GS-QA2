@@ -1,0 +1,19 @@
+{
+  "question": "Where can I find a hospital that fall inside a 90 kilometers boundary to the southwest of Hasley Canyon Equestrian Center, Valencia, CA?",
+  "sql": "SELECT poi_name, addr_city, addr_state FROM pois WHERE amenity = 'hospital' AND ST_DWithin( pois.geometry::geography, ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Hasley Canyon Equestrian Center%' LIMIT 1 )::geography, 90000 ) AND degrees( ST_Azimuth( ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Hasley Canyon Equestrian Center%' LIMIT 1 ), pois.geometry ) ) BETWEEN 202.5 AND 247.5;",
+  "answers": [],
+  "metadata": {
+    "question_id": 48,
+    "cache_id": 2247,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 5.234,
+    "llm_latency_seconds": 5.234,
+    "prompt_tokens": 1721,
+    "completion_tokens": 179,
+    "total_tokens": 2714,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress",
+    "answer_text": ""
+  }
+}

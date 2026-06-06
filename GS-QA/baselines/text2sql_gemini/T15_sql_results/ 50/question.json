@@ -1,0 +1,19 @@
+{
+  "question": "Where can I find a nature reserve that lie within 160 kilometers toward the east side of ABQ BioPark (Botanic Garden), Albuquerque, NM?",
+  "sql": "SELECT park_name FROM parks WHERE leisure = 'nature_reserve' AND ST_DWithin( geometry::geography, ( SELECT geometry FROM pois WHERE poi_name ILIKE '%ABQ BioPark (Botanic Garden)%' LIMIT 1 )::geography, 160000 ) AND degrees(ST_Azimuth( ST_Centroid(( SELECT geometry FROM pois WHERE poi_name ILIKE '%ABQ BioPark (Botanic Garden)%' LIMIT 1 )), ST_Centroid(geometry) )) BETWEEN 67.5 AND 112.5;",
+  "answers": [],
+  "metadata": {
+    "question_id": 50,
+    "cache_id": 2249,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 3.907,
+    "llm_latency_seconds": 3.907,
+    "prompt_tokens": 1725,
+    "completion_tokens": 182,
+    "total_tokens": 2491,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress",
+    "answer_text": ""
+  }
+}

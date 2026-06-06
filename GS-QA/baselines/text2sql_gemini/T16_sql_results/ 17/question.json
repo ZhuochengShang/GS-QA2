@@ -1,0 +1,19 @@
+{
+  "question": "Where is gallery situated within 90 kilometers along the travel path toward All Saints Way, Boston, MA from Cyrus Dallin Art Museum, Arlington, MA?",
+  "sql": "WITH start_loc AS ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Cyrus Dallin Art Museum%' AND addr_city ILIKE '%Arlington%' AND addr_state ILIKE '%MA%' LIMIT 1 ), end_loc_poi AS ( SELECT geometry FROM pois WHERE poi_name ILIKE '%All Saints Way%' AND addr_city ILIKE '%Boston%' AND addr_state ILIKE '%MA%' LIMIT 1 ), end_loc_road AS ( SELECT ST_Centroid(geometry) AS geometry FROM roads WHERE road_name ILIKE '%All Saints Way%' LIMIT 1 ), target_end_point AS ( SELECT CASE WHEN (SELECT geometry FROM end_loc_poi) IS NOT NULL THEN (SELECT geometry FROM end_loc_poi) ELSE (SELECT geometry FROM end_loc_road) END AS geometry ) SELECT p.poi_name, p.addr_city, p.addr_state FROM pois AS p, start_loc AS sl, target_end_point AS tep WHERE p.tourism = 'gallery' AND sl.geometry IS NOT NULL AND tep.geometry IS NOT NULL AND ST_DWithin(p.geometry::geography, sl.geometry::geography, 90000) AND ST_Intersects(p.geometry::geography, ST_Buffer(ST_MakeLine(sl.geometry, tep.geometry)::geography, 500)) ORDER BY ST_Distance(p.geometry::geography, sl.geometry::geography) ASC;",
+  "answers": [],
+  "metadata": {
+    "question_id": 17,
+    "cache_id": 2616,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 17.139,
+    "llm_latency_seconds": 17.139,
+    "prompt_tokens": 1724,
+    "completion_tokens": 383,
+    "total_tokens": 5046,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "function st_makeline(geography, geography) does not exist\nLINE 31: ...ND ST_Intersects(p.geometry::geography, ST_Buffer(ST_MakeLin...\n                                                              ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "answer_text": ""
+  }
+}

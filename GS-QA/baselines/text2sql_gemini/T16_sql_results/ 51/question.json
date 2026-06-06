@@ -1,0 +1,19 @@
+{
+  "question": "Where is fast food restaurant found within 140 kilometers while moving toward Neil Carey Arena, IL from Hickory Grove Riverfront, Cary, IL?",
+  "sql": "WITH start_point AS ( SELECT geometry FROM lakes WHERE lake_name ILIKE '%Hickory Grove Riverfront%' LIMIT 1 ), destination_point AS ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Neil Carey Arena%' LIMIT 1 ), target_azimuth_calc AS ( SELECT degrees(ST_Azimuth(s.geometry, d.geometry)) AS target_azimuth FROM start_point s, destination_point d ) SELECT p.id, p.poi_name, p.addr_city, p.addr_state FROM pois p, start_point s, target_azimuth_calc tac WHERE p.amenity = 'fast_food' AND ST_DWithin(p.geometry::geography, s.geometry::geography, 140000) -- 140 kilometers in meters AND ( SELECT LEAST( ABS(degrees(ST_Azimuth(s.geometry, p.geometry)) - tac.target_azimuth), 360 - ABS(degrees(ST_Azimuth(s.geometry, p.geometry)) - tac.target_azimuth) ) ) <= 22.5 -- Within a 45-degree cone (22.5 degrees on either side of the target azimuth) ;",
+  "answers": [],
+  "metadata": {
+    "question_id": 51,
+    "cache_id": 2650,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 9.182,
+    "llm_latency_seconds": 9.182,
+    "prompt_tokens": 1722,
+    "completion_tokens": 325,
+    "total_tokens": 3613,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "",
+    "answer_text": ""
+  }
+}

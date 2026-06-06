@@ -1,0 +1,332 @@
+{
+  "by_query_type": {
+    "unknown": {
+      "stems": {
+        "aspect+poi": {
+          "total": 20,
+          "correct": 4,
+          "accuracy": 0.2,
+          "mean_score": 17.9384,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 0.4,
+          "timeouts": 0
+        },
+        "avg_slope+area": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "mean_score": 838.256,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 0.65,
+          "timeouts": 0
+        },
+        "elevation+coverage": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "mean_score": 0.0,
+          "sql_gen_rate": 0.95,
+          "sql_exec_rate": 0.3,
+          "timeouts": 0
+        },
+        "elevation+poi": {
+          "total": 20,
+          "correct": 20,
+          "accuracy": 1.0,
+          "mean_score": 0.0,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 1.0,
+          "timeouts": 0
+        },
+        "elevation_average+name": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "mean_score": 996136.8993,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 0.9,
+          "timeouts": 0
+        },
+        "elevation_compare+two_pois": {
+          "total": 20,
+          "correct": 20,
+          "accuracy": 1.0,
+          "mean_score": 1.0,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 1.0,
+          "timeouts": 0
+        },
+        "elevation_compare_categories+name": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "mean_score": 0.0,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 0.85,
+          "timeouts": 0
+        },
+        "elevation_count_threshold+count": {
+          "total": 20,
+          "correct": 9,
+          "accuracy": 0.45,
+          "mean_score": 0.0,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 0.7,
+          "timeouts": 0
+        },
+        "elevation_diff+two_pois": {
+          "total": 20,
+          "correct": 20,
+          "accuracy": 1.0,
+          "mean_score": 0.0,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 1.0,
+          "timeouts": 0
+        },
+        "elevation_lowest_n_poi+name": {
+          "total": 20,
+          "correct": 6,
+          "accuracy": 0.3,
+          "mean_score": 31.65,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 0.65,
+          "timeouts": 0
+        },
+        "elevation_max+region": {
+          "total": 20,
+          "correct": 5,
+          "accuracy": 0.25,
+          "mean_score": 21.4,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 1.0,
+          "timeouts": 0
+        },
+        "elevation_mean+region": {
+          "total": 20,
+          "correct": 1,
+          "accuracy": 0.05,
+          "mean_score": 3711.2026,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 1.0,
+          "timeouts": 0
+        },
+        "elevation_min+region": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "mean_score": 0.0,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 0.15,
+          "timeouts": 0
+        },
+        "elevation_proximity_zone+name": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "mean_score": 0.0,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 0.2,
+          "timeouts": 0
+        },
+        "elevation_range+region": {
+          "total": 20,
+          "correct": 1,
+          "accuracy": 0.05,
+          "mean_score": 4966.4,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 0.75,
+          "timeouts": 0
+        },
+        "elevation_threshold+poi": {
+          "total": 20,
+          "correct": 19,
+          "accuracy": 0.95,
+          "mean_score": 0.95,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 1.0,
+          "timeouts": 0
+        },
+        "intersects_area_max+name+max_elevation": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "mean_score": 0.0,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 0.75,
+          "timeouts": 0
+        },
+        "intersects_area_total+area+avg_slope": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "mean_score": 0.0,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 0.45,
+          "timeouts": 0
+        },
+        "intersects_length_max+name+slope": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "mean_score": 1577.643,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 0.1,
+          "timeouts": 0
+        },
+        "knn+distance+slope": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "mean_score": 5432.9794,
+          "sql_gen_rate": 0.95,
+          "sql_exec_rate": 0.15,
+          "timeouts": 0
+        },
+        "max_slope+area": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "mean_score": 8.796,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 0.4,
+          "timeouts": 0
+        },
+        "min_slope+area": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "mean_score": 0.0,
+          "sql_gen_rate": 0.95,
+          "sql_exec_rate": 0.1,
+          "timeouts": 0
+        },
+        "nearest_high_terrain+poi": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "mean_score": 0.0,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 0.2,
+          "timeouts": 0
+        },
+        "nearest_low_terrain+poi": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "mean_score": 0.0,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 0.35,
+          "timeouts": 0
+        },
+        "range+count+elevation_condition": {
+          "total": 20,
+          "correct": 12,
+          "accuracy": 0.6,
+          "mean_score": 18.0,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 0.7,
+          "timeouts": 0
+        },
+        "range+distance+elevation": {
+          "total": 20,
+          "correct": 4,
+          "accuracy": 0.2,
+          "mean_score": 188758.0362,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 0.85,
+          "timeouts": 0
+        },
+        "range+loc+elevation_condition": {
+          "total": 20,
+          "correct": 1,
+          "accuracy": 0.05,
+          "mean_score": 0.0,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 0.65,
+          "timeouts": 0
+        },
+        "range+name+elevation_condition": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "mean_score": 0.0,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 0.75,
+          "timeouts": 0
+        },
+        "ruggedness+poi": {
+          "total": 20,
+          "correct": 6,
+          "accuracy": 0.3,
+          "mean_score": 757.6645,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 0.45,
+          "timeouts": 0
+        },
+        "slope+compare_route": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "mean_score": 4.3962,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 0.05,
+          "timeouts": 0
+        },
+        "slope+poi": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "mean_score": 4.2302,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 0.05,
+          "timeouts": 0
+        },
+        "slope+route": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "mean_score": 2280.6418,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 0.15,
+          "timeouts": 0
+        },
+        "slope_condition+name": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "mean_score": 0.0,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 0.35,
+          "timeouts": 0
+        },
+        "slope_steepest_n_poi+name": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "mean_score": 1230.5615,
+          "sql_gen_rate": 1.0,
+          "sql_exec_rate": 0.25,
+          "timeouts": 0
+        }
+      },
+      "total": {
+        "total": 680,
+        "correct": 128,
+        "accuracy": 0.1882,
+        "mean_score": 35464.666,
+        "sql_gen_rate": 0.9956,
+        "sql_exec_rate": 0.5382,
+        "timeouts": 0
+      }
+    }
+  },
+  "overall": {
+    "total": 680,
+    "correct": 128,
+    "accuracy": 0.1882,
+    "mean_score": 35464.666,
+    "sql_gen_rate": 0.9956,
+    "sql_exec_rate": 0.5382,
+    "timeouts": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "question": "Do you know where I can find the nearest golf course from Strawberry Hill, San Francisco, CA?",
+  "sql": "WITH origin_point AS ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Strawberry Hill%' AND addr_city ILIKE '%San Francisco%' AND addr_state ILIKE '%CA%' LIMIT 1 ) SELECT name, distance_meters FROM ( SELECT poi_name AS name, ST_Distance(P.geometry::geography, (SELECT geometry FROM origin_point)::geography) AS distance_meters FROM pois AS P WHERE P.leisure = 'golf_course' UNION ALL SELECT park_name AS name, ST_Distance(PA.geometry::geography, (SELECT geometry FROM origin_point)::geography) AS distance_meters FROM parks AS PA WHERE PA.leisure = 'golf_course' ) AS combined_golf_courses ORDER BY distance_meters ASC LIMIT 1;",
+  "answers": [
+    {
+      "name": "Lincoln Park Golf Course",
+      "distance_meters": 2218.57062283
+    }
+  ],
+  "metadata": {
+    "question_id": 71,
+    "cache_id": 770,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 7.914,
+    "llm_latency_seconds": 7.914,
+    "prompt_tokens": 1712,
+    "completion_tokens": 220,
+    "total_tokens": 3359,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "",
+    "answer_text": "Lincoln Park Golf Course"
+  }
+}

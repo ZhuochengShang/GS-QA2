@@ -1,0 +1,19 @@
+{
+  "question": "Where is the nearest café ahead of Mentor Civic Arena, Mentor, OH toward Bottle & Bottega, North Olmsted, OH?",
+  "sql": "WITH origin AS ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Mentor Civic Arena%' LIMIT 1 ), target AS ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Bottle & Bottega%' LIMIT 1 ) SELECT p.poi_name FROM pois AS p, origin, target WHERE p.amenity = 'cafe' AND origin.geometry IS NOT NULL AND target.geometry IS NOT NULL -- Filter cafes to be within a 90-degree cone (45 degrees either side) -- in the direction from the origin to the target. AND ( SELECT LEAST( ABS(degrees(ST_Azimuth(origin.geometry, p.geometry)) - degrees(ST_Azimuth(origin.geometry, target.geometry))), 360 - ABS(degrees(ST_Azimuth(origin.geometry, p.geometry)) - degrees(ST_Azimuth(origin.geometry, target.geometry))) ) ) <= 45 ORDER BY ST_Distance(origin.geometry, p.geometry::geography) ASC LIMIT 1;",
+  "answers": [],
+  "metadata": {
+    "question_id": 55,
+    "cache_id": 1554,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 11.141,
+    "llm_latency_seconds": 11.141,
+    "prompt_tokens": 1718,
+    "completion_tokens": 267,
+    "total_tokens": 3912,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress",
+    "answer_text": ""
+  }
+}

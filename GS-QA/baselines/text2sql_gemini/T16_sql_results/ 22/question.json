@@ -1,0 +1,19 @@
+{
+  "question": "Where can I find restaurant inside 120 kilometers while progressing from Taylor's Aquarium, Dunn, NC toward Procter Farm Preserve, Wendell, NC?",
+  "sql": "SELECT p.poi_name, p.addr_city, p.addr_state FROM pois AS p WHERE p.amenity = 'restaurant' AND ST_DWithin( p.geometry::geography, ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Taylor''s Aquarium%' AND addr_city ILIKE '%Dunn%' AND addr_state ILIKE '%NC%' LIMIT 1 )::geography, 120000 -- 120 kilometers ) AND ST_Distance( p.geometry::geography, ( SELECT geometry FROM parks WHERE park_name ILIKE '%Procter Farm Preserve%' AND ST_Intersects(geometry, ( SELECT geometry FROM regions WHERE region_name ILIKE '%Wendell%' AND border_type = 'city' LIMIT 1 )) LIMIT 1 )::geography ) < ST_Distance( p.geometry::geography, ( SELECT geometry FROM pois WHERE poi_name ILIKE '%Taylor''s Aquarium%' AND addr_city ILIKE '%Dunn%' AND addr_state ILIKE '%NC%' LIMIT 1 )::geography );",
+  "answers": [],
+  "metadata": {
+    "question_id": 22,
+    "cache_id": 2621,
+    "db_id": "gsqa",
+    "pipeline_time_seconds": 14.87,
+    "llm_latency_seconds": 14.87,
+    "prompt_tokens": 1723,
+    "completion_tokens": 332,
+    "total_tokens": 4625,
+    "llm_calls": 1,
+    "final_exec_res": "",
+    "final_exec_err": "",
+    "answer_text": ""
+  }
+}
