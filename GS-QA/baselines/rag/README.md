@@ -37,7 +37,53 @@ Raster RAG uses two Chroma stores:
 - a vector-entity store for OSM-like entities and geometries
 - a DEM-patch store for raster metadata and patch windows
 
-Build the vector entity store:
+In the Qwen experiment package, these stores are distributed as a shared
+embedding archive:
+
+```text
+gsqa_vector_raster_chroma_embeddings.tar.gz
+gsqa_vector_raster_chroma_embeddings.tar.gz.sha256
+```
+
+Use the setup script to download and place the stores automatically:
+
+```bash
+mkdir -p ~/qwen_gsqa_share
+cd ~/qwen_gsqa_share
+
+hdfs dfs -get -f /user/$USER/share_qwen/GS_QA_experiment_qwen.tar.gz .
+tar -xzf GS_QA_experiment_qwen.tar.gz
+
+cd GS-QA-experiment/GS-QA
+./setup_qwen_share_from_hdfs.sh
+```
+
+The script downloads the code and embedding archives from HDFS, verifies the
+embedding archive checksum, and extracts the stores to:
+
+```text
+GS-QA-experiment/GS-QA/shared_embeddings/vector_entities_chroma/
+GS-QA-experiment/GS-QA/shared_embeddings/dem_patches_gdal_chroma/
+```
+
+The archive is the expected path for reproducing the Qwen experiments. The
+commands below rebuild the stores only when the archive is unavailable or the
+benchmark/data files have changed.
+
+The Qwen experiment wrapper uses these shared stores directly:
+
+```bash
+cd GS-QA
+MODEL_PATH=/path/to/Qwen3-32B-AWQ \
+RUN_CHESS_VECTOR=0 \
+RUN_CHESS_QA2=0 \
+RUN_RAG_VECTOR=0 \
+RUN_RAG_QA2=1 \
+RUN_TEXT2SQL_QA2=0 \
+./run_qwen_all_experiments.sh
+```
+
+Build the vector entity store from QA2 question entities:
 
 ```bash
 cd GS-QA
@@ -45,7 +91,7 @@ python baselines/rag/build_vector_entity_embeddings.py \
   --input-dir benchmark/qa2/raster_only \
   --input-dir benchmark/qa2/raster_vector \
   --input-dir benchmark/qa2/extended \
-  --persist-directory baselines/shared_embeddings/vector_entities_chroma \
+  --persist-directory shared_embeddings/vector_entities_chroma \
   --collection-name geo_entities
 ```
 
@@ -53,8 +99,8 @@ Build the DEM patch store from a question-relevant patch list:
 
 ```bash
 python baselines/build_question_dem_patch_embeddings.py \
-  --patches "$SCRATCH_ROOT/needed_dem_patches.jsonl" \
-  --persist-directory baselines/shared_embeddings/dem_patches_gdal_chroma \
+  --patches shared_embeddings/dem_patches_gdal_chroma/question_dem_patches.jsonl \
+  --persist-directory shared_embeddings/dem_patches_gdal_chroma \
   --collection-name dem_patches \
   --embedding-provider sentence-transformers \
   --embedding-model sentence-transformers/all-MiniLM-L6-v2
@@ -67,9 +113,9 @@ python baselines/run_raster_rag.py \
   --input-dir benchmark/qa2/raster_only \
   --input-dir benchmark/qa2/raster_vector \
   --input-dir benchmark/qa2/extended \
-  --entity-persist-directory baselines/shared_embeddings/vector_entities_chroma \
+  --entity-persist-directory shared_embeddings/vector_entities_chroma \
   --entity-collection-name geo_entities \
-  --dem-persist-directory baselines/shared_embeddings/dem_patches_gdal_chroma \
+  --dem-persist-directory shared_embeddings/dem_patches_gdal_chroma \
   --dem-collection-name dem_patches \
   --embedding-provider sentence-transformers \
   --embedding-model sentence-transformers/all-MiniLM-L6-v2 \
