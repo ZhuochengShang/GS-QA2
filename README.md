@@ -11,9 +11,13 @@ raster-only, and raster-vector questions.
 - `GS-QA/benchmark/qa2/`: GS-QA2 raster-only, raster-vector, and extended
   raster-vector question files. Each JSONL record contains the question text,
   answer type, SQL/ground-truth fields, and template metadata.
+- `GS-QA/ingestion/`: OSM vector and DEM raster ingestion instructions and
+  shell scripts for loading PostGIS tables.
 - `GS-QA/generator/`: vector benchmark generation code and template logic.
 - `GS-QA/baselines/`: Text2SQL, RAG, raster Text2SQL, raster RAG, evaluation,
   and result aggregation scripts.
+- `GS-QA/baselines/rag/`: RAG-specific embedding workflow documentation and
+  vector-entity embedding builder.
 - `GS-QA/baselines/evaluation/`: compact evaluation outputs used to summarize
   accuracy and failure modes.
 - `GS-QA/baselines/exp_tables/`: aggregate result tables.
@@ -89,15 +93,16 @@ Each processor maps a GeoJSON layer to a benchmark table using the matching
 schema file, for example `poi_schema.json` for POIs.
 
 ```bash
-cd GS-QA/generator
-python pois_processor.py
-python roads_processor.py
-python parks_processor.py
-python lakes_processor.py
-python regions_processor.py
+cd GS-QA/ingestion
+export DATA_ROOT="/path/to/data"
+export PGHOST="localhost"
+export PGPORT="5432"
+export PGDATABASE="gsqa"
+export PGUSER="postgres"
+export PGPASSWORD=""
+./ingest_osm_postgis.sh
 ```
 
-Configure the database connection in the processor scripts before running them.
 The benchmark uses OSM feature tables for points, roads, parks, water bodies,
 and regions, plus selected non-spatial attributes such as category, name, and
 Wikipedia-derived metadata.
@@ -107,8 +112,11 @@ Wikipedia-derived metadata.
 Load DEM rasters into PostGIS as tiled raster tables. A typical ingestion flow is:
 
 ```bash
-raster2pgsql -s 4326 -I -C -M -t 256x256 "$DEM_ROOT"/*.tif public.dem_tiles \
-  | psql "$POSTGIS_DSN"
+cd GS-QA/ingestion
+export DEM_ROOT="/path/to/dem_tiles"
+export DEM_TABLE="public.dem_us"
+export POSTGIS_DSN="postgresql://postgres@localhost:5432/gsqa"
+./ingest_dem_postgis.sh
 ```
 
 The raster tables should preserve tile extent, CRS, pixel resolution, and band
@@ -202,14 +210,20 @@ done
 ```
 
 For raster RAG, provide prebuilt vector-entity and DEM-patch stores. If the
-question-relevant DEM patch list is available as JSONL, build the DEM patch
-store with:
+question-relevant DEM patch list is available as JSONL, build both stores with:
 
 ```bash
-cd GS-QA/baselines
-python build_question_dem_patch_embeddings.py \
+cd GS-QA
+python baselines/rag/build_vector_entity_embeddings.py \
+  --input-dir benchmark/qa2/raster_only \
+  --input-dir benchmark/qa2/raster_vector \
+  --input-dir benchmark/qa2/extended \
+  --persist-directory baselines/shared_embeddings/vector_entities_chroma \
+  --collection-name geo_entities
+
+python baselines/build_question_dem_patch_embeddings.py \
   --patches "$SCRATCH_ROOT/needed_dem_patches.jsonl" \
-  --persist-directory "$VECTORSTORE_ROOT/dem_patches" \
+  --persist-directory baselines/shared_embeddings/dem_patches_gdal_chroma \
   --collection-name dem_patches \
   --embedding-provider sentence-transformers \
   --embedding-model sentence-transformers/all-MiniLM-L6-v2
@@ -218,12 +232,12 @@ python build_question_dem_patch_embeddings.py \
 Then run retrieval and answer generation:
 
 ```bash
-python run_raster_rag.py \
-  --input-dir ../benchmark/qa2/raster_only \
-  --input-dir ../benchmark/qa2/raster_vector \
-  --input-dir ../benchmark/qa2/extended \
-  --entity-persist-directory "$VECTORSTORE_ROOT/geo_entities" \
-  --dem-persist-directory "$VECTORSTORE_ROOT/dem_patches" \
+python baselines/run_raster_rag.py \
+  --input-dir benchmark/qa2/raster_only \
+  --input-dir benchmark/qa2/raster_vector \
+  --input-dir benchmark/qa2/extended \
+  --entity-persist-directory baselines/shared_embeddings/vector_entities_chroma \
+  --dem-persist-directory baselines/shared_embeddings/dem_patches_gdal_chroma \
   --llm-provider gemini \
   --model gemini-2.5-flash \
   --output cache/gemini_rag_raster/raster_rag.jsonl \
