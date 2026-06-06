@@ -25,7 +25,7 @@ import processing
 from qgis.core import QgsProject
 
 def generate_xyz_tiles():
-    output_path = \"""C:/Users/Output/tiles.mbtiles\"
+    output_path = \"""output/tiles.mbtiles\"
     
     parameters = {
         'EXTENT': 'xmin, xmax, ymin, ymax',  # Specify as needed; options include: calculate from layer/layout map/bookmark, use map canvas extent, draw on canvas, or enter coordinates

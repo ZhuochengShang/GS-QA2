@@ -26,7 +26,7 @@ import processing
 def add_field_to_attribute_table():
     # Define the input and output paths
     input_path = 'D:/input_layer.shp'
-    output_dir = 'C:/Users/Output'
+    output_dir = 'output'
     output_file_name = \"""output_layer_with_new_field.shp\"
     output_path = f\"{output_dir}/{output_file_name}\"
     # Load the input layer

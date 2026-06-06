@@ -19,7 +19,7 @@ from qgis.core import QgsMeshLayer, QgsProject, QgsCoordinateReferenceSystem
 
 def mesh_rasterize():
     mesh_layer_path = 'D:/mesh_layer.2dm'  # input mesh layer
-    output_path = 'C:/Users/Output/output_raster.tif'  # output file path
+    output_path = 'output/output_raster.tif'  # output file path
     
     mesh_layer = QgsMeshLayer(mesh_layer_path, 'Input Mesh', 'mdal')
 

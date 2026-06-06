@@ -21,7 +21,7 @@ from qgis.core import QgsProject, QgsPointCloudLayer
 
 def calculate_boundary():
     input_path = 'C:/path/to/point_cloud.las'
-    output_path = 'C:/Users/Output/boundary_polygon.shp'
+    output_path = 'output/boundary_polygon.shp'
     input_layer = QgsPointCloudLayer(input_path, \"""Input Point Cloud\", \"pdal\")
     
     parameters = {

@@ -16,7 +16,7 @@ from qgis.core import QgsRasterLayer, QgsProject
 
 def fill_no_data():
     input_path = 'D:/input_raster.tif'
-    output_path = 'C:/Users/Output/filled_raster.tif'
+    output_path = 'output/filled_raster.tif'
     input_raster = QgsRasterLayer(input_path, \"""Input Raster\")
 
     parameters = {

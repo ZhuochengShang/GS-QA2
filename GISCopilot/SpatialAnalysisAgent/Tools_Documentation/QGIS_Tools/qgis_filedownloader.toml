@@ -21,7 +21,7 @@ from qgis.core import QgsVectorLayer, QgsProject
 
 def download_file():
     # Define the file download processing parameters
-    output_path = \"""C:/Users/Output/downloaded_file\"
+    output_path = \"""output/downloaded_file\"
     parameters = {
         'URL': 'http://example.com/file.zip',
         'OUTPUT': output_path,  # Skip Output, Save to a Temporary File, Save to File

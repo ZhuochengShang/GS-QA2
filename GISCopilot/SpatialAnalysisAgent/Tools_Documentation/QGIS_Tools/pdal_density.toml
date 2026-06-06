@@ -25,7 +25,7 @@ from qgis.core import QgsProject, QgsPointCloudLayer
 
 def generate_density_raster():
     input_layer_path = 'D:/input_point_cloud.las'
-    output_path = 'C:/Users/Output/density_raster.tif'
+    output_path = 'output/density_raster.tif'
 
     parameters = {
         'INPUT': input_layer_path,

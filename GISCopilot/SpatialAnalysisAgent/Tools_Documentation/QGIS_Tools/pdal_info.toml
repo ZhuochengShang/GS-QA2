@@ -15,7 +15,7 @@ import processing
 def extract_point_cloud_metadata():
     # Define the input and output paths
     input_path = 'D:/point_cloud_data.las'
-    output_path = 'C:/Users/Output/point_cloud_metadata.json'
+    output_path = 'output/point_cloud_metadata.json'
 
     # Set PDAL info processing parameters
     parameters = {

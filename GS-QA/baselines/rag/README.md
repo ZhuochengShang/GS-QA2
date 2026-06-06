@@ -37,33 +37,29 @@ Raster RAG uses two Chroma stores:
 - a vector-entity store for OSM-like entities and geometries
 - a DEM-patch store for raster metadata and patch windows
 
-In the Qwen experiment package, these stores are distributed as a shared
-embedding archive:
+For the Qwen runs, these stores are distributed as a GitHub release asset:
 
 ```text
+https://github.com/ZhuochengShang/QARV/releases/tag/gsqa2-qwen-embeddings
 gsqa_vector_raster_chroma_embeddings.tar.gz
 gsqa_vector_raster_chroma_embeddings.tar.gz.sha256
 ```
 
-Use the setup script to download and place the stores automatically:
+The Qwen model weights are not included. Download `Qwen3-32B-AWQ` separately
+and pass its local path through `MODEL_PATH`.
+
+Use the setup script to download and place the embedding stores automatically:
 
 ```bash
-mkdir -p ~/qwen_gsqa_share
-cd ~/qwen_gsqa_share
-
-hdfs dfs -get -f /user/$USER/share_qwen/GS_QA_experiment_qwen.tar.gz .
-tar -xzf GS_QA_experiment_qwen.tar.gz
-
-cd GS-QA-experiment/GS-QA
-./setup_qwen_share_from_hdfs.sh
+cd GS-QA
+./setup_qwen_shared_embeddings.sh
 ```
 
-The script downloads the code and embedding archives from HDFS, verifies the
-embedding archive checksum, and extracts the stores to:
+The script verifies the embedding archive checksum and extracts the stores to:
 
 ```text
-GS-QA-experiment/GS-QA/shared_embeddings/vector_entities_chroma/
-GS-QA-experiment/GS-QA/shared_embeddings/dem_patches_gdal_chroma/
+GS-QA/shared_embeddings/vector_entities_chroma/
+GS-QA/shared_embeddings/dem_patches_gdal_chroma/
 ```
 
 The archive is the expected path for reproducing the Qwen experiments. The

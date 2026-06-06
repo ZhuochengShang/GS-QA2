@@ -39,7 +39,7 @@ def align_single_raster():
     # Define the input and output paths
     input_path = 'D:/input_raster.tif'
     reference_layer_path = 'D:/reference_layer.tif'
-    output_dir = 'C:/Users/Output'
+    output_dir = 'output'
     output_file_name = \"""aligned_raster.tif\"
     output_path = f\"{output_dir}/{output_file_name}\"
     

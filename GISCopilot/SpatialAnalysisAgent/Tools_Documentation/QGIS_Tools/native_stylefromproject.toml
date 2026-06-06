@@ -23,7 +23,7 @@ from qgis.core import QgsProject
 
 def extract_style_from_project():
     # Define the output path for the style database
-    output_path = \"""C:/Users/Output/style_database.xml\"
+    output_path = \"""output/style_database.xml\"
     
     # Define the parameters for the style extraction
     parameters = {

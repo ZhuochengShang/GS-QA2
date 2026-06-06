@@ -39,7 +39,7 @@ from qgis.core import QgsRasterLayer, QgsProject
 def generate_tiles():
     # Define the input and output directory paths
     input_path = 'D:/input_raster.tif'
-    output_path = 'C:/Users/Output'
+    output_path = 'output'
 
     # Load the input raster layer
     input_layer = QgsRasterLayer(input_path, \"""Input Raster\")

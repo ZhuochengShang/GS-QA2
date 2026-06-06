@@ -29,7 +29,7 @@ import processing
 
 def export_atlas_to_image():
     # Set output path
-    output_folder = 'C:/Users/Output'
+    output_folder = 'output'
 
     # Define parameters for atlas layout to image tool
     parameters = {

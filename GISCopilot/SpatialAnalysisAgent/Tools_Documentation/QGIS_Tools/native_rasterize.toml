@@ -22,7 +22,7 @@ from qgis.core import QgsRasterLayer, QgsProject
 import processing
 
 def rasterize():
-    output_path = \"""C:/Users/Output/raster_output.tif\"
+    output_path = \"""output/raster_output.tif\"
     
     parameters = {
         'EXTENT': 'xmin,xmax,ymin,ymax',  # Example usage of EXTENT

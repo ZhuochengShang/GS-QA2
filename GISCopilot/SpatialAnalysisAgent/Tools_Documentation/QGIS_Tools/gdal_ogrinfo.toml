@@ -18,7 +18,7 @@ import processing
 def layer_information():
     # Define the input and output paths
     input_path = 'D:/input_layer.shp'
-    output_path = 'C:/Users/Output/layer_information.html'
+    output_path = 'output/layer_information.html'
     
     # Load the input layer
     input_layer = QgsVectorLayer(input_path, \"""Input Layer\", \"ogr\")

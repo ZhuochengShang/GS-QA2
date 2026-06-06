@@ -33,7 +33,8 @@ Large data products are not committed:
 
 - raw OSM extracts and DEM raster files
 - PostGIS database dumps
-- vector-store and embedding indexes
+- vector-store and embedding indexes, except for the optional release asset
+  described below
 - full model caches, runtime logs, and temporary execution outputs
 - address-geocoding caches
 
@@ -73,36 +74,38 @@ export LOCAL_LLM_API_KEY="EMPTY"
 export LOCAL_LLM_MODEL="Qwen/Qwen3-32B-AWQ"
 ```
 
-## Qwen Experiment Package
+## Qwen RAG Embedding Package
 
-For the Qwen runs, the code and shared RAG embeddings can be restored from the
-HDFS experiment package:
+The Qwen model weights are not distributed in this repository. Download
+`Qwen3-32B-AWQ` separately, store it on local disk, and pass its path through
+`MODEL_PATH`.
 
-```bash
-mkdir -p ~/qwen_gsqa_share
-cd ~/qwen_gsqa_share
-
-hdfs dfs -get -f /user/$USER/share_qwen/GS_QA_experiment_qwen.tar.gz .
-tar -xzf GS_QA_experiment_qwen.tar.gz
-
-cd GS-QA-experiment/GS-QA
-./setup_qwen_share_from_hdfs.sh
-```
-
-The setup script downloads:
+The shared RAG embeddings used by the Qwen runs are published as a GitHub
+release asset:
 
 ```text
-CHESS_code_qwen.tar.gz
-GS_QA_experiment_qwen.tar.gz
+https://github.com/ZhuochengShang/QARV/releases/tag/gsqa2-qwen-embeddings
+```
+
+Download and extract the embeddings into the local checkout with:
+
+```bash
+cd GS-QA
+./setup_qwen_shared_embeddings.sh
+```
+
+The release contains:
+
+```text
 gsqa_vector_raster_chroma_embeddings.tar.gz
 gsqa_vector_raster_chroma_embeddings.tar.gz.sha256
 ```
 
-It verifies the embedding archive and extracts the stores to:
+The setup script verifies the checksum and extracts the stores to:
 
 ```text
-GS-QA-experiment/GS-QA/shared_embeddings/vector_entities_chroma/
-GS-QA-experiment/GS-QA/shared_embeddings/dem_patches_gdal_chroma/
+GS-QA/shared_embeddings/vector_entities_chroma/
+GS-QA/shared_embeddings/dem_patches_gdal_chroma/
 ```
 
 Start the local Qwen endpoint in one terminal:
@@ -117,7 +120,7 @@ python -m vllm.entrypoints.openai.api_server \
 Run all configured Qwen experiments in another terminal:
 
 ```bash
-cd ~/qwen_gsqa_share/GS-QA-experiment/GS-QA
+cd GS-QA
 MODEL_PATH=/path/to/Qwen3-32B-AWQ ./run_qwen_all_experiments.sh
 ```
 
@@ -310,7 +313,7 @@ done
 ```
 
 For raster RAG, use the prebuilt shared stores restored by
-`setup_qwen_share_from_hdfs.sh` when reproducing the Qwen experiments:
+`setup_qwen_shared_embeddings.sh` when reproducing the Qwen experiments:
 
 ```text
 shared_embeddings/vector_entities_chroma/

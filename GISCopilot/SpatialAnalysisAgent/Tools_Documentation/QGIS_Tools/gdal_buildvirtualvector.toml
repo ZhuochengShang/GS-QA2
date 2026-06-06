@@ -16,7 +16,7 @@ from qgis.core import QgsProject, QgsVectorLayer
 
 def build_virtual_vector():
     input_paths = ['path/to/layer1.shp', 'path/to/layer2.shp']  # Add your vector layer paths
-    output_dir = 'C:/Users/Output'
+    output_dir = 'output'
     output_file_name = \"""virtual_vector.vrt\"
     output_path = f\"{output_dir}/{output_file_name}\"
     

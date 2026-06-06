@@ -36,7 +36,7 @@ import processing
 from qgis.core import QgsProject, QgsVectorLayer
 
 def export_atlas_layout_to_pdf():
-    output_path = 'C:/Users/Output/atlas_layout.pdf'
+    output_path = 'output/atlas_layout.pdf'
 
     parameters = {
         'LAYOUT': 'Atlas Layout',  # example layout name

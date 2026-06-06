@@ -31,7 +31,7 @@ import processing
 
 def random_points_on_lines():
     input_path = 'D:/input_line_layer.shp'
-    output_path = 'C:/Users/Output/random_points_output.shp'
+    output_path = 'output/random_points_output.shp'
     
     input_layer = QgsVectorLayer(input_path, \"""Line Layer\", \"ogr\")
     

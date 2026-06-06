@@ -20,7 +20,7 @@ from qgis.core import QgsProject, QgsVectorLayer
 def convert_b3dm_to_gltf():
     # Define the input and output paths
     input_path = 'D:/input_data.b3dm'
-    output_path = 'C:/Users/Output/output_data.gltf'
+    output_path = 'output/output_data.gltf'
     
     # Set the processing parameters
     parameters = {

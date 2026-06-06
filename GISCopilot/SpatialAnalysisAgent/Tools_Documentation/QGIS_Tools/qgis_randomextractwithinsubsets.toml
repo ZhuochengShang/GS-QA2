@@ -19,7 +19,7 @@ from qgis.core import QgsVectorLayer, QgsProject
 
 def random_extract_within_subsets():
     input_path = 'D:/input_layer.shp'
-    output_path = 'C:/Users/Output/extracted_random_stratified.shp'
+    output_path = 'output/extracted_random_stratified.shp'
     input_layer = QgsVectorLayer(input_path, \"""RandomExtractWithinSubsets\", \"ogr\")
     
     parameters = {

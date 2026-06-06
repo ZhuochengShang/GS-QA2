@@ -28,7 +28,7 @@ from qgis.core import QgsVectorLayer, QgsProject
 def execute_sql_query():
     # Define the input and output paths
     input_path = 'D:/input_layer.shp'
-    output_path = 'C:/Users/Output/executed_sql_result.shp'
+    output_path = 'output/executed_sql_result.shp'
     
     # Load the input layer
     input_layer = QgsVectorLayer(input_path, \"""Input Layer\", \"ogr\")

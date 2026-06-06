@@ -28,7 +28,7 @@ import processing
 
 def create_regular_points():
     # Define output path
-    output_path = \"""C:/Users/Output/regular_points_output.shp\"
+    output_path = \"""output/regular_points_output.shp\"
 
     # Set parameters for generating regular points
     parameters = {

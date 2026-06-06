@@ -20,5 +20,5 @@ def concatenate_strings(output_path):
     result = processing.run(\"""native:stringconcatenation\", parameters)
 
 # Example usage
-output_path = \"C:/Users/Output/concatenated_string.txt\"
+output_path = \"output/concatenated_string.txt\"
 concatenate_strings(output_path)"""
