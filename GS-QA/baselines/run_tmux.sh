@@ -19,7 +19,7 @@ CACHE_DIR="baselines/cache"
 WORKERS="${WORKERS:-6}"
 SAMPLES="${SAMPLES:-0}"          # 0 = all questions
 DB_NAME="${DB_NAME:-gsqa}"
-DB_USER="${DB_USER:-zshan011}"
+DB_USER="${DB_USER:-postgres}"
 DB_HOST="${DB_HOST:-localhost}"
 LOG_DIR="baselines/logs"
 
@@ -42,7 +42,7 @@ done
 # ---------------------------------------------------------------------------
 if [[ -z "${GEMINI_API_KEY:-}" ]]; then
   echo "ERROR: GEMINI_API_KEY is not set."
-  echo "  export GEMINI_API_KEY=your_key_here"
+  echo "  export GEMINI_API_KEY=..."
   exit 1
 fi
 

@@ -25,7 +25,7 @@ export CHESS_DB_TABLE_ALLOWLIST="${CHESS_DB_TABLE_ALLOWLIST:-pois,lakes,parks,ro
 
 PG_HOST="${PG_HOST:-localhost}"
 PG_DATABASE="${PG_DATABASE:-gsqa}"
-PG_USER="${PG_USER:-zshan011}"
+PG_USER="${PG_USER:-postgres}"
 PG_PASSWORD="${PG_PASSWORD:-}"
 PG_PORT="${PG_PORT:-5432}"
 

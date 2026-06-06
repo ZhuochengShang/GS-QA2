@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 import json
+import os
 import re
 import sqlite3
 from pathlib import Path
@@ -41,7 +42,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--include-gold-sql-results", action="store_true", help="Also execute each question.json gold SQL in PostGIS and cache returned rows.")
     parser.add_argument("--db-host", default="localhost")
     parser.add_argument("--db-name", default="gsqa")
-    parser.add_argument("--db-user", default="zshan011")
+    parser.add_argument("--db-user", default=os.environ.get("PGUSER", "postgres"))
     parser.add_argument("--db-password", default="")
     parser.add_argument("--db-port", type=int, default=5432)
     return parser.parse_args()

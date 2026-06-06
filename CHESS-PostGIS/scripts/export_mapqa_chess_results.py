@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 import json
+import os
 from pathlib import Path
 
 import psycopg
@@ -57,7 +58,7 @@ def main() -> int:
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--db-host", default="localhost")
     parser.add_argument("--db-name", default="mapqa_socal")
-    parser.add_argument("--db-user", default="zshan011")
+    parser.add_argument("--db-user", default=os.environ.get("PGUSER", "postgres"))
     parser.add_argument("--db-password", default="")
     parser.add_argument("--db-port", type=int, default=5432)
     parser.add_argument("--timeout-seconds", type=int, default=360)

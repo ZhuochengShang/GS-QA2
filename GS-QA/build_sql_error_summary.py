@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import csv
 import json
+import os
 import pathlib
 import re
 from collections import Counter
@@ -50,7 +51,9 @@ def text2sql_counts():
 
 def chess_counts():
     counts = Counter()
-    root = pathlib.Path("/home/zshan011/CHESS/CHESS/results/dev/CHESS_IR_SS_CG_GEMINI")
+    root = pathlib.Path(
+        os.environ.get("CHESS_RESULTS_ROOT", "CHESS-PostGIS/results/dev/CHESS_IR_SS_CG_GEMINI")
+    )
 
     def latest_run_dir(result_dir):
         return sorted([p for p in result_dir.iterdir() if p.is_dir()])[-1]

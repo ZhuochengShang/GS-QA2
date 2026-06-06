@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 set -u
-export GSQA_RASTER_RAG_ROOT=/home/zshan011/GS-QA
+BASE="${BASE:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}"
+export GSQA_RASTER_RAG_ROOT="${GSQA_RASTER_RAG_ROOT:-$BASE}"
 
-PY=/home/zshan011/anaconda3/envs/postgis/bin/python
-BASE=/home/zshan011/GS-QA-experiment/GS-QA
+PY="${PY:-python3}"
+ENTITY_STORE="${ENTITY_STORE:-$BASE/shared_embeddings/vector_entities_chroma}"
+DEM_STORE="${DEM_STORE:-$BASE/shared_embeddings/dem_patches_gdal_chroma}"
 cd "${BASE}/baselines"
 
 run_one() {
@@ -16,9 +18,9 @@ run_one() {
     --benchmark-root "${BASE}/benchmark/qa2" \
     --benchmark-tasks "${subset}" \
     --output-subdir "../gemini_rag_raster/${subset}" \
-    --dem-persist-directory /home/zshan011/GS-QA/dem_patches_gdal_chroma \
+    --dem-persist-directory "$DEM_STORE" \
     --dem-collection-name dem_patches \
-    --entity-persist-directory /home/zshan011/GS-QA/vector_entities_chroma \
+    --entity-persist-directory "$ENTITY_STORE" \
     --entity-collection-name geo_entities \
     --top-k-entities 5 \
     --top-k-dem 5 \

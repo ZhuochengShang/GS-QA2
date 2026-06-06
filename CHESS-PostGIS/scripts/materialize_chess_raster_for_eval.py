@@ -2,6 +2,7 @@
 import argparse
 import csv
 import json
+import os
 import re
 import time
 from decimal import Decimal
@@ -282,7 +283,7 @@ def main() -> None:
     parser.add_argument("--overwrite", action="store_true", help="Re-execute and overwrite every record.")
     parser.add_argument("--pg-host", default="localhost")
     parser.add_argument("--pg-database", default="gsqa")
-    parser.add_argument("--pg-user", default="zshan011")
+    parser.add_argument("--pg-user", default=os.environ.get("PGUSER", "postgres"))
     parser.add_argument("--pg-password", default="")
     parser.add_argument("--pg-port", type=int, default=5432)
     args = parser.parse_args()

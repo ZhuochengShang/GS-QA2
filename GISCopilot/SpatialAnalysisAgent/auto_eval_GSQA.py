@@ -716,7 +716,7 @@ Rules:
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
     workspace_dir = os.environ.get("SPATIALAGENT_WORKSPACE") or os.path.join(script_dir, "workspace")
-    data_path = os.environ.get("SPATIALAGENT_DATA_PATH") or "/local_data/scratch/zshan011/osm/osm_extract"
+    data_path = os.environ.get("SPATIALAGENT_DATA_PATH") or os.path.join(workspace_dir, "osm_extract")
     artifacts_dir = os.path.join(workspace_dir, "task_artifacts")
     outputs_dir = os.path.join(artifacts_dir, "outputs")
     python_bin = os.environ.get("SPATIALAGENT_PYTHON") or sys.executable

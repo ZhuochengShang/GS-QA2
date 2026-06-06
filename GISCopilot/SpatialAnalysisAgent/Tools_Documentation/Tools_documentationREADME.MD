@@ -55,7 +55,7 @@ Also an example has can be seen in the image below.
 
 
 # How to add tool documentation to the local machine
-To add a documentation file (.toml) on your local machine, use the ```Add a documentation file``` button within the plugin. This allows you to select and automatically add a documentation file from any location on your local machine to the documentation folder within the plugin directory (```C:\Users\YOUR_USERENAME\AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins\SpatialAnalysisAgent-master\SpatialAnalysisAgent\Tools_Documentation```). **Note:** Replace "YOUR_USERNAME" with your actual username in the file path. Alternatively, you can manually add the documentation file by copying it directly to the specified plugin directory.
+To add a documentation file (.toml) on your local machine, use the ```Add a documentation file``` button within the plugin. This allows you to select and automatically add a documentation file from any location on your local machine to the documentation folder within the plugin directory (```<QGIS_PROFILE_PLUGINS>\SpatialAnalysisAgent\Tools_Documentation```). **Note:** Replace "YOUR_USERNAME" with your actual username in the file path. Alternatively, you can manually add the documentation file by copying it directly to the specified plugin directory.
 
 
 # How to add tool documentation to the github repository

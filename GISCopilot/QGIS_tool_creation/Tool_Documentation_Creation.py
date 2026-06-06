@@ -18,7 +18,7 @@ if current_script_dir not in sys.path:
 import QGIS_tool_creation_Helper as Helper
 
 # toml_directory = r"D:\Onedrive\OneDrive - The Pennsylvania State University\PhD Work\SpatialAnalysisAgent_Reasearch\Plugin\GRASS_toml_withHTML_MD\Others"
-toml_directory = r"C:\Users\AKINBOYEWA TEMITOPE\AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins\SpatialAnalysisAgent-master\SpatialAnalysisAgent\Tools_Documentation\QGIS_Tools"
+toml_directory = r"<QGIS_PROFILE_PLUGINS>\SpatialAnalysisAgent-master\SpatialAnalysisAgent\Tools_Documentation\QGIS_Tools"
 def rename_vgrass_toml_filename(directory):
     files_in_directory = os.listdir(directory)
     toml_files = [file for file in files_in_directory if file.endswith(".toml")]
@@ -669,7 +669,7 @@ def format_first_parameters_in_all_toml_files_in_folder(folder_path):
 
 
 #CHECK IF ANY ERROR EXIST
-error_folder = r"C:\Users\AKINBOYEWA TEMITOPE\Downloads\landsat_toar"
+error_folder = r"<LOCAL_DATA_DIR>"
 check_toml_files_for_errors(error_folder)
 # error_folder = r"D:\Onedrive\OneDrive - The Pennsylvania State University\PhD Work\SpatialAnalysisAgent_Reasearch\Plugin\GRASS_toml_withHTML_MD\NOT GOOD"
 
