@@ -13,7 +13,7 @@ QA2_SPLITS="${QA2_SPLITS:-raster_only raster_vector extended}"
 
 PG_HOST="${PG_HOST:-localhost}"
 PG_DATABASE="${PG_DATABASE:-gsqa}"
-PG_USER="${PG_USER:-shahd}"
+PG_USER="${PG_USER:-$USER}"
 PG_PASSWORD="${PG_PASSWORD:-}"
 PG_PORT="${PG_PORT:-5432}"
 

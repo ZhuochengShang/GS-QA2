@@ -73,6 +73,106 @@ export LOCAL_LLM_API_KEY="EMPTY"
 export LOCAL_LLM_MODEL="Qwen/Qwen3-32B-AWQ"
 ```
 
+## Qwen Experiment Package
+
+For the Qwen runs, the code and shared RAG embeddings can be restored from the
+HDFS experiment package:
+
+```bash
+mkdir -p ~/qwen_gsqa_share
+cd ~/qwen_gsqa_share
+
+hdfs dfs -get -f /user/$USER/share_qwen/GS_QA_experiment_qwen.tar.gz .
+tar -xzf GS_QA_experiment_qwen.tar.gz
+
+cd GS-QA-experiment/GS-QA
+./setup_qwen_share_from_hdfs.sh
+```
+
+The setup script downloads:
+
+```text
+CHESS_code_qwen.tar.gz
+GS_QA_experiment_qwen.tar.gz
+gsqa_vector_raster_chroma_embeddings.tar.gz
+gsqa_vector_raster_chroma_embeddings.tar.gz.sha256
+```
+
+It verifies the embedding archive and extracts the stores to:
+
+```text
+GS-QA-experiment/GS-QA/shared_embeddings/vector_entities_chroma/
+GS-QA-experiment/GS-QA/shared_embeddings/dem_patches_gdal_chroma/
+```
+
+Start the local Qwen endpoint in one terminal:
+
+```bash
+python -m vllm.entrypoints.openai.api_server \
+  --model /path/to/Qwen3-32B-AWQ \
+  --host 0.0.0.0 \
+  --port 8000
+```
+
+Run all configured Qwen experiments in another terminal:
+
+```bash
+cd ~/qwen_gsqa_share/GS-QA-experiment/GS-QA
+MODEL_PATH=/path/to/Qwen3-32B-AWQ ./run_qwen_all_experiments.sh
+```
+
+Smoke test only T1 and `raster_only`:
+
+```bash
+MODEL_PATH=/path/to/Qwen3-32B-AWQ \
+TASKS=1 \
+QA2_SPLITS=raster_only \
+./run_qwen_all_experiments.sh
+```
+
+Run selected components by setting the run toggles. For example, CHESS vector
+only:
+
+```bash
+MODEL_PATH=/path/to/Qwen3-32B-AWQ \
+RUN_CHESS_VECTOR=1 \
+RUN_CHESS_QA2=0 \
+RUN_RAG_VECTOR=0 \
+RUN_RAG_QA2=0 \
+RUN_TEXT2SQL_QA2=0 \
+./run_qwen_all_experiments.sh
+```
+
+Raster RAG only:
+
+```bash
+MODEL_PATH=/path/to/Qwen3-32B-AWQ \
+RUN_CHESS_VECTOR=0 \
+RUN_CHESS_QA2=0 \
+RUN_RAG_VECTOR=0 \
+RUN_RAG_QA2=1 \
+RUN_TEXT2SQL_QA2=0 \
+./run_qwen_all_experiments.sh
+```
+
+Raster Text2SQL only:
+
+```bash
+MODEL_PATH=/path/to/Qwen3-32B-AWQ \
+RUN_CHESS_VECTOR=0 \
+RUN_CHESS_QA2=0 \
+RUN_RAG_VECTOR=0 \
+RUN_RAG_QA2=0 \
+RUN_TEXT2SQL_QA2=1 \
+./run_qwen_all_experiments.sh
+```
+
+The experiment wrappers keep a six-minute limit where the baseline supports it:
+vector RAG uses `--task-timeout-seconds 360`, raster Text2SQL uses
+`--generation-timeout 360` and `--execution-timeout 360`, and raster RAG uses
+the API-compatible model timeout path. CHESS uses the timeout behavior in its
+runner and configuration.
+
 ## Building the Benchmark
 
 ### Vector Data Ingestion
@@ -209,8 +309,15 @@ for i in $(seq 1 28); do
 done
 ```
 
-For raster RAG, provide prebuilt vector-entity and DEM-patch stores. If the
-question-relevant DEM patch list is available as JSONL, build both stores with:
+For raster RAG, use the prebuilt shared stores restored by
+`setup_qwen_share_from_hdfs.sh` when reproducing the Qwen experiments:
+
+```text
+shared_embeddings/vector_entities_chroma/
+shared_embeddings/dem_patches_gdal_chroma/
+```
+
+If the shared embedding archive is unavailable, rebuild both stores with:
 
 ```bash
 cd GS-QA
@@ -218,12 +325,12 @@ python baselines/rag/build_vector_entity_embeddings.py \
   --input-dir benchmark/qa2/raster_only \
   --input-dir benchmark/qa2/raster_vector \
   --input-dir benchmark/qa2/extended \
-  --persist-directory baselines/shared_embeddings/vector_entities_chroma \
+  --persist-directory shared_embeddings/vector_entities_chroma \
   --collection-name geo_entities
 
 python baselines/build_question_dem_patch_embeddings.py \
-  --patches "$SCRATCH_ROOT/needed_dem_patches.jsonl" \
-  --persist-directory baselines/shared_embeddings/dem_patches_gdal_chroma \
+  --patches shared_embeddings/dem_patches_gdal_chroma/question_dem_patches.jsonl \
+  --persist-directory shared_embeddings/dem_patches_gdal_chroma \
   --collection-name dem_patches \
   --embedding-provider sentence-transformers \
   --embedding-model sentence-transformers/all-MiniLM-L6-v2
@@ -236,8 +343,8 @@ python baselines/run_raster_rag.py \
   --input-dir benchmark/qa2/raster_only \
   --input-dir benchmark/qa2/raster_vector \
   --input-dir benchmark/qa2/extended \
-  --entity-persist-directory baselines/shared_embeddings/vector_entities_chroma \
-  --dem-persist-directory baselines/shared_embeddings/dem_patches_gdal_chroma \
+  --entity-persist-directory shared_embeddings/vector_entities_chroma \
+  --dem-persist-directory shared_embeddings/dem_patches_gdal_chroma \
   --llm-provider gemini \
   --model gemini-2.5-flash \
   --output cache/gemini_rag_raster/raster_rag.jsonl \
