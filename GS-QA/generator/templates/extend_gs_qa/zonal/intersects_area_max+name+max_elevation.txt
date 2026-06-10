@@ -1,0 +1,46 @@
+What is the largest [1] in [2], and what is its maximum elevation?
+Which is the biggest [1] in [2], and what is its highest elevation?
+Can you name the largest [1] located in [2], and its maximum elevation?
+What is the name of the largest [1] in [2], and what is its max elevation?
+Which [1] is the largest in [2], and what is its peak elevation?
+What is the biggest [1] found in [2], and what is its maximum elevation?
+Do you know the largest [1] in [2], and its highest elevation?
+What [1] is the largest in [2], and what is its max elevation?
+Can you tell me the largest [1] in [2], and its maximum elevation?
+Which [1] in [2] is the biggest, and what is its highest elevation?
+What is the most extensive [1] in [2], and what is its maximum elevation?
+
+-- SQL_TEMPLATE_START
+-- Answer type: name+elevation
+-- [1] feature category; [1_table] feature table - parks/lakes (polygons); [2] region
+WITH candidates AS (
+  SELECT *,
+         ST_Area([1_table].geometry::geography) AS computed_area,
+         ST_CollectionExtract(
+           ST_MakeValid(ST_Intersection([1_table].geometry::geometry, ST_GeomFromText('[2_wkt]',4326))),
+           3
+         ) AS geom_clipped
+  FROM [1_table]
+  WHERE [1_type] = '[1]'
+    AND ST_Intersects([1_table].geometry::geography, ST_GeomFromText('[2_wkt]',4326)::geography)
+),
+biggest AS (
+  SELECT * FROM candidates
+  WHERE geom_clipped IS NOT NULL AND NOT ST_IsEmpty(geom_clipped)
+  ORDER BY computed_area DESC
+  LIMIT 1
+),
+clipped AS (
+  SELECT ST_Clip(d.rast, b.geom_clipped) AS rast
+  FROM public.dem_us d
+  JOIN biggest b ON ST_Intersects(d.rast, b.geom_clipped)
+)
+SELECT
+  b.*,
+  s.max_elevation
+FROM biggest b
+CROSS JOIN (
+  SELECT MAX((ST_SummaryStats(rast)).max) AS max_elevation
+  FROM clipped
+) s;
+-- SQL_TEMPLATE_END

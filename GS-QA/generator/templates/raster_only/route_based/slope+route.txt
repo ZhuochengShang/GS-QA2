@@ -1,0 +1,56 @@
+What is the average slope along [3]?
+What is the mean slope along the route of [3]?
+On average, how steep is the terrain along [3]?
+What is the average slope along the route [3]?
+What is the mean slope along [3]?
+
+-- SQL_TEMPLATE_START
+-- Answer type: slope
+-- Definition: split the route into straight segments between consecutive vertices.
+-- For each segment, sample elevation at its two endpoints (z1 = start elevation, z2 = end elevation),
+-- compute slope = |z2 - z1| / segment_length (rise over run), then take a length-weighted average
+-- across all segments (longer segments contribute more).
+-- [3] is a line geometry (route, road, trail, river)
+-- Similar to this defintion: https://support.esri.com/en-us/knowledge-base/how-to-calculate-the-slope-of-a-line-feature-across-a-s-000025428
+WITH route AS (
+  SELECT ST_GeomFromText('[3_wkt]', 4326)::geometry AS geom
+),
+dem_clip AS (
+  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast
+  FROM public.dem_us d, route r
+  WHERE ST_Intersects(d.rast, r.geom)
+),
+segments AS (
+  SELECT (ST_DumpSegments(r.geom)).geom AS seg
+  FROM route r
+),
+endpoints AS (
+  SELECT
+    ST_StartPoint(seg) AS p1,
+    ST_EndPoint(seg)   AS p2,
+    ST_Length(seg::geography) AS seg_len_m
+  FROM segments
+),
+elev AS (
+  SELECT
+    e.seg_len_m,
+    ST_Value(dc.rast, 1, e.p1) AS z1,
+    ST_Value(dc.rast, 1, e.p2) AS z2
+  FROM endpoints e, dem_clip dc
+),
+slopes AS (
+  SELECT
+    seg_len_m,
+    CASE WHEN seg_len_m > 0 THEN ABS(z2 - z1) / seg_len_m ELSE NULL END AS grade
+  FROM elev
+  WHERE z1 IS NOT NULL AND z2 IS NOT NULL
+),
+avg_grade AS (
+  SELECT
+    SUM(grade * seg_len_m) / NULLIF(SUM(seg_len_m), 0) AS g
+  FROM slopes
+  WHERE grade IS NOT NULL
+)
+SELECT DEGREES(ATAN(g)) AS slope_degrees
+FROM avg_grade;
+-- SQL_TEMPLATE_END

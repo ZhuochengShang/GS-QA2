@@ -1,0 +1,51 @@
+Which [1] in [3] are on slopes steeper than [2] degrees?
+Find [1] in [3] located on terrain with slope greater than [2] degrees.
+Show [1] in [3] that lie on terrain with slope above [2] degrees.
+List [1] in [3] situated on slopes steeper than [2]°.
+Where are [1] in [3] on slopes exceeding [2] degrees?
+
+-- SQL_TEMPLATE_START
+-- Answer type: row/s
+-- [1] POI category value
+-- [1_type] POI tag column (amenity/tourism/shop/...)
+-- [2] slope threshold (degrees)
+-- [3] region/city
+WITH region AS (
+  SELECT ST_GeomFromText('[3_wkt]', 4326) AS g
+),
+candidates AS (
+  SELECT p.id, p.poi_name AS name, p.geometry,
+         ST_PointOnSurface(p.geometry::geometry) AS pt
+  FROM pois p
+  JOIN region r ON ST_Intersects(p.geometry::geometry, r.g)
+  WHERE p."[1_type]" = '[1]'
+),
+tile_boxes AS (
+  SELECT d.rid,
+         ST_Expand(ST_SetSRID(ST_Extent(c.pt)::geometry, 4326), 0.001) AS clip_box
+  FROM candidates c
+  JOIN public.dem_us d ON ST_Intersects(d.rast, c.pt)
+  GROUP BY d.rid
+),
+slope_tiles AS (
+  SELECT tb.rid,
+         ST_Slope(ST_Clip(d.rast, tb.clip_box), 1, '32BF', 'DEGREES', 111120) AS srast,
+         tb.clip_box
+  FROM tile_boxes tb
+  JOIN public.dem_us d ON d.rid = tb.rid
+),
+poi_slope AS (
+  SELECT c.id, c.name, c.geometry, slope.s AS slope_deg
+  FROM candidates c
+  JOIN LATERAL (
+    SELECT ST_Value(st.srast, 1, c.pt) AS s
+    FROM slope_tiles st
+    WHERE ST_Intersects(st.clip_box, c.pt)
+    LIMIT 1
+  ) slope ON slope.s IS NOT NULL
+)
+SELECT id, name, geometry, slope_deg
+FROM poi_slope
+WHERE slope_deg > [2]
+ORDER BY slope_deg DESC;
+-- SQL_TEMPLATE_END

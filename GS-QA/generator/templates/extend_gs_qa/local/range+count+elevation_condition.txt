@@ -1,0 +1,44 @@
+How many [1] can be found within [2_text] of [3] at elevations no higher than [4] m?
+Within [2_text] from [3], how many [1] are available below [4] m elevation?
+What is the count of [1] within [2_text] from [3] where elevation is at most [4] m?
+Could you tell me the number of [1] located within [2_text] of [3] that lie under [4] m?
+In the vicinity of [3], within [2_text], how many [1] are there at or below [4] m elevation?
+Within [2_text] from [3], how many [1] are present with elevation lower than [4] m?
+What's the quantity of [1] that can be found within a [2_text] distance from [3] with terrain elevation not exceeding [4] m?
+How many [1] are available within [2_text] from the location [3] and at most [4] m above sea level?
+What is the total number of [1] within [2_text] from [3] whose elevation is up to [4] m?
+Within [2_text] of [3], how many [1] are there with elevation capped at [4] m?
+Could you inform me about the number of [1] within [2_text] from [3] that meet an elevation limit of [4] m?
+How many [1] are situated within a [2_text] distance from [3] and remain below [4] m elevation?
+What's the count of [1] within [2_text] from the location [3] at no more than [4] m elevation?
+Within [2_text] from [3], how many [1] can I find with elevations under [4] m?
+Could you provide me with the number of [1] within [2_text] of [3] where elevation does not exceed [4] m?
+How many [1] are available within [2_text] from [3] at elevations no higher than [4] m?
+What is the number of [1] located within [2_text] from [3] with altitude at most [4] m?
+Within a [2_text] distance from [3], how many [1] are there whose elevation is beneath [4] m?
+What's the total count of [1] within [2_text] from [3] at or under [4] m elevation?
+Could you tell me how many [1] are present within [2_text] of [3] with elevation no greater than [4] m?
+
+-- SQL_TEMPLATE_START
+-- Answer type: count, POIs -> Points
+-- [1] POI category; [2] distance (meters); [3] anchor POI; [4] max elevation threshold (meters)
+WITH candidates AS (
+  SELECT p.id, p.geometry
+  FROM pois p
+  WHERE ST_DWithin(p.geometry::geography, ST_GeomFromText('[3_wkt]',4326)::geography, [2])
+    AND p.[1_type] = '[1]'
+),
+poi_elev AS (
+  SELECT c.id, elev.z
+  FROM candidates c
+  JOIN LATERAL (
+    SELECT ST_Value(d.rast, 1, c.geometry::geometry) AS z
+    FROM public.dem_us d
+    WHERE ST_Intersects(d.rast, c.geometry::geometry)
+    LIMIT 1
+  ) elev ON elev.z IS NOT NULL
+)
+SELECT COUNT(*) AS count
+FROM poi_elev
+WHERE z <= [4];
+-- SQL_TEMPLATE_END

@@ -1,0 +1,35 @@
+How far is [1] from [3] within [2_text], and what is its elevation?
+What is the distance from [3] to [1] within [2_text], and what is its elevation?
+For [1] within [2_text] of [3], what are the distance and elevation?
+How far away is [1] from [3] within [2_text], and what is its altitude?
+What is the distance between [3] and [1] within [2_text], and what is its height above sea level?
+For [1] found within [2_text] of [3], what is the distance and ground elevation?
+How far is [1] located from [3] within [2_text], and what is the elevation at its location?
+What is the distance to [1] from [3] within [2_text], and what altitude does it have?
+How far away is [1] from [3] within [2_text], and what is the elevation above sea level there?
+What are the distance and terrain elevation for [1] within [2_text] of [3]?
+
+-- SQL_TEMPLATE_START
+-- Answer type: distance+elevation
+-- [1] POI category; [2] distance (meters); [3] anchor POI; elevation/s at [1] (returned POIs) / elevation at a point 
+SELECT
+  p.*,
+  ST_Distance(
+    ST_GeomFromText('[3_wkt]',4326)::geography,
+    p.geometry::geography
+  ) AS distance,
+  elev.z AS elevation
+FROM pois p
+JOIN LATERAL (
+  SELECT ST_Value(d.rast, 1, p.geometry::geometry) AS z
+  FROM public.dem_us d
+  WHERE ST_Intersects(d.rast, p.geometry::geometry)
+  LIMIT 1
+) elev ON elev.z IS NOT NULL
+WHERE ST_DWithin(
+        p.geometry::geography,
+        ST_GeomFromText('[3_wkt]',4326)::geography,
+        [2]
+      )
+  AND [1_type] = '[1]';
+-- SQL_TEMPLATE_END

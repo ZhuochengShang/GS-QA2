@@ -1,0 +1,32 @@
+How many [1] in [2] are above [3] meters elevation?
+Count the [1] in [2] at elevations exceeding [3] m.
+How many [1] in [2] sit above [3] meters?
+What is the number of [1] above [3] m elevation in [2]?
+In [2], how many [1] are at elevations higher than [3] m?
+
+-- SQL_TEMPLATE_START
+-- Answer type: count
+-- [1] POI category value; [1_type] POI tag column; [2] region/city; [3] elevation threshold (m), range: 200-500 (extreme high)
+WITH region AS (
+  SELECT ST_GeomFromText('[2_wkt]', 4326) AS g
+),
+candidates AS (
+  SELECT p.id, ST_PointOnSurface(p.geometry::geometry) AS pt
+  FROM pois p
+  JOIN region r ON ST_Intersects(p.geometry::geometry, r.g)
+  WHERE p."[1_type]" = '[1]'
+),
+poi_elev AS (
+  SELECT c.id, elev.z AS elevation
+  FROM candidates c
+  JOIN LATERAL (
+    SELECT ST_Value(d.rast, 1, c.pt) AS z
+    FROM public.dem_us d
+    WHERE ST_Intersects(d.rast, c.pt)
+    LIMIT 1
+  ) elev ON elev.z IS NOT NULL
+)
+SELECT COUNT(*) AS count
+FROM poi_elev
+WHERE elevation > [3];
+-- SQL_TEMPLATE_END

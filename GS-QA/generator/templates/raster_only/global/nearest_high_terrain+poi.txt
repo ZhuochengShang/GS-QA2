@@ -1,0 +1,43 @@
+How far is [3] from the nearest terrain above [2] meters?
+What is the distance from [3] to the closest point higher than [2] meters in elevation?
+How many meters separate [3] from the nearest cell exceeding [2] meters in elevation?
+From [3], what is the distance to the nearest cell of land above [2] meters?
+How far would you travel from [3] before reaching terrain higher than [2] meters?
+What is the distance to the nearest elevation higher than [2] meters from [3]?
+
+-- SQL_TEMPLATE_START
+-- Answer type: distance
+-- Global raster operation: find the nearest DEM cell with elevation > [2] m.
+-- POI is the origin (coordinate anchor) for the distance search.
+-- Two-stage filter to keep this tractable:
+--   1. Bbox-prune tiles within ~110 km (1 degree) of the origin via the GiST index.
+--   2. ST_MapAlgebra masks each tile so non-qualifying pixels become NODATA;
+--      ST_PixelAsCentroids(..., exclude_nodata=TRUE) then emits only the qualifying cells.
+-- Note: this returns the nearest cell above [2] m, not a true topographic peak
+-- (no local-maximum check). If no qualifying cell exists within the bbox the answer is NULL.
+WITH origin AS (
+  SELECT ST_GeomFromText('[3_wkt]',4326) AS pt
+),
+nearby_tiles AS (
+  SELECT d.rast
+  FROM public.dem_us d, origin o
+  WHERE d.rast && ST_Expand(o.pt, 1.0)
+),
+masked AS (
+	  SELECT ST_MapAlgebra(
+	           rast,
+	           1,
+	           '32BF'::text,
+	           'CASE WHEN [rast.val] > [2] THEN [rast.val] ELSE NULL END'::text,
+	           NULL::double precision
+	         ) AS rast
+  FROM nearby_tiles
+),
+qualifying_pixels AS (
+  SELECT (pp).geom AS geom
+  FROM masked
+  CROSS JOIN LATERAL ST_PixelAsCentroids(rast, 1, TRUE) AS pp
+)
+SELECT MIN(ST_Distance(p.geom::geography, o.pt::geography)) AS distance_m
+FROM qualifying_pixels p, origin o;
+-- SQL_TEMPLATE_END

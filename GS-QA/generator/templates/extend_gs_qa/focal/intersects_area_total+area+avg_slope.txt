@@ -1,0 +1,49 @@
+What is the total area of all [1] in [2], and what is the average slope of [2]?
+What is the combined area of all [1] in [2], and how steep is [2] on average?
+How large is the total area of all [1] in [2], and what is the mean slope of [2]?
+What is the aggregate area of all [1] in [2], and what is the average slope of [2]?
+Can you tell me the total area of all [1] in [2] and the average slope of [2]?
+What is the overall area of all [1] in [2], and what is the mean slope across [2]?
+How much area do all [1] in [2] cover, and what is the average slope of [2]?
+What is the total land area of all [1] in [2], and how steep is [2] on average?
+How extensive is the total area of all [1] in [2], and what is the average slope of [2]?
+What is the cumulative area of all [1] in [2], and what is the mean slope of [2]?
+
+-- SQL_TEMPLATE_START
+-- Answer type: area+slope
+-- [1] feature category; [1_table] feature table; [2] region
+WITH region AS (
+  SELECT ST_CollectionExtract(ST_MakeValid(ST_GeomFromText('[2_wkt]',4326)), 3) AS g
+),
+buffered_region AS (
+  SELECT
+    g,
+    ST_Buffer(g::geography, 100)::geometry AS g_buffer
+  FROM region
+),
+area_sum AS (
+  SELECT SUM(ST_Area([1_table].geometry::geography)) AS area
+  FROM [1_table]
+  WHERE [1_type] = '[1]'
+    AND ST_Intersects([1_table].geometry::geography, (SELECT g::geography FROM region))
+),
+clipped_dem AS (
+  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast
+  FROM public.dem_us d, buffered_region r
+  WHERE ST_Intersects(d.rast, r.g_buffer)
+),
+slope AS (
+  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast
+  FROM clipped_dem
+),
+region_slope AS (
+  SELECT ST_Clip(s.rast, r.g) AS rast
+  FROM slope s, buffered_region r
+),
+slope_agg AS (
+  SELECT (ST_SummaryStats(rast, 1, TRUE)).mean AS slope
+  FROM region_slope
+)
+SELECT a.area, s.slope
+FROM area_sum a, slope_agg s;
+-- SQL_TEMPLATE_END

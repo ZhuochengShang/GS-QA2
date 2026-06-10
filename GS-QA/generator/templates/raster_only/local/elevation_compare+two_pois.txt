@@ -1,0 +1,33 @@
+Which is at a higher elevation, [3] or [4]?
+Of [3] and [4], which sits at a greater elevation?
+Between [3] and [4], which one is more elevated?
+Which has a higher elevation, [3] or [4]?
+Of the two, [3] and [4], which lies at a greater elevation?
+Which of [3] and [4] stands at the higher elevation?
+
+-- SQL_TEMPLATE_START
+-- Answer type: name
+-- Local raster operation: two ST_Value lookups, one per POI coordinate anchor.
+-- Returns the higher POI's display name and both elevations for evaluation.
+WITH p1 AS (
+  SELECT ST_Value(d.rast, 1, ST_GeomFromText('[3_wkt]',4326)) AS elev
+  FROM public.dem_us d
+  WHERE ST_Intersects(d.rast, ST_GeomFromText('[3_wkt]',4326))
+  LIMIT 1
+),
+p2 AS (
+  SELECT ST_Value(d.rast, 1, ST_GeomFromText('[4_wkt]',4326)) AS elev
+  FROM public.dem_us d
+  WHERE ST_Intersects(d.rast, ST_GeomFromText('[4_wkt]',4326))
+  LIMIT 1
+)
+SELECT
+  CASE
+    WHEN p1.elev > p2.elev THEN '[3]'
+    WHEN p2.elev > p1.elev THEN '[4]'
+    ELSE 'equal'
+  END AS higher_poi,
+  p1.elev AS poi1_elevation_m,
+  p2.elev AS poi2_elevation_m
+FROM p1, p2;
+-- SQL_TEMPLATE_END
