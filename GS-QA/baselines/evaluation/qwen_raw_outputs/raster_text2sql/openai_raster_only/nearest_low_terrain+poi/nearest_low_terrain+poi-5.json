@@ -1,0 +1,59 @@
+{
+  "answer_type": "distance",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "distance",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "distance_m": 11.614036
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "distance_m": 11.614036
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-121.858204 37.319739)',4326) AS pt\n),\nnearby_tiles AS (\n  SELECT d.rast\n  FROM public.dem_us d, origin o\n  WHERE d.rast && ST_Expand(o.pt, 1.0)\n),\nmasked AS (\n\t  SELECT ST_MapAlgebra(\n\t           rast,\n\t           1,\n\t           '32BF'::text,\n\t           'CASE WHEN [rast.val] < 440 THEN [rast.val] ELSE NULL END'::text,\n\t           NULL::double precision\n\t         ) AS rast\n  FROM nearby_tiles\n),\nqualifying_pixels AS (\n  SELECT (pp).geom AS geom\n  FROM masked\n  CROSS JOIN LATERAL ST_PixelAsCentroids(rast, 1, TRUE) AS pp\n)\nSELECT MIN(ST_Distance(p.geom::geography, o.pt::geography)) AS distance_m\nFROM qualifying_pixels p, origin o;",
+  "id": "nearest_low_terrain+poi-5",
+  "model_output": "```sql\nWITH source_poi AS (\n  SELECT \n    ST_SetSRID(ST_MakePoint(-121.858204, 37.319739), 4326)::geography AS source_geom\n),\ndem_subset AS (\n  SELECT \n    rast\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(\n      rast,\n      ST_Envelope(ST_Transform(source_poi.source_geom, 4326))\n    )\n),\nelevation_raster AS (\n  SELECT \n    ST_Union(rast) AS rast\n  FROM \n    dem_subset\n),\nelevation_values AS (\n  SELECT \n    (ST_DumpAsPolygons(ST_Reclass(\n      ST_Slope(elevation_raster.rast, '32BF'), \n      1, \n      '0-440:0,440-:1', \n      '32BF'\n    ))).val AS is_lower,\n    (ST_DumpAsPolygons(ST_Reclass(\n      ST_Slope(elevation_raster.rast, '32BF'), \n      1, \n      '0-440:0,440-:1', \n      '32BF'\n    ))).geom AS target_geom\n  FROM \n    elevation_raster\n),\nfiltered_areas AS (\n  SELECT \n    target_geom\n  FROM \n    elevation_values\n  WHERE \n    is_lower = 0\n),\nnearest_distance AS (\n  SELECT \n    MIN(ST_Distance(\n      source_poi.source_geom, \n      ST_Transform(filtered_areas.target_geom, 4326)\n    )) AS min_distance_meters\n  FROM \n    source_poi, \n    filtered_areas\n)\nSELECT \n  min_distance_meters AS distance_to_lower_land_meters\nFROM \n  nearest_distance;\n```",
+  "predicted_exec": {
+    "error": "missing FROM-clause entry for table \"source_poi\"\nLINE 13:       ST_Envelope(ST_Transform(source_poi.source_geom, 4326)...\n                                        ^",
+    "output": []
+  },
+  "predicted_sql": "WITH source_poi AS (\n  SELECT \n    ST_SetSRID(ST_MakePoint(-121.858204, 37.319739), 4326)::geography AS source_geom\n),\ndem_subset AS (\n  SELECT \n    rast\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(\n      rast,\n      ST_Envelope(ST_Transform(source_poi.source_geom, 4326))\n    )\n),\nelevation_raster AS (\n  SELECT \n    ST_Union(rast) AS rast\n  FROM \n    dem_subset\n),\nelevation_values AS (\n  SELECT \n    (ST_DumpAsPolygons(ST_Reclass(\n      ST_Slope(elevation_raster.rast, '32BF'), \n      1, \n      '0-440:0,440-:1', \n      '32BF'\n    ))).val AS is_lower,\n    (ST_DumpAsPolygons(ST_Reclass(\n      ST_Slope(elevation_raster.rast, '32BF'), \n      1, \n      '0-440:0,440-:1', \n      '32BF'\n    ))).geom AS target_geom\n  FROM \n    elevation_raster\n),\nfiltered_areas AS (\n  SELECT \n    target_geom\n  FROM \n    elevation_values\n  WHERE \n    is_lower = 0\n),\nnearest_distance AS (\n  SELECT \n    MIN(ST_Distance(\n      source_poi.source_geom, \n      ST_Transform(filtered_areas.target_geom, 4326)\n    )) AS min_distance_meters\n  FROM \n    source_poi, \n    filtered_areas\n)\nSELECT \n  min_distance_meters AS distance_to_lower_land_meters\nFROM \n  nearest_distance;",
+  "predicted_sql_candidates": [
+    "WITH source_poi AS (\n  SELECT \n    ST_SetSRID(ST_MakePoint(-121.858204, 37.319739), 4326)::geography AS source_geom\n),\ndem_subset AS (\n  SELECT \n    rast\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(\n      rast,\n      ST_Envelope(ST_Transform(source_poi.source_geom, 4326))\n    )\n),\nelevation_raster AS (\n  SELECT \n    ST_Union(rast) AS rast\n  FROM \n    dem_subset\n),\nelevation_values AS (\n  SELECT \n    (ST_DumpAsPolygons(ST_Reclass(\n      ST_Slope(elevation_raster.rast, '32BF'), \n      1, \n      '0-440:0,440-:1', \n      '32BF'\n    ))).val AS is_lower,\n    (ST_DumpAsPolygons(ST_Reclass(\n      ST_Slope(elevation_raster.rast, '32BF'), \n      1, \n      '0-440:0,440-:1', \n      '32BF'\n    ))).geom AS target_geom\n  FROM \n    elevation_raster\n),\nfiltered_areas AS (\n  SELECT \n    target_geom\n  FROM \n    elevation_values\n  WHERE \n    is_lower = 0\n),\nnearest_distance AS (\n  SELECT \n    MIN(ST_Distance(\n      source_poi.source_geom, \n      ST_Transform(filtered_areas.target_geom, 4326)\n    )) AS min_distance_meters\n  FROM \n    source_poi, \n    filtered_areas\n)\nSELECT \n  min_distance_meters AS distance_to_lower_land_meters\nFROM \n  nearest_distance;"
+  ],
+  "query_type": "raster_only",
+  "question": "How far must one travel from Chinese American Historical Museum, San Jose, CA to reach land lower than 440 meters?",
+  "source_file": "nearest_low_terrain+poi.jsonl",
+  "source_stem": "nearest_low_terrain+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 90.255,
+    "total_seconds": 90.256
+  },
+  "usage": {
+    "completion_tokens": 398,
+    "prompt_tokens": 1635,
+    "total_tokens": 2033
+  }
+}

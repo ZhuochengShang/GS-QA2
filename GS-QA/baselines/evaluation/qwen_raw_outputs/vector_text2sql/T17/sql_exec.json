@@ -1,0 +1,1285 @@
+[
+  {
+    "id": 700,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"p\"\nLINE 2: ...CT g.poi_name, ST_Distance(g.geometry::geography, p.geometry...\n                                                             ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 701,
+    "records": [
+      {
+        "output": [],
+        "error": "column t1.wikipedia does not exist\nLINE 2: SELECT t1.poi_name, t1.wikidata, t1.wikipedia,\n                                         ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 702,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Mount Independence State Historic Site Museum",
+            "addr_city": "Orwell",
+            "addr_state": "VT"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.061
+  },
+  {
+    "id": 703,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Lenox Health Greenwich Village",
+            "location": "POINT(-74.0008333 40.7377778)"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.049
+  },
+  {
+    "id": 704,
+    "records": [
+      {
+        "output": [],
+        "error": "syntax error at or near \"s\"\nLINE 7: ...ometry FROM pois WHERE poi_name ILIKE '%Cal, Sr.\\'s Yard%' L...\n                                                             ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 705,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 8.226
+  },
+  {
+    "id": 706,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.032
+  },
+  {
+    "id": 707,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Andrew J. Conner Nature Center",
+            "distance_meters": 9810.33358828
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.041
+  },
+  {
+    "id": 708,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Ft. hays Chuckwagon Supper and Show",
+            "distance_meters": 1689.38401592
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.141
+  },
+  {
+    "id": 709,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.037
+  },
+  {
+    "id": 710,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "North Phoenix Heart Center",
+            "distance_meters": 7563.9428024
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.04
+  },
+  {
+    "id": 711,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Rainbow Valley Family Farms",
+            "distance_meters": 92180.46541287
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.026
+  },
+  {
+    "id": 712,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Sakura Japanese Steakhouse",
+            "distance_meters": 111.60521212
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.051
+  },
+  {
+    "id": 713,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.032
+  },
+  {
+    "id": 714,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Comprehensive Health Care",
+            "distance_meters": 2223.45199546
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.051
+  },
+  {
+    "id": 715,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Hanini Subs",
+            "addr_state": "OH",
+            "addr_city": "Elyria",
+            "amenity": "fast_food"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.036
+  },
+  {
+    "id": 716,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Margery Adams Wildlife Sanctuary",
+            "distance_meters": 8250.64416491
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.043
+  },
+  {
+    "id": 717,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.054
+  },
+  {
+    "id": 718,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.088
+  },
+  {
+    "id": 719,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.045
+  },
+  {
+    "id": 720,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.058
+  },
+  {
+    "id": 721,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.122
+  },
+  {
+    "id": 722,
+    "records": [
+      {
+        "output": [
+          {
+            "park_name": "UIS Greenhouse",
+            "distance_meters": 0.0
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 45.223
+  },
+  {
+    "id": 723,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.073
+  },
+  {
+    "id": 724,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.089
+  },
+  {
+    "id": 725,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.014
+  },
+  {
+    "id": 726,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Pocasset Mental Health Center",
+            "distance_meters": 52319.59415967
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.089
+  },
+  {
+    "id": 727,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.044
+  },
+  {
+    "id": 728,
+    "records": [
+      {
+        "output": [],
+        "error": "column reference \"poi_name\" is ambiguous\nLINE 2: SELECT poi_name, addr_state, addr_city, ST_Distance(p1.geome...\n               ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 729,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Texas knife makers supply",
+            "distance_meters": 9779.98511447
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.048
+  },
+  {
+    "id": 730,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Soul Full Cup",
+            "amenity": "cafe",
+            "distance_meters": 433.81030054
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.025
+  },
+  {
+    "id": 731,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.016
+  },
+  {
+    "id": 732,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "The Potted Plant Inc.",
+            "distance_meters": 5301.98240045
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.038
+  },
+  {
+    "id": 733,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 1.819
+  },
+  {
+    "id": 734,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Summerland"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.056
+  },
+  {
+    "id": 735,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Shavers Creek Environmental Center",
+            "distance_meters": 0.0
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.057
+  },
+  {
+    "id": 736,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.089
+  },
+  {
+    "id": 737,
+    "records": [
+      {
+        "output": [],
+        "error": "column r.addr_state does not exist\nLINE 7:   AND r.addr_state ILIKE '%WI%'\n              ^\nHINT:  Perhaps you meant to reference the column \"p.addr_state\"."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 738,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "WSU Cooperative Extension Energy Program",
+            "distance_meters": 60975.42090204
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.052
+  },
+  {
+    "id": 739,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.042
+  },
+  {
+    "id": 740,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.05
+  },
+  {
+    "id": 741,
+    "records": [
+      {
+        "output": [
+          {
+            "park_name": "New River Gorge National Park and Preserve",
+            "distance_meters": 345156.75667389
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 132.107
+  },
+  {
+    "id": 742,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.311
+  },
+  {
+    "id": 743,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Johns Hopkins University School of Education",
+            "distance_meters": 0.0
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.865
+  },
+  {
+    "id": 744,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.045
+  },
+  {
+    "id": 745,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.047
+  },
+  {
+    "id": 746,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Chifa Dukang"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.111
+  },
+  {
+    "id": 747,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.042
+  },
+  {
+    "id": 748,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.014
+  },
+  {
+    "id": 749,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Cattle Tie-Outs",
+            "distance_meters": 1883780.39774082
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.307
+  },
+  {
+    "id": 750,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Jimmy John's",
+            "addr_state": "IL",
+            "addr_city": "Algonquin",
+            "amenity": "fast_food"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.165
+  },
+  {
+    "id": 751,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 2.163
+  },
+  {
+    "id": 752,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Bardstown Country Club",
+            "distance_meters": 43989.89100155
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.064
+  },
+  {
+    "id": 753,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Methodist University",
+            "distance_meters": 27183.87110519
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.049
+  },
+  {
+    "id": 754,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "North Light Gallery & Framing",
+            "distance_meters": 8092.38374786
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.311
+  },
+  {
+    "id": 755,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.039
+  },
+  {
+    "id": 756,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.262
+  },
+  {
+    "id": 757,
+    "records": [
+      {
+        "output": [
+          {
+            "distance_meters": 232.5299705
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 45.961
+  },
+  {
+    "id": 758,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Bruegger's Bagels",
+            "addr_state": "CO",
+            "addr_city": "Denver",
+            "amenity": "fast_food"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.149
+  },
+  {
+    "id": 759,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Ameristar Casino Hotel East Chicago",
+            "distance_meters": 6024.74081326
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.026
+  },
+  {
+    "id": 760,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.05
+  },
+  {
+    "id": 761,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.055
+  },
+  {
+    "id": 762,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.059
+  },
+  {
+    "id": 763,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Frazier Rehabilitation Institute",
+            "distance_meters": 5386.77574032
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.024
+  },
+  {
+    "id": 764,
+    "records": [
+      {
+        "output": [
+          {
+            "park_name": "Pine Grove Zoo",
+            "distance_meters": 0.0
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 22.84
+  },
+  {
+    "id": 765,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Malibu Jack's",
+            "addr_state": "IL",
+            "addr_city": "Springfield",
+            "amenity": "restaurant",
+            "distance_meters": 0.0
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.125
+  },
+  {
+    "id": 766,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Aloha Safari Park",
+            "distance_meters": 59617.57548397
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.081
+  },
+  {
+    "id": 767,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.053
+  },
+  {
+    "id": 768,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.048
+  },
+  {
+    "id": 769,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Sun Village Golf Course",
+            "distance_meters": 1632.96221898
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.024
+  },
+  {
+    "id": 770,
+    "records": [
+      {
+        "output": [
+          {
+            "park_name": "Lincoln Park Golf Course",
+            "distance_meters": 2218.57062283
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 2.983
+  },
+  {
+    "id": 771,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Moe's Southwest Grill",
+            "distance_meters": 1281.98033984
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.096
+  },
+  {
+    "id": 772,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Pure Raw Juice",
+            "distance_meters": 2363.5451344
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.091
+  },
+  {
+    "id": 773,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Ridgeview Behavioral Health Services",
+            "addr_city": "Oak Ridge"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.054
+  },
+  {
+    "id": 774,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.107
+  },
+  {
+    "id": 775,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Cafe Bongiorno",
+            "amenity": "cafe"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.041
+  },
+  {
+    "id": 776,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"p\"\nLINE 2: SELECT poi_name, ST_Distance(p.geometry::geography, (SELECT ...\n                                     ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 777,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.043
+  },
+  {
+    "id": 778,
+    "records": [
+      {
+        "output": [
+          {
+            "park_name": "Tree That Owns Itself",
+            "distance_meters": 0.0
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 44.95
+  },
+  {
+    "id": 779,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.043
+  },
+  {
+    "id": 780,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.009
+  },
+  {
+    "id": 781,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.114
+  },
+  {
+    "id": 782,
+    "records": [
+      {
+        "output": [
+          {
+            "park_name": "Lumberman\u2019s Memorial Park",
+            "distance_meters": 38.09057672
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 9.988
+  },
+  {
+    "id": 783,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Sunset Beach Resort",
+            "distance_meters": 1115209.46076719
+          },
+          {
+            "poi_name": "Sunrise Beach Resort",
+            "distance_meters": 1241848.23481486
+          },
+          {
+            "poi_name": "Sanibel Tower at Sanibel Harbour Marriott Beach Resort & Spa",
+            "addr_city": "Punta Rassa",
+            "addr_state": "FL",
+            "distance_meters": 1672002.16432988
+          },
+          {
+            "poi_name": "Captiva Tower at Sanibel Harbour Marriott Beach Resort & Spa",
+            "addr_city": "Punta Rassa",
+            "addr_state": "FL",
+            "distance_meters": 1672196.54794973
+          },
+          {
+            "poi_name": "Seashell Beach Resort",
+            "distance_meters": 1831539.18441955
+          },
+          {
+            "poi_name": "Sunrider Beach Resort",
+            "distance_meters": 1863493.73423933
+          },
+          {
+            "poi_name": "Sanctuary Beach Resort",
+            "distance_meters": 2295550.95567094
+          },
+          {
+            "poi_name": "Gold Beach Resort",
+            "distance_meters": 2713425.50284242
+          },
+          {
+            "poi_name": "Misty Harbor and Barefoot Beach Resort",
+            "distance_meters": 2881683.27710917
+          },
+          {
+            "poi_name": "Sandpiper Beach Resort",
+            "addr_city": "Pacific Beach",
+            "addr_state": "WA",
+            "distance_meters": 2949500.85658781
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.1
+  },
+  {
+    "id": 784,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Erie Island Coffee Co.",
+            "amenity": "cafe",
+            "addr_state": "OH",
+            "addr_city": "Elyria"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.104
+  },
+  {
+    "id": 785,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.543
+  },
+  {
+    "id": 786,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Alexander's Steak House",
+            "amenity": "restaurant",
+            "distance_meters": 1432.60188579
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 1.008
+  },
+  {
+    "id": 787,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Mallard Head Country Club",
+            "distance_meters": 36018.86379728
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.074
+  },
+  {
+    "id": 788,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.011
+  },
+  {
+    "id": 789,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"r\"\nLINE 2: ...CT p.poi_name, ST_Distance(p.geometry::geography, r.geometry...\n                                                             ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 790,
+    "records": [
+      {
+        "output": [
+          {
+            "park_name": "Clifton Park Golf Course",
+            "distance_meters": 4948.02137975
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.48
+  },
+  {
+    "id": 791,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.041
+  },
+  {
+    "id": 792,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.014
+  },
+  {
+    "id": 793,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"p\"\nLINE 2: SELECT poi_name, ST_Distance(p.geometry::geography, (SELECT ...\n                                     ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 794,
+    "records": [
+      {
+        "output": [],
+        "error": "column r.addr_city does not exist\nLINE 6: ....region_name ILIKE '%Center of the Universe%' AND r.addr_cit...\n                                                             ^\nHINT:  Perhaps you meant to reference the column \"p.addr_city\"."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 795,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.066
+  },
+  {
+    "id": 796,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"p\"\nLINE 2: SELECT poi_name, ST_Distance(p.geometry::geography, (SELECT ...\n                                     ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 797,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"p\"\nLINE 2: SELECT poi_name, ST_Distance(p.geometry::geography, (SELECT ...\n                                     ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 798,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.047
+  },
+  {
+    "id": 799,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.033
+  }
+]

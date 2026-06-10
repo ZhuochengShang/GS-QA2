@@ -1,0 +1,2102 @@
+[
+  {
+    "id": 0,
+    "run_seconds": 0.78,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1282,
+      "output_tokens": 2,
+      "total_tokens": 1284,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1282,
+        "total_tokens": 1284,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1,
+    "run_seconds": 0.8,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1338,
+      "output_tokens": 2,
+      "total_tokens": 1340,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1338,
+        "total_tokens": 1340,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2,
+    "run_seconds": 0.871,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1690,
+      "output_tokens": 2,
+      "total_tokens": 1692,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1690,
+        "total_tokens": 1692,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 3,
+    "run_seconds": 0.685,
+    "content": "zero",
+    "usage_metadata": {
+      "input_tokens": 1018,
+      "output_tokens": 2,
+      "total_tokens": 1020,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1018,
+        "total_tokens": 1020,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 4,
+    "run_seconds": 2.856,
+    "content": "There are approximately eighty thousand parks in the United States.",
+    "usage_metadata": {
+      "input_tokens": 1147,
+      "output_tokens": 12,
+      "total_tokens": 1159,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1147,
+        "total_tokens": 1159,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 5,
+    "run_seconds": 0.655,
+    "content": "zero",
+    "usage_metadata": {
+      "input_tokens": 996,
+      "output_tokens": 2,
+      "total_tokens": 998,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 996,
+        "total_tokens": 998,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 6,
+    "run_seconds": 0.956,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1887,
+      "output_tokens": 2,
+      "total_tokens": 1889,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1887,
+        "total_tokens": 1889,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 7,
+    "run_seconds": 3.837,
+    "content": "Georgia (U.S. state) has no recorded viewpoints in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 868,
+      "output_tokens": 17,
+      "total_tokens": 885,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 868,
+        "total_tokens": 885,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 8,
+    "run_seconds": 1.261,
+    "content": "zero",
+    "usage_metadata": {
+      "input_tokens": 2282,
+      "output_tokens": 2,
+      "total_tokens": 2284,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 2282,
+        "total_tokens": 2284,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 9,
+    "run_seconds": 0.856,
+    "content": "zero",
+    "usage_metadata": {
+      "input_tokens": 1595,
+      "output_tokens": 2,
+      "total_tokens": 1597,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1595,
+        "total_tokens": 1597,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 10,
+    "run_seconds": 2.431,
+    "content": "There are no restaurants listed in Denver.",
+    "usage_metadata": {
+      "input_tokens": 1261,
+      "output_tokens": 9,
+      "total_tokens": 1270,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 1261,
+        "total_tokens": 1270,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 11,
+    "run_seconds": 0.775,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1337,
+      "output_tokens": 2,
+      "total_tokens": 1339,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1337,
+        "total_tokens": 1339,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 12,
+    "run_seconds": 1.026,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 2382,
+      "output_tokens": 2,
+      "total_tokens": 2384,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 2382,
+        "total_tokens": 2384,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 13,
+    "run_seconds": 0.665,
+    "content": "zero",
+    "usage_metadata": {
+      "input_tokens": 886,
+      "output_tokens": 2,
+      "total_tokens": 888,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 886,
+        "total_tokens": 888,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 14,
+    "run_seconds": 1.135,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1877,
+      "output_tokens": 2,
+      "total_tokens": 1879,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1877,
+        "total_tokens": 1879,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 15,
+    "run_seconds": 3.61,
+    "content": "Schaumburg, Illinois has approximately one hundred hotels.",
+    "usage_metadata": {
+      "input_tokens": 2319,
+      "output_tokens": 13,
+      "total_tokens": 2332,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 2319,
+        "total_tokens": 2332,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 16,
+    "run_seconds": 1.019,
+    "content": "zero",
+    "usage_metadata": {
+      "input_tokens": 2084,
+      "output_tokens": 2,
+      "total_tokens": 2086,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 2084,
+        "total_tokens": 2086,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 17,
+    "run_seconds": 0.85,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1568,
+      "output_tokens": 2,
+      "total_tokens": 1570,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1568,
+        "total_tokens": 1570,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 18,
+    "run_seconds": 1.253,
+    "content": "zero",
+    "usage_metadata": {
+      "input_tokens": 2251,
+      "output_tokens": 2,
+      "total_tokens": 2253,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 2251,
+        "total_tokens": 2253,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 19,
+    "run_seconds": 0.858,
+    "content": "zero",
+    "usage_metadata": {
+      "input_tokens": 1612,
+      "output_tokens": 2,
+      "total_tokens": 1614,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1612,
+        "total_tokens": 1614,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 20,
+    "run_seconds": 0.717,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1136,
+      "output_tokens": 2,
+      "total_tokens": 1138,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1136,
+        "total_tokens": 1138,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 21,
+    "run_seconds": 0.859,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1642,
+      "output_tokens": 2,
+      "total_tokens": 1644,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1642,
+        "total_tokens": 1644,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 22,
+    "run_seconds": 2.626,
+    "content": "There are no golf courses in the provided records.",
+    "usage_metadata": {
+      "input_tokens": 1044,
+      "output_tokens": 11,
+      "total_tokens": 1055,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1044,
+        "total_tokens": 1055,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 23,
+    "run_seconds": 0.711,
+    "content": "Ten",
+    "usage_metadata": {
+      "input_tokens": 1066,
+      "output_tokens": 2,
+      "total_tokens": 1068,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1066,
+        "total_tokens": 1068,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 24,
+    "run_seconds": 0.873,
+    "content": "zero",
+    "usage_metadata": {
+      "input_tokens": 1697,
+      "output_tokens": 2,
+      "total_tokens": 1699,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1697,
+        "total_tokens": 1699,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 25,
+    "run_seconds": 0.624,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 852,
+      "output_tokens": 2,
+      "total_tokens": 854,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 852,
+        "total_tokens": 854,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 26,
+    "run_seconds": 0.953,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1297,
+      "output_tokens": 2,
+      "total_tokens": 1299,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1297,
+        "total_tokens": 1299,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 27,
+    "run_seconds": 0.624,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 879,
+      "output_tokens": 2,
+      "total_tokens": 881,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 879,
+        "total_tokens": 881,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 28,
+    "run_seconds": 0.811,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1494,
+      "output_tokens": 2,
+      "total_tokens": 1496,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1494,
+        "total_tokens": 1496,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 29,
+    "run_seconds": 2.469,
+    "content": "There are thirty-one restaurants in Seattle.",
+    "usage_metadata": {
+      "input_tokens": 1951,
+      "output_tokens": 9,
+      "total_tokens": 1960,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 1951,
+        "total_tokens": 1960,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 30,
+    "run_seconds": 0.622,
+    "content": "zero",
+    "usage_metadata": {
+      "input_tokens": 818,
+      "output_tokens": 2,
+      "total_tokens": 820,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 818,
+        "total_tokens": 820,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 31,
+    "run_seconds": 0.924,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1878,
+      "output_tokens": 2,
+      "total_tokens": 1880,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1878,
+        "total_tokens": 1880,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 32,
+    "run_seconds": 0.624,
+    "content": "zero",
+    "usage_metadata": {
+      "input_tokens": 865,
+      "output_tokens": 2,
+      "total_tokens": 867,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 865,
+        "total_tokens": 867,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 33,
+    "run_seconds": 0.888,
+    "content": "zero",
+    "usage_metadata": {
+      "input_tokens": 1211,
+      "output_tokens": 2,
+      "total_tokens": 1213,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1211,
+        "total_tokens": 1213,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 34,
+    "run_seconds": 0.82,
+    "content": "zero",
+    "usage_metadata": {
+      "input_tokens": 1479,
+      "output_tokens": 2,
+      "total_tokens": 1481,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1479,
+        "total_tokens": 1481,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 35,
+    "run_seconds": 1.569,
+    "content": "Eighteen thousand.",
+    "usage_metadata": {
+      "input_tokens": 1817,
+      "output_tokens": 5,
+      "total_tokens": 1822,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1817,
+        "total_tokens": 1822,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 36,
+    "run_seconds": 0.836,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1529,
+      "output_tokens": 2,
+      "total_tokens": 1531,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1529,
+        "total_tokens": 1531,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 37,
+    "run_seconds": 4.217,
+    "content": "There are no caf\u00e9s listed in the provided records for Charleston, West Virginia.",
+    "usage_metadata": {
+      "input_tokens": 2142,
+      "output_tokens": 17,
+      "total_tokens": 2159,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 2142,
+        "total_tokens": 2159,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 38,
+    "run_seconds": 1.25,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 2185,
+      "output_tokens": 2,
+      "total_tokens": 2187,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 2185,
+        "total_tokens": 2187,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 39,
+    "run_seconds": 1.001,
+    "content": "zero",
+    "usage_metadata": {
+      "input_tokens": 1979,
+      "output_tokens": 2,
+      "total_tokens": 1981,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1979,
+        "total_tokens": 1981,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 40,
+    "run_seconds": 0.991,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1980,
+      "output_tokens": 2,
+      "total_tokens": 1982,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1980,
+        "total_tokens": 1982,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 41,
+    "run_seconds": 1.3,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 2441,
+      "output_tokens": 2,
+      "total_tokens": 2443,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 2441,
+        "total_tokens": 2443,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 42,
+    "run_seconds": 3.569,
+    "content": "The overall count of hotels in Georgia is not available in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 855,
+      "output_tokens": 16,
+      "total_tokens": 871,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 855,
+        "total_tokens": 871,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 43,
+    "run_seconds": 0.702,
+    "content": "Ten",
+    "usage_metadata": {
+      "input_tokens": 1044,
+      "output_tokens": 2,
+      "total_tokens": 1046,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1044,
+        "total_tokens": 1046,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 44,
+    "run_seconds": 0.776,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1334,
+      "output_tokens": 2,
+      "total_tokens": 1336,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1334,
+        "total_tokens": 1336,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 45,
+    "run_seconds": 0.625,
+    "content": "zero",
+    "usage_metadata": {
+      "input_tokens": 830,
+      "output_tokens": 2,
+      "total_tokens": 832,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 830,
+        "total_tokens": 832,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 46,
+    "run_seconds": 3.678,
+    "content": "There are no attractions listed in Jackson County, Oregon in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 1123,
+      "output_tokens": 16,
+      "total_tokens": 1139,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 1123,
+        "total_tokens": 1139,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 47,
+    "run_seconds": 0.615,
+    "content": "zero",
+    "usage_metadata": {
+      "input_tokens": 1977,
+      "output_tokens": 2,
+      "total_tokens": 1979,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1977,
+        "total_tokens": 1979,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 48,
+    "run_seconds": 0.624,
+    "content": "zero",
+    "usage_metadata": {
+      "input_tokens": 862,
+      "output_tokens": 2,
+      "total_tokens": 864,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 862,
+        "total_tokens": 864,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 49,
+    "run_seconds": 0.928,
+    "content": "zero",
+    "usage_metadata": {
+      "input_tokens": 1806,
+      "output_tokens": 2,
+      "total_tokens": 1808,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1806,
+        "total_tokens": 1808,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 50,
+    "run_seconds": 4.642,
+    "content": "There are no museums in Corning, New York, based on the provided data.",
+    "usage_metadata": {
+      "input_tokens": 2219,
+      "output_tokens": 18,
+      "total_tokens": 2237,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 2219,
+        "total_tokens": 2237,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 51,
+    "run_seconds": 2.182,
+    "content": "There are thirty restaurants in Ohio.",
+    "usage_metadata": {
+      "input_tokens": 1736,
+      "output_tokens": 8,
+      "total_tokens": 1744,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 1736,
+        "total_tokens": 1744,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 52,
+    "run_seconds": 4.051,
+    "content": "There are no restaurants listed in the provided records for Fresno, California.",
+    "usage_metadata": {
+      "input_tokens": 2346,
+      "output_tokens": 15,
+      "total_tokens": 2361,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 2346,
+        "total_tokens": 2361,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 53,
+    "run_seconds": 2.328,
+    "content": "Birmingham, Alabama has twenty stadia.",
+    "usage_metadata": {
+      "input_tokens": 927,
+      "output_tokens": 10,
+      "total_tokens": 937,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 927,
+        "total_tokens": 937,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 54,
+    "run_seconds": 1.09,
+    "content": "Fourteen",
+    "usage_metadata": {
+      "input_tokens": 1920,
+      "output_tokens": 3,
+      "total_tokens": 1923,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1920,
+        "total_tokens": 1923,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 55,
+    "run_seconds": 2.765,
+    "content": "The requested information is not available in the provided records.",
+    "usage_metadata": {
+      "input_tokens": 825,
+      "output_tokens": 12,
+      "total_tokens": 837,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 825,
+        "total_tokens": 837,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 56,
+    "run_seconds": 0.687,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1033,
+      "output_tokens": 2,
+      "total_tokens": 1035,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1033,
+        "total_tokens": 1035,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 57,
+    "run_seconds": 2.256,
+    "content": "There are two attractions listed in Virginia.",
+    "usage_metadata": {
+      "input_tokens": 1261,
+      "output_tokens": 9,
+      "total_tokens": 1270,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 1261,
+        "total_tokens": 1270,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 58,
+    "run_seconds": 0.822,
+    "content": "one",
+    "usage_metadata": {
+      "input_tokens": 844,
+      "output_tokens": 2,
+      "total_tokens": 846,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 844,
+        "total_tokens": 846,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 59,
+    "run_seconds": 0.708,
+    "content": "zero",
+    "usage_metadata": {
+      "input_tokens": 1070,
+      "output_tokens": 2,
+      "total_tokens": 1072,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1070,
+        "total_tokens": 1072,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 60,
+    "run_seconds": 1.245,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 2183,
+      "output_tokens": 2,
+      "total_tokens": 2185,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 2183,
+        "total_tokens": 2185,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 61,
+    "run_seconds": 0.878,
+    "content": "Three.",
+    "usage_metadata": {
+      "input_tokens": 924,
+      "output_tokens": 3,
+      "total_tokens": 927,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 924,
+        "total_tokens": 927,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 62,
+    "run_seconds": 0.872,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1712,
+      "output_tokens": 2,
+      "total_tokens": 1714,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1712,
+        "total_tokens": 1714,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 63,
+    "run_seconds": 1.011,
+    "content": "Two.",
+    "usage_metadata": {
+      "input_tokens": 1345,
+      "output_tokens": 3,
+      "total_tokens": 1348,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1345,
+        "total_tokens": 1348,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 64,
+    "run_seconds": 0.696,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1116,
+      "output_tokens": 2,
+      "total_tokens": 1118,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1116,
+        "total_tokens": 1118,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 65,
+    "run_seconds": 0.886,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1769,
+      "output_tokens": 2,
+      "total_tokens": 1771,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1769,
+        "total_tokens": 1771,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 66,
+    "run_seconds": 2.383,
+    "content": "There are four galleries in Davis, California.",
+    "usage_metadata": {
+      "input_tokens": 962,
+      "output_tokens": 10,
+      "total_tokens": 972,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 962,
+        "total_tokens": 972,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 67,
+    "run_seconds": 1.973,
+    "content": "There are nine nature reserves listed.",
+    "usage_metadata": {
+      "input_tokens": 1103,
+      "output_tokens": 8,
+      "total_tokens": 1111,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 1103,
+        "total_tokens": 1111,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 68,
+    "run_seconds": 3.787,
+    "content": "There are no hotels listed within Will County, Illinois in the provided records.",
+    "usage_metadata": {
+      "input_tokens": 1434,
+      "output_tokens": 16,
+      "total_tokens": 1450,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 1434,
+        "total_tokens": 1450,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 69,
+    "run_seconds": 0.774,
+    "content": "zero",
+    "usage_metadata": {
+      "input_tokens": 1316,
+      "output_tokens": 2,
+      "total_tokens": 1318,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1316,
+        "total_tokens": 1318,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 70,
+    "run_seconds": 0.694,
+    "content": "zero",
+    "usage_metadata": {
+      "input_tokens": 1077,
+      "output_tokens": 2,
+      "total_tokens": 1079,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1077,
+        "total_tokens": 1079,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 71,
+    "run_seconds": 4.222,
+    "content": "There are no records provided about the number of hospitals in Sandusky County, Ohio.",
+    "usage_metadata": {
+      "input_tokens": 873,
+      "output_tokens": 19,
+      "total_tokens": 892,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 873,
+        "total_tokens": 892,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 72,
+    "run_seconds": 0.76,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1222,
+      "output_tokens": 2,
+      "total_tokens": 1224,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1222,
+        "total_tokens": 1224,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 73,
+    "run_seconds": 0.679,
+    "content": "five",
+    "usage_metadata": {
+      "input_tokens": 991,
+      "output_tokens": 2,
+      "total_tokens": 993,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 991,
+        "total_tokens": 993,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 74,
+    "run_seconds": 0.889,
+    "content": "zero",
+    "usage_metadata": {
+      "input_tokens": 1699,
+      "output_tokens": 2,
+      "total_tokens": 1701,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1699,
+        "total_tokens": 1701,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 75,
+    "run_seconds": 1.439,
+    "content": "zero",
+    "usage_metadata": {
+      "input_tokens": 2285,
+      "output_tokens": 2,
+      "total_tokens": 2287,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 2285,
+        "total_tokens": 2287,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 76,
+    "run_seconds": 1.251,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 2195,
+      "output_tokens": 2,
+      "total_tokens": 2197,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 2195,
+        "total_tokens": 2197,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 77,
+    "run_seconds": 0.702,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1034,
+      "output_tokens": 2,
+      "total_tokens": 1036,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1034,
+        "total_tokens": 1036,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 78,
+    "run_seconds": 0.624,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 866,
+      "output_tokens": 2,
+      "total_tokens": 868,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 866,
+        "total_tokens": 868,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 79,
+    "run_seconds": 2.176,
+    "content": "There are ten fast food restaurants included.",
+    "usage_metadata": {
+      "input_tokens": 1020,
+      "output_tokens": 9,
+      "total_tokens": 1029,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 1020,
+        "total_tokens": 1029,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 80,
+    "run_seconds": 1.599,
+    "content": "Three hundred thirty-one million",
+    "usage_metadata": {
+      "input_tokens": 977,
+      "output_tokens": 6,
+      "total_tokens": 983,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 977,
+        "total_tokens": 983,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 81,
+    "run_seconds": 0.71,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1138,
+      "output_tokens": 2,
+      "total_tokens": 1140,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1138,
+        "total_tokens": 1140,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 82,
+    "run_seconds": 0.792,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1451,
+      "output_tokens": 2,
+      "total_tokens": 1453,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1451,
+        "total_tokens": 1453,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 83,
+    "run_seconds": 2.035,
+    "content": "Three universities are officially in Kentucky.",
+    "usage_metadata": {
+      "input_tokens": 1203,
+      "output_tokens": 8,
+      "total_tokens": 1211,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 1203,
+        "total_tokens": 1211,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 84,
+    "run_seconds": 0.985,
+    "content": "Two.",
+    "usage_metadata": {
+      "input_tokens": 1327,
+      "output_tokens": 3,
+      "total_tokens": 1330,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1327,
+        "total_tokens": 1330,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 85,
+    "run_seconds": 0.753,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1281,
+      "output_tokens": 2,
+      "total_tokens": 1283,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1281,
+        "total_tokens": 1283,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 86,
+    "run_seconds": 2.965,
+    "content": "There are no zoos in Morrison County, Minnesota.",
+    "usage_metadata": {
+      "input_tokens": 1529,
+      "output_tokens": 12,
+      "total_tokens": 1541,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1529,
+        "total_tokens": 1541,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 87,
+    "run_seconds": 1.018,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 2104,
+      "output_tokens": 2,
+      "total_tokens": 2106,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 2104,
+        "total_tokens": 2106,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 88,
+    "run_seconds": 0.651,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 891,
+      "output_tokens": 2,
+      "total_tokens": 893,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 891,
+        "total_tokens": 893,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 89,
+    "run_seconds": 0.838,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1576,
+      "output_tokens": 2,
+      "total_tokens": 1578,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1576,
+        "total_tokens": 1578,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 90,
+    "run_seconds": 0.968,
+    "content": "three",
+    "usage_metadata": {
+      "input_tokens": 1948,
+      "output_tokens": 2,
+      "total_tokens": 1950,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1948,
+        "total_tokens": 1950,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 91,
+    "run_seconds": 3.059,
+    "content": "There are no theme parks within Flathead County, Montana.",
+    "usage_metadata": {
+      "input_tokens": 1129,
+      "output_tokens": 13,
+      "total_tokens": 1142,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 1129,
+        "total_tokens": 1142,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 92,
+    "run_seconds": 0.967,
+    "content": "Fourteen",
+    "usage_metadata": {
+      "input_tokens": 1310,
+      "output_tokens": 3,
+      "total_tokens": 1313,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1310,
+        "total_tokens": 1313,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 93,
+    "run_seconds": 3.168,
+    "content": "None of the provided records mention hospitals in Denver.",
+    "usage_metadata": {
+      "input_tokens": 2171,
+      "output_tokens": 11,
+      "total_tokens": 2182,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 2171,
+        "total_tokens": 2182,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 94,
+    "run_seconds": 4.013,
+    "content": "There is no information provided about the number of hospitals in Blaine County, Oklahoma.",
+    "usage_metadata": {
+      "input_tokens": 844,
+      "output_tokens": 18,
+      "total_tokens": 862,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 844,
+        "total_tokens": 862,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 95,
+    "run_seconds": 3.735,
+    "content": "There are no universities in Rockford, Illinois listed in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 1319,
+      "output_tokens": 16,
+      "total_tokens": 1335,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 1319,
+        "total_tokens": 1335,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 96,
+    "run_seconds": 0.587,
+    "content": "Ten",
+    "usage_metadata": {
+      "input_tokens": 695,
+      "output_tokens": 2,
+      "total_tokens": 697,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 695,
+        "total_tokens": 697,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 97,
+    "run_seconds": 0.655,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 990,
+      "output_tokens": 2,
+      "total_tokens": 992,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 990,
+        "total_tokens": 992,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 98,
+    "run_seconds": 0.955,
+    "content": "zero",
+    "usage_metadata": {
+      "input_tokens": 1854,
+      "output_tokens": 2,
+      "total_tokens": 1856,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1854,
+        "total_tokens": 1856,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 99,
+    "run_seconds": 1.321,
+    "content": "Fourteen.",
+    "usage_metadata": {
+      "input_tokens": 1699,
+      "output_tokens": 4,
+      "total_tokens": 1703,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1699,
+        "total_tokens": 1703,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  }
+]

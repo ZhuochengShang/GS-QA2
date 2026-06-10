@@ -1,0 +1,112 @@
+{
+  "answer_type": "row/s",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "row/s",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "rowset_f1",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 345.0,
+      "geometry": "POINT (-117.696722 34.091121)",
+      "id": 264135,
+      "leisure": "park",
+      "osm_id": 358786637,
+      "poi_name": "John F Kennedy Park"
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "addr_city": null,
+        "addr_housenumber": null,
+        "addr_postcode": null,
+        "addr_state": null,
+        "addr_street": null,
+        "amenity": null,
+        "artwork_type": null,
+        "building": null,
+        "capacity": null,
+        "cuisine": null,
+        "delivery": null,
+        "description": null,
+        "drive_through": null,
+        "elevation": 345.0,
+        "emergency": null,
+        "fast_food": null,
+        "fee": null,
+        "geometry": "0101000020E61000006BD9B518976C5DC04A7D59DAA90B4140",
+        "hairdresser": null,
+        "healthcare": null,
+        "historic": null,
+        "id": 264135,
+        "information": null,
+        "internet_access": null,
+        "leisure": "park",
+        "museum": null,
+        "official_name": null,
+        "opening_hours": null,
+        "operator": null,
+        "osm_id": 358786637,
+        "outdoor_seating": null,
+        "parking": null,
+        "pastry_shop": null,
+        "phone": null,
+        "poi_name": "John F Kennedy Park",
+        "resort": null,
+        "restaurant": null,
+        "school_type": null,
+        "shop": null,
+        "sport": null,
+        "sports": null,
+        "takeaway": null,
+        "toilets": null,
+        "tourism": null,
+        "website": null,
+        "wheelchair": null,
+        "wholesale": null,
+        "wikidata": null,
+        "zoo": null
+      }
+    ]
+  },
+  "gold_sql": "SELECT p.*, elev.z AS elevation\nFROM pois p\nJOIN LATERAL (\n  SELECT ST_Value(d.rast, 1, p.geometry::geometry) AS z\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, p.geometry::geometry)\n  LIMIT 1\n) elev ON elev.z IS NOT NULL\nWHERE ST_DWithin(p.geometry::geography, ST_GeomFromText('POINT (-117.71559 34.094359)',4326)::geography, 2500)\n  AND p.leisure = 'park'\n  AND elev.z >= 200;",
+  "id": "range+loc+elevation_condition-13",
+  "model_output": "```sql\nWITH claremont_uni AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-117.71559 34.094359)'), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT ST_Buffer(claremont_uni.geom, 2500) AS geom\n  FROM claremont_uni\n),\nparks_in_buffer AS (\n  SELECT p.id, p.park_name, p.geometry\n  FROM parks p, buffered_area\n  WHERE ST_DWithin(p.geometry::geometry, buffered_area.geom::geometry, 0)\n    AND ST_Intersects(p.geometry::geometry, buffered_area.geom::geometry)\n)\nSELECT \n  pi.park_name,\n  ST_Value(r.rast, pi.geometry::geometry) AS elevation\nFROM parks_in_buffer pi\nJOIN public.dem_us r ON ST_Intersects(r.rast, pi.geometry::geometry)\nWHERE ST_Value(r.rast, pi.geometry::geometry) >= 200;\n```",
+  "predicted_exec": {
+    "error": "Attempting to get the value of a pixel with a non-point geometry",
+    "output": []
+  },
+  "predicted_sql": "WITH claremont_uni AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-117.71559 34.094359)'), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT ST_Buffer(claremont_uni.geom, 2500) AS geom\n  FROM claremont_uni\n),\nparks_in_buffer AS (\n  SELECT p.id, p.park_name, p.geometry\n  FROM parks p, buffered_area\n  WHERE ST_DWithin(p.geometry::geometry, buffered_area.geom::geometry, 0)\n    AND ST_Intersects(p.geometry::geometry, buffered_area.geom::geometry)\n)\nSELECT \n  pi.park_name,\n  ST_Value(r.rast, pi.geometry::geometry) AS elevation\nFROM parks_in_buffer pi\nJOIN public.dem_us r ON ST_Intersects(r.rast, pi.geometry::geometry)\nWHERE ST_Value(r.rast, pi.geometry::geometry) >= 200;",
+  "predicted_sql_candidates": [
+    "WITH claremont_uni AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-117.71559 34.094359)'), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT ST_Buffer(claremont_uni.geom, 2500) AS geom\n  FROM claremont_uni\n),\nparks_in_buffer AS (\n  SELECT p.id, p.park_name, p.geometry\n  FROM parks p, buffered_area\n  WHERE ST_DWithin(p.geometry::geometry, buffered_area.geom::geometry, 0)\n    AND ST_Intersects(p.geometry::geometry, buffered_area.geom::geometry)\n)\nSELECT \n  pi.park_name,\n  ST_Value(r.rast, pi.geometry::geometry) AS elevation\nFROM parks_in_buffer pi\nJOIN public.dem_us r ON ST_Intersects(r.rast, pi.geometry::geometry)\nWHERE ST_Value(r.rast, pi.geometry::geometry) >= 200;"
+  ],
+  "query_type": "extended",
+  "question": "Where can I find a park that's 2500 meters from Claremont Lincoln University, Claremont, CA with elevation at least 200 m?",
+  "source_file": "range+loc+elevation_condition.jsonl",
+  "source_stem": "range+loc+elevation_condition",
+  "timing": {
+    "execution_seconds": 0.04,
+    "generation_seconds": 47.731,
+    "total_seconds": 47.771
+  },
+  "usage": {
+    "completion_tokens": 223,
+    "prompt_tokens": 1809,
+    "total_tokens": 2032
+  }
+}

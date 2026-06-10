@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 3.498508
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 3.498508
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-104.080642 40.234182, -104.080661 40.235438, -104.079603 40.235864, -104.079379 40.235967, -104.078379 40.23644, -104.077247 40.236976, -104.074656 40.238207, -104.074644 40.237364, -104.074673 40.234938, -104.074667 40.234444, -104.074661 40.233958, -104.072986 40.234029, -104.070425 40.235411, -104.070745 40.235892, -104.06905 40.236953, -104.068635 40.236297, -104.062891 40.239339, -104.055836 40.243, -104.055813 40.245401, -104.055814 40.245817, -104.05561 40.245854, -104.054885 40.245932, -104.054245 40.246011, -104.053511 40.246098, -104.052322 40.246238, -104.052238 40.246208, -104.050221 40.245457, -104.05781 40.241469, -104.058106 40.240135, -104.05579 40.24024, -104.055803 40.239426, -104.055787 40.234515, -104.062623 40.234398, -104.062576 40.232895, -104.062923 40.232894, -104.062917 40.233639, -104.06347 40.233622, -104.063781 40.233323, -104.064034 40.233086, -104.064177 40.232949, -104.06424 40.232891, -104.065307 40.232902, -104.069155 40.232889, -104.069148 40.232176, -104.069979 40.232176, -104.069965 40.229624, -104.069901 40.229623, -104.069315 40.229615, -104.06863 40.229606, -104.068136 40.2296, -104.067556 40.229593, -104.067418 40.229591, -104.066941 40.229579, -104.066389 40.229575, -104.066367 40.229574, -104.065762 40.229557, -104.065502 40.229548, -104.065242 40.229535, -104.065113 40.229524, -104.065114 40.22947, -104.065159 40.227483, -104.06515 40.225584, -104.065145 40.225499, -104.066319 40.225544, -104.067411 40.225571, -104.068891 40.225607, -104.070138 40.225654, -104.071796 40.225654, -104.072467 40.225654, -104.073182 40.225653, -104.073547 40.225653, -104.073588 40.224122, -104.07459 40.224122, -104.074597 40.222758, -104.074606 40.222052, -104.07465 40.21838, -104.073076 40.218387, -104.073073 40.217621, -104.074642 40.217622, -104.074615 40.21324, -104.074562 40.211074, -104.082369 40.211081, -104.084036 40.212408, -104.084155 40.218339, -104.084143 40.226594, -104.083245 40.22699, -104.083408 40.227168, -104.083576 40.227351, -104.08016 40.229175, -104.080131 40.230703, -104.080172 40.230841, -104.080191 40.231211, -104.080176 40.231762, -104.080179 40.232151, -104.083863 40.232198, -104.083828 40.23276, -104.083442 40.232762, -104.082726 40.232767, -104.080694 40.23278, -104.080642 40.234182))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).mean AS slope\nFROM region_slope;",
+  "id": "avg_slope+area-6",
+  "model_output": "```sql\nWITH wiggins_geometry AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Wiggins' AND addr_state ILIKE 'Colorado'\n),\nwiggins_dem AS (\n  SELECT\n    ST_Clip(rast, (SELECT geom FROM wiggins_geometry), TRUE) AS clipped_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM wiggins_geometry))\n),\nwiggins_slope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, 'DEGREE') AS slope_rast\n  FROM wiggins_dem\n)\nSELECT\n  ROUND(AVG(value), 2) AS avg_slope_degrees\nFROM (\n  SELECT\n    (ST_SummaryStats(slope_rast, TRUE)).*\n  FROM wiggins_slope_raster\n) AS stats;\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 4:   WHERE region_name ILIKE 'Wiggins' AND addr_state ILIKE 'Co...\n                                                ^",
+    "output": []
+  },
+  "predicted_sql": "WITH wiggins_geometry AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Wiggins' AND addr_state ILIKE 'Colorado'\n),\nwiggins_dem AS (\n  SELECT\n    ST_Clip(rast, (SELECT geom FROM wiggins_geometry), TRUE) AS clipped_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM wiggins_geometry))\n),\nwiggins_slope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, 'DEGREE') AS slope_rast\n  FROM wiggins_dem\n)\nSELECT\n  ROUND(AVG(value), 2) AS avg_slope_degrees\nFROM (\n  SELECT\n    (ST_SummaryStats(slope_rast, TRUE)).*\n  FROM wiggins_slope_raster\n) AS stats;",
+  "predicted_sql_candidates": [
+    "WITH wiggins_geometry AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Wiggins' AND addr_state ILIKE 'Colorado'\n),\nwiggins_dem AS (\n  SELECT\n    ST_Clip(rast, (SELECT geom FROM wiggins_geometry), TRUE) AS clipped_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM wiggins_geometry))\n),\nwiggins_slope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, 'DEGREE') AS slope_rast\n  FROM wiggins_dem\n)\nSELECT\n  ROUND(AVG(value), 2) AS avg_slope_degrees\nFROM (\n  SELECT\n    (ST_SummaryStats(slope_rast, TRUE)).*\n  FROM wiggins_slope_raster\n) AS stats;"
+  ],
+  "query_type": "raster_only",
+  "question": "How steep is Wiggins, Colorado on average?",
+  "source_file": "avg_slope+area.jsonl",
+  "source_stem": "avg_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 41.163,
+    "total_seconds": 41.164
+  },
+  "usage": {
+    "completion_tokens": 183,
+    "prompt_tokens": 1514,
+    "total_tokens": 1697
+  }
+}

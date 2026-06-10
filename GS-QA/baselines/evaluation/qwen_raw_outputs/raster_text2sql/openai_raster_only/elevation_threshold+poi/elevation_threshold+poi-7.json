@@ -1,0 +1,61 @@
+{
+  "answer_type": "yes-no",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "yes-no",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer": "no",
+      "elevation_m": 49.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer": "no",
+        "elevation_m": 49.0
+      }
+    ]
+  },
+  "gold_sql": "SELECT\n  CASE\n    WHEN ST_Value(d.rast, 1, ST_GeomFromText('POINT (-123.076491 45.221228)',4326)) > 440\n    THEN 'yes' ELSE 'no'\n  END AS answer,\n  ST_Value(d.rast, 1, ST_GeomFromText('POINT (-123.076491 45.221228)',4326)) AS elevation_m\nFROM public.dem_us d\nWHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-123.076491 45.221228)',4326))\nLIMIT 1;",
+  "id": "elevation_threshold+poi-7",
+  "model_output": "```sql\nWITH park_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-123.076491 45.221228)'), 4326)::geometry AS geom\n)\nSELECT \n  CASE \n    WHEN MAX(elevation) > 440 THEN 'yes'\n    ELSE 'no'\n  END AS answer\nFROM (\n  SELECT \n    (ST_Value(r.rast, p.geom, 1)) AS elevation\n  FROM \n    park_geom p,\n    public.dem_us r\n  WHERE \n    ST_Intersects(r.rast, p.geom)\n) subquery;\n```",
+  "predicted_exec": {
+    "error": "function st_value(raster, geometry, integer) does not exist\nLINE 11:     (ST_Value(r.rast, p.geom, 1)) AS elevation\n              ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH park_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-123.076491 45.221228)'), 4326)::geometry AS geom\n)\nSELECT \n  CASE \n    WHEN MAX(elevation) > 440 THEN 'yes'\n    ELSE 'no'\n  END AS answer\nFROM (\n  SELECT \n    (ST_Value(r.rast, p.geom, 1)) AS elevation\n  FROM \n    park_geom p,\n    public.dem_us r\n  WHERE \n    ST_Intersects(r.rast, p.geom)\n) subquery;",
+  "predicted_sql_candidates": [
+    "WITH park_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-123.076491 45.221228)'), 4326)::geometry AS geom\n)\nSELECT \n  CASE \n    WHEN MAX(elevation) > 440 THEN 'yes'\n    ELSE 'no'\n  END AS answer\nFROM (\n  SELECT \n    (ST_Value(r.rast, p.geom, 1)) AS elevation\n  FROM \n    park_geom p,\n    public.dem_us r\n  WHERE \n    ST_Intersects(r.rast, p.geom)\n) subquery;"
+  ],
+  "query_type": "raster_only",
+  "question": "Is Courthouse Square Park, OR more than 440 meters in elevation?",
+  "source_file": "elevation_threshold+poi.jsonl",
+  "source_stem": "elevation_threshold+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 30.307,
+    "total_seconds": 30.308
+  },
+  "usage": {
+    "completion_tokens": 142,
+    "prompt_tokens": 1616,
+    "total_tokens": 1758
+  }
+}

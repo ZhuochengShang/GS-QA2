@@ -1,0 +1,63 @@
+{
+  "answer_type": "name",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "name",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer_name": "Mayger Fill Road",
+      "slope_deg_3": 0.0,
+      "slope_deg_4": 1.180011
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer_name": "Mayger Fill Road",
+        "slope_deg_3": 0.0,
+        "slope_deg_4": 1.180011
+      }
+    ]
+  },
+  "gold_sql": "WITH route3 AS (\n  SELECT ST_GeomFromText('LINESTRING (-118.70154 34.144705, -118.701564 34.145124, -118.701449 34.145489, -118.701319 34.14566)', 4326)::geometry AS geom\n),\nroute4 AS (\n  SELECT ST_GeomFromText('LINESTRING (-123.104083 46.164628, -123.104123 46.165938, -123.104199 46.167398)', 4326)::geometry AS geom\n),\ndem_clip3 AS (\n  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast\n  FROM public.dem_us d, route3 r\n  WHERE ST_Intersects(d.rast, r.geom)\n),\ndem_clip4 AS (\n  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast\n  FROM public.dem_us d, route4 r\n  WHERE ST_Intersects(d.rast, r.geom)\n),\nsegments AS (\n  SELECT 1 AS route_id, (ST_DumpSegments(r.geom)).geom AS seg FROM route3 r\n  UNION ALL\n  SELECT 2 AS route_id, (ST_DumpSegments(r.geom)).geom AS seg FROM route4 r\n),\nendpoints AS (\n  SELECT\n    route_id,\n    ST_StartPoint(seg)         AS p1,\n    ST_EndPoint(seg)           AS p2,\n    ST_Length(seg::geography)  AS seg_len_m\n  FROM segments\n),\nelev AS (\n  SELECT\n    e.route_id,\n    e.seg_len_m,\n    CASE WHEN e.route_id = 1 THEN ST_Value(dc3.rast, 1, e.p1)\n         ELSE ST_Value(dc4.rast, 1, e.p1) END AS z1,\n    CASE WHEN e.route_id = 1 THEN ST_Value(dc3.rast, 1, e.p2)\n         ELSE ST_Value(dc4.rast, 1, e.p2) END AS z2\n  FROM endpoints e, dem_clip3 dc3, dem_clip4 dc4\n),\ngrades AS (\n  SELECT\n    route_id,\n    seg_len_m,\n    CASE WHEN seg_len_m > 0 THEN ABS(z2 - z1) / seg_len_m END AS grade\n  FROM elev\n  WHERE z1 IS NOT NULL AND z2 IS NOT NULL\n),\navg_grade AS (\n  SELECT\n    route_id,\n    SUM(grade * seg_len_m) / NULLIF(SUM(seg_len_m), 0) AS g\n  FROM grades\n  WHERE grade IS NOT NULL\n  GROUP BY route_id\n)\nSELECT\n  CASE WHEN a1.g >= a2.g THEN 'Don Wallace Trail' ELSE 'Mayger Fill Road' END AS answer_name,\n  DEGREES(ATAN(a1.g)) AS slope_deg_3,\n  DEGREES(ATAN(a2.g)) AS slope_deg_4\nFROM avg_grade a1\nJOIN avg_grade a2\n  ON a1.route_id = 1 AND a2.route_id = 2\nWHERE a1.g IS NOT NULL AND a2.g IS NOT NULL;",
+  "id": "slope+compare_route-9",
+  "model_output": "```sql\nWITH don_wallace_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-118.70154 34.144705, -118.701564 34.145124, -118.701449 34.145489, -118.701319 34.14566)', 4326)::geometry AS geom\n),\nmayger_fill_road_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-123.104083 46.164628, -123.104123 46.165938, -123.104199 46.167398)', 4326)::geometry AS geom\n),\ndon_wallace_slope AS (\n  SELECT \n    AVG(ST_Slope(rast, 1, '32BF')) AS avg_slope\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(rast, (SELECT geom FROM don_wallace_geom))\n),\nmayger_fill_road_slope AS (\n  SELECT \n    AVG(ST_Slope(rast, 1, '32BF')) AS avg_slope\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(rast, (SELECT geom FROM mayger_fill_road_geom))\n)\nSELECT \n  (SELECT avg_slope FROM don_wallace_slope) > (SELECT avg_slope FROM mayger_fill_road_slope) AS is_don_wallace_higher,\n  (SELECT 'Don Wallace Trail') AS higher_name,\n  (SELECT avg_slope FROM don_wallace_slope) AS don_wallace_avg_slope,\n  (SELECT avg_slope FROM mayger_fill_road_slope) AS mayger_fill_road_avg_slope\n```",
+  "predicted_exec": {
+    "error": "function avg(raster) does not exist\nLINE 9:     AVG(ST_Slope(rast, 1, '32BF')) AS avg_slope\n            ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH don_wallace_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-118.70154 34.144705, -118.701564 34.145124, -118.701449 34.145489, -118.701319 34.14566)', 4326)::geometry AS geom\n),\nmayger_fill_road_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-123.104083 46.164628, -123.104123 46.165938, -123.104199 46.167398)', 4326)::geometry AS geom\n),\ndon_wallace_slope AS (\n  SELECT \n    AVG(ST_Slope(rast, 1, '32BF')) AS avg_slope\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(rast, (SELECT geom FROM don_wallace_geom))\n),\nmayger_fill_road_slope AS (\n  SELECT \n    AVG(ST_Slope(rast, 1, '32BF')) AS avg_slope\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(rast, (SELECT geom FROM mayger_fill_road_geom))\n)\nSELECT \n  (SELECT avg_slope FROM don_wallace_slope) > (SELECT avg_slope FROM mayger_fill_road_slope) AS is_don_wallace_higher,\n  (SELECT 'Don Wallace Trail') AS higher_name,\n  (SELECT avg_slope FROM don_wallace_slope) AS don_wallace_avg_slope,\n  (SELECT avg_slope FROM mayger_fill_road_slope) AS mayger_fill_road_avg_slope",
+  "predicted_sql_candidates": [
+    "WITH don_wallace_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-118.70154 34.144705, -118.701564 34.145124, -118.701449 34.145489, -118.701319 34.14566)', 4326)::geometry AS geom\n),\nmayger_fill_road_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-123.104083 46.164628, -123.104123 46.165938, -123.104199 46.167398)', 4326)::geometry AS geom\n),\ndon_wallace_slope AS (\n  SELECT \n    AVG(ST_Slope(rast, 1, '32BF')) AS avg_slope\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(rast, (SELECT geom FROM don_wallace_geom))\n),\nmayger_fill_road_slope AS (\n  SELECT \n    AVG(ST_Slope(rast, 1, '32BF')) AS avg_slope\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(rast, (SELECT geom FROM mayger_fill_road_geom))\n)\nSELECT \n  (SELECT avg_slope FROM don_wallace_slope) > (SELECT avg_slope FROM mayger_fill_road_slope) AS is_don_wallace_higher,\n  (SELECT 'Don Wallace Trail') AS higher_name,\n  (SELECT avg_slope FROM don_wallace_slope) AS don_wallace_avg_slope,\n  (SELECT avg_slope FROM mayger_fill_road_slope) AS mayger_fill_road_avg_slope"
+  ],
+  "query_type": "raster_only",
+  "question": "Does Don Wallace Trail have a higher average slope than Mayger Fill Road?",
+  "source_file": "slope+compare_route.jsonl",
+  "source_stem": "slope+compare_route",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 92.341,
+    "total_seconds": 92.342
+  },
+  "usage": {
+    "completion_tokens": 422,
+    "prompt_tokens": 1696,
+    "total_tokens": 2118
+  }
+}

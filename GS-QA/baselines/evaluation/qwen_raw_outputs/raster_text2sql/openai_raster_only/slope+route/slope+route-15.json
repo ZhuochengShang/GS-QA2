@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope_degrees": 2.135753
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope_degrees": 2.135753
+      }
+    ]
+  },
+  "gold_sql": "WITH route AS (\n  SELECT ST_GeomFromText('LINESTRING (-111.249209 44.684521, -111.249271 44.684729, -111.249369 44.684961, -111.249421 44.685043, -111.249491 44.685115, -111.249598 44.685197, -111.250226 44.685521, -111.250512 44.685724, -111.2507 44.685872, -111.250798 44.685978, -111.250856 44.68605, -111.250885 44.68611, -111.250892 44.686183, -111.250878 44.686278, -111.250868 44.68635, -111.250852 44.686435, -111.250848 44.686546, -111.250866 44.686636)', 4326)::geometry AS geom\n),\ndem_clip AS (\n  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast\n  FROM public.dem_us d, route r\n  WHERE ST_Intersects(d.rast, r.geom)\n),\nsegments AS (\n  SELECT (ST_DumpSegments(r.geom)).geom AS seg\n  FROM route r\n),\nendpoints AS (\n  SELECT\n    ST_StartPoint(seg) AS p1,\n    ST_EndPoint(seg)   AS p2,\n    ST_Length(seg::geography) AS seg_len_m\n  FROM segments\n),\nelev AS (\n  SELECT\n    e.seg_len_m,\n    ST_Value(dc.rast, 1, e.p1) AS z1,\n    ST_Value(dc.rast, 1, e.p2) AS z2\n  FROM endpoints e, dem_clip dc\n),\nslopes AS (\n  SELECT\n    seg_len_m,\n    CASE WHEN seg_len_m > 0 THEN ABS(z2 - z1) / seg_len_m ELSE NULL END AS grade\n  FROM elev\n  WHERE z1 IS NOT NULL AND z2 IS NOT NULL\n),\navg_grade AS (\n  SELECT\n    SUM(grade * seg_len_m) / NULLIF(SUM(seg_len_m), 0) AS g\n  FROM slopes\n  WHERE grade IS NOT NULL\n)\nSELECT DEGREES(ATAN(g)) AS slope_degrees\nFROM avg_grade;",
+  "id": "slope+route-15",
+  "model_output": "```sql\nWITH beaver_street_geom AS (\n  SELECT geometry\n  FROM roads\n  WHERE road_name ILIKE 'Beaver Street'\n),\nclipped_dem AS (\n  SELECT\n    ST_Clip(\n      r.rast,\n      b.geometry,\n      TRUE\n    ) AS clipped_rast\n  FROM\n    public.dem_us r,\n    beaver_street_geom b\n  WHERE\n    ST_Intersects(r.rast::geometry, b.geometry)\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM\n    clipped_dem\n)\nSELECT\n  ROUND(AVG(value), 2) AS average_slope_degrees\nFROM\n  slope_raster s,\n  LATERAL ST_DumpAsPolygons(s.slope_rast) AS (geom geometry, value double precision);\n```",
+  "predicted_exec": {
+    "error": "function st_clip(raster, geography, boolean) does not exist\nLINE 8:     ST_Clip(\n            ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH beaver_street_geom AS (\n  SELECT geometry\n  FROM roads\n  WHERE road_name ILIKE 'Beaver Street'\n),\nclipped_dem AS (\n  SELECT\n    ST_Clip(\n      r.rast,\n      b.geometry,\n      TRUE\n    ) AS clipped_rast\n  FROM\n    public.dem_us r,\n    beaver_street_geom b\n  WHERE\n    ST_Intersects(r.rast::geometry, b.geometry)\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM\n    clipped_dem\n)\nSELECT\n  ROUND(AVG(value), 2) AS average_slope_degrees\nFROM\n  slope_raster s,\n  LATERAL ST_DumpAsPolygons(s.slope_rast) AS (geom geometry, value double precision);",
+  "predicted_sql_candidates": [
+    "WITH beaver_street_geom AS (\n  SELECT geometry\n  FROM roads\n  WHERE road_name ILIKE 'Beaver Street'\n),\nclipped_dem AS (\n  SELECT\n    ST_Clip(\n      r.rast,\n      b.geometry,\n      TRUE\n    ) AS clipped_rast\n  FROM\n    public.dem_us r,\n    beaver_street_geom b\n  WHERE\n    ST_Intersects(r.rast::geometry, b.geometry)\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM\n    clipped_dem\n)\nSELECT\n  ROUND(AVG(value), 2) AS average_slope_degrees\nFROM\n  slope_raster s,\n  LATERAL ST_DumpAsPolygons(s.slope_rast) AS (geom geometry, value double precision);"
+  ],
+  "query_type": "raster_only",
+  "question": "On average, how steep is the terrain along Beaver Street?",
+  "source_file": "slope+route.jsonl",
+  "source_stem": "slope+route",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 42.361,
+    "total_seconds": 42.362
+  },
+  "usage": {
+    "completion_tokens": 186,
+    "prompt_tokens": 1525,
+    "total_tokens": 1711
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 34.507259
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 34.507259
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-87.218735 45.967508, -87.219552 45.968156, -87.221957 45.969336, -87.222709 45.969879, -87.222837 45.970009, -87.223783 45.970507, -87.225148 45.971016, -87.226066 45.971254, -87.227554 45.97155, -87.229232 45.972011, -87.231733 45.972233, -87.234367 45.972741, -87.23498 45.972797, -87.2355 45.972784, -87.238827 45.973041, -87.241273 45.97329, -87.242097 45.973262, -87.243368 45.973119, -87.244736 45.973082, -87.245796 45.973063, -87.24698 45.973084, -87.249481 45.972795, -87.25186 45.972637, -87.252763 45.972746, -87.255535 45.973156, -87.257881 45.97371, -87.260632 45.974616, -87.263942 45.975308, -87.264941 45.975683, -87.265885 45.976238, -87.266392 45.976413, -87.266838 45.97648, -87.267214 45.976565, -87.267858 45.976792, -87.268512 45.977141, -87.268809 45.977413, -87.268912 45.977578, -87.269531 45.978972, -87.269504 45.97947, -87.269315 45.979843, -87.26916 45.980366, -87.269194 45.98059, -87.269226 45.980618, -87.269173 45.981247, -87.268855 45.981984, -87.268431 45.982785, -87.268151 45.983316, -87.268046 45.983709, -87.267817 45.984189, -87.267306 45.98508, -87.367648 45.985237, -87.367553 45.898968, -87.346502 45.898716, -87.325321 45.898652, -87.325376 45.869844, -87.270606 45.869453, -87.250092 45.869468, -87.193358 45.869438, -87.163424 45.869872, -87.142654 45.869972, -87.14186 45.898237, -87.137733 45.898212, -87.138078 45.899312, -87.138318 45.899863, -87.138811 45.900623, -87.139334 45.9012, -87.14053 45.901938, -87.141289 45.902526, -87.141521 45.902764, -87.142217 45.903886, -87.142508 45.904183, -87.143069 45.904554, -87.143574 45.904803, -87.144084 45.904975, -87.145061 45.905205, -87.145715 45.905274, -87.146384 45.905267, -87.147763 45.905135, -87.149174 45.904921, -87.150213 45.90471, -87.15185 45.904183, -87.153295 45.903493, -87.15456 45.902648, -87.154897 45.902461, -87.156699 45.901444, -87.157993 45.901091, -87.159626 45.900338, -87.160664 45.900022, -87.161305 45.899884, -87.162018 45.899806, -87.16316 45.89966, -87.164103 45.899556, -87.165439 45.899304, -87.167926 45.898998, -87.169104 45.898909, -87.170906 45.898953, -87.175086 45.899383, -87.176681 45.899364, -87.181346 45.898598, -87.184147 45.898292, -87.186649 45.897861, -87.18706 45.897847, -87.187324 45.897856, -87.188869 45.897885, -87.189845 45.897831, -87.191263 45.897647, -87.19208 45.897468, -87.192649 45.897301, -87.193276 45.897052, -87.195021 45.896101, -87.195807 45.895832, -87.196202 45.89575, -87.196968 45.895681, -87.197792 45.895689, -87.198196 45.895747, -87.199996 45.896186, -87.201035 45.896652, -87.202995 45.897764, -87.204905 45.899076, -87.20725 45.900926, -87.210519 45.903323, -87.212364 45.90536, -87.212669 45.905856, -87.212902 45.906557, -87.212957 45.906987, -87.212909 45.908138, -87.212623 45.909235, -87.21231 45.910985, -87.212258 45.911739, -87.212629 45.912919, -87.212708 45.913878, -87.212717 45.914501, -87.212829 45.915558, -87.21254 45.916618, -87.212222 45.918403, -87.211494 45.920278, -87.211254 45.92138, -87.211429 45.921754, -87.211356 45.922327, -87.211153 45.922732, -87.210874 45.922973, -87.210696 45.924182, -87.210843 45.926304, -87.21091 45.92695, -87.211144 45.927614, -87.21135 45.92805, -87.211992 45.929079, -87.212461 45.929678, -87.212765 45.930477, -87.21284 45.931531, -87.212781 45.933977, -87.212882 45.93509, -87.2133 45.93741, -87.21341 45.938486, -87.213248 45.939632, -87.212953 45.940544, -87.212956 45.940976, -87.213066 45.941473, -87.213397 45.942306, -87.214087 45.943391, -87.215495 45.94491, -87.217377 45.94747, -87.217556 45.947804, -87.217651 45.948009, -87.218131 45.948561, -87.218446 45.949054, -87.218766 45.9497, -87.218975 45.950331, -87.218986 45.950834, -87.218755 45.952589, -87.218666 45.953052, -87.218328 45.953958, -87.217552 45.955597, -87.21718 45.956191, -87.216646 45.957393, -87.216384 45.958142, -87.216086 45.959457, -87.215385 45.961554, -87.215223 45.962907, -87.215393 45.963594, -87.21575 45.96429, -87.216321 45.965293, -87.216466 45.965484, -87.218463 45.967226, -87.218735 45.967508))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).max AS slope\nFROM region_slope;",
+  "id": "max_slope+area-9",
+  "model_output": "```sql\nWITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Cornell Township'\n    AND border_type ILIKE 'township'\n    AND addr_state ILIKE 'Michigan'\n)\n, clipped_raster AS (\n  SELECT\n    ST_Clip(\n      r.rast,\n      1,\n      (SELECT geom FROM region_geom),\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast::geometry,\n    (SELECT geom FROM region_geom)\n  )\n)\n, slope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF', TRUE) AS slope_rast\n  FROM clipped_raster\n)\nSELECT\n  MAX(value) AS max_slope_degrees\nFROM (\n  SELECT\n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM slope_raster\n) AS dump;\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 6:     AND addr_state ILIKE 'Michigan'\n                ^",
+    "output": []
+  },
+  "predicted_sql": "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Cornell Township'\n    AND border_type ILIKE 'township'\n    AND addr_state ILIKE 'Michigan'\n)\n, clipped_raster AS (\n  SELECT\n    ST_Clip(\n      r.rast,\n      1,\n      (SELECT geom FROM region_geom),\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast::geometry,\n    (SELECT geom FROM region_geom)\n  )\n)\n, slope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF', TRUE) AS slope_rast\n  FROM clipped_raster\n)\nSELECT\n  MAX(value) AS max_slope_degrees\nFROM (\n  SELECT\n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM slope_raster\n) AS dump;",
+  "predicted_sql_candidates": [
+    "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Cornell Township'\n    AND border_type ILIKE 'township'\n    AND addr_state ILIKE 'Michigan'\n)\n, clipped_raster AS (\n  SELECT\n    ST_Clip(\n      r.rast,\n      1,\n      (SELECT geom FROM region_geom),\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast::geometry,\n    (SELECT geom FROM region_geom)\n  )\n)\n, slope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF', TRUE) AS slope_rast\n  FROM clipped_raster\n)\nSELECT\n  MAX(value) AS max_slope_degrees\nFROM (\n  SELECT\n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM slope_raster\n) AS dump;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the max slope value within Cornell Township, Michigan?",
+  "source_file": "max_slope+area.jsonl",
+  "source_stem": "max_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 45.327,
+    "total_seconds": 45.328
+  },
+  "usage": {
+    "completion_tokens": 207,
+    "prompt_tokens": 1516,
+    "total_tokens": 1723
+  }
+}

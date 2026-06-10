@@ -1,0 +1,63 @@
+{
+  "answer_type": "name",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "name",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer_name": "Westwood Drive",
+      "slope_deg_3": 6.357074,
+      "slope_deg_4": 0.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer_name": "Westwood Drive",
+        "slope_deg_3": 6.357074,
+        "slope_deg_4": 0.0
+      }
+    ]
+  },
+  "gold_sql": "WITH route3 AS (\n  SELECT ST_GeomFromText('LINESTRING (-121.580616 45.698687, -121.580788 45.698419, -121.581072 45.698374, -121.583005 45.698452, -121.583335 45.698426, -121.583511 45.698348, -121.584036 45.697562, -121.584229 45.697442, -121.584615 45.69733, -121.585098 45.697304, -121.58528 45.697356, -121.585468 45.697528)', 4326)::geometry AS geom\n),\nroute4 AS (\n  SELECT ST_GeomFromText('LINESTRING (-117.168199 33.258874, -117.168134 33.259087, -117.168122 33.259128, -117.167916 33.259447, -117.167857 33.259594, -117.167862 33.259886, -117.167954 33.260215, -117.167967 33.260267)', 4326)::geometry AS geom\n),\ndem_clip3 AS (\n  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast\n  FROM public.dem_us d, route3 r\n  WHERE ST_Intersects(d.rast, r.geom)\n),\ndem_clip4 AS (\n  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast\n  FROM public.dem_us d, route4 r\n  WHERE ST_Intersects(d.rast, r.geom)\n),\nsegments AS (\n  SELECT 1 AS route_id, (ST_DumpSegments(r.geom)).geom AS seg FROM route3 r\n  UNION ALL\n  SELECT 2 AS route_id, (ST_DumpSegments(r.geom)).geom AS seg FROM route4 r\n),\nendpoints AS (\n  SELECT\n    route_id,\n    ST_StartPoint(seg)         AS p1,\n    ST_EndPoint(seg)           AS p2,\n    ST_Length(seg::geography)  AS seg_len_m\n  FROM segments\n),\nelev AS (\n  SELECT\n    e.route_id,\n    e.seg_len_m,\n    CASE WHEN e.route_id = 1 THEN ST_Value(dc3.rast, 1, e.p1)\n         ELSE ST_Value(dc4.rast, 1, e.p1) END AS z1,\n    CASE WHEN e.route_id = 1 THEN ST_Value(dc3.rast, 1, e.p2)\n         ELSE ST_Value(dc4.rast, 1, e.p2) END AS z2\n  FROM endpoints e, dem_clip3 dc3, dem_clip4 dc4\n),\ngrades AS (\n  SELECT\n    route_id,\n    seg_len_m,\n    CASE WHEN seg_len_m > 0 THEN ABS(z2 - z1) / seg_len_m END AS grade\n  FROM elev\n  WHERE z1 IS NOT NULL AND z2 IS NOT NULL\n),\navg_grade AS (\n  SELECT\n    route_id,\n    SUM(grade * seg_len_m) / NULLIF(SUM(seg_len_m), 0) AS g\n  FROM grades\n  WHERE grade IS NOT NULL\n  GROUP BY route_id\n)\nSELECT\n  CASE WHEN a1.g >= a2.g THEN 'Westwood Drive' ELSE 'SD Aqueduct service road (private)' END AS answer_name,\n  DEGREES(ATAN(a1.g)) AS slope_deg_3,\n  DEGREES(ATAN(a2.g)) AS slope_deg_4\nFROM avg_grade a1\nJOIN avg_grade a2\n  ON a1.route_id = 1 AND a2.route_id = 2\nWHERE a1.g IS NOT NULL AND a2.g IS NOT NULL;",
+  "id": "slope+compare_route-4",
+  "model_output": "```sql\nWITH westwood_drive_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-121.580616 45.698687, -121.580788 45.698419, -121.581072 45.698374, -121.583005 45.698452, -121.583335 45.698426, -121.583511 45.698348, -121.584036 45.697562, -121.584229 45.697442, -121.584615 45.69733, -121.585098 45.697304, -121.58528 45.697356, -121.585468 45.697528)', 4326)::geometry AS geom\n),\nsd_aqueduct_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-117.168199 33.258874, -117.168134 33.259087, -117.168122 33.259128, -117.167916 33.259447, -117.167857 33.259594, -117.167862 33.259886, -117.167954 33.260215, -117.167967 33.260267)', 4326)::geometry AS geom\n),\nwestwood_slope AS (\n  SELECT \n    ST_Avg(ST_Slope(rast, 1, '32BF')) AS avg_slope\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(rast, (SELECT geom FROM westwood_drive_geom))\n),\nsd_aqueduct_slope AS (\n  SELECT \n    ST_Avg(ST_Slope(rast, 1, '32BF')) AS avg_slope\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(rast, (SELECT geom FROM sd_aqueduct_geom))\n)\nSELECT \n  (SELECT avg_slope FROM westwood_slope) > (SELECT avg_slope FROM sd_aqueduct_slope) AS is_higher,\n  (SELECT 'Westwood Drive') AS higher_road,\n  (SELECT avg_slope FROM westwood_slope) AS westwood_avg_slope,\n  (SELECT avg_slope FROM sd_aqueduct_slope) AS sd_aqueduct_avg_slope;\n```",
+  "predicted_exec": {
+    "error": "function st_avg(raster) does not exist\nLINE 9:     ST_Avg(ST_Slope(rast, 1, '32BF')) AS avg_slope\n            ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH westwood_drive_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-121.580616 45.698687, -121.580788 45.698419, -121.581072 45.698374, -121.583005 45.698452, -121.583335 45.698426, -121.583511 45.698348, -121.584036 45.697562, -121.584229 45.697442, -121.584615 45.69733, -121.585098 45.697304, -121.58528 45.697356, -121.585468 45.697528)', 4326)::geometry AS geom\n),\nsd_aqueduct_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-117.168199 33.258874, -117.168134 33.259087, -117.168122 33.259128, -117.167916 33.259447, -117.167857 33.259594, -117.167862 33.259886, -117.167954 33.260215, -117.167967 33.260267)', 4326)::geometry AS geom\n),\nwestwood_slope AS (\n  SELECT \n    ST_Avg(ST_Slope(rast, 1, '32BF')) AS avg_slope\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(rast, (SELECT geom FROM westwood_drive_geom))\n),\nsd_aqueduct_slope AS (\n  SELECT \n    ST_Avg(ST_Slope(rast, 1, '32BF')) AS avg_slope\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(rast, (SELECT geom FROM sd_aqueduct_geom))\n)\nSELECT \n  (SELECT avg_slope FROM westwood_slope) > (SELECT avg_slope FROM sd_aqueduct_slope) AS is_higher,\n  (SELECT 'Westwood Drive') AS higher_road,\n  (SELECT avg_slope FROM westwood_slope) AS westwood_avg_slope,\n  (SELECT avg_slope FROM sd_aqueduct_slope) AS sd_aqueduct_avg_slope;",
+  "predicted_sql_candidates": [
+    "WITH westwood_drive_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-121.580616 45.698687, -121.580788 45.698419, -121.581072 45.698374, -121.583005 45.698452, -121.583335 45.698426, -121.583511 45.698348, -121.584036 45.697562, -121.584229 45.697442, -121.584615 45.69733, -121.585098 45.697304, -121.58528 45.697356, -121.585468 45.697528)', 4326)::geometry AS geom\n),\nsd_aqueduct_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-117.168199 33.258874, -117.168134 33.259087, -117.168122 33.259128, -117.167916 33.259447, -117.167857 33.259594, -117.167862 33.259886, -117.167954 33.260215, -117.167967 33.260267)', 4326)::geometry AS geom\n),\nwestwood_slope AS (\n  SELECT \n    ST_Avg(ST_Slope(rast, 1, '32BF')) AS avg_slope\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(rast, (SELECT geom FROM westwood_drive_geom))\n),\nsd_aqueduct_slope AS (\n  SELECT \n    ST_Avg(ST_Slope(rast, 1, '32BF')) AS avg_slope\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(rast, (SELECT geom FROM sd_aqueduct_geom))\n)\nSELECT \n  (SELECT avg_slope FROM westwood_slope) > (SELECT avg_slope FROM sd_aqueduct_slope) AS is_higher,\n  (SELECT 'Westwood Drive') AS higher_road,\n  (SELECT avg_slope FROM westwood_slope) AS westwood_avg_slope,\n  (SELECT avg_slope FROM sd_aqueduct_slope) AS sd_aqueduct_avg_slope;"
+  ],
+  "query_type": "raster_only",
+  "question": "Does Westwood Drive have a higher average slope than SD Aqueduct service road (private)?",
+  "source_file": "slope+compare_route.jsonl",
+  "source_stem": "slope+compare_route",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 156.847,
+    "total_seconds": 156.848
+  },
+  "usage": {
+    "completion_tokens": 700,
+    "prompt_tokens": 1988,
+    "total_tokens": 2688
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "stem": "elevation_compare+two_pois",
+  "query_type": "raster_only",
+  "model": "Qwen/Qwen3-32B-AWQ",
+  "provider": "openai",
+  "question_count": 20,
+  "generation_timeouts": 0,
+  "successful_sql_generation": 20,
+  "successful_sql_execution": 16,
+  "timing": {
+    "total_wall_seconds": 1353.745,
+    "mean_generation_seconds": 66.446,
+    "mean_execution_seconds": 1.241,
+    "mean_total_seconds": 67.687,
+    "max_total_seconds": 84.289
+  },
+  "tokens": {
+    "total_prompt_tokens": 34841,
+    "total_completion_tokens": 6226,
+    "total_tokens": 41067,
+    "mean_prompt_tokens": 1742.0,
+    "mean_completion_tokens": 311.3,
+    "mean_total_tokens": 2053.3
+  },
+  "evaluation": {
+    "exact_matches": 0,
+    "numeric_tolerance_accuracy": null,
+    "mean_absolute_error": null,
+    "text_exact_accuracy": 0.5625,
+    "mean_rowset_f1": 0.0
+  }
+}

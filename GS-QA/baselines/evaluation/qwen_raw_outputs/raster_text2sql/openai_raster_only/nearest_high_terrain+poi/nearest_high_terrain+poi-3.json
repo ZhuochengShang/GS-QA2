@@ -1,0 +1,59 @@
+{
+  "answer_type": "distance",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "distance",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "distance_m": 33766.377776
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "distance_m": 33766.377776
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-123.160374 44.638732)',4326) AS pt\n),\nnearby_tiles AS (\n  SELECT d.rast\n  FROM public.dem_us d, origin o\n  WHERE d.rast && ST_Expand(o.pt, 1.0)\n),\nmasked AS (\n\t  SELECT ST_MapAlgebra(\n\t           rast,\n\t           1,\n\t           '32BF'::text,\n\t           'CASE WHEN [rast.val] > 1100 THEN [rast.val] ELSE NULL END'::text,\n\t           NULL::double precision\n\t         ) AS rast\n  FROM nearby_tiles\n),\nqualifying_pixels AS (\n  SELECT (pp).geom AS geom\n  FROM masked\n  CROSS JOIN LATERAL ST_PixelAsCentroids(rast, 1, TRUE) AS pp\n)\nSELECT MIN(ST_Distance(p.geom::geography, o.pt::geography)) AS distance_m\nFROM qualifying_pixels p, origin o;",
+  "id": "nearest_high_terrain+poi-3",
+  "model_output": "```sql\nWITH hyak_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-123.160374, 44.638732), 4326)::geography AS geom\n),\nrast_clip AS (\n  SELECT\n    (ST_Union(rast)).geom AS geom,\n    (ST_Union(rast)).rast AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, hyak_point.geom)\n),\nelevation_raster AS (\n  SELECT\n    ST_MapAlgebraExpr(\n      rast_clip.rast,\n      '([rast] > 1100)::INT',\n      '32BF'\n    ) AS rast\n  FROM rast_clip\n),\ndistance_analysis AS (\n  SELECT\n    ST_Distance(\n      hyak_point.geom,\n      ST_AsGeography(\n        ST_PixelAsCentroids(\n          elevation_raster.rast,\n          TRUE\n        )\n      )\n    ) AS distance_meters\n  FROM hyak_point, elevation_raster\n  WHERE ST_Value(elevation_raster.rast, 1, 1) = 1\n  ORDER BY distance_meters\n  LIMIT 1\n)\nSELECT distance_meters FROM distance_analysis;\n```",
+  "predicted_exec": {
+    "error": "column notation .geom applied to type raster, which is not a composite type\nLINE 6:     (ST_Union(rast)).geom AS geom,\n             ^",
+    "output": []
+  },
+  "predicted_sql": "WITH hyak_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-123.160374, 44.638732), 4326)::geography AS geom\n),\nrast_clip AS (\n  SELECT\n    (ST_Union(rast)).geom AS geom,\n    (ST_Union(rast)).rast AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, hyak_point.geom)\n),\nelevation_raster AS (\n  SELECT\n    ST_MapAlgebraExpr(\n      rast_clip.rast,\n      '([rast] > 1100)::INT',\n      '32BF'\n    ) AS rast\n  FROM rast_clip\n),\ndistance_analysis AS (\n  SELECT\n    ST_Distance(\n      hyak_point.geom,\n      ST_AsGeography(\n        ST_PixelAsCentroids(\n          elevation_raster.rast,\n          TRUE\n        )\n      )\n    ) AS distance_meters\n  FROM hyak_point, elevation_raster\n  WHERE ST_Value(elevation_raster.rast, 1, 1) = 1\n  ORDER BY distance_meters\n  LIMIT 1\n)\nSELECT distance_meters FROM distance_analysis;",
+  "predicted_sql_candidates": [
+    "WITH hyak_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-123.160374, 44.638732), 4326)::geography AS geom\n),\nrast_clip AS (\n  SELECT\n    (ST_Union(rast)).geom AS geom,\n    (ST_Union(rast)).rast AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, hyak_point.geom)\n),\nelevation_raster AS (\n  SELECT\n    ST_MapAlgebraExpr(\n      rast_clip.rast,\n      '([rast] > 1100)::INT',\n      '32BF'\n    ) AS rast\n  FROM rast_clip\n),\ndistance_analysis AS (\n  SELECT\n    ST_Distance(\n      hyak_point.geom,\n      ST_AsGeography(\n        ST_PixelAsCentroids(\n          elevation_raster.rast,\n          TRUE\n        )\n      )\n    ) AS distance_meters\n  FROM hyak_point, elevation_raster\n  WHERE ST_Value(elevation_raster.rast, 1, 1) = 1\n  ORDER BY distance_meters\n  LIMIT 1\n)\nSELECT distance_meters FROM distance_analysis;"
+  ],
+  "query_type": "raster_only",
+  "question": "From Hyak Park, OR, what is the distance to the nearest cell of land above 1100 meters?",
+  "source_file": "nearest_high_terrain+poi.jsonl",
+  "source_stem": "nearest_high_terrain+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 59.87,
+    "total_seconds": 59.871
+  },
+  "usage": {
+    "completion_tokens": 273,
+    "prompt_tokens": 1622,
+    "total_tokens": 1895
+  }
+}

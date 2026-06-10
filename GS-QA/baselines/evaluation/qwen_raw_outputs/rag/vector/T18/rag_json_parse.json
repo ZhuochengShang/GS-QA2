@@ -1,0 +1,2102 @@
+[
+  {
+    "id": 1300,
+    "run_seconds": 11.955,
+    "content": "```json\n{\n    \"name\": \"U.S. Space & Rocket Center\",\n    \"address\": \"3700 County Road 175, Huntsville, AL 35805\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 203,
+      "output_tokens": 55,
+      "total_tokens": 258,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 55,
+        "prompt_tokens": 203,
+        "total_tokens": 258,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1301,
+    "run_seconds": 6.382,
+    "content": "```json\n{\n    \"name\": \"Frederick-Douglass Maritime Museum\",\n    \"distance\": 21\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 193,
+      "output_tokens": 29,
+      "total_tokens": 222,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 29,
+        "prompt_tokens": 193,
+        "total_tokens": 222,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1302,
+    "run_seconds": 9.574,
+    "content": "```json\n{\n    \"name\": \"emergency hospital\",\n    \"address\": \"near Wenatchee Valley Museum and Cultural Center, Wenatchee, WA\",\n    \"distance\": 90\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 198,
+      "output_tokens": 44,
+      "total_tokens": 242,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 44,
+        "prompt_tokens": 198,
+        "total_tokens": 242,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1303,
+    "run_seconds": 10.85,
+    "content": "```json\n{\n    \"name\": \"Banner Thunderbird Medical Center\",\n    \"address\": \"1101 W Thunderbird Rd, Phoenix, AZ 85013\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 202,
+      "output_tokens": 50,
+      "total_tokens": 252,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 50,
+        "prompt_tokens": 202,
+        "total_tokens": 252,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1304,
+    "run_seconds": 7.659,
+    "content": "```json\n{\n    \"name\": \"emergency hospital\",\n    \"address\": \"Provincetown, MA\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 189,
+      "output_tokens": 35,
+      "total_tokens": 224,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 35,
+        "prompt_tokens": 189,
+        "total_tokens": 224,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1305,
+    "run_seconds": 7.659,
+    "content": "```json\n{\n    \"name\": \"Glory Days Grill\",\n    \"address\": \"Herndon, Virginia\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 198,
+      "output_tokens": 35,
+      "total_tokens": 233,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 35,
+        "prompt_tokens": 198,
+        "total_tokens": 233,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1306,
+    "run_seconds": 6.171,
+    "content": "```json\n{\n    \"name\": \"Imagine That!!!\",\n    \"address\": \"Florham Park, NJ\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 185,
+      "output_tokens": 28,
+      "total_tokens": 213,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 28,
+        "prompt_tokens": 185,
+        "total_tokens": 213,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1307,
+    "run_seconds": 11.07,
+    "content": "```json\n{\n    \"name\": \"Delray Medical Center\",\n    \"address\": \"2800 N. Federal Highway, Delray Beach, FL 33445\",\n    \"distance\": 40\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 209,
+      "output_tokens": 51,
+      "total_tokens": 260,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 51,
+        "prompt_tokens": 209,
+        "total_tokens": 260,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1308,
+    "run_seconds": 11.703,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0,\n    \"distance\": 0,\n    \"length\": 0,\n    \"area\": 0,\n    \"azimuth_angle\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 189,
+      "output_tokens": 54,
+      "total_tokens": 243,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 54,
+        "prompt_tokens": 189,
+        "total_tokens": 243,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1309,
+    "run_seconds": 5.53,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 25,
+      "total_tokens": 211,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 186,
+        "total_tokens": 211,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1310,
+    "run_seconds": 11.702,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0,\n    \"distance\": 0,\n    \"length\": 0,\n    \"area\": 0,\n    \"azimuth_angle\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 185,
+      "output_tokens": 54,
+      "total_tokens": 239,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 54,
+        "prompt_tokens": 185,
+        "total_tokens": 239,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1311,
+    "run_seconds": 5.957,
+    "content": "```json\n{\n    \"name\": \"Josiah Day House Museum\",\n    \"distance\": 111\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 196,
+      "output_tokens": 27,
+      "total_tokens": 223,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 27,
+        "prompt_tokens": 196,
+        "total_tokens": 223,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1312,
+    "run_seconds": 11.489,
+    "content": "```json\n{\n    \"name\": \"Memorial Health University Medical Center\",\n    \"address\": \"1101 E 32nd St, Savannah, GA 31460\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 192,
+      "output_tokens": 53,
+      "total_tokens": 245,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 53,
+        "prompt_tokens": 192,
+        "total_tokens": 245,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1313,
+    "run_seconds": 3.829,
+    "content": "```json\n{\n    \"name\": \"Mr. Seafood\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 185,
+      "output_tokens": 17,
+      "total_tokens": 202,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 185,
+        "total_tokens": 202,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1314,
+    "run_seconds": 7.872,
+    "content": "```json\n{\n    \"name\": \"nearest transport museum\",\n    \"address\": \"Atlanta, GA\",\n    \"distance\": 18000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 191,
+      "output_tokens": 36,
+      "total_tokens": 227,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 36,
+        "prompt_tokens": 191,
+        "total_tokens": 227,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1315,
+    "run_seconds": 8.942,
+    "content": "```json\n{\n    \"name\": \"Walt Disney World Resort\",\n    \"address\": \"Walt Disney World Resort, FL, USA\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 209,
+      "output_tokens": 41,
+      "total_tokens": 250,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 41,
+        "prompt_tokens": 209,
+        "total_tokens": 250,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1316,
+    "run_seconds": 8.515,
+    "content": "```json\n{\n    \"name\": \"Toms River Seaport Society and Maritime Museum\",\n    \"address\": \"New Jersey\",\n    \"distance\": 14\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 209,
+      "output_tokens": 39,
+      "total_tokens": 248,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 39,
+        "prompt_tokens": 209,
+        "total_tokens": 248,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1317,
+    "run_seconds": 7.233,
+    "content": "```json\n{\n    \"name\": \"Weymouth Woods-Sandhills Nature Preserve-Museum\",\n    \"distance\": 53\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 202,
+      "output_tokens": 33,
+      "total_tokens": 235,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 33,
+        "prompt_tokens": 202,
+        "total_tokens": 235,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1318,
+    "run_seconds": 11.063,
+    "content": "```json\n{\n    \"name\": \"Ritter Park Rose Garden\",\n    \"address\": \"1001 5th Ave, Huntington, WV 25701\",\n    \"azimuth_angle\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 195,
+      "output_tokens": 51,
+      "total_tokens": 246,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 51,
+        "prompt_tokens": 195,
+        "total_tokens": 246,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1319,
+    "run_seconds": 9.573,
+    "content": "```json\n{\n    \"name\": \"Lake Placid Historical Society Depot Museum\",\n    \"address\": \"Fish Creek Falls, Steamboat Springs, CO\",\n    \"distance\": 145\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 195,
+      "output_tokens": 44,
+      "total_tokens": 239,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 44,
+        "prompt_tokens": 195,
+        "total_tokens": 239,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1320,
+    "run_seconds": 12.34,
+    "content": "```json\n{\n    \"name\": \"Sedona Heritage Museum\",\n    \"address\": \"125 N State Rte 179, Sedona, AZ 86336\",\n    \"distance\": 20000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 201,
+      "output_tokens": 57,
+      "total_tokens": 258,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 57,
+        "prompt_tokens": 201,
+        "total_tokens": 258,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1321,
+    "run_seconds": 7.446,
+    "content": "```json\n{\n    \"name\": \"nearest nature museum\",\n    \"address\": \"Springfield, IL\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 191,
+      "output_tokens": 34,
+      "total_tokens": 225,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 34,
+        "prompt_tokens": 191,
+        "total_tokens": 225,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1322,
+    "run_seconds": 7.658,
+    "content": "```json\n{\n    \"name\": \"There are no local museums listed in the provided data.\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 183,
+      "output_tokens": 35,
+      "total_tokens": 218,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 35,
+        "prompt_tokens": 183,
+        "total_tokens": 218,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1323,
+    "run_seconds": 8.297,
+    "content": "```json\n{\n    \"name\": \"Science Museum\",\n    \"address\": \"Randall Football Stadium, Amarillo, Texas\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 195,
+      "output_tokens": 38,
+      "total_tokens": 233,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 38,
+        "prompt_tokens": 195,
+        "total_tokens": 233,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1324,
+    "run_seconds": 3.401,
+    "content": "```json\n{\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 15,
+      "total_tokens": 201,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 186,
+        "total_tokens": 201,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1325,
+    "run_seconds": 8.72,
+    "content": "```json\n{\n    \"name\": \"Wilkes-Barre VA Medical Center\",\n    \"address\": \"Wilkes-Barre, PA\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 202,
+      "output_tokens": 40,
+      "total_tokens": 242,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 40,
+        "prompt_tokens": 202,
+        "total_tokens": 242,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1326,
+    "run_seconds": 11.913,
+    "content": "```json\n{\n    \"name\": \"Froedtert Health Mequon\",\n    \"address\": \"1000 N Highland Ave, Mequon, WI 53092\",\n    \"distance\": 20\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 202,
+      "output_tokens": 55,
+      "total_tokens": 257,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 55,
+        "prompt_tokens": 202,
+        "total_tokens": 257,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1327,
+    "run_seconds": 5.317,
+    "content": "```json\n{\n    \"name\": \"nearest transport museum\",\n    \"distance\": 44\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 24,
+      "total_tokens": 211,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 187,
+        "total_tokens": 211,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1328,
+    "run_seconds": 7.871,
+    "content": "```json\n{\n    \"name\": \"Miami Beach Urgent Care\",\n    \"address\": \"Miami Beach, FL\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 195,
+      "output_tokens": 36,
+      "total_tokens": 231,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 36,
+        "prompt_tokens": 195,
+        "total_tokens": 231,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1329,
+    "run_seconds": 3.401,
+    "content": "```json\n{\n    \"distance\": 20\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 191,
+      "output_tokens": 15,
+      "total_tokens": 206,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 191,
+        "total_tokens": 206,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1330,
+    "run_seconds": 9.146,
+    "content": "```json\n{\n    \"name\": \"Heavenly Heart Farm & Mini Petting Zoo\",\n    \"address\": \"Edinburg, VA\",\n    \"distance\": 20\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 202,
+      "output_tokens": 42,
+      "total_tokens": 244,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 42,
+        "prompt_tokens": 202,
+        "total_tokens": 244,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1331,
+    "run_seconds": 7.232,
+    "content": "```json\n{\n    \"name\": \"emergency hospital\",\n    \"distance\": 50,\n    \"azimuth_angle\": 45\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 33,
+      "total_tokens": 221,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 33,
+        "prompt_tokens": 188,
+        "total_tokens": 221,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1332,
+    "run_seconds": 5.103,
+    "content": "```json\n{\n    \"name\": \"nearest buffet\",\n    \"distance\": 75\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 179,
+      "output_tokens": 23,
+      "total_tokens": 202,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 179,
+        "total_tokens": 202,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1333,
+    "run_seconds": 3.614,
+    "content": "```json\n{\n    \"name\": \"Smith Street Pizza\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 175,
+      "output_tokens": 16,
+      "total_tokens": 191,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 175,
+        "total_tokens": 191,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1334,
+    "run_seconds": 8.934,
+    "content": "```json\n{\n    \"name\": \"White Memorial Foundation\",\n    \"address\": \"452 Litchfield St, Litchfield, CT 06751\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 192,
+      "output_tokens": 41,
+      "total_tokens": 233,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 41,
+        "prompt_tokens": 192,
+        "total_tokens": 233,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1335,
+    "run_seconds": 8.933,
+    "content": "```json\n{\n    \"name\": \"emergency hospital\",\n    \"address\": \"not provided\",\n    \"distance\": 30,\n    \"azimuth_angle\": 45\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 198,
+      "output_tokens": 41,
+      "total_tokens": 239,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 41,
+        "prompt_tokens": 198,
+        "total_tokens": 239,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1336,
+    "run_seconds": 10.639,
+    "content": "```json\n{\n    \"name\": \"University Hospital\",\n    \"address\": \"8403 Floyd Curl Dr, San Antonio, TX 78229, USA\",\n    \"distance\": 50\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 197,
+      "output_tokens": 49,
+      "total_tokens": 246,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 49,
+        "prompt_tokens": 197,
+        "total_tokens": 246,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1337,
+    "run_seconds": 8.507,
+    "content": "```json\n{\n    \"name\": \"White Memorial Foundation\",\n    \"address\": \"White Memorial Foundation, Litchfield, CT\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 206,
+      "output_tokens": 39,
+      "total_tokens": 245,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 39,
+        "prompt_tokens": 206,
+        "total_tokens": 245,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1338,
+    "run_seconds": 8.083,
+    "content": "```json\n{\n    \"name\": \"Joseph Skinner Museum\",\n    \"address\": \"UIS Greenhouse, Springfield, IL\",\n    \"distance\": 10\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 194,
+      "output_tokens": 37,
+      "total_tokens": 231,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 37,
+        "prompt_tokens": 194,
+        "total_tokens": 231,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1339,
+    "run_seconds": 6.167,
+    "content": "```json\n{\n    \"name\": \"Catskill Mountain Lodge\",\n    \"address\": \"Palenville, NY\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 191,
+      "output_tokens": 28,
+      "total_tokens": 219,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 28,
+        "prompt_tokens": 191,
+        "total_tokens": 219,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1340,
+    "run_seconds": 11.06,
+    "content": "```json\n{\n    \"name\": null,\n    \"address\": null,\n    \"count\": null,\n    \"distance\": null,\n    \"length\": null,\n    \"area\": null,\n    \"azimuth_angle\": null\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 197,
+      "output_tokens": 51,
+      "total_tokens": 248,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 51,
+        "prompt_tokens": 197,
+        "total_tokens": 248,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1341,
+    "run_seconds": 7.445,
+    "content": "```json\n{\n    \"name\": \"The Fresh Fish Co.\",\n    \"address\": \"Denver, CO\",\n    \"distance\": 12\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 200,
+      "output_tokens": 34,
+      "total_tokens": 234,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 34,
+        "prompt_tokens": 200,
+        "total_tokens": 234,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1342,
+    "run_seconds": 4.678,
+    "content": "```json\n{\n    \"name\": \"Youth Museum of Southwestern West Virginia\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 184,
+      "output_tokens": 21,
+      "total_tokens": 205,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 184,
+        "total_tokens": 205,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1343,
+    "run_seconds": 3.402,
+    "content": "```json\n{\n    \"name\": \"Just Salad\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 172,
+      "output_tokens": 15,
+      "total_tokens": 187,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 172,
+        "total_tokens": 187,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1344,
+    "run_seconds": 6.807,
+    "content": "```json\n{\n    \"name\": \"transport museum\",\n    \"address\": \"Not specified\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 196,
+      "output_tokens": 31,
+      "total_tokens": 227,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 31,
+        "prompt_tokens": 196,
+        "total_tokens": 227,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1345,
+    "run_seconds": 10.21,
+    "content": "```json\n{\n    \"name\": \"Massachusetts General Hospital\",\n    \"address\": \"55 Fruit St, Boston, MA 02114, USA\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 185,
+      "output_tokens": 47,
+      "total_tokens": 232,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 47,
+        "prompt_tokens": 185,
+        "total_tokens": 232,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1346,
+    "run_seconds": 3.614,
+    "content": "```json\n{\n    \"name\": \"Blimpie\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 174,
+      "output_tokens": 16,
+      "total_tokens": 190,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 174,
+        "total_tokens": 190,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1347,
+    "run_seconds": 5.314,
+    "content": "```json\n{\n    \"name\": \"nearest local museum\",\n    \"distance\": 70\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 184,
+      "output_tokens": 24,
+      "total_tokens": 208,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 184,
+        "total_tokens": 208,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1348,
+    "run_seconds": 8.509,
+    "content": "```json\n{\n    \"name\": \"Shechem Ministries\",\n    \"address\": \"123 Church Street, Lawrenceburg, KY 40342\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 193,
+      "output_tokens": 39,
+      "total_tokens": 232,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 39,
+        "prompt_tokens": 193,
+        "total_tokens": 232,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1349,
+    "run_seconds": 3.402,
+    "content": "```json\n{\n    \"distance\": 70\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 192,
+      "output_tokens": 15,
+      "total_tokens": 207,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 192,
+        "total_tokens": 207,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1350,
+    "run_seconds": 9.785,
+    "content": "```json\n{\n    \"name\": \"The Contemporary Dayton Visual Arts Center\",\n    \"address\": \"Curtis Motel, Bridgeton, NC\",\n    \"distance\": 160\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 207,
+      "output_tokens": 45,
+      "total_tokens": 252,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 45,
+        "prompt_tokens": 207,
+        "total_tokens": 252,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1351,
+    "run_seconds": 11.061,
+    "content": "```json\n{\n    \"name\": \"Lehigh Valley Hospital - Hazleton\",\n    \"address\": \"1000 Hospital Drive, Hazleton, PA 18201\",\n    \"distance\": 40\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 204,
+      "output_tokens": 51,
+      "total_tokens": 255,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 51,
+        "prompt_tokens": 204,
+        "total_tokens": 255,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1352,
+    "run_seconds": 5.316,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 24,
+      "total_tokens": 212,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 188,
+        "total_tokens": 212,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1353,
+    "run_seconds": 3.616,
+    "content": "```json\n{\n    \"distance\": 600\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 16,
+      "total_tokens": 204,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 188,
+        "total_tokens": 204,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1354,
+    "run_seconds": 11.487,
+    "content": "```json\n{\n    \"name\": \"Florida Solar Energy Center\",\n    \"address\": \"1600 Common Grounds Rd, Cape Canaveral, FL 32920\",\n    \"distance\": 200\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 204,
+      "output_tokens": 53,
+      "total_tokens": 257,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 53,
+        "prompt_tokens": 204,
+        "total_tokens": 257,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1355,
+    "run_seconds": 11.698,
+    "content": "```json\n{\n    \"name\": \"David J. Sencer CDC Museum\",\n    \"address\": \"1600 Clifton Road NE, Atlanta, GA 30329, USA\",\n    \"distance\": 40\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 207,
+      "output_tokens": 54,
+      "total_tokens": 261,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 54,
+        "prompt_tokens": 207,
+        "total_tokens": 261,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1356,
+    "run_seconds": 5.954,
+    "content": "```json\n{\n    \"name\": \"The Porch Restaurant and Bar\",\n    \"distance\": 39\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 200,
+      "output_tokens": 27,
+      "total_tokens": 227,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 27,
+        "prompt_tokens": 200,
+        "total_tokens": 227,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1357,
+    "run_seconds": 8.722,
+    "content": "```json\n{\n    \"name\": \"Clarksville Regional Museum\",\n    \"address\": \"Ducks Unlimited National Headquarters, Memphis, TN\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 194,
+      "output_tokens": 40,
+      "total_tokens": 234,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 40,
+        "prompt_tokens": 194,
+        "total_tokens": 234,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1358,
+    "run_seconds": 8.305,
+    "content": "```json\n{\n    \"name\": \"Cayuga Medical Center\",\n    \"address\": \"Ithaca, New York\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 209,
+      "output_tokens": 38,
+      "total_tokens": 247,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 38,
+        "prompt_tokens": 209,
+        "total_tokens": 247,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1359,
+    "run_seconds": 11.067,
+    "content": "```json\n{\n    \"name\": null,\n    \"address\": null,\n    \"count\": null,\n    \"distance\": null,\n    \"length\": null,\n    \"area\": null,\n    \"azimuth_angle\": null\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 51,
+      "total_tokens": 239,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 51,
+        "prompt_tokens": 188,
+        "total_tokens": 239,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1360,
+    "run_seconds": 5.531,
+    "content": "```json\n{\n    \"name\": \"Seafood Restaurant\",\n    \"address\": \"Rosemead\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 184,
+      "output_tokens": 25,
+      "total_tokens": 209,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 184,
+        "total_tokens": 209,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1361,
+    "run_seconds": 9.362,
+    "content": "```json\n{\n    \"name\": \"nearest emergency hospital\",\n    \"address\": \"Indian Run Falls Park - Observation Deck B, Dublin, OH\",\n    \"distance\": 600\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 197,
+      "output_tokens": 43,
+      "total_tokens": 240,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 43,
+        "prompt_tokens": 197,
+        "total_tokens": 240,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1362,
+    "run_seconds": 7.446,
+    "content": "```json\n{\n    \"name\": \"nearest emergency hospital\",\n    \"address\": \"Buffalo, NY\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 205,
+      "output_tokens": 34,
+      "total_tokens": 239,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 34,
+        "prompt_tokens": 205,
+        "total_tokens": 239,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1363,
+    "run_seconds": 8.513,
+    "content": "```json\n{\n    \"name\": \"Fuji Cafe\",\n    \"address\": \"Strawberry Hill, San Francisco, CA\",\n    \"distance\": 40\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 192,
+      "output_tokens": 39,
+      "total_tokens": 231,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 39,
+        "prompt_tokens": 192,
+        "total_tokens": 231,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1364,
+    "run_seconds": 10.425,
+    "content": "```json\n{\n    \"name\": \"Yale New Haven Hospital\",\n    \"address\": \"250 York Street, New Haven, CT 06510\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 201,
+      "output_tokens": 48,
+      "total_tokens": 249,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 48,
+        "prompt_tokens": 201,
+        "total_tokens": 249,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1365,
+    "run_seconds": 7.447,
+    "content": "```json\n{\n    \"name\": \"Marly's\",\n    \"address\": \"Phoenixville, PA\",\n    \"distance\": 70\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 204,
+      "output_tokens": 34,
+      "total_tokens": 238,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 34,
+        "prompt_tokens": 204,
+        "total_tokens": 238,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1366,
+    "run_seconds": 5.107,
+    "content": "```json\n{\n    \"name\": \"emergency hospital\",\n    \"distance\": 12\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 194,
+      "output_tokens": 23,
+      "total_tokens": 217,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 194,
+        "total_tokens": 217,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1367,
+    "run_seconds": 7.448,
+    "content": "```json\n{\n    \"name\": \"The Habit Burger Grill\",\n    \"address\": \"Union, NJ\",\n    \"distance\": 38\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 198,
+      "output_tokens": 34,
+      "total_tokens": 232,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 34,
+        "prompt_tokens": 198,
+        "total_tokens": 232,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1368,
+    "run_seconds": 8.3,
+    "content": "```json\n{\n    \"name\": \"New England Civil War Museum\",\n    \"address\": \"Vernon, Connecticut\",\n    \"distance\": 138\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 198,
+      "output_tokens": 38,
+      "total_tokens": 236,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 38,
+        "prompt_tokens": 198,
+        "total_tokens": 236,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1369,
+    "run_seconds": 9.364,
+    "content": "```json\n{\n    \"name\": \"E.O. Wilson Biophilia Center\",\n    \"address\": \"100 Red Maple Drive, Freeport, FL 34239\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 43,
+      "total_tokens": 231,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 43,
+        "prompt_tokens": 188,
+        "total_tokens": 231,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1370,
+    "run_seconds": 8.725,
+    "content": "```json\n{\n    \"name\": \"Lehigh Valley Hospital-Muhlenberg\",\n    \"address\": \"Bethlehen, PA\",\n    \"distance\": 40\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 207,
+      "output_tokens": 40,
+      "total_tokens": 247,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 40,
+        "prompt_tokens": 207,
+        "total_tokens": 247,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1371,
+    "run_seconds": 4.042,
+    "content": "```json\n{\n    \"distance\": 13000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 183,
+      "output_tokens": 18,
+      "total_tokens": 201,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 183,
+        "total_tokens": 201,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1372,
+    "run_seconds": 6.596,
+    "content": "```json\n{\n    \"name\": \"Little Caesars\",\n    \"address\": \"\",\n    \"distance\": 98\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 195,
+      "output_tokens": 30,
+      "total_tokens": 225,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 30,
+        "prompt_tokens": 195,
+        "total_tokens": 225,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1373,
+    "run_seconds": 6.17,
+    "content": "```json\n{\n    \"name\": \"Waterford Historical Museum and Cultural Center\",\n    \"distance\": 16\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 197,
+      "output_tokens": 28,
+      "total_tokens": 225,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 28,
+        "prompt_tokens": 197,
+        "total_tokens": 225,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1374,
+    "run_seconds": 3.616,
+    "content": "```json\n{\n    \"name\": \"Arkell Museum\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 176,
+      "output_tokens": 16,
+      "total_tokens": 192,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 176,
+        "total_tokens": 192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1375,
+    "run_seconds": 3.404,
+    "content": "```json\n{\n    \"distance\": 35\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 195,
+      "output_tokens": 15,
+      "total_tokens": 210,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 195,
+        "total_tokens": 210,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1376,
+    "run_seconds": 11.5,
+    "content": "```json\n{\n    \"name\": \"Bartlesville Historical Museum\",\n    \"address\": \"110 S 2nd St, Bartlesville, OK 74003\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 216,
+      "output_tokens": 53,
+      "total_tokens": 269,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 53,
+        "prompt_tokens": 216,
+        "total_tokens": 269,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1377,
+    "run_seconds": 3.191,
+    "content": "```json\n{\n    \"distance\": 3\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 177,
+      "output_tokens": 14,
+      "total_tokens": 191,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 177,
+        "total_tokens": 191,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1378,
+    "run_seconds": 8.945,
+    "content": "```json\n{\n    \"name\": \"Louisville Historical Museum\",\n    \"address\": \"123 Main Street, Louisville, KY\",\n    \"distance\": 350\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 210,
+      "output_tokens": 41,
+      "total_tokens": 251,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 41,
+        "prompt_tokens": 210,
+        "total_tokens": 251,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1379,
+    "run_seconds": 4.255,
+    "content": "```json\n{\n    \"name\": \"Lakewalk Galley\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 176,
+      "output_tokens": 19,
+      "total_tokens": 195,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 176,
+        "total_tokens": 195,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1380,
+    "run_seconds": 10.216,
+    "content": "```json\n{\n    \"name\": \"nearest emergency hospital\",\n    \"address\": \"Raleigh, North Carolina\",\n    \"distance\": 6000,\n    \"azimuth_angle\": 45\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 197,
+      "output_tokens": 47,
+      "total_tokens": 244,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 47,
+        "prompt_tokens": 197,
+        "total_tokens": 244,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1381,
+    "run_seconds": 7.237,
+    "content": "```json\n{\n    \"name\": \"Waterford Historical Museum and Cultural Center\",\n    \"address\": \"\",\n    \"distance\": 16\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 193,
+      "output_tokens": 33,
+      "total_tokens": 226,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 33,
+        "prompt_tokens": 193,
+        "total_tokens": 226,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1382,
+    "run_seconds": 6.172,
+    "content": "```json\n{\n    \"name\": \"Jerrell's BETR BRGR\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 194,
+      "output_tokens": 28,
+      "total_tokens": 222,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 28,
+        "prompt_tokens": 194,
+        "total_tokens": 222,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1383,
+    "run_seconds": 8.085,
+    "content": "```json\n{\n    \"name\": \"emergency hospital\",\n    \"address\": \"Rock Fence Park, Nicholasville, KY\",\n    \"distance\": 90\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 194,
+      "output_tokens": 37,
+      "total_tokens": 231,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 37,
+        "prompt_tokens": 194,
+        "total_tokens": 231,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1384,
+    "run_seconds": 6.337,
+    "content": "```json\n{\n    \"name\": \"Himalayan restaurant\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 192,
+      "output_tokens": 29,
+      "total_tokens": 221,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 29,
+        "prompt_tokens": 192,
+        "total_tokens": 221,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1385,
+    "run_seconds": 5.957,
+    "content": "```json\n{\n    \"name\": \"Jerusalem Organic Kitchen\",\n    \"address\": \"Berkeley, CA\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 180,
+      "output_tokens": 27,
+      "total_tokens": 207,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 27,
+        "prompt_tokens": 180,
+        "total_tokens": 207,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1386,
+    "run_seconds": 3.402,
+    "content": "```json\n{\n    \"name\": \"Brooklyn\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 15,
+      "total_tokens": 193,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 178,
+        "total_tokens": 193,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1387,
+    "run_seconds": 5.956,
+    "content": "```json\n{\n    \"name\": \"Pikes Peak Historical Society Museum\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 202,
+      "output_tokens": 27,
+      "total_tokens": 229,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 27,
+        "prompt_tokens": 202,
+        "total_tokens": 229,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1388,
+    "run_seconds": 3.402,
+    "content": "```json\n{\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 198,
+      "output_tokens": 15,
+      "total_tokens": 213,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 198,
+        "total_tokens": 213,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1389,
+    "run_seconds": 8.936,
+    "content": "```json\n{\n    \"name\": \"McDonald's\",\n    \"address\": \"Captain Mike's Fun Park, Bridgman, MI\",\n    \"distance\": 50\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 185,
+      "output_tokens": 41,
+      "total_tokens": 226,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 41,
+        "prompt_tokens": 185,
+        "total_tokens": 226,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1390,
+    "run_seconds": 3.402,
+    "content": "```json\n{\n    \"name\": \"Anaheim\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 172,
+      "output_tokens": 15,
+      "total_tokens": 187,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 172,
+        "total_tokens": 187,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1391,
+    "run_seconds": 11.487,
+    "content": "```json\n{\n    \"name\": \"falafel restaurant\",\n    \"address\": \"near Sugarplum Zoo, Temecula, CA\",\n    \"distance\": 200,\n    \"azimuth_angle\": 45\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 202,
+      "output_tokens": 53,
+      "total_tokens": 255,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 53,
+        "prompt_tokens": 202,
+        "total_tokens": 255,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1392,
+    "run_seconds": 3.57,
+    "content": "```json\n{\n    \"name\": \"Blimpie\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 177,
+      "output_tokens": 16,
+      "total_tokens": 193,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 177,
+        "total_tokens": 193,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1393,
+    "run_seconds": 7.668,
+    "content": "```json\n{\n    \"name\": \"Overlook Medical Center\",\n    \"address\": \"Summit, NJ\",\n    \"distance\": 25\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 217,
+      "output_tokens": 35,
+      "total_tokens": 252,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 35,
+        "prompt_tokens": 217,
+        "total_tokens": 252,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1394,
+    "run_seconds": 11.283,
+    "content": "```json\n{\n    \"name\": \"Wesley Medical Center\",\n    \"address\": \"1430 E 19th St, Wichita, KS 67214\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 194,
+      "output_tokens": 52,
+      "total_tokens": 246,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 52,
+        "prompt_tokens": 194,
+        "total_tokens": 246,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1395,
+    "run_seconds": 6.809,
+    "content": "```json\n{\n    \"name\": \"No falafel restaurant found\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 184,
+      "output_tokens": 31,
+      "total_tokens": 215,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 31,
+        "prompt_tokens": 184,
+        "total_tokens": 215,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1396,
+    "run_seconds": 6.384,
+    "content": "```json\n{\n    \"name\": \"Frederick-Douglass Maritime Museum\",\n    \"distance\": 21\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 189,
+      "output_tokens": 29,
+      "total_tokens": 218,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 29,
+        "prompt_tokens": 189,
+        "total_tokens": 218,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1397,
+    "run_seconds": 11.493,
+    "content": "```json\n{\n    \"name\": \"Children's Museum of Sonoma County\",\n    \"address\": \"175 W Napa St, Santa Rosa, CA 95401\",\n    \"distance\": 100\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 198,
+      "output_tokens": 53,
+      "total_tokens": 251,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 53,
+        "prompt_tokens": 198,
+        "total_tokens": 251,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1398,
+    "run_seconds": 3.403,
+    "content": "```json\n{\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 190,
+      "output_tokens": 15,
+      "total_tokens": 205,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 190,
+        "total_tokens": 205,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1399,
+    "run_seconds": 5.745,
+    "content": "```json\n{\n    \"name\": \"Mediterranean Restaurant\",\n    \"distance\": 20\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 189,
+      "output_tokens": 26,
+      "total_tokens": 215,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 26,
+        "prompt_tokens": 189,
+        "total_tokens": 215,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  }
+]

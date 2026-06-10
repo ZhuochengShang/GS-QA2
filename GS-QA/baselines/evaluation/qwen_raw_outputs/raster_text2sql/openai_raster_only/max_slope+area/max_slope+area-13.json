@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 33.790035
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 33.790035
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-72.102779 41.744496, -72.107491 41.745196, -72.108612 41.74537, -72.108663 41.745378, -72.108707 41.745384, -72.108746 41.745391, -72.109366 41.745488, -72.110134 41.745608, -72.110356 41.745642, -72.111256 41.745783, -72.111343 41.745796, -72.111933 41.74589, -72.112002 41.7459, -72.11201 41.7459, -72.112037 41.745904, -72.112046 41.745906, -72.11236 41.744906, -72.113304 41.741912, -72.113492 41.741314, -72.113601 41.740971, -72.113619 41.740914, -72.113631 41.740874, -72.113902 41.740013, -72.1141 41.739381, -72.114288 41.738784, -72.114298 41.738751, -72.114308 41.738722, -72.11538 41.735314, -72.115712 41.734259, -72.115768 41.734081, -72.116297 41.7324, -72.116853 41.730638, -72.116968 41.730272, -72.117274 41.729292, -72.117854 41.727437, -72.118194 41.726352, -72.118474 41.725459, -72.118501 41.725374, -72.118512 41.725339, -72.11894 41.723983, -72.119303 41.722836, -72.119642 41.721768, -72.12171 41.715226, -72.12211 41.713961, -72.12249 41.712762, -72.122476 41.712618, -72.122381 41.711648, -72.122249 41.710294, -72.122186 41.709647, -72.122 41.707737, -72.121977 41.707496, -72.12194 41.707083, -72.121925 41.706911, -72.121801 41.705488, -72.121676 41.704057, -72.121452 41.701501, -72.12145 41.701473, -72.121375 41.70062, -72.121275 41.699468, -72.121264 41.699343, -72.121114 41.697625, -72.1211 41.69746, -72.121096 41.697399, -72.121088 41.697289, -72.121086 41.697244, -72.120917 41.694666, -72.120912 41.694589, -72.120757 41.692198, -72.120682 41.691053, -72.120466 41.687746, -72.120434 41.68726, -72.120371 41.686284, -72.12033 41.685661, -72.120246 41.684376, -72.120192 41.683538, -72.120189 41.683492, -72.120187 41.683421, -72.120163 41.682522, -72.12014 41.681693, -72.120076 41.679301, -72.120014 41.676977, -72.120011 41.676844, -72.119962 41.675031, -72.119914 41.673235, -72.11985 41.670888, -72.11978 41.668258, -72.119722 41.666093, -72.11968 41.664552, -72.119679 41.664498, -72.119678 41.664452, -72.119684 41.664421, -72.119762 41.664056, -72.119778 41.663992, -72.119804 41.663894, -72.119908 41.6635, -72.119974 41.663247, -72.119983 41.663214, -72.120123 41.66271, -72.120241 41.662264, -72.120329 41.661934, -72.110927 41.66033, -72.109693 41.66012, -72.1055 41.659405, -72.096123 41.657876, -72.064035 41.652574, -72.062051 41.652246, -72.062001 41.652554, -72.061906 41.65291, -72.061385 41.654886, -72.061219 41.655516, -72.061212 41.655544, -72.060896 41.656754, -72.059949 41.660382, -72.059634 41.661592, -72.059383 41.662484, -72.058631 41.665164, -72.058381 41.666058, -72.058189 41.66678, -72.057614 41.668952, -72.057423 41.669678, -72.057328 41.67001, -72.057045 41.671012, -72.056951 41.671346, -72.056251 41.673952, -72.056121 41.674438, -72.056114 41.674464, -72.056091 41.674548, -72.056069 41.674632, -72.054151 41.681774, -72.053452 41.684382, -72.053349 41.68509, -72.053299 41.685444, -72.053273 41.685626, -72.053246 41.685808, -72.053218 41.686, -72.05319 41.686194, -72.053042 41.687216, -72.05294 41.687926, -72.052935 41.687996, -72.052924 41.68821, -72.052921 41.688282, -72.053436 41.69035, -72.054982 41.696554, -72.055498 41.698622, -72.055521 41.69872, -72.055619 41.69914, -72.055983 41.700694, -72.056105 41.701212, -72.056179 41.701384, -72.056117 41.701848, -72.05586 41.703798, -72.055848 41.703896, -72.055825 41.70407, -72.055775 41.70445, -72.055711 41.70493, -72.055523 41.70637, -72.055461 41.70685, -72.055459 41.707366, -72.0554 41.70767, -72.055312 41.708522, -72.055254 41.708842, -72.055215 41.70919, -72.055039 41.710648, -72.054792 41.712703, -72.054438 41.715734, -72.053388 41.72483, -72.053335 41.72529, -72.053074 41.72755, -72.053063 41.727642, -72.053038 41.727862, -72.052943 41.728574, -72.05266 41.730718, -72.052583 41.731679, -72.066213 41.733475, -72.079714 41.734994, -72.083906 41.736698, -72.084143 41.73675, -72.084241 41.736771, -72.084911 41.73701, -72.086676 41.73764, -72.094622 41.741023, -72.1027 41.744462, -72.102779 41.744496))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).max AS slope\nFROM region_slope;",
+  "id": "max_slope+area-13",
+  "model_output": "```sql\nWITH scotland_connecticut AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'scotland%' AND border_type = 'city'\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM scotland_connecticut), true) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM scotland_connecticut))\n)\nSELECT MAX(ST_Slope(rast, 1)) AS steepest_slope\nFROM clipped_dem;\n```",
+  "predicted_exec": {
+    "error": "function max(raster) does not exist\nLINE 11: SELECT MAX(ST_Slope(rast, 1)) AS steepest_slope\n                ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH scotland_connecticut AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'scotland%' AND border_type = 'city'\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM scotland_connecticut), true) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM scotland_connecticut))\n)\nSELECT MAX(ST_Slope(rast, 1)) AS steepest_slope\nFROM clipped_dem;",
+  "predicted_sql_candidates": [
+    "WITH scotland_connecticut AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'scotland%' AND border_type = 'city'\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM scotland_connecticut), true) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM scotland_connecticut))\n)\nSELECT MAX(ST_Slope(rast, 1)) AS steepest_slope\nFROM clipped_dem;"
+  ],
+  "query_type": "raster_only",
+  "question": "How steep is the steepest part of Scotland, Connecticut?",
+  "source_file": "max_slope+area.jsonl",
+  "source_stem": "max_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 26.247,
+    "total_seconds": 26.248
+  },
+  "usage": {
+    "completion_tokens": 116,
+    "prompt_tokens": 1517,
+    "total_tokens": 1633
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 6.497212
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 6.497212
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-74.76274 42.863263, -74.802406 42.873735, -74.800471 42.874706, -74.833392 42.884712, -74.842818 42.887552, -74.863826 42.893818, -74.869844 42.895762, -74.874498 42.897184, -74.87876 42.898508, -74.88245 42.879948, -74.885359 42.864721, -74.887872 42.851954, -74.88922 42.848088, -74.894138 42.833979, -74.894874 42.831699, -74.898797 42.829483, -74.898802 42.82948, -74.901885 42.827776, -74.905235 42.82588, -74.906758 42.825086, -74.933543 42.837292, -74.943156 42.841427, -74.954685 42.846664, -74.9603 42.840084, -74.969645 42.82885, -74.981805 42.814662, -74.973655 42.810952, -74.967426 42.808198, -74.966054 42.809844, -74.944727 42.800245, -74.943106 42.802083, -74.92679 42.794752, -74.925398 42.796327, -74.923256 42.795271, -74.920593 42.79392, -74.913645 42.790522, -74.901341 42.784435, -74.901927 42.78299, -74.898008 42.781681, -74.888678 42.778846, -74.868115 42.783078, -74.805654 42.802378, -74.806429 42.80495, -74.799916 42.813468, -74.772696 42.848236, -74.751198 42.859499, -74.755888 42.860985, -74.759159 42.861986, -74.762746 42.863025, -74.76274 42.863263))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).mean AS slope\nFROM region_slope;",
+  "id": "avg_slope+area-13",
+  "model_output": "```sql\nWITH springfield_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Springfield' AND border_type = 'city'\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM springfield_geom), TRUE),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM springfield_geom))\n)\nSELECT\n  ROUND(AVG(value), 2) AS mean_slope_degrees\nFROM (\n  SELECT\n    (ST_SummaryStats(slope_rast, TRUE)).mean AS value\n  FROM slope_raster\n) sub;\n```",
+  "predicted_exec": {
+    "error": "function round(double precision, integer) does not exist\nLINE 17:   ROUND(AVG(value), 2) AS mean_slope_degrees\n           ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH springfield_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Springfield' AND border_type = 'city'\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM springfield_geom), TRUE),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM springfield_geom))\n)\nSELECT\n  ROUND(AVG(value), 2) AS mean_slope_degrees\nFROM (\n  SELECT\n    (ST_SummaryStats(slope_rast, TRUE)).mean AS value\n  FROM slope_raster\n) sub;",
+  "predicted_sql_candidates": [
+    "WITH springfield_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Springfield' AND border_type = 'city'\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM springfield_geom), TRUE),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM springfield_geom))\n)\nSELECT\n  ROUND(AVG(value), 2) AS mean_slope_degrees\nFROM (\n  SELECT\n    (ST_SummaryStats(slope_rast, TRUE)).mean AS value\n  FROM slope_raster\n) sub;"
+  ],
+  "query_type": "raster_only",
+  "question": "In Springfield, New York, what is the mean slope?",
+  "source_file": "avg_slope+area.jsonl",
+  "source_stem": "avg_slope+area",
+  "timing": {
+    "execution_seconds": 0.002,
+    "generation_seconds": 36.965,
+    "total_seconds": 36.967
+  },
+  "usage": {
+    "completion_tokens": 161,
+    "prompt_tokens": 1516,
+    "total_tokens": 1677
+  }
+}

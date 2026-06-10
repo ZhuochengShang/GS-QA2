@@ -1,0 +1,59 @@
+{
+  "answer_type": "percent",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "percent",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer_percent": 45.418381
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer_percent": 45.418381
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-94.480193 43.40013, -94.469913 43.40002, -94.46993 43.397856, -94.47261 43.39788, -94.47264 43.39263, -94.472643 43.391307, -94.472704 43.385502, -94.473308 43.385517, -94.477074 43.385524, -94.477061 43.386605, -94.482412 43.38662, -94.482391 43.389096, -94.487467 43.389024, -94.487476 43.392857, -94.49245 43.392812, -94.492432 43.397211, -94.487469 43.395773, -94.487489 43.397155, -94.488132 43.397152, -94.488131 43.396413, -94.4898 43.396856, -94.490718 43.397108, -94.497209 43.398927, -94.497205 43.398633, -94.497134 43.396111, -94.497108 43.394834, -94.495552 43.394832, -94.495519 43.392752, -94.497253 43.392737, -94.497322 43.396109, -94.497399 43.398978, -94.497398 43.399425, -94.499951 43.399391, -94.500441 43.399526, -94.50755 43.399482, -94.507948 43.399344, -94.508747 43.399342, -94.510147 43.398876, -94.513032 43.394945, -94.514009 43.397655, -94.51601 43.398974, -94.516634 43.399307, -94.517172 43.399532, -94.509908 43.39952, -94.508197 43.399524, -94.507919 43.399617, -94.499843 43.399652, -94.499385 43.399526, -94.488214 43.399662, -94.488218 43.399796, -94.484388 43.399846, -94.482028 43.399866, -94.480199 43.39983, -94.480193 43.40013))',4326) AS geom\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.geom) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.geom)\n),\nhist AS (\n  SELECT\n    (vc).value::double precision AS val,\n    (vc).count::double precision AS cnt\n  FROM clipped c\n  CROSS JOIN LATERAL ST_ValueCount(c.rast, 1, TRUE) AS vc\n)\nSELECT\n  (\n    COALESCE(SUM(CASE WHEN val >= 60 THEN cnt ELSE 0 END), 0)\n    / NULLIF(SUM(cnt), 0)\n  ) * 100.0 AS answer_percent\nFROM hist;",
+  "id": "elevation+coverage-2",
+  "model_output": "```sql\nWITH armstrong_area AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Armstrong' AND addr_state ILIKE 'Iowa'\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM armstrong_area), true) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM armstrong_area))\n),\nelevation_stats AS (\n  SELECT\n    SUM(ST_Count(rast, 1)) AS total_pixels,\n    SUM(ST_Count(ST_Reclass(rast, 1, '0-60:0,60-:1', '8BUI'), 1)) AS above_60_pixels\n  FROM clipped_dem\n)\nSELECT\n  ROUND((above_60_pixels * 100.0 / total_pixels)::numeric, 2) AS percent_above_60\nFROM elevation_stats;\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 4:   WHERE region_name ILIKE 'Armstrong' AND addr_state ILIKE '...\n                                                  ^",
+    "output": []
+  },
+  "predicted_sql": "WITH armstrong_area AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Armstrong' AND addr_state ILIKE 'Iowa'\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM armstrong_area), true) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM armstrong_area))\n),\nelevation_stats AS (\n  SELECT\n    SUM(ST_Count(rast, 1)) AS total_pixels,\n    SUM(ST_Count(ST_Reclass(rast, 1, '0-60:0,60-:1', '8BUI'), 1)) AS above_60_pixels\n  FROM clipped_dem\n)\nSELECT\n  ROUND((above_60_pixels * 100.0 / total_pixels)::numeric, 2) AS percent_above_60\nFROM elevation_stats;",
+  "predicted_sql_candidates": [
+    "WITH armstrong_area AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Armstrong' AND addr_state ILIKE 'Iowa'\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM armstrong_area), true) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM armstrong_area))\n),\nelevation_stats AS (\n  SELECT\n    SUM(ST_Count(rast, 1)) AS total_pixels,\n    SUM(ST_Count(ST_Reclass(rast, 1, '0-60:0,60-:1', '8BUI'), 1)) AS above_60_pixels\n  FROM clipped_dem\n)\nSELECT\n  ROUND((above_60_pixels * 100.0 / total_pixels)::numeric, 2) AS percent_above_60\nFROM elevation_stats;"
+  ],
+  "query_type": "raster_only",
+  "question": "In Armstrong, Iowa, what percentage of the area is at or above 60 m in elevation?",
+  "source_file": "elevation+coverage.jsonl",
+  "source_stem": "elevation+coverage",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 45.893,
+    "total_seconds": 45.894
+  },
+  "usage": {
+    "completion_tokens": 201,
+    "prompt_tokens": 1542,
+    "total_tokens": 1743
+  }
+}

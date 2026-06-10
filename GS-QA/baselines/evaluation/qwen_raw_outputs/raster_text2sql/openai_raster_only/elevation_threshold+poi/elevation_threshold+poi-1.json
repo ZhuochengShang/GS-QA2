@@ -1,0 +1,66 @@
+{
+  "answer_type": "yes-no",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "yes-no",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 1,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "exact_match": true,
+      "gold_field": "answer",
+      "gold_value": "no",
+      "metric_family": "primary_text",
+      "predicted_field": "answer",
+      "predicted_value": "no"
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer": "no",
+      "elevation_m": 15.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer": "no",
+        "elevation_m": 15.0
+      }
+    ]
+  },
+  "gold_sql": "SELECT\n  CASE\n    WHEN ST_Value(d.rast, 1, ST_GeomFromText('POINT (-71.121891 42.375395)',4326)) > 460\n    THEN 'yes' ELSE 'no'\n  END AS answer,\n  ST_Value(d.rast, 1, ST_GeomFromText('POINT (-71.121891 42.375395)',4326)) AS elevation_m\nFROM public.dem_us d\nWHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-71.121891 42.375395)',4326))\nLIMIT 1;",
+  "id": "elevation_threshold+poi-1",
+  "model_output": "```sql\nWITH poi_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-71.121891 42.375395)'), 4326)::geometry AS geom\n)\nSELECT \n  CASE \n    WHEN (ST_Value(r.rast, p.geom) > 460) THEN 'yes'\n    ELSE 'no'\n  END AS answer\nFROM \n  poi_geom p\n  CROSS JOIN public.dem_us r\nWHERE \n  ST_Intersects(r.rast, p.geom);\n```",
+  "predicted_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer": "no"
+      }
+    ]
+  },
+  "predicted_sql": "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-71.121891 42.375395)'), 4326)::geometry AS geom\n)\nSELECT \n  CASE \n    WHEN (ST_Value(r.rast, p.geom) > 460) THEN 'yes'\n    ELSE 'no'\n  END AS answer\nFROM \n  poi_geom p\n  CROSS JOIN public.dem_us r\nWHERE \n  ST_Intersects(r.rast, p.geom);",
+  "predicted_sql_candidates": [
+    "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-71.121891 42.375395)'), 4326)::geometry AS geom\n)\nSELECT \n  CASE \n    WHEN (ST_Value(r.rast, p.geom) > 460) THEN 'yes'\n    ELSE 'no'\n  END AS answer\nFROM \n  poi_geom p\n  CROSS JOIN public.dem_us r\nWHERE \n  ST_Intersects(r.rast, p.geom);"
+  ],
+  "query_type": "raster_only",
+  "question": "Is the elevation at Harvard Graduate School of Education, Cambridge, MA greater than 460 meters?",
+  "source_file": "elevation_threshold+poi.jsonl",
+  "source_stem": "elevation_threshold+poi",
+  "timing": {
+    "execution_seconds": 0.028,
+    "generation_seconds": 26.191,
+    "total_seconds": 26.219
+  },
+  "usage": {
+    "completion_tokens": 122,
+    "prompt_tokens": 1644,
+    "total_tokens": 1766
+  }
+}

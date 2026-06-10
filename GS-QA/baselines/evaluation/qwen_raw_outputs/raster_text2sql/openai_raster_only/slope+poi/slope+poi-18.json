@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope_degrees": 7.752123
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope_degrees": 7.752123
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-121.887315 37.329661)',4326) AS pt\n),\npatch AS (\n  SELECT ST_Buffer(pt::geography, 100)::geometry AS g FROM origin\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, p.g)) AS rast\n  FROM public.dem_us d\n  JOIN patch p ON ST_Intersects(d.rast, p.g)\n),\nslope_rast AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n)\nSELECT ST_Value(s.rast, 1, o.pt) AS slope_degrees\nFROM slope_rast s, origin o;",
+  "id": "slope+poi-18",
+  "model_output": "```sql\nWITH poi_geom AS (\n  SELECT id, geometry\n  FROM pois\n  WHERE poi_name ILIKE 'WORKS/San Jos%' AND addr_city = 'San Jose' AND addr_state = 'CA'\n  LIMIT 1\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(\n        r.rast,\n        geometry::geometry,\n        TRUE\n      ),\n      'DEGREES'\n    ) AS slope_rast\n  FROM\n    public.dem_us r,\n    poi_geom p\n  WHERE\n    ST_Intersects(r.rast, geometry::geometry)\n)\nSELECT\n  ST_Value(slope_rast, 1, 1) AS slope_degrees\nFROM\n  slope_raster;\n```",
+  "predicted_exec": {
+    "error": "invalid input syntax for type integer: \"DEGREES\"\nLINE 15:       'DEGREES'\n               ^",
+    "output": []
+  },
+  "predicted_sql": "WITH poi_geom AS (\n  SELECT id, geometry\n  FROM pois\n  WHERE poi_name ILIKE 'WORKS/San Jos%' AND addr_city = 'San Jose' AND addr_state = 'CA'\n  LIMIT 1\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(\n        r.rast,\n        geometry::geometry,\n        TRUE\n      ),\n      'DEGREES'\n    ) AS slope_rast\n  FROM\n    public.dem_us r,\n    poi_geom p\n  WHERE\n    ST_Intersects(r.rast, geometry::geometry)\n)\nSELECT\n  ST_Value(slope_rast, 1, 1) AS slope_degrees\nFROM\n  slope_raster;",
+  "predicted_sql_candidates": [
+    "WITH poi_geom AS (\n  SELECT id, geometry\n  FROM pois\n  WHERE poi_name ILIKE 'WORKS/San Jos%' AND addr_city = 'San Jose' AND addr_state = 'CA'\n  LIMIT 1\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(\n        r.rast,\n        geometry::geometry,\n        TRUE\n      ),\n      'DEGREES'\n    ) AS slope_rast\n  FROM\n    public.dem_us r,\n    poi_geom p\n  WHERE\n    ST_Intersects(r.rast, geometry::geometry)\n)\nSELECT\n  ST_Value(slope_rast, 1, 1) AS slope_degrees\nFROM\n  slope_raster;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the terrain slope in degrees at WORKS/San Jos\u00e9, San Jose, CA?",
+  "source_file": "slope+poi.jsonl",
+  "source_stem": "slope+poi",
+  "timing": {
+    "execution_seconds": 0.002,
+    "generation_seconds": 34.396,
+    "total_seconds": 34.398
+  },
+  "usage": {
+    "completion_tokens": 159,
+    "prompt_tokens": 1622,
+    "total_tokens": 1781
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 189.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 189.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-85.908386 43.205928, -85.903768 43.205932, -85.869656 43.205879, -85.849846 43.205551, -85.829972 43.205491, -85.790594 43.205232, -85.790612 43.219647, -85.79055 43.22715, -85.790516 43.234183, -85.790529 43.237994, -85.790534 43.239779, -85.790538 43.241522, -85.79054 43.243434, -85.790521 43.244527, -85.790542 43.246962, -85.790546 43.248743, -85.790472 43.277882, -85.790408 43.292958, -85.800583 43.29289, -85.830071 43.292958, -85.901645 43.293103, -85.908089 43.29313, -85.907944 43.213351, -85.908386 43.205928))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).min AS elevation\nFROM clipped;",
+  "id": "elevation_min+region-5",
+  "model_output": "```sql\nWITH casnovia_township AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Casnovia Township'\n    AND border_type ILIKE 'township'\n    AND addr_state ILIKE 'Michigan'\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM casnovia_township), true) AS clipped_raster\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM casnovia_township))\n)\nSELECT MIN((ST_Value(clipped_raster, 1))::float) AS lowest_elevation\nFROM clipped_dem;\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 6:     AND addr_state ILIKE 'Michigan'\n                ^",
+    "output": []
+  },
+  "predicted_sql": "WITH casnovia_township AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Casnovia Township'\n    AND border_type ILIKE 'township'\n    AND addr_state ILIKE 'Michigan'\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM casnovia_township), true) AS clipped_raster\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM casnovia_township))\n)\nSELECT MIN((ST_Value(clipped_raster, 1))::float) AS lowest_elevation\nFROM clipped_dem;",
+  "predicted_sql_candidates": [
+    "WITH casnovia_township AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Casnovia Township'\n    AND border_type ILIKE 'township'\n    AND addr_state ILIKE 'Michigan'\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM casnovia_township), true) AS clipped_raster\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM casnovia_township))\n)\nSELECT MIN((ST_Value(clipped_raster, 1))::float) AS lowest_elevation\nFROM clipped_dem;"
+  ],
+  "query_type": "raster_only",
+  "question": "How low is the lowest point in Casnovia Township, Michigan?",
+  "source_file": "elevation_min+region.jsonl",
+  "source_stem": "elevation_min+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 30.194,
+    "total_seconds": 30.195
+  },
+  "usage": {
+    "completion_tokens": 141,
+    "prompt_tokens": 1518,
+    "total_tokens": 1659
+  }
+}

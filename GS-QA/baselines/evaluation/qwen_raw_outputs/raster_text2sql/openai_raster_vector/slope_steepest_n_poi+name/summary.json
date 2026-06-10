@@ -1,0 +1,32 @@
+{
+  "stem": "slope_steepest_n_poi+name",
+  "query_type": "raster_vector",
+  "model": "Qwen/Qwen3-32B-AWQ",
+  "provider": "openai",
+  "question_count": 20,
+  "generation_timeouts": 0,
+  "successful_sql_generation": 20,
+  "successful_sql_execution": 0,
+  "timing": {
+    "total_wall_seconds": 1210.77,
+    "mean_generation_seconds": 51.537,
+    "mean_execution_seconds": 9.001,
+    "mean_total_seconds": 60.538,
+    "max_total_seconds": 217.534
+  },
+  "tokens": {
+    "total_prompt_tokens": 33287,
+    "total_completion_tokens": 4834,
+    "total_tokens": 38121,
+    "mean_prompt_tokens": 1664.3,
+    "mean_completion_tokens": 241.7,
+    "mean_total_tokens": 1906.0
+  },
+  "evaluation": {
+    "exact_matches": 0,
+    "numeric_tolerance_accuracy": null,
+    "mean_absolute_error": null,
+    "text_exact_accuracy": null,
+    "mean_rowset_f1": 0.0
+  }
+}

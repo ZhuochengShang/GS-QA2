@@ -1,0 +1,63 @@
+{
+  "answer_type": "name",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "name",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer_name": "10th Street",
+      "slope_deg_3": 0.0,
+      "slope_deg_4": 0.763647
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer_name": "10th Street",
+        "slope_deg_3": 0.0,
+        "slope_deg_4": 0.763647
+      }
+    ]
+  },
+  "gold_sql": "WITH route3 AS (\n  SELECT ST_GeomFromText('POLYGON ((-111.988837 40.785743, -111.989129 40.78838, -111.989296 40.78837, -111.989004 40.785732, -111.988837 40.785743))', 4326)::geometry AS geom\n),\nroute4 AS (\n  SELECT ST_GeomFromText('LINESTRING (-105.006308 39.746878, -105.006285 39.746849, -105.006283 39.746846, -105.005773 39.746173, -105.005744 39.746134, -105.005734 39.746121, -105.005725 39.74611, -105.005695 39.74607, -105.005678 39.746048, -105.005643 39.746002, -105.005323 39.745578, -105.004854 39.744959, -105.004838 39.744938, -105.004807 39.744898, -105.004551 39.74456, -105.004504 39.744424, -105.004058 39.743822)', 4326)::geometry AS geom\n),\ndem_clip3 AS (\n  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast\n  FROM public.dem_us d, route3 r\n  WHERE ST_Intersects(d.rast, r.geom)\n),\ndem_clip4 AS (\n  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast\n  FROM public.dem_us d, route4 r\n  WHERE ST_Intersects(d.rast, r.geom)\n),\nsegments AS (\n  SELECT 1 AS route_id, (ST_DumpSegments(r.geom)).geom AS seg FROM route3 r\n  UNION ALL\n  SELECT 2 AS route_id, (ST_DumpSegments(r.geom)).geom AS seg FROM route4 r\n),\nendpoints AS (\n  SELECT\n    route_id,\n    ST_StartPoint(seg)         AS p1,\n    ST_EndPoint(seg)           AS p2,\n    ST_Length(seg::geography)  AS seg_len_m\n  FROM segments\n),\nelev AS (\n  SELECT\n    e.route_id,\n    e.seg_len_m,\n    CASE WHEN e.route_id = 1 THEN ST_Value(dc3.rast, 1, e.p1)\n         ELSE ST_Value(dc4.rast, 1, e.p1) END AS z1,\n    CASE WHEN e.route_id = 1 THEN ST_Value(dc3.rast, 1, e.p2)\n         ELSE ST_Value(dc4.rast, 1, e.p2) END AS z2\n  FROM endpoints e, dem_clip3 dc3, dem_clip4 dc4\n),\ngrades AS (\n  SELECT\n    route_id,\n    seg_len_m,\n    CASE WHEN seg_len_m > 0 THEN ABS(z2 - z1) / seg_len_m END AS grade\n  FROM elev\n  WHERE z1 IS NOT NULL AND z2 IS NOT NULL\n),\navg_grade AS (\n  SELECT\n    route_id,\n    SUM(grade * seg_len_m) / NULLIF(SUM(seg_len_m), 0) AS g\n  FROM grades\n  WHERE grade IS NOT NULL\n  GROUP BY route_id\n)\nSELECT\n  CASE WHEN a1.g >= a2.g THEN 'West Tunnel' ELSE '10th Street' END AS answer_name,\n  DEGREES(ATAN(a1.g)) AS slope_deg_3,\n  DEGREES(ATAN(a2.g)) AS slope_deg_4\nFROM avg_grade a1\nJOIN avg_grade a2\n  ON a1.route_id = 1 AND a2.route_id = 2\nWHERE a1.g IS NOT NULL AND a2.g IS NOT NULL;",
+  "id": "slope+compare_route-5",
+  "model_output": "```sql\nWITH west_tunnel_geom AS (\n  SELECT ST_GeomFromText('POLYGON ((-111.988837 40.785743, -111.989129 40.78838, -111.989296 40.78837, -111.989004 40.785732, -111.988837 40.785743))')::geometry AS geom\n),\ntenth_street_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-105.006308 39.746878, -105.006285 39.746849, -105.006283 39.746846, -105.005773 39.746173, -105.005744 39.746134, -105.005734 39.746121, -105.005725 39.74611, -105.005695 39.74607, -105.005678 39.746048, -105.005643 39.746002, -105.005323 39.745578, -105.004854 39.744959, -105.004838 39.744938, -105.004807 39.744898, -105.004551 39.74456, -105.004504 39.744424, -105.004058 39.743822)')::geometry AS geom\n),\nwest_tunnel_slope AS (\n  SELECT \n    'West Tunnel'::text AS route_name,\n    AVG(ST_Slope(rast, 1, '32BF')) AS avg_slope\n  FROM \n    public.dem_us,\n    west_tunnel_geom\n  WHERE \n    ST_Intersects(rast, west_tunnel_geom.geom)\n),\ntenth_street_slope AS (\n  SELECT \n    '10th Street'::text AS route_name,\n    AVG(ST_Slope(rast, 1, '32BF')) AS avg_slope\n  FROM \n    public.dem_us,\n    tenth_street_geom\n  WHERE \n    ST_Intersects(rast, tenth_street_geom.geom)\n)\nSELECT \n  CASE \n    WHEN wt.avg_slope > ts.avg_slope THEN wt.route_name\n    ELSE ts.route_name\n  END AS steeper_route,\n  wt.avg_slope AS west_tunnel_avg_slope,\n  ts.avg_slope AS tenth_street_avg_slope\nFROM \n  west_tunnel_slope wt,\n  tenth_street_slope ts;\n```",
+  "predicted_exec": {
+    "error": "function avg(raster) does not exist\nLINE 10:     AVG(ST_Slope(rast, 1, '32BF')) AS avg_slope\n             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH west_tunnel_geom AS (\n  SELECT ST_GeomFromText('POLYGON ((-111.988837 40.785743, -111.989129 40.78838, -111.989296 40.78837, -111.989004 40.785732, -111.988837 40.785743))')::geometry AS geom\n),\ntenth_street_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-105.006308 39.746878, -105.006285 39.746849, -105.006283 39.746846, -105.005773 39.746173, -105.005744 39.746134, -105.005734 39.746121, -105.005725 39.74611, -105.005695 39.74607, -105.005678 39.746048, -105.005643 39.746002, -105.005323 39.745578, -105.004854 39.744959, -105.004838 39.744938, -105.004807 39.744898, -105.004551 39.74456, -105.004504 39.744424, -105.004058 39.743822)')::geometry AS geom\n),\nwest_tunnel_slope AS (\n  SELECT \n    'West Tunnel'::text AS route_name,\n    AVG(ST_Slope(rast, 1, '32BF')) AS avg_slope\n  FROM \n    public.dem_us,\n    west_tunnel_geom\n  WHERE \n    ST_Intersects(rast, west_tunnel_geom.geom)\n),\ntenth_street_slope AS (\n  SELECT \n    '10th Street'::text AS route_name,\n    AVG(ST_Slope(rast, 1, '32BF')) AS avg_slope\n  FROM \n    public.dem_us,\n    tenth_street_geom\n  WHERE \n    ST_Intersects(rast, tenth_street_geom.geom)\n)\nSELECT \n  CASE \n    WHEN wt.avg_slope > ts.avg_slope THEN wt.route_name\n    ELSE ts.route_name\n  END AS steeper_route,\n  wt.avg_slope AS west_tunnel_avg_slope,\n  ts.avg_slope AS tenth_street_avg_slope\nFROM \n  west_tunnel_slope wt,\n  tenth_street_slope ts;",
+  "predicted_sql_candidates": [
+    "WITH west_tunnel_geom AS (\n  SELECT ST_GeomFromText('POLYGON ((-111.988837 40.785743, -111.989129 40.78838, -111.989296 40.78837, -111.989004 40.785732, -111.988837 40.785743))')::geometry AS geom\n),\ntenth_street_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-105.006308 39.746878, -105.006285 39.746849, -105.006283 39.746846, -105.005773 39.746173, -105.005744 39.746134, -105.005734 39.746121, -105.005725 39.74611, -105.005695 39.74607, -105.005678 39.746048, -105.005643 39.746002, -105.005323 39.745578, -105.004854 39.744959, -105.004838 39.744938, -105.004807 39.744898, -105.004551 39.74456, -105.004504 39.744424, -105.004058 39.743822)')::geometry AS geom\n),\nwest_tunnel_slope AS (\n  SELECT \n    'West Tunnel'::text AS route_name,\n    AVG(ST_Slope(rast, 1, '32BF')) AS avg_slope\n  FROM \n    public.dem_us,\n    west_tunnel_geom\n  WHERE \n    ST_Intersects(rast, west_tunnel_geom.geom)\n),\ntenth_street_slope AS (\n  SELECT \n    '10th Street'::text AS route_name,\n    AVG(ST_Slope(rast, 1, '32BF')) AS avg_slope\n  FROM \n    public.dem_us,\n    tenth_street_geom\n  WHERE \n    ST_Intersects(rast, tenth_street_geom.geom)\n)\nSELECT \n  CASE \n    WHEN wt.avg_slope > ts.avg_slope THEN wt.route_name\n    ELSE ts.route_name\n  END AS steeper_route,\n  wt.avg_slope AS west_tunnel_avg_slope,\n  ts.avg_slope AS tenth_street_avg_slope\nFROM \n  west_tunnel_slope wt,\n  tenth_street_slope ts;"
+  ],
+  "query_type": "raster_only",
+  "question": "Which route is steeper, West Tunnel or 10th Street?",
+  "source_file": "slope+compare_route.jsonl",
+  "source_stem": "slope+compare_route",
+  "timing": {
+    "execution_seconds": 0.002,
+    "generation_seconds": 164.512,
+    "total_seconds": 164.514
+  },
+  "usage": {
+    "completion_tokens": 740,
+    "prompt_tokens": 2023,
+    "total_tokens": 2763
+  }
+}

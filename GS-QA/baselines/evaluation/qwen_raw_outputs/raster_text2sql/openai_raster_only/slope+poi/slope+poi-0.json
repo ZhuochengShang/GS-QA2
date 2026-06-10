@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope_degrees": 5.64621
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope_degrees": 5.64621
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-103.271398 43.990679)',4326) AS pt\n),\npatch AS (\n  SELECT ST_Buffer(pt::geography, 100)::geometry AS g FROM origin\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, p.g)) AS rast\n  FROM public.dem_us d\n  JOIN patch p ON ST_Intersects(d.rast, p.g)\n),\nslope_rast AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n)\nSELECT ST_Value(s.rast, 1, o.pt) AS slope_degrees\nFROM slope_rast s, origin o;",
+  "id": "slope+poi-0",
+  "model_output": "```sql\nWITH poi_geom AS (\n  SELECT geometry\n  FROM pois\n  WHERE poi_name ILIKE 'Reptile Gardens'\n    AND addr_city ILIKE 'Rapid City'\n    AND addr_state ILIKE 'SD'\n)\nSELECT\n  degrees(ST_Azimuth(ST_Centroid(ST_Envelope(r.rast)), ST_Centroid(ST_Envelope(r.rast)))) AS aspect,\n  ST_Slope(r.rast, 1, '32BF') AS slope_raster,\n  (ST_DumpAsPolygons(ST_Slope(r.rast, 1, '32BF'), 1)).val AS slope_degrees\nFROM\n  public.dem_us r,\n  poi_geom p\nWHERE\n  ST_Intersects(r.rast, p.geometry::geometry)\n  AND ST_Distance(ST_Centroid(r.rast), p.geometry::geometry) < 100;\n```",
+  "predicted_exec": {
+    "error": "function st_centroid(raster) does not exist\nLINE 17:   AND ST_Distance(ST_Centroid(r.rast), p.geometry::geometry)...\n                           ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH poi_geom AS (\n  SELECT geometry\n  FROM pois\n  WHERE poi_name ILIKE 'Reptile Gardens'\n    AND addr_city ILIKE 'Rapid City'\n    AND addr_state ILIKE 'SD'\n)\nSELECT\n  degrees(ST_Azimuth(ST_Centroid(ST_Envelope(r.rast)), ST_Centroid(ST_Envelope(r.rast)))) AS aspect,\n  ST_Slope(r.rast, 1, '32BF') AS slope_raster,\n  (ST_DumpAsPolygons(ST_Slope(r.rast, 1, '32BF'), 1)).val AS slope_degrees\nFROM\n  public.dem_us r,\n  poi_geom p\nWHERE\n  ST_Intersects(r.rast, p.geometry::geometry)\n  AND ST_Distance(ST_Centroid(r.rast), p.geometry::geometry) < 100;",
+  "predicted_sql_candidates": [
+    "WITH poi_geom AS (\n  SELECT geometry\n  FROM pois\n  WHERE poi_name ILIKE 'Reptile Gardens'\n    AND addr_city ILIKE 'Rapid City'\n    AND addr_state ILIKE 'SD'\n)\nSELECT\n  degrees(ST_Azimuth(ST_Centroid(ST_Envelope(r.rast)), ST_Centroid(ST_Envelope(r.rast)))) AS aspect,\n  ST_Slope(r.rast, 1, '32BF') AS slope_raster,\n  (ST_DumpAsPolygons(ST_Slope(r.rast, 1, '32BF'), 1)).val AS slope_degrees\nFROM\n  public.dem_us r,\n  poi_geom p\nWHERE\n  ST_Intersects(r.rast, p.geometry::geometry)\n  AND ST_Distance(ST_Centroid(r.rast), p.geometry::geometry) < 100;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the gradient of the terrain at Reptile Gardens, Rapid City, SD?",
+  "source_file": "slope+poi.jsonl",
+  "source_stem": "slope+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 42.312,
+    "total_seconds": 42.313
+  },
+  "usage": {
+    "completion_tokens": 190,
+    "prompt_tokens": 1611,
+    "total_tokens": 1801
+  }
+}

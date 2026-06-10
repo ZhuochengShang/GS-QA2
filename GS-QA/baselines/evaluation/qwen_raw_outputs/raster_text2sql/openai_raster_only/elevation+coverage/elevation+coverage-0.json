@@ -1,0 +1,59 @@
+{
+  "answer_type": "percent",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "percent",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer_percent": 46.285141
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer_percent": 46.285141
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-119.541779 44.467607, -119.541784 44.472724, -119.543197 44.472809, -119.543208 44.474625, -119.539078 44.474542, -119.536386 44.471055, -119.531096 44.471031, -119.531078 44.469035, -119.526368 44.469031, -119.52634 44.465411, -119.520384 44.465365, -119.520297 44.461657, -119.536571 44.461753, -119.536556 44.462346, -119.533907 44.462303, -119.533893 44.462877, -119.533979 44.463996, -119.541779 44.467607))',4326) AS geom\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.geom) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.geom)\n),\nhist AS (\n  SELECT\n    (vc).value::double precision AS val,\n    (vc).count::double precision AS cnt\n  FROM clipped c\n  CROSS JOIN LATERAL ST_ValueCount(c.rast, 1, TRUE) AS vc\n)\nSELECT\n  (\n    COALESCE(SUM(CASE WHEN val >= 80 THEN cnt ELSE 0 END), 0)\n    / NULLIF(SUM(cnt), 0)\n  ) * 100.0 AS answer_percent\nFROM hist;",
+  "id": "elevation+coverage-0",
+  "model_output": "```sql\nWITH dayville_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Dayville' AND border_type ILIKE 'city'\n),\nclipped_dem AS (\n  SELECT\n    ST_Clip(rast, (SELECT geom FROM dayville_geom), true) AS clipped_raster\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM dayville_geom))\n),\nelevation_stats AS (\n  SELECT\n    SUM(ST_Count(clipped_raster, true)) AS total_pixels,\n    SUM(ST_Count(clipped_raster, true, 80, NULL, 1)) AS pixels_above_80\n  FROM clipped_dem\n)\nSELECT\n  ROUND((pixels_above_80 * 100.0 / total_pixels)::numeric, 2) AS percent_area_above_80\nFROM elevation_stats;\n```",
+  "predicted_exec": {
+    "error": "function st_count(raster, boolean, integer, unknown, integer) does not exist\nLINE 15:     SUM(ST_Count(clipped_raster, true, 80, NULL, 1)) AS pixe...\n                 ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH dayville_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Dayville' AND border_type ILIKE 'city'\n),\nclipped_dem AS (\n  SELECT\n    ST_Clip(rast, (SELECT geom FROM dayville_geom), true) AS clipped_raster\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM dayville_geom))\n),\nelevation_stats AS (\n  SELECT\n    SUM(ST_Count(clipped_raster, true)) AS total_pixels,\n    SUM(ST_Count(clipped_raster, true, 80, NULL, 1)) AS pixels_above_80\n  FROM clipped_dem\n)\nSELECT\n  ROUND((pixels_above_80 * 100.0 / total_pixels)::numeric, 2) AS percent_area_above_80\nFROM elevation_stats;",
+  "predicted_sql_candidates": [
+    "WITH dayville_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Dayville' AND border_type ILIKE 'city'\n),\nclipped_dem AS (\n  SELECT\n    ST_Clip(rast, (SELECT geom FROM dayville_geom), true) AS clipped_raster\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM dayville_geom))\n),\nelevation_stats AS (\n  SELECT\n    SUM(ST_Count(clipped_raster, true)) AS total_pixels,\n    SUM(ST_Count(clipped_raster, true, 80, NULL, 1)) AS pixels_above_80\n  FROM clipped_dem\n)\nSELECT\n  ROUND((pixels_above_80 * 100.0 / total_pixels)::numeric, 2) AS percent_area_above_80\nFROM elevation_stats;"
+  ],
+  "query_type": "raster_only",
+  "question": "Within Dayville, Oregon, what share of the area has elevation at or above 80 meters?",
+  "source_file": "elevation+coverage.jsonl",
+  "source_stem": "elevation+coverage",
+  "timing": {
+    "execution_seconds": 0.002,
+    "generation_seconds": 43.101,
+    "total_seconds": 43.103
+  },
+  "usage": {
+    "completion_tokens": 190,
+    "prompt_tokens": 1541,
+    "total_tokens": 1731
+  }
+}

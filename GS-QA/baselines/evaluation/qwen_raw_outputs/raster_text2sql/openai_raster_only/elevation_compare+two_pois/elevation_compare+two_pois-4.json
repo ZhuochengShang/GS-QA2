@@ -1,0 +1,63 @@
+{
+  "answer_type": "name",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "name",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "higher_poi": "Canyonlands National Park, UT",
+      "poi1_elevation_m": 1666.0,
+      "poi2_elevation_m": 38.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "higher_poi": "Canyonlands National Park, UT",
+        "poi1_elevation_m": 1666.0,
+        "poi2_elevation_m": 38.0
+      }
+    ]
+  },
+  "gold_sql": "WITH p1 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-109.984017 38.166652)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-109.984017 38.166652)',4326))\n  LIMIT 1\n),\np2 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-121.858204 37.319739)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-121.858204 37.319739)',4326))\n  LIMIT 1\n)\nSELECT\n  CASE\n    WHEN p1.elev > p2.elev THEN 'Canyonlands National Park, UT'\n    WHEN p2.elev > p1.elev THEN 'Chinese American Historical Museum, San Jose, CA'\n    ELSE 'equal'\n  END AS higher_poi,\n  p1.elev AS poi1_elevation_m,\n  p2.elev AS poi2_elevation_m\nFROM p1, p2;",
+  "id": "elevation_compare+two_pois-4",
+  "model_output": "```sql\nWITH park_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-109.984017, 38.166652), 4326)::geography AS geom\n),\nmuseum_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-121.858204, 37.319739), 4326)::geography AS geom\n),\npark_elevation AS (\n  SELECT ST_Value(rast, ST_Transform(p.geom, 4326)) AS elevation\n  FROM public.dem_us r\n  CROSS JOIN park_point p\n  WHERE ST_Intersects(r.rast, ST_Transform(p.geom, 4326))\n),\nmuseum_elevation AS (\n  SELECT ST_Value(rast, ST_Transform(m.geom, 4326)) AS elevation\n  FROM public.dem_us r\n  CROSS JOIN museum_point m\n  WHERE ST_Intersects(r.rast, ST_Transform(m.geom, 4326))\n)\nSELECT \n  CASE\n    WHEN p.elevation > m.elevation THEN 'Canyonlands National Park, UT'\n    WHEN m.elevation > p.elevation THEN 'Chinese American Historical Museum, San Jose, CA'\n    ELSE 'Equal'\n  END AS higher_elevation,\n  p.elevation AS park_elevation,\n  m.elevation AS museum_elevation\nFROM park_elevation p, museum_elevation m;\n```",
+  "predicted_exec": {
+    "error": "function st_transform(geography, integer) does not exist\nLINE 8:   SELECT ST_Value(rast, ST_Transform(p.geom, 4326)) AS eleva...\n                                ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH park_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-109.984017, 38.166652), 4326)::geography AS geom\n),\nmuseum_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-121.858204, 37.319739), 4326)::geography AS geom\n),\npark_elevation AS (\n  SELECT ST_Value(rast, ST_Transform(p.geom, 4326)) AS elevation\n  FROM public.dem_us r\n  CROSS JOIN park_point p\n  WHERE ST_Intersects(r.rast, ST_Transform(p.geom, 4326))\n),\nmuseum_elevation AS (\n  SELECT ST_Value(rast, ST_Transform(m.geom, 4326)) AS elevation\n  FROM public.dem_us r\n  CROSS JOIN museum_point m\n  WHERE ST_Intersects(r.rast, ST_Transform(m.geom, 4326))\n)\nSELECT \n  CASE\n    WHEN p.elevation > m.elevation THEN 'Canyonlands National Park, UT'\n    WHEN m.elevation > p.elevation THEN 'Chinese American Historical Museum, San Jose, CA'\n    ELSE 'Equal'\n  END AS higher_elevation,\n  p.elevation AS park_elevation,\n  m.elevation AS museum_elevation\nFROM park_elevation p, museum_elevation m;",
+  "predicted_sql_candidates": [
+    "WITH park_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-109.984017, 38.166652), 4326)::geography AS geom\n),\nmuseum_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-121.858204, 37.319739), 4326)::geography AS geom\n),\npark_elevation AS (\n  SELECT ST_Value(rast, ST_Transform(p.geom, 4326)) AS elevation\n  FROM public.dem_us r\n  CROSS JOIN park_point p\n  WHERE ST_Intersects(r.rast, ST_Transform(p.geom, 4326))\n),\nmuseum_elevation AS (\n  SELECT ST_Value(rast, ST_Transform(m.geom, 4326)) AS elevation\n  FROM public.dem_us r\n  CROSS JOIN museum_point m\n  WHERE ST_Intersects(r.rast, ST_Transform(m.geom, 4326))\n)\nSELECT \n  CASE\n    WHEN p.elevation > m.elevation THEN 'Canyonlands National Park, UT'\n    WHEN m.elevation > p.elevation THEN 'Chinese American Historical Museum, San Jose, CA'\n    ELSE 'Equal'\n  END AS higher_elevation,\n  p.elevation AS park_elevation,\n  m.elevation AS museum_elevation\nFROM park_elevation p, museum_elevation m;"
+  ],
+  "query_type": "raster_only",
+  "question": "Which is at a higher elevation, Canyonlands National Park, UT or Chinese American Historical Museum, San Jose, CA?",
+  "source_file": "elevation_compare+two_pois.jsonl",
+  "source_stem": "elevation_compare+two_pois",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 68.602,
+    "total_seconds": 68.603
+  },
+  "usage": {
+    "completion_tokens": 321,
+    "prompt_tokens": 1725,
+    "total_tokens": 2046
+  }
+}

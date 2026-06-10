@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 0.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 0.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-85.815042 44.774572, -85.828318 44.774984, -85.937125 44.77836, -85.937178 44.771166, -85.937787 44.689175, -85.882338 44.688807, -85.878137 44.689338, -85.868025 44.689352, -85.847791 44.689383, -85.817448 44.689072, -85.817401 44.694528, -85.816567 44.725203, -85.815212 44.765215, -85.815109 44.767149, -85.815031 44.772414, -85.815042 44.774572))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).min AS slope\nFROM region_slope;",
+  "id": "min_slope+area-11",
+  "model_output": "```sql\nWITH almiratownship_geom AS (\n  SELECT ST_GeomFromText('POLYGON ((-85.815042 44.774572, -85.828318 44.774984, -85.937125 44.77836, -85.937178 44.771166, -85.937787 44.689175, -85.882338 44.688807, -85.878137 44.689338, -85.868025 44.689352, -85.847791 44.689383, -85.817448 44.689072, -85.817401 44.694528, -85.816567 44.725203, -85.815212 44.765215, -85.815109 44.767149, -85.815031 44.772414, -85.815042 44.774572))', 4326)::geometry AS geom\n),\ndem_clip AS (\n  SELECT \n    ST_Clip(rast, 1, almiratownship_geom.geom, true) AS clipped_rast\n  FROM \n    public.dem_us, almiratownship_geom\n  WHERE \n    ST_Intersects(rast, almiratownship_geom.geom)\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(clipped_rast, 1, '32BF', true) AS slope_rast\n  FROM \n    dem_clip\n),\nflattest_value AS (\n  SELECT \n    MIN(ST_Value(slope_rast, 1)) AS flattest_slope\n  FROM \n    slope_raster\n)\nSELECT \n  flattest_slope AS flattest_slope_degrees;\n```",
+  "predicted_exec": {
+    "error": "function st_slope(raster, integer, unknown, boolean) does not exist\nLINE 14:     ST_Slope(clipped_rast, 1, '32BF', true) AS slope_rast\n             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH almiratownship_geom AS (\n  SELECT ST_GeomFromText('POLYGON ((-85.815042 44.774572, -85.828318 44.774984, -85.937125 44.77836, -85.937178 44.771166, -85.937787 44.689175, -85.882338 44.688807, -85.878137 44.689338, -85.868025 44.689352, -85.847791 44.689383, -85.817448 44.689072, -85.817401 44.694528, -85.816567 44.725203, -85.815212 44.765215, -85.815109 44.767149, -85.815031 44.772414, -85.815042 44.774572))', 4326)::geometry AS geom\n),\ndem_clip AS (\n  SELECT \n    ST_Clip(rast, 1, almiratownship_geom.geom, true) AS clipped_rast\n  FROM \n    public.dem_us, almiratownship_geom\n  WHERE \n    ST_Intersects(rast, almiratownship_geom.geom)\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(clipped_rast, 1, '32BF', true) AS slope_rast\n  FROM \n    dem_clip\n),\nflattest_value AS (\n  SELECT \n    MIN(ST_Value(slope_rast, 1)) AS flattest_slope\n  FROM \n    slope_raster\n)\nSELECT \n  flattest_slope AS flattest_slope_degrees;",
+  "predicted_sql_candidates": [
+    "WITH almiratownship_geom AS (\n  SELECT ST_GeomFromText('POLYGON ((-85.815042 44.774572, -85.828318 44.774984, -85.937125 44.77836, -85.937178 44.771166, -85.937787 44.689175, -85.882338 44.688807, -85.878137 44.689338, -85.868025 44.689352, -85.847791 44.689383, -85.817448 44.689072, -85.817401 44.694528, -85.816567 44.725203, -85.815212 44.765215, -85.815109 44.767149, -85.815031 44.772414, -85.815042 44.774572))', 4326)::geometry AS geom\n),\ndem_clip AS (\n  SELECT \n    ST_Clip(rast, 1, almiratownship_geom.geom, true) AS clipped_rast\n  FROM \n    public.dem_us, almiratownship_geom\n  WHERE \n    ST_Intersects(rast, almiratownship_geom.geom)\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(clipped_rast, 1, '32BF', true) AS slope_rast\n  FROM \n    dem_clip\n),\nflattest_value AS (\n  SELECT \n    MIN(ST_Value(slope_rast, 1)) AS flattest_slope\n  FROM \n    slope_raster\n)\nSELECT \n  flattest_slope AS flattest_slope_degrees;"
+  ],
+  "query_type": "raster_only",
+  "question": "How flat is the flattest part of Almira Township, Michigan?",
+  "source_file": "min_slope+area.jsonl",
+  "source_stem": "min_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 112.55,
+    "total_seconds": 112.551
+  },
+  "usage": {
+    "completion_tokens": 524,
+    "prompt_tokens": 1842,
+    "total_tokens": 2366
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 37.941551
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 37.941551
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-85.653526 41.436918, -85.756847 41.435905, -85.757411 41.435906, -85.757958 41.435901, -85.768943 41.435796, -85.891655 41.435698, -85.972731 41.435432, -85.973103 41.435431, -85.974728 41.435426, -85.982118 41.435418, -85.986325 41.435411, -85.991615 41.435404, -86.000748 41.435393, -86.001431 41.435394, -86.058982 41.435489, -86.058986 41.433647, -86.058983 41.433578, -86.05735 41.303318, -86.053894 41.173523, -86.07769 41.173603, -86.075783 41.085117, -86.018414 41.086118, -86.018605 41.054509, -86.018612 41.053294, -86.018616 41.052541, -86.018623 41.051333, -86.018659 41.046014, -86.01866 41.045882, -86.018649 41.045869, -86.018658 41.045399, -86.018691 41.042836, -85.981351 41.042795, -85.980894 41.042274, -85.980407 41.041682, -85.980041 41.041196, -85.980161 41.040773, -85.980275 41.040404, -85.9802 41.039959, -85.979769 41.039275, -85.979307 41.03893, -85.978837 41.038811, -85.978352 41.038752, -85.977913 41.038818, -85.977621 41.03891, -85.977285 41.039083, -85.97716 41.039174, -85.977145 41.039263, -85.97715 41.039377, -85.977233 41.039468, -85.977274 41.039511, -85.977202 41.039744, -85.977079 41.040014, -85.976936 41.040138, -85.976719 41.040211, -85.976357 41.04038, -85.976018 41.040651, -85.975969 41.040719, -85.975998 41.04083, -85.976056 41.040978, -85.975802 41.041353, -85.975662 41.04145, -85.97556 41.041504, -85.975496 41.041743, -85.97556 41.041962, -85.975935 41.04218, -85.976449 41.042348, -85.977688 41.042706, -85.977772 41.042741, -85.977823 41.042791, -85.9778 41.042875, -85.945633 41.042828, -85.940751 41.042903, -85.927174 41.042638, -85.907338 41.042982, -85.888706 41.04313, -85.870366 41.043028, -85.853422 41.043214, -85.815049 41.04362, -85.795657 41.043521, -85.77975 41.044123, -85.760519 41.044509, -85.749975 41.04475, -85.733718 41.045086, -85.723521 41.04533, -85.699649 41.045702, -85.693337 41.045937, -85.684139 41.046667, -85.685623 41.089581, -85.687637 41.178982, -85.652245 41.178753, -85.651794 41.266785, -85.652679 41.294926, -85.653831 41.352119, -85.653526 41.436918))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).max AS slope\nFROM region_slope;",
+  "id": "max_slope+area-12",
+  "model_output": "```sql\nWITH kosciusko_county AS (\n  SELECT geometry\n  FROM regions\n  WHERE region_name ILIKE 'Kosciusko County' AND border_type = 'county'\n),\nraster_subset AS (\n  SELECT\n    ST_Clip(\n      r.rast,\n      (SELECT geometry::geometry FROM kosciusko_county),\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast,\n    (SELECT geometry::geometry FROM kosciusko_county)\n  )\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM raster_subset\n)\nSELECT\n  MAX(value) AS max_slope_degrees\nFROM (\n  SELECT\n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM slope_raster\n) AS dump;\n```",
+  "predicted_exec": {
+    "error": "column \"value\" does not exist\nLINE 25:   MAX(value) AS max_slope_degrees\n               ^\nHINT:  Perhaps you meant to reference the column \"dump.val\".",
+    "output": []
+  },
+  "predicted_sql": "WITH kosciusko_county AS (\n  SELECT geometry\n  FROM regions\n  WHERE region_name ILIKE 'Kosciusko County' AND border_type = 'county'\n),\nraster_subset AS (\n  SELECT\n    ST_Clip(\n      r.rast,\n      (SELECT geometry::geometry FROM kosciusko_county),\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast,\n    (SELECT geometry::geometry FROM kosciusko_county)\n  )\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM raster_subset\n)\nSELECT\n  MAX(value) AS max_slope_degrees\nFROM (\n  SELECT\n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM slope_raster\n) AS dump;",
+  "predicted_sql_candidates": [
+    "WITH kosciusko_county AS (\n  SELECT geometry\n  FROM regions\n  WHERE region_name ILIKE 'Kosciusko County' AND border_type = 'county'\n),\nraster_subset AS (\n  SELECT\n    ST_Clip(\n      r.rast,\n      (SELECT geometry::geometry FROM kosciusko_county),\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast,\n    (SELECT geometry::geometry FROM kosciusko_county)\n  )\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM raster_subset\n)\nSELECT\n  MAX(value) AS max_slope_degrees\nFROM (\n  SELECT\n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM slope_raster\n) AS dump;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the maximum slope in Kosciusko County, Indiana?",
+  "source_file": "max_slope+area.jsonl",
+  "source_stem": "max_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 45.085,
+    "total_seconds": 45.086
+  },
+  "usage": {
+    "completion_tokens": 198,
+    "prompt_tokens": 1518,
+    "total_tokens": 1716
+  }
+}

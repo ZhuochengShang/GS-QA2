@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 40.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 40.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-94.68102 45.160073, -94.680816 45.154991, -94.679346 45.155013, -94.679322 45.154502, -94.675797 45.154482, -94.675753 45.152895, -94.675763 45.152551, -94.67721 45.152437, -94.678304 45.15219, -94.677909 45.151765, -94.677423 45.151861, -94.676533 45.152019, -94.675751 45.152089, -94.67568 45.149196, -94.67408 45.149205, -94.67403 45.145582, -94.675958 45.145601, -94.676374 45.146162, -94.67662 45.146071, -94.675995 45.145248, -94.675768 45.14493, -94.675675 45.14463, -94.675659 45.143966, -94.680369 45.143897, -94.680143 45.1383, -94.685547 45.138358, -94.685679 45.143818, -94.685947 45.143814, -94.687284 45.145637, -94.684724 45.146596, -94.685141 45.146767, -94.685233 45.147069, -94.685418 45.147431, -94.685665 45.147756, -94.686381 45.148789, -94.688923 45.14787, -94.690149 45.14954, -94.685856 45.15106, -94.685858 45.151148, -94.687642 45.151164, -94.688883 45.150755, -94.689118 45.151299, -94.688812 45.151429, -94.688849 45.152966, -94.687206 45.152956, -94.686877 45.152498, -94.686665 45.152305, -94.686415 45.152245, -94.68588 45.152072, -94.685902 45.152949, -94.686076 45.160091, -94.68102 45.160073))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n),\nstats AS (\n  SELECT ST_SummaryStats(ST_Union(rast)) AS s\n  FROM clipped\n)\nSELECT (s).max - (s).min AS elevation\nFROM stats;",
+  "id": "elevation_range+region-17",
+  "model_output": "```sql\nWITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Grove City' AND border_type ILIKE 'city'\n),\nclipped_raster AS (\n  SELECT\n    ST_Clip(r.rast, 1, rg.geom, TRUE) AS clipped_rast\n  FROM\n    public.dem_us r,\n    region_geom rg\n  WHERE\n    ST_Intersects(r.rast::geometry, rg.geom)\n),\nelevation_stats AS (\n  SELECT\n    MAX(ST_Value(clipped_rast, 1)) AS max_elevation,\n    MIN(ST_Value(clipped_rast, 1)) AS min_elevation\n  FROM\n    clipped_raster\n)\nSELECT\n  max_elevation - min_elevation AS elevation_difference\nFROM\n  elevation_stats;\n```",
+  "predicted_exec": {
+    "error": "function st_value(raster, integer) does not exist\nLINE 17:     MAX(ST_Value(clipped_rast, 1)) AS max_elevation,\n                 ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Grove City' AND border_type ILIKE 'city'\n),\nclipped_raster AS (\n  SELECT\n    ST_Clip(r.rast, 1, rg.geom, TRUE) AS clipped_rast\n  FROM\n    public.dem_us r,\n    region_geom rg\n  WHERE\n    ST_Intersects(r.rast::geometry, rg.geom)\n),\nelevation_stats AS (\n  SELECT\n    MAX(ST_Value(clipped_rast, 1)) AS max_elevation,\n    MIN(ST_Value(clipped_rast, 1)) AS min_elevation\n  FROM\n    clipped_raster\n)\nSELECT\n  max_elevation - min_elevation AS elevation_difference\nFROM\n  elevation_stats;",
+  "predicted_sql_candidates": [
+    "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Grove City' AND border_type ILIKE 'city'\n),\nclipped_raster AS (\n  SELECT\n    ST_Clip(r.rast, 1, rg.geom, TRUE) AS clipped_rast\n  FROM\n    public.dem_us r,\n    region_geom rg\n  WHERE\n    ST_Intersects(r.rast::geometry, rg.geom)\n),\nelevation_stats AS (\n  SELECT\n    MAX(ST_Value(clipped_rast, 1)) AS max_elevation,\n    MIN(ST_Value(clipped_rast, 1)) AS min_elevation\n  FROM\n    clipped_raster\n)\nSELECT\n  max_elevation - min_elevation AS elevation_difference\nFROM\n  elevation_stats;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the difference between highest and lowest elevation in Grove City, Minnesota?",
+  "source_file": "elevation_range+region.jsonl",
+  "source_stem": "elevation_range+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 37.298,
+    "total_seconds": 37.299
+  },
+  "usage": {
+    "completion_tokens": 175,
+    "prompt_tokens": 1520,
+    "total_tokens": 1695
+  }
+}

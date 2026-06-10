@@ -1,0 +1,63 @@
+{
+  "answer_type": "name",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "name",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer_name": "cafe",
+      "avg_elev_1": 12.382979,
+      "avg_elev_2": 11.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer_name": "cafe",
+        "avg_elev_1": 12.382979,
+        "avg_elev_2": 11.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-80.203045 26.327865, -80.190233 26.327862, -80.170686 26.327857, -80.169911 26.327857, -80.128242 26.327858, -80.100228 26.327839, -80.099483 26.327704, -80.099048 26.327512, -80.098673 26.327152, -80.098404 26.326738, -80.098222 26.326161, -80.098249 26.325724, -80.098383 26.325166, -80.098598 26.324579, -80.098866 26.32419, -80.099 26.323747, -80.098995 26.323392, -80.098914 26.323166, -80.098791 26.322978, -80.098517 26.322762, -80.09782 26.322526, -80.096951 26.322368, -80.096378 26.322512, -80.096072 26.322795, -80.095872 26.323368, -80.095658 26.323964, -80.095279 26.324521, -80.094796 26.324964, -80.094399 26.325276, -80.093856 26.32559, -80.092779 26.326262, -80.091915 26.326411, -80.091057 26.325887, -80.089306 26.324794, -80.089021 26.324367, -80.088833 26.322398, -80.087867 26.320677, -80.075813 26.320945, -80.074495 26.320946, -80.074364 26.320946, -80.073167 26.320946, -80.072668 26.320947, -80.05783 26.320956, -80.025914 26.320956, -80.015276 26.320956, -80.014362 26.362236, -80.006149 26.432809, -79.999762 26.471142, -79.997998 26.477478, -79.99693 26.483708, -79.996694 26.488491, -79.996518 26.492951, -79.995567 26.496065, -79.9942 26.500349, -79.993129 26.50853, -79.991269 26.523026, -79.988543 26.527264, -79.98631 26.537035, -79.985261 26.544712, -79.985513 26.549384, -79.985875 26.550887, -79.98511 26.553786, -79.984119 26.560926, -79.982476 26.569247, -79.98209 26.57961, -79.98134 26.587716, -79.980648 26.595447, -79.980676 26.604844, -79.981074 26.618374, -79.981297 26.625345, -79.981176 26.63831, -79.981303 26.650273, -79.980879 26.66363, -79.980263 26.672102, -79.979736 26.677464, -79.978373 26.682929, -79.97654 26.687479, -79.975721 26.692089, -79.974895 26.697503, -79.974728 26.702598, -79.974734 26.708231, -79.976951 26.713446, -79.977582 26.716078, -79.978641 26.723917, -79.979153 26.726709, -79.978677 26.732768, -79.979024 26.740227, -79.97944 26.746774, -79.97965 26.750341, -79.977129 26.756295, -79.975557 26.764989, -79.97488 26.77481, -79.975468 26.779212, -79.975463 26.781681, -79.974857 26.786028, -79.974306 26.792415, -79.975425 26.80025, -79.977739 26.808731, -79.983618 26.828966, -79.985099 26.835835, -79.98973 26.85301, -79.990799 26.856552, -79.990851 26.860631, -79.991917 26.866374, -79.993519 26.873029, -79.993913 26.875337, -79.996463 26.88181, -79.998951 26.889634, -79.999761 26.892817, -80.005203 26.911177, -80.014886 26.943845, -80.022754 26.970392, -80.080289 26.970488, -80.083266 26.970493, -80.085156 26.970507, -80.087341 26.970522, -80.088879 26.970532, -80.097161 26.970614, -80.09767 26.970617, -80.09815 26.970622, -80.09955 26.970636, -80.09991 26.970639, -80.100269 26.970643, -80.101152 26.970654, -80.101808 26.970662, -80.102012 26.970664, -80.103134 26.970677, -80.103624 26.970681, -80.105115 26.970701, -80.107513 26.970739, -80.107596 26.97074, -80.10901 26.970763, -80.109957 26.970834, -80.110936 26.970847, -80.115292 26.970866, -80.120871 26.970924, -80.126472 26.970893, -80.139701 26.970881, -80.141526 26.970871, -80.141602 26.970816, -80.141692 26.970769, -80.141767 26.970737, -80.141836 26.970717, -80.141889 26.970707, -80.141937 26.966863, -80.142002 26.962635, -80.142012 26.956322, -80.158107 26.956439, -80.166142 26.956543, -80.167745 26.956556, -80.174553 26.95657, -80.190662 26.956604, -80.226459 26.95679, -80.254861 26.95714, -80.277427 26.957659, -80.290563 26.95786, -80.300137 26.957917, -80.329509 26.958095, -80.336305 26.958134, -80.340553 26.958158, -80.355215 26.958241, -80.430643 26.957792, -80.458601 26.958097, -80.483106 26.958288, -80.499775 26.958155, -80.531901 26.958067, -80.556429 26.958, -80.559084 26.957993, -80.560577 26.957989, -80.560876 26.957988, -80.561423 26.957987, -80.561998 26.957985, -80.571664 26.957959, -80.618063 26.957833, -80.62966 26.957776, -80.64479 26.957934, -80.660779 26.958102, -80.688241 26.958389, -80.71281 26.958646, -80.749781 26.959033, -80.874784 26.959017, -80.885639 26.958919, -80.885747 26.919962, -80.886099 26.794513, -80.88617 26.768937, -80.886173 26.766997, -80.886178 26.76645, -80.886183 26.76514, -80.886232 26.750342, -80.886074 26.746224, -80.886066 26.745926, -80.886055 26.745649, -80.886054 26.744214, -80.886056 26.743883, -80.886057 26.743773, -80.886063 26.743542, -80.886098 26.741147, -80.886101 26.738689, -80.886104 26.738558, -80.886106 26.738526, -80.886099 26.731293, -80.886097 26.716804, -80.886098 26.712555, -80.886101 26.711026, -80.886103 26.703606, -80.886103 26.694889, -80.886107 26.681909, -80.886104 26.681825, -80.88611 26.666414, -80.886093 26.664201, -80.886014 26.652796, -80.885966 26.646987, -80.885911 26.63978, -80.88589 26.636795, -80.885834 26.629485, -80.885805 26.625387, -80.885709 26.623854, -80.885601 26.61658, -80.885601 26.616482, -80.885496 26.609299, -80.88549 26.609044, -80.885302 26.596528, -80.885429 26.594473, -80.885004 26.573166, -80.884817 26.565477, -80.884697 26.56071, -80.884349 26.544531, -80.884032 26.528248, -80.883937 26.523437, -80.883913 26.522186, -80.883913 26.522111, -80.883874 26.520767, -80.882124 26.432644, -80.880079 26.347548, -80.880034 26.346099, -80.881625 26.346077, -80.881389 26.333873, -80.296968 26.334558, -80.296889 26.355491, -80.251151 26.341865, -80.227088 26.334696, -80.204164 26.327865, -80.203045 26.327865))', 4326) AS g\n),\ncat1 AS (\n  SELECT p.id, ST_PointOnSurface(p.geometry::geometry) AS pt\n  FROM pois p\n  JOIN region r ON ST_Intersects(p.geometry::geometry, r.g)\n  WHERE p.\"amenity\" = 'cafe'\n),\ncat2 AS (\n  SELECT p.id, ST_PointOnSurface(p.geometry::geometry) AS pt\n  FROM pois p\n  JOIN region r ON ST_Intersects(p.geometry::geometry, r.g)\n  WHERE p.\"leisure\" = 'nature_reserve'\n),\navg1 AS (\n  SELECT AVG(elev.z) AS avg_elev\n  FROM cat1 c\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, c.pt) AS z\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, c.pt)\n    LIMIT 1\n  ) elev ON elev.z IS NOT NULL\n),\navg2 AS (\n  SELECT AVG(elev.z) AS avg_elev\n  FROM cat2 c\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, c.pt) AS z\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, c.pt)\n    LIMIT 1\n  ) elev ON elev.z IS NOT NULL\n)\nSELECT\n  CASE WHEN a1.avg_elev >= a2.avg_elev THEN 'cafe' ELSE 'nature_reserve' END AS answer_name,\n  a1.avg_elev AS avg_elev_1,\n  a2.avg_elev AS avg_elev_2\nFROM avg1 a1, avg2 a2\nWHERE a1.avg_elev IS NOT NULL AND a2.avg_elev IS NOT NULL;",
+  "id": "elevation_compare_categories+name-13",
+  "model_output": "```sql\nWITH palm_beach_county AS (\n  SELECT geometry\n  FROM regions\n  WHERE region_name ILIKE 'Palm Beach County' AND border_type = 'county'\n),\ncafes_in_county AS (\n  SELECT pois.geometry\n  FROM pois\n  JOIN palm_beach_county\n    ON ST_Intersects(pois.geometry::geometry, palm_beach_county.geometry::geometry)\n  WHERE pois.amenity = 'cafe'\n),\nnature_reserves_in_county AS (\n  SELECT pois.geometry\n  FROM pois\n  JOIN palm_beach_county\n    ON ST_Intersects(pois.geometry::geometry, palm_beach_county.geometry::geometry)\n  WHERE pois.leisure = 'nature reserve'\n),\ncafe_elevation AS (\n  SELECT ST_Value(ST_Clip(public.dem_us.rast, TRUE, cafes_in_county.geometry), 1) AS elevation\n  FROM cafes_in_county, public.dem_us\n  WHERE ST_Intersects(public.dem_us.rast, cafes_in_county.geometry)\n),\nnature_reserve_elevation AS (\n  SELECT ST_Value(ST_Clip(public.dem_us.rast, TRUE, nature_reserves_in_county.geometry), 1) AS elevation\n  FROM nature_reserves_in_county, public.dem_us\n  WHERE ST_Intersects(public.dem_us.rast, nature_reserves_in_county.geometry)\n)\nSELECT \n  'cafes' AS category,\n  AVG(elevation) AS avg_elevation\nFROM cafe_elevation\nUNION ALL\nSELECT \n  'nature reserves' AS category,\n  AVG(elevation) AS avg_elevation\nFROM nature_reserve_elevation\nORDER BY avg_elevation DESC\nLIMIT 1;\n```",
+  "predicted_exec": {
+    "error": "function st_clip(raster, boolean, geography) does not exist\nLINE 21:   SELECT ST_Value(ST_Clip(public.dem_us.rast, TRUE, cafes_in...\n                           ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH palm_beach_county AS (\n  SELECT geometry\n  FROM regions\n  WHERE region_name ILIKE 'Palm Beach County' AND border_type = 'county'\n),\ncafes_in_county AS (\n  SELECT pois.geometry\n  FROM pois\n  JOIN palm_beach_county\n    ON ST_Intersects(pois.geometry::geometry, palm_beach_county.geometry::geometry)\n  WHERE pois.amenity = 'cafe'\n),\nnature_reserves_in_county AS (\n  SELECT pois.geometry\n  FROM pois\n  JOIN palm_beach_county\n    ON ST_Intersects(pois.geometry::geometry, palm_beach_county.geometry::geometry)\n  WHERE pois.leisure = 'nature reserve'\n),\ncafe_elevation AS (\n  SELECT ST_Value(ST_Clip(public.dem_us.rast, TRUE, cafes_in_county.geometry), 1) AS elevation\n  FROM cafes_in_county, public.dem_us\n  WHERE ST_Intersects(public.dem_us.rast, cafes_in_county.geometry)\n),\nnature_reserve_elevation AS (\n  SELECT ST_Value(ST_Clip(public.dem_us.rast, TRUE, nature_reserves_in_county.geometry), 1) AS elevation\n  FROM nature_reserves_in_county, public.dem_us\n  WHERE ST_Intersects(public.dem_us.rast, nature_reserves_in_county.geometry)\n)\nSELECT \n  'cafes' AS category,\n  AVG(elevation) AS avg_elevation\nFROM cafe_elevation\nUNION ALL\nSELECT \n  'nature reserves' AS category,\n  AVG(elevation) AS avg_elevation\nFROM nature_reserve_elevation\nORDER BY avg_elevation DESC\nLIMIT 1;",
+  "predicted_sql_candidates": [
+    "WITH palm_beach_county AS (\n  SELECT geometry\n  FROM regions\n  WHERE region_name ILIKE 'Palm Beach County' AND border_type = 'county'\n),\ncafes_in_county AS (\n  SELECT pois.geometry\n  FROM pois\n  JOIN palm_beach_county\n    ON ST_Intersects(pois.geometry::geometry, palm_beach_county.geometry::geometry)\n  WHERE pois.amenity = 'cafe'\n),\nnature_reserves_in_county AS (\n  SELECT pois.geometry\n  FROM pois\n  JOIN palm_beach_county\n    ON ST_Intersects(pois.geometry::geometry, palm_beach_county.geometry::geometry)\n  WHERE pois.leisure = 'nature reserve'\n),\ncafe_elevation AS (\n  SELECT ST_Value(ST_Clip(public.dem_us.rast, TRUE, cafes_in_county.geometry), 1) AS elevation\n  FROM cafes_in_county, public.dem_us\n  WHERE ST_Intersects(public.dem_us.rast, cafes_in_county.geometry)\n),\nnature_reserve_elevation AS (\n  SELECT ST_Value(ST_Clip(public.dem_us.rast, TRUE, nature_reserves_in_county.geometry), 1) AS elevation\n  FROM nature_reserves_in_county, public.dem_us\n  WHERE ST_Intersects(public.dem_us.rast, nature_reserves_in_county.geometry)\n)\nSELECT \n  'cafes' AS category,\n  AVG(elevation) AS avg_elevation\nFROM cafe_elevation\nUNION ALL\nSELECT \n  'nature reserves' AS category,\n  AVG(elevation) AS avg_elevation\nFROM nature_reserve_elevation\nORDER BY avg_elevation DESC\nLIMIT 1;"
+  ],
+  "query_type": "raster_vector",
+  "question": "In Palm Beach County, Florida, which category tends to be at higher elevation: cafes or nature reserves?",
+  "source_file": "elevation_compare_categories+name.jsonl",
+  "source_stem": "elevation_compare_categories+name",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 75.53,
+    "total_seconds": 75.531
+  },
+  "usage": {
+    "completion_tokens": 354,
+    "prompt_tokens": 1785,
+    "total_tokens": 2139
+  }
+}

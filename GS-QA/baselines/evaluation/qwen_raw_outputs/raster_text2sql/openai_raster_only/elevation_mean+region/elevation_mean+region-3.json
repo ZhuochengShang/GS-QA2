@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 235.025727
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 235.025727
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-86.270999 38.542435, -86.272292 38.542447, -86.278942 38.54251, -86.278831 38.550624, -86.284807 38.550667, -86.286708 38.550691, -86.286424 38.557004, -86.286393 38.558941, -86.286355 38.564216, -86.277395 38.564131, -86.274903 38.564107, -86.270566 38.564063, -86.270573 38.556969, -86.270847 38.555561, -86.270826 38.555127, -86.270839 38.55462, -86.270893 38.550564, -86.270887 38.549076, -86.270922 38.547666, -86.270903 38.546228, -86.270966 38.54463, -86.270982 38.542975, -86.270999 38.542435))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).mean AS elevation\nFROM clipped;",
+  "id": "elevation_mean+region-3",
+  "model_output": "```sql\nWITH livonia_geometry AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Livonia'\n    AND border_type ILIKE 'city'\n    AND addr_state ILIKE 'Indiana'\n)\nSELECT\n  ST_ValueCount(\n    ST_Clip(\n      r.rast,\n      lg.geom,\n      TRUE\n    ),\n    1\n  ) AS elevation_stats\nFROM\n  livonia_geometry lg,\n  public.dem_us r\nWHERE\n  ST_Intersects(r.rast, lg.geom);\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 6:     AND addr_state ILIKE 'Indiana'\n                ^",
+    "output": []
+  },
+  "predicted_sql": "WITH livonia_geometry AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Livonia'\n    AND border_type ILIKE 'city'\n    AND addr_state ILIKE 'Indiana'\n)\nSELECT\n  ST_ValueCount(\n    ST_Clip(\n      r.rast,\n      lg.geom,\n      TRUE\n    ),\n    1\n  ) AS elevation_stats\nFROM\n  livonia_geometry lg,\n  public.dem_us r\nWHERE\n  ST_Intersects(r.rast, lg.geom);",
+  "predicted_sql_candidates": [
+    "WITH livonia_geometry AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Livonia'\n    AND border_type ILIKE 'city'\n    AND addr_state ILIKE 'Indiana'\n)\nSELECT\n  ST_ValueCount(\n    ST_Clip(\n      r.rast,\n      lg.geom,\n      TRUE\n    ),\n    1\n  ) AS elevation_stats\nFROM\n  livonia_geometry lg,\n  public.dem_us r\nWHERE\n  ST_Intersects(r.rast, lg.geom);"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the average elevation in Livonia, Indiana?",
+  "source_file": "elevation_mean+region.jsonl",
+  "source_stem": "elevation_mean+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 24.87,
+    "total_seconds": 24.871
+  },
+  "usage": {
+    "completion_tokens": 116,
+    "prompt_tokens": 1515,
+    "total_tokens": 1631
+  }
+}

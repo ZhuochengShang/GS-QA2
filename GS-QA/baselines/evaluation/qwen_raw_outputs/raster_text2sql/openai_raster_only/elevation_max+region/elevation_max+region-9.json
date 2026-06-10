@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 294.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 294.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-96.79322 46.788391, -96.79307 46.788416, -96.792712 46.78846, -96.792611 46.788477, -96.792411 46.788517, -96.792015 46.788605, -96.791919 46.788633, -96.791872 46.78865, -96.791773 46.788672, -96.791627 46.78871, -96.791585 46.78873, -96.791538 46.788745, -96.791488 46.788756, -96.791172 46.788881, -96.790914 46.789003, -96.790708 46.789113, -96.790486 46.789265, -96.79025 46.789458, -96.790103 46.78956, -96.79006 46.78958, -96.790011 46.789593, -96.789959 46.789596, -96.789803 46.789593, -96.789752 46.789585, -96.789654 46.789561, -96.789558 46.789533, -96.789513 46.789515, -96.789395 46.789444, -96.789336 46.789384, -96.789306 46.789315, -96.789298 46.789244, -96.789302 46.789208, -96.789354 46.789068, -96.789464 46.788905, -96.789519 46.788844, -96.789538 46.78881, -96.789638 46.788684, -96.789718 46.788591, -96.789803 46.788501, -96.789856 46.78844, -96.789901 46.788376, -96.790008 46.788252, -96.790056 46.788188, -96.790134 46.788055, -96.790159 46.787985, -96.790175 46.787914, -96.790186 46.787806, -96.790185 46.787734, -96.790176 46.787662, -96.790166 46.787627, -96.790143 46.787556, -96.790112 46.787488, -96.790091 46.787455, -96.790012 46.787361, -96.789951 46.787303, -96.789702 46.787119, -96.789551 46.787019, -96.789434 46.786948, -96.789225 46.786841, -96.789011 46.786739, -96.788786 46.786648, -96.788693 46.786616, -96.788651 46.786595, -96.788605 46.786578, -96.788463 46.786534, -96.788239 46.786442, -96.788021 46.786344, -96.787774 46.786212, -96.787509 46.786038, -96.787401 46.785961, -96.787375 46.78593, -96.787314 46.785871, -96.78729 46.785839, -96.787248 46.785773, -96.787179 46.785637, -96.787166 46.785602, -96.78715 46.78553, -96.787136 46.785496, -96.787133 46.78546, -96.787119 46.785388, -96.78711 46.785281, -96.787124 46.785065, -96.787142 46.784994, -96.787167 46.784924, -96.787183 46.78489, -96.787308 46.784731, -96.787323 46.784698, -96.787369 46.784521, -96.787385 46.784486, -96.787429 46.784421, -96.787465 46.784353, -96.787522 46.784293, -96.787601 46.7842, -96.787647 46.784136, -96.787685 46.784069, -96.787792 46.783905, -96.787846 46.783843, -96.787868 46.78381, -96.787894 46.78378, -96.78796 46.783724, -96.788135 46.78359, -96.788281 46.783487, -96.79068 46.783701, -96.79092 46.783624, -96.791002 46.783607, -96.791219 46.783604, -96.792226 46.7835, -96.792889 46.78333, -96.793122 46.783292, -96.793464 46.783279, -96.795946 46.783249, -96.798232 46.783215, -96.798653 46.783214, -96.798979 46.783189, -96.799029 46.783401, -96.799174 46.783755, -96.799331 46.784077, -96.799462 46.784329, -96.799564 46.784496, -96.799685 46.784695, -96.800002 46.785141, -96.800432 46.785718, -96.80087 46.786316, -96.80136 46.786994, -96.801794 46.787622, -96.802081 46.788106, -96.802215 46.788278, -96.802342 46.788537, -96.802422 46.788895, -96.80218 46.788916, -96.795465 46.789156, -96.795418 46.78912, -96.795164 46.788939, -96.794936 46.788791, -96.794819 46.78872, -96.794695 46.788654, -96.794566 46.788593, -96.794521 46.788575, -96.794475 46.788558, -96.794378 46.788532, -96.794287 46.788497, -96.794238 46.788485, -96.794189 46.788473, -96.793986 46.788443, -96.793937 46.78843, -96.793627 46.788406, -96.79322 46.788391))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).max AS elevation\nFROM clipped;",
+  "id": "elevation_max+region-9",
+  "model_output": "```sql\nWITH briarwood_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Briarwood'\n    AND addr_state ILIKE 'North Dakota'\n)\nSELECT MAX((ST_Value(r.rast, b.geom))::numeric) AS max_elevation\nFROM briarwood_geom b,\nLATERAL ST_Clip(public.dem_us.rast, b.geom, TRUE) AS r(rast)\nWHERE ST_Intersects(public.dem_us.rast, b.geom);\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 5:     AND addr_state ILIKE 'North Dakota'\n                ^",
+    "output": []
+  },
+  "predicted_sql": "WITH briarwood_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Briarwood'\n    AND addr_state ILIKE 'North Dakota'\n)\nSELECT MAX((ST_Value(r.rast, b.geom))::numeric) AS max_elevation\nFROM briarwood_geom b,\nLATERAL ST_Clip(public.dem_us.rast, b.geom, TRUE) AS r(rast)\nWHERE ST_Intersects(public.dem_us.rast, b.geom);",
+  "predicted_sql_candidates": [
+    "WITH briarwood_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Briarwood'\n    AND addr_state ILIKE 'North Dakota'\n)\nSELECT MAX((ST_Value(r.rast, b.geom))::numeric) AS max_elevation\nFROM briarwood_geom b,\nLATERAL ST_Clip(public.dem_us.rast, b.geom, TRUE) AS r(rast)\nWHERE ST_Intersects(public.dem_us.rast, b.geom);"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the max elevation value within Briarwood, North Dakota?",
+  "source_file": "elevation_max+region.jsonl",
+  "source_stem": "elevation_max+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 23.662,
+    "total_seconds": 23.663
+  },
+  "usage": {
+    "completion_tokens": 111,
+    "prompt_tokens": 1519,
+    "total_tokens": 1630
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "stem": "range+name+elevation_condition",
+  "query_type": "extended",
+  "model": "Qwen/Qwen3-32B-AWQ",
+  "provider": "openai",
+  "question_count": 20,
+  "generation_timeouts": 0,
+  "successful_sql_generation": 20,
+  "successful_sql_execution": 3,
+  "timing": {
+    "total_wall_seconds": 1178.001,
+    "mean_generation_seconds": 58.137,
+    "mean_execution_seconds": 0.763,
+    "mean_total_seconds": 58.9,
+    "max_total_seconds": 83.243
+  },
+  "tokens": {
+    "total_prompt_tokens": 35782,
+    "total_completion_tokens": 5440,
+    "total_tokens": 41222,
+    "mean_prompt_tokens": 1789.1,
+    "mean_completion_tokens": 272,
+    "mean_total_tokens": 2061.1
+  },
+  "evaluation": {
+    "exact_matches": 0,
+    "numeric_tolerance_accuracy": null,
+    "mean_absolute_error": null,
+    "text_exact_accuracy": null,
+    "mean_rowset_f1": 0.0
+  }
+}

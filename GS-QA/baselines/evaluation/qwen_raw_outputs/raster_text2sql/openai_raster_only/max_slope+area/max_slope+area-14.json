@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 37.281094
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 37.281094
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-76.360536 41.040432, -76.360748 41.040407, -76.360958 41.040371, -76.361208 41.040314, -76.361458 41.040252, -76.36183 41.040155, -76.363557 41.039715, -76.36599 41.039094, -76.366941 41.038863, -76.367981 41.038589, -76.369088 41.038304, -76.369448 41.038216, -76.370606 41.037964, -76.37115 41.037837, -76.371646 41.037707, -76.372533 41.037471, -76.373364 41.037265, -76.37358 41.037221, -76.373806 41.037185, -76.374028 41.037168, -76.374199 41.037164, -76.374394 41.037163, -76.374472 41.037168, -76.377382 41.034784, -76.381853 41.033855, -76.382028 41.033788, -76.382278 41.033726, -76.382732 41.03363, -76.385383 41.033124, -76.386338 41.032931, -76.386439 41.032911, -76.386834 41.032814, -76.387126 41.032678, -76.38746 41.032458, -76.387769 41.032335, -76.388044 41.032244, -76.391065 41.031512, -76.395528 41.030517, -76.404168 41.040053, -76.404709 41.041549, -76.40692 41.047709, -76.407558 41.04949, -76.407728 41.049959, -76.394817 41.053865, -76.389286 41.055504, -76.384534 41.056911, -76.38592 41.060577, -76.385916 41.060648, -76.386047 41.061012, -76.386606 41.062492, -76.38678 41.062924, -76.386917 41.063293, -76.387337 41.064348, -76.387477 41.064688, -76.387536 41.064874, -76.387564 41.064997, -76.395168 41.084962, -76.391218 41.085808, -76.389275 41.08616, -76.384496 41.08672, -76.383252 41.087143, -76.381971 41.087702, -76.377383 41.088636, -76.375966 41.088846, -76.374792 41.08935, -76.371267 41.089849, -76.36389 41.091835, -76.361923 41.092099, -76.357913 41.092895, -76.355397 41.093107, -76.348904 41.095015, -76.345451 41.09579, -76.344132 41.096033, -76.342945 41.096009, -76.340779 41.095665, -76.339447 41.097021, -76.337422 41.097627, -76.336935 41.097654, -76.334698 41.097634, -76.33038 41.098859, -76.327904 41.09934, -76.326248 41.099561, -76.320597 41.084271, -76.314648 41.068169, -76.307584 41.049043, -76.310184 41.048294, -76.32202 41.04467, -76.325662 41.043994, -76.34058 41.043482, -76.345013 41.044111, -76.3452 41.044061, -76.349037 41.04315, -76.349648 41.043008, -76.351432 41.042574, -76.35383 41.042017, -76.353986 41.041979, -76.354094 41.04193, -76.354141 41.041885, -76.354365 41.041865, -76.358951 41.040782, -76.359061 41.04075, -76.359136 41.040715, -76.360536 41.040432))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).max AS slope\nFROM region_slope;",
+  "id": "max_slope+area-14",
+  "model_output": "```sql\nWITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'North Centre Township'\n    AND border_type ILIKE 'township'\n    AND addr_state ILIKE 'Pennsylvania'\n)\n, clipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM region_geom), true) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM region_geom))\n)\n, slope_raster AS (\n  SELECT ST_Slope(rast, 1, '32BF') AS rast\n  FROM clipped_dem\n)\nSELECT MAX(value) AS max_slope_degrees\nFROM (\n  SELECT (ST_DumpAsPolygons(rast)).*\n  FROM slope_raster\n) AS slope_values;\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 6:     AND addr_state ILIKE 'Pennsylvania'\n                ^",
+    "output": []
+  },
+  "predicted_sql": "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'North Centre Township'\n    AND border_type ILIKE 'township'\n    AND addr_state ILIKE 'Pennsylvania'\n)\n, clipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM region_geom), true) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM region_geom))\n)\n, slope_raster AS (\n  SELECT ST_Slope(rast, 1, '32BF') AS rast\n  FROM clipped_dem\n)\nSELECT MAX(value) AS max_slope_degrees\nFROM (\n  SELECT (ST_DumpAsPolygons(rast)).*\n  FROM slope_raster\n) AS slope_values;",
+  "predicted_sql_candidates": [
+    "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'North Centre Township'\n    AND border_type ILIKE 'township'\n    AND addr_state ILIKE 'Pennsylvania'\n)\n, clipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM region_geom), true) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM region_geom))\n)\n, slope_raster AS (\n  SELECT ST_Slope(rast, 1, '32BF') AS rast\n  FROM clipped_dem\n)\nSELECT MAX(value) AS max_slope_degrees\nFROM (\n  SELECT (ST_DumpAsPolygons(rast)).*\n  FROM slope_raster\n) AS slope_values;"
+  ],
+  "query_type": "raster_only",
+  "question": "In North Centre Township, Pennsylvania, what is the highest slope?",
+  "source_file": "max_slope+area.jsonl",
+  "source_stem": "max_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 36.838,
+    "total_seconds": 36.839
+  },
+  "usage": {
+    "completion_tokens": 171,
+    "prompt_tokens": 1517,
+    "total_tokens": 1688
+  }
+}

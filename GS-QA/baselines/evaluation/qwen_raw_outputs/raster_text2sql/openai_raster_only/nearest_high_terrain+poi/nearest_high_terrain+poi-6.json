@@ -1,0 +1,59 @@
+{
+  "answer_type": "distance",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "distance",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "distance_m": 17702.38142
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "distance_m": 17702.38142
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-115.193325 36.144059)',4326) AS pt\n),\nnearby_tiles AS (\n  SELECT d.rast\n  FROM public.dem_us d, origin o\n  WHERE d.rast && ST_Expand(o.pt, 1.0)\n),\nmasked AS (\n\t  SELECT ST_MapAlgebra(\n\t           rast,\n\t           1,\n\t           '32BF'::text,\n\t           'CASE WHEN [rast.val] > 1600 THEN [rast.val] ELSE NULL END'::text,\n\t           NULL::double precision\n\t         ) AS rast\n  FROM nearby_tiles\n),\nqualifying_pixels AS (\n  SELECT (pp).geom AS geom\n  FROM masked\n  CROSS JOIN LATERAL ST_PixelAsCentroids(rast, 1, TRUE) AS pp\n)\nSELECT MIN(ST_Distance(p.geom::geography, o.pt::geography)) AS distance_m\nFROM qualifying_pixels p, origin o;",
+  "id": "nearest_high_terrain+poi-6",
+  "model_output": "```sql\nWITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-115.193325, 36.144059), 4326)::geography AS geom\n),\ndem_higher AS (\n  SELECT\n    (ST_DumpAsPolygons(r.rast, 1, true)).geom AS geom\n  FROM\n    public.dem_us r\n  WHERE\n    ST_Intersects(r.rast, (SELECT geom FROM poi_geom))\n    AND (ST_DumpAsPolygons(r.rast, 1, true)).val > 1600\n),\nnearest_distance AS (\n  SELECT\n    ST_Distance((SELECT geom FROM poi_geom), geom) AS distance_meters\n  FROM\n    dem_higher\n  ORDER BY\n    distance_meters\n  LIMIT 1\n)\nSELECT\n  ROUND(distance_meters) AS distance_to_elevation\nFROM\n  nearest_distance;\n```",
+  "predicted_exec": {
+    "error": "function st_intersects(raster, geography) does not exist\nLINE 10:     ST_Intersects(r.rast, (SELECT geom FROM poi_geom))\n             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-115.193325, 36.144059), 4326)::geography AS geom\n),\ndem_higher AS (\n  SELECT\n    (ST_DumpAsPolygons(r.rast, 1, true)).geom AS geom\n  FROM\n    public.dem_us r\n  WHERE\n    ST_Intersects(r.rast, (SELECT geom FROM poi_geom))\n    AND (ST_DumpAsPolygons(r.rast, 1, true)).val > 1600\n),\nnearest_distance AS (\n  SELECT\n    ST_Distance((SELECT geom FROM poi_geom), geom) AS distance_meters\n  FROM\n    dem_higher\n  ORDER BY\n    distance_meters\n  LIMIT 1\n)\nSELECT\n  ROUND(distance_meters) AS distance_to_elevation\nFROM\n  nearest_distance;",
+  "predicted_sql_candidates": [
+    "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-115.193325, 36.144059), 4326)::geography AS geom\n),\ndem_higher AS (\n  SELECT\n    (ST_DumpAsPolygons(r.rast, 1, true)).geom AS geom\n  FROM\n    public.dem_us r\n  WHERE\n    ST_Intersects(r.rast, (SELECT geom FROM poi_geom))\n    AND (ST_DumpAsPolygons(r.rast, 1, true)).val > 1600\n),\nnearest_distance AS (\n  SELECT\n    ST_Distance((SELECT geom FROM poi_geom), geom) AS distance_meters\n  FROM\n    dem_higher\n  ORDER BY\n    distance_meters\n  LIMIT 1\n)\nSELECT\n  ROUND(distance_meters) AS distance_to_elevation\nFROM\n  nearest_distance;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the distance to the nearest elevation higher than 1600 meters from Weera Thai, Las Vegas, NV?",
+  "source_file": "nearest_high_terrain+poi.jsonl",
+  "source_stem": "nearest_high_terrain+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 44.253,
+    "total_seconds": 44.254
+  },
+  "usage": {
+    "completion_tokens": 207,
+    "prompt_tokens": 1642,
+    "total_tokens": 1849
+  }
+}

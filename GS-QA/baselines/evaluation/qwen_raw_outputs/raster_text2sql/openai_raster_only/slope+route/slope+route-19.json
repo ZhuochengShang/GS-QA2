@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope_degrees": 3.349225
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope_degrees": 3.349225
+      }
+    ]
+  },
+  "gold_sql": "WITH route AS (\n  SELECT ST_GeomFromText('LINESTRING (-112.15062 33.611577, -112.150604 33.611635, -112.150583 33.611726, -112.150582 33.611768, -112.150573 33.611901, -112.150576 33.612213, -112.15057 33.612279, -112.150548 33.612341, -112.150518 33.612383, -112.150478 33.61242)', 4326)::geometry AS geom\n),\ndem_clip AS (\n  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast\n  FROM public.dem_us d, route r\n  WHERE ST_Intersects(d.rast, r.geom)\n),\nsegments AS (\n  SELECT (ST_DumpSegments(r.geom)).geom AS seg\n  FROM route r\n),\nendpoints AS (\n  SELECT\n    ST_StartPoint(seg) AS p1,\n    ST_EndPoint(seg)   AS p2,\n    ST_Length(seg::geography) AS seg_len_m\n  FROM segments\n),\nelev AS (\n  SELECT\n    e.seg_len_m,\n    ST_Value(dc.rast, 1, e.p1) AS z1,\n    ST_Value(dc.rast, 1, e.p2) AS z2\n  FROM endpoints e, dem_clip dc\n),\nslopes AS (\n  SELECT\n    seg_len_m,\n    CASE WHEN seg_len_m > 0 THEN ABS(z2 - z1) / seg_len_m ELSE NULL END AS grade\n  FROM elev\n  WHERE z1 IS NOT NULL AND z2 IS NOT NULL\n),\navg_grade AS (\n  SELECT\n    SUM(grade * seg_len_m) / NULLIF(SUM(seg_len_m), 0) AS g\n  FROM slopes\n  WHERE grade IS NOT NULL\n)\nSELECT DEGREES(ATAN(g)) AS slope_degrees\nFROM avg_grade;",
+  "id": "slope+route-19",
+  "model_output": "```sql\nWITH road_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-112.15062 33.611577, -112.150604 33.611635, -112.150583 33.611726, -112.150582 33.611768, -112.150573 33.611901, -112.150576 33.612213, -112.15057 33.612279, -112.150548 33.612341, -112.150518 33.612383, -112.150478 33.61242)', 4326)::geometry AS geom\n),\nclipped_dem AS (\n  SELECT ST_Clip(r.rast, 1, road_geom.geom, true) AS clipped_rast\n  FROM public.dem_us r, road_geom\n  WHERE ST_Intersects(r.rast::geometry, road_geom.geom)\n),\nslope_raster AS (\n  SELECT ST_Slope(clipped_dem.clipped_rast, 1, '32BF', true) AS slope_rast\n  FROM clipped_dem\n)\nSELECT\n  ST_Stats(slope_raster.slope_rast, 1, true).mean AS average_slope_degrees\nFROM slope_raster;\n```",
+  "predicted_exec": {
+    "error": "syntax error at or near \".\"\nLINE 14:   ST_Stats(slope_raster.slope_rast, 1, true).mean AS average...\n                                                     ^",
+    "output": []
+  },
+  "predicted_sql": "WITH road_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-112.15062 33.611577, -112.150604 33.611635, -112.150583 33.611726, -112.150582 33.611768, -112.150573 33.611901, -112.150576 33.612213, -112.15057 33.612279, -112.150548 33.612341, -112.150518 33.612383, -112.150478 33.61242)', 4326)::geometry AS geom\n),\nclipped_dem AS (\n  SELECT ST_Clip(r.rast, 1, road_geom.geom, true) AS clipped_rast\n  FROM public.dem_us r, road_geom\n  WHERE ST_Intersects(r.rast::geometry, road_geom.geom)\n),\nslope_raster AS (\n  SELECT ST_Slope(clipped_dem.clipped_rast, 1, '32BF', true) AS slope_rast\n  FROM clipped_dem\n)\nSELECT\n  ST_Stats(slope_raster.slope_rast, 1, true).mean AS average_slope_degrees\nFROM slope_raster;",
+  "predicted_sql_candidates": [
+    "WITH road_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-112.15062 33.611577, -112.150604 33.611635, -112.150583 33.611726, -112.150582 33.611768, -112.150573 33.611901, -112.150576 33.612213, -112.15057 33.612279, -112.150548 33.612341, -112.150518 33.612383, -112.150478 33.61242)', 4326)::geometry AS geom\n),\nclipped_dem AS (\n  SELECT ST_Clip(r.rast, 1, road_geom.geom, true) AS clipped_rast\n  FROM public.dem_us r, road_geom\n  WHERE ST_Intersects(r.rast::geometry, road_geom.geom)\n),\nslope_raster AS (\n  SELECT ST_Slope(clipped_dem.clipped_rast, 1, '32BF', true) AS slope_rast\n  FROM clipped_dem\n)\nSELECT\n  ST_Stats(slope_raster.slope_rast, 1, true).mean AS average_slope_degrees\nFROM slope_raster;"
+  ],
+  "query_type": "raster_only",
+  "question": "On average, how steep is the terrain along North 42nd Lane?",
+  "source_file": "slope+route.jsonl",
+  "source_stem": "slope+route",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 85.462,
+    "total_seconds": 85.463
+  },
+  "usage": {
+    "completion_tokens": 375,
+    "prompt_tokens": 1737,
+    "total_tokens": 2112
+  }
+}

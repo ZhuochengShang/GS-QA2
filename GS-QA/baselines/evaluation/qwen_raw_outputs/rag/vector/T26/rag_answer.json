@@ -1,0 +1,2102 @@
+[
+  {
+    "id": 600,
+    "run_seconds": 2.473,
+    "content": "The nearest golf course is thirty kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1208,
+      "output_tokens": 10,
+      "total_tokens": 1218,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 1208,
+        "total_tokens": 1218,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 601,
+    "run_seconds": 2.302,
+    "content": "The separation distance is approximately ten kilometers.",
+    "usage_metadata": {
+      "input_tokens": 1428,
+      "output_tokens": 9,
+      "total_tokens": 1437,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 1428,
+        "total_tokens": 1437,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 602,
+    "run_seconds": 1.958,
+    "content": "One hundred forty three kilometers.",
+    "usage_metadata": {
+      "input_tokens": 1115,
+      "output_tokens": 7,
+      "total_tokens": 1122,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 1115,
+        "total_tokens": 1122,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 603,
+    "run_seconds": 2.092,
+    "content": "One hundred thirty thousand meters.",
+    "usage_metadata": {
+      "input_tokens": 2035,
+      "output_tokens": 7,
+      "total_tokens": 2042,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 2035,
+        "total_tokens": 2042,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 604,
+    "run_seconds": 2.379,
+    "content": "The nearest zoo is approximately thirteen kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 951,
+      "output_tokens": 10,
+      "total_tokens": 961,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 951,
+        "total_tokens": 961,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 605,
+    "run_seconds": 1.826,
+    "content": "sixty-two hundred meters",
+    "usage_metadata": {
+      "input_tokens": 1966,
+      "output_tokens": 6,
+      "total_tokens": 1972,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 1966,
+        "total_tokens": 1972,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 606,
+    "run_seconds": 2.854,
+    "content": "The closest garden is approximately forty-five kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1201,
+      "output_tokens": 11,
+      "total_tokens": 1212,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1201,
+        "total_tokens": 1212,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 607,
+    "run_seconds": 1.916,
+    "content": "The distance is thirty thousand meters.",
+    "usage_metadata": {
+      "input_tokens": 823,
+      "output_tokens": 8,
+      "total_tokens": 831,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 823,
+        "total_tokens": 831,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 608,
+    "run_seconds": 1.548,
+    "content": "Nine thousand meters.",
+    "usage_metadata": {
+      "input_tokens": 1137,
+      "output_tokens": 5,
+      "total_tokens": 1142,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1137,
+        "total_tokens": 1142,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 609,
+    "run_seconds": 2.892,
+    "content": "The nearest gallery is approximately sixty three kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1980,
+      "output_tokens": 11,
+      "total_tokens": 1991,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1980,
+        "total_tokens": 1991,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 610,
+    "run_seconds": 2.697,
+    "content": "The closest zoo is approximately thirty kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 2030,
+      "output_tokens": 10,
+      "total_tokens": 2040,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 2030,
+        "total_tokens": 2040,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 611,
+    "run_seconds": 2.906,
+    "content": "The nearest stadium is approximately twenty thousand meters away.",
+    "usage_metadata": {
+      "input_tokens": 1978,
+      "output_tokens": 11,
+      "total_tokens": 1989,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1978,
+        "total_tokens": 1989,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 612,
+    "run_seconds": 3.396,
+    "content": "The nearest attraction is approximately eighteen thousand meters away.",
+    "usage_metadata": {
+      "input_tokens": 2376,
+      "output_tokens": 11,
+      "total_tokens": 2387,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 2376,
+        "total_tokens": 2387,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 613,
+    "run_seconds": 1.892,
+    "content": "Five thousand eight hundred meters",
+    "usage_metadata": {
+      "input_tokens": 2160,
+      "output_tokens": 6,
+      "total_tokens": 2166,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 2160,
+        "total_tokens": 2166,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 614,
+    "run_seconds": 4.972,
+    "content": "The nearest zoo is approximately twenty kilometers away from the DoubleTree by Hilton Hotel, Bedford, MA.",
+    "usage_metadata": {
+      "input_tokens": 1763,
+      "output_tokens": 21,
+      "total_tokens": 1784,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 1763,
+        "total_tokens": 1784,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 615,
+    "run_seconds": 1.615,
+    "content": "One thousand meters.",
+    "usage_metadata": {
+      "input_tokens": 1989,
+      "output_tokens": 5,
+      "total_tokens": 1994,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1989,
+        "total_tokens": 1994,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 616,
+    "run_seconds": 2.554,
+    "content": "The separation distance is approximately forty-five kilometers.",
+    "usage_metadata": {
+      "input_tokens": 916,
+      "output_tokens": 10,
+      "total_tokens": 926,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 916,
+        "total_tokens": 926,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 617,
+    "run_seconds": 2.308,
+    "content": "One thousand three hundred meters.",
+    "usage_metadata": {
+      "input_tokens": 2280,
+      "output_tokens": 7,
+      "total_tokens": 2287,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 2280,
+        "total_tokens": 2287,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 618,
+    "run_seconds": 2.585,
+    "content": "The nearest stadium is approximately eight thousand meters away.",
+    "usage_metadata": {
+      "input_tokens": 943,
+      "output_tokens": 11,
+      "total_tokens": 954,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 943,
+        "total_tokens": 954,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 619,
+    "run_seconds": 1.134,
+    "content": "Twenty-one kilometers",
+    "usage_metadata": {
+      "input_tokens": 1014,
+      "output_tokens": 4,
+      "total_tokens": 1018,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1014,
+        "total_tokens": 1018,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 620,
+    "run_seconds": 1.131,
+    "content": "Two hundred",
+    "usage_metadata": {
+      "input_tokens": 1811,
+      "output_tokens": 3,
+      "total_tokens": 1814,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1811,
+        "total_tokens": 1814,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 621,
+    "run_seconds": 3.793,
+    "content": "None of the provided records mention a museum or Stratton Fire Tower.",
+    "usage_metadata": {
+      "input_tokens": 2078,
+      "output_tokens": 15,
+      "total_tokens": 2093,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 2078,
+        "total_tokens": 2093,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 622,
+    "run_seconds": 2.805,
+    "content": "The measured distance to the closest caf\u00e9 is sixty metres.",
+    "usage_metadata": {
+      "input_tokens": 962,
+      "output_tokens": 12,
+      "total_tokens": 974,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 962,
+        "total_tokens": 974,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 623,
+    "run_seconds": 1.89,
+    "content": "About six thousand meters.",
+    "usage_metadata": {
+      "input_tokens": 2152,
+      "output_tokens": 6,
+      "total_tokens": 2158,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 2152,
+        "total_tokens": 2158,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 624,
+    "run_seconds": 1.709,
+    "content": "Thirteen kilometers",
+    "usage_metadata": {
+      "input_tokens": 2515,
+      "output_tokens": 4,
+      "total_tokens": 2519,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 2515,
+        "total_tokens": 2519,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 625,
+    "run_seconds": 1.743,
+    "content": "The distance is forty kilometers.",
+    "usage_metadata": {
+      "input_tokens": 995,
+      "output_tokens": 7,
+      "total_tokens": 1002,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 995,
+        "total_tokens": 1002,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 626,
+    "run_seconds": 1.735,
+    "content": "Two hundred ten kilometers.",
+    "usage_metadata": {
+      "input_tokens": 1615,
+      "output_tokens": 6,
+      "total_tokens": 1621,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 1615,
+        "total_tokens": 1621,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 627,
+    "run_seconds": 1.525,
+    "content": "Five hundred meters.",
+    "usage_metadata": {
+      "input_tokens": 1653,
+      "output_tokens": 5,
+      "total_tokens": 1658,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1653,
+        "total_tokens": 1658,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 628,
+    "run_seconds": 2.743,
+    "content": "The distance is about sixty thousand meters.",
+    "usage_metadata": {
+      "input_tokens": 2206,
+      "output_tokens": 9,
+      "total_tokens": 2215,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 2206,
+        "total_tokens": 2215,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 629,
+    "run_seconds": 1.453,
+    "content": "Three hundred meters",
+    "usage_metadata": {
+      "input_tokens": 2063,
+      "output_tokens": 4,
+      "total_tokens": 2067,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 2063,
+        "total_tokens": 2067,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 630,
+    "run_seconds": 4.725,
+    "content": "The nearest university is approximately thirty miles away from Sonny's Place, Somers, CT.",
+    "usage_metadata": {
+      "input_tokens": 1691,
+      "output_tokens": 20,
+      "total_tokens": 1711,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 1691,
+        "total_tokens": 1711,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 631,
+    "run_seconds": 2.733,
+    "content": "The nearest aquarium is approximately forty kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 2057,
+      "output_tokens": 10,
+      "total_tokens": 2067,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 2057,
+        "total_tokens": 2067,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 632,
+    "run_seconds": 2.166,
+    "content": "About four thousand four hundred seventy meters.",
+    "usage_metadata": {
+      "input_tokens": 971,
+      "output_tokens": 9,
+      "total_tokens": 980,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 971,
+        "total_tokens": 980,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 633,
+    "run_seconds": 2.806,
+    "content": "The nearest fast food restaurant is approximately fourteen kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 957,
+      "output_tokens": 12,
+      "total_tokens": 969,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 957,
+        "total_tokens": 969,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 634,
+    "run_seconds": 2.553,
+    "content": "The closest attraction is approximately six thousand meters away.",
+    "usage_metadata": {
+      "input_tokens": 843,
+      "output_tokens": 11,
+      "total_tokens": 854,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 843,
+        "total_tokens": 854,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 635,
+    "run_seconds": 2.355,
+    "content": "The closest university is approximately five kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 907,
+      "output_tokens": 10,
+      "total_tokens": 917,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 907,
+        "total_tokens": 917,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 636,
+    "run_seconds": 1.807,
+    "content": "Two hundred seventy kilometers.",
+    "usage_metadata": {
+      "input_tokens": 1871,
+      "output_tokens": 6,
+      "total_tokens": 1877,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 1871,
+        "total_tokens": 1877,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 637,
+    "run_seconds": 1.8,
+    "content": "One hundred forty thousand meters.",
+    "usage_metadata": {
+      "input_tokens": 1161,
+      "output_tokens": 7,
+      "total_tokens": 1168,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 1161,
+        "total_tokens": 1168,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 638,
+    "run_seconds": 2.374,
+    "content": "The nearest museum is approximately seven kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 931,
+      "output_tokens": 10,
+      "total_tokens": 941,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 931,
+        "total_tokens": 941,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 639,
+    "run_seconds": 1.203,
+    "content": "one hundred meters",
+    "usage_metadata": {
+      "input_tokens": 1343,
+      "output_tokens": 4,
+      "total_tokens": 1347,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1343,
+        "total_tokens": 1347,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 640,
+    "run_seconds": 2.286,
+    "content": "The distance is thirty thousand meters.",
+    "usage_metadata": {
+      "input_tokens": 2094,
+      "output_tokens": 8,
+      "total_tokens": 2102,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 2094,
+        "total_tokens": 2102,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 641,
+    "run_seconds": 2.641,
+    "content": "The nearest restaurant is approximately thirty metres away.",
+    "usage_metadata": {
+      "input_tokens": 1852,
+      "output_tokens": 10,
+      "total_tokens": 1862,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 1852,
+        "total_tokens": 1862,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 642,
+    "run_seconds": 2.931,
+    "content": "The closest park is approximately two thousand eight hundred meters away.",
+    "usage_metadata": {
+      "input_tokens": 804,
+      "output_tokens": 13,
+      "total_tokens": 817,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 804,
+        "total_tokens": 817,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 643,
+    "run_seconds": 2.372,
+    "content": "None of the provided records mention a garden.",
+    "usage_metadata": {
+      "input_tokens": 969,
+      "output_tokens": 10,
+      "total_tokens": 979,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 969,
+        "total_tokens": 979,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 644,
+    "run_seconds": 1.616,
+    "content": "Fifty meters.",
+    "usage_metadata": {
+      "input_tokens": 1988,
+      "output_tokens": 5,
+      "total_tokens": 1993,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1988,
+        "total_tokens": 1993,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 645,
+    "run_seconds": 1.727,
+    "content": "Ninety kilometers.",
+    "usage_metadata": {
+      "input_tokens": 1690,
+      "output_tokens": 6,
+      "total_tokens": 1696,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 1690,
+        "total_tokens": 1696,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 646,
+    "run_seconds": 3.023,
+    "content": "The nearest caf\u00e9 is approximately one hundred thirty kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1660,
+      "output_tokens": 12,
+      "total_tokens": 1672,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1660,
+        "total_tokens": 1672,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 647,
+    "run_seconds": 2.329,
+    "content": "None of the provided records indicate an aquarium.",
+    "usage_metadata": {
+      "input_tokens": 943,
+      "output_tokens": 10,
+      "total_tokens": 953,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 943,
+        "total_tokens": 953,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 648,
+    "run_seconds": 2.823,
+    "content": "The closest fast food restaurant is approximately seven kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1080,
+      "output_tokens": 12,
+      "total_tokens": 1092,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1080,
+        "total_tokens": 1092,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 649,
+    "run_seconds": 4.174,
+    "content": "The proximity distance of the closest gallery to Cockrell Butterfly Center is thirty meters.",
+    "usage_metadata": {
+      "input_tokens": 2011,
+      "output_tokens": 17,
+      "total_tokens": 2028,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 2011,
+        "total_tokens": 2028,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 650,
+    "run_seconds": 1.113,
+    "content": "Thirty kilometers.",
+    "usage_metadata": {
+      "input_tokens": 1059,
+      "output_tokens": 4,
+      "total_tokens": 1063,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1059,
+        "total_tokens": 1063,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 651,
+    "run_seconds": 2.084,
+    "content": "one hundred twenty four thousand meters",
+    "usage_metadata": {
+      "input_tokens": 2110,
+      "output_tokens": 7,
+      "total_tokens": 2117,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 2110,
+        "total_tokens": 2117,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 652,
+    "run_seconds": 1.766,
+    "content": "Sixty thousand meters.",
+    "usage_metadata": {
+      "input_tokens": 1421,
+      "output_tokens": 6,
+      "total_tokens": 1427,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 1421,
+        "total_tokens": 1427,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 653,
+    "run_seconds": 3.582,
+    "content": "The straight-line distance to the nearest attraction is twenty three hundred metres.",
+    "usage_metadata": {
+      "input_tokens": 1518,
+      "output_tokens": 15,
+      "total_tokens": 1533,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 1518,
+        "total_tokens": 1533,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 654,
+    "run_seconds": 1.619,
+    "content": "Twenty thousand meters.",
+    "usage_metadata": {
+      "input_tokens": 2093,
+      "output_tokens": 5,
+      "total_tokens": 2098,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 2093,
+        "total_tokens": 2098,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 655,
+    "run_seconds": 1.686,
+    "content": "forty kilometers",
+    "usage_metadata": {
+      "input_tokens": 2254,
+      "output_tokens": 4,
+      "total_tokens": 2258,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 2254,
+        "total_tokens": 2258,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 656,
+    "run_seconds": 2.055,
+    "content": "The distance is thirty thousand meters.",
+    "usage_metadata": {
+      "input_tokens": 1356,
+      "output_tokens": 8,
+      "total_tokens": 1364,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 1356,
+        "total_tokens": 1364,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 657,
+    "run_seconds": 1.766,
+    "content": "The distance is seventy kilometers.",
+    "usage_metadata": {
+      "input_tokens": 1026,
+      "output_tokens": 7,
+      "total_tokens": 1033,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 1026,
+        "total_tokens": 1033,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 658,
+    "run_seconds": 1.472,
+    "content": "Twenty-five thousand meters.",
+    "usage_metadata": {
+      "input_tokens": 761,
+      "output_tokens": 6,
+      "total_tokens": 767,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 761,
+        "total_tokens": 767,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 659,
+    "run_seconds": 1.744,
+    "content": "Eighty-two thousand meters.",
+    "usage_metadata": {
+      "input_tokens": 961,
+      "output_tokens": 7,
+      "total_tokens": 968,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 961,
+        "total_tokens": 968,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 660,
+    "run_seconds": 1.344,
+    "content": "Thirty kilometres.",
+    "usage_metadata": {
+      "input_tokens": 1745,
+      "output_tokens": 4,
+      "total_tokens": 1749,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1745,
+        "total_tokens": 1749,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 661,
+    "run_seconds": 1.762,
+    "content": "Twelve thousand meters.",
+    "usage_metadata": {
+      "input_tokens": 1155,
+      "output_tokens": 6,
+      "total_tokens": 1161,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 1155,
+        "total_tokens": 1161,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 662,
+    "run_seconds": 7.919,
+    "content": "The nearest hotel is approximately seventy-one kilometers away, while the Lake County Discovery Museum is approximately one hundred sixty-five kilometers away. The hotel is closer by approximately ninety-five kilometers.",
+    "usage_metadata": {
+      "input_tokens": 966,
+      "output_tokens": 36,
+      "total_tokens": 1002,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 36,
+        "prompt_tokens": 966,
+        "total_tokens": 1002,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 663,
+    "run_seconds": 1.874,
+    "content": "Two hundred kilometers.",
+    "usage_metadata": {
+      "input_tokens": 2187,
+      "output_tokens": 5,
+      "total_tokens": 2192,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 2187,
+        "total_tokens": 2192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 664,
+    "run_seconds": 1.519,
+    "content": "One hundred forty kilometers",
+    "usage_metadata": {
+      "input_tokens": 1592,
+      "output_tokens": 5,
+      "total_tokens": 1597,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1592,
+        "total_tokens": 1597,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 665,
+    "run_seconds": 2.801,
+    "content": "The closest nature reserve is approximately nine kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1651,
+      "output_tokens": 11,
+      "total_tokens": 1662,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1651,
+        "total_tokens": 1662,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 666,
+    "run_seconds": 2.375,
+    "content": "The closest park is approximately twelve kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 995,
+      "output_tokens": 10,
+      "total_tokens": 1005,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 995,
+        "total_tokens": 1005,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 667,
+    "run_seconds": 2.824,
+    "content": "The closest fast food restaurant is thirty five kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1084,
+      "output_tokens": 12,
+      "total_tokens": 1096,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1084,
+        "total_tokens": 1096,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 668,
+    "run_seconds": 1.311,
+    "content": "one hundred twenty kilometers",
+    "usage_metadata": {
+      "input_tokens": 916,
+      "output_tokens": 5,
+      "total_tokens": 921,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 916,
+        "total_tokens": 921,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 669,
+    "run_seconds": 1.515,
+    "content": "Twenty-seven kilometers.",
+    "usage_metadata": {
+      "input_tokens": 1597,
+      "output_tokens": 5,
+      "total_tokens": 1602,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1597,
+        "total_tokens": 1602,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 670,
+    "run_seconds": 1.667,
+    "content": "Twenty thousand meters.",
+    "usage_metadata": {
+      "input_tokens": 2076,
+      "output_tokens": 5,
+      "total_tokens": 2081,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 2076,
+        "total_tokens": 2081,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 671,
+    "run_seconds": 2.782,
+    "content": "The nearest zoo is approximately forty-five thousand meters away.",
+    "usage_metadata": {
+      "input_tokens": 944,
+      "output_tokens": 12,
+      "total_tokens": 956,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 944,
+        "total_tokens": 956,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 672,
+    "run_seconds": 1.55,
+    "content": "Fifty kilometers.",
+    "usage_metadata": {
+      "input_tokens": 1199,
+      "output_tokens": 5,
+      "total_tokens": 1204,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1199,
+        "total_tokens": 1204,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 673,
+    "run_seconds": 2.787,
+    "content": "The closest theme park is approximately seven thousand meters away.",
+    "usage_metadata": {
+      "input_tokens": 1007,
+      "output_tokens": 12,
+      "total_tokens": 1019,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1007,
+        "total_tokens": 1019,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 674,
+    "run_seconds": 1.671,
+    "content": "Fifteen thousand meters.",
+    "usage_metadata": {
+      "input_tokens": 777,
+      "output_tokens": 7,
+      "total_tokens": 784,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 777,
+        "total_tokens": 784,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 675,
+    "run_seconds": 2.851,
+    "content": "The closest gallery is approximately two thousand meters away.",
+    "usage_metadata": {
+      "input_tokens": 1814,
+      "output_tokens": 11,
+      "total_tokens": 1825,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1814,
+        "total_tokens": 1825,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 676,
+    "run_seconds": 3.122,
+    "content": "The nearest golf course is approximately fourteen thousand meters away.",
+    "usage_metadata": {
+      "input_tokens": 1999,
+      "output_tokens": 12,
+      "total_tokens": 2011,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1999,
+        "total_tokens": 2011,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 677,
+    "run_seconds": 1.258,
+    "content": "Ten thousand metres.",
+    "usage_metadata": {
+      "input_tokens": 796,
+      "output_tokens": 5,
+      "total_tokens": 801,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 796,
+        "total_tokens": 801,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 678,
+    "run_seconds": 3.644,
+    "content": "The nearest zoo is thirty five kilometers away from the UIS Greenhouse.",
+    "usage_metadata": {
+      "input_tokens": 1647,
+      "output_tokens": 15,
+      "total_tokens": 1662,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 1647,
+        "total_tokens": 1662,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 679,
+    "run_seconds": 2.356,
+    "content": "The closest hospital is approximately seventy kilometres away.",
+    "usage_metadata": {
+      "input_tokens": 974,
+      "output_tokens": 10,
+      "total_tokens": 984,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 974,
+        "total_tokens": 984,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 680,
+    "run_seconds": 2.993,
+    "content": "The nearest fast food restaurant is approximately five thousand meters away.",
+    "usage_metadata": {
+      "input_tokens": 882,
+      "output_tokens": 13,
+      "total_tokens": 895,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 882,
+        "total_tokens": 895,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 681,
+    "run_seconds": 2.32,
+    "content": "The distance is thirty kilometers.",
+    "usage_metadata": {
+      "input_tokens": 2210,
+      "output_tokens": 7,
+      "total_tokens": 2217,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 2210,
+        "total_tokens": 2217,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 682,
+    "run_seconds": 2.359,
+    "content": "The closest viewpoint is approximately sixty metres away.",
+    "usage_metadata": {
+      "input_tokens": 979,
+      "output_tokens": 10,
+      "total_tokens": 989,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 979,
+        "total_tokens": 989,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 683,
+    "run_seconds": 2.999,
+    "content": "The nearest golf course is approximately forty-two thousand meters away.",
+    "usage_metadata": {
+      "input_tokens": 980,
+      "output_tokens": 13,
+      "total_tokens": 993,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 980,
+        "total_tokens": 993,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 684,
+    "run_seconds": 2.403,
+    "content": "Seventy thousand meters.",
+    "usage_metadata": {
+      "input_tokens": 2498,
+      "output_tokens": 7,
+      "total_tokens": 2505,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 2498,
+        "total_tokens": 2505,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 685,
+    "run_seconds": 1.688,
+    "content": "Ninety kilometers.",
+    "usage_metadata": {
+      "input_tokens": 1524,
+      "output_tokens": 6,
+      "total_tokens": 1530,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 1524,
+        "total_tokens": 1530,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 686,
+    "run_seconds": 1.193,
+    "content": "Forty kilometers",
+    "usage_metadata": {
+      "input_tokens": 1270,
+      "output_tokens": 4,
+      "total_tokens": 1274,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1270,
+        "total_tokens": 1274,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 687,
+    "run_seconds": 1.557,
+    "content": "Thirty thousand meters.",
+    "usage_metadata": {
+      "input_tokens": 1837,
+      "output_tokens": 5,
+      "total_tokens": 1842,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1837,
+        "total_tokens": 1842,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 688,
+    "run_seconds": 1.768,
+    "content": "The distance is forty kilometers.",
+    "usage_metadata": {
+      "input_tokens": 1016,
+      "output_tokens": 7,
+      "total_tokens": 1023,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 1016,
+        "total_tokens": 1023,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 689,
+    "run_seconds": 1.33,
+    "content": "Twenty kilometers.",
+    "usage_metadata": {
+      "input_tokens": 1762,
+      "output_tokens": 4,
+      "total_tokens": 1766,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1762,
+        "total_tokens": 1766,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 690,
+    "run_seconds": 2.128,
+    "content": "Eleven thousand six hundred meters.",
+    "usage_metadata": {
+      "input_tokens": 932,
+      "output_tokens": 8,
+      "total_tokens": 940,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 932,
+        "total_tokens": 940,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 691,
+    "run_seconds": 2.968,
+    "content": "The straight-line distance is approximately sixteen kilometers.",
+    "usage_metadata": {
+      "input_tokens": 2262,
+      "output_tokens": 10,
+      "total_tokens": 2272,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 2262,
+        "total_tokens": 2272,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 692,
+    "run_seconds": 1.858,
+    "content": "Ninety thousand meters.",
+    "usage_metadata": {
+      "input_tokens": 1447,
+      "output_tokens": 7,
+      "total_tokens": 1454,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 1447,
+        "total_tokens": 1454,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 693,
+    "run_seconds": 1.532,
+    "content": "Eighty thousand meters.",
+    "usage_metadata": {
+      "input_tokens": 989,
+      "output_tokens": 6,
+      "total_tokens": 995,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 989,
+        "total_tokens": 995,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 694,
+    "run_seconds": 2.785,
+    "content": "The closest stadium is approximately thirty-eight thousand meters away.",
+    "usage_metadata": {
+      "input_tokens": 974,
+      "output_tokens": 12,
+      "total_tokens": 986,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 974,
+        "total_tokens": 986,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 695,
+    "run_seconds": 2.359,
+    "content": "The closest caf\u00e9 is approximately ten kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 961,
+      "output_tokens": 10,
+      "total_tokens": 971,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 961,
+        "total_tokens": 971,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 696,
+    "run_seconds": 1.494,
+    "content": "Twenty thousand meters.",
+    "usage_metadata": {
+      "input_tokens": 1541,
+      "output_tokens": 5,
+      "total_tokens": 1546,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1541,
+        "total_tokens": 1546,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 697,
+    "run_seconds": 4.224,
+    "content": "The nearest stadium is approximately thirty-five kilometers away from the Cabell Gallery.",
+    "usage_metadata": {
+      "input_tokens": 2268,
+      "output_tokens": 16,
+      "total_tokens": 2284,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 2268,
+        "total_tokens": 2284,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 698,
+    "run_seconds": 1.321,
+    "content": "Two thousand meters.",
+    "usage_metadata": {
+      "input_tokens": 1006,
+      "output_tokens": 5,
+      "total_tokens": 1011,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1006,
+        "total_tokens": 1011,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 699,
+    "run_seconds": 2.215,
+    "content": "The distance is thirty thousand meters.",
+    "usage_metadata": {
+      "input_tokens": 1868,
+      "output_tokens": 8,
+      "total_tokens": 1876,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 1868,
+        "total_tokens": 1876,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  }
+]

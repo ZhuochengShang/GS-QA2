@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 133.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 133.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-89.000072 37.854507, -89.000072 37.854587, -89.00082 37.854544, -89.002192 37.854466, -89.002203 37.854563, -89.002204 37.854587, -89.002209 37.85468, -89.002221 37.855019, -89.002252 37.855554, -89.002236 37.855665, -89.002225 37.855922, -89.002219 37.856893, -89.002213 37.857845, -89.002211 37.858444, -89.002224 37.860702, -89.002232 37.860841, -89.002267 37.861038, -89.002296 37.861108, -89.002274 37.861129, -89.002244 37.861156, -89.002226 37.861187, -89.002217 37.861224, -89.002221 37.861472, -89.00223 37.861817, -89.002245 37.861885, -89.002308 37.862009, -89.002807 37.862029, -89.003783 37.862068, -89.005244 37.862127, -89.00579 37.862149, -89.005797 37.862149, -89.005804 37.862149, -89.005827 37.862149, -89.00584 37.862148, -89.005848 37.862148, -89.005862 37.862148, -89.005892 37.862148, -89.005922 37.862148, -89.006051 37.862146, -89.007133 37.862137, -89.007072 37.863234, -89.007094 37.863331, -89.007102 37.863587, -89.007105 37.864322, -89.007109 37.865746, -89.006286 37.865746, -89.004531 37.865752, -89.002438 37.86576, -88.997756 37.865772, -88.996693 37.865777, -88.995191 37.865784, -88.994185 37.865783, -88.993361 37.865784, -88.993254 37.865784, -88.992939 37.865784, -88.992493 37.86582, -88.992493 37.865794, -88.992459 37.863987, -88.992428 37.862205, -88.994737 37.862015, -88.99506 37.862015, -88.995278 37.862015, -88.995344 37.858346, -88.995361 37.857827, -88.995614 37.856882, -88.995598 37.855901, -88.997397 37.855414, -88.99742 37.854573, -88.997424 37.854437, -88.997792 37.854433, -89.000069 37.854427, -89.000072 37.854507))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).max AS elevation\nFROM clipped;",
+  "id": "elevation_max+region-16",
+  "model_output": "```sql\nWITH freeman_spur_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Freeman Spur' AND addr_state ILIKE 'Illinois'\n)\nSELECT MAX((ST_Value(r.rast, f.geom)).val) AS highest_elevation\nFROM freeman_spur_geom f\nJOIN public.dem_us r\nON ST_Intersects(r.rast, f.geom);\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 4:   WHERE region_name ILIKE 'Freeman Spur' AND addr_state ILIK...\n                                                     ^",
+    "output": []
+  },
+  "predicted_sql": "WITH freeman_spur_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Freeman Spur' AND addr_state ILIKE 'Illinois'\n)\nSELECT MAX((ST_Value(r.rast, f.geom)).val) AS highest_elevation\nFROM freeman_spur_geom f\nJOIN public.dem_us r\nON ST_Intersects(r.rast, f.geom);",
+  "predicted_sql_candidates": [
+    "WITH freeman_spur_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Freeman Spur' AND addr_state ILIKE 'Illinois'\n)\nSELECT MAX((ST_Value(r.rast, f.geom)).val) AS highest_elevation\nFROM freeman_spur_geom f\nJOIN public.dem_us r\nON ST_Intersects(r.rast, f.geom);"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the highest elevation in Freeman Spur, Illinois?",
+  "source_file": "elevation_max+region.jsonl",
+  "source_stem": "elevation_max+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 19.615,
+    "total_seconds": 19.616
+  },
+  "usage": {
+    "completion_tokens": 92,
+    "prompt_tokens": 1517,
+    "total_tokens": 1609
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "answer_type": "count, POIs -> Points",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "count, POIs -> Points",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "count": 0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "count": 0
+      }
+    ]
+  },
+  "gold_sql": "WITH candidates AS (\n  SELECT p.id, p.geometry\n  FROM pois p\n  WHERE ST_DWithin(p.geometry::geography, ST_GeomFromText('POINT (-93.61234 42.025716)',4326)::geography, 1800)\n    AND p.leisure = 'garden'\n),\npoi_elev AS (\n  SELECT c.id, elev.z\n  FROM candidates c\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, c.geometry::geometry) AS z\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, c.geometry::geometry)\n    LIMIT 1\n  ) elev ON elev.z IS NOT NULL\n)\nSELECT COUNT(*) AS count\nFROM poi_elev\nWHERE z <= 220;",
+  "id": "range+count+elevation_condition-7",
+  "model_output": "```sql\nWITH octagon_center AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-93.61234 42.025716)'), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT ST_Buffer(octagon_center.geom, 1800) AS geom\n  FROM octagon_center\n),\ngardens_in_buffer AS (\n  SELECT p.id\n  FROM pois p,\n  buffered_area b\n  WHERE p.addr_state = 'IA'\n    AND p.addr_city = 'Ames'\n    AND p.tourism IS NULL\n    AND p.leisure = 'garden'\n    AND ST_DWithin(p.geometry::geometry, b.geom::geometry, 0)\n),\nelevation_check AS (\n  SELECT COUNT(*) AS garden_count\n  FROM gardens_in_buffer g\n  JOIN pois p ON g.id = p.id\n  JOIN LATERAL ST_Clip(\n    rast,\n    1,\n    ST_Transform(p.geometry, 4326)::geometry,\n    TRUE\n  ) AS clipped_rast ON TRUE\n  WHERE ST_Value(clipped_rast, 1) < 220\n)\nSELECT garden_count\nFROM elevation_check;\n```",
+  "predicted_exec": {
+    "error": "column \"rast\" does not exist\nLINE 23:     rast,\n             ^",
+    "output": []
+  },
+  "predicted_sql": "WITH octagon_center AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-93.61234 42.025716)'), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT ST_Buffer(octagon_center.geom, 1800) AS geom\n  FROM octagon_center\n),\ngardens_in_buffer AS (\n  SELECT p.id\n  FROM pois p,\n  buffered_area b\n  WHERE p.addr_state = 'IA'\n    AND p.addr_city = 'Ames'\n    AND p.tourism IS NULL\n    AND p.leisure = 'garden'\n    AND ST_DWithin(p.geometry::geometry, b.geom::geometry, 0)\n),\nelevation_check AS (\n  SELECT COUNT(*) AS garden_count\n  FROM gardens_in_buffer g\n  JOIN pois p ON g.id = p.id\n  JOIN LATERAL ST_Clip(\n    rast,\n    1,\n    ST_Transform(p.geometry, 4326)::geometry,\n    TRUE\n  ) AS clipped_rast ON TRUE\n  WHERE ST_Value(clipped_rast, 1) < 220\n)\nSELECT garden_count\nFROM elevation_check;",
+  "predicted_sql_candidates": [
+    "WITH octagon_center AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-93.61234 42.025716)'), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT ST_Buffer(octagon_center.geom, 1800) AS geom\n  FROM octagon_center\n),\ngardens_in_buffer AS (\n  SELECT p.id\n  FROM pois p,\n  buffered_area b\n  WHERE p.addr_state = 'IA'\n    AND p.addr_city = 'Ames'\n    AND p.tourism IS NULL\n    AND p.leisure = 'garden'\n    AND ST_DWithin(p.geometry::geometry, b.geom::geometry, 0)\n),\nelevation_check AS (\n  SELECT COUNT(*) AS garden_count\n  FROM gardens_in_buffer g\n  JOIN pois p ON g.id = p.id\n  JOIN LATERAL ST_Clip(\n    rast,\n    1,\n    ST_Transform(p.geometry, 4326)::geometry,\n    TRUE\n  ) AS clipped_rast ON TRUE\n  WHERE ST_Value(clipped_rast, 1) < 220\n)\nSELECT garden_count\nFROM elevation_check;"
+  ],
+  "query_type": "extended",
+  "question": "Within 1800 meters from Octagon Center for the Arts, Ames, IA, how many gardens are present with elevation lower than 220 m?",
+  "source_file": "range+count+elevation_condition.jsonl",
+  "source_stem": "range+count+elevation_condition",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 57.338,
+    "total_seconds": 57.339
+  },
+  "usage": {
+    "completion_tokens": 268,
+    "prompt_tokens": 1791,
+    "total_tokens": 2059
+  }
+}

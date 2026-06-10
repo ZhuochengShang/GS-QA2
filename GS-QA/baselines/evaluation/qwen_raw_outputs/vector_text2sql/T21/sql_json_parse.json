@@ -1,0 +1,502 @@
+[
+  {
+    "id": 1700,
+    "content": "```json\n{\n    \"name\": \"Red Wolf Sanctuary\",\n    \"address\": \"100 Sanctuary Lane, Rising Sun, IN 47576\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 11.353
+  },
+  {
+    "id": 1701,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.348
+  },
+  {
+    "id": 1702,
+    "content": "```json\n{\n    \"name\": \"UIS Greenhouse\",\n    \"address\": \"Springfield, IL\",\n    \"azimuth_angle\": 315\n}\n```",
+    "run_seconds": 8.642
+  },
+  {
+    "id": 1703,
+    "content": "```json\n{\n    \"name\": \"hospital\",\n    \"address\": \"Shavers Creek Environmental Center, Petersburg, PA\",\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 9.242
+  },
+  {
+    "id": 1704,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 4.32
+  },
+  {
+    "id": 1705,
+    "content": "```json\n{\n    \"name\": \"Douglas Motorsports Park\",\n    \"address\": \"Nicholls, GA\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 9.077
+  },
+  {
+    "id": 1706,
+    "content": "```json\n{\n    \"name\": \"viewpoint\",\n    \"address\": \"Jeff Tabor Fine Art Gallery, Santa Fe, NM\",\n    \"distance\": 50,\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 11.548
+  },
+  {
+    "id": 1707,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 4.092
+  },
+  {
+    "id": 1708,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.325
+  },
+  {
+    "id": 1709,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.293
+  },
+  {
+    "id": 1710,
+    "content": "```json\n{\n    \"name\": \"hotel\",\n    \"address\": \"Maple Lawn Manor, Hydro, OK\",\n    \"azimuth_angle\": 315\n}\n```",
+    "run_seconds": 9.08
+  },
+  {
+    "id": 1711,
+    "content": "```json\n{\n    \"name\": \"Plaza Sports Center\",\n    \"address\": \"Edinburg, TX\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 9.061
+  },
+  {
+    "id": 1712,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.292
+  },
+  {
+    "id": 1713,
+    "content": "```json\n{\n    \"azimuth_angle\": 315\n}\n```",
+    "run_seconds": 4.273
+  },
+  {
+    "id": 1714,
+    "content": "```json\n{\n    \"name\": \"Elyria Arts Council\",\n    \"address\": \"1225 E 13th St, Elyria, OH 44035\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 13.08
+  },
+  {
+    "id": 1715,
+    "content": "```json\n{\n    \"azimuth_angle\": 270\n}\n```",
+    "run_seconds": 4.26
+  },
+  {
+    "id": 1716,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 4.341
+  },
+  {
+    "id": 1717,
+    "content": "```json\n{\n    \"name\": \"hospital\",\n    \"address\": \"SeaQuest, Lynchburg, VA\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 8.818
+  },
+  {
+    "id": 1718,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 4.067
+  },
+  {
+    "id": 1719,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.302
+  },
+  {
+    "id": 1720,
+    "content": "```json\n{\n    \"name\": \"restaurant\",\n    \"address\": \"Santa Barbara, CA\",\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 7.955
+  },
+  {
+    "id": 1721,
+    "content": "```json\n{\n    \"name\": \"caf\u00e9\",\n    \"address\": \"within 100 kilometers of Acadia Cliffs Wildlife Area, OH\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 10.793
+  },
+  {
+    "id": 1722,
+    "content": "```json\n{\n    \"name\": \"university\",\n    \"address\": \"Chicago Portage National Historic Site, Lyons, IL\",\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 9.462
+  },
+  {
+    "id": 1723,
+    "content": "```json\n{\n    \"name\": \"UMA Handley Hall\",\n    \"address\": \"Augusta, ME\",\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 9.001
+  },
+  {
+    "id": 1724,
+    "content": "```json\n{\n    \"azimuth_angle\": 330\n}\n```",
+    "run_seconds": 4.287
+  },
+  {
+    "id": 1725,
+    "content": "```json\n{\n    \"azimuth_angle\": 270\n}\n```",
+    "run_seconds": 4.333
+  },
+  {
+    "id": 1726,
+    "content": "```json\n{\n    \"name\": \"hospital\",\n    \"address\": \"Edinburg, TX\",\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 8.355
+  },
+  {
+    "id": 1727,
+    "content": "```json\n{\n    \"name\": \"Speert Green\",\n    \"address\": \"Wayne, New Jersey\",\n    \"azimuth_angle\": 180\n}\n```",
+    "run_seconds": 8.763
+  },
+  {
+    "id": 1728,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.266
+  },
+  {
+    "id": 1729,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.255
+  },
+  {
+    "id": 1730,
+    "content": "```json\n{\n    \"name\": \"caf\u00e9\",\n    \"address\": \"Veterans Memorial Museum, Branson, MO\",\n    \"azimuth_angle\": 315\n}\n```",
+    "run_seconds": 9.453
+  },
+  {
+    "id": 1731,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.266
+  },
+  {
+    "id": 1732,
+    "content": "```json\n{\n    \"azimuth_angle\": 270\n}\n```",
+    "run_seconds": 4.252
+  },
+  {
+    "id": 1733,
+    "content": "```json\n{\n    \"azimuth_angle\": 270\n}\n```",
+    "run_seconds": 4.264
+  },
+  {
+    "id": 1734,
+    "content": "```json\n{\n    \"name\": \"Out of Africa Wildlife Park\",\n    \"address\": \"1990 W State Rte 260, Camp Verde, AZ 86322\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 13.24
+  },
+  {
+    "id": 1735,
+    "content": "```json\n{\n    \"name\": \"Ritter Park Rose Garden\",\n    \"address\": \"1000 Ritter Rd, Huntington, WV 25704, USA\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 11.658
+  },
+  {
+    "id": 1736,
+    "content": "```json\n{\n    \"name\": \"nature reserve\",\n    \"address\": \"C.S.U. Technology Park, Long Beach, CA\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 9.874
+  },
+  {
+    "id": 1737,
+    "content": "```json\n{\n    \"name\": \"zoo\",\n    \"address\": \"Hellsgate Farms, Astoria, NY\",\n    \"distance\": 40,\n    \"azimuth_angle\": 315\n}\n```",
+    "run_seconds": 11.225
+  },
+  {
+    "id": 1738,
+    "content": "```json\n{\n    \"name\": \"Bidwell House Museum\",\n    \"address\": \"120 Main St, Monterey, MA 01759, USA\",\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 11.479
+  },
+  {
+    "id": 1739,
+    "content": "```json\n{\n    \"name\": \"Outdoor Biological Research Facility\",\n    \"address\": \"123 Research Road, Vestal, NY 13850\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 11.45
+  },
+  {
+    "id": 1740,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.277
+  },
+  {
+    "id": 1741,
+    "content": "```json\n{\n    \"name\": \"museum\",\n    \"address\": \"Sanitas Medical Center, Orlando, FL\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 9.218
+  },
+  {
+    "id": 1742,
+    "content": "```json\n{\n    \"azimuth_angle\": 150\n}\n```",
+    "run_seconds": 4.255
+  },
+  {
+    "id": 1743,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.271
+  },
+  {
+    "id": 1744,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 4.268
+  },
+  {
+    "id": 1745,
+    "content": "```json\n{\n    \"name\": \"Aquarium Depot\",\n    \"address\": \"1301 NE 1st Ave, Miami, FL 33101\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 11.922
+  },
+  {
+    "id": 1746,
+    "content": "```json\n{\n    \"azimuth_angle\": 280\n}\n```",
+    "run_seconds": 4.149
+  },
+  {
+    "id": 1747,
+    "content": "```json\n{\n    \"name\": \"aquarium\",\n    \"address\": \"Mount Washington Boat Terminal, Wolfeboro, NH\",\n    \"distance\": 160,\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 11.047
+  },
+  {
+    "id": 1748,
+    "content": "```json\n{\n    \"name\": \"university\",\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 5.872
+  },
+  {
+    "id": 1749,
+    "content": "```json\n{\n    \"name\": \"stadium\",\n    \"address\": \"from Victory Park, Minden, LA within 170 kilometers\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 10.18
+  },
+  {
+    "id": 1750,
+    "content": "```json\n{\n    \"name\": \"golf course\",\n    \"address\": \"Residence Inn, Los Angeles, CA\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 9.007
+  },
+  {
+    "id": 1751,
+    "content": "```json\n{\n    \"name\": \"Residence Inn\",\n    \"address\": \"Los Angeles, CA\",\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 8.12
+  },
+  {
+    "id": 1752,
+    "content": "```json\n{\n    \"name\": \"Lucille Ball Childhood Home\",\n    \"address\": \"326 Main St, Jamestown, NY 14701\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 11.143
+  },
+  {
+    "id": 1753,
+    "content": "```json\n{\n    \"azimuth_angle\": 315\n}\n```",
+    "run_seconds": 4.063
+  },
+  {
+    "id": 1754,
+    "content": "```json\n{\n    \"name\": \"Bagley Nature Area viewing platform\",\n    \"address\": \"1200 E Superior St, Duluth, MN 55805, USA\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 12.148
+  },
+  {
+    "id": 1755,
+    "content": "```json\n{\n    \"name\": \"Malibu Jack's\",\n    \"address\": \"Springfield, IL\",\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 8.318
+  },
+  {
+    "id": 1756,
+    "content": "```json\n{\n    \"name\": \"gallery\",\n    \"address\": \"Olmsted Medical Center, Stewartville, MN\",\n    \"azimuth_angle\": 90\n}\n```",
+    "run_seconds": 9.181
+  },
+  {
+    "id": 1757,
+    "content": "```json\n{\n    \"azimuth_angle\": 0\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 1758,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 4.062
+  },
+  {
+    "id": 1759,
+    "content": "```json\n{\n    \"name\": \"Blue Ocean Discovery Center\",\n    \"address\": \"1 Castle Hill Ave, Hampton, NH 03842, USA\",\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 11.328
+  },
+  {
+    "id": 1760,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 4.301
+  },
+  {
+    "id": 1761,
+    "content": "```json\n{\n    \"name\": \"South Tryon Street\",\n    \"address\": \"Strayer University, Charlotte, NC\",\n    \"azimuth_angle\": 180\n}\n```",
+    "run_seconds": 9.492
+  },
+  {
+    "id": 1762,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 4.08
+  },
+  {
+    "id": 1763,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.284
+  },
+  {
+    "id": 1764,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.295
+  },
+  {
+    "id": 1765,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.308
+  },
+  {
+    "id": 1766,
+    "content": "```json\n{\n    \"name\": \"caf\u00e9\",\n    \"address\": \"City Suites Hotel, Chicago, IL\",\n    \"azimuth_angle\": 90\n}\n```",
+    "run_seconds": 8.824
+  },
+  {
+    "id": 1767,
+    "content": "```json\n{\n    \"name\": \"fast food restaurant\",\n    \"address\": \"English Street Community Garden, New Haven, CT\",\n    \"azimuth_angle\": 130\n}\n```",
+    "run_seconds": 9.714
+  },
+  {
+    "id": 1768,
+    "content": "```json\n{\n    \"name\": \"stadium\",\n    \"address\": \"Erie, PA\",\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 8.165
+  },
+  {
+    "id": 1769,
+    "content": "```json\n{\n    \"name\": \"Team 1732 Thunderdome\",\n    \"address\": \"Milwaukee, WI\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 9.996
+  },
+  {
+    "id": 1770,
+    "content": "```json\n{\n    \"name\": \"caf\u00e9\",\n    \"address\": \"Plaza at the Shops by HTA, Hoonah, AK\",\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 10.648
+  },
+  {
+    "id": 1771,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 4.313
+  },
+  {
+    "id": 1772,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 4.088
+  },
+  {
+    "id": 1773,
+    "content": "```json\n{\n    \"name\": \"hotel\",\n    \"address\": \"I-20 Wildlife Preserve, Midland, TX\",\n    \"distance\": 60,\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 11.356
+  },
+  {
+    "id": 1774,
+    "content": "```json\n{\n    \"name\": \"Mays Chapel Medical Care Center\",\n    \"address\": \"1100 Mays Chapel Road, Lutherville, MD 21093, USA\",\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 13.226
+  },
+  {
+    "id": 1775,
+    "content": "```json\n{\n    \"name\": \"nature reserve\",\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 5.89
+  },
+  {
+    "id": 1776,
+    "content": "```json\n{\n    \"azimuth_angle\": 315\n}\n```",
+    "run_seconds": 4.298
+  },
+  {
+    "id": 1777,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.313
+  },
+  {
+    "id": 1778,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.313
+  },
+  {
+    "id": 1779,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 4.08
+  },
+  {
+    "id": 1780,
+    "content": "```json\n{\n    \"name\": \"Mentor Civic Arena\",\n    \"address\": \"11500 Mentor Ave, Mentor, OH 44060, USA\",\n    \"distance\": 100\n}\n```",
+    "run_seconds": 12.059
+  },
+  {
+    "id": 1781,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.303
+  },
+  {
+    "id": 1782,
+    "content": "```json\n{\n    \"name\": \"Aquatic Zoo Tropical Fish\",\n    \"address\": \"Thousand Oaks, CA\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 9.298
+  },
+  {
+    "id": 1783,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 4.076
+  },
+  {
+    "id": 1784,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.302
+  },
+  {
+    "id": 1785,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 4.07
+  },
+  {
+    "id": 1786,
+    "content": "```json\n{\n    \"name\": \"university\",\n    \"address\": \"Meerkerk Gardens, Greenbank, WA\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 9.772
+  },
+  {
+    "id": 1787,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.346
+  },
+  {
+    "id": 1788,
+    "content": "```json\n{\n    \"name\": \"restaurant\",\n    \"address\": \"Hickory Grove Riverfront, Cary, IL\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 9.534
+  },
+  {
+    "id": 1789,
+    "content": "```json\n{\n    \"name\": \"Steinhart Aquarium\",\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 6.358
+  },
+  {
+    "id": 1790,
+    "content": "```json\n{\n    \"name\": \"Hickory Grove Riverfront\",\n    \"address\": \"Cary, IL\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 9.325
+  },
+  {
+    "id": 1791,
+    "content": "```json\n{\n    \"azimuth_angle\": 270\n}\n```",
+    "run_seconds": 4.282
+  },
+  {
+    "id": 1792,
+    "content": "```json\n{\n    \"name\": \"golf course\",\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 6.355
+  },
+  {
+    "id": 1793,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 4.024
+  },
+  {
+    "id": 1794,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 4.097
+  },
+  {
+    "id": 1795,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.321
+  },
+  {
+    "id": 1796,
+    "content": "```json\n{\n    \"name\": \"golf course\",\n    \"address\": \"Maple Lawn Manor, Hydro, OK\",\n    \"distance\": 170,\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 11.557
+  },
+  {
+    "id": 1797,
+    "content": "```json\n{\n    \"name\": \"park\",\n    \"address\": \"Butterfield Garage Art Gallery, Saint Augustine, FL\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 9.783
+  },
+  {
+    "id": 1798,
+    "content": "```json\n{\n    \"name\": \"Hyatt Centric\",\n    \"address\": \"New York, NY\",\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 8.614
+  },
+  {
+    "id": 1799,
+    "content": "```json\n{\n    \"azimuth_angle\": 0\n}\n```",
+    "run_seconds": 3.849
+  }
+]

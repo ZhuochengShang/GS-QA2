@@ -1,0 +1,502 @@
+[
+  {
+    "id": 400,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_length\nFROM roads\nWHERE ST_Intersects(roads.geometry, (SELECT regions.geometry FROM regions WHERE regions.region_name ILIKE '%New York City%' LIMIT 1))\n  AND roads.highway = 'footway';\n```",
+    "run_seconds": 13.224
+  },
+  {
+    "id": 401,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_motorway_length\nFROM roads\nWHERE highway = 'motorway'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Bronx%' LIMIT 1));\n```",
+    "run_seconds": 12.778
+  },
+  {
+    "id": 402,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_cycleway_length\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%West Des Moines%' LIMIT 1));\n```",
+    "run_seconds": 12.996
+  },
+  {
+    "id": 403,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_motorway_length\nFROM roads\nWHERE highway = 'motorway'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Schuyler%' LIMIT 1));\n```",
+    "run_seconds": 12.994
+  },
+  {
+    "id": 404,
+    "content": "```sql\nSELECT SUM(ST_Length(geometry::geography)) AS total_length_meters\nFROM lakes\nWHERE waterway = 'canal'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Larimer%' AND border_type = 'county' LIMIT 1));\n```",
+    "run_seconds": 14.484
+  },
+  {
+    "id": 405,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_length\nFROM roads\nWHERE highway = 'footway'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Scarsdale%' LIMIT 1));\n```",
+    "run_seconds": 12.568
+  },
+  {
+    "id": 406,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_footway_length\nFROM roads\nWHERE highway = 'footway'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Ulster County%' LIMIT 1));\n```",
+    "run_seconds": 12.994
+  },
+  {
+    "id": 407,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_cycleway_length\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(roads.geometry, (SELECT regions.geometry FROM regions WHERE regions.region_name ILIKE '%Polk County%' AND regions.addr_state ILIKE '%Minnesota%' LIMIT 1));\n```",
+    "run_seconds": 15.344
+  },
+  {
+    "id": 408,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_motorway_length\nFROM roads\nWHERE highway = 'motorway'\n  AND ST_Intersects(roads.geometry, (SELECT regions.geometry FROM regions WHERE regions.region_name ILIKE '%Aurora%' AND regions.region_name ILIKE '%Erie County%' AND regions.region_name ILIKE '%New York%' LIMIT 1));\n```",
+    "run_seconds": 17.901
+  },
+  {
+    "id": 409,
+    "content": "```sql\nSELECT SUM(ST_Length(geometry::geography)) AS total_canal_length\nFROM lakes\nWHERE waterway = 'canal'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Bluffton%' AND region_name ILIKE '%South Carolina%' LIMIT 1));\n```",
+    "run_seconds": 14.918
+  },
+  {
+    "id": 410,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_cycleway_length\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Arlington%' LIMIT 1));\n```",
+    "run_seconds": 12.998
+  },
+  {
+    "id": 411,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_cycleway_length\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(roads.geometry::geography, (SELECT regions.geometry::geography FROM regions WHERE regions.region_name ILIKE '%Tazewell County%' LIMIT 1));\n```",
+    "run_seconds": 15.132
+  },
+  {
+    "id": 412,
+    "content": "```sql\nSELECT SUM(ST_Length(geometry::geography)) AS total_length_metres\nFROM lakes\nWHERE waterway = 'stream'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Polk County%' AND border_type = 'county' LIMIT 1));\n```",
+    "run_seconds": 14.278
+  },
+  {
+    "id": 413,
+    "content": "```sql\nSELECT SUM(ST_Length(geometry::geography)) AS total_river_distance\nFROM lakes\nWHERE waterway = 'river'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Halifax County%' LIMIT 1));\n```",
+    "run_seconds": 12.148
+  },
+  {
+    "id": 414,
+    "content": "```sql\nSELECT SUM(ST_Length(geometry::geography)) AS total_stream_length\nFROM lakes\nWHERE waterway = 'stream'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Milton%' LIMIT 1));\n```",
+    "run_seconds": 12.358
+  },
+  {
+    "id": 415,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_cycleway_length\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Brentwood%' LIMIT 1));\n```",
+    "run_seconds": 13.0
+  },
+  {
+    "id": 416,
+    "content": "```sql\nSELECT SUM(ST_Length(geometry::geography)) AS total_canal_length\nFROM lakes\nWHERE waterway = 'canal'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%United States%' LIMIT 1));\n```",
+    "run_seconds": 12.786
+  },
+  {
+    "id": 417,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_motorway_length\nFROM roads\nWHERE highway = 'motorway'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%boston%' LIMIT 1));\n```",
+    "run_seconds": 12.786
+  },
+  {
+    "id": 418,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_cycleway_length\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Alexandria%' LIMIT 1));\n```",
+    "run_seconds": 12.998
+  },
+  {
+    "id": 419,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_motorway_length\nFROM roads\nWHERE highway = 'motorway'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Las Vegas%' LIMIT 1));\n```",
+    "run_seconds": 12.785
+  },
+  {
+    "id": 420,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_footway_length\nFROM roads\nWHERE ST_Intersects(roads.geometry::geography, (SELECT regions.geometry::geography FROM regions WHERE regions.region_name ILIKE '%Raleigh%' AND regions.border_type = 'city' LIMIT 1))\n  AND roads.highway = 'footway';\n```",
+    "run_seconds": 16.623
+  },
+  {
+    "id": 421,
+    "content": "```sql\nSELECT SUM(ST_Length(geometry::geography)) AS total_river_length\nFROM lakes\nWHERE waterway = 'river'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Chester County%' LIMIT 1));\n```",
+    "run_seconds": 12.786
+  },
+  {
+    "id": 422,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_road_length\nFROM roads\nJOIN regions ON ST_Intersects(roads.geometry::geography, regions.geometry::geography)\nWHERE regions.region_name ILIKE '%Cibola%' AND regions.addr_state ILIKE '%New Mexico%';\n```",
+    "run_seconds": 14.279
+  },
+  {
+    "id": 423,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_stream_length\nFROM roads\nWHERE ST_Intersects(roads.geometry, (SELECT regions.geometry FROM regions WHERE regions.region_name ILIKE '%Oconee%' AND regions.border_type = 'county' LIMIT 1))\n  AND roads.highway = 'stream';\n```",
+    "run_seconds": 15.13
+  },
+  {
+    "id": 424,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_motorway_length\nFROM roads\nJOIN regions ON ST_Intersects(roads.geometry, regions.geometry)\nWHERE regions.region_name ILIKE '%Dallas County%' AND regions.border_type = 'county'\n  AND roads.highway = 'motorway';\n```",
+    "run_seconds": 14.281
+  },
+  {
+    "id": 425,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) / 1609.34 AS total_mileage\nFROM roads\nWHERE highway = 'motorway'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Pennsylvania%' LIMIT 1));\n```",
+    "run_seconds": 14.704
+  },
+  {
+    "id": 426,
+    "content": "```sql\nSELECT SUM(ST_Length(geometry::geography)) AS total_river_length\nFROM lakes\nWHERE waterway = 'river'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%United States%' LIMIT 1));\n```",
+    "run_seconds": 11.936
+  },
+  {
+    "id": 427,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_motorway_length\nFROM roads\nJOIN regions ON ST_Intersects(roads.geometry, regions.geometry)\nWHERE roads.highway = 'motorway'\n  AND regions.region_name ILIKE '%Memphis%'\n  AND regions.border_type = 'city';\n```",
+    "run_seconds": 14.492
+  },
+  {
+    "id": 428,
+    "content": "```sql\nSELECT SUM(ST_Length(r.geometry::geography)) AS total_river_distance\nFROM lakes r\nWHERE ST_Intersects(r.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Orange County%' LIMIT 1));\n```",
+    "run_seconds": 11.509
+  },
+  {
+    "id": 429,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_motorway_length\nFROM roads\nJOIN regions ON ST_Intersects(roads.geometry::geography, regions.geometry::geography)\nWHERE roads.highway = 'motorway'\n  AND regions.region_name ILIKE '%Natick%'\n  AND regions.addr_state ILIKE '%Massachusetts%';\n```",
+    "run_seconds": 16.623
+  },
+  {
+    "id": 430,
+    "content": "```sql\nSELECT SUM(ST_Length(geometry::geography)) AS total_canal_length\nFROM lakes\nWHERE waterway = 'canal'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Albion%' AND border_type = 'city' LIMIT 1));\n```",
+    "run_seconds": 13.862
+  },
+  {
+    "id": 431,
+    "content": "```sql\nSELECT SUM(ST_Length(lakes.geometry::geography)) AS total_canal_length\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT regions.geometry::geography FROM regions WHERE regions.region_name ILIKE '%West Jordan%' LIMIT 1))\n  AND lakes.waterway = 'canal';\n```",
+    "run_seconds": 14.919
+  },
+  {
+    "id": 432,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_cycleway_length\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(roads.geometry, (SELECT regions.geometry FROM regions WHERE regions.region_name ILIKE '%Arapahoe County%' AND regions.addr_state ILIKE '%Colorado%' LIMIT 1));\n```",
+    "run_seconds": 15.771
+  },
+  {
+    "id": 433,
+    "content": "```sql\nSELECT SUM(ST_Length(r.geometry::geography)) AS total_river_length\nFROM lakes r\nWHERE ST_Intersects(r.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Bedford County%' AND border_type = 'county' LIMIT 1))\n  AND r.waterway = 'river';\n```",
+    "run_seconds": 15.131
+  },
+  {
+    "id": 434,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_distance_meters\nFROM roads\nWHERE ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Ohio%' LIMIT 1))\n  AND highway = 'footway';\n```",
+    "run_seconds": 12.573
+  },
+  {
+    "id": 435,
+    "content": "```sql\nSELECT SUM(ST_Length(r.geometry::geography)) AS total_river_length\nFROM lakes r\nWHERE ST_Intersects(r.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Henry County%' AND region_name ILIKE '%Virginia%' LIMIT 1));\n```",
+    "run_seconds": 13.213
+  },
+  {
+    "id": 436,
+    "content": "```sql\nSELECT SUM(ST_Length(r.geometry::geography)) AS total_river_length\nFROM lakes r\nWHERE ST_Intersects(r.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Jackson County%' LIMIT 1));\n```",
+    "run_seconds": 11.508
+  },
+  {
+    "id": 437,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_motorway_length\nFROM roads\nWHERE highway = 'motorway'\n  AND ST_Intersects(roads.geometry, (SELECT regions.geometry FROM regions WHERE regions.region_name ILIKE '%Cuba, New York%' LIMIT 1));\n```",
+    "run_seconds": 13.854
+  },
+  {
+    "id": 438,
+    "content": "```sql\nSELECT SUM(ST_Length(lakes.geometry::geography)) AS total_river_length\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT regions.geometry::geography FROM regions WHERE regions.region_name ILIKE '%Koochiching%' AND regions.border_type = 'county' LIMIT 1))\n  AND lakes.waterway = 'river';\n```",
+    "run_seconds": 17.05
+  },
+  {
+    "id": 439,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_cycleway_length\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(roads.geometry, (SELECT regions.geometry FROM regions WHERE regions.region_name ILIKE '%Ulster County%' LIMIT 1));\n```",
+    "run_seconds": 13.424
+  },
+  {
+    "id": 440,
+    "content": "```sql\nSELECT SUM(ST_Length(lakes.geometry::geography)) AS total_canal_length\nFROM lakes\nWHERE ST_Intersects(lakes.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Delta County%' LIMIT 1))\n  AND waterway = 'canal';\n```",
+    "run_seconds": 12.999
+  },
+  {
+    "id": 441,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_length_metres\nFROM roads\nJOIN regions ON ST_Intersects(roads.geometry::geography, regions.geometry::geography)\nWHERE regions.region_name ILIKE '%Norwich%' AND regions.border_type = 'city';\n```",
+    "run_seconds": 13.425
+  },
+  {
+    "id": 442,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_road_length\nFROM roads\nWHERE ST_Intersects(roads.geometry, (SELECT regions.geometry FROM regions WHERE regions.region_name ILIKE '%Cabarrus County%' LIMIT 1));\n```",
+    "run_seconds": 11.932
+  },
+  {
+    "id": 443,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_canal_length\nFROM roads\nWHERE highway = 'canal'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Dania Beach%' LIMIT 1));\n```",
+    "run_seconds": 13.0
+  },
+  {
+    "id": 444,
+    "content": "```sql\nSELECT SUM(ST_Length(r.geometry::geography)) AS total_river_distance\nFROM lakes r\nWHERE ST_Intersects(r.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Stevens County%' LIMIT 1))\n  AND r.waterway = 'river';\n```",
+    "run_seconds": 13.212
+  },
+  {
+    "id": 445,
+    "content": "```sql\nSELECT SUM(ST_Length(geometry::geography)) AS total_span_meters\nFROM lakes\nWHERE waterway = 'canal'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Jefferson County%' LIMIT 1));\n```",
+    "run_seconds": 12.999
+  },
+  {
+    "id": 446,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_footway_length\nFROM roads\nWHERE highway = 'footway'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Connecticut%' LIMIT 1));\n```",
+    "run_seconds": 12.786
+  },
+  {
+    "id": 447,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_road_length\nFROM roads\nWHERE ST_Intersects(roads.geometry, (SELECT regions.geometry FROM regions WHERE regions.region_name ILIKE '%Umatilla%' AND regions.border_type = 'county' LIMIT 1));\n```",
+    "run_seconds": 13.426
+  },
+  {
+    "id": 448,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_cycleway_length\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Mecklenburg%' AND border_type = 'county' LIMIT 1));\n```",
+    "run_seconds": 14.704
+  },
+  {
+    "id": 449,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_motorway_length\nFROM roads\nWHERE ST_Intersects(roads.geometry, (SELECT regions.geometry FROM regions WHERE regions.region_name ILIKE '%Middlesex%' AND regions.border_type = 'county' LIMIT 1))\n  AND roads.highway = 'motorway';\n```",
+    "run_seconds": 15.343
+  },
+  {
+    "id": 450,
+    "content": "```sql\nSELECT SUM(ST_Length(geometry::geography)) AS total_canal_length\nFROM lakes\nWHERE waterway = 'canal'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Lee County%' LIMIT 1));\n```",
+    "run_seconds": 12.787
+  },
+  {
+    "id": 451,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_motorway_length\nFROM roads\nWHERE highway = 'motorway'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Cheektowaga%' LIMIT 1));\n```",
+    "run_seconds": 13.212
+  },
+  {
+    "id": 452,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_motorway_length\nFROM roads\nWHERE highway = 'motorway'\n  AND ST_Intersects(roads.geometry, (SELECT regions.geometry FROM regions WHERE region_name ILIKE '%Albany County%' LIMIT 1));\n```",
+    "run_seconds": 13.426
+  },
+  {
+    "id": 453,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_length\nFROM roads\nWHERE highway = 'motorway'\n  AND ST_Intersects(roads.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Ithaca%' LIMIT 1));\n```",
+    "run_seconds": 13.214
+  },
+  {
+    "id": 454,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_motorway_length\nFROM roads\nWHERE ST_Intersects(roads.geometry, (SELECT regions.geometry FROM regions WHERE regions.region_name ILIKE '%Tarrant County%' LIMIT 1))\n  AND roads.highway = 'motorway';\n```",
+    "run_seconds": 13.853
+  },
+  {
+    "id": 455,
+    "content": "```sql\nSELECT SUM(ST_Length(geometry::geography)) AS total_stream_length\nFROM lakes\nWHERE waterway = 'stream'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Green County%' AND border_type = 'county' LIMIT 1));\n```",
+    "run_seconds": 13.853
+  },
+  {
+    "id": 456,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_cycleway_length\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%United States%' LIMIT 1));\n```",
+    "run_seconds": 12.786
+  },
+  {
+    "id": 457,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_cycleway_length\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Pennsylvania%' LIMIT 1));\n```",
+    "run_seconds": 12.787
+  },
+  {
+    "id": 458,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_cycleway_length\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Kentucky%' LIMIT 1));\n```",
+    "run_seconds": 12.786
+  },
+  {
+    "id": 459,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_length\nFROM roads\nWHERE ST_Intersects(roads.geometry, (SELECT regions.geometry FROM regions WHERE regions.region_name ILIKE '%Rocky Mount%' AND regions.addr_state ILIKE '%North Carolina%' LIMIT 1))\n  AND roads.highway IN ('river', 'canal', 'stream');\n```",
+    "run_seconds": 16.836
+  },
+  {
+    "id": 460,
+    "content": "```sql\nSELECT SUM(ST_Length(geometry::geography)) AS total_length_meters\nFROM lakes\nWHERE waterway = 'river'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Wood County%' LIMIT 1));\n```",
+    "run_seconds": 11.934
+  },
+  {
+    "id": 461,
+    "content": "```sql\nSELECT SUM(ST_Length(geometry::geography)) AS total_length\nFROM lakes\nWHERE waterway = 'stream'\n  AND addr_state ILIKE '%georgia%';\n```",
+    "run_seconds": 8.525
+  },
+  {
+    "id": 462,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_road_length\nFROM roads\nWHERE ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%United States%' LIMIT 1));\n```",
+    "run_seconds": 11.08
+  },
+  {
+    "id": 463,
+    "content": "```sql\nSELECT SUM(ST_Length(geometry::geography)) AS total_length_meters\nFROM lakes\nWHERE waterway = 'stream'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Putnam County%' LIMIT 1));\n```",
+    "run_seconds": 12.784
+  },
+  {
+    "id": 464,
+    "content": "```sql\nSELECT SUM(ST_Length(geometry::geography)) AS total_river_length\nFROM lakes\nWHERE waterway = 'river'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Brunswick%' AND region_name ILIKE '%Virginia%' LIMIT 1));\n```",
+    "run_seconds": 14.28
+  },
+  {
+    "id": 465,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_canal_length\nFROM roads\nWHERE highway = 'canal'\n  AND ST_Intersects(roads.geometry, (SELECT regions.geometry FROM regions WHERE regions.region_name ILIKE '%Osceola%' AND regions.addr_state ILIKE '%Florida%' LIMIT 1));\n```",
+    "run_seconds": 15.344
+  },
+  {
+    "id": 466,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_cycleway_length\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Anaheim%' AND border_type = 'city' LIMIT 1));\n```",
+    "run_seconds": 14.278
+  },
+  {
+    "id": 467,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_cycleway_length\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(roads.geometry::geography, (SELECT regions.geometry::geography FROM regions WHERE regions.region_name ILIKE '%Summit County%' LIMIT 1));\n```",
+    "run_seconds": 14.704
+  },
+  {
+    "id": 468,
+    "content": "```sql\nSELECT SUM(ST_Length(geometry::geography)) AS total_length_metres\nFROM lakes\nWHERE waterway = 'stream'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Paulding County%' AND border_type = 'county' LIMIT 1));\n```",
+    "run_seconds": 14.278
+  },
+  {
+    "id": 469,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_motorway_length\nFROM roads\nWHERE highway = 'motorway'\n  AND ST_Intersects(roads.geometry, (SELECT regions.geometry FROM regions WHERE regions.region_name ILIKE '%Lake County%' LIMIT 1));\n```",
+    "run_seconds": 13.212
+  },
+  {
+    "id": 470,
+    "content": "```sql\nSELECT SUM(ST_Length(geometry::geography)) AS total_stream_length\nFROM lakes\nWHERE waterway = 'stream'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Appling County%' LIMIT 1));\n```",
+    "run_seconds": 11.934
+  },
+  {
+    "id": 471,
+    "content": "```sql\nSELECT SUM(ST_Length(geometry::geography)) AS total_length_meters\nFROM lakes\nWHERE waterway = 'river'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Hertford%' AND border_type = 'county' LIMIT 1));\n```",
+    "run_seconds": 14.278
+  },
+  {
+    "id": 472,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_footway_length\nFROM roads\nWHERE highway = 'footway'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Cuyahoga%' AND border_type = 'county' LIMIT 1));\n```",
+    "run_seconds": 14.704
+  },
+  {
+    "id": 473,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_length_meters\nFROM roads\nWHERE ST_Intersects(roads.geometry, (SELECT regions.geometry FROM regions WHERE regions.region_name ILIKE '%Nueces%' AND regions.border_type = 'county' LIMIT 1))\n  AND roads.highway = 'footway';\n```",
+    "run_seconds": 15.57
+  },
+  {
+    "id": 474,
+    "content": "```sql\nSELECT SUM(ST_Length(lakes.geometry::geography)) AS total_stream_length\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT regions.geometry::geography FROM regions WHERE regions.region_name ILIKE '%Walton County%' AND regions.addr_state ILIKE '%Georgia%' LIMIT 1))\n  AND lakes.waterway = 'stream';\n```",
+    "run_seconds": 16.621
+  },
+  {
+    "id": 475,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_cycleway_length\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%New Hampshire%' LIMIT 1));\n```",
+    "run_seconds": 12.783
+  },
+  {
+    "id": 476,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_cycleway_length\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(roads.geometry::geography, (SELECT regions.geometry::geography FROM regions WHERE region_name ILIKE '%St. Louis Park%' LIMIT 1));\n```",
+    "run_seconds": 14.703
+  },
+  {
+    "id": 477,
+    "content": "```sql\nSELECT SUM(ST_Length(geometry::geography)) AS total_stream_length\nFROM lakes\nWHERE waterway = 'stream'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%United States%' LIMIT 1));\n```",
+    "run_seconds": 11.72
+  },
+  {
+    "id": 478,
+    "content": "```sql\nSELECT SUM(ST_Length(lakes.geometry::geography)) AS total_canal_length\nFROM lakes\nWHERE waterway = 'canal'\n  AND ST_Intersects(lakes.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Chaffee%' AND region_name ILIKE '%Colorado%' LIMIT 1));\n```",
+    "run_seconds": 14.917
+  },
+  {
+    "id": 479,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_stream_length\nFROM roads\nWHERE ST_Intersects(roads.geometry, (SELECT regions.geometry FROM regions WHERE regions.region_name ILIKE '%Delaware County%' AND regions.border_type = 'county' LIMIT 1))\n  AND roads.highway = 'stream';\n```",
+    "run_seconds": 15.128
+  },
+  {
+    "id": 480,
+    "content": "```sql\nSELECT SUM(ST_Length(geometry::geography)) AS total_river_length\nFROM lakes\nWHERE waterway = 'river'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Brookneal%' LIMIT 1));\n```",
+    "run_seconds": 12.998
+  },
+  {
+    "id": 481,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_river_length\nFROM roads\nWHERE ST_Intersects(roads.geometry, (SELECT regions.geometry FROM regions WHERE regions.region_name ILIKE '%Jasper County%' AND regions.addr_state ILIKE '%South Carolina%' LIMIT 1))\n  AND roads.highway IN ('river', 'canal', 'stream', 'drain', 'ditch');\n```",
+    "run_seconds": 18.966
+  },
+  {
+    "id": 482,
+    "content": "```sql\nSELECT SUM(ST_Length(geometry::geography)) AS total_length_metres\nFROM lakes\nWHERE waterway = 'stream'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Jackson County%' LIMIT 1));\n```",
+    "run_seconds": 12.571
+  },
+  {
+    "id": 483,
+    "content": "```sql\nSELECT SUM(ST_Length(geometry::geography)) AS total_length_meters\nFROM lakes\nWHERE waterway = 'stream'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Macon County%' LIMIT 1));\n```",
+    "run_seconds": 12.785
+  },
+  {
+    "id": 484,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_length_meters\nFROM roads\nWHERE highway = 'footway'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%seattle%' LIMIT 1));\n```",
+    "run_seconds": 12.785
+  },
+  {
+    "id": 485,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_length_meters\nFROM roads\nWHERE ST_Intersects(roads.geometry, (SELECT regions.geometry FROM regions WHERE regions.region_name ILIKE '%Dobbs Ferry%' LIMIT 1))\n  AND roads.highway = 'footway';\n```",
+    "run_seconds": 14.064
+  },
+  {
+    "id": 486,
+    "content": "```sql\nSELECT SUM(ST_Length(lakes.geometry::geography)) AS total_river_length\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT regions.geometry::geography FROM regions WHERE regions.region_name ILIKE '%Greene County%' AND regions.addr_state ILIKE '%Tennessee%' LIMIT 1))\n  AND lakes.waterway = 'river';\n```",
+    "run_seconds": 17.045
+  },
+  {
+    "id": 487,
+    "content": "```sql\nSELECT SUM(ST_Length(r.geometry::geography)) / 1609.34 AS total_mileage\nFROM lakes r\nJOIN regions c ON ST_Intersects(r.geometry::geography, c.geometry::geography)\nWHERE c.region_name ILIKE '%Greensville County%' AND c.border_type = 'county';\n```",
+    "run_seconds": 15.768
+  },
+  {
+    "id": 488,
+    "content": "```sql\nSELECT SUM(ST_Length(geometry::geography)) AS total_canal_length\nFROM lakes\nWHERE waterway = 'canal'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Eagle County%' AND region_name ILIKE '%Colorado%' LIMIT 1));\n```",
+    "run_seconds": 14.702
+  },
+  {
+    "id": 489,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_road_length\nFROM roads\nWHERE ST_Intersects(roads.geometry, (SELECT regions.geometry FROM regions WHERE regions.region_name ILIKE '%Mesa%' AND regions.addr_state ILIKE '%Colorado%' LIMIT 1));\n```",
+    "run_seconds": 13.423
+  },
+  {
+    "id": 490,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_motorway_length\nFROM roads, regions\nWHERE roads.highway = 'motorway'\n  AND ST_Intersects(roads.geometry::geography, regions.geometry::geography)\n  AND regions.region_name ILIKE '%United States%' AND regions.border_type = 'country';\n```",
+    "run_seconds": 15.767
+  },
+  {
+    "id": 491,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) / 1609.34 AS total_mileage\nFROM roads\nWHERE ST_Intersects(roads.geometry, (SELECT regions.geometry FROM regions WHERE regions.region_name ILIKE '%Citrus County%' LIMIT 1));\n```",
+    "run_seconds": 13.636
+  },
+  {
+    "id": 492,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_footway_distance\nFROM roads\nWHERE highway = 'footway'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%United States%' LIMIT 1));\n```",
+    "run_seconds": 12.783
+  },
+  {
+    "id": 493,
+    "content": "```sql\nSELECT SUM(ST_Length(geometry::geography)) AS total_stream_length\nFROM lakes\nWHERE waterway = 'stream'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Clark County%' LIMIT 1));\n```",
+    "run_seconds": 11.72
+  },
+  {
+    "id": 494,
+    "content": "```sql\nSELECT SUM(ST_Length(r.geometry::geography)) AS total_river_length\nFROM lakes r\nWHERE r.waterway = 'river'\n  AND ST_Intersects(r.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Lunenburg%' AND border_type = 'county' LIMIT 1));\n```",
+    "run_seconds": 15.13
+  },
+  {
+    "id": 495,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_cycleway_length\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Illinois%' LIMIT 1));\n```",
+    "run_seconds": 12.784
+  },
+  {
+    "id": 496,
+    "content": "```sql\nSELECT SUM(ST_Length(geometry::geography)) AS total_length_meters\nFROM lakes\nWHERE waterway = 'canal'\n  AND ST_Intersects(geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Palm Bay%' AND addr_state = 'Florida' LIMIT 1));\n```",
+    "run_seconds": 15.128
+  },
+  {
+    "id": 497,
+    "content": "```sql\nSELECT SUM(ST_Length(lake.geometry::geography)) AS total_length_meters\nFROM lakes lake\nWHERE lake.waterway = 'canal'\n  AND ST_Intersects(lake.geometry::geography, (SELECT regions.geometry::geography FROM regions WHERE regions.region_name ILIKE '%Saguache%' AND regions.addr_state = 'Colorado' LIMIT 1));\n```",
+    "run_seconds": 17.045
+  },
+  {
+    "id": 498,
+    "content": "```sql\nSELECT SUM(ST_Length(geometry::geography)) AS total_canal_length\nFROM lakes\nWHERE waterway = 'canal'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Payson%' LIMIT 1));\n```",
+    "run_seconds": 12.786
+  },
+  {
+    "id": 499,
+    "content": "```sql\nSELECT SUM(ST_Length(roads.geometry::geography)) AS total_road_length\nFROM roads\nWHERE ST_Intersects(roads.geometry, (SELECT regions.geometry FROM regions WHERE regions.region_name ILIKE '%Rio Grande%' AND regions.border_type = 'county' LIMIT 1));\n```",
+    "run_seconds": 13.211
+  }
+]

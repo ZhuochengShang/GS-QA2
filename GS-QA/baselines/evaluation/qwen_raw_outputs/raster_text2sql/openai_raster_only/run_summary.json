@@ -1,0 +1,623 @@
+{
+  "query_type": "raster_only",
+  "provider": "openai",
+  "model": "Qwen/Qwen3-32B-AWQ",
+  "workers": 1,
+  "stems_processed": 19,
+  "total_questions": 380,
+  "total_timeouts": 4,
+  "total_sql_ok": 376,
+  "total_exec_ok": 68,
+  "total_tokens": 691035,
+  "total_wall_seconds": 20549.3,
+  "stems": [
+    {
+      "stem": "aspect+poi",
+      "query_type": "raster_only",
+      "model": "Qwen/Qwen3-32B-AWQ",
+      "provider": "openai",
+      "question_count": 20,
+      "generation_timeouts": 0,
+      "successful_sql_generation": 20,
+      "successful_sql_execution": 3,
+      "timing": {
+        "total_wall_seconds": 998.998,
+        "mean_generation_seconds": 49.813,
+        "mean_execution_seconds": 0.137,
+        "mean_total_seconds": 49.95,
+        "max_total_seconds": 90.614
+      },
+      "tokens": {
+        "total_prompt_tokens": 32224,
+        "total_completion_tokens": 4480,
+        "total_tokens": 36704,
+        "mean_prompt_tokens": 1611.2,
+        "mean_completion_tokens": 224,
+        "mean_total_tokens": 1835.2
+      },
+      "evaluation": {
+        "exact_matches": 0,
+        "numeric_tolerance_accuracy": 0.0,
+        "mean_absolute_error": 230.2785,
+        "text_exact_accuracy": null,
+        "mean_rowset_f1": 0.0
+      }
+    },
+    {
+      "stem": "avg_slope+area",
+      "query_type": "raster_only",
+      "model": "Qwen/Qwen3-32B-AWQ",
+      "provider": "openai",
+      "question_count": 20,
+      "generation_timeouts": 0,
+      "successful_sql_generation": 20,
+      "successful_sql_execution": 0,
+      "timing": {
+        "total_wall_seconds": 768.432,
+        "mean_generation_seconds": 38.42,
+        "mean_execution_seconds": 0.001,
+        "mean_total_seconds": 38.422,
+        "max_total_seconds": 50.236
+      },
+      "tokens": {
+        "total_prompt_tokens": 30318,
+        "total_completion_tokens": 3466,
+        "total_tokens": 33784,
+        "mean_prompt_tokens": 1515.9,
+        "mean_completion_tokens": 173.3,
+        "mean_total_tokens": 1689.2
+      },
+      "evaluation": {
+        "exact_matches": 0,
+        "numeric_tolerance_accuracy": null,
+        "mean_absolute_error": null,
+        "text_exact_accuracy": null,
+        "mean_rowset_f1": 0.0
+      }
+    },
+    {
+      "stem": "elevation+coverage",
+      "query_type": "raster_only",
+      "model": "Qwen/Qwen3-32B-AWQ",
+      "provider": "openai",
+      "question_count": 20,
+      "generation_timeouts": 2,
+      "successful_sql_generation": 18,
+      "successful_sql_execution": 2,
+      "timing": {
+        "total_wall_seconds": 2003.613,
+        "mean_generation_seconds": 100.111,
+        "mean_execution_seconds": 0.07,
+        "mean_total_seconds": 100.181,
+        "max_total_seconds": 545.094
+      },
+      "tokens": {
+        "total_prompt_tokens": 28321,
+        "total_completion_tokens": 4182,
+        "total_tokens": 32503,
+        "mean_prompt_tokens": 1573.4,
+        "mean_completion_tokens": 232.3,
+        "mean_total_tokens": 1805.7
+      },
+      "evaluation": {
+        "exact_matches": 0,
+        "numeric_tolerance_accuracy": 0.0,
+        "mean_absolute_error": null,
+        "text_exact_accuracy": null,
+        "mean_rowset_f1": 0.0
+      }
+    },
+    {
+      "stem": "elevation+poi",
+      "query_type": "raster_only",
+      "model": "Qwen/Qwen3-32B-AWQ",
+      "provider": "openai",
+      "question_count": 20,
+      "generation_timeouts": 0,
+      "successful_sql_generation": 20,
+      "successful_sql_execution": 17,
+      "timing": {
+        "total_wall_seconds": 463.132,
+        "mean_generation_seconds": 23.081,
+        "mean_execution_seconds": 0.076,
+        "mean_total_seconds": 23.157,
+        "max_total_seconds": 28.563
+      },
+      "tokens": {
+        "total_prompt_tokens": 32373,
+        "total_completion_tokens": 2156,
+        "total_tokens": 34529,
+        "mean_prompt_tokens": 1618.7,
+        "mean_completion_tokens": 107.8,
+        "mean_total_tokens": 1726.5
+      },
+      "evaluation": {
+        "exact_matches": 17,
+        "numeric_tolerance_accuracy": 1.0,
+        "mean_absolute_error": 0.0,
+        "text_exact_accuracy": null,
+        "mean_rowset_f1": 0.0
+      }
+    },
+    {
+      "stem": "elevation_compare+two_pois",
+      "query_type": "raster_only",
+      "model": "Qwen/Qwen3-32B-AWQ",
+      "provider": "openai",
+      "question_count": 20,
+      "generation_timeouts": 0,
+      "successful_sql_generation": 20,
+      "successful_sql_execution": 16,
+      "timing": {
+        "total_wall_seconds": 1353.745,
+        "mean_generation_seconds": 66.446,
+        "mean_execution_seconds": 1.241,
+        "mean_total_seconds": 67.687,
+        "max_total_seconds": 84.289
+      },
+      "tokens": {
+        "total_prompt_tokens": 34841,
+        "total_completion_tokens": 6226,
+        "total_tokens": 41067,
+        "mean_prompt_tokens": 1742.0,
+        "mean_completion_tokens": 311.3,
+        "mean_total_tokens": 2053.3
+      },
+      "evaluation": {
+        "exact_matches": 0,
+        "numeric_tolerance_accuracy": null,
+        "mean_absolute_error": null,
+        "text_exact_accuracy": 0.5625,
+        "mean_rowset_f1": 0.0
+      }
+    },
+    {
+      "stem": "elevation_diff+two_pois",
+      "query_type": "raster_only",
+      "model": "Qwen/Qwen3-32B-AWQ",
+      "provider": "openai",
+      "question_count": 20,
+      "generation_timeouts": 0,
+      "successful_sql_generation": 20,
+      "successful_sql_execution": 15,
+      "timing": {
+        "total_wall_seconds": 1102.916,
+        "mean_generation_seconds": 54.917,
+        "mean_execution_seconds": 0.229,
+        "mean_total_seconds": 55.146,
+        "max_total_seconds": 69.13
+      },
+      "tokens": {
+        "total_prompt_tokens": 34866,
+        "total_completion_tokens": 5142,
+        "total_tokens": 40008,
+        "mean_prompt_tokens": 1743.3,
+        "mean_completion_tokens": 257.1,
+        "mean_total_tokens": 2000.4
+      },
+      "evaluation": {
+        "exact_matches": 0,
+        "numeric_tolerance_accuracy": 0.4615,
+        "mean_absolute_error": 57.1,
+        "text_exact_accuracy": null,
+        "mean_rowset_f1": 0.0
+      }
+    },
+    {
+      "stem": "elevation_max+region",
+      "query_type": "raster_only",
+      "model": "Qwen/Qwen3-32B-AWQ",
+      "provider": "openai",
+      "question_count": 20,
+      "generation_timeouts": 0,
+      "successful_sql_generation": 20,
+      "successful_sql_execution": 0,
+      "timing": {
+        "total_wall_seconds": 531.324,
+        "mean_generation_seconds": 26.559,
+        "mean_execution_seconds": 0.007,
+        "mean_total_seconds": 26.566,
+        "max_total_seconds": 71.852
+      },
+      "tokens": {
+        "total_prompt_tokens": 30713,
+        "total_completion_tokens": 2485,
+        "total_tokens": 33198,
+        "mean_prompt_tokens": 1535.7,
+        "mean_completion_tokens": 124.2,
+        "mean_total_tokens": 1659.9
+      },
+      "evaluation": {
+        "exact_matches": 0,
+        "numeric_tolerance_accuracy": null,
+        "mean_absolute_error": null,
+        "text_exact_accuracy": null,
+        "mean_rowset_f1": 0.0
+      }
+    },
+    {
+      "stem": "elevation_mean+region",
+      "query_type": "raster_only",
+      "model": "Qwen/Qwen3-32B-AWQ",
+      "provider": "openai",
+      "question_count": 20,
+      "generation_timeouts": 0,
+      "successful_sql_generation": 20,
+      "successful_sql_execution": 2,
+      "timing": {
+        "total_wall_seconds": 720.854,
+        "mean_generation_seconds": 36.036,
+        "mean_execution_seconds": 0.006,
+        "mean_total_seconds": 36.043,
+        "max_total_seconds": 98.292
+      },
+      "tokens": {
+        "total_prompt_tokens": 31077,
+        "total_completion_tokens": 3376,
+        "total_tokens": 34453,
+        "mean_prompt_tokens": 1553.8,
+        "mean_completion_tokens": 168.8,
+        "mean_total_tokens": 1722.7
+      },
+      "evaluation": {
+        "exact_matches": 0,
+        "numeric_tolerance_accuracy": 0.0,
+        "mean_absolute_error": null,
+        "text_exact_accuracy": null,
+        "mean_rowset_f1": 0.0
+      }
+    },
+    {
+      "stem": "elevation_min+region",
+      "query_type": "raster_only",
+      "model": "Qwen/Qwen3-32B-AWQ",
+      "provider": "openai",
+      "question_count": 20,
+      "generation_timeouts": 0,
+      "successful_sql_generation": 20,
+      "successful_sql_execution": 3,
+      "timing": {
+        "total_wall_seconds": 669.2,
+        "mean_generation_seconds": 33.336,
+        "mean_execution_seconds": 0.124,
+        "mean_total_seconds": 33.46,
+        "max_total_seconds": 91.061
+      },
+      "tokens": {
+        "total_prompt_tokens": 31067,
+        "total_completion_tokens": 3122,
+        "total_tokens": 34189,
+        "mean_prompt_tokens": 1553.3,
+        "mean_completion_tokens": 156.1,
+        "mean_total_tokens": 1709.5
+      },
+      "evaluation": {
+        "exact_matches": 0,
+        "numeric_tolerance_accuracy": 0.0,
+        "mean_absolute_error": null,
+        "text_exact_accuracy": null,
+        "mean_rowset_f1": 0.0
+      }
+    },
+    {
+      "stem": "elevation_range+region",
+      "query_type": "raster_only",
+      "model": "Qwen/Qwen3-32B-AWQ",
+      "provider": "openai",
+      "question_count": 20,
+      "generation_timeouts": 0,
+      "successful_sql_generation": 20,
+      "successful_sql_execution": 0,
+      "timing": {
+        "total_wall_seconds": 694.744,
+        "mean_generation_seconds": 34.736,
+        "mean_execution_seconds": 0.001,
+        "mean_total_seconds": 34.737,
+        "max_total_seconds": 75.69
+      },
+      "tokens": {
+        "total_prompt_tokens": 30454,
+        "total_completion_tokens": 3258,
+        "total_tokens": 33712,
+        "mean_prompt_tokens": 1522.7,
+        "mean_completion_tokens": 162.9,
+        "mean_total_tokens": 1685.6
+      },
+      "evaluation": {
+        "exact_matches": 0,
+        "numeric_tolerance_accuracy": null,
+        "mean_absolute_error": null,
+        "text_exact_accuracy": null,
+        "mean_rowset_f1": 0.0
+      }
+    },
+    {
+      "stem": "elevation_threshold+poi",
+      "query_type": "raster_only",
+      "model": "Qwen/Qwen3-32B-AWQ",
+      "provider": "openai",
+      "question_count": 20,
+      "generation_timeouts": 0,
+      "successful_sql_generation": 20,
+      "successful_sql_execution": 9,
+      "timing": {
+        "total_wall_seconds": 617.277,
+        "mean_generation_seconds": 30.848,
+        "mean_execution_seconds": 0.016,
+        "mean_total_seconds": 30.864,
+        "max_total_seconds": 41.389
+      },
+      "tokens": {
+        "total_prompt_tokens": 32688,
+        "total_completion_tokens": 2884,
+        "total_tokens": 35572,
+        "mean_prompt_tokens": 1634.4,
+        "mean_completion_tokens": 144.2,
+        "mean_total_tokens": 1778.6
+      },
+      "evaluation": {
+        "exact_matches": 0,
+        "numeric_tolerance_accuracy": null,
+        "mean_absolute_error": null,
+        "text_exact_accuracy": 1.0,
+        "mean_rowset_f1": 0.0
+      }
+    },
+    {
+      "stem": "max_slope+area",
+      "query_type": "raster_only",
+      "model": "Qwen/Qwen3-32B-AWQ",
+      "provider": "openai",
+      "question_count": 20,
+      "generation_timeouts": 0,
+      "successful_sql_generation": 20,
+      "successful_sql_execution": 0,
+      "timing": {
+        "total_wall_seconds": 933.45,
+        "mean_generation_seconds": 46.672,
+        "mean_execution_seconds": 0.001,
+        "mean_total_seconds": 46.672,
+        "max_total_seconds": 106.868
+      },
+      "tokens": {
+        "total_prompt_tokens": 31326,
+        "total_completion_tokens": 4315,
+        "total_tokens": 35641,
+        "mean_prompt_tokens": 1566.3,
+        "mean_completion_tokens": 215.8,
+        "mean_total_tokens": 1782.0
+      },
+      "evaluation": {
+        "exact_matches": 0,
+        "numeric_tolerance_accuracy": null,
+        "mean_absolute_error": null,
+        "text_exact_accuracy": null,
+        "mean_rowset_f1": 0.0
+      }
+    },
+    {
+      "stem": "min_slope+area",
+      "query_type": "raster_only",
+      "model": "Qwen/Qwen3-32B-AWQ",
+      "provider": "openai",
+      "question_count": 20,
+      "generation_timeouts": 0,
+      "successful_sql_generation": 20,
+      "successful_sql_execution": 0,
+      "timing": {
+        "total_wall_seconds": 767.216,
+        "mean_generation_seconds": 38.36,
+        "mean_execution_seconds": 0.001,
+        "mean_total_seconds": 38.361,
+        "max_total_seconds": 112.551
+      },
+      "tokens": {
+        "total_prompt_tokens": 30653,
+        "total_completion_tokens": 3560,
+        "total_tokens": 34213,
+        "mean_prompt_tokens": 1532.7,
+        "mean_completion_tokens": 178,
+        "mean_total_tokens": 1710.7
+      },
+      "evaluation": {
+        "exact_matches": 0,
+        "numeric_tolerance_accuracy": null,
+        "mean_absolute_error": null,
+        "text_exact_accuracy": null,
+        "mean_rowset_f1": 0.0
+      }
+    },
+    {
+      "stem": "nearest_high_terrain+poi",
+      "query_type": "raster_only",
+      "model": "Qwen/Qwen3-32B-AWQ",
+      "provider": "openai",
+      "question_count": 20,
+      "generation_timeouts": 0,
+      "successful_sql_generation": 20,
+      "successful_sql_execution": 0,
+      "timing": {
+        "total_wall_seconds": 1152.553,
+        "mean_generation_seconds": 57.627,
+        "mean_execution_seconds": 0.001,
+        "mean_total_seconds": 57.628,
+        "max_total_seconds": 78.476
+      },
+      "tokens": {
+        "total_prompt_tokens": 32806,
+        "total_completion_tokens": 5243,
+        "total_tokens": 38049,
+        "mean_prompt_tokens": 1640.3,
+        "mean_completion_tokens": 262.1,
+        "mean_total_tokens": 1902.5
+      },
+      "evaluation": {
+        "exact_matches": 0,
+        "numeric_tolerance_accuracy": null,
+        "mean_absolute_error": null,
+        "text_exact_accuracy": null,
+        "mean_rowset_f1": 0.0
+      }
+    },
+    {
+      "stem": "nearest_low_terrain+poi",
+      "query_type": "raster_only",
+      "model": "Qwen/Qwen3-32B-AWQ",
+      "provider": "openai",
+      "question_count": 20,
+      "generation_timeouts": 0,
+      "successful_sql_generation": 20,
+      "successful_sql_execution": 1,
+      "timing": {
+        "total_wall_seconds": 1140.924,
+        "mean_generation_seconds": 57.043,
+        "mean_execution_seconds": 0.003,
+        "mean_total_seconds": 57.046,
+        "max_total_seconds": 97.092
+      },
+      "tokens": {
+        "total_prompt_tokens": 32766,
+        "total_completion_tokens": 5125,
+        "total_tokens": 37891,
+        "mean_prompt_tokens": 1638.3,
+        "mean_completion_tokens": 256.2,
+        "mean_total_tokens": 1894.5
+      },
+      "evaluation": {
+        "exact_matches": 0,
+        "numeric_tolerance_accuracy": null,
+        "mean_absolute_error": null,
+        "text_exact_accuracy": null,
+        "mean_rowset_f1": 0.0
+      }
+    },
+    {
+      "stem": "ruggedness+poi",
+      "query_type": "raster_only",
+      "model": "Qwen/Qwen3-32B-AWQ",
+      "provider": "openai",
+      "question_count": 20,
+      "generation_timeouts": 2,
+      "successful_sql_generation": 18,
+      "successful_sql_execution": 0,
+      "timing": {
+        "total_wall_seconds": 1881.114,
+        "mean_generation_seconds": 94.055,
+        "mean_execution_seconds": 0.001,
+        "mean_total_seconds": 94.056,
+        "max_total_seconds": 547.012
+      },
+      "tokens": {
+        "total_prompt_tokens": 29066,
+        "total_completion_tokens": 3511,
+        "total_tokens": 32577,
+        "mean_prompt_tokens": 1614.8,
+        "mean_completion_tokens": 195.1,
+        "mean_total_tokens": 1809.8
+      },
+      "evaluation": {
+        "exact_matches": 0,
+        "numeric_tolerance_accuracy": null,
+        "mean_absolute_error": null,
+        "text_exact_accuracy": null,
+        "mean_rowset_f1": 0.0
+      }
+    },
+    {
+      "stem": "slope+compare_route",
+      "query_type": "raster_only",
+      "model": "Qwen/Qwen3-32B-AWQ",
+      "provider": "openai",
+      "question_count": 20,
+      "generation_timeouts": 0,
+      "successful_sql_generation": 20,
+      "successful_sql_execution": 0,
+      "timing": {
+        "total_wall_seconds": 2565.744,
+        "mean_generation_seconds": 128.286,
+        "mean_execution_seconds": 0.001,
+        "mean_total_seconds": 128.287,
+        "max_total_seconds": 171.952
+      },
+      "tokens": {
+        "total_prompt_tokens": 36662,
+        "total_completion_tokens": 11609,
+        "total_tokens": 48271,
+        "mean_prompt_tokens": 1833.1,
+        "mean_completion_tokens": 580.5,
+        "mean_total_tokens": 2413.6
+      },
+      "evaluation": {
+        "exact_matches": 0,
+        "numeric_tolerance_accuracy": null,
+        "mean_absolute_error": null,
+        "text_exact_accuracy": null,
+        "mean_rowset_f1": 0.0
+      }
+    },
+    {
+      "stem": "slope+poi",
+      "query_type": "raster_only",
+      "model": "Qwen/Qwen3-32B-AWQ",
+      "provider": "openai",
+      "question_count": 20,
+      "generation_timeouts": 0,
+      "successful_sql_generation": 20,
+      "successful_sql_execution": 0,
+      "timing": {
+        "total_wall_seconds": 878.627,
+        "mean_generation_seconds": 43.929,
+        "mean_execution_seconds": 0.003,
+        "mean_total_seconds": 43.931,
+        "max_total_seconds": 58.38
+      },
+      "tokens": {
+        "total_prompt_tokens": 32262,
+        "total_completion_tokens": 3944,
+        "total_tokens": 36206,
+        "mean_prompt_tokens": 1613.1,
+        "mean_completion_tokens": 197.2,
+        "mean_total_tokens": 1810.3
+      },
+      "evaluation": {
+        "exact_matches": 0,
+        "numeric_tolerance_accuracy": null,
+        "mean_absolute_error": null,
+        "text_exact_accuracy": null,
+        "mean_rowset_f1": 0.0
+      }
+    },
+    {
+      "stem": "slope+route",
+      "query_type": "raster_only",
+      "model": "Qwen/Qwen3-32B-AWQ",
+      "provider": "openai",
+      "question_count": 20,
+      "generation_timeouts": 0,
+      "successful_sql_generation": 20,
+      "successful_sql_execution": 0,
+      "timing": {
+        "total_wall_seconds": 1305.455,
+        "mean_generation_seconds": 65.272,
+        "mean_execution_seconds": 0.001,
+        "mean_total_seconds": 65.273,
+        "max_total_seconds": 120.052
+      },
+      "tokens": {
+        "total_prompt_tokens": 32722,
+        "total_completion_tokens": 5746,
+        "total_tokens": 38468,
+        "mean_prompt_tokens": 1636.1,
+        "mean_completion_tokens": 287.3,
+        "mean_total_tokens": 1923.4
+      },
+      "evaluation": {
+        "exact_matches": 0,
+        "numeric_tolerance_accuracy": null,
+        "mean_absolute_error": null,
+        "text_exact_accuracy": null,
+        "mean_rowset_f1": 0.0
+      }
+    }
+  ]
+}

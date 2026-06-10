@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 19.228247
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 19.228247
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-84.825365 33.124977, -84.825412 33.125351, -84.825412 33.125707, -84.825322 33.12617, -84.825163 33.126652, -84.824876 33.127159, -84.824579 33.127583, -84.824172 33.127971, -84.823764 33.12828, -84.823288 33.128564, -84.822743 33.128787, -84.822206 33.128945, -84.821614 33.129038, -84.820974 33.129064, -84.820412 33.12902, -84.819769 33.128902, -84.819206 33.128719, -84.81867 33.128471, -84.818185 33.128158, -84.81779 33.12782, -84.817395 33.127374, -84.817108 33.12695, -84.816906 33.126472, -84.816764 33.125973, -84.816709 33.125509, -84.816764 33.124873, -84.81691 33.124391, -84.817151 33.12391, -84.817498 33.123346, -84.817859 33.12295, -84.818408 33.12253, -84.819005 33.122188, -84.819696 33.121908, -84.820382 33.121764, -84.820992 33.121717, -84.821562 33.121746, -84.82218 33.12184, -84.82267 33.121983, -84.823249 33.122238, -84.823652 33.122472, -84.824124 33.122817, -84.824438 33.123112, -84.824764 33.1235, -84.824996 33.123885, -84.825159 33.124222, -84.825292 33.124636, -84.825365 33.124977))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).max AS slope\nFROM region_slope;",
+  "id": "max_slope+area-19",
+  "model_output": "```sql\nWITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Saint Marks' AND addr_state ILIKE 'Georgia'\n  LIMIT 1\n),\nclipped_dem AS (\n  SELECT ST_Clip(r.rast, 1, rg.geom, TRUE) AS rast\n  FROM public.dem_us r, region_geom rg\n  WHERE ST_Intersects(r.rast::geometry, rg.geom)\n),\nslope_raster AS (\n  SELECT ST_Slope(clipped_dem.rast, 1, '32BF', TRUE) AS rast\n  FROM clipped_dem\n)\nSELECT MAX(ST_Value(slope_raster.rast, 1)) AS max_slope_degrees\nFROM slope_raster;\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 4:   WHERE region_name ILIKE 'Saint Marks' AND addr_state ILIKE...\n                                                    ^",
+    "output": []
+  },
+  "predicted_sql": "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Saint Marks' AND addr_state ILIKE 'Georgia'\n  LIMIT 1\n),\nclipped_dem AS (\n  SELECT ST_Clip(r.rast, 1, rg.geom, TRUE) AS rast\n  FROM public.dem_us r, region_geom rg\n  WHERE ST_Intersects(r.rast::geometry, rg.geom)\n),\nslope_raster AS (\n  SELECT ST_Slope(clipped_dem.rast, 1, '32BF', TRUE) AS rast\n  FROM clipped_dem\n)\nSELECT MAX(ST_Value(slope_raster.rast, 1)) AS max_slope_degrees\nFROM slope_raster;",
+  "predicted_sql_candidates": [
+    "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Saint Marks' AND addr_state ILIKE 'Georgia'\n  LIMIT 1\n),\nclipped_dem AS (\n  SELECT ST_Clip(r.rast, 1, rg.geom, TRUE) AS rast\n  FROM public.dem_us r, region_geom rg\n  WHERE ST_Intersects(r.rast::geometry, rg.geom)\n),\nslope_raster AS (\n  SELECT ST_Slope(clipped_dem.rast, 1, '32BF', TRUE) AS rast\n  FROM clipped_dem\n)\nSELECT MAX(ST_Value(slope_raster.rast, 1)) AS max_slope_degrees\nFROM slope_raster;"
+  ],
+  "query_type": "raster_only",
+  "question": "How steep is the steepest part of Saint Marks, Georgia?",
+  "source_file": "max_slope+area.jsonl",
+  "source_stem": "max_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 34.131,
+    "total_seconds": 34.132
+  },
+  "usage": {
+    "completion_tokens": 160,
+    "prompt_tokens": 1518,
+    "total_tokens": 1678
+  }
+}

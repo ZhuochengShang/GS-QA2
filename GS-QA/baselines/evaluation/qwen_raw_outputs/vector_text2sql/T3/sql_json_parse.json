@@ -1,0 +1,502 @@
+[
+  {
+    "id": 2300,
+    "content": "```json\n{\n    \"name\": \"Quabbin Reservoir\",\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 6.441
+  },
+  {
+    "id": 2301,
+    "content": "```json\n{\n    \"azimuth_angle\": 315\n}\n```",
+    "run_seconds": 4.054
+  },
+  {
+    "id": 2302,
+    "content": "```json\n{\n    \"name\": \"Queensbury Mountain House\"\n}\n```",
+    "run_seconds": 4.054
+  },
+  {
+    "id": 2303,
+    "content": "```json\n{\n    \"name\": \"Mission Hills Church Park\",\n    \"address\": \"1234 Mission Hills Church Park, San Marcos, CA\",\n    \"distance\": 20\n}\n```",
+    "run_seconds": 9.602
+  },
+  {
+    "id": 2304,
+    "content": "```json\n{\n    \"name\": \"Starved Rock State Park\"\n}\n```",
+    "run_seconds": 4.053
+  },
+  {
+    "id": 2305,
+    "content": "```json\n{\n    \"name\": \"Clark University\"\n}\n```",
+    "run_seconds": 3.412
+  },
+  {
+    "id": 2306,
+    "content": "```json\n{\n    \"name\": \"McDonald's\",\n    \"address\": \"\"\n}\n```",
+    "run_seconds": 4.694
+  },
+  {
+    "id": 2307,
+    "content": "```json\n{\n    \"name\": \"City Suites Hotel\",\n    \"address\": \"123 North Michigan Avenue, Chicago, IL 60601\",\n    \"count\": 0,\n    \"distance\": 60,\n    \"azimuth_angle\": 315\n}\n```",
+    "run_seconds": 13.87
+  },
+  {
+    "id": 2308,
+    "content": "```json\n{\n    \"name\": \"Denver Health Medical Center Emergency Department Trauma Center\",\n    \"address\": \"712 18th Ave, Denver, CO 80202\",\n    \"distance\": 30,\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 14.087
+  },
+  {
+    "id": 2309,
+    "content": "```json\n{\n    \"name\": \"Sonesta Columbus Downtown\",\n    \"address\": \"130 North Fifth Street, Columbus, OH 43215, USA\",\n    \"distance\": 190\n}\n```",
+    "run_seconds": 10.884
+  },
+  {
+    "id": 2310,
+    "content": "```json\n{\n    \"name\": \"No museum found\",\n    \"address\": \"\",\n    \"distance\": 100,\n    \"azimuth_angle\": 90\n}\n```",
+    "run_seconds": 8.748
+  },
+  {
+    "id": 2311,
+    "content": "```json\n{\n    \"name\": \"Liberty Bell\"\n}\n```",
+    "run_seconds": 3.625
+  },
+  {
+    "id": 2312,
+    "content": "```json\n{\n    \"name\": \"Amarillo Civic Center Stadium\"\n}\n```",
+    "run_seconds": 4.265
+  },
+  {
+    "id": 2313,
+    "content": "```json\n{\n    \"name\": \"Fermilab Nature Reserve\"\n}\n```",
+    "run_seconds": 4.269
+  },
+  {
+    "id": 2314,
+    "content": "```json\n{\n    \"name\": \"Barry Gallery\",\n    \"address\": \"Arlington, Virginia\",\n    \"distance\": 140,\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 10.027
+  },
+  {
+    "id": 2315,
+    "content": "```json\n{\n    \"name\": \"Aljira A Center for Contemporary Art\"\n}\n```",
+    "run_seconds": 4.693
+  },
+  {
+    "id": 2316,
+    "content": "```json\n{\n    \"name\": \"North Olmsted Recreation Center\",\n    \"address\": \"2000 Indian Lake Rd, North Olmsted, OH 44070\",\n    \"distance\": 90,\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 13.658
+  },
+  {
+    "id": 2317,
+    "content": "```json\n{\n    \"name\": \"Laurel Ridge Historical Museum\"\n}\n```",
+    "run_seconds": 4.266
+  },
+  {
+    "id": 2318,
+    "content": "```json\n{\n    \"name\": \"giraffe\"\n}\n```",
+    "run_seconds": 3.626
+  },
+  {
+    "id": 2319,
+    "content": "```json\n{\n    \"name\": \"Go Fish\"\n}\n```",
+    "run_seconds": 3.412
+  },
+  {
+    "id": 2320,
+    "content": "```json\n{\n    \"name\": \"Strayer University\",\n    \"address\": \"1001 15th Street, Charlotte, NC 28202\",\n    \"distance\": 170,\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 13.312
+  },
+  {
+    "id": 2321,
+    "content": "```json\n{\n    \"name\": \"Under Water Viewing Area\"\n}\n```",
+    "run_seconds": 4.111
+  },
+  {
+    "id": 2322,
+    "content": "```json\n{\n    \"name\": \"Fort Snelling State Park\",\n    \"address\": \"1120 State Park Dr, St. Paul, MN 55113, USA\"\n}\n```",
+    "run_seconds": 10.331
+  },
+  {
+    "id": 2323,
+    "content": "```json\n{\n    \"name\": \"Jake's Point Overlook\"\n}\n```",
+    "run_seconds": 4.13
+  },
+  {
+    "id": 2324,
+    "content": "```json\n{\n    \"name\": \"Wild Bird Viewing\"\n}\n```",
+    "run_seconds": 3.665
+  },
+  {
+    "id": 2325,
+    "content": "```json\n{\n    \"name\": \"Heavenly Heart Farm & Mini Petting Zoo\"\n}\n```",
+    "run_seconds": 5.153
+  },
+  {
+    "id": 2326,
+    "content": "```json\n{\n    \"name\": \"Missisquoi National Wildlife Refuge\",\n    \"address\": \"Swanton, VT, USA\",\n    \"distance\": 120,\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 11.818
+  },
+  {
+    "id": 2327,
+    "content": "```json\n{\n    \"name\": \"Hemby Children's Hospital\"\n}\n```",
+    "run_seconds": 4.385
+  },
+  {
+    "id": 2328,
+    "content": "```json\n{\n    \"name\": \"DoubleTree by Hilton Hotel\",\n    \"address\": \"100 Intermodal Blvd, Bedford, MA 01730\",\n    \"distance\": 120\n}\n```",
+    "run_seconds": 10.868
+  },
+  {
+    "id": 2329,
+    "content": "```json\n{\n    \"name\": \"Sunset cafe\"\n}\n```",
+    "run_seconds": 3.864
+  },
+  {
+    "id": 2330,
+    "content": "```json\n{\n    \"name\": \"Aquarium\"\n}\n```",
+    "run_seconds": 3.66
+  },
+  {
+    "id": 2331,
+    "content": "```json\n{\n    \"name\": \"Lone Star Inn and Suites\",\n    \"address\": \"1000 E Highway 18, Round Rock, TX 78664\",\n    \"distance\": 190,\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 14.665
+  },
+  {
+    "id": 2332,
+    "content": "```json\n{\n    \"name\": \"West End Park\",\n    \"address\": \"Queensbury, NY\",\n    \"distance\": 170000,\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 11.611
+  },
+  {
+    "id": 2333,
+    "content": "```json\n{\n    \"name\": \"Ruby Tuesday\"\n}\n```",
+    "run_seconds": 3.654
+  },
+  {
+    "id": 2334,
+    "content": "```json\n[\n    {\n        \"name\": \"Fei Tian Academy of Arts\"\n    },\n    {\n        \"name\": \"New York Institute of Technology\"\n    },\n    {\n        \"name\": \"William Paterson University School of Continuing and Professional Education\"\n    }\n]\n```",
+    "run_seconds": 13.055
+  },
+  {
+    "id": 2335,
+    "content": "```json\n{\n    \"name\": \"Smokestack Pottery\",\n    \"address\": \"Fort Collins, CO\",\n    \"distance\": 70,\n    \"azimuth_angle\": 0\n}\n```",
+    "run_seconds": 9.949
+  },
+  {
+    "id": 2336,
+    "content": "```json\n{\n    \"name\": \"Bresnan Golf Course\",\n    \"address\": \"1200 University Dr W, Mankato, MN 56001, USA\",\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 11.994
+  },
+  {
+    "id": 2337,
+    "content": "```json\n{\n    \"name\": \"ISU Design West\",\n    \"address\": \"1010 NW 10th St, Iowa City, IA 52245, USA\",\n    \"distance\": 120\n}\n```",
+    "run_seconds": 12.047
+  },
+  {
+    "id": 2338,
+    "content": "```json\n{\n    \"name\": \"Caf\u00e9 at 1010 Thames Street\",\n    \"address\": \"1010 Thames Street, Baltimore, MD\"\n}\n```",
+    "run_seconds": 8.766
+  },
+  {
+    "id": 2339,
+    "content": "```json\n{\n    \"name\": \"Starved Rock State Park\"\n}\n```",
+    "run_seconds": 4.062
+  },
+  {
+    "id": 2340,
+    "content": "```json\n{\n    \"name\": \"Arlington National Cemetery Golf Course\"\n}\n```",
+    "run_seconds": 4.549
+  },
+  {
+    "id": 2341,
+    "content": "```json\n{\n    \"name\": \"Cedars Sinai Transplant Center\"\n}\n```",
+    "run_seconds": 4.711
+  },
+  {
+    "id": 2342,
+    "content": "```json\n{\n    \"name\": \"North Carolina Aquarium on Roanoke Island\"\n}\n```",
+    "run_seconds": 4.76
+  },
+  {
+    "id": 2343,
+    "content": "```json\n{\n    \"name\": \"Best Western Moline, Castle Bed & Breakfast, Country Inn & Suites, Country Inn & Suites Freeport, Holiday Inn Rock Island - Quad Cities, Hyatt Place, Oak Tree Inn, and Timber Motel\",\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 14.888
+  },
+  {
+    "id": 2344,
+    "content": "```json\n{\n    \"name\": \"Bingham Park\"\n}\n```",
+    "run_seconds": 3.731
+  },
+  {
+    "id": 2345,
+    "content": "```json\n{\n    \"name\": \"Children's Hospital at Montefiore\",\n    \"address\": \"1040 Morris Park Ave, Bronx, NY 10467\",\n    \"distance\": 80,\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 13.605
+  },
+  {
+    "id": 2346,
+    "content": "```json\n{\n    \"name\": \"Acrisure Stadium\"\n}\n```",
+    "run_seconds": 3.854
+  },
+  {
+    "id": 2347,
+    "content": "```json\n{\n    \"name\": \"McDonald's\"\n}\n```",
+    "run_seconds": 3.698
+  },
+  {
+    "id": 2348,
+    "content": "```json\n{\n    \"name\": \"Cahaba River National Wildlife Refuge Complex\"\n}\n```",
+    "run_seconds": 5.006
+  },
+  {
+    "id": 2349,
+    "content": "```json\n{\n    \"name\": \"Bramhall Terrace\",\n    \"address\": \"12345 Bramhall Terrace, New York, NY\",\n    \"distance\": 80\n}\n```",
+    "run_seconds": 9.698
+  },
+  {
+    "id": 2350,
+    "content": "```json\n{\n    \"name\": \"Rincon Argentina\"\n}\n```",
+    "run_seconds": 4.071
+  },
+  {
+    "id": 2351,
+    "content": "```json\n{\n    \"name\": \"Dixon Cave and Sunset Point\",\n    \"address\": \"Nashville, TN\",\n    \"distance\": 140\n}\n```",
+    "run_seconds": 9.014
+  },
+  {
+    "id": 2352,
+    "content": "```json\n{\n    \"name\": \"The hotel\",\n    \"distance\": 100\n}\n```",
+    "run_seconds": 5.725
+  },
+  {
+    "id": 2353,
+    "content": "```json\n{\n    \"name\": \"Northside Hospital\",\n    \"address\": \"Northeast of Yellow River Game Ranch, Lilburn, GA\",\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 10.312
+  },
+  {
+    "id": 2354,
+    "content": "```json\n{\n    \"name\": \"Long John Silver's\"\n}\n```",
+    "run_seconds": 4.114
+  },
+  {
+    "id": 2355,
+    "content": "```json\n{\n    \"name\": \"Museum of Contemporary Art\"\n}\n```",
+    "run_seconds": 4.337
+  },
+  {
+    "id": 2356,
+    "content": "```json\n{\n    \"name\": \"Jennings Environmental Education Center\"\n}\n```",
+    "run_seconds": 4.273
+  },
+  {
+    "id": 2357,
+    "content": "```json\n{\n    \"name\": \"Susan Hambley Nature Center\",\n    \"address\": \"13700 S Hamilton Rd, Brunswick, OH 44212, USA\",\n    \"distance\": 80\n}\n```",
+    "run_seconds": 11.66
+  },
+  {
+    "id": 2358,
+    "content": "```json\n{\n    \"name\": \"Blue Horse Cafe\",\n    \"distance\": 120\n}\n```",
+    "run_seconds": 5.924
+  },
+  {
+    "id": 2359,
+    "content": "```json\n{\n    \"name\": \"Memory Garden\",\n    \"address\": \"Baltimore, MD\",\n    \"distance\": 60,\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 10.109
+  },
+  {
+    "id": 2360,
+    "content": "```json\n{\n    \"name\": \"Aquarium of the Americas\",\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 6.689
+  },
+  {
+    "id": 2361,
+    "content": "```json\n{\n    \"name\": \"Tennessee Aquarium\"\n}\n```",
+    "run_seconds": 3.864
+  },
+  {
+    "id": 2362,
+    "content": "```json\n{\n    \"name\": \"Apollo Pizza and Beer Emporium\",\n    \"address\": \"100 W Short St, Lexington, KY 40507\",\n    \"distance\": 90\n}\n```",
+    "run_seconds": 11.632
+  },
+  {
+    "id": 2363,
+    "content": "```json\n{\n    \"name\": \"Conservation Park of Virginia\",\n    \"address\": \"Charles City, VA\",\n    \"distance\": 90\n}\n```",
+    "run_seconds": 8.229
+  },
+  {
+    "id": 2364,
+    "content": "```json\n{\n    \"name\": \"Hendry Regional Convenient Care Center\",\n    \"address\": \"1001 S Main St, LaBelle, FL 33935, USA\",\n    \"distance\": 100\n}\n```",
+    "run_seconds": 12.936
+  },
+  {
+    "id": 2365,
+    "content": "```json\n{\n    \"name\": \"SubCulture\"\n}\n```",
+    "run_seconds": 3.698
+  },
+  {
+    "id": 2366,
+    "content": "```json\n{\n    \"name\": \"Glacier Fine Art\"\n}\n```",
+    "run_seconds": 4.05
+  },
+  {
+    "id": 2367,
+    "content": "```json\n{\n    \"name\": \"Millennium Park\",\n    \"address\": \"230 N Columbus Dr, Chicago, IL 60601\",\n    \"distance\": 90\n}\n```",
+    "run_seconds": 10.878
+  },
+  {
+    "id": 2368,
+    "content": "```json\n{\n    \"name\": \"Achenbach Gallery\"\n}\n```",
+    "run_seconds": 4.097
+  },
+  {
+    "id": 2369,
+    "content": "```json\n{\n    \"name\": \"Meadowlands Park\"\n}\n```",
+    "run_seconds": 4.454
+  },
+  {
+    "id": 2370,
+    "content": "```json\n{\n    \"name\": \"Sixty Vines\"\n}\n```",
+    "run_seconds": 4.217
+  },
+  {
+    "id": 2371,
+    "content": "```json\n{\n    \"name\": \"The Bass Museum of Art\"\n}\n```",
+    "run_seconds": 4.48
+  },
+  {
+    "id": 2372,
+    "content": "```json\n{\n    \"name\": \"Oak Mountain State Park\",\n    \"address\": \"1200 Park Road, Pelham, AL 35124\",\n    \"distance\": 90\n}\n```",
+    "run_seconds": 11.438
+  },
+  {
+    "id": 2373,
+    "content": "```json\n{\n    \"name\": \"Mission Hills Church Park\",\n    \"address\": \"1234 Church Park Drive, San Marcos, CA 92069\",\n    \"distance\": 40,\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 14.234
+  },
+  {
+    "id": 2374,
+    "content": "```json\n{\n    \"name\": \"Rosati's\"\n}\n```",
+    "run_seconds": 3.883
+  },
+  {
+    "id": 2375,
+    "content": "```json\n{\n    \"name\": \"Oldham County Nature Preserve\",\n    \"address\": \"1000 Oldham County Nature Preserve Road, Louisville, KY 40213\",\n    \"distance\": 110\n}\n```",
+    "run_seconds": 12.508
+  },
+  {
+    "id": 2376,
+    "content": "```json\n{\n    \"name\": \"Hudson Highlands Nature Museum Garden\"\n}\n```",
+    "run_seconds": 4.672
+  },
+  {
+    "id": 2377,
+    "content": "```json\n[\n    {\"name\": \"Days Inn\"},\n    {\"name\": \"Holiday Inn\"},\n    {\"name\": \"River Valley Inn and Suites\"}\n]\n```",
+    "run_seconds": 7.987
+  },
+  {
+    "id": 2378,
+    "content": "```json\n{\n}\n```",
+    "run_seconds": 1.727
+  },
+  {
+    "id": 2379,
+    "content": "```json\n{\n    \"name\": \"Action Behavior Centers - ABA therapy for Autism\",\n    \"address\": \"11400 North Loop 1604 W, San Antonio, TX 78238\",\n    \"azimuth_angle\": 90\n}\n```",
+    "run_seconds": 14.635
+  },
+  {
+    "id": 2380,
+    "content": "```json\n{\n    \"name\": \"John Natsoulas Gallery\",\n    \"address\": \"1126 7th St, Davis, CA 95616\",\n    \"distance\": 70,\n    \"azimuth_angle\": 90\n}\n```",
+    "run_seconds": 14.303
+  },
+  {
+    "id": 2381,
+    "content": "```json\n{\n    \"name\": \"Bourbon Coffee\"\n}\n```",
+    "run_seconds": 4.143
+  },
+  {
+    "id": 2382,
+    "content": "```json\n{\n    \"name\": \"First Responders Park\",\n    \"address\": \"1200 S Public Square, Germantown Hills, IL 60135\",\n    \"distance\": 110,\n    \"azimuth_angle\": 315\n}\n```",
+    "run_seconds": 14.791
+  },
+  {
+    "id": 2383,
+    "content": "```json\n{\n    \"name\": \"Harrison Benwell Conservation Area\",\n    \"address\": \"Wonder Lake, IL\",\n    \"distance\": 170\n}\n```",
+    "run_seconds": 8.794
+  },
+  {
+    "id": 2384,
+    "content": "```json\n{\n    \"name\": \"Captain Mike's Fun Park\",\n    \"address\": \"1000 Fun Park Dr, Bridgman, MI 49410\",\n    \"distance\": 120\n}\n```",
+    "run_seconds": 11.933
+  },
+  {
+    "id": 2385,
+    "content": "```json\n{\n    \"name\": \"Bayonne Museum of Art\",\n    \"address\": \"Gary Lapelusa Landscaping LLC, Bayonne, NJ\",\n    \"distance\": 20,\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 12.95
+  },
+  {
+    "id": 2386,
+    "content": "```json\n{\n    \"name\": \"The Warhol Museum\"\n}\n```",
+    "run_seconds": 4.158
+  },
+  {
+    "id": 2387,
+    "content": "```json\n{\n    \"name\": \"Monarch Eucalyptus Grove\"\n}\n```",
+    "run_seconds": 5.056
+  },
+  {
+    "id": 2388,
+    "content": "```json\n{\n    \"name\": \"Godfather's Pizza\"\n}\n```",
+    "run_seconds": 4.164
+  },
+  {
+    "id": 2389,
+    "content": "```json\n{\n    \"name\": \"10th Avenue West Scenic Overlook\",\n    \"address\": \"10th Avenue West Scenic Overlook, Crystal Lake, IL\",\n    \"distance\": 90,\n    \"azimuth_angle\": 0\n}\n```",
+    "run_seconds": 12.95
+  },
+  {
+    "id": 2390,
+    "content": "```json\n{\n    \"name\": \"Laguna College of Art and Design\"\n}\n```",
+    "run_seconds": 5.007
+  },
+  {
+    "id": 2391,
+    "content": "```json\n{\n    \"name\": \"The Secret Garden\",\n    \"address\": \"Children's Hospital Colorado at Memorial Hospital, Colorado Springs, CO\",\n    \"distance\": 120\n}\n```",
+    "run_seconds": 10.06
+  },
+  {
+    "id": 2392,
+    "content": "```json\n{\n    \"name\": \"Great Smoky Mountains National Park\"\n}\n```",
+    "run_seconds": 4.57
+  },
+  {
+    "id": 2393,
+    "content": "```json\n{\n    \"name\": \"Subway\",\n    \"address\": \"123 Main Street, San Francisco, CA\",\n    \"distance\": 120\n}\n```",
+    "run_seconds": 9.485
+  },
+  {
+    "id": 2394,
+    "content": "```json\n{\n    \"name\": \"Jewel's Cafe\"\n}\n```",
+    "run_seconds": 4.337
+  },
+  {
+    "id": 2395,
+    "content": "```json\n{\n    \"name\": \"Bagley Nature Area viewing platform\",\n    \"address\": \"Bagley Nature Area, Duluth, MN, USA\",\n    \"count\": 0,\n    \"distance\": 50\n}\n```",
+    "run_seconds": 11.873
+  },
+  {
+    "id": 2396,
+    "content": "```json\n{\n    \"name\": \"No hotels available\",\n    \"address\": \"CG-41364, Mobile, AL\",\n    \"distance\": 60\n}\n```",
+    "run_seconds": 9.557
+  },
+  {
+    "id": 2397,
+    "content": "```json\n{\n    \"name\": \"Airport Observation Deck\",\n    \"address\": \"St. Augustine Beach, FL 32087, USA\",\n    \"distance\": 85\n}\n```",
+    "run_seconds": 10.23
+  },
+  {
+    "id": 2398,
+    "content": "```json\n{\n    \"name\": \"Toscano Kitchen\",\n    \"address\": \"1234 Market Street, San Francisco, CA 94103\",\n    \"distance\": 15\n}\n```",
+    "run_seconds": 11.159
+  },
+  {
+    "id": 2399,
+    "content": "```json\n{\n    \"name\": \"Central Park\"\n}\n```",
+    "run_seconds": 3.657
+  }
+]

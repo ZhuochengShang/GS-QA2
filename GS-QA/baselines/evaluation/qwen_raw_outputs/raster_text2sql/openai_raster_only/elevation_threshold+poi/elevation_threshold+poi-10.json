@@ -1,0 +1,61 @@
+{
+  "answer_type": "yes-no",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "yes-no",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer": "no",
+      "elevation_m": 173.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer": "no",
+        "elevation_m": 173.0
+      }
+    ]
+  },
+  "gold_sql": "SELECT\n  CASE\n    WHEN ST_Value(d.rast, 1, ST_GeomFromText('POINT (-76.429747 40.227758)',4326)) > 220\n    THEN 'yes' ELSE 'no'\n  END AS answer,\n  ST_Value(d.rast, 1, ST_GeomFromText('POINT (-76.429747 40.227758)',4326)) AS elevation_m\nFROM public.dem_us d\nWHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-76.429747 40.227758)',4326))\nLIMIT 1;",
+  "id": "elevation_threshold+poi-10",
+  "model_output": "```sql\nWITH mount_hope_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-76.429747, 40.227758), 4326)::geography AS geom\n)\nSELECT \n  (ST_Value(r.rast, ST_Transform(mh.geom, 4326)::geometry)) > 220 AS is_elevation_greater_than_220\nFROM \n  public.dem_us r,\n  mount_hope_point mh\nWHERE \n  ST_Intersects(r.rast, ST_Transform(mh.geom, 4326)::geometry);\n```",
+  "predicted_exec": {
+    "error": "function st_transform(geography, integer) does not exist\nLINE 5:   (ST_Value(r.rast, ST_Transform(mh.geom, 4326)::geometry)) ...\n                            ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH mount_hope_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-76.429747, 40.227758), 4326)::geography AS geom\n)\nSELECT \n  (ST_Value(r.rast, ST_Transform(mh.geom, 4326)::geometry)) > 220 AS is_elevation_greater_than_220\nFROM \n  public.dem_us r,\n  mount_hope_point mh\nWHERE \n  ST_Intersects(r.rast, ST_Transform(mh.geom, 4326)::geometry);",
+  "predicted_sql_candidates": [
+    "WITH mount_hope_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-76.429747, 40.227758), 4326)::geography AS geom\n)\nSELECT \n  (ST_Value(r.rast, ST_Transform(mh.geom, 4326)::geometry)) > 220 AS is_elevation_greater_than_220\nFROM \n  public.dem_us r,\n  mount_hope_point mh\nWHERE \n  ST_Intersects(r.rast, ST_Transform(mh.geom, 4326)::geometry);"
+  ],
+  "query_type": "raster_only",
+  "question": "Is the elevation at Mount Hope Estate, Manheim, PA greater than 220 meters?",
+  "source_file": "elevation_threshold+poi.jsonl",
+  "source_stem": "elevation_threshold+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 29.443,
+    "total_seconds": 29.444
+  },
+  "usage": {
+    "completion_tokens": 138,
+    "prompt_tokens": 1628,
+    "total_tokens": 1766
+  }
+}

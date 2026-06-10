@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 463.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 463.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-68.167199 46.037594, -68.167457 46.04854, -68.16734 46.05979, -68.167272 46.071008, -68.167254 46.082276, -68.167242 46.08285, -68.167035 46.093498, -68.167013 46.105054, -68.167104 46.115675, -68.16731 46.123506, -68.167112 46.123505, -68.161665 46.123483, -68.15987 46.12347, -68.157968 46.123464, -68.157676 46.123463, -68.152722 46.123435, -68.147834 46.123399, -68.143711 46.123359, -68.141596 46.123343, -68.13947 46.123318, -68.126777 46.123222, -68.124482 46.12324, -68.116724 46.123208, -68.106467 46.123128, -68.09661 46.123028, -68.093254 46.12301, -68.086935 46.122969, -68.082517 46.122934, -68.078837 46.122913, -68.077385 46.122902, -68.077098 46.122908, -68.067816 46.122905, -68.058303 46.12289, -68.048807 46.122856, -68.044771 46.12285, -68.039689 46.122834, -68.039688 46.122465, -68.039662 46.112502, -68.039558 46.098685, -68.03956 46.097623, -68.039565 46.096426, -68.039577 46.093384, -68.039679 46.085375, -68.039762 46.074323, -68.039878 46.063425, -68.039883 46.057935, -68.039942 46.052445, -68.039949 46.044714, -68.039967 46.039476, -68.039963 46.038702, -68.042949 46.0387, -68.046746 46.038705, -68.049916 46.038695, -68.055576 46.038661, -68.057776 46.038643, -68.058008 46.038636, -68.062571 46.038602, -68.067448 46.038587, -68.072326 46.038555, -68.077338 46.038515, -68.082188 46.038464, -68.095109 46.03836, -68.104115 46.038305, -68.109469 46.038266, -68.109726 46.038258, -68.115871 46.038189, -68.116578 46.038177, -68.119195 46.038152, -68.124473 46.038076, -68.131967 46.038025, -68.139428 46.037919, -68.147787 46.037829, -68.150744 46.037788, -68.15108 46.03779, -68.156625 46.037714, -68.165462 46.037626, -68.167199 46.037594))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).max AS elevation\nFROM clipped;",
+  "id": "elevation_max+region-3",
+  "model_output": "```sql\nWITH oakfield_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Oakfield' AND border_type = 'city'\n)\nSELECT MAX((ST_Value(r.rast, o.geom)).val) AS max_elevation\nFROM oakfield_geom o\nJOIN public.dem_us r\nON ST_Intersects(r.rast, o.geom);\n```",
+  "predicted_exec": {
+    "error": "column notation .val applied to type double precision, which is not a composite type\nLINE 6: SELECT MAX((ST_Value(r.rast, o.geom)).val) AS max_elevation\n                    ^",
+    "output": []
+  },
+  "predicted_sql": "WITH oakfield_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Oakfield' AND border_type = 'city'\n)\nSELECT MAX((ST_Value(r.rast, o.geom)).val) AS max_elevation\nFROM oakfield_geom o\nJOIN public.dem_us r\nON ST_Intersects(r.rast, o.geom);",
+  "predicted_sql_candidates": [
+    "WITH oakfield_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Oakfield' AND border_type = 'city'\n)\nSELECT MAX((ST_Value(r.rast, o.geom)).val) AS max_elevation\nFROM oakfield_geom o\nJOIN public.dem_us r\nON ST_Intersects(r.rast, o.geom);"
+  ],
+  "query_type": "raster_only",
+  "question": "In Oakfield, Maine, what is the maximum elevation?",
+  "source_file": "elevation_max+region.jsonl",
+  "source_stem": "elevation_max+region",
+  "timing": {
+    "execution_seconds": 0.002,
+    "generation_seconds": 18.051,
+    "total_seconds": 18.053
+  },
+  "usage": {
+    "completion_tokens": 84,
+    "prompt_tokens": 1517,
+    "total_tokens": 1601
+  }
+}

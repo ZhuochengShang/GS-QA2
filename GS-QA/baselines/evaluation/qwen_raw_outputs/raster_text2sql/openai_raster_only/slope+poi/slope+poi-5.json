@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope_degrees": 1.037553
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope_degrees": 1.037553
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-71.21808 42.606947)',4326) AS pt\n),\npatch AS (\n  SELECT ST_Buffer(pt::geography, 100)::geometry AS g FROM origin\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, p.g)) AS rast\n  FROM public.dem_us d\n  JOIN patch p ON ST_Intersects(d.rast, p.g)\n),\nslope_rast AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n)\nSELECT ST_Value(s.rast, 1, o.pt) AS slope_degrees\nFROM slope_rast s, origin o;",
+  "id": "slope+poi-5",
+  "model_output": "```sql\nWITH hospital_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-71.21808, 42.606947), 4326)::geography AS geom\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(\n      r.rast,\n      '32BF',\n      true\n    ) AS slope_rast\n  FROM \n    public.dem_us r,\n    hospital_geom h\n  WHERE \n    ST_Intersects(r.rast::geography, h.geom)\n),\nslope_value AS (\n  SELECT \n    ST_Value(slope_rast, ST_Transform(h.geom::geometry, 4326)) AS slope_angle_deg\n  FROM \n    slope_raster s,\n    hospital_geom h\n)\nSELECT \n  slope_angle_deg\nFROM \n  slope_value;\n```",
+  "predicted_exec": {
+    "error": "function st_slope(raster, unknown, boolean) does not exist\nLINE 6:     ST_Slope(\n            ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH hospital_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-71.21808, 42.606947), 4326)::geography AS geom\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(\n      r.rast,\n      '32BF',\n      true\n    ) AS slope_rast\n  FROM \n    public.dem_us r,\n    hospital_geom h\n  WHERE \n    ST_Intersects(r.rast::geography, h.geom)\n),\nslope_value AS (\n  SELECT \n    ST_Value(slope_rast, ST_Transform(h.geom::geometry, 4326)) AS slope_angle_deg\n  FROM \n    slope_raster s,\n    hospital_geom h\n)\nSELECT \n  slope_angle_deg\nFROM \n  slope_value;",
+  "predicted_sql_candidates": [
+    "WITH hospital_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-71.21808, 42.606947), 4326)::geography AS geom\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(\n      r.rast,\n      '32BF',\n      true\n    ) AS slope_rast\n  FROM \n    public.dem_us r,\n    hospital_geom h\n  WHERE \n    ST_Intersects(r.rast::geography, h.geom)\n),\nslope_value AS (\n  SELECT \n    ST_Value(slope_rast, ST_Transform(h.geom::geometry, 4326)) AS slope_angle_deg\n  FROM \n    slope_raster s,\n    hospital_geom h\n)\nSELECT \n  slope_angle_deg\nFROM \n  slope_value;"
+  ],
+  "query_type": "raster_only",
+  "question": "What slope angle does the surface have at Tewksbury Hospital, Tewksbury, MA?",
+  "source_file": "slope+poi.jsonl",
+  "source_stem": "slope+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 41.508,
+    "total_seconds": 41.509
+  },
+  "usage": {
+    "completion_tokens": 182,
+    "prompt_tokens": 1624,
+    "total_tokens": 1806
+  }
+}

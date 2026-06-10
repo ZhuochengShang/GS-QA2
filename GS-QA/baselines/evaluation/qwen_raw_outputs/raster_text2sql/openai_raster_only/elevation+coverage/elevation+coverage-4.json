@@ -1,0 +1,66 @@
+{
+  "answer_type": "percent",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "percent",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 1,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "absolute_error": null,
+      "gold_field": "answer_percent",
+      "gold_value": 93.937632,
+      "metric_family": "primary_numeric",
+      "predicted_field": null,
+      "predicted_value": null,
+      "relative_error": null,
+      "within_tolerance": false
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer_percent": 93.937632
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer_percent": 93.937632
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-88.797257 44.856291, -88.859043 44.856004, -88.858913 44.870458, -88.859207 44.885012, -88.859564 44.899462, -88.85957 44.900679, -88.859631 44.904602, -88.859642 44.906634, -88.859731 44.9102, -88.859736 44.913567, -88.859771 44.913603, -88.859895 44.913866, -88.859736 44.913869, -88.859704 44.917487, -88.859619 44.921106, -88.859569 44.935723, -88.859438 44.943095, -88.859016 44.943095, -88.83162 44.94317, -88.828342 44.943185, -88.798157 44.943195, -88.796632 44.943205, -88.775948 44.943346, -88.771209 44.943378, -88.755812 44.943483, -88.735803 44.943225, -88.735718 44.928555, -88.735705 44.926264, -88.735629 44.924269, -88.735626 44.924189, -88.735654 44.914196, -88.735674 44.906988, -88.735859 44.886689, -88.735927 44.87798, -88.735955 44.874464, -88.735977 44.871574, -88.735982 44.870971, -88.736096 44.856436, -88.75006 44.856369, -88.771914 44.856229, -88.775558 44.856254, -88.787471 44.856296, -88.793389 44.856293, -88.797257 44.856291))',4326) AS geom\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.geom) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.geom)\n),\nhist AS (\n  SELECT\n    (vc).value::double precision AS val,\n    (vc).count::double precision AS cnt\n  FROM clipped c\n  CROSS JOIN LATERAL ST_ValueCount(c.rast, 1, TRUE) AS vc\n)\nSELECT\n  (\n    COALESCE(SUM(CASE WHEN val >= 280 THEN cnt ELSE 0 END), 0)\n    / NULLIF(SUM(cnt), 0)\n  ) * 100.0 AS answer_percent\nFROM hist;",
+  "id": "elevation+coverage-4",
+  "model_output": "```sql\nWITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Red Springs' AND border_type ILIKE 'city'\n),\nclipped_dem AS (\n  SELECT\n    ST_Clip(rast, 1, (SELECT geom FROM region_geom), TRUE) AS clipped_raster\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM region_geom))\n),\nelevation_stats AS (\n  SELECT\n    SUM(ST_Count(clipped_raster, 1)) AS total_pixels,\n    SUM(ST_Count(clipped_raster, 1, TRUE)) AS above_280_pixels\n  FROM clipped_dem\n),\npercent_above_280 AS (\n  SELECT\n    (above_280_pixels::float / total_pixels::float) * 100 AS percent_above\n  FROM elevation_stats\n)\nSELECT percent_above FROM percent_above_280;\n```",
+  "predicted_exec": {
+    "error": "",
+    "output": [
+      {
+        "percent_above": null
+      }
+    ]
+  },
+  "predicted_sql": "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Red Springs' AND border_type ILIKE 'city'\n),\nclipped_dem AS (\n  SELECT\n    ST_Clip(rast, 1, (SELECT geom FROM region_geom), TRUE) AS clipped_raster\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM region_geom))\n),\nelevation_stats AS (\n  SELECT\n    SUM(ST_Count(clipped_raster, 1)) AS total_pixels,\n    SUM(ST_Count(clipped_raster, 1, TRUE)) AS above_280_pixels\n  FROM clipped_dem\n),\npercent_above_280 AS (\n  SELECT\n    (above_280_pixels::float / total_pixels::float) * 100 AS percent_above\n  FROM elevation_stats\n)\nSELECT percent_above FROM percent_above_280;",
+  "predicted_sql_candidates": [
+    "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Red Springs' AND border_type ILIKE 'city'\n),\nclipped_dem AS (\n  SELECT\n    ST_Clip(rast, 1, (SELECT geom FROM region_geom), TRUE) AS clipped_raster\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM region_geom))\n),\nelevation_stats AS (\n  SELECT\n    SUM(ST_Count(clipped_raster, 1)) AS total_pixels,\n    SUM(ST_Count(clipped_raster, 1, TRUE)) AS above_280_pixels\n  FROM clipped_dem\n),\npercent_above_280 AS (\n  SELECT\n    (above_280_pixels::float / total_pixels::float) * 100 AS percent_above\n  FROM elevation_stats\n)\nSELECT percent_above FROM percent_above_280;"
+  ],
+  "query_type": "raster_only",
+  "question": "What percentage of the region Red Springs, Wisconsin is at or above 280 m elevation?",
+  "source_file": "elevation+coverage.jsonl",
+  "source_stem": "elevation+coverage",
+  "timing": {
+    "execution_seconds": 0.683,
+    "generation_seconds": 46.324,
+    "total_seconds": 47.007
+  },
+  "usage": {
+    "completion_tokens": 201,
+    "prompt_tokens": 1541,
+    "total_tokens": 1742
+  }
+}

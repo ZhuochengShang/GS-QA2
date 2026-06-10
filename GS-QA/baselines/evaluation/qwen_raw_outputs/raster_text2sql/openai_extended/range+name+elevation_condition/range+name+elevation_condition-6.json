@@ -1,0 +1,118 @@
+{
+  "answer_type": "row/s",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "row/s",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "rowset_f1",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "addr_city": "Crossnore",
+      "addr_housenumber": "231",
+      "addr_postcode": "28616",
+      "addr_street": "Dellinger Road",
+      "amenity": "cafe",
+      "elevation": 1054.0,
+      "geometry": "POINT (-81.93062 36.019002)",
+      "id": 62382,
+      "opening_hours": "We-Sa 11:00-17:00; Su 13:00-17:00",
+      "osm_id": 6657978522,
+      "phone": "+18284678167",
+      "poi_name": "Linville River Mercantile"
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "addr_city": "Crossnore",
+        "addr_housenumber": "231",
+        "addr_postcode": "28616",
+        "addr_state": null,
+        "addr_street": "Dellinger Road",
+        "amenity": "cafe",
+        "artwork_type": null,
+        "building": null,
+        "capacity": null,
+        "cuisine": null,
+        "delivery": null,
+        "description": null,
+        "drive_through": null,
+        "elevation": 1054.0,
+        "emergency": null,
+        "fast_food": null,
+        "fee": null,
+        "geometry": "0101000020E6100000466117458F7B54C015072BA96E024240",
+        "hairdresser": null,
+        "healthcare": null,
+        "historic": null,
+        "id": 62382,
+        "information": null,
+        "internet_access": null,
+        "leisure": null,
+        "museum": null,
+        "official_name": null,
+        "opening_hours": "We-Sa 11:00-17:00; Su 13:00-17:00",
+        "operator": null,
+        "osm_id": 6657978522,
+        "outdoor_seating": null,
+        "parking": null,
+        "pastry_shop": null,
+        "phone": "+18284678167",
+        "poi_name": "Linville River Mercantile",
+        "resort": null,
+        "restaurant": null,
+        "school_type": null,
+        "shop": null,
+        "sport": null,
+        "sports": null,
+        "takeaway": null,
+        "toilets": null,
+        "tourism": null,
+        "website": null,
+        "wheelchair": null,
+        "wholesale": null,
+        "wikidata": null,
+        "zoo": null
+      }
+    ]
+  },
+  "gold_sql": "SELECT p.*, elev.z AS elevation\nFROM pois p\nJOIN LATERAL (\n  SELECT ST_Value(d.rast, 1, p.geometry::geometry) AS z\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, p.geometry::geometry)\n  LIMIT 1\n) elev ON elev.z IS NOT NULL\nWHERE ST_DWithin(p.geometry::geography, ST_GeomFromText('POINT (-81.88824 35.992246)',4326)::geography, 5000)\n  AND p.amenity = 'cafe'\n  AND elev.z >= 140;",
+  "id": "range+name+elevation_condition-6",
+  "model_output": "```sql\nWITH cafe_point AS (\n  SELECT \n    ST_SetSRID(ST_GeomFromText('POINT (-82.976492 39.962826)'), 4326)::geography AS geom\n),\ngardens_point AS (\n  SELECT \n    ST_SetSRID(ST_GeomFromText('POINT (-81.88824 35.992246)'), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT \n    ST_Buffer(gardens_point.geom, 5000) AS geom\n  FROM \n    gardens_point\n),\nraster_clip AS (\n  SELECT \n    ST_Union(rast) AS rast\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(rast, buffered_area.geom)\n),\nelevation_values AS (\n  SELECT \n    (ST_SummaryStats(ST_Clip(raster_clip.rast, 1, buffered_area.geom, TRUE))).*\n  FROM \n    raster_clip, buffered_area\n)\nSELECT \n  CASE \n    WHEN mean >= 140 THEN 'Yes'\n    ELSE 'No'\n  END AS has_suitable_elevation;\n```",
+  "predicted_exec": {
+    "error": "missing FROM-clause entry for table \"buffered_area\"\nLINE 21:     ST_Intersects(rast, buffered_area.geom)\n                                 ^",
+    "output": []
+  },
+  "predicted_sql": "WITH cafe_point AS (\n  SELECT \n    ST_SetSRID(ST_GeomFromText('POINT (-82.976492 39.962826)'), 4326)::geography AS geom\n),\ngardens_point AS (\n  SELECT \n    ST_SetSRID(ST_GeomFromText('POINT (-81.88824 35.992246)'), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT \n    ST_Buffer(gardens_point.geom, 5000) AS geom\n  FROM \n    gardens_point\n),\nraster_clip AS (\n  SELECT \n    ST_Union(rast) AS rast\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(rast, buffered_area.geom)\n),\nelevation_values AS (\n  SELECT \n    (ST_SummaryStats(ST_Clip(raster_clip.rast, 1, buffered_area.geom, TRUE))).*\n  FROM \n    raster_clip, buffered_area\n)\nSELECT \n  CASE \n    WHEN mean >= 140 THEN 'Yes'\n    ELSE 'No'\n  END AS has_suitable_elevation;",
+  "predicted_sql_candidates": [
+    "WITH cafe_point AS (\n  SELECT \n    ST_SetSRID(ST_GeomFromText('POINT (-82.976492 39.962826)'), 4326)::geography AS geom\n),\ngardens_point AS (\n  SELECT \n    ST_SetSRID(ST_GeomFromText('POINT (-81.88824 35.992246)'), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT \n    ST_Buffer(gardens_point.geom, 5000) AS geom\n  FROM \n    gardens_point\n),\nraster_clip AS (\n  SELECT \n    ST_Union(rast) AS rast\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(rast, buffered_area.geom)\n),\nelevation_values AS (\n  SELECT \n    (ST_SummaryStats(ST_Clip(raster_clip.rast, 1, buffered_area.geom, TRUE))).*\n  FROM \n    raster_clip, buffered_area\n)\nSELECT \n  CASE \n    WHEN mean >= 140 THEN 'Yes'\n    ELSE 'No'\n  END AS has_suitable_elevation;"
+  ],
+  "query_type": "extended",
+  "question": "Is there a cafe within 5 kilometers from Gardens of the Blue Ridge, Newland, NC with elevation at least 140 m?",
+  "source_file": "range+name+elevation_condition.jsonl",
+  "source_stem": "range+name+elevation_condition",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 56.574,
+    "total_seconds": 56.575
+  },
+  "usage": {
+    "completion_tokens": 265,
+    "prompt_tokens": 1797,
+    "total_tokens": 2062
+  }
+}

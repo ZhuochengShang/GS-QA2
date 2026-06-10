@@ -1,0 +1,59 @@
+{
+  "answer_type": "distance",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "distance",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "distance_m": 11.64361
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "distance_m": 11.64361
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-71.095885 42.309542)',4326) AS pt\n),\nnearby_tiles AS (\n  SELECT d.rast\n  FROM public.dem_us d, origin o\n  WHERE d.rast && ST_Expand(o.pt, 1.0)\n),\nmasked AS (\n\t  SELECT ST_MapAlgebra(\n\t           rast,\n\t           1,\n\t           '32BF'::text,\n\t           'CASE WHEN [rast.val] < 100 THEN [rast.val] ELSE NULL END'::text,\n\t           NULL::double precision\n\t         ) AS rast\n  FROM nearby_tiles\n),\nqualifying_pixels AS (\n  SELECT (pp).geom AS geom\n  FROM masked\n  CROSS JOIN LATERAL ST_PixelAsCentroids(rast, 1, TRUE) AS pp\n)\nSELECT MIN(ST_Distance(p.geom::geography, o.pt::geography)) AS distance_m\nFROM qualifying_pixels p, origin o;",
+  "id": "nearest_low_terrain+poi-7",
+  "model_output": "```sql\nWITH white_stadium AS (\n  SELECT ST_SetSRID(ST_MakePoint(-71.095885, 42.309542), 4326)::geography AS geom\n),\ndem_subset AS (\n  SELECT\n    (ST_DumpAsPolygons(rast, 1)).*\n  FROM\n    public.dem_us,\n    white_stadium\n  WHERE\n    ST_Intersects(rast, white_stadium.geom)\n),\nelevation_cells AS (\n  SELECT\n    val AS elevation,\n    ST_SetSRID(ST_Point(x, y), 4326) AS cell_point\n  FROM\n    dem_subset\n  WHERE\n    val < 100\n),\nnearest_cell AS (\n  SELECT\n    ST_Distance(white_stadium.geom::geometry, cell_point::geometry) AS distance_meters\n  FROM\n    white_stadium,\n    elevation_cells\n  ORDER BY\n    ST_Distance(white_stadium.geom::geometry, cell_point::geometry)\n  LIMIT 1\n)\nSELECT\n  distance_meters\nFROM\n  nearest_cell;\n```",
+  "predicted_exec": {
+    "error": "function st_intersects(raster, geography) does not exist\nLINE 11:     ST_Intersects(rast, white_stadium.geom)\n             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH white_stadium AS (\n  SELECT ST_SetSRID(ST_MakePoint(-71.095885, 42.309542), 4326)::geography AS geom\n),\ndem_subset AS (\n  SELECT\n    (ST_DumpAsPolygons(rast, 1)).*\n  FROM\n    public.dem_us,\n    white_stadium\n  WHERE\n    ST_Intersects(rast, white_stadium.geom)\n),\nelevation_cells AS (\n  SELECT\n    val AS elevation,\n    ST_SetSRID(ST_Point(x, y), 4326) AS cell_point\n  FROM\n    dem_subset\n  WHERE\n    val < 100\n),\nnearest_cell AS (\n  SELECT\n    ST_Distance(white_stadium.geom::geometry, cell_point::geometry) AS distance_meters\n  FROM\n    white_stadium,\n    elevation_cells\n  ORDER BY\n    ST_Distance(white_stadium.geom::geometry, cell_point::geometry)\n  LIMIT 1\n)\nSELECT\n  distance_meters\nFROM\n  nearest_cell;",
+  "predicted_sql_candidates": [
+    "WITH white_stadium AS (\n  SELECT ST_SetSRID(ST_MakePoint(-71.095885, 42.309542), 4326)::geography AS geom\n),\ndem_subset AS (\n  SELECT\n    (ST_DumpAsPolygons(rast, 1)).*\n  FROM\n    public.dem_us,\n    white_stadium\n  WHERE\n    ST_Intersects(rast, white_stadium.geom)\n),\nelevation_cells AS (\n  SELECT\n    val AS elevation,\n    ST_SetSRID(ST_Point(x, y), 4326) AS cell_point\n  FROM\n    dem_subset\n  WHERE\n    val < 100\n),\nnearest_cell AS (\n  SELECT\n    ST_Distance(white_stadium.geom::geometry, cell_point::geometry) AS distance_meters\n  FROM\n    white_stadium,\n    elevation_cells\n  ORDER BY\n    ST_Distance(white_stadium.geom::geometry, cell_point::geometry)\n  LIMIT 1\n)\nSELECT\n  distance_meters\nFROM\n  nearest_cell;"
+  ],
+  "query_type": "raster_only",
+  "question": "How many meters separate White Stadium, Jamaica Plain, MA from the nearest cell below 100 meters in elevation?",
+  "source_file": "nearest_low_terrain+poi.jsonl",
+  "source_stem": "nearest_low_terrain+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 52.892,
+    "total_seconds": 52.893
+  },
+  "usage": {
+    "completion_tokens": 241,
+    "prompt_tokens": 1631,
+    "total_tokens": 1872
+  }
+}

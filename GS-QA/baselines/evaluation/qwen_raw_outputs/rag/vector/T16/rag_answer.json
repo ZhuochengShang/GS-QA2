@@ -1,0 +1,2102 @@
+[
+  {
+    "id": 2600,
+    "run_seconds": 1.441,
+    "content": "Joe Coffee Company",
+    "usage_metadata": {
+      "input_tokens": 1748,
+      "output_tokens": 4,
+      "total_tokens": 1752,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1748,
+        "total_tokens": 1752,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2601,
+    "run_seconds": 2.752,
+    "content": "There is no hotel listed in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 1602,
+      "output_tokens": 11,
+      "total_tokens": 1613,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1602,
+        "total_tokens": 1613,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2602,
+    "run_seconds": 2.318,
+    "content": "Maryland Center for History and Culture Museum",
+    "usage_metadata": {
+      "input_tokens": 1504,
+      "output_tokens": 9,
+      "total_tokens": 1513,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 1504,
+        "total_tokens": 1513,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2603,
+    "run_seconds": 1.639,
+    "content": "Dunkin'",
+    "usage_metadata": {
+      "input_tokens": 2097,
+      "output_tokens": 5,
+      "total_tokens": 2102,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 2097,
+        "total_tokens": 2102,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2604,
+    "run_seconds": 3.89,
+    "content": "Mia Halal Food is situated approximately seven thousand meters along the travel path.",
+    "usage_metadata": {
+      "input_tokens": 1151,
+      "output_tokens": 17,
+      "total_tokens": 1168,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 1151,
+        "total_tokens": 1168,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2605,
+    "run_seconds": 1.297,
+    "content": "McDonald's",
+    "usage_metadata": {
+      "input_tokens": 1614,
+      "output_tokens": 4,
+      "total_tokens": 1618,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1614,
+        "total_tokens": 1618,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2606,
+    "run_seconds": 1.336,
+    "content": "Brooklyn",
+    "usage_metadata": {
+      "input_tokens": 1894,
+      "output_tokens": 3,
+      "total_tokens": 1897,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1894,
+        "total_tokens": 1897,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2607,
+    "run_seconds": 1.418,
+    "content": "Canterbury",
+    "usage_metadata": {
+      "input_tokens": 2043,
+      "output_tokens": 4,
+      "total_tokens": 2047,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 2043,
+        "total_tokens": 2047,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2608,
+    "run_seconds": 1.075,
+    "content": "New London Cafe",
+    "usage_metadata": {
+      "input_tokens": 952,
+      "output_tokens": 4,
+      "total_tokens": 956,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 952,
+        "total_tokens": 956,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2609,
+    "run_seconds": 3.057,
+    "content": "Qdoba Mexican Grill, 30 kilometers.",
+    "usage_metadata": {
+      "input_tokens": 1795,
+      "output_tokens": 12,
+      "total_tokens": 1807,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1795,
+        "total_tokens": 1807,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2610,
+    "run_seconds": 1.02,
+    "content": "Santa Rosa",
+    "usage_metadata": {
+      "input_tokens": 1885,
+      "output_tokens": 3,
+      "total_tokens": 1888,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1885,
+        "total_tokens": 1888,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2611,
+    "run_seconds": 3.653,
+    "content": "Arkell Museum is situated within 90 kilometers along the travel path.",
+    "usage_metadata": {
+      "input_tokens": 951,
+      "output_tokens": 16,
+      "total_tokens": 967,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 951,
+        "total_tokens": 967,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2612,
+    "run_seconds": 1.073,
+    "content": "Domino's",
+    "usage_metadata": {
+      "input_tokens": 942,
+      "output_tokens": 4,
+      "total_tokens": 946,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 942,
+        "total_tokens": 946,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2613,
+    "run_seconds": 1.736,
+    "content": "Cedar Park",
+    "usage_metadata": {
+      "input_tokens": 2482,
+      "output_tokens": 4,
+      "total_tokens": 2486,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 2482,
+        "total_tokens": 2486,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2614,
+    "run_seconds": 0.768,
+    "content": "None",
+    "usage_metadata": {
+      "input_tokens": 1293,
+      "output_tokens": 2,
+      "total_tokens": 1295,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1293,
+        "total_tokens": 1295,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2615,
+    "run_seconds": 1.143,
+    "content": "Old Fort Museum",
+    "usage_metadata": {
+      "input_tokens": 1120,
+      "output_tokens": 4,
+      "total_tokens": 1124,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1120,
+        "total_tokens": 1124,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2616,
+    "run_seconds": 1.346,
+    "content": "Pratt Manhattan Gallery",
+    "usage_metadata": {
+      "input_tokens": 1108,
+      "output_tokens": 5,
+      "total_tokens": 1113,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1108,
+        "total_tokens": 1113,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2617,
+    "run_seconds": 9.224,
+    "content": "Fairfield Inn & Suites Baltimore Downtown/Inner Harbor is located in Baltimore, MD. There are no caf\u00e9s listed within the provided data that are located within 80 kilometers of the specified route.",
+    "usage_metadata": {
+      "input_tokens": 1810,
+      "output_tokens": 41,
+      "total_tokens": 1851,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 41,
+        "prompt_tokens": 1810,
+        "total_tokens": 1851,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2618,
+    "run_seconds": 4.76,
+    "content": "Moe's Halal Food  \nLewis Avenue Soul Food & Sea Food Restaurant  \nHalalbee's",
+    "usage_metadata": {
+      "input_tokens": 1131,
+      "output_tokens": 21,
+      "total_tokens": 1152,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 1131,
+        "total_tokens": 1152,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2619,
+    "run_seconds": 1.528,
+    "content": "Moe's Southwest Grill",
+    "usage_metadata": {
+      "input_tokens": 988,
+      "output_tokens": 6,
+      "total_tokens": 994,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 988,
+        "total_tokens": 994,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2620,
+    "run_seconds": 1.962,
+    "content": "Stan's Donuts & Coffee",
+    "usage_metadata": {
+      "input_tokens": 1819,
+      "output_tokens": 7,
+      "total_tokens": 1826,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 1819,
+        "total_tokens": 1826,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2621,
+    "run_seconds": 0.987,
+    "content": "Perkins",
+    "usage_metadata": {
+      "input_tokens": 1360,
+      "output_tokens": 3,
+      "total_tokens": 1363,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1360,
+        "total_tokens": 1363,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2622,
+    "run_seconds": 8.403,
+    "content": "There are no hotels located within 50 kilometers on the route from Hickory Grove Riverfront, Cary, IL to In the Game - Hollywood Park, Crestwood, IL.",
+    "usage_metadata": {
+      "input_tokens": 1855,
+      "output_tokens": 37,
+      "total_tokens": 1892,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 37,
+        "prompt_tokens": 1855,
+        "total_tokens": 1892,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2623,
+    "run_seconds": 1.444,
+    "content": "SEP Cafe",
+    "usage_metadata": {
+      "input_tokens": 2173,
+      "output_tokens": 3,
+      "total_tokens": 2176,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2173,
+        "total_tokens": 2176,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2624,
+    "run_seconds": 1.828,
+    "content": "Upper Farinon Dining Hall",
+    "usage_metadata": {
+      "input_tokens": 1264,
+      "output_tokens": 7,
+      "total_tokens": 1271,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 1264,
+        "total_tokens": 1271,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2625,
+    "run_seconds": 1.703,
+    "content": "Joe Coffee Company",
+    "usage_metadata": {
+      "input_tokens": 2386,
+      "output_tokens": 4,
+      "total_tokens": 2390,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 2386,
+        "total_tokens": 2390,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2626,
+    "run_seconds": 4.93,
+    "content": "Caf\u00e9 is located 140 kilometers northeast of Daubenspeck Nature Reserve.",
+    "usage_metadata": {
+      "input_tokens": 1690,
+      "output_tokens": 21,
+      "total_tokens": 1711,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 1690,
+        "total_tokens": 1711,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2627,
+    "run_seconds": 1.315,
+    "content": "Beso de Arte",
+    "usage_metadata": {
+      "input_tokens": 967,
+      "output_tokens": 5,
+      "total_tokens": 972,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 967,
+        "total_tokens": 972,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2628,
+    "run_seconds": 1.122,
+    "content": "Blue Wall Cafe",
+    "usage_metadata": {
+      "input_tokens": 1281,
+      "output_tokens": 4,
+      "total_tokens": 1285,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1281,
+        "total_tokens": 1285,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2629,
+    "run_seconds": 2.696,
+    "content": "Slater's 50/50",
+    "usage_metadata": {
+      "input_tokens": 2023,
+      "output_tokens": 10,
+      "total_tokens": 2033,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 2023,
+        "total_tokens": 2033,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2630,
+    "run_seconds": 2.405,
+    "content": "No restaurant matches the criteria.",
+    "usage_metadata": {
+      "input_tokens": 2571,
+      "output_tokens": 7,
+      "total_tokens": 2578,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 2571,
+        "total_tokens": 2578,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2631,
+    "run_seconds": 1.709,
+    "content": "Qdoba Mexican Grill",
+    "usage_metadata": {
+      "input_tokens": 1568,
+      "output_tokens": 6,
+      "total_tokens": 1574,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 1568,
+        "total_tokens": 1574,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2632,
+    "run_seconds": 1.305,
+    "content": "Oppenheimer Gallery",
+    "usage_metadata": {
+      "input_tokens": 943,
+      "output_tokens": 5,
+      "total_tokens": 948,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 943,
+        "total_tokens": 948,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2633,
+    "run_seconds": 1.217,
+    "content": "Clark House Museum",
+    "usage_metadata": {
+      "input_tokens": 1437,
+      "output_tokens": 4,
+      "total_tokens": 1441,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1437,
+        "total_tokens": 1441,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2634,
+    "run_seconds": 3.499,
+    "content": "Lewis Avenue Soul Food & Sea Food Restaurant, approximately eight kilometers ahead.",
+    "usage_metadata": {
+      "input_tokens": 1180,
+      "output_tokens": 15,
+      "total_tokens": 1195,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 1180,
+        "total_tokens": 1195,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2635,
+    "run_seconds": 9.083,
+    "content": "There are no museums listed within the 90-kilometer radius along the journey between New Mexico Slaughter House, Albuquerque, NM, and 3 Studios Gallery, Santa Fe, NM.",
+    "usage_metadata": {
+      "input_tokens": 1433,
+      "output_tokens": 40,
+      "total_tokens": 1473,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 40,
+        "prompt_tokens": 1433,
+        "total_tokens": 1473,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2636,
+    "run_seconds": 1.935,
+    "content": "Museum of North Carolina Minerals",
+    "usage_metadata": {
+      "input_tokens": 1652,
+      "output_tokens": 7,
+      "total_tokens": 1659,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 1652,
+        "total_tokens": 1659,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2637,
+    "run_seconds": 2.704,
+    "content": "None of the provided records indicate a gallery.",
+    "usage_metadata": {
+      "input_tokens": 2001,
+      "output_tokens": 10,
+      "total_tokens": 2011,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 2001,
+        "total_tokens": 2011,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2638,
+    "run_seconds": 1.945,
+    "content": "California Lutheran University - Thousand Oaks Campus",
+    "usage_metadata": {
+      "input_tokens": 932,
+      "output_tokens": 8,
+      "total_tokens": 940,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 932,
+        "total_tokens": 940,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2639,
+    "run_seconds": 3.241,
+    "content": "There is no gallery within 30 kilometers along that route.",
+    "usage_metadata": {
+      "input_tokens": 1016,
+      "output_tokens": 14,
+      "total_tokens": 1030,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 1016,
+        "total_tokens": 1030,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2640,
+    "run_seconds": 0.945,
+    "content": "Perkins",
+    "usage_metadata": {
+      "input_tokens": 1309,
+      "output_tokens": 3,
+      "total_tokens": 1312,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1309,
+        "total_tokens": 1312,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2641,
+    "run_seconds": 2.082,
+    "content": "West Chester Griswolds",
+    "usage_metadata": {
+      "input_tokens": 2102,
+      "output_tokens": 7,
+      "total_tokens": 2109,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 2102,
+        "total_tokens": 2109,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2642,
+    "run_seconds": 7.906,
+    "content": "Lewis Avenue Soul Food & Sea Food Restaurant, approximately eight kilometers.  \nHalalbee's, approximately six kilometers.  \nMoe's Halal Food, approximately twenty kilometers.",
+    "usage_metadata": {
+      "input_tokens": 1131,
+      "output_tokens": 36,
+      "total_tokens": 1167,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 36,
+        "prompt_tokens": 1131,
+        "total_tokens": 1167,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2643,
+    "run_seconds": 5.91,
+    "content": "Moe's Southwest Grill is located approximately thirty-three kilometers in the direction of travel toward Go Ape Treetop Adventure Course.",
+    "usage_metadata": {
+      "input_tokens": 976,
+      "output_tokens": 27,
+      "total_tokens": 1003,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 27,
+        "prompt_tokens": 976,
+        "total_tokens": 1003,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2644,
+    "run_seconds": 1.117,
+    "content": "Baltimore",
+    "usage_metadata": {
+      "input_tokens": 1765,
+      "output_tokens": 3,
+      "total_tokens": 1768,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1765,
+        "total_tokens": 1768,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2645,
+    "run_seconds": 6.206,
+    "content": "Coffee Lab & Roasters is located 170 kilometers towards Harrison Benwell Conservation Area from Kindred Hospital Chicago Northlake.",
+    "usage_metadata": {
+      "input_tokens": 1798,
+      "output_tokens": 27,
+      "total_tokens": 1825,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 27,
+        "prompt_tokens": 1798,
+        "total_tokens": 1825,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2646,
+    "run_seconds": 4.842,
+    "content": "Cafe Leonelli is located within 130 kilometers in the direction of Miami Sun Hotel.",
+    "usage_metadata": {
+      "input_tokens": 1382,
+      "output_tokens": 21,
+      "total_tokens": 1403,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 1382,
+        "total_tokens": 1403,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2647,
+    "run_seconds": 3.55,
+    "content": "Mamma Joan's is located approximately twenty kilometers from your route.",
+    "usage_metadata": {
+      "input_tokens": 2023,
+      "output_tokens": 14,
+      "total_tokens": 2037,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 2023,
+        "total_tokens": 2037,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2648,
+    "run_seconds": 3.845,
+    "content": "Willo B's Cafe is found within 20 kilometers along the way.",
+    "usage_metadata": {
+      "input_tokens": 937,
+      "output_tokens": 17,
+      "total_tokens": 954,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 937,
+        "total_tokens": 954,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2649,
+    "run_seconds": 1.299,
+    "content": "McDonald's",
+    "usage_metadata": {
+      "input_tokens": 1630,
+      "output_tokens": 4,
+      "total_tokens": 1634,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1630,
+        "total_tokens": 1634,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2650,
+    "run_seconds": 1.37,
+    "content": "Howard Station Cafe",
+    "usage_metadata": {
+      "input_tokens": 2140,
+      "output_tokens": 4,
+      "total_tokens": 2144,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 2140,
+        "total_tokens": 2144,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2651,
+    "run_seconds": 4.539,
+    "content": "None of the provided records indicate a gallery within the specified radius or along the described route.",
+    "usage_metadata": {
+      "input_tokens": 1736,
+      "output_tokens": 19,
+      "total_tokens": 1755,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 1736,
+        "total_tokens": 1755,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2652,
+    "run_seconds": 0.892,
+    "content": "None.",
+    "usage_metadata": {
+      "input_tokens": 994,
+      "output_tokens": 3,
+      "total_tokens": 997,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 994,
+        "total_tokens": 997,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2653,
+    "run_seconds": 9.079,
+    "content": "There is no fast food restaurant situated within 10 kilometers in the direction of Fairview Park, Ennis, TX from LEGOLAND Discovery Center Dallas/Fort Worth, Grapevine, TX.",
+    "usage_metadata": {
+      "input_tokens": 1311,
+      "output_tokens": 41,
+      "total_tokens": 1352,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 41,
+        "prompt_tokens": 1311,
+        "total_tokens": 1352,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2654,
+    "run_seconds": 1.988,
+    "content": "Pleasantville Pizzeria",
+    "usage_metadata": {
+      "input_tokens": 1074,
+      "output_tokens": 8,
+      "total_tokens": 1082,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 1074,
+        "total_tokens": 1082,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2655,
+    "run_seconds": 0.915,
+    "content": "Subway",
+    "usage_metadata": {
+      "input_tokens": 1045,
+      "output_tokens": 3,
+      "total_tokens": 1048,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1045,
+        "total_tokens": 1048,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2656,
+    "run_seconds": 3.839,
+    "content": "Half Acre Beer Co. Balmoral Tap Room & Garden",
+    "usage_metadata": {
+      "input_tokens": 2333,
+      "output_tokens": 14,
+      "total_tokens": 2347,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 2333,
+        "total_tokens": 2347,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2657,
+    "run_seconds": 1.583,
+    "content": "Comers Rock Recreation Area",
+    "usage_metadata": {
+      "input_tokens": 1160,
+      "output_tokens": 6,
+      "total_tokens": 1166,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 1160,
+        "total_tokens": 1166,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2658,
+    "run_seconds": 0.695,
+    "content": "None",
+    "usage_metadata": {
+      "input_tokens": 1113,
+      "output_tokens": 2,
+      "total_tokens": 1115,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1113,
+        "total_tokens": 1115,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2659,
+    "run_seconds": 1.497,
+    "content": "Irvington",
+    "usage_metadata": {
+      "input_tokens": 1701,
+      "output_tokens": 4,
+      "total_tokens": 1705,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1701,
+        "total_tokens": 1705,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2660,
+    "run_seconds": 1.451,
+    "content": "Waypoint Cafe",
+    "usage_metadata": {
+      "input_tokens": 2359,
+      "output_tokens": 4,
+      "total_tokens": 2363,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 2359,
+        "total_tokens": 2363,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2661,
+    "run_seconds": 8.153,
+    "content": "There is no gallery aligned with the route to Fred Crabtree Park, Herndon, VA from Former Gundry/Glass Hospital, Baltimore, MD within 140 kilometers.",
+    "usage_metadata": {
+      "input_tokens": 1024,
+      "output_tokens": 37,
+      "total_tokens": 1061,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 37,
+        "prompt_tokens": 1024,
+        "total_tokens": 1061,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2662,
+    "run_seconds": 3.017,
+    "content": "Richard and Lucile Durrell Edge of Appalachia Preserve",
+    "usage_metadata": {
+      "input_tokens": 989,
+      "output_tokens": 13,
+      "total_tokens": 1002,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 989,
+        "total_tokens": 1002,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2663,
+    "run_seconds": 1.777,
+    "content": "New Milford Historical Society Museum",
+    "usage_metadata": {
+      "input_tokens": 1183,
+      "output_tokens": 7,
+      "total_tokens": 1190,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 1183,
+        "total_tokens": 1190,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2664,
+    "run_seconds": 5.619,
+    "content": "There is no hotel within 80 kilometers along the route from Acushnet Sawmill to Drive By Projects.",
+    "usage_metadata": {
+      "input_tokens": 1792,
+      "output_tokens": 24,
+      "total_tokens": 1816,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 1792,
+        "total_tokens": 1816,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2665,
+    "run_seconds": 1.006,
+    "content": "Sub Hub",
+    "usage_metadata": {
+      "input_tokens": 1452,
+      "output_tokens": 3,
+      "total_tokens": 1455,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1452,
+        "total_tokens": 1455,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2666,
+    "run_seconds": 4.308,
+    "content": "Springfield Park Botanical Garden is located approximately forty kilometers southeast of Chicago, Illinois.",
+    "usage_metadata": {
+      "input_tokens": 1533,
+      "output_tokens": 18,
+      "total_tokens": 1551,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 1533,
+        "total_tokens": 1551,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2667,
+    "run_seconds": 1.35,
+    "content": "Chuck E. Cheese",
+    "usage_metadata": {
+      "input_tokens": 1170,
+      "output_tokens": 5,
+      "total_tokens": 1175,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1170,
+        "total_tokens": 1175,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2668,
+    "run_seconds": 1.595,
+    "content": "Glory Days Grill",
+    "usage_metadata": {
+      "input_tokens": 1866,
+      "output_tokens": 5,
+      "total_tokens": 1871,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1866,
+        "total_tokens": 1871,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2669,
+    "run_seconds": 6.453,
+    "content": "None of the provided hotels are located within 100 kilometers towards Los Angeles, CA from Disney California Adventure, Anaheim, CA.",
+    "usage_metadata": {
+      "input_tokens": 1751,
+      "output_tokens": 28,
+      "total_tokens": 1779,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 28,
+        "prompt_tokens": 1751,
+        "total_tokens": 1779,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2670,
+    "run_seconds": 7.377,
+    "content": "Aquarium is not situated along the travel path toward Forest Glen Historic Railroad Station, Silver Spring, MD from Cal, Sr.'s Yard, Aberdeen, MD.",
+    "usage_metadata": {
+      "input_tokens": 1265,
+      "output_tokens": 33,
+      "total_tokens": 1298,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 33,
+        "prompt_tokens": 1265,
+        "total_tokens": 1298,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2671,
+    "run_seconds": 1.353,
+    "content": "New Haven Salad Shop",
+    "usage_metadata": {
+      "input_tokens": 1300,
+      "output_tokens": 5,
+      "total_tokens": 1305,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1300,
+        "total_tokens": 1305,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2672,
+    "run_seconds": 1.023,
+    "content": "Benson",
+    "usage_metadata": {
+      "input_tokens": 1452,
+      "output_tokens": 3,
+      "total_tokens": 1455,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1452,
+        "total_tokens": 1455,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2673,
+    "run_seconds": 1.432,
+    "content": "Cafe Lotus",
+    "usage_metadata": {
+      "input_tokens": 2096,
+      "output_tokens": 4,
+      "total_tokens": 2100,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 2096,
+        "total_tokens": 2100,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2674,
+    "run_seconds": 1.351,
+    "content": "Cafe Ponte",
+    "usage_metadata": {
+      "input_tokens": 1179,
+      "output_tokens": 5,
+      "total_tokens": 1184,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1179,
+        "total_tokens": 1184,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2675,
+    "run_seconds": 1.581,
+    "content": "Lovely Lane Museum Library",
+    "usage_metadata": {
+      "input_tokens": 1154,
+      "output_tokens": 6,
+      "total_tokens": 1160,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 1154,
+        "total_tokens": 1160,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2676,
+    "run_seconds": 1.323,
+    "content": "None",
+    "usage_metadata": {
+      "input_tokens": 2510,
+      "output_tokens": 2,
+      "total_tokens": 2512,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 2510,
+        "total_tokens": 2512,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2677,
+    "run_seconds": 6.183,
+    "content": "There are no galleries within 50 kilometers along the route from St. Regis San Francisco to Safari West, Sant Rosa.",
+    "usage_metadata": {
+      "input_tokens": 1619,
+      "output_tokens": 27,
+      "total_tokens": 1646,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 27,
+        "prompt_tokens": 1619,
+        "total_tokens": 1646,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2678,
+    "run_seconds": 8.97,
+    "content": "There is no museum located within 60 kilometers along the route from Gary Lapelusa Landscaping LLC, Bayonne, NJ to Nautical Mile, Freeport, NY.",
+    "usage_metadata": {
+      "input_tokens": 2429,
+      "output_tokens": 38,
+      "total_tokens": 2467,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 38,
+        "prompt_tokens": 2429,
+        "total_tokens": 2467,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2679,
+    "run_seconds": 1.237,
+    "content": "Irvington",
+    "usage_metadata": {
+      "input_tokens": 1507,
+      "output_tokens": 4,
+      "total_tokens": 1511,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1507,
+        "total_tokens": 1511,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2680,
+    "run_seconds": 1.304,
+    "content": "Irvington",
+    "usage_metadata": {
+      "input_tokens": 1642,
+      "output_tokens": 4,
+      "total_tokens": 1646,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1642,
+        "total_tokens": 1646,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2681,
+    "run_seconds": 1.361,
+    "content": "Joe Coffee Company",
+    "usage_metadata": {
+      "input_tokens": 1865,
+      "output_tokens": 4,
+      "total_tokens": 1869,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1865,
+        "total_tokens": 1869,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2682,
+    "run_seconds": 1.366,
+    "content": "Sanchez Adobe Museum",
+    "usage_metadata": {
+      "input_tokens": 1164,
+      "output_tokens": 5,
+      "total_tokens": 1169,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1164,
+        "total_tokens": 1169,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2683,
+    "run_seconds": 2.093,
+    "content": "The Market Place at Kimmel",
+    "usage_metadata": {
+      "input_tokens": 2082,
+      "output_tokens": 7,
+      "total_tokens": 2089,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 2082,
+        "total_tokens": 2089,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2684,
+    "run_seconds": 3.047,
+    "content": "New Jersey Botanical Garden is located along the route.",
+    "usage_metadata": {
+      "input_tokens": 1805,
+      "output_tokens": 12,
+      "total_tokens": 1817,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1805,
+        "total_tokens": 1817,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2685,
+    "run_seconds": 2.188,
+    "content": "O'Reillys Pub",
+    "usage_metadata": {
+      "input_tokens": 2538,
+      "output_tokens": 6,
+      "total_tokens": 2544,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 2538,
+        "total_tokens": 2544,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2686,
+    "run_seconds": 3.597,
+    "content": "Dunkin' on Saint Nicholas Avenue, New York.",
+    "usage_metadata": {
+      "input_tokens": 2190,
+      "output_tokens": 13,
+      "total_tokens": 2203,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 2190,
+        "total_tokens": 2203,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2687,
+    "run_seconds": 1.73,
+    "content": "Little Pecks",
+    "usage_metadata": {
+      "input_tokens": 2540,
+      "output_tokens": 4,
+      "total_tokens": 2544,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 2540,
+        "total_tokens": 2544,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2688,
+    "run_seconds": 2.073,
+    "content": "West Chester Griswolds",
+    "usage_metadata": {
+      "input_tokens": 2091,
+      "output_tokens": 7,
+      "total_tokens": 2098,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 2091,
+        "total_tokens": 2098,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2689,
+    "run_seconds": 1.415,
+    "content": "Chuck E. Cheese",
+    "usage_metadata": {
+      "input_tokens": 1338,
+      "output_tokens": 5,
+      "total_tokens": 1343,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1338,
+        "total_tokens": 1343,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2690,
+    "run_seconds": 2.269,
+    "content": "Hilton Garden Inn Midtown Park Avenue",
+    "usage_metadata": {
+      "input_tokens": 1371,
+      "output_tokens": 9,
+      "total_tokens": 1380,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 1371,
+        "total_tokens": 1380,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2691,
+    "run_seconds": 1.297,
+    "content": "Stedman Gallery",
+    "usage_metadata": {
+      "input_tokens": 1207,
+      "output_tokens": 5,
+      "total_tokens": 1212,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1207,
+        "total_tokens": 1212,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2692,
+    "run_seconds": 1.138,
+    "content": "Parkside Cafe",
+    "usage_metadata": {
+      "input_tokens": 1174,
+      "output_tokens": 4,
+      "total_tokens": 1178,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1174,
+        "total_tokens": 1178,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2693,
+    "run_seconds": 1.256,
+    "content": "Irvington",
+    "usage_metadata": {
+      "input_tokens": 1603,
+      "output_tokens": 4,
+      "total_tokens": 1607,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1603,
+        "total_tokens": 1607,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2694,
+    "run_seconds": 1.984,
+    "content": "Waterford Historical Museum and Cultural Center",
+    "usage_metadata": {
+      "input_tokens": 1013,
+      "output_tokens": 8,
+      "total_tokens": 1021,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 1013,
+        "total_tokens": 1021,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2695,
+    "run_seconds": 1.452,
+    "content": "Naval Academy Museum",
+    "usage_metadata": {
+      "input_tokens": 1427,
+      "output_tokens": 5,
+      "total_tokens": 1432,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1427,
+        "total_tokens": 1432,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2696,
+    "run_seconds": 1.315,
+    "content": "Bartolini Gallery",
+    "usage_metadata": {
+      "input_tokens": 989,
+      "output_tokens": 5,
+      "total_tokens": 994,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 989,
+        "total_tokens": 994,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2697,
+    "run_seconds": 3.637,
+    "content": "Jackson's Bistro is located approximately thirty five kilometers in the forward direction.",
+    "usage_metadata": {
+      "input_tokens": 982,
+      "output_tokens": 16,
+      "total_tokens": 998,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 982,
+        "total_tokens": 998,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2698,
+    "run_seconds": 1.372,
+    "content": "Innovation Bistro",
+    "usage_metadata": {
+      "input_tokens": 1180,
+      "output_tokens": 5,
+      "total_tokens": 1185,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1180,
+        "total_tokens": 1185,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2699,
+    "run_seconds": 1.402,
+    "content": "Land of Natura",
+    "usage_metadata": {
+      "input_tokens": 1229,
+      "output_tokens": 5,
+      "total_tokens": 1234,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1229,
+        "total_tokens": 1234,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  }
+]

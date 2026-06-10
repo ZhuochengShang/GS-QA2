@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope_degrees": 12.425244
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope_degrees": 12.425244
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-74.004968 40.749576)',4326) AS pt\n),\npatch AS (\n  SELECT ST_Buffer(pt::geography, 100)::geometry AS g FROM origin\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, p.g)) AS rast\n  FROM public.dem_us d\n  JOIN patch p ON ST_Intersects(d.rast, p.g)\n),\nslope_rast AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n)\nSELECT ST_Value(s.rast, 1, o.pt) AS slope_degrees\nFROM slope_rast s, origin o;",
+  "id": "slope+poi-8",
+  "model_output": "```sql\nWITH gallery_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-74.004968, 40.749576), 4326)::geography AS geom\n),\nraster_slope AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(\n        rast,\n        ST_Transform(ST_SetSRID(ST_MakePoint(-74.004968, 40.749576), 4326), 4326)::geometry,\n        TRUE\n      ),\n      1,\n      'degrees'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(\n    rast,\n    ST_Transform(ST_SetSRID(ST_MakePoint(-74.004968, 40.749576), 4326), 4326)::geometry\n  )\n)\nSELECT\n  ST_Value(slope_rast, 1, 1) AS slope_degrees\nFROM raster_slope;\n```",
+  "predicted_exec": {
+    "error": "RASTER_nMapAlgebra: Invalid pixel type: degrees\nCONTEXT:  PL/pgSQL function st_slope(raster,integer,raster,text,text,double precision,boolean) line 41 at RETURN",
+    "output": []
+  },
+  "predicted_sql": "WITH gallery_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-74.004968, 40.749576), 4326)::geography AS geom\n),\nraster_slope AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(\n        rast,\n        ST_Transform(ST_SetSRID(ST_MakePoint(-74.004968, 40.749576), 4326), 4326)::geometry,\n        TRUE\n      ),\n      1,\n      'degrees'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(\n    rast,\n    ST_Transform(ST_SetSRID(ST_MakePoint(-74.004968, 40.749576), 4326), 4326)::geometry\n  )\n)\nSELECT\n  ST_Value(slope_rast, 1, 1) AS slope_degrees\nFROM raster_slope;",
+  "predicted_sql_candidates": [
+    "WITH gallery_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-74.004968, 40.749576), 4326)::geography AS geom\n),\nraster_slope AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(\n        rast,\n        ST_Transform(ST_SetSRID(ST_MakePoint(-74.004968, 40.749576), 4326), 4326)::geometry,\n        TRUE\n      ),\n      1,\n      'degrees'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(\n    rast,\n    ST_Transform(ST_SetSRID(ST_MakePoint(-74.004968, 40.749576), 4326), 4326)::geometry\n  )\n)\nSELECT\n  ST_Value(slope_rast, 1, 1) AS slope_degrees\nFROM raster_slope;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the terrain slope in degrees at Pace Gallery, New York, NY?",
+  "source_file": "slope+poi.jsonl",
+  "source_stem": "slope+poi",
+  "timing": {
+    "execution_seconds": 0.028,
+    "generation_seconds": 51.195,
+    "total_seconds": 51.223
+  },
+  "usage": {
+    "completion_tokens": 237,
+    "prompt_tokens": 1604,
+    "total_tokens": 1841
+  }
+}

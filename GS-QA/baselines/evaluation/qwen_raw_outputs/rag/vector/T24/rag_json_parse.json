@@ -1,0 +1,2102 @@
+[
+  {
+    "id": 0,
+    "run_seconds": 3.216,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 168,
+      "output_tokens": 14,
+      "total_tokens": 182,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 168,
+        "total_tokens": 182,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1,
+    "run_seconds": 3.189,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 166,
+      "output_tokens": 14,
+      "total_tokens": 180,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 166,
+        "total_tokens": 180,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2,
+    "run_seconds": 3.189,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 165,
+      "output_tokens": 14,
+      "total_tokens": 179,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 165,
+        "total_tokens": 179,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 3,
+    "run_seconds": 4.892,
+    "content": "```json\n{\n    \"name\": \"Springfield\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 165,
+      "output_tokens": 22,
+      "total_tokens": 187,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 165,
+        "total_tokens": 187,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 4,
+    "run_seconds": 5.743,
+    "content": "```json\n{\n    \"name\": \"parks\",\n    \"count\": 80000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 175,
+      "output_tokens": 26,
+      "total_tokens": 201,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 26,
+        "prompt_tokens": 175,
+        "total_tokens": 201,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 5,
+    "run_seconds": 3.189,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 171,
+      "output_tokens": 14,
+      "total_tokens": 185,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 171,
+        "total_tokens": 185,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 6,
+    "run_seconds": 7.233,
+    "content": "```json\n{\n    \"name\": \"Bayonne\",\n    \"address\": \"Bayonne, New Jersey\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 168,
+      "output_tokens": 33,
+      "total_tokens": 201,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 33,
+        "prompt_tokens": 168,
+        "total_tokens": 201,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 7,
+    "run_seconds": 4.68,
+    "content": "```json\n{\n    \"name\": \"Georgia\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 185,
+      "output_tokens": 21,
+      "total_tokens": 206,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 185,
+        "total_tokens": 206,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 8,
+    "run_seconds": 7.659,
+    "content": "```json\n{\n    \"name\": \"Hauppauge\",\n    \"address\": \"Hauppauge, New York\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 169,
+      "output_tokens": 35,
+      "total_tokens": 204,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 35,
+        "prompt_tokens": 169,
+        "total_tokens": 204,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 9,
+    "run_seconds": 7.019,
+    "content": "```json\n{\n    \"name\": \"theme parks\",\n    \"address\": \"Fort Lauderdale, Florida\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 169,
+      "output_tokens": 32,
+      "total_tokens": 201,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 32,
+        "prompt_tokens": 169,
+        "total_tokens": 201,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 10,
+    "run_seconds": 6.167,
+    "content": "```json\n{\n    \"name\": \"restaurants\",\n    \"address\": \"Denver\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 171,
+      "output_tokens": 28,
+      "total_tokens": 199,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 28,
+        "prompt_tokens": 171,
+        "total_tokens": 199,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 11,
+    "run_seconds": 7.446,
+    "content": "```json\n{\n    \"name\": \"golf courses\",\n    \"address\": \"Monroe County, Tennessee\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 168,
+      "output_tokens": 34,
+      "total_tokens": 202,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 34,
+        "prompt_tokens": 168,
+        "total_tokens": 202,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 12,
+    "run_seconds": 5.317,
+    "content": "```json\n{\n    \"name\": \"Gloucester County\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 24,
+      "total_tokens": 194,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 170,
+        "total_tokens": 194,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 13,
+    "run_seconds": 5.531,
+    "content": "```json\n{\n    \"name\": \"Edgecombe County Zoo Inquiry\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 169,
+      "output_tokens": 25,
+      "total_tokens": 194,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 169,
+        "total_tokens": 194,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 14,
+    "run_seconds": 7.444,
+    "content": "```json\n{\n    \"name\": \"St. Petersburg\",\n    \"address\": \"St. Petersburg, Florida\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 167,
+      "output_tokens": 34,
+      "total_tokens": 201,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 34,
+        "prompt_tokens": 167,
+        "total_tokens": 201,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 15,
+    "run_seconds": 5.742,
+    "content": "```json\n{\n    \"name\": \"Schaumburg\",\n    \"count\": 100\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 176,
+      "output_tokens": 26,
+      "total_tokens": 202,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 26,
+        "prompt_tokens": 176,
+        "total_tokens": 202,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 16,
+    "run_seconds": 3.188,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 167,
+      "output_tokens": 14,
+      "total_tokens": 181,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 167,
+        "total_tokens": 181,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 17,
+    "run_seconds": 3.189,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 164,
+      "output_tokens": 14,
+      "total_tokens": 178,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 164,
+        "total_tokens": 178,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 18,
+    "run_seconds": 7.232,
+    "content": "```json\n{\n    \"name\": \"hospitals\",\n    \"address\": \"Clearwater, Florida\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 166,
+      "output_tokens": 33,
+      "total_tokens": 199,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 33,
+        "prompt_tokens": 166,
+        "total_tokens": 199,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 19,
+    "run_seconds": 7.019,
+    "content": "```json\n{\n    \"name\": \"caf\u00e9s\",\n    \"address\": \"Lake City, Michigan\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 168,
+      "output_tokens": 32,
+      "total_tokens": 200,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 32,
+        "prompt_tokens": 168,
+        "total_tokens": 200,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 20,
+    "run_seconds": 5.104,
+    "content": "```json\n{\n    \"name\": \"museums\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 166,
+      "output_tokens": 23,
+      "total_tokens": 189,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 166,
+        "total_tokens": 189,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 21,
+    "run_seconds": 5.484,
+    "content": "```json\n{\n    \"name\": \"Kalamazoo County\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 169,
+      "output_tokens": 25,
+      "total_tokens": 194,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 169,
+        "total_tokens": 194,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 22,
+    "run_seconds": 3.144,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 175,
+      "output_tokens": 14,
+      "total_tokens": 189,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 175,
+        "total_tokens": 189,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 23,
+    "run_seconds": 3.4,
+    "content": "```json\n{\n    \"count\": 10\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 165,
+      "output_tokens": 15,
+      "total_tokens": 180,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 165,
+        "total_tokens": 180,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 24,
+    "run_seconds": 5.104,
+    "content": "```json\n{\n    \"name\": \"golf courses\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 23,
+      "total_tokens": 193,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 170,
+        "total_tokens": 193,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 25,
+    "run_seconds": 5.318,
+    "content": "```json\n{\n    \"name\": \"Crawford County\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 166,
+      "output_tokens": 24,
+      "total_tokens": 190,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 166,
+        "total_tokens": 190,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 26,
+    "run_seconds": 7.444,
+    "content": "```json\n{\n    \"name\": \"golf courses\",\n    \"address\": \"Lufkin, Texas\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 168,
+      "output_tokens": 34,
+      "total_tokens": 202,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 34,
+        "prompt_tokens": 168,
+        "total_tokens": 202,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 27,
+    "run_seconds": 3.188,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 169,
+      "output_tokens": 14,
+      "total_tokens": 183,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 169,
+        "total_tokens": 183,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 28,
+    "run_seconds": 5.316,
+    "content": "```json\n{\n    \"name\": \"Georgetown, Texas\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 166,
+      "output_tokens": 24,
+      "total_tokens": 190,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 166,
+        "total_tokens": 190,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 29,
+    "run_seconds": 4.847,
+    "content": "```json\n{\n    \"name\": \"restaurants\",\n    \"count\": 31\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 172,
+      "output_tokens": 22,
+      "total_tokens": 194,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 172,
+        "total_tokens": 194,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 30,
+    "run_seconds": 5.316,
+    "content": "```json\n{\n    \"name\": \"Kit Carson County Museum\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 168,
+      "output_tokens": 24,
+      "total_tokens": 192,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 168,
+        "total_tokens": 192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 31,
+    "run_seconds": 5.316,
+    "content": "```json\n{\n    \"name\": \"Prince George's County\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 168,
+      "output_tokens": 24,
+      "total_tokens": 192,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 168,
+        "total_tokens": 192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 32,
+    "run_seconds": 3.189,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 14,
+      "total_tokens": 184,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 170,
+        "total_tokens": 184,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 33,
+    "run_seconds": 3.188,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 14,
+      "total_tokens": 184,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 170,
+        "total_tokens": 184,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 34,
+    "run_seconds": 3.188,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 171,
+      "output_tokens": 14,
+      "total_tokens": 185,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 171,
+        "total_tokens": 185,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 35,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"count\": 18000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 171,
+      "output_tokens": 18,
+      "total_tokens": 189,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 171,
+        "total_tokens": 189,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 36,
+    "run_seconds": 3.188,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 168,
+      "output_tokens": 14,
+      "total_tokens": 182,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 168,
+        "total_tokens": 182,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 37,
+    "run_seconds": 7.233,
+    "content": "```json\n{\n    \"name\": \"Charleston\",\n    \"address\": \"Charleston, West Virginia\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 182,
+      "output_tokens": 33,
+      "total_tokens": 215,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 33,
+        "prompt_tokens": 182,
+        "total_tokens": 215,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 38,
+    "run_seconds": 7.657,
+    "content": "```json\n{\n    \"name\": \"Broome County\",\n    \"address\": \"Broome County, New York\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 169,
+      "output_tokens": 35,
+      "total_tokens": 204,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 35,
+        "prompt_tokens": 169,
+        "total_tokens": 204,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 39,
+    "run_seconds": 3.189,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 171,
+      "output_tokens": 14,
+      "total_tokens": 185,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 171,
+        "total_tokens": 185,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 40,
+    "run_seconds": 7.231,
+    "content": "```json\n{\n    \"name\": \"Corning\",\n    \"address\": \"Corning, New York\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 172,
+      "output_tokens": 33,
+      "total_tokens": 205,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 33,
+        "prompt_tokens": 172,
+        "total_tokens": 205,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 41,
+    "run_seconds": 4.891,
+    "content": "```json\n{\n    \"name\": \"caf\u00e9s\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 169,
+      "output_tokens": 22,
+      "total_tokens": 191,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 169,
+        "total_tokens": 191,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 42,
+    "run_seconds": 5.104,
+    "content": "```json\n{\n    \"name\": \"hotels in Georgia\",\n    \"count\": null\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 184,
+      "output_tokens": 23,
+      "total_tokens": 207,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 184,
+        "total_tokens": 207,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 43,
+    "run_seconds": 3.399,
+    "content": "```json\n{\n    \"count\": 10\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 164,
+      "output_tokens": 15,
+      "total_tokens": 179,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 164,
+        "total_tokens": 179,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 44,
+    "run_seconds": 5.059,
+    "content": "```json\n{\n    \"name\": \"hospitals\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 168,
+      "output_tokens": 23,
+      "total_tokens": 191,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 168,
+        "total_tokens": 191,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 45,
+    "run_seconds": 3.188,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 14,
+      "total_tokens": 184,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 170,
+        "total_tokens": 184,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 46,
+    "run_seconds": 3.188,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 179,
+      "output_tokens": 14,
+      "total_tokens": 193,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 179,
+        "total_tokens": 193,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 47,
+    "run_seconds": 3.187,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 169,
+      "output_tokens": 14,
+      "total_tokens": 183,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 169,
+        "total_tokens": 183,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 48,
+    "run_seconds": 3.187,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 165,
+      "output_tokens": 14,
+      "total_tokens": 179,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 165,
+        "total_tokens": 179,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 49,
+    "run_seconds": 5.53,
+    "content": "```json\n{\n    \"name\": \"Harborcreek Township\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 168,
+      "output_tokens": 25,
+      "total_tokens": 193,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 168,
+        "total_tokens": 193,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 50,
+    "run_seconds": 7.233,
+    "content": "```json\n{\n    \"name\": \"Corning\",\n    \"address\": \"Corning, New York\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 33,
+      "total_tokens": 219,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 33,
+        "prompt_tokens": 186,
+        "total_tokens": 219,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 51,
+    "run_seconds": 4.89,
+    "content": "```json\n{\n    \"name\": \"restaurants\",\n    \"count\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 169,
+      "output_tokens": 22,
+      "total_tokens": 191,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 169,
+        "total_tokens": 191,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 52,
+    "run_seconds": 4.677,
+    "content": "```json\n{\n    \"name\": \"restaurants\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 21,
+      "total_tokens": 199,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 178,
+        "total_tokens": 199,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 53,
+    "run_seconds": 5.102,
+    "content": "```json\n{\n    \"name\": \"Birmingham\",\n    \"count\": 20\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 172,
+      "output_tokens": 23,
+      "total_tokens": 195,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 172,
+        "total_tokens": 195,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 54,
+    "run_seconds": 3.4,
+    "content": "```json\n{\n    \"count\": 14\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 168,
+      "output_tokens": 15,
+      "total_tokens": 183,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 168,
+        "total_tokens": 183,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 55,
+    "run_seconds": 4.89,
+    "content": "```json\n{\n    \"name\": \"universities\",\n    \"count\": null\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 175,
+      "output_tokens": 22,
+      "total_tokens": 197,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 175,
+        "total_tokens": 197,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 56,
+    "run_seconds": 5.102,
+    "content": "```json\n{\n    \"name\": \"Blaine County\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 169,
+      "output_tokens": 23,
+      "total_tokens": 192,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 169,
+        "total_tokens": 192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 57,
+    "run_seconds": 4.89,
+    "content": "```json\n{\n    \"name\": \"attractions\",\n    \"count\": 2\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 171,
+      "output_tokens": 22,
+      "total_tokens": 193,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 171,
+        "total_tokens": 193,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 58,
+    "run_seconds": 3.188,
+    "content": "```json\n{\n    \"count\": 1\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 168,
+      "output_tokens": 14,
+      "total_tokens": 182,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 168,
+        "total_tokens": 182,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 59,
+    "run_seconds": 5.741,
+    "content": "```json\n{\n    \"name\": \"Rensselaer County\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 174,
+      "output_tokens": 26,
+      "total_tokens": 200,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 26,
+        "prompt_tokens": 174,
+        "total_tokens": 200,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 60,
+    "run_seconds": 3.187,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 163,
+      "output_tokens": 14,
+      "total_tokens": 177,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 163,
+        "total_tokens": 177,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 61,
+    "run_seconds": 3.188,
+    "content": "```json\n{\n    \"count\": 3\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 166,
+      "output_tokens": 14,
+      "total_tokens": 180,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 166,
+        "total_tokens": 180,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 62,
+    "run_seconds": 3.188,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 169,
+      "output_tokens": 14,
+      "total_tokens": 183,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 169,
+        "total_tokens": 183,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 63,
+    "run_seconds": 4.68,
+    "content": "```json\n{\n    \"name\": \"restaurants\",\n    \"count\": 2\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 21,
+      "total_tokens": 191,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 170,
+        "total_tokens": 191,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 64,
+    "run_seconds": 7.021,
+    "content": "```json\n{\n    \"name\": \"Redmond\",\n    \"address\": \"Redmond, Washington\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 167,
+      "output_tokens": 32,
+      "total_tokens": 199,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 32,
+        "prompt_tokens": 167,
+        "total_tokens": 199,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 65,
+    "run_seconds": 5.532,
+    "content": "```json\n{\n    \"name\": \"Cuyahoga County\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 25,
+      "total_tokens": 195,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 170,
+        "total_tokens": 195,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 66,
+    "run_seconds": 6.808,
+    "content": "```json\n{\n    \"name\": \"galleries\",\n    \"address\": \"Davis, California\",\n    \"count\": 4\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 175,
+      "output_tokens": 31,
+      "total_tokens": 206,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 31,
+        "prompt_tokens": 175,
+        "total_tokens": 206,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 67,
+    "run_seconds": 3.189,
+    "content": "```json\n{\n    \"count\": 9\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 14,
+      "total_tokens": 187,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 173,
+        "total_tokens": 187,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 68,
+    "run_seconds": 4.893,
+    "content": "```json\n{\n    \"name\": \"hotels\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 180,
+      "output_tokens": 22,
+      "total_tokens": 202,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 180,
+        "total_tokens": 202,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 69,
+    "run_seconds": 5.105,
+    "content": "```json\n{\n    \"name\": \"museums\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 167,
+      "output_tokens": 23,
+      "total_tokens": 190,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 167,
+        "total_tokens": 190,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 70,
+    "run_seconds": 3.19,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 167,
+      "output_tokens": 14,
+      "total_tokens": 181,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 167,
+        "total_tokens": 181,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 71,
+    "run_seconds": 1.486,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 185,
+      "output_tokens": 6,
+      "total_tokens": 191,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 185,
+        "total_tokens": 191,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 72,
+    "run_seconds": 5.106,
+    "content": "```json\n{\n    \"name\": \"Oxford County\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 166,
+      "output_tokens": 23,
+      "total_tokens": 189,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 166,
+        "total_tokens": 189,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 73,
+    "run_seconds": 3.189,
+    "content": "```json\n{\n    \"count\": 5\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 167,
+      "output_tokens": 14,
+      "total_tokens": 181,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 167,
+        "total_tokens": 181,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 74,
+    "run_seconds": 7.446,
+    "content": "```json\n{\n    \"name\": \"St. George\",\n    \"address\": \"St. George, Utah\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 167,
+      "output_tokens": 34,
+      "total_tokens": 201,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 34,
+        "prompt_tokens": 167,
+        "total_tokens": 201,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 75,
+    "run_seconds": 7.021,
+    "content": "```json\n{\n    \"name\": \"caf\u00e9s\",\n    \"address\": \"Santa Cruz, California\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 169,
+      "output_tokens": 32,
+      "total_tokens": 201,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 32,
+        "prompt_tokens": 169,
+        "total_tokens": 201,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 76,
+    "run_seconds": 4.893,
+    "content": "```json\n{\n    \"name\": \"hotels\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 165,
+      "output_tokens": 22,
+      "total_tokens": 187,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 165,
+        "total_tokens": 187,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 77,
+    "run_seconds": 4.892,
+    "content": "```json\n{\n    \"name\": \"nature reserves\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 171,
+      "output_tokens": 22,
+      "total_tokens": 193,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 171,
+        "total_tokens": 193,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 78,
+    "run_seconds": 5.318,
+    "content": "```json\n{\n    \"name\": \"Gallatin County\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 168,
+      "output_tokens": 24,
+      "total_tokens": 192,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 168,
+        "total_tokens": 192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 79,
+    "run_seconds": 5.318,
+    "content": "```json\n{\n    \"name\": \"fast food restaurants\",\n    \"count\": 10\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 174,
+      "output_tokens": 24,
+      "total_tokens": 198,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 174,
+        "total_tokens": 198,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 80,
+    "run_seconds": 4.893,
+    "content": "```json\n{\n    \"count\": 331000000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 171,
+      "output_tokens": 22,
+      "total_tokens": 193,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 171,
+        "total_tokens": 193,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 81,
+    "run_seconds": 7.234,
+    "content": "```json\n{\n    \"name\": \"stadia\",\n    \"address\": \"Ogden, Utah\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 167,
+      "output_tokens": 33,
+      "total_tokens": 200,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 33,
+        "prompt_tokens": 167,
+        "total_tokens": 200,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 82,
+    "run_seconds": 7.66,
+    "content": "```json\n{\n    \"name\": \"golf courses\",\n    \"address\": \"Osceola County, Florida\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 171,
+      "output_tokens": 35,
+      "total_tokens": 206,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 35,
+        "prompt_tokens": 171,
+        "total_tokens": 206,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 83,
+    "run_seconds": 5.105,
+    "content": "```json\n{\n    \"name\": \"universities\",\n    \"count\": 3\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 169,
+      "output_tokens": 23,
+      "total_tokens": 192,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 169,
+        "total_tokens": 192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 84,
+    "run_seconds": 3.189,
+    "content": "```json\n{\n    \"count\": 2\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 169,
+      "output_tokens": 14,
+      "total_tokens": 183,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 169,
+        "total_tokens": 183,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 85,
+    "run_seconds": 3.188,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 164,
+      "output_tokens": 14,
+      "total_tokens": 178,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 164,
+        "total_tokens": 178,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 86,
+    "run_seconds": 3.189,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 176,
+      "output_tokens": 14,
+      "total_tokens": 190,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 176,
+        "total_tokens": 190,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 87,
+    "run_seconds": 7.022,
+    "content": "```json\n{\n    \"name\": \"restaurants\",\n    \"address\": \"Greenwood Village, Colorado\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 168,
+      "output_tokens": 32,
+      "total_tokens": 200,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 32,
+        "prompt_tokens": 168,
+        "total_tokens": 200,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 88,
+    "run_seconds": 5.105,
+    "content": "```json\n{\n    \"name\": \"Shorewood\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 23,
+      "total_tokens": 193,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 170,
+        "total_tokens": 193,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 89,
+    "run_seconds": 3.189,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 169,
+      "output_tokens": 14,
+      "total_tokens": 183,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 169,
+        "total_tokens": 183,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 90,
+    "run_seconds": 4.892,
+    "content": "```json\n{\n    \"name\": \"hotels\",\n    \"count\": 3\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 22,
+      "total_tokens": 192,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 170,
+        "total_tokens": 192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 91,
+    "run_seconds": 3.19,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 179,
+      "output_tokens": 14,
+      "total_tokens": 193,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 179,
+        "total_tokens": 193,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 92,
+    "run_seconds": 3.401,
+    "content": "```json\n{\n    \"count\": 14\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 165,
+      "output_tokens": 15,
+      "total_tokens": 180,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 165,
+        "total_tokens": 180,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 93,
+    "run_seconds": 6.17,
+    "content": "```json\n{\n    \"name\": \"None\",\n    \"address\": \"None\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 172,
+      "output_tokens": 28,
+      "total_tokens": 200,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 28,
+        "prompt_tokens": 172,
+        "total_tokens": 200,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 94,
+    "run_seconds": 1.486,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 183,
+      "output_tokens": 6,
+      "total_tokens": 189,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 183,
+        "total_tokens": 189,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 95,
+    "run_seconds": 7.022,
+    "content": "```json\n{\n    \"name\": \"Rockford\",\n    \"address\": \"Rockford, Illinois\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 182,
+      "output_tokens": 32,
+      "total_tokens": 214,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 32,
+        "prompt_tokens": 182,
+        "total_tokens": 214,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 96,
+    "run_seconds": 3.401,
+    "content": "```json\n{\n    \"count\": 10\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 169,
+      "output_tokens": 15,
+      "total_tokens": 184,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 169,
+        "total_tokens": 184,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 97,
+    "run_seconds": 7.447,
+    "content": "```json\n{\n    \"name\": \"aquaria\",\n    \"address\": \"Auburn Hills, Michigan\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 167,
+      "output_tokens": 34,
+      "total_tokens": 201,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 34,
+        "prompt_tokens": 167,
+        "total_tokens": 201,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 98,
+    "run_seconds": 4.879,
+    "content": "```json\n{\n    \"name\": \"hotels\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 22,
+      "total_tokens": 192,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 170,
+        "total_tokens": 192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 99,
+    "run_seconds": 5.105,
+    "content": "```json\n{\n    \"name\": \"caf\u00e9s\",\n    \"count\": 14\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 166,
+      "output_tokens": 23,
+      "total_tokens": 189,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 166,
+        "total_tokens": 189,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  }
+]

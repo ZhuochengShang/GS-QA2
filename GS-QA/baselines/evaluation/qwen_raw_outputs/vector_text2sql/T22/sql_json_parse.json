@@ -1,0 +1,502 @@
+[
+  {
+    "id": 500,
+    "content": "```json\n{\n    \"name\": \"nearest university\",\n    \"address\": \"Adventure Sports, Hershey, PA\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 8.609
+  },
+  {
+    "id": 501,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.085
+  },
+  {
+    "id": 502,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 4.086
+  },
+  {
+    "id": 503,
+    "content": "```json\n{\n    \"name\": \"Oak Ridge Children's Museum\",\n    \"address\": \"300 Wongsong Rd, Oak Ridge, TN 37830\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 11.617
+  },
+  {
+    "id": 504,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 4.088
+  },
+  {
+    "id": 505,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.086
+  },
+  {
+    "id": 506,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 3.87
+  },
+  {
+    "id": 507,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.087
+  },
+  {
+    "id": 508,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.101
+  },
+  {
+    "id": 509,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 3.873
+  },
+  {
+    "id": 510,
+    "content": "```json\n{\n    \"name\": \"Acushnet Sawmill\",\n    \"azimuth_angle\": 270\n}\n```",
+    "run_seconds": 6.461
+  },
+  {
+    "id": 511,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 4.087
+  },
+  {
+    "id": 512,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.091
+  },
+  {
+    "id": 513,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 4.087
+  },
+  {
+    "id": 514,
+    "content": "```json\n{\n    \"azimuth_angle\": 90\n}\n```",
+    "run_seconds": 3.872
+  },
+  {
+    "id": 515,
+    "content": "```json\n{\n    \"name\": \"Action Behavior Centers - ABA therapy for Autism\",\n    \"address\": \"1550 12th Ave, Longmont, CO 80501\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 12.917
+  },
+  {
+    "id": 516,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 3.876
+  },
+  {
+    "id": 517,
+    "content": "```json\n{\n    \"azimuth_angle\": 314\n}\n```",
+    "run_seconds": 4.089
+  },
+  {
+    "id": 518,
+    "content": "```json\n{\n    \"name\": \"nearest caf\u00e9\",\n    \"address\": \"Ruffner Park, Irondale, AL\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 9.251
+  },
+  {
+    "id": 519,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.087
+  },
+  {
+    "id": 520,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 4.088
+  },
+  {
+    "id": 521,
+    "content": "```json\n{\n    \"name\": \"Super Cichlids Inc\",\n    \"address\": \"Dover, DE\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 8.825
+  },
+  {
+    "id": 522,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.088
+  },
+  {
+    "id": 523,
+    "content": "```json\n{\n    \"name\": \"nearest fast food restaurant\",\n    \"address\": \"English Street Community Garden, New Haven, CT\",\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 9.257
+  },
+  {
+    "id": 524,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 3.873
+  },
+  {
+    "id": 525,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 4.089
+  },
+  {
+    "id": 526,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.092
+  },
+  {
+    "id": 527,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.085
+  },
+  {
+    "id": 528,
+    "content": "```json\n{\n    \"name\": \"nearest university\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 5.812
+  },
+  {
+    "id": 529,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.087
+  },
+  {
+    "id": 530,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.085
+  },
+  {
+    "id": 531,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.09
+  },
+  {
+    "id": 532,
+    "content": "```json\n{\n    \"name\": \"Hobbit Cabin\",\n    \"address\": \"Talkeetna, AK\",\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 9.038
+  },
+  {
+    "id": 533,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.092
+  },
+  {
+    "id": 534,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.086
+  },
+  {
+    "id": 535,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 4.087
+  },
+  {
+    "id": 536,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 4.086
+  },
+  {
+    "id": 537,
+    "content": "```json\n{\n    \"name\": \"caf\u00e9\",\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 5.604
+  },
+  {
+    "id": 538,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.09
+  },
+  {
+    "id": 539,
+    "content": "```json\n{\n    \"name\": \"closest university\",\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 5.595
+  },
+  {
+    "id": 540,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 3.873
+  },
+  {
+    "id": 541,
+    "content": "```json\n{\n    \"azimuth_angle\": 270\n}\n```",
+    "run_seconds": 4.087
+  },
+  {
+    "id": 542,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.088
+  },
+  {
+    "id": 543,
+    "content": "```json\n{\n    \"name\": \"Bellevue Park\",\n    \"address\": \"123 108th Ave NE, Bellevue, WA 98004\",\n    \"azimuth_angle\": 90\n}\n```",
+    "run_seconds": 11.844
+  },
+  {
+    "id": 544,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 4.087
+  },
+  {
+    "id": 545,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.089
+  },
+  {
+    "id": 546,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.086
+  },
+  {
+    "id": 547,
+    "content": "```json\n{\n    \"name\": \"New Mexico Highlands University\",\n    \"address\": \"800 University Blvd, Las Vegas, NM 87701\",\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 10.764
+  },
+  {
+    "id": 548,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.091
+  },
+  {
+    "id": 549,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 4.088
+  },
+  {
+    "id": 550,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.089
+  },
+  {
+    "id": 551,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 3.878
+  },
+  {
+    "id": 552,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 3.871
+  },
+  {
+    "id": 553,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.09
+  },
+  {
+    "id": 554,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 3.87
+  },
+  {
+    "id": 555,
+    "content": "```json\n{\n    \"name\": \"zoo\",\n    \"address\": \"Bresnan Arena, Mankato, MN\",\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 9.046
+  },
+  {
+    "id": 556,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.087
+  },
+  {
+    "id": 557,
+    "content": "```json\n{\n    \"name\": \"Wenatchee Valley Museum and Cultural Center\",\n    \"address\": \"191 S Mission St, Wenatchee, WA 98801\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 12.608
+  },
+  {
+    "id": 558,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 3.896
+  },
+  {
+    "id": 559,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.172
+  },
+  {
+    "id": 560,
+    "content": "```json\n{\n    \"name\": \"Tensas River National Wildlife Refuge\",\n    \"address\": \"Tallulah, LA\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 9.643
+  },
+  {
+    "id": 561,
+    "content": "```json\n{\n    \"name\": \"Blue Ocean Discovery Center\",\n    \"address\": \"100 Ocean Blvd, Hampton, NH 03842\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 11.406
+  },
+  {
+    "id": 562,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.334
+  },
+  {
+    "id": 563,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 4.13
+  },
+  {
+    "id": 564,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.357
+  },
+  {
+    "id": 565,
+    "content": "```json\n{\n    \"name\": \"Plaza at the Shops by HTA\",\n    \"address\": \"Hoonah, AK\",\n    \"distance\": 30,\n    \"azimuth_angle\": 90\n}\n```",
+    "run_seconds": 11.668
+  },
+  {
+    "id": 566,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 4.353
+  },
+  {
+    "id": 567,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.3
+  },
+  {
+    "id": 568,
+    "content": "```json\n{\n    \"name\": \"Horrigan Hall\",\n    \"address\": \"130 S 1st St, Louisville, KY 40202\",\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 11.797
+  },
+  {
+    "id": 569,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.344
+  },
+  {
+    "id": 570,
+    "content": "```json\n{\n    \"azimuth_angle\": 90\n}\n```",
+    "run_seconds": 4.133
+  },
+  {
+    "id": 571,
+    "content": "```json\n{\n    \"name\": \"nearest park\",\n    \"azimuth_angle\": 0\n}\n```",
+    "run_seconds": 5.757
+  },
+  {
+    "id": 572,
+    "content": "```json\n{\n    \"name\": \"Georgia Nature Center\",\n    \"address\": \"1000 Center Park Dr, Watkinsville, GA 30677\",\n    \"azimuth_angle\": 0\n}\n```",
+    "run_seconds": 11.451
+  },
+  {
+    "id": 573,
+    "content": "```json\n{\n    \"name\": \"Sherwood Forest Faire\",\n    \"address\": \"McDade, TX\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 9.037
+  },
+  {
+    "id": 574,
+    "content": "```json\n{\n    \"name\": \"nearest nature reserve\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 6.095
+  },
+  {
+    "id": 575,
+    "content": "```json\n{\n    \"azimuth_angle\": 300\n}\n```",
+    "run_seconds": 4.251
+  },
+  {
+    "id": 576,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.359
+  },
+  {
+    "id": 577,
+    "content": "```json\n{\n    \"azimuth_angle\": 90\n}\n```",
+    "run_seconds": 4.117
+  },
+  {
+    "id": 578,
+    "content": "```json\n{\n    \"azimuth_angle\": 315\n}\n```",
+    "run_seconds": 4.354
+  },
+  {
+    "id": 579,
+    "content": "```json\n{\n    \"name\": \"nearest hospital\",\n    \"address\": \"Rio Grande Gorge Visitor Center, Pilar, NM\",\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 9.886
+  },
+  {
+    "id": 580,
+    "content": "```json\n{\n    \"name\": \"New York Institute of Technology\",\n    \"address\": \"1001 E 23rd St, New York, NY 10010\",\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 12.414
+  },
+  {
+    "id": 581,
+    "content": "```json\n{\n    \"name\": \"nearest gallery\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 5.878
+  },
+  {
+    "id": 582,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 3.943
+  },
+  {
+    "id": 583,
+    "content": "```json\n{\n    \"name\": \"Thomas Jefferson Memorial\",\n    \"address\": \"1000 University Drive, Lexington, VA 24450\",\n    \"azimuth_angle\": 30\n}\n```",
+    "run_seconds": 11.113
+  },
+  {
+    "id": 584,
+    "content": "```json\n{\n    \"name\": \"Barons Bus Arena\",\n    \"address\": \"1000 Barons Road, Parma, OH 44130\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 11.589
+  },
+  {
+    "id": 585,
+    "content": "```json\n{\n    \"name\": \"Dolphins Plus Bayside\",\n    \"address\": \"Key Largo, FL\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 9.335
+  },
+  {
+    "id": 586,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 4.126
+  },
+  {
+    "id": 587,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.283
+  },
+  {
+    "id": 588,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.24
+  },
+  {
+    "id": 589,
+    "content": "```json\n{\n    \"name\": \"ABQ BioPark (Botanic Garden)\",\n    \"address\": \"1601 Central Ave NW, Albuquerque, NM 87102\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 12.502
+  },
+  {
+    "id": 590,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 4.389
+  },
+  {
+    "id": 591,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 4.359
+  },
+  {
+    "id": 592,
+    "content": "```json\n{\n    \"name\": \"Red Wolf Sanctuary\",\n    \"address\": \"Rising Sun, IN\",\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 8.976
+  },
+  {
+    "id": 593,
+    "content": "```json\n{\n    \"name\": \"Sky Oaks Reserve\",\n    \"address\": \"Warner Springs, CA\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 8.953
+  },
+  {
+    "id": 594,
+    "content": "```json\n{\n    \"name\": \"closest hotel\",\n    \"address\": \"Fireside Farm & Sawmill, Efland, NC\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 10.483
+  },
+  {
+    "id": 595,
+    "content": "```json\n{\n    \"name\": \"Fran Rish Stadium\",\n    \"address\": \"1201 W 12th Ave, Richland, WA 99354\",\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 12.618
+  },
+  {
+    "id": 596,
+    "content": "```json\n{\n    \"name\": \"Out of Africa Wildlife Park\",\n    \"address\": \"1001 Wildlife Way, Camp Verde, AZ 86322\",\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 11.994
+  },
+  {
+    "id": 597,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 3.898
+  },
+  {
+    "id": 598,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 4.219
+  },
+  {
+    "id": 599,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 4.134
+  }
+]

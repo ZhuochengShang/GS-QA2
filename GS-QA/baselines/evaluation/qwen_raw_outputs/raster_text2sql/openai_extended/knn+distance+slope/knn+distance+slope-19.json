@@ -1,0 +1,63 @@
+{
+  "answer_type": "name+distance+slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "name+distance+slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "dist_m": 11845.938539,
+      "road_name": "Clovis Trail",
+      "slope_deg": 10.355137
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "dist_m": 11845.938539,
+        "road_name": "Clovis Trail",
+        "slope_deg": 10.355137
+      }
+    ]
+  },
+  "gold_sql": "WITH ref AS (\n  SELECT ST_GeomFromText('POINT (-119.823195 36.752149)', 4326)::geometry AS g\n),\nnearest AS (\n  SELECT r.road_name,\n         r.geometry::geometry AS geom,\n         ST_Distance(r.geometry::geography, ST_GeomFromText('POINT (-119.823195 36.752149)', 4326)::geography) AS dist_m\n  FROM roads r, ref\n  WHERE r.highway = 'cycleway'\n    AND r.road_name IS NOT NULL\n    AND ST_Dimension(r.geometry::geometry) = 1\n    AND ST_NPoints(r.geometry::geometry) BETWEEN 2 AND 50\n    AND r.geometry::geometry && ST_MakeEnvelope(-126, 24, -66, 50, 4326)\n    AND ST_DWithin(r.geometry::geography, ST_GeomFromText('POINT (-119.823195 36.752149)', 4326)::geography, 100000)\n  ORDER BY r.geometry::geometry <-> ref.g\n  LIMIT 1\n),\nsegments AS (\n  SELECT (ST_DumpSegments(n.geom)).geom AS seg FROM nearest n\n),\nendpoints AS (\n  SELECT ST_StartPoint(seg) AS p1,\n         ST_EndPoint(seg)   AS p2,\n         ST_Length(seg::geography) AS seg_len_m\n  FROM segments\n),\nelev AS (\n  SELECT e.seg_len_m,\n         z1.v AS z1,\n         z2.v AS z2\n  FROM endpoints e\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, e.p1) AS v\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, e.p1)\n    LIMIT 1\n  ) z1 ON z1.v IS NOT NULL\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, e.p2) AS v\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, e.p2)\n    LIMIT 1\n  ) z2 ON z2.v IS NOT NULL\n),\nslopes AS (\n  SELECT seg_len_m,\n         CASE WHEN seg_len_m > 0 THEN ABS(z2 - z1) / seg_len_m ELSE NULL END AS grade\n  FROM elev\n  WHERE z1 IS NOT NULL AND z2 IS NOT NULL\n)\nSELECT n.road_name,\n       n.dist_m,\n       DEGREES(ATAN(SUM(grade * seg_len_m) / NULLIF(SUM(seg_len_m), 0))) AS slope_deg\nFROM nearest n\nCROSS JOIN slopes\nWHERE grade IS NOT NULL\nGROUP BY n.road_name, n.dist_m;",
+  "id": "knn+distance+slope-19",
+  "model_output": "```sql\nWITH zoo_geom AS (\n  SELECT \n    ST_SetSRID(ST_MakePoint(-119.823195, 36.752149), 4326)::geography AS geometry\n),\ncycleway AS (\n  SELECT \n    id,\n    geometry,\n    ST_Distance(zoo_geom.geometry, roads.geometry) AS distance_to_zoo\n  FROM \n    roads,\n    zoo_geom\n  WHERE \n    roads.highway IS NOT NULL\n    AND roads.highway ILIKE '%cycleway%'\n    AND ST_DWithin(zoo_geom.geometry, roads.geometry, 1000) -- limit search to 1000m\n),\nclosest_cycleway AS (\n  SELECT \n    id,\n    geometry\n  FROM \n    cycleway\n  ORDER BY \n    distance_to_zoo ASC\n  LIMIT 1\n),\nterrain_profile AS (\n  SELECT \n    ST_3DInterpolatePoints(\n      ST_Clip(public.dem_us.rast, closest_cycleway.geometry),\n      closest_cycleway.geometry,\n      'LINESTRING'\n    ) AS elevation_profile\n  FROM \n    public.dem_us,\n    closest_cycleway\n  WHERE \n    ST_Intersects(public.dem_us.rast, closest_cycleway.geometry)\n),\nslope_stats AS (\n  SELECT \n    ST_Slope(ST_Union(public.dem_us.rast), 1, '32BF') AS slope_rast,\n    ST_Stats(ST_Slope(ST_Union(public.dem_us.rast), 1, '32BF'), 1, TRUE) AS slope_stats\n  FROM \n    public.dem_us,\n    closest_cycleway\n  WHERE \n    ST_Intersects(public.dem_us.rast, closest_cycleway.geometry)\n)\nSELECT \n  'Fresno Chaffee Zoo' AS feature_name,\n  MIN(cycleway.distance_to_zoo) AS distance_to_cycleway_meters,\n  slope_stats.mean AS average_slope_degrees\nFROM \n  cycleway,\n  slope_stats;\n```",
+  "predicted_exec": {
+    "error": "column reference \"geometry\" is ambiguous\nLINE 8:     geometry,\n            ^",
+    "output": []
+  },
+  "predicted_sql": "WITH zoo_geom AS (\n  SELECT \n    ST_SetSRID(ST_MakePoint(-119.823195, 36.752149), 4326)::geography AS geometry\n),\ncycleway AS (\n  SELECT \n    id,\n    geometry,\n    ST_Distance(zoo_geom.geometry, roads.geometry) AS distance_to_zoo\n  FROM \n    roads,\n    zoo_geom\n  WHERE \n    roads.highway IS NOT NULL\n    AND roads.highway ILIKE '%cycleway%'\n    AND ST_DWithin(zoo_geom.geometry, roads.geometry, 1000) -- limit search to 1000m\n),\nclosest_cycleway AS (\n  SELECT \n    id,\n    geometry\n  FROM \n    cycleway\n  ORDER BY \n    distance_to_zoo ASC\n  LIMIT 1\n),\nterrain_profile AS (\n  SELECT \n    ST_3DInterpolatePoints(\n      ST_Clip(public.dem_us.rast, closest_cycleway.geometry),\n      closest_cycleway.geometry,\n      'LINESTRING'\n    ) AS elevation_profile\n  FROM \n    public.dem_us,\n    closest_cycleway\n  WHERE \n    ST_Intersects(public.dem_us.rast, closest_cycleway.geometry)\n),\nslope_stats AS (\n  SELECT \n    ST_Slope(ST_Union(public.dem_us.rast), 1, '32BF') AS slope_rast,\n    ST_Stats(ST_Slope(ST_Union(public.dem_us.rast), 1, '32BF'), 1, TRUE) AS slope_stats\n  FROM \n    public.dem_us,\n    closest_cycleway\n  WHERE \n    ST_Intersects(public.dem_us.rast, closest_cycleway.geometry)\n)\nSELECT \n  'Fresno Chaffee Zoo' AS feature_name,\n  MIN(cycleway.distance_to_zoo) AS distance_to_cycleway_meters,\n  slope_stats.mean AS average_slope_degrees\nFROM \n  cycleway,\n  slope_stats;",
+  "predicted_sql_candidates": [
+    "WITH zoo_geom AS (\n  SELECT \n    ST_SetSRID(ST_MakePoint(-119.823195, 36.752149), 4326)::geography AS geometry\n),\ncycleway AS (\n  SELECT \n    id,\n    geometry,\n    ST_Distance(zoo_geom.geometry, roads.geometry) AS distance_to_zoo\n  FROM \n    roads,\n    zoo_geom\n  WHERE \n    roads.highway IS NOT NULL\n    AND roads.highway ILIKE '%cycleway%'\n    AND ST_DWithin(zoo_geom.geometry, roads.geometry, 1000) -- limit search to 1000m\n),\nclosest_cycleway AS (\n  SELECT \n    id,\n    geometry\n  FROM \n    cycleway\n  ORDER BY \n    distance_to_zoo ASC\n  LIMIT 1\n),\nterrain_profile AS (\n  SELECT \n    ST_3DInterpolatePoints(\n      ST_Clip(public.dem_us.rast, closest_cycleway.geometry),\n      closest_cycleway.geometry,\n      'LINESTRING'\n    ) AS elevation_profile\n  FROM \n    public.dem_us,\n    closest_cycleway\n  WHERE \n    ST_Intersects(public.dem_us.rast, closest_cycleway.geometry)\n),\nslope_stats AS (\n  SELECT \n    ST_Slope(ST_Union(public.dem_us.rast), 1, '32BF') AS slope_rast,\n    ST_Stats(ST_Slope(ST_Union(public.dem_us.rast), 1, '32BF'), 1, TRUE) AS slope_stats\n  FROM \n    public.dem_us,\n    closest_cycleway\n  WHERE \n    ST_Intersects(public.dem_us.rast, closest_cycleway.geometry)\n)\nSELECT \n  'Fresno Chaffee Zoo' AS feature_name,\n  MIN(cycleway.distance_to_zoo) AS distance_to_cycleway_meters,\n  slope_stats.mean AS average_slope_degrees\nFROM \n  cycleway,\n  slope_stats;"
+  ],
+  "query_type": "extended",
+  "question": "What's the distance between Fresno Chaffee Zoo, Fresno, CA and the closest cycle way, and how steep is the terrain along that road?",
+  "source_file": "knn+distance+slope.jsonl",
+  "source_stem": "knn+distance+slope",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 91.274,
+    "total_seconds": 91.275
+  },
+  "usage": {
+    "completion_tokens": 428,
+    "prompt_tokens": 1657,
+    "total_tokens": 2085
+  }
+}

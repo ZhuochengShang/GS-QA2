@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 4.685977
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 4.685977
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-84.804977 32.036893, -84.804999 32.036855, -84.805358 32.03605, -84.805515 32.035719, -84.805585 32.035517, -84.805881 32.034675, -84.806188 32.033245, -84.806221 32.033123, -84.806351 32.032679, -84.806397 32.032518, -84.806661 32.032069, -84.806868 32.031871, -84.8072 32.031563, -84.80776 32.031195, -84.808974 32.030798, -84.810286 32.030312, -84.810958 32.030122, -84.811215 32.030055, -84.812369 32.030025, -84.816446 32.030531, -84.822792 32.031323, -84.823945 32.031351, -84.825637 32.027553, -84.826461 32.0268, -84.829721 32.027049, -84.829613 32.031646, -84.822925 32.031665, -84.820442 32.031284, -84.816421 32.03081, -84.812367 32.030327, -84.811263 32.030395, -84.811016 32.030451, -84.810446 32.03066, -84.809123 32.031108, -84.807968 32.031535, -84.807319 32.031962, -84.807018 32.032244, -84.80682 32.032598, -84.80679 32.032651, -84.806728 32.03311, -84.806725 32.033125, -84.806424 32.034692, -84.80607 32.035783, -84.805915 32.036131, -84.805528 32.037003, -84.805255 32.037613, -84.805176 32.037791, -84.804535 32.038836, -84.804513 32.03888, -84.802255 32.043145, -84.803056 32.04317, -84.803046 32.047594, -84.806268 32.0476, -84.806234 32.048233, -84.810859 32.048226, -84.810849 32.049038, -84.813331 32.04819, -84.812897 32.047486, -84.812746 32.047252, -84.812558 32.046836, -84.812293 32.046523, -84.811954 32.046211, -84.811708 32.045898, -84.811557 32.045534, -84.811557 32.045378, -84.811633 32.045015, -84.811746 32.04468, -84.811784 32.044473, -84.811765 32.04411, -84.811727 32.043512, -84.811595 32.042786, -84.819448 32.04291, -84.82339 32.042973, -84.823409 32.043802, -84.82339 32.045436, -84.82343 32.047111, -84.820465 32.047226, -84.817922 32.047443, -84.815122 32.048142, -84.813481 32.04862, -84.811491 32.049208, -84.810784 32.049416, -84.810746 32.051256, -84.805877 32.051248, -84.805877 32.052051, -84.803062 32.051966, -84.803067 32.057743, -84.797858 32.05775, -84.797133 32.058577, -84.796706 32.059089, -84.796062 32.058965, -84.796299 32.058667, -84.796586 32.058273, -84.79697 32.05775, -84.786671 32.057724, -84.785438 32.057676, -84.785367 32.050786, -84.784011 32.050481, -84.783203 32.050371, -84.782938 32.050354, -84.782655 32.050345, -84.78184 32.050361, -84.781549 32.050387, -84.781181 32.050435, -84.781078 32.050453, -84.780953 32.050474, -84.780764 32.050514, -84.778405 32.051015, -84.777312 32.051226, -84.776716 32.051341, -84.775367 32.05165, -84.775163 32.051687, -84.772564 32.052154, -84.771406 32.05237, -84.769329 32.052757, -84.765688 32.053567, -84.76258 32.053899, -84.759567 32.054047, -84.75731 32.054066, -84.754979 32.053858, -84.75104 32.05339, -84.751034 32.051594, -84.752565 32.050768, -84.754337 32.050906, -84.754062 32.053428, -84.755766 32.053606, -84.757354 32.053791, -84.758428 32.053784, -84.760843 32.053699, -84.763607 32.053558, -84.764667 32.053438, -84.76562 32.053263, -84.772508 32.051876, -84.77523 32.051385, -84.776831 32.05108, -84.777187 32.051011, -84.777251 32.050998, -84.777632 32.050928, -84.778409 32.050772, -84.778962 32.050662, -84.780532 32.050328, -84.780504 32.046048, -84.780522 32.044661, -84.785372 32.044662, -84.785392 32.043206, -84.790658 32.043177, -84.791989 32.043177, -84.798144 32.043156, -84.799077 32.043152, -84.801644 32.04314, -84.803875 32.038749, -84.803901 32.0387, -84.804543 32.037701, -84.804602 32.037575, -84.804977 32.036893))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).mean AS slope\nFROM region_slope;",
+  "id": "avg_slope+area-4",
+  "model_output": "```sql\nWITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Lumpkin' AND border_type = 'county'\n)\n, clipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM region_geom), true) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM region_geom))\n)\nSELECT\n  ST_Mean(ST_Slope(rast, 1)) AS mean_slope_degrees\nFROM clipped_dem;\n```",
+  "predicted_exec": {
+    "error": "function st_mean(raster) does not exist\nLINE 12:   ST_Mean(ST_Slope(rast, 1)) AS mean_slope_degrees\n           ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Lumpkin' AND border_type = 'county'\n)\n, clipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM region_geom), true) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM region_geom))\n)\nSELECT\n  ST_Mean(ST_Slope(rast, 1)) AS mean_slope_degrees\nFROM clipped_dem;",
+  "predicted_sql_candidates": [
+    "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Lumpkin' AND border_type = 'county'\n)\n, clipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM region_geom), true) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM region_geom))\n)\nSELECT\n  ST_Mean(ST_Slope(rast, 1)) AS mean_slope_degrees\nFROM clipped_dem;"
+  ],
+  "query_type": "raster_only",
+  "question": "In Lumpkin, Georgia, what is the mean slope?",
+  "source_file": "avg_slope+area.jsonl",
+  "source_stem": "avg_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 25.002,
+    "total_seconds": 25.003
+  },
+  "usage": {
+    "completion_tokens": 115,
+    "prompt_tokens": 1516,
+    "total_tokens": 1631
+  }
+}

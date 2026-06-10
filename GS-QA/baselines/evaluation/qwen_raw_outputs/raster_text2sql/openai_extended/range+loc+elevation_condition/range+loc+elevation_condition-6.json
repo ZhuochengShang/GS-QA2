@@ -1,0 +1,121 @@
+{
+  "answer_type": "row/s",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "row/s",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "rowset_f1",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "addr_city": "Fruitland",
+      "addr_housenumber": "1210",
+      "addr_postcode": "83619",
+      "addr_state": "ID",
+      "addr_street": "Northwest 16th Street",
+      "amenity": "hospital",
+      "elevation": 668.0,
+      "emergency": "yes",
+      "geometry": "POINT (-116.929504 44.024043)",
+      "healthcare": "hospital",
+      "id": 46954,
+      "opening_hours": "Mo-Fr 09:00-17:00",
+      "operator": "St. Luke's Health System",
+      "osm_id": 7895285985,
+      "poi_name": "St. Luke's Fruitland Medical Plaza"
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "addr_city": "Fruitland",
+        "addr_housenumber": "1210",
+        "addr_postcode": "83619",
+        "addr_state": "ID",
+        "addr_street": "Northwest 16th Street",
+        "amenity": "hospital",
+        "artwork_type": null,
+        "building": null,
+        "capacity": null,
+        "cuisine": null,
+        "delivery": null,
+        "description": null,
+        "drive_through": null,
+        "elevation": 668.0,
+        "emergency": "yes",
+        "fast_food": null,
+        "fee": null,
+        "geometry": "0101000020E6100000136058FE7C3B5DC0A257A8DA13034640",
+        "hairdresser": null,
+        "healthcare": "hospital",
+        "historic": null,
+        "id": 46954,
+        "information": null,
+        "internet_access": null,
+        "leisure": null,
+        "museum": null,
+        "official_name": null,
+        "opening_hours": "Mo-Fr 09:00-17:00",
+        "operator": "St. Luke's Health System",
+        "osm_id": 7895285985,
+        "outdoor_seating": null,
+        "parking": null,
+        "pastry_shop": null,
+        "phone": null,
+        "poi_name": "St. Luke's Fruitland Medical Plaza",
+        "resort": null,
+        "restaurant": null,
+        "school_type": null,
+        "shop": null,
+        "sport": null,
+        "sports": null,
+        "takeaway": null,
+        "toilets": null,
+        "tourism": null,
+        "website": null,
+        "wheelchair": null,
+        "wholesale": null,
+        "wikidata": null,
+        "zoo": null
+      }
+    ]
+  },
+  "gold_sql": "SELECT p.*, elev.z AS elevation\nFROM pois p\nJOIN LATERAL (\n  SELECT ST_Value(d.rast, 1, p.geometry::geometry) AS z\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, p.geometry::geometry)\n  LIMIT 1\n) elev ON elev.z IS NOT NULL\nWHERE ST_DWithin(p.geometry::geography, ST_GeomFromText('POINT (-116.929504 44.024043)',4326)::geography, 4600)\n  AND p.amenity = 'hospital'\n  AND elev.z >= 340;",
+  "id": "range+loc+elevation_condition-6",
+  "model_output": "```sql\nWITH target_hospital AS (\n  SELECT \n    ST_SetSRID(ST_GeomFromText('POINT (-116.929504 44.024043)'), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT \n    ST_Buffer(geom, 4600) AS geom\n  FROM target_hospital\n),\nclipped_dem AS (\n  SELECT \n    ST_Clip(rast, 1, ST_Transform(geom::geometry, 4326)) AS clipped_rast\n  FROM \n    public.dem_us, buffered_area\n  WHERE \n    ST_Intersects(rast, ST_Transform(geom::geometry, 4326))\n),\nelevation_stats AS (\n  SELECT \n    (ST_SummaryStats(clipped_rast, true)).*\n  FROM \n    clipped_dem\n),\nvalid_hospitals AS (\n  SELECT \n    p.poi_name,\n    p.geometry\n  FROM \n    pois p, buffered_area\n  WHERE \n    p.amenity = 'hospital' AND\n    ST_DWithin(p.geometry, buffered_area.geom, 0) AND\n    p.poi_name != 'St. Luke''s Fruitland Medical Plaza'\n)\nSELECT \n  vh.poi_name,\n  vh.geometry,\n  (SELECT max_val FROM elevation_stats) AS max_elevation\nFROM \n  valid_hospitals vh, elevation_stats\nWHERE \n  (SELECT max_val FROM elevation_stats) >= 340;\n```",
+  "predicted_exec": {
+    "error": "column \"max_val\" does not exist\nLINE 38:   (SELECT max_val FROM elevation_stats) AS max_elevation\n                   ^",
+    "output": []
+  },
+  "predicted_sql": "WITH target_hospital AS (\n  SELECT \n    ST_SetSRID(ST_GeomFromText('POINT (-116.929504 44.024043)'), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT \n    ST_Buffer(geom, 4600) AS geom\n  FROM target_hospital\n),\nclipped_dem AS (\n  SELECT \n    ST_Clip(rast, 1, ST_Transform(geom::geometry, 4326)) AS clipped_rast\n  FROM \n    public.dem_us, buffered_area\n  WHERE \n    ST_Intersects(rast, ST_Transform(geom::geometry, 4326))\n),\nelevation_stats AS (\n  SELECT \n    (ST_SummaryStats(clipped_rast, true)).*\n  FROM \n    clipped_dem\n),\nvalid_hospitals AS (\n  SELECT \n    p.poi_name,\n    p.geometry\n  FROM \n    pois p, buffered_area\n  WHERE \n    p.amenity = 'hospital' AND\n    ST_DWithin(p.geometry, buffered_area.geom, 0) AND\n    p.poi_name != 'St. Luke''s Fruitland Medical Plaza'\n)\nSELECT \n  vh.poi_name,\n  vh.geometry,\n  (SELECT max_val FROM elevation_stats) AS max_elevation\nFROM \n  valid_hospitals vh, elevation_stats\nWHERE \n  (SELECT max_val FROM elevation_stats) >= 340;",
+  "predicted_sql_candidates": [
+    "WITH target_hospital AS (\n  SELECT \n    ST_SetSRID(ST_GeomFromText('POINT (-116.929504 44.024043)'), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT \n    ST_Buffer(geom, 4600) AS geom\n  FROM target_hospital\n),\nclipped_dem AS (\n  SELECT \n    ST_Clip(rast, 1, ST_Transform(geom::geometry, 4326)) AS clipped_rast\n  FROM \n    public.dem_us, buffered_area\n  WHERE \n    ST_Intersects(rast, ST_Transform(geom::geometry, 4326))\n),\nelevation_stats AS (\n  SELECT \n    (ST_SummaryStats(clipped_rast, true)).*\n  FROM \n    clipped_dem\n),\nvalid_hospitals AS (\n  SELECT \n    p.poi_name,\n    p.geometry\n  FROM \n    pois p, buffered_area\n  WHERE \n    p.amenity = 'hospital' AND\n    ST_DWithin(p.geometry, buffered_area.geom, 0) AND\n    p.poi_name != 'St. Luke''s Fruitland Medical Plaza'\n)\nSELECT \n  vh.poi_name,\n  vh.geometry,\n  (SELECT max_val FROM elevation_stats) AS max_elevation\nFROM \n  valid_hospitals vh, elevation_stats\nWHERE \n  (SELECT max_val FROM elevation_stats) >= 340;"
+  ],
+  "query_type": "extended",
+  "question": "Where can I find a hospital within 4600 meters of St. Luke's Fruitland Medical Plaza, Fruitland, ID with elevation at least 340 m?",
+  "source_file": "range+loc+elevation_condition.jsonl",
+  "source_stem": "range+loc+elevation_condition",
+  "timing": {
+    "execution_seconds": 0.002,
+    "generation_seconds": 69.179,
+    "total_seconds": 69.181
+  },
+  "usage": {
+    "completion_tokens": 324,
+    "prompt_tokens": 1809,
+    "total_tokens": 2133
+  }
+}

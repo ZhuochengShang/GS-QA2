@@ -1,0 +1,59 @@
+{
+  "answer_type": "distance",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "distance",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "distance_m": 18.41571
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "distance_m": 18.41571
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-74.004314 40.748756)',4326) AS pt\n),\nnearby_tiles AS (\n  SELECT d.rast\n  FROM public.dem_us d, origin o\n  WHERE d.rast && ST_Expand(o.pt, 1.0)\n),\nmasked AS (\n\t  SELECT ST_MapAlgebra(\n\t           rast,\n\t           1,\n\t           '32BF'::text,\n\t           'CASE WHEN [rast.val] < 100 THEN [rast.val] ELSE NULL END'::text,\n\t           NULL::double precision\n\t         ) AS rast\n  FROM nearby_tiles\n),\nqualifying_pixels AS (\n  SELECT (pp).geom AS geom\n  FROM masked\n  CROSS JOIN LATERAL ST_PixelAsCentroids(rast, 1, TRUE) AS pp\n)\nSELECT MIN(ST_Distance(p.geom::geography, o.pt::geography)) AS distance_m\nFROM qualifying_pixels p, origin o;",
+  "id": "nearest_low_terrain+poi-10",
+  "model_output": "```sql\nWITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-74.004314, 40.748756), 4326)::geography AS geom\n),\nelevation_raster AS (\n  SELECT rast\n  FROM public.dem_us\n  WHERE ST_Intersects(\n    rast,\n    ST_Envelope(ST_Transform(poi_geom.geom, 3857))\n  )\n),\nelevation_points AS (\n  SELECT\n    (ST_PixelAsPoints(rast, 1)).*\n  FROM elevation_raster, poi_geom\n  WHERE ST_Distance(ST_Transform(poi_geom.geom, 3857), ST_Transform(ST_SetSRID(ST_MakePoint(x, y), 4326), 3857)) < 100000\n),\nfiltered_points AS (\n  SELECT *\n  FROM elevation_points\n  WHERE value < 100\n),\nnearest_point AS (\n  SELECT\n    MIN(ST_Distance(ST_Transform(ST_SetSRID(ST_MakePoint(x, y), 4326), 3857), ST_Transform(poi_geom.geom, 3857))) AS distance_meters\n  FROM filtered_points, poi_geom\n)\nSELECT\n  ROUND(distance_meters) AS distance_to_low_elevation_point_meters\nFROM nearest_point;\n```",
+  "predicted_exec": {
+    "error": "missing FROM-clause entry for table \"poi_geom\"\nLINE 9:     ST_Envelope(ST_Transform(poi_geom.geom, 3857))\n                                     ^",
+    "output": []
+  },
+  "predicted_sql": "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-74.004314, 40.748756), 4326)::geography AS geom\n),\nelevation_raster AS (\n  SELECT rast\n  FROM public.dem_us\n  WHERE ST_Intersects(\n    rast,\n    ST_Envelope(ST_Transform(poi_geom.geom, 3857))\n  )\n),\nelevation_points AS (\n  SELECT\n    (ST_PixelAsPoints(rast, 1)).*\n  FROM elevation_raster, poi_geom\n  WHERE ST_Distance(ST_Transform(poi_geom.geom, 3857), ST_Transform(ST_SetSRID(ST_MakePoint(x, y), 4326), 3857)) < 100000\n),\nfiltered_points AS (\n  SELECT *\n  FROM elevation_points\n  WHERE value < 100\n),\nnearest_point AS (\n  SELECT\n    MIN(ST_Distance(ST_Transform(ST_SetSRID(ST_MakePoint(x, y), 4326), 3857), ST_Transform(poi_geom.geom, 3857))) AS distance_meters\n  FROM filtered_points, poi_geom\n)\nSELECT\n  ROUND(distance_meters) AS distance_to_low_elevation_point_meters\nFROM nearest_point;",
+  "predicted_sql_candidates": [
+    "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-74.004314, 40.748756), 4326)::geography AS geom\n),\nelevation_raster AS (\n  SELECT rast\n  FROM public.dem_us\n  WHERE ST_Intersects(\n    rast,\n    ST_Envelope(ST_Transform(poi_geom.geom, 3857))\n  )\n),\nelevation_points AS (\n  SELECT\n    (ST_PixelAsPoints(rast, 1)).*\n  FROM elevation_raster, poi_geom\n  WHERE ST_Distance(ST_Transform(poi_geom.geom, 3857), ST_Transform(ST_SetSRID(ST_MakePoint(x, y), 4326), 3857)) < 100000\n),\nfiltered_points AS (\n  SELECT *\n  FROM elevation_points\n  WHERE value < 100\n),\nnearest_point AS (\n  SELECT\n    MIN(ST_Distance(ST_Transform(ST_SetSRID(ST_MakePoint(x, y), 4326), 3857), ST_Transform(poi_geom.geom, 3857))) AS distance_meters\n  FROM filtered_points, poi_geom\n)\nSELECT\n  ROUND(distance_meters) AS distance_to_low_elevation_point_meters\nFROM nearest_point;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the distance from Marianne Boesky Gallery, New York, NY to the closest point under 100 meters in elevation?",
+  "source_file": "nearest_low_terrain+poi.jsonl",
+  "source_stem": "nearest_low_terrain+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 67.948,
+    "total_seconds": 67.949
+  },
+  "usage": {
+    "completion_tokens": 301,
+    "prompt_tokens": 1643,
+    "total_tokens": 1944
+  }
+}

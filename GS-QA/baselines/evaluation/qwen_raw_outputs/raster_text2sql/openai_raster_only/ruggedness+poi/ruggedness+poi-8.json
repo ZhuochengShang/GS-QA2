@@ -1,0 +1,59 @@
+{
+  "answer_type": "ruggedness_index",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "ruggedness_index",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "tri_value": 1.25
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "tri_value": 1.25
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-72.377447 43.866048)',4326) AS pt\n),\npatch AS (\n  SELECT ST_Buffer(pt::geography, 100)::geometry AS g FROM origin\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, p.g)) AS rast\n  FROM public.dem_us d\n  JOIN patch p ON ST_Intersects(d.rast, p.g)\n),\ntri_rast AS (\n  SELECT ST_TRI(rast, 1) AS rast\n  FROM clipped_dem\n)\nSELECT ST_Value(t.rast, 1, o.pt) AS tri_value\nFROM tri_rast t, origin o;",
+  "id": "ruggedness+poi-8",
+  "model_output": "```sql\nWITH geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-72.377447, 43.866048), 4326)::geography AS geometry\n),\nraster_clip AS (\n  SELECT\n    ST_Clip(\n      r.rast,\n      ST_Buffer(ST_Transform(geometry::geometry, 4326), 100),\n      true\n    ) AS clipped_rast\n  FROM geom, public.dem_us r\n  WHERE ST_Intersects(ST_Transform(geometry::geometry, 4326), r.rast)\n)\nSELECT\n  ST_Ruggedness(clipped_rast, 1) AS ruggedness_index\nFROM raster_clip;\n```",
+  "predicted_exec": {
+    "error": "function st_ruggedness(raster, integer) does not exist\nLINE 15:   ST_Ruggedness(clipped_rast, 1) AS ruggedness_index\n           ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-72.377447, 43.866048), 4326)::geography AS geometry\n),\nraster_clip AS (\n  SELECT\n    ST_Clip(\n      r.rast,\n      ST_Buffer(ST_Transform(geometry::geometry, 4326), 100),\n      true\n    ) AS clipped_rast\n  FROM geom, public.dem_us r\n  WHERE ST_Intersects(ST_Transform(geometry::geometry, 4326), r.rast)\n)\nSELECT\n  ST_Ruggedness(clipped_rast, 1) AS ruggedness_index\nFROM raster_clip;",
+  "predicted_sql_candidates": [
+    "WITH geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-72.377447, 43.866048), 4326)::geography AS geometry\n),\nraster_clip AS (\n  SELECT\n    ST_Clip(\n      r.rast,\n      ST_Buffer(ST_Transform(geometry::geometry, 4326), 100),\n      true\n    ) AS clipped_rast\n  FROM geom, public.dem_us r\n  WHERE ST_Intersects(ST_Transform(geometry::geometry, 4326), r.rast)\n)\nSELECT\n  ST_Ruggedness(clipped_rast, 1) AS ruggedness_index\nFROM raster_clip;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the local terrain roughness at Strafford Village Historic District, VT?",
+  "source_file": "ruggedness+poi.jsonl",
+  "source_stem": "ruggedness+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 36.194,
+    "total_seconds": 36.195
+  },
+  "usage": {
+    "completion_tokens": 159,
+    "prompt_tokens": 1603,
+    "total_tokens": 1762
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 87.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 87.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-72.912557 40.956341, -72.912701 40.95707, -72.913617 40.961514, -72.913316 40.961667, -72.913479 40.962472, -72.913836 40.962466, -72.913476 40.971299, -72.954814 40.974804, -72.954869 40.966277, -72.954639 40.963396, -72.954586 40.962321, -72.956043 40.962312, -72.957546 40.962416, -72.958057 40.96258, -72.958677 40.962748, -72.959935 40.96292, -72.960156 40.961653, -72.960521 40.96049, -72.960576 40.960097, -72.960683 40.959681, -72.961223 40.958052, -72.96124 40.957869, -72.961178 40.957693, -72.961079 40.95754, -72.960912 40.957358, -72.961178 40.95716, -72.961377 40.957034, -72.96166 40.956946, -72.961987 40.956919, -72.962765 40.957034, -72.963581 40.957198, -72.963833 40.957225, -72.964148 40.957206, -72.964039 40.957076, -72.963696 40.956526, -72.963581 40.956201, -72.963544 40.955973, -72.963399 40.955748, -72.963201 40.955291, -72.963115 40.955134, -72.962605 40.954565, -72.962361 40.954328, -72.962216 40.954135, -72.961606 40.953494, -72.961438 40.953345, -72.960911 40.953006, -72.960781 40.952822, -72.960706 40.95267, -72.960675 40.952422, -72.960659 40.951789, -72.960597 40.951113, -72.965146 40.950785, -72.965565 40.950118, -72.965253 40.948409, -72.964794 40.945506, -72.967976 40.946582, -72.968943 40.946893, -72.969433 40.947051, -72.968892 40.944814, -72.968748 40.94411, -72.967649 40.939662, -72.966663 40.935507, -72.964551 40.926451, -72.961152 40.911709, -72.960942 40.910874, -72.962034 40.910563, -72.962905 40.910182, -72.962606 40.909838, -72.962011 40.909037, -72.960882 40.906974, -72.960667 40.906668, -72.960088 40.905954, -72.959806 40.905741, -72.959417 40.905612, -72.958974 40.90544, -72.958761 40.905379, -72.957708 40.905406, -72.957249 40.905229, -72.956723 40.904928, -72.956663 40.904894, -72.956472 40.905069, -72.956267 40.905219, -72.956159 40.905272, -72.955853 40.905294, -72.955633 40.905368, -72.955319 40.905531, -72.954824 40.90666, -72.954239 40.907927, -72.95374 40.908068, -72.952902 40.908213, -72.952039 40.90829, -72.951131 40.908239, -72.950498 40.908244, -72.9483 40.908156, -72.945432 40.907983, -72.943829 40.907912, -72.942937 40.907843, -72.941953 40.907817, -72.941371 40.907544, -72.94094 40.907285, -72.940706 40.907162, -72.940185 40.907005, -72.939556 40.906845, -72.939229 40.906783, -72.938773 40.906752, -72.937934 40.906764, -72.936633 40.906752, -72.935986 40.906727, -72.935536 40.906684, -72.935277 40.906684, -72.934562 40.906832, -72.9336 40.907054, -72.932604 40.907231, -72.932203 40.907277, -72.931442 40.907257, -72.931269 40.907266, -72.931139 40.907283, -72.930948 40.907331, -72.930711 40.907422, -72.930421 40.907585, -72.930054 40.907863, -72.929466 40.908362, -72.92931 40.908453, -72.929134 40.908511, -72.928891 40.908527, -72.927777 40.908516, -72.926517 40.908484, -72.924411 40.908392, -72.922774 40.908281, -72.922219 40.908188, -72.92168 40.908039, -72.920974 40.90781, -72.92058 40.907649, -72.920115 40.907392, -72.918951 40.906627, -72.918793 40.906547, -72.918513 40.906442, -72.918282 40.906394, -72.918082 40.906391, -72.917825 40.906427, -72.916627 40.906678, -72.915378 40.906865, -72.91507 40.906952, -72.915022 40.907743, -72.914929 40.908263, -72.914779 40.908855, -72.91454 40.909667, -72.914105 40.910285, -72.913838 40.911139, -72.913708 40.913019, -72.913151 40.914088, -72.912656 40.914907, -72.912304 40.915663, -72.912068 40.915971, -72.911197 40.916868, -72.910885 40.917743, -72.909848 40.91949, -72.909557 40.92015, -72.908727 40.92108, -72.907429 40.922662, -72.906536 40.923677, -72.905842 40.924765, -72.904918 40.926287, -72.904515 40.926776, -72.904241 40.927751, -72.904026 40.92814, -72.903545 40.928599, -72.903346 40.92919, -72.903209 40.929374, -72.903089 40.929853, -72.902919 40.930406, -72.902904 40.930514, -72.90295 40.930781, -72.903049 40.931079, -72.903515 40.931994, -72.903957 40.932982, -72.904209 40.933615, -72.904369 40.934298, -72.904392 40.934832, -72.904385 40.935262, -72.904217 40.936674, -72.904111 40.937879, -72.903981 40.938788, -72.904149 40.939405, -72.904246 40.939962, -72.904148 40.942457, -72.904125 40.94335, -72.90414 40.943526, -72.904338 40.944781, -72.904736 40.946967, -72.904759 40.947281, -72.904768 40.947401, -72.906582 40.947382, -72.906366 40.948066, -72.907011 40.94797, -72.908115 40.947924, -72.908225 40.949062, -72.909078 40.950496, -72.909396 40.951122, -72.909604 40.951482, -72.910649 40.951465, -72.9107 40.9529, -72.910752 40.953121, -72.910529 40.953502, -72.910535 40.953889, -72.910693 40.954424, -72.910949 40.954898, -72.911005 40.955182, -72.912299 40.955031, -72.912557 40.956341))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n),\nstats AS (\n  SELECT ST_SummaryStats(ST_Union(rast)) AS s\n  FROM clipped\n)\nSELECT (s).max - (s).min AS elevation\nFROM stats;",
+  "id": "elevation_range+region-5",
+  "model_output": "```sql\nWITH geom AS (\n  SELECT 'Rocky Point'::text AS name, ST_GeomFromText('POLYGON((...))') AS geometry\n  -- WKT is omitted, so we derive geometry from the regions table\n),\nrocky_point_geom AS (\n  SELECT region_name, geometry\n  FROM regions\n  WHERE region_name ILIKE '%Rocky Point%' AND ST_GeometryType(geometry) = 'ST_Polygon'\n  LIMIT 1\n)\nSELECT \n  MAX(elev) - MIN(elev) AS vertical_range\nFROM (\n  SELECT \n    (ST_Value(r.rast, g.geometry)).[1] AS elev\n  FROM \n    rocky_point_geom g,\n    LATERAL (\n      SELECT rast\n      FROM public.dem_us d\n      WHERE ST_Intersects(d.rast, g.geometry::geometry)\n    ) r\n  WHERE \n    ST_Intersects(r.rast, g.geometry::geometry)\n) sub;\n```",
+  "predicted_exec": {
+    "error": "syntax error at or near \"[\"\nLINE 15:     (ST_Value(r.rast, g.geometry)).[1] AS elev\n                                            ^",
+    "output": []
+  },
+  "predicted_sql": "WITH geom AS (\n  SELECT 'Rocky Point'::text AS name, ST_GeomFromText('POLYGON((...))') AS geometry\n  -- WKT is omitted, so we derive geometry from the regions table\n),\nrocky_point_geom AS (\n  SELECT region_name, geometry\n  FROM regions\n  WHERE region_name ILIKE '%Rocky Point%' AND ST_GeometryType(geometry) = 'ST_Polygon'\n  LIMIT 1\n)\nSELECT \n  MAX(elev) - MIN(elev) AS vertical_range\nFROM (\n  SELECT \n    (ST_Value(r.rast, g.geometry)).[1] AS elev\n  FROM \n    rocky_point_geom g,\n    LATERAL (\n      SELECT rast\n      FROM public.dem_us d\n      WHERE ST_Intersects(d.rast, g.geometry::geometry)\n    ) r\n  WHERE \n    ST_Intersects(r.rast, g.geometry::geometry)\n) sub;",
+  "predicted_sql_candidates": [
+    "WITH geom AS (\n  SELECT 'Rocky Point'::text AS name, ST_GeomFromText('POLYGON((...))') AS geometry\n  -- WKT is omitted, so we derive geometry from the regions table\n),\nrocky_point_geom AS (\n  SELECT region_name, geometry\n  FROM regions\n  WHERE region_name ILIKE '%Rocky Point%' AND ST_GeometryType(geometry) = 'ST_Polygon'\n  LIMIT 1\n)\nSELECT \n  MAX(elev) - MIN(elev) AS vertical_range\nFROM (\n  SELECT \n    (ST_Value(r.rast, g.geometry)).[1] AS elev\n  FROM \n    rocky_point_geom g,\n    LATERAL (\n      SELECT rast\n      FROM public.dem_us d\n      WHERE ST_Intersects(d.rast, g.geometry::geometry)\n    ) r\n  WHERE \n    ST_Intersects(r.rast, g.geometry::geometry)\n) sub;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the vertical range across Rocky Point, New York?",
+  "source_file": "elevation_range+region.jsonl",
+  "source_stem": "elevation_range+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 43.5,
+    "total_seconds": 43.501
+  },
+  "usage": {
+    "completion_tokens": 204,
+    "prompt_tokens": 1517,
+    "total_tokens": 1721
+  }
+}

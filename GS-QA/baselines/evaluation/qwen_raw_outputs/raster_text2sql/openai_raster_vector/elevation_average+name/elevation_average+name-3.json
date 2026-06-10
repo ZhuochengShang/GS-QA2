@@ -1,0 +1,123 @@
+{
+  "answer_type": "row/s",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "row/s",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "rowset_f1",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "addr_city": "Cave City",
+      "addr_housenumber": "3057",
+      "addr_postcode": "42127",
+      "addr_state": "KY",
+      "addr_street": "Mammoth Cave Road",
+      "geometry": "POINT (-86.0041 37.132939)",
+      "id": 1471,
+      "mean": -2794.635192,
+      "osm_id": 4268014471,
+      "phone": "+1 270-773-2560",
+      "poi_name": "Kentucky Action Park",
+      "pt": "0101000020E6100000787AA52C438055C0B66FA42204914240",
+      "tourism": "theme_park",
+      "website": "https://www.kentuckyactionpark.com/",
+      "z": 247.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "addr_city": "Cave City",
+        "addr_housenumber": "3057",
+        "addr_postcode": "42127",
+        "addr_state": "KY",
+        "addr_street": "Mammoth Cave Road",
+        "amenity": null,
+        "artwork_type": null,
+        "building": null,
+        "capacity": null,
+        "cuisine": null,
+        "delivery": null,
+        "description": null,
+        "drive_through": null,
+        "emergency": null,
+        "fast_food": null,
+        "fee": null,
+        "geometry": "0101000020E6100000787AA52C438055C0B66FA42204914240",
+        "hairdresser": null,
+        "healthcare": null,
+        "historic": null,
+        "id": 1471,
+        "information": null,
+        "internet_access": null,
+        "leisure": null,
+        "mean": -2794.635192,
+        "museum": null,
+        "official_name": null,
+        "opening_hours": null,
+        "operator": null,
+        "osm_id": 4268014471,
+        "outdoor_seating": null,
+        "parking": null,
+        "pastry_shop": null,
+        "phone": "+1 270-773-2560",
+        "poi_name": "Kentucky Action Park",
+        "pt": "0101000020E6100000787AA52C438055C0B66FA42204914240",
+        "resort": null,
+        "restaurant": null,
+        "school_type": null,
+        "shop": null,
+        "sport": null,
+        "sports": null,
+        "takeaway": null,
+        "toilets": null,
+        "tourism": "theme_park",
+        "website": "https://www.kentuckyactionpark.com/",
+        "wheelchair": null,
+        "wholesale": null,
+        "wikidata": null,
+        "z": 247.0,
+        "zoo": null
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-86.113571 37.061085, -86.074295 37.05312, -86.062202 37.132519, -86.056686 37.167, -86.039345 37.16481, -85.992516 37.156849, -85.968842 37.156036, -85.935318 37.150723, -85.905853 37.148109, -85.857361 37.150982, -85.801987 37.162918, -85.775436 37.167519, -85.744263 37.169395, -85.759209 37.150326, -85.777061 37.138496, -85.771767 37.109947, -85.762535 37.111782, -85.75676 37.110435, -85.757881 37.100006, -85.758926 37.068268, -85.755325 37.027016, -85.750061 37.005718, -85.749466 37.000278, -85.739166 36.841614, -85.750092 36.841587, -85.765602 36.836113, -85.772507 36.836552, -85.790871 36.827438, -85.80809 36.821503, -85.930122 36.749939, -85.977036 36.722553, -85.982895 36.741123, -85.992722 36.750153, -86.001968 36.758724, -86.006569 36.760067, -86.029579 36.76405, -86.033585 36.761765, -86.034721 36.759945, -86.03759 36.759933, -86.039345 36.764458, -86.041092 36.767624, -86.050896 36.772114, -86.052643 36.77528, -86.048645 36.778927, -86.040024 36.778057, -86.034866 36.78035, -86.036049 36.785332, -86.040092 36.787582, -86.039536 36.790756, -86.042992 36.792103, -86.045891 36.795261, -86.049896 36.79343, -86.051628 36.794331, -86.050545 36.803402, -86.047676 36.803871, -86.046555 36.807503, -86.054039 36.80928, -86.070107 36.80558, -86.071846 36.807838, -86.070717 36.81102, -86.068428 36.811935, -86.065643 36.823284, -86.055908 36.829224, -86.061722 36.837814, -86.071541 36.843662, -86.077957 36.855419, -86.075157 36.864502, -86.078049 36.867207, -86.07637 36.873112, -86.074646 36.873573, -86.072334 36.871769, -86.070076 36.877674, -86.077011 36.881725, -86.078239 36.891239, -86.077095 36.892605, -86.067329 36.894466, -86.068451 36.890831, -86.066727 36.890842, -86.064445 36.894024, -86.065056 36.898102, -86.069107 36.901711, -86.076599 36.902584, -86.087509 36.899807, -86.09787 36.900208, -86.105835 36.889286, -86.108673 36.883831, -86.108063 36.880207, -86.097626 36.869377, -86.099312 36.864834, -86.101608 36.863914, -86.105064 36.864353, -86.109695 36.867958, -86.109726 36.872036, -86.113777 36.875191, -86.114975 36.880623, -86.124298 36.895088, -86.130638 36.895962, -86.141541 36.892277, -86.146751 36.896782, -86.142189 36.900887, -86.134155 36.903648, -86.141731 36.91449, -86.137215 36.925396, -86.134956 36.930397, -86.136124 36.932205, -86.145309 36.929436, -86.147614 36.92942, -86.150475 36.927139, -86.152161 36.922596, -86.1521 36.916248, -86.1492 36.913544, -86.14975 36.910366, -86.157196 36.9067, -86.162956 36.90667, -86.168724 36.908451, -86.176262 36.914303, -86.172844 36.918404, -86.165947 36.9198, -86.163101 36.923443, -86.16024 36.92482, -86.160858 36.929806, -86.166077 36.934311, -86.113571 37.061085))', 4326) AS g\n),\nmean_elev AS (\n  SELECT SUM(stats.sum) / NULLIF(SUM(stats.count), 0) AS mean\n  FROM public.dem_us d\n  JOIN region r ON ST_Intersects(d.rast, r.g)\n  JOIN LATERAL ST_SummaryStats(ST_Clip(d.rast, r.g)) AS stats ON stats.count > 0\n),\ncandidates AS (\n  SELECT p.*, ST_PointOnSurface(p.geometry::geometry) AS pt\n  FROM pois p\n  JOIN region r\n    ON ST_Intersects(p.geometry::geometry, r.g)\n  WHERE p.\"tourism\" = 'theme_park'\n),\npoi_elev AS (\n  SELECT c.*, elev.z\n  FROM candidates c\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, c.pt) AS z\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, c.pt)\n    LIMIT 1\n  ) elev ON elev.z IS NOT NULL\n)\nSELECT DISTINCT ON (id) *\nFROM poi_elev\nCROSS JOIN mean_elev\nWHERE z > mean;",
+  "id": "elevation_average+name-3",
+  "model_output": "```sql\nWITH park_geom AS (\n  SELECT \n    'POINT (-86.0041 37.132939)'::geography AS geometry,\n    'Kentucky Action Park'::text AS park_name\n),\ncounty_geom AS (\n  SELECT \n    r.geometry\n  FROM \n    regions r\n  WHERE \n    r.region_name ILIKE 'Barren County' AND \n    r.addr_state ILIKE 'KY'\n),\ndem_clip AS (\n  SELECT \n    ST_Clip(\n      r.rast, \n      1, \n      (SELECT geometry::geometry FROM park_geom)::geography, \n      TRUE\n    ) AS clipped_rast\n  FROM \n    public.dem_us r\n  WHERE \n    ST_Intersects(\n      r.rast, \n      (SELECT geometry::geometry FROM park_geom)::geometry\n    )\n),\ncounty_avg_elevation AS (\n  SELECT \n    ROUND(AVG(ST_Value(clipped_rast, 1)), 2) AS avg_elevation\n  FROM \n    dem_clip\n)\nSELECT \n  park_name,\n  ROUND(ST_Value(clipped_rast, 1), 2) AS park_elevation,\n  avg_elevation\nFROM \n  dem_clip,\n  park_geom,\n  county_avg_elevation\nWHERE \n  ST_Value(clipped_rast, 1) > avg_elevation;\n```",
+  "predicted_exec": {
+    "error": "column r.addr_state does not exist\nLINE 13:     r.addr_state ILIKE 'KY'\n             ^",
+    "output": []
+  },
+  "predicted_sql": "WITH park_geom AS (\n  SELECT \n    'POINT (-86.0041 37.132939)'::geography AS geometry,\n    'Kentucky Action Park'::text AS park_name\n),\ncounty_geom AS (\n  SELECT \n    r.geometry\n  FROM \n    regions r\n  WHERE \n    r.region_name ILIKE 'Barren County' AND \n    r.addr_state ILIKE 'KY'\n),\ndem_clip AS (\n  SELECT \n    ST_Clip(\n      r.rast, \n      1, \n      (SELECT geometry::geometry FROM park_geom)::geography, \n      TRUE\n    ) AS clipped_rast\n  FROM \n    public.dem_us r\n  WHERE \n    ST_Intersects(\n      r.rast, \n      (SELECT geometry::geometry FROM park_geom)::geometry\n    )\n),\ncounty_avg_elevation AS (\n  SELECT \n    ROUND(AVG(ST_Value(clipped_rast, 1)), 2) AS avg_elevation\n  FROM \n    dem_clip\n)\nSELECT \n  park_name,\n  ROUND(ST_Value(clipped_rast, 1), 2) AS park_elevation,\n  avg_elevation\nFROM \n  dem_clip,\n  park_geom,\n  county_avg_elevation\nWHERE \n  ST_Value(clipped_rast, 1) > avg_elevation;",
+  "predicted_sql_candidates": [
+    "WITH park_geom AS (\n  SELECT \n    'POINT (-86.0041 37.132939)'::geography AS geometry,\n    'Kentucky Action Park'::text AS park_name\n),\ncounty_geom AS (\n  SELECT \n    r.geometry\n  FROM \n    regions r\n  WHERE \n    r.region_name ILIKE 'Barren County' AND \n    r.addr_state ILIKE 'KY'\n),\ndem_clip AS (\n  SELECT \n    ST_Clip(\n      r.rast, \n      1, \n      (SELECT geometry::geometry FROM park_geom)::geography, \n      TRUE\n    ) AS clipped_rast\n  FROM \n    public.dem_us r\n  WHERE \n    ST_Intersects(\n      r.rast, \n      (SELECT geometry::geometry FROM park_geom)::geometry\n    )\n),\ncounty_avg_elevation AS (\n  SELECT \n    ROUND(AVG(ST_Value(clipped_rast, 1)), 2) AS avg_elevation\n  FROM \n    dem_clip\n)\nSELECT \n  park_name,\n  ROUND(ST_Value(clipped_rast, 1), 2) AS park_elevation,\n  avg_elevation\nFROM \n  dem_clip,\n  park_geom,\n  county_avg_elevation\nWHERE \n  ST_Value(clipped_rast, 1) > avg_elevation;"
+  ],
+  "query_type": "raster_vector",
+  "question": "List a theme park in Barren County, Kentucky with elevation above the area's average.",
+  "source_file": "elevation_average+name.jsonl",
+  "source_stem": "elevation_average+name",
+  "timing": {
+    "execution_seconds": 0.005,
+    "generation_seconds": 64.565,
+    "total_seconds": 64.57
+  },
+  "usage": {
+    "completion_tokens": 289,
+    "prompt_tokens": 1638,
+    "total_tokens": 1927
+  }
+}

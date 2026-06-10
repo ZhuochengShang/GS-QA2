@@ -1,0 +1,5687 @@
+[
+  {
+    "id": 2300,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_translate(geography, double precision, double precision) does not exist\nLINE 7:         ST_Translate(\n                ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.003
+  },
+  {
+    "id": 2301,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Valley Pediatric Associates"
+          },
+          {
+            "poi_name": "Children's Hospital at Montefiore"
+          },
+          {
+            "poi_name": "Montefiore Medical Center - Wakefield Campus"
+          },
+          {
+            "poi_name": "Quest Diagnostics"
+          },
+          {
+            "poi_name": "Bronx Psychiatric Center"
+          },
+          {
+            "poi_name": "Ski Patrol"
+          },
+          {
+            "poi_name": "Ski Patrol"
+          },
+          {
+            "poi_name": "Hartford Healthcare Medical Group"
+          },
+          {
+            "poi_name": "Westchester Women's Medical Healthcare"
+          },
+          {
+            "poi_name": "Immediate Care Medical Walk-In of Brick"
+          },
+          {
+            "poi_name": "Nyack Hospital"
+          },
+          {
+            "poi_name": "Capital Health Mercer Campus (former)"
+          },
+          {
+            "poi_name": "North Hudson Community Action Corporation"
+          },
+          {
+            "poi_name": "Willowbrook Pediatrics"
+          },
+          {
+            "poi_name": "Apple Rehab"
+          },
+          {
+            "poi_name": "Garnet Health Medical Center - Catskills, Harris Campus"
+          },
+          {
+            "poi_name": "Katz Women's Hospital"
+          },
+          {
+            "poi_name": "Maria Fareri Children's Hospital"
+          },
+          {
+            "poi_name": "Hospital for Special Surgery"
+          },
+          {
+            "poi_name": "New York Proton Center"
+          },
+          {
+            "poi_name": "Hebrew Senior Care"
+          },
+          {
+            "poi_name": "Easton Hospital"
+          },
+          {
+            "poi_name": "Capital Health at Deborah - Emergency Department"
+          },
+          {
+            "poi_name": "Weisman Children's Rehabilitation Hospital"
+          },
+          {
+            "poi_name": "Barix Clinics"
+          },
+          {
+            "poi_name": "Diaz Ambulance"
+          },
+          {
+            "poi_name": "Huntington Health Center"
+          },
+          {
+            "poi_name": "NYU Langone Outpatient Surgery Center"
+          },
+          {
+            "poi_name": "Richmond University Medical Center"
+          },
+          {
+            "poi_name": "Comprehensive Health Care"
+          },
+          {
+            "poi_name": "University Spine Center"
+          },
+          {
+            "poi_name": "NYC Health + Hospitals/Coler"
+          },
+          {
+            "poi_name": "Montefiore Medical Center West Campus Moses Division Hospital"
+          },
+          {
+            "poi_name": "Rockland Psychiatric Center"
+          },
+          {
+            "poi_name": "New York City Children's Center Bronx Campus"
+          },
+          {
+            "poi_name": "Rockland Children's Psychiatric Center"
+          },
+          {
+            "poi_name": "Kirby Forensic Psychiatric Center"
+          },
+          {
+            "poi_name": "Four Winds Hospital"
+          },
+          {
+            "poi_name": "North Central Bronx Hospital"
+          },
+          {
+            "poi_name": "George Rosenfeld Center for Recovery"
+          },
+          {
+            "poi_name": "Cohen\u2019s Children\u2019s Medical Center"
+          },
+          {
+            "poi_name": "Lenox Health Greenwich Village"
+          },
+          {
+            "poi_name": "Gracie Square Hospital"
+          },
+          {
+            "poi_name": "Rockefeller University Hospital"
+          },
+          {
+            "poi_name": "New York Eye and Ear Infirmary of Mount Sinai"
+          },
+          {
+            "poi_name": "Manhattan Eye Ear and Throat Hospital"
+          },
+          {
+            "poi_name": "Plaza del Sol Family Health Center"
+          },
+          {
+            "poi_name": "Atlantic Rehabilitation Institute"
+          },
+          {
+            "poi_name": "Carrier Clinic"
+          },
+          {
+            "poi_name": "Greystone Park Psychiatric Hospital"
+          },
+          {
+            "poi_name": "Essex County Isolation Hospital"
+          },
+          {
+            "poi_name": "Yale New Haven Children's Hospital"
+          },
+          {
+            "poi_name": "True Life Care Center"
+          },
+          {
+            "poi_name": "East Neck Nursing and Rehabilitation Center"
+          },
+          {
+            "poi_name": "Mount Sinai"
+          },
+          {
+            "poi_name": "Weill Cornell Medicine Primary Care at Broadway"
+          },
+          {
+            "poi_name": "Serene Home Nursing Agency"
+          },
+          {
+            "poi_name": "New Milford Hospital"
+          },
+          {
+            "poi_name": "Triborough GI"
+          },
+          {
+            "poi_name": "Rockville Hospital"
+          },
+          {
+            "poi_name": "cardiology"
+          },
+          {
+            "poi_name": "Fresenius Medical Care at Preakness Healthcare Center"
+          },
+          {
+            "poi_name": "Ancelmo Hospital"
+          },
+          {
+            "poi_name": "Preakness healthcare"
+          },
+          {
+            "poi_name": "Cristian Health - Ramapo Ridge Psychiatric Hospital"
+          },
+          {
+            "poi_name": "Encompass Health Rehabilitation Hospital Of Tinton Falls"
+          },
+          {
+            "poi_name": "Atlantic Rehabilitation Institute"
+          },
+          {
+            "poi_name": "Hudson County Meadowview Psychiatric Hospital"
+          },
+          {
+            "poi_name": "Brunswick Hospital Center"
+          },
+          {
+            "poi_name": "Mount Sinai Doctors - Williamsburg"
+          },
+          {
+            "poi_name": "Silver Hill Hospital"
+          },
+          {
+            "poi_name": "Medical Office Building - Browns Mills"
+          },
+          {
+            "poi_name": "Hospital For Special Surgery"
+          },
+          {
+            "poi_name": "VA New Jersey Health Care System - Lyons Campus"
+          },
+          {
+            "poi_name": "Cassena Care At Norwalk"
+          },
+          {
+            "poi_name": "L.A. FUE Hair New York"
+          },
+          {
+            "poi_name": "Downtown Pain Physicians Of Brooklyn"
+          },
+          {
+            "poi_name": "Cohen Children's Northwell Health"
+          },
+          {
+            "poi_name": "Girling Health Care"
+          },
+          {
+            "poi_name": "Midwood medical Plaza"
+          },
+          {
+            "poi_name": "Back to health"
+          },
+          {
+            "poi_name": "Dr. Jerald Kupperberg, MD"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.025
+  },
+  {
+    "id": 2302,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikidata, wikipedia\n                                   ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 2303,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.085
+  },
+  {
+    "id": 2304,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.105
+  },
+  {
+    "id": 2305,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Clark University"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.106
+  },
+  {
+    "id": 2306,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_x(geography) does not exist\nLINE 9:             ST_X(ST_Centroid((SELECT geometry FROM pois WHER...\n                    ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 2307,
+    "records": [
+      {
+        "output": [],
+        "error": "column pois.wikipedia does not exist\nLINE 5:     pois.wikipedia,\n            ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 2308,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.145
+  },
+  {
+    "id": 2309,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.056
+  },
+  {
+    "id": 2310,
+    "records": [
+      {
+        "output": [],
+        "error": "column p.wikipedia does not exist\nLINE 2: SELECT DISTINCT p.poi_name, p.wikidata, p.wikipedia\n                                                ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 2311,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "American Bandstand"
+          },
+          {
+            "poi_name": "Aqua Shot"
+          },
+          {
+            "poi_name": "Arrow Head Train & Station"
+          },
+          {
+            "poi_name": "Bartram's Garden"
+          },
+          {
+            "poi_name": "Benjamin Franklin Grave"
+          },
+          {
+            "poi_name": "Bowling"
+          },
+          {
+            "poi_name": "Council Rock"
+          },
+          {
+            "poi_name": "Discovery Center at East Park Reservoir"
+          },
+          {
+            "poi_name": "Elfreth's Alley"
+          },
+          {
+            "poi_name": "Harbison's Dairy Milk Bottle"
+          },
+          {
+            "poi_name": "Italian market"
+          },
+          {
+            "poi_name": "Liberty Bell"
+          },
+          {
+            "poi_name": "Marlton Park Entrance"
+          },
+          {
+            "poi_name": "NASA Moon Tree"
+          },
+          {
+            "poi_name": "One Liberty Observation Deck"
+          },
+          {
+            "poi_name": "Philly Gun Range"
+          },
+          {
+            "poi_name": "Reading Terminal"
+          },
+          {
+            "poi_name": "The Universal Sphere"
+          },
+          {
+            "poi_name": "Tire Pully"
+          },
+          {
+            "poi_name": "Tractor Pull"
+          },
+          {
+            "poi_name": "U.S. Mint at Philadelphia Tour"
+          },
+          {
+            "poi_name": "WildWorks Ropes Course"
+          },
+          {
+            "poi_name": "Willow Grove Mall Carousel"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.022
+  },
+  {
+    "id": 2312,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.025
+  },
+  {
+    "id": 2313,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.173
+  },
+  {
+    "id": 2314,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.11
+  },
+  {
+    "id": 2315,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Aljira A Center for Contemporary Art"
+          },
+          {
+            "poi_name": "Anya & Andrew Shiva Gallery"
+          },
+          {
+            "poi_name": "Asian Arts"
+          },
+          {
+            "poi_name": "Beloosesky Gallery"
+          },
+          {
+            "poi_name": "Buck House"
+          },
+          {
+            "poi_name": "Faction Art Projects"
+          },
+          {
+            "poi_name": "False Flag"
+          },
+          {
+            "poi_name": "Flux Factory"
+          },
+          {
+            "poi_name": "Focal Point Gallery"
+          },
+          {
+            "poi_name": "Gallery 51"
+          },
+          {
+            "poi_name": "Graffiti Hall of Fame"
+          },
+          {
+            "poi_name": "International Studio & Curatorial Program"
+          },
+          {
+            "poi_name": "Makeready Gallery"
+          },
+          {
+            "poi_name": "Miriam and Ira D. Wallach Art Gallery"
+          },
+          {
+            "poi_name": "Paul Robeson Galleries"
+          },
+          {
+            "poi_name": "Qlty-Life"
+          },
+          {
+            "poi_name": "Resobox"
+          },
+          {
+            "poi_name": "Ross Gallery and Lecture Hall"
+          },
+          {
+            "poi_name": "Sculpture Center"
+          },
+          {
+            "poi_name": "Transfer Gallery"
+          },
+          {
+            "poi_name": "Vector Gallery"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.052
+  },
+  {
+    "id": 2316,
+    "records": [
+      {
+        "output": [],
+        "error": "syntax error at or near \";\"\nLINE 24:       ) ASC;\n                    ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 2317,
+    "records": [
+      {
+        "output": [],
+        "error": "column p.wikipedia does not exist\nLINE 2: SELECT p.poi_name, p.wikidata, p.wikipedia\n                                       ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 2318,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "giraffe"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.059
+  },
+  {
+    "id": 2319,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Go Fish"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.02
+  },
+  {
+    "id": 2320,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.011
+  },
+  {
+    "id": 2321,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Under Water Viewing Area",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "Den Viewing Area",
+            "tourism": "viewpoint"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.126
+  },
+  {
+    "id": 2322,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.161
+  },
+  {
+    "id": 2323,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Jake's Point Overlook"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.019
+  },
+  {
+    "id": 2324,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Wild Bird Viewing"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.063
+  },
+  {
+    "id": 2325,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Heavenly Heart Farm & Mini Petting Zoo"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.137
+  },
+  {
+    "id": 2326,
+    "records": [
+      {
+        "output": [],
+        "error": "column pois.wikipedia does not exist\nLINE 2: ... ON (pois.poi_name) pois.poi_name, pois.wikidata, pois.wikip...\n                                                             ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 2327,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Hemby Children's Hospital"
+          },
+          {
+            "poi_name": "Carolinas Medical Center - Center For Mental Health"
+          },
+          {
+            "poi_name": "Novant Health & Vascular Institute - Elizabeth (Cardio)"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.016
+  },
+  {
+    "id": 2328,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.011
+  },
+  {
+    "id": 2329,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Sunset cafe",
+            "amenity": "cafe"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.136
+  },
+  {
+    "id": 2330,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "wholesale glass"
+          },
+          {
+            "poi_name": "Bell"
+          },
+          {
+            "poi_name": "Man & Guitar Statue"
+          },
+          {
+            "poi_name": "Tiger Lane"
+          },
+          {
+            "poi_name": "Memphis Riverboats"
+          },
+          {
+            "poi_name": "Primates"
+          },
+          {
+            "poi_name": "Warthog"
+          },
+          {
+            "poi_name": "Aquarium"
+          },
+          {
+            "poi_name": "Tropical Bird House"
+          },
+          {
+            "poi_name": "Primate"
+          },
+          {
+            "poi_name": "Merkaat"
+          },
+          {
+            "poi_name": "Jackass Penguin"
+          },
+          {
+            "poi_name": "Chilean Flamingo"
+          },
+          {
+            "poi_name": "Ruddy Duck"
+          },
+          {
+            "poi_name": "Mandarin Duck"
+          },
+          {
+            "poi_name": "North American Ruddy Duck"
+          },
+          {
+            "poi_name": "Zebra"
+          },
+          {
+            "poi_name": "Turtoise"
+          },
+          {
+            "poi_name": "Giraffe"
+          },
+          {
+            "poi_name": "Komodo Dragon"
+          },
+          {
+            "poi_name": "Crocodile"
+          },
+          {
+            "poi_name": "Hippopotamus"
+          },
+          {
+            "poi_name": "Ostrich"
+          },
+          {
+            "poi_name": "Cat Country"
+          },
+          {
+            "poi_name": "American White Pelican"
+          },
+          {
+            "poi_name": "Red River Hog"
+          },
+          {
+            "poi_name": "Gibson Guitar Factory Tour"
+          },
+          {
+            "poi_name": "Sidewalk of Stars at the Orpheum"
+          },
+          {
+            "poi_name": "Lisa Marie Jet"
+          },
+          {
+            "poi_name": "Hound Dog II Jet"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.061
+  },
+  {
+    "id": 2331,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Lone Star Inn and Suites"
+          },
+          {
+            "poi_name": "Valley Lodge Clubhouse"
+          },
+          {
+            "poi_name": "Grand Fayette Hotel"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.124
+  },
+  {
+    "id": 2332,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.055
+  },
+  {
+    "id": 2333,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.035
+  },
+  {
+    "id": 2334,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Fei Tian Academy of Arts"
+          },
+          {
+            "poi_name": "Freeman Hall"
+          },
+          {
+            "poi_name": "John J. Cali School of Music"
+          },
+          {
+            "poi_name": "New York Institute of Technology"
+          },
+          {
+            "poi_name": "Role Play Bldg"
+          },
+          {
+            "poi_name": "Russ Berrie Institute for Professional Sales"
+          },
+          {
+            "poi_name": "Russ Hall"
+          },
+          {
+            "poi_name": "Science Hall East"
+          },
+          {
+            "poi_name": "Science Hall West"
+          },
+          {
+            "poi_name": "Speert Hall"
+          },
+          {
+            "poi_name": "The Juilliard School"
+          },
+          {
+            "poi_name": "Weill Cornell Medical College"
+          },
+          {
+            "poi_name": "William Paterson University School of Continuing and Professional Education"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.11
+  },
+  {
+    "id": 2335,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.017
+  },
+  {
+    "id": 2336,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"r\"\nLINE 7:         (SELECT ST_Centroid(r.geometry))::geography,\n                                    ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 2337,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "ISU Design West"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.095
+  },
+  {
+    "id": 2338,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.03
+  },
+  {
+    "id": 2339,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.193
+  },
+  {
+    "id": 2340,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"r\"\nLINE 8: ...s(ST_Azimuth(ST_Centroid(p.geometry), ST_Centroid(r.geometry...\n                                                             ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 2341,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Cedars Sinai Transplant Center"
+          },
+          {
+            "poi_name": "Balance Treatment Center"
+          },
+          {
+            "poi_name": "Covid Testing (PCR 30 mins)"
+          },
+          {
+            "poi_name": "Olive House Crisis Residential"
+          },
+          {
+            "poi_name": "STARS Crisis Residential"
+          },
+          {
+            "poi_name": "Nu Vela Esthetica"
+          },
+          {
+            "poi_name": "Neurological Rehabilitation & Research Unit"
+          },
+          {
+            "poi_name": "California Rehabilitation Institute"
+          },
+          {
+            "poi_name": "Mattel Children's Hospital"
+          },
+          {
+            "poi_name": "Resnick Neuropsychiatric Hospital"
+          },
+          {
+            "poi_name": "Lakeview Terrace Sanitarium"
+          },
+          {
+            "poi_name": "Van Nuys Behavioral Health Hospital"
+          },
+          {
+            "poi_name": "Tarzana Treatment Center"
+          },
+          {
+            "poi_name": "Motion Picture And Television Hospital"
+          },
+          {
+            "poi_name": "Los Robles - Thousand Oaks Surgical Hospital"
+          },
+          {
+            "poi_name": "Los Robles Hospital And Medical Center - East Campus"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.39
+  },
+  {
+    "id": 2342,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.02
+  },
+  {
+    "id": 2343,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Best Western"
+          },
+          {
+            "poi_name": "Best Western Moline"
+          },
+          {
+            "poi_name": "Castle Bed & Breakfast"
+          },
+          {
+            "poi_name": "Country Inn & Suites"
+          },
+          {
+            "poi_name": "Country Inn & Suites Freeport"
+          },
+          {
+            "poi_name": "Holiday Inn Express & Suites Davenport North"
+          },
+          {
+            "poi_name": "Holiday Inn Rock Island - Quad Cities"
+          },
+          {
+            "poi_name": "Hyatt Place"
+          },
+          {
+            "poi_name": "Oak Tree Inn"
+          },
+          {
+            "poi_name": "The Current Iowa, Autograph Collection"
+          },
+          {
+            "poi_name": "Timber Motel"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.128
+  },
+  {
+    "id": 2344,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "0.2",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "0.6",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "1",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "10",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "11",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "11315 Bodley dr",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "12",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "13",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "14",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "15",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "16",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "17",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "17.1",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "18",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "19",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "2",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "20",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "2.1",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "21",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "22",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "23",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "24",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "25",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "26",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "27",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "28",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "29",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "3",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "30",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "3.1",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "31",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "31.1",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "32",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "33 or 18.1",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "34",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "36",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "37",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "38",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "39",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "4",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "40",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "4.1",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "41",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "42",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "43",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "44",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "45",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "46",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "47",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "5",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "5.1",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "6",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "6.1",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "7",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "7.1",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "8",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "8.1",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "9",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "9.1",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "Best Western",
+            "tourism": "hotel"
+          },
+          {
+            "poi_name": "Bingham Park",
+            "tourism": "attraction"
+          },
+          {
+            "poi_name": "Clark County Museum",
+            "tourism": "museum"
+          },
+          {
+            "poi_name": "Dutch Checkpoint",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "Escape Lou",
+            "tourism": "attraction"
+          },
+          {
+            "poi_name": "Fairfield Inn & Suites",
+            "tourism": "hotel"
+          },
+          {
+            "poi_name": "Frankfort Avenue Coach House",
+            "tourism": "hotel"
+          },
+          {
+            "poi_name": "Garden Gateway Overlook - Beckley Creek Park",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "Hilton Garden Inn Jeffersonville Louisville North",
+            "tourism": "hotel"
+          },
+          {
+            "poi_name": "Jeffersonville Overlook",
+            "tourism": "attraction"
+          },
+          {
+            "poi_name": "Jeptha Creed Distillery",
+            "tourism": "attraction"
+          },
+          {
+            "poi_name": "Lake Shelby Campground",
+            "tourism": "caravan_site"
+          },
+          {
+            "poi_name": "Lovers Lane",
+            "tourism": "attraction"
+          },
+          {
+            "poi_name": "Market Street line sign",
+            "tourism": "attraction"
+          },
+          {
+            "poi_name": "Microtel Inn & Suites",
+            "tourism": "hotel"
+          },
+          {
+            "poi_name": "Museum of the American Printing House for the Blind",
+            "tourism": "museum"
+          },
+          {
+            "poi_name": "Overlook Area",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "Party Center",
+            "tourism": "attraction"
+          },
+          {
+            "poi_name": "Preservation Station Caboose",
+            "tourism": "attraction"
+          },
+          {
+            "poi_name": "Quality Inn",
+            "tourism": "hotel"
+          },
+          {
+            "poi_name": "Radisson Hotel Louisville North",
+            "tourism": "hotel"
+          },
+          {
+            "poi_name": "Riverview Overlook",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "Sam Calli/Rosemary Calli Memorial Overlook",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "Sign",
+            "tourism": "attraction"
+          },
+          {
+            "poi_name": "Stucker Fork",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "the big museum",
+            "tourism": "museum"
+          },
+          {
+            "poi_name": "Tru",
+            "tourism": "hotel"
+          },
+          {
+            "poi_name": "Vintage Fire Museum",
+            "tourism": "museum"
+          },
+          {
+            "poi_name": "WaterWorks Museum",
+            "tourism": "museum"
+          },
+          {
+            "poi_name": "WoodSpring Suites",
+            "tourism": "hotel"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.194
+  },
+  {
+    "id": 2345,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.055
+  },
+  {
+    "id": 2346,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.133
+  },
+  {
+    "id": 2347,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.204
+  },
+  {
+    "id": 2348,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_transform(geography, integer) does not exist\nLINE 5:     ST_Transform(\n            ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 2349,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Washington Rock",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "303 Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "L'Space Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Embassy Suites",
+            "tourism": "hotel"
+          },
+          {
+            "poi_name": "Solitude House",
+            "tourism": "museum"
+          },
+          {
+            "poi_name": "Califon Station",
+            "tourism": "museum"
+          },
+          {
+            "poi_name": "Pier 55",
+            "tourism": "attraction"
+          },
+          {
+            "poi_name": "Museum of Early Trades and Crafts Education Annex",
+            "tourism": "museum"
+          },
+          {
+            "poi_name": "The Lighthouse",
+            "tourism": "attraction"
+          },
+          {
+            "poi_name": "National Academy of Design",
+            "tourism": "museum"
+          },
+          {
+            "poi_name": "African Adventure",
+            "tourism": "attraction"
+          },
+          {
+            "poi_name": "Great Plains",
+            "tourism": "attraction"
+          },
+          {
+            "poi_name": "Big Cat Country",
+            "tourism": "attraction"
+          },
+          {
+            "poi_name": "Devil's Tree",
+            "tourism": "attraction"
+          },
+          {
+            "poi_name": "FlyNYON",
+            "tourism": "attraction"
+          },
+          {
+            "poi_name": "Berkeley Aquatic Club",
+            "tourism": "attraction"
+          },
+          {
+            "poi_name": "David Zwirner",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Canvas And Grapes",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Hyatt Regency",
+            "tourism": "hotel"
+          },
+          {
+            "poi_name": "Basking Ridge Oak Tree",
+            "tourism": "attraction"
+          },
+          {
+            "poi_name": "Northwest Overlook",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "Southwest Overlook",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "Imagine That!!!",
+            "tourism": "museum"
+          },
+          {
+            "poi_name": "Golf",
+            "tourism": "attraction"
+          },
+          {
+            "poi_name": "13th Hour Haunted House",
+            "tourism": "attraction"
+          },
+          {
+            "poi_name": "Aljira A Center for Contemporary Art",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Paul Robeson Galleries",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Arcaro Award Gallery Inc",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Seward Hill",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "Hall Christmas Tree Farm",
+            "tourism": "attraction"
+          },
+          {
+            "poi_name": "Kasmin Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Galerie Templon",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Nancy Hoffman Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Miles McEnery Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Sugarlift Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Davidson Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Albertz Benda Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Hollis Taggart Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Friedman Benda Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Ryan Lee Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Thomas Erben Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "BravinLee Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Morgan Lehman Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Hesse Flatow Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Deborah Bell Photographs",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Alexander Gray Associates Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Daniel Cooney Fine Art Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "David Richard Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "David Richard Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Yossi Milo Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Pace Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Miles McEnery Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Miles McEnery Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Miles McEnery Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Yancey Richardson Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "DC Moore Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Dia Chelsea",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Hauser & Wirth",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Harper's Chelsea",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Sikkema Jenkins & Co.",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Matthew Marks Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Matthew Marks Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Harper's Chelsea",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Nara Roesler Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Tina Kim Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Kravets Wehby Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Tanya Bonakdar Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Hales Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Paula Cooper Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Gladstone Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Gagosian",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Galleria Ca' d'Oro",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Washburn Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Praxis Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Jack Shainman Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Sean Horton Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Ricco/Maresca Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Kathryn Markel Fine Arts",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "ACA Galleries",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Elizabeth Harris Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "David Zwirner Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Kurimanzutto Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "David Kordansky Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Ulrik Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Slag Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Michael Rosenfield Art",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Best Western",
+            "tourism": "hotel"
+          },
+          {
+            "poi_name": "Hilton",
+            "tourism": "hotel"
+          },
+          {
+            "poi_name": "MC Hotel",
+            "tourism": "hotel"
+          },
+          {
+            "poi_name": "Marriott Newark Airport",
+            "tourism": "hotel"
+          },
+          {
+            "poi_name": "DoubleTree",
+            "tourism": "hotel"
+          },
+          {
+            "poi_name": "Holiday Inn",
+            "tourism": "hotel"
+          },
+          {
+            "poi_name": "ArtXo Studios",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "HG Contemporary",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Gladstone Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Crater View",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "Bramhall Terrace",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "Pace Gallery",
+            "tourism": "gallery"
+          },
+          {
+            "poi_name": "Scenic Overlook - Spruce Run Reservoir",
+            "tourism": "viewpoint"
+          },
+          {
+            "poi_name": "Scenic Overlook - Round Valley Reservoir",
+            "tourism": "viewpoint"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.055
+  },
+  {
+    "id": 2350,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Rincon Argentina"
+          },
+          {
+            "poi_name": "Kingston Bread + Bar"
+          },
+          {
+            "poi_name": "Lake House Cafe"
+          },
+          {
+            "poi_name": "Little Apple Caf\u00e9"
+          },
+          {
+            "poi_name": "Starbucks"
+          },
+          {
+            "poi_name": "LavAzza"
+          },
+          {
+            "poi_name": "Kingston Candy Bar"
+          },
+          {
+            "poi_name": "Rough Draft"
+          },
+          {
+            "poi_name": "Fruition Chocolate"
+          },
+          {
+            "poi_name": "Corner Bakery"
+          },
+          {
+            "poi_name": "Caf\u00e9 Espresso"
+          },
+          {
+            "poi_name": "Starbucks"
+          },
+          {
+            "poi_name": "Sugar & Spice Cafe"
+          },
+          {
+            "poi_name": "Beacon Bread Company"
+          },
+          {
+            "poi_name": "Royal Crepes"
+          },
+          {
+            "poi_name": "Glazed Over Donuts"
+          },
+          {
+            "poi_name": "Peaceful Provisions"
+          },
+          {
+            "poi_name": "Big Mouth Coffee Roasters"
+          },
+          {
+            "poi_name": "Starbucks"
+          },
+          {
+            "poi_name": "Bliss Cheesecakes Cafe"
+          },
+          {
+            "poi_name": "Trax Espresso"
+          },
+          {
+            "poi_name": "Pocono Cafe"
+          },
+          {
+            "poi_name": "Zo\u00e9's Ice Cream Emporium & Cafe"
+          },
+          {
+            "poi_name": "B 'n B Bagels"
+          },
+          {
+            "poi_name": "Molten Java"
+          },
+          {
+            "poi_name": "Dave's Daylight Donuts"
+          },
+          {
+            "poi_name": "Beans Cat Cafe"
+          },
+          {
+            "poi_name": "Starbucks"
+          },
+          {
+            "poi_name": "Bagel Boys Cafe"
+          },
+          {
+            "poi_name": "Spa Bites"
+          },
+          {
+            "poi_name": "Rosie General"
+          },
+          {
+            "poi_name": "Lagusta's Luscious Commissary"
+          },
+          {
+            "poi_name": "Mudd Puddle"
+          },
+          {
+            "poi_name": "Sweetberry Pompton Lakes"
+          },
+          {
+            "poi_name": "Playa Bowls"
+          },
+          {
+            "poi_name": "Mystic Cafe"
+          },
+          {
+            "poi_name": "Tazza Cafe"
+          },
+          {
+            "poi_name": "The Baker\u2019s Daughter"
+          },
+          {
+            "poi_name": "Hava Java"
+          },
+          {
+            "poi_name": "Starbucks"
+          },
+          {
+            "poi_name": "Dunkin\u2019"
+          },
+          {
+            "poi_name": "Starbucks"
+          },
+          {
+            "poi_name": "Starbucks"
+          },
+          {
+            "poi_name": "Bobo's Cafe"
+          },
+          {
+            "poi_name": "Bank Square Coffeehouse"
+          },
+          {
+            "poi_name": "Hug a Mug"
+          },
+          {
+            "poi_name": "Xpresso Cafe"
+          },
+          {
+            "poi_name": "Starbucks"
+          },
+          {
+            "poi_name": "Vegatellian"
+          },
+          {
+            "poi_name": "Board"
+          },
+          {
+            "poi_name": "Sissy's Cafe"
+          },
+          {
+            "poi_name": "Starbucks"
+          },
+          {
+            "poi_name": "Market Basket Delicatessen"
+          },
+          {
+            "poi_name": "Garden House"
+          },
+          {
+            "poi_name": "Dulce"
+          },
+          {
+            "poi_name": "Nana's Creative Cafe"
+          },
+          {
+            "poi_name": "Starbucks"
+          },
+          {
+            "poi_name": "Black Cow Coffee"
+          },
+          {
+            "poi_name": "Starbucks Main Street"
+          },
+          {
+            "poi_name": "Starbucks"
+          },
+          {
+            "poi_name": "Starbucks"
+          },
+          {
+            "poi_name": "The Frisky Goat Coffeehouse"
+          },
+          {
+            "poi_name": "Milford's Daily Grind"
+          },
+          {
+            "poi_name": "Starbucks"
+          },
+          {
+            "poi_name": "Java Love"
+          },
+          {
+            "poi_name": "The Crafted Kup Coffee House"
+          },
+          {
+            "poi_name": "Mushroom Cafe"
+          },
+          {
+            "poi_name": "Beans Cat Cafe"
+          },
+          {
+            "poi_name": "Pompton Espresso Bar"
+          },
+          {
+            "poi_name": "Maeve's Place"
+          },
+          {
+            "poi_name": "McKinney & Doyle Fine Foods Cafe/ The Corner Bakery"
+          },
+          {
+            "poi_name": "Petite on Main"
+          },
+          {
+            "poi_name": "Village Coffee and Goods"
+          },
+          {
+            "poi_name": "Citrus Cafe"
+          },
+          {
+            "poi_name": "19 Main Street Luncheonette"
+          },
+          {
+            "poi_name": "Cornwall Coffee Co. & Mercantile"
+          },
+          {
+            "poi_name": "Valkyrie Coffee Roasters"
+          },
+          {
+            "poi_name": "Not Just Bagels"
+          },
+          {
+            "poi_name": "Trailside Cafe"
+          },
+          {
+            "poi_name": "Starbucks"
+          },
+          {
+            "poi_name": "Mr V\u2019s Deli"
+          },
+          {
+            "poi_name": "Ready Coffee"
+          },
+          {
+            "poi_name": "Starbucks"
+          },
+          {
+            "poi_name": "Caffe"
+          },
+          {
+            "poi_name": "Poughkeepsie Grind"
+          },
+          {
+            "poi_name": "Bad Ass Coffee"
+          },
+          {
+            "poi_name": "Starbucks"
+          },
+          {
+            "poi_name": "Samuel's"
+          },
+          {
+            "poi_name": "Rhinebeck Bagels & Cafe"
+          },
+          {
+            "poi_name": "The Peekskill Coffee House"
+          },
+          {
+            "poi_name": "Tuscan Cafe"
+          },
+          {
+            "poi_name": "Starbucks"
+          },
+          {
+            "poi_name": "Atrium Brew"
+          },
+          {
+            "poi_name": "Sweets & Treats"
+          },
+          {
+            "poi_name": "Starbucks"
+          },
+          {
+            "poi_name": "Christopher's Bistro"
+          },
+          {
+            "poi_name": "Brick Street Cafe"
+          },
+          {
+            "poi_name": "Express"
+          },
+          {
+            "poi_name": "The Retreat"
+          },
+          {
+            "poi_name": "First Village Coffee"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.132
+  },
+  {
+    "id": 2351,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Dixon Cave"
+          },
+          {
+            "poi_name": "Sunset Point"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.129
+  },
+  {
+    "id": 2352,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_y(geography) does not exist\nLINE 10:   AND ST_Y(pois.geometry) > ST_Y(ST_Centroid((SELECT geometr...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 2353,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.058
+  },
+  {
+    "id": 2354,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Long John Silver's"
+          },
+          {
+            "poi_name": "Little Caesars"
+          },
+          {
+            "poi_name": "Little Caesars"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "McDonald's"
+          },
+          {
+            "poi_name": "Dunkin'"
+          },
+          {
+            "poi_name": "Five Guys"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Dunkin'"
+          },
+          {
+            "poi_name": "Taco Bell"
+          },
+          {
+            "poi_name": "Sonic"
+          },
+          {
+            "poi_name": "Which Wich?"
+          },
+          {
+            "poi_name": "Quiznos"
+          },
+          {
+            "poi_name": "Panda Express"
+          },
+          {
+            "poi_name": "Wingstop"
+          },
+          {
+            "poi_name": "Firehouse Subs"
+          },
+          {
+            "poi_name": "Luna Pizza"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Jimmy John's"
+          },
+          {
+            "poi_name": "Einstein Bros. Bagels"
+          },
+          {
+            "poi_name": "Smashburger"
+          },
+          {
+            "poi_name": "Papa Murphy's"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "The Old Station Subs"
+          },
+          {
+            "poi_name": "La Canasta"
+          },
+          {
+            "poi_name": "Bowl To Go"
+          },
+          {
+            "poi_name": "Panda Express"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Manuel's Mexican Restaurant"
+          },
+          {
+            "poi_name": "Burger King"
+          },
+          {
+            "poi_name": "Mu Shu Asian Grill Chinese"
+          },
+          {
+            "poi_name": "Art's All American Cafe"
+          },
+          {
+            "poi_name": "Tres Leches Cafe"
+          },
+          {
+            "poi_name": "Persian Garden Cafe"
+          },
+          {
+            "poi_name": "Pizza Patron"
+          },
+          {
+            "poi_name": "Little Caesars"
+          },
+          {
+            "poi_name": "Chipotle"
+          },
+          {
+            "poi_name": "Fired Pie"
+          },
+          {
+            "poi_name": "Jimmy John's"
+          },
+          {
+            "poi_name": "Five Guys"
+          },
+          {
+            "poi_name": "Jimmy John's"
+          },
+          {
+            "poi_name": "Wingstop"
+          },
+          {
+            "poi_name": "Pizza Patron"
+          },
+          {
+            "poi_name": "Barro's Pizza"
+          },
+          {
+            "poi_name": "Firehouse Subs"
+          },
+          {
+            "poi_name": "Cold Beers & Cheeseburgers"
+          },
+          {
+            "poi_name": "Panda Express"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "The Habit Burger Grill"
+          },
+          {
+            "poi_name": "Boba & Donuts"
+          },
+          {
+            "poi_name": "Genghis Grill"
+          },
+          {
+            "poi_name": "Smashburger"
+          },
+          {
+            "poi_name": "N\u00e9kter Juice Bar"
+          },
+          {
+            "poi_name": "Jimmy John's"
+          },
+          {
+            "poi_name": "Panera Bread"
+          },
+          {
+            "poi_name": "Chipotle"
+          },
+          {
+            "poi_name": "Zero Degrees"
+          },
+          {
+            "poi_name": "Jimmy John's"
+          },
+          {
+            "poi_name": "Panda Express"
+          },
+          {
+            "poi_name": "Which Wich?"
+          },
+          {
+            "poi_name": "Wingstop"
+          },
+          {
+            "poi_name": "Wingstop"
+          },
+          {
+            "poi_name": "Pizza & WIngs"
+          },
+          {
+            "poi_name": "Jersey Mike's Subs"
+          },
+          {
+            "poi_name": "Smashburger"
+          },
+          {
+            "poi_name": "Potbelly"
+          },
+          {
+            "poi_name": "Sonic"
+          },
+          {
+            "poi_name": "Tokyo Joe's"
+          },
+          {
+            "poi_name": "Chen and Wok Gourmet Oriental"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Pizza Hut Express"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Filiberto\u2019s Mexican Food"
+          },
+          {
+            "poi_name": "Little Caesars"
+          },
+          {
+            "poi_name": "Little Caesars"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Little Caesars"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Extreme Pizza"
+          },
+          {
+            "poi_name": "Quiznos"
+          },
+          {
+            "poi_name": "BoSa Donuts"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Smashburger"
+          },
+          {
+            "poi_name": "Firehouse Subs"
+          },
+          {
+            "poi_name": "Papa John's"
+          },
+          {
+            "poi_name": "Little Caesars"
+          },
+          {
+            "poi_name": "Little Caesars"
+          },
+          {
+            "poi_name": "BurgerIM"
+          },
+          {
+            "poi_name": "Jersey Mike's Subs"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "19th Donut Hole"
+          },
+          {
+            "poi_name": "Giant Hamburgers"
+          },
+          {
+            "poi_name": "Shorty & Wags"
+          },
+          {
+            "poi_name": "Dunkin'"
+          },
+          {
+            "poi_name": "Little Caesars"
+          },
+          {
+            "poi_name": "Jamba"
+          },
+          {
+            "poi_name": "Jimmy John's"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Panda Express"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.244
+  },
+  {
+    "id": 2355,
+    "records": [
+      {
+        "output": [],
+        "error": "syntax error at or near \"LIMIT\"\nLINE 20: LIMIT 1;\n         ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 2356,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Jennings Environmental Education Center"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.019
+  },
+  {
+    "id": 2357,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_translate(geography, double precision, double precision) does not exist\nLINE 7:         ST_Translate(\n                ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 2358,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Blue Horse Cafe"
+          },
+          {
+            "poi_name": "Dunkin\u2019"
+          },
+          {
+            "poi_name": "Heine Brothers' Coffee"
+          },
+          {
+            "poi_name": "Insomnia Cookies"
+          },
+          {
+            "poi_name": "Kim\u2019s Koffee"
+          },
+          {
+            "poi_name": "Midwest Cafe and Market"
+          },
+          {
+            "poi_name": "Old Louisville Coffee Co-op"
+          },
+          {
+            "poi_name": "Old School Cafe and Bakery"
+          },
+          {
+            "poi_name": "Parlor Doughnuts"
+          },
+          {
+            "poi_name": "Quill's"
+          },
+          {
+            "poi_name": "SRC Cafe"
+          },
+          {
+            "poi_name": "Starbucks"
+          },
+          {
+            "poi_name": "Sunergos Coffee"
+          },
+          {
+            "poi_name": "Zax Creamery"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.03
+  },
+  {
+    "id": 2359,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.092
+  },
+  {
+    "id": 2360,
+    "records": [
+      {
+        "output": [],
+        "error": "column pois.wikipedia does not exist\nLINE 2: ... ON (pois.poi_name) pois.poi_name, pois.wikidata, pois.wikip...\n                                                             ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 2361,
+    "records": [
+      {
+        "output": [],
+        "error": "column a.wikipedia does not exist\nLINE 2: SELECT DISTINCT a.id, a.poi_name, a.wikidata, a.wikipedia\n                                                      ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 2362,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Apollo Pizza and Beer Emporium"
+          },
+          {
+            "poi_name": "Applebee's"
+          },
+          {
+            "poi_name": "Archa Nine Thai Kitchen"
+          },
+          {
+            "poi_name": "Babylon Market"
+          },
+          {
+            "poi_name": "Bonefish Grill"
+          },
+          {
+            "poi_name": "Casa Cafe Mexican"
+          },
+          {
+            "poi_name": "Chili's"
+          },
+          {
+            "poi_name": "Chuck E. Cheese"
+          },
+          {
+            "poi_name": "Cicis"
+          },
+          {
+            "poi_name": "Cracker Barrel"
+          },
+          {
+            "poi_name": "Frisch's Big Boy"
+          },
+          {
+            "poi_name": "Gillums Sports Bar"
+          },
+          {
+            "poi_name": "Giovanni's Pizza"
+          },
+          {
+            "poi_name": "Golden Wok"
+          },
+          {
+            "poi_name": "Hananoki"
+          },
+          {
+            "poi_name": "IHOP"
+          },
+          {
+            "poi_name": "Koreana"
+          },
+          {
+            "poi_name": "Liberty Road Cafe"
+          },
+          {
+            "poi_name": "Los Two Brothers"
+          },
+          {
+            "poi_name": "Masala Indian Cuisine"
+          },
+          {
+            "poi_name": "Mi Pueblo II"
+          },
+          {
+            "poi_name": "Momma D's Smokin' Oak Country Store"
+          },
+          {
+            "poi_name": "Mr. Kabob"
+          },
+          {
+            "poi_name": "O'Charley's"
+          },
+          {
+            "poi_name": "Outback Steakhouse"
+          },
+          {
+            "poi_name": "Red Lobster"
+          },
+          {
+            "poi_name": "Red River Rockhouse"
+          },
+          {
+            "poi_name": "Restaurante Santa Fe"
+          },
+          {
+            "poi_name": "Sarah's BBQ"
+          },
+          {
+            "poi_name": "Smashing Tomato"
+          },
+          {
+            "poi_name": "Sonny's Barbecue"
+          },
+          {
+            "poi_name": "Sugano Japanese Restaurant"
+          },
+          {
+            "poi_name": "Yamaguchi's Sake and Tapas"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.466
+  },
+  {
+    "id": 2363,
+    "records": [
+      {
+        "output": [],
+        "error": "column r.addr_state does not exist\nLINE 11:            AND r.addr_state ILIKE '%VA%' LIMIT 1)\n                        ^\nHINT:  Perhaps you meant to reference the column \"p2.addr_state\" or the column \"p1.addr_state\"."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 2364,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_within(geography, geography) does not exist\nLINE 5:   AND ST_Within(p.geometry::geography, ST_Buffer((SELECT geo...\n              ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 2365,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "SubCulture"
+          },
+          {
+            "poi_name": "Menya"
+          },
+          {
+            "poi_name": "Slice Works"
+          },
+          {
+            "poi_name": "Potager Restaurant"
+          },
+          {
+            "poi_name": "Park Tavern & Restaurant"
+          },
+          {
+            "poi_name": "Opal Restaurant"
+          },
+          {
+            "poi_name": "Attivo Libre Taqueria"
+          },
+          {
+            "poi_name": "Gold Panda"
+          },
+          {
+            "poi_name": "Hayati Mediterranean Grill"
+          },
+          {
+            "poi_name": "Apple Barrel Restaurant"
+          },
+          {
+            "poi_name": "The District"
+          },
+          {
+            "poi_name": "Pepper Asian Bistro"
+          },
+          {
+            "poi_name": "Yahya's Mediterranean Grill & Pastries"
+          },
+          {
+            "poi_name": "Chinatown Bistro"
+          },
+          {
+            "poi_name": "Sushi Bay 17"
+          },
+          {
+            "poi_name": "The Pepper Pod"
+          },
+          {
+            "poi_name": "D Bar"
+          },
+          {
+            "poi_name": "Hook & Reel"
+          },
+          {
+            "poi_name": "Yogi's Indian Restaurant"
+          },
+          {
+            "poi_name": "The Cherry Tomato"
+          },
+          {
+            "poi_name": "Anthony's Pizza and Pasta"
+          },
+          {
+            "poi_name": "Noodles & Company"
+          },
+          {
+            "poi_name": "Steuben's"
+          },
+          {
+            "poi_name": "WaterCourse Foods"
+          },
+          {
+            "poi_name": "City O' City"
+          },
+          {
+            "poi_name": "Las Margs at Reunion"
+          },
+          {
+            "poi_name": "Snarf's Sandwiches"
+          },
+          {
+            "poi_name": "Breckenridge Brewery"
+          },
+          {
+            "poi_name": "Spices"
+          },
+          {
+            "poi_name": "White Pie"
+          },
+          {
+            "poi_name": "Cr\u00fa Food and Wine Bar"
+          },
+          {
+            "poi_name": "Que Bueno! Mexican Grille"
+          },
+          {
+            "poi_name": "Tamales by La Casita"
+          },
+          {
+            "poi_name": "Villa Italian Kitchen"
+          },
+          {
+            "poi_name": "Great Divide"
+          },
+          {
+            "poi_name": "Modern Market"
+          },
+          {
+            "poi_name": "The Magic Pan"
+          },
+          {
+            "poi_name": "Big Bowl"
+          },
+          {
+            "poi_name": "Woody Creek Bakery & Caf\u00e9"
+          },
+          {
+            "poi_name": "IHOP"
+          },
+          {
+            "poi_name": "Walter's Pizzeria"
+          },
+          {
+            "poi_name": "Root Down"
+          },
+          {
+            "poi_name": "Shish Kabob Grill"
+          },
+          {
+            "poi_name": "City Grille"
+          },
+          {
+            "poi_name": "China Kitchen"
+          },
+          {
+            "poi_name": "Great Wall Chinese Food"
+          },
+          {
+            "poi_name": "Pete's Steak House"
+          },
+          {
+            "poi_name": "Pita Grill and Hookah"
+          },
+          {
+            "poi_name": "Crazy Horse Kitchen + Bar"
+          },
+          {
+            "poi_name": "The Avenue Grille"
+          },
+          {
+            "poi_name": "Ace Eat Serve"
+          },
+          {
+            "poi_name": "Anise"
+          },
+          {
+            "poi_name": "Garibaldi Mexican Bistro"
+          },
+          {
+            "poi_name": "Stub's Gas & Oil"
+          },
+          {
+            "poi_name": "Tacos la Tapatia"
+          },
+          {
+            "poi_name": "Texas de Brazil"
+          },
+          {
+            "poi_name": "Thai Monkey Club"
+          },
+          {
+            "poi_name": "Jacal Mexican Grill"
+          },
+          {
+            "poi_name": "Jim N' Nick's Bar-B-Q"
+          },
+          {
+            "poi_name": "Yum Asian and Sushi"
+          },
+          {
+            "poi_name": "Little Gingko Asian Cafe"
+          },
+          {
+            "poi_name": "Ritual Social House"
+          },
+          {
+            "poi_name": "Humboldt Farm Fish Wine"
+          },
+          {
+            "poi_name": "Claim Bar & Restaurant"
+          },
+          {
+            "poi_name": "The Plimoth"
+          },
+          {
+            "poi_name": "La Pasadita Inn"
+          },
+          {
+            "poi_name": "Park & Company"
+          },
+          {
+            "poi_name": "Bella Basil Pizzeria"
+          },
+          {
+            "poi_name": "Fork & Spoon"
+          },
+          {
+            "poi_name": "Stoney's Bar and Grill"
+          },
+          {
+            "poi_name": "The 9th Door"
+          },
+          {
+            "poi_name": "DiFranco's Italian Restaurant"
+          },
+          {
+            "poi_name": "East Tao"
+          },
+          {
+            "poi_name": "100% de Agave"
+          },
+          {
+            "poi_name": "Melita's Greek Cafe & Market"
+          },
+          {
+            "poi_name": "Anthony's Pizza & Pasta"
+          },
+          {
+            "poi_name": "Chef Jimmy's"
+          },
+          {
+            "poi_name": "New Belgium Brewing"
+          },
+          {
+            "poi_name": "Elway's"
+          },
+          {
+            "poi_name": "Modern Market"
+          },
+          {
+            "poi_name": "Pour la France"
+          },
+          {
+            "poi_name": "Steve's Snappin Dogs"
+          },
+          {
+            "poi_name": "Tom\u2019s Urban"
+          },
+          {
+            "poi_name": "Samburu Grille"
+          },
+          {
+            "poi_name": "Blue Fin Sushi"
+          },
+          {
+            "poi_name": "Knife & Board"
+          },
+          {
+            "poi_name": "Burro King"
+          },
+          {
+            "poi_name": "Brother's BBQ"
+          },
+          {
+            "poi_name": "Tacos El Huequito"
+          },
+          {
+            "poi_name": "Patxi's Pizza"
+          },
+          {
+            "poi_name": "El Jardin Restaurant"
+          },
+          {
+            "poi_name": "Charlie Browns Piano Bar & Grill"
+          },
+          {
+            "poi_name": "Le Peep Cafe On The Park"
+          },
+          {
+            "poi_name": "Pizza Hut & Wing Street"
+          },
+          {
+            "poi_name": "Arjuua!!"
+          },
+          {
+            "poi_name": "Wellness Sushi"
+          },
+          {
+            "poi_name": "Pizzeria Locale"
+          },
+          {
+            "poi_name": "Rivers and Roads Coffee"
+          },
+          {
+            "poi_name": "Stoney\u2019s Uptown Joint"
+          },
+          {
+            "poi_name": "Fit Kitchen"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.191
+  },
+  {
+    "id": 2366,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Glacier Fine Art"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 3.33
+  },
+  {
+    "id": 2367,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.008
+  },
+  {
+    "id": 2368,
+    "records": [
+      {
+        "output": [],
+        "error": "column pois.wikipedia does not exist\nLINE 2: ... ON (pois.poi_name) pois.poi_name, pois.wikidata, pois.wikip...\n                                                             ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 2369,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Centroid(geography) unhandled geography type"
+      }
+    ],
+    "run_seconds": 2.503
+  },
+  {
+    "id": 2370,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Sixty Vines"
+          },
+          {
+            "poi_name": "sweetgreen"
+          },
+          {
+            "poi_name": "Tiger Noodle House"
+          },
+          {
+            "poi_name": "Pepperoni\u2019s"
+          },
+          {
+            "poi_name": "Pier 36 Seafood Restaurant & Oyster Bar"
+          },
+          {
+            "poi_name": "Crown Seafood Restaurant"
+          },
+          {
+            "poi_name": "La Tapatia"
+          },
+          {
+            "poi_name": "Parrilla Colombiana"
+          },
+          {
+            "poi_name": "La Sultana Panaderia y Pupuseria"
+          },
+          {
+            "poi_name": "The Afghan Village Resturant"
+          },
+          {
+            "poi_name": "Buffet de Pupusas"
+          },
+          {
+            "poi_name": "Chatt 'N Paan"
+          },
+          {
+            "poi_name": "Momo House"
+          },
+          {
+            "poi_name": "H.S. Green"
+          },
+          {
+            "poi_name": "Cafe Hababi"
+          },
+          {
+            "poi_name": "HopDoddy"
+          },
+          {
+            "poi_name": "Piola"
+          },
+          {
+            "poi_name": "Dish Society"
+          },
+          {
+            "poi_name": "Grimaldi's Pizzeria"
+          },
+          {
+            "poi_name": "Dimassi's Mediterranean Buffet"
+          },
+          {
+            "poi_name": "Luna Pizzeria"
+          },
+          {
+            "poi_name": "Michys Chino Boricua"
+          },
+          {
+            "poi_name": "Michys Chino Boricua"
+          },
+          {
+            "poi_name": "Toasted Yolk"
+          },
+          {
+            "poi_name": "H\u1ea3i C\u1ea3ng"
+          },
+          {
+            "poi_name": "Dumpling King"
+          },
+          {
+            "poi_name": "Shiva Indian Restaurant"
+          },
+          {
+            "poi_name": "Bombay Palace"
+          },
+          {
+            "poi_name": "Nawab's Biryani House"
+          },
+          {
+            "poi_name": "Aka"
+          },
+          {
+            "poi_name": "La Tortuga Taqueria"
+          },
+          {
+            "poi_name": "Foody's Gourmet"
+          },
+          {
+            "poi_name": "Le Mistral"
+          },
+          {
+            "poi_name": "rattan pan-asian bistro & wine bar"
+          },
+          {
+            "poi_name": "Five Spice Asian Cuisine"
+          },
+          {
+            "poi_name": "Iyara Thai Cuisine"
+          },
+          {
+            "poi_name": "Matsu Sushi Bar"
+          },
+          {
+            "poi_name": "Pho Basil Vietnamese Restaurant"
+          },
+          {
+            "poi_name": "Ashiana Indian Restaruant"
+          },
+          {
+            "poi_name": "Olive Garden Italian Restaurant"
+          },
+          {
+            "poi_name": "The Cafe at Brookwood"
+          },
+          {
+            "poi_name": "The Cottage"
+          },
+          {
+            "poi_name": "Chang's Chinese"
+          },
+          {
+            "poi_name": "Kublai Khan"
+          },
+          {
+            "poi_name": "Nagoya Sushi"
+          },
+          {
+            "poi_name": "Pho Mai Vietnamese Noodle House"
+          },
+          {
+            "poi_name": "Russo's New York Pizzeria"
+          },
+          {
+            "poi_name": "Texas Boarders Bar & Grill"
+          },
+          {
+            "poi_name": "Unicle Julio's"
+          },
+          {
+            "poi_name": "Wild Wing Cafe"
+          },
+          {
+            "poi_name": "Orient Express"
+          },
+          {
+            "poi_name": "Texas Mesquite Grill"
+          },
+          {
+            "poi_name": "Moe's Southwest Gril"
+          },
+          {
+            "poi_name": "Pho Bamboo Vietnamese Noodle House"
+          },
+          {
+            "poi_name": "Salata"
+          },
+          {
+            "poi_name": "E Star Chinese Buffet"
+          },
+          {
+            "poi_name": "Carrabba's Itallian Grill"
+          },
+          {
+            "poi_name": "Dimassi's Mediterranean Buffet"
+          },
+          {
+            "poi_name": "Clay Pot Kitchen - C\u01a1m Ni\u00eau Houston"
+          },
+          {
+            "poi_name": "Morton's The Steakhouse"
+          },
+          {
+            "poi_name": "Banana Leaf"
+          },
+          {
+            "poi_name": "Al Aseel Grill and Cafe"
+          },
+          {
+            "poi_name": "Casa do Brasil"
+          },
+          {
+            "poi_name": "Taqueria El Sol De Mexico"
+          },
+          {
+            "poi_name": "Lupe's Mexican Cafe"
+          },
+          {
+            "poi_name": "Los Tios Mexican Restaurant"
+          },
+          {
+            "poi_name": "Pizaro's Pizza"
+          },
+          {
+            "poi_name": "Luchi & Joey's"
+          },
+          {
+            "poi_name": "The Devine Affair"
+          },
+          {
+            "poi_name": "Pei Wei"
+          },
+          {
+            "poi_name": "Urban American Kitchen"
+          },
+          {
+            "poi_name": "Bacco Wine and Spirits"
+          },
+          {
+            "poi_name": "Emporio Brazilian Grill"
+          },
+          {
+            "poi_name": "Good 'Ol Boys"
+          },
+          {
+            "poi_name": "Hibachi Grill & Buffet"
+          },
+          {
+            "poi_name": "Chili's"
+          },
+          {
+            "poi_name": "Outback Steakhouse"
+          },
+          {
+            "poi_name": "Mama Mia Sugarcane Drinks"
+          },
+          {
+            "poi_name": "R House Cantonese Restaurant"
+          },
+          {
+            "poi_name": "Tony Thai Restaurant"
+          },
+          {
+            "poi_name": "Pho 54"
+          },
+          {
+            "poi_name": "Pho Binh"
+          },
+          {
+            "poi_name": "Nem Houston"
+          },
+          {
+            "poi_name": "Kh\u00f4 B\u00f2 S\u1ed1 1 ( Number 1 Beef Jerky)"
+          },
+          {
+            "poi_name": "My Baguettes"
+          },
+          {
+            "poi_name": "Ramen Okidoki & Lims Chicken"
+          },
+          {
+            "poi_name": "Kim Son"
+          },
+          {
+            "poi_name": "Mango Mango"
+          },
+          {
+            "poi_name": "Tarka"
+          },
+          {
+            "poi_name": "CAVA"
+          },
+          {
+            "poi_name": "Lemongrass Cafe"
+          },
+          {
+            "poi_name": "Auntie Pasto's"
+          },
+          {
+            "poi_name": "Pizza Hut"
+          },
+          {
+            "poi_name": "Boudreaux Cajun Restaurant"
+          },
+          {
+            "poi_name": "Caf\u00e9 Express"
+          },
+          {
+            "poi_name": "Haidilao Hot Pot"
+          },
+          {
+            "poi_name": "Squares Hot Pot"
+          },
+          {
+            "poi_name": "Ferso's Tacos & More"
+          },
+          {
+            "poi_name": "Asian Too"
+          },
+          {
+            "poi_name": "Lou's Cajun Grill"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.18
+  },
+  {
+    "id": 2371,
+    "records": [
+      {
+        "output": [],
+        "error": "column p.wikipedia does not exist\nLINE 2: SELECT p.poi_name, p.wikidata, p.wikipedia\n                                       ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 2372,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_envelope(geography) does not exist\nLINE 6:     (SELECT ST_Centroid(ST_Envelope(r.geometry::geography)) \n                                ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 2373,
+    "records": [
+      {
+        "output": [],
+        "error": "function deg2rad(numeric) does not exist\nLINE 9:       -40000 * sin(deg2rad(202.5)),\n                           ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 2374,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Rosati's"
+          },
+          {
+            "poi_name": "Honey Fluff Donuts"
+          },
+          {
+            "poi_name": "KFC"
+          },
+          {
+            "poi_name": "Taco Bell"
+          },
+          {
+            "poi_name": "Dunkin'"
+          },
+          {
+            "poi_name": "Buona"
+          },
+          {
+            "poi_name": "Rosati's"
+          },
+          {
+            "poi_name": "Dunkin'"
+          },
+          {
+            "poi_name": "Wingstop"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Firehouse Subs"
+          },
+          {
+            "poi_name": "Dunkin'"
+          },
+          {
+            "poi_name": "Panda Express"
+          },
+          {
+            "poi_name": "Domino's"
+          },
+          {
+            "poi_name": "Chipotle"
+          },
+          {
+            "poi_name": "Jersey Mike's Subs"
+          },
+          {
+            "poi_name": "Potbelly"
+          },
+          {
+            "poi_name": "McDonald's"
+          },
+          {
+            "poi_name": "Burger King"
+          },
+          {
+            "poi_name": "KFC"
+          },
+          {
+            "poi_name": "Dunkin'"
+          },
+          {
+            "poi_name": "Jimmy John's"
+          },
+          {
+            "poi_name": "Dunkin'"
+          },
+          {
+            "poi_name": "KFC"
+          },
+          {
+            "poi_name": "Taco Bell"
+          },
+          {
+            "poi_name": "McDonald's"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Dunkin'"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "WingStreet"
+          },
+          {
+            "poi_name": "Dunkin'"
+          },
+          {
+            "poi_name": "Tropical Smoothie Cafe"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Rosati's"
+          },
+          {
+            "poi_name": "Level Up"
+          },
+          {
+            "poi_name": "Ino's Tacos"
+          },
+          {
+            "poi_name": "Panera Bread"
+          },
+          {
+            "poi_name": "McDonald's"
+          },
+          {
+            "poi_name": "KFC"
+          },
+          {
+            "poi_name": "Dunkin'"
+          },
+          {
+            "poi_name": "Little Caesars"
+          },
+          {
+            "poi_name": "Jack & Pats"
+          },
+          {
+            "poi_name": "Dunkin'"
+          },
+          {
+            "poi_name": "Waldo Cooney's Pizza"
+          },
+          {
+            "poi_name": "Mr. Submarine"
+          },
+          {
+            "poi_name": "Dunkin'"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Great American Bagel"
+          },
+          {
+            "poi_name": "Papa John's"
+          },
+          {
+            "poi_name": "KFC"
+          },
+          {
+            "poi_name": "Donald's Famous Hot Dogs"
+          },
+          {
+            "poi_name": "Pop's Italian Beef"
+          },
+          {
+            "poi_name": "DeBo's Dogs"
+          },
+          {
+            "poi_name": "Dunkin'"
+          },
+          {
+            "poi_name": "Pizza Mia"
+          },
+          {
+            "poi_name": "Enzo's Pizzeria"
+          },
+          {
+            "poi_name": "Original Mr Beef"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Dunkin'"
+          },
+          {
+            "poi_name": "Dunkin'"
+          },
+          {
+            "poi_name": "Dairy Queen"
+          },
+          {
+            "poi_name": "Jimmy John's"
+          },
+          {
+            "poi_name": "Pizza Hut Delivery"
+          },
+          {
+            "poi_name": "Panda Express"
+          },
+          {
+            "poi_name": "Burger King"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Dairy Queen"
+          },
+          {
+            "poi_name": "Mancinos"
+          },
+          {
+            "poi_name": "McDonald's"
+          },
+          {
+            "poi_name": "Poor Boy"
+          },
+          {
+            "poi_name": "Double Dragon"
+          },
+          {
+            "poi_name": "Sal's Phillys"
+          },
+          {
+            "poi_name": "Burger King"
+          },
+          {
+            "poi_name": "Panda Express"
+          },
+          {
+            "poi_name": "Panera Bread"
+          },
+          {
+            "poi_name": "Potbelly"
+          },
+          {
+            "poi_name": "Chipotle"
+          },
+          {
+            "poi_name": "Five Guys"
+          },
+          {
+            "poi_name": "Domino's"
+          },
+          {
+            "poi_name": "Popeyes"
+          },
+          {
+            "poi_name": "Dunkin'"
+          },
+          {
+            "poi_name": "First Wok II"
+          },
+          {
+            "poi_name": "Joey's Red Hots"
+          },
+          {
+            "poi_name": "KabobQ"
+          },
+          {
+            "poi_name": "Kombs"
+          },
+          {
+            "poi_name": "Domino's"
+          },
+          {
+            "poi_name": "Jimmy John's"
+          },
+          {
+            "poi_name": "Little Joe's"
+          },
+          {
+            "poi_name": "Wendy's"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Panda Express"
+          },
+          {
+            "poi_name": "Wingstop"
+          },
+          {
+            "poi_name": "Raising Cane's"
+          },
+          {
+            "poi_name": "Panera Bread"
+          },
+          {
+            "poi_name": "Smashburger"
+          },
+          {
+            "poi_name": "Chipotle"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Harold's Chicken Shack"
+          },
+          {
+            "poi_name": "Domino's"
+          },
+          {
+            "poi_name": "Dunkin'"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.115
+  },
+  {
+    "id": 2375,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_translate(geography, double precision, double precision) does not exist\nLINE 7:         ST_Translate(\n                ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 2376,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.095
+  },
+  {
+    "id": 2377,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Days Inn"
+          },
+          {
+            "poi_name": "Holiday Inn"
+          },
+          {
+            "poi_name": "River Valley Inn and Suites"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.017
+  },
+  {
+    "id": 2378,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.042
+  },
+  {
+    "id": 2379,
+    "records": [
+      {
+        "output": [],
+        "error": "function deg2rad(integer) does not exist\nLINE 10:         30000 * sin(deg2rad(90)),\n                             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 2380,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_envelope(geography) does not exist\nLINE 6:     (SELECT ST_Centroid(ST_Envelope(r.geometry))::geography\n                                ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 2381,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "49 West"
+          },
+          {
+            "poi_name": "Ahra Cafe"
+          },
+          {
+            "poi_name": "An Uncommon Cafe"
+          },
+          {
+            "poi_name": "As You Are"
+          },
+          {
+            "poi_name": "Au Lait"
+          },
+          {
+            "poi_name": "Bada Bean Coffee House"
+          },
+          {
+            "poi_name": "Bagels & Baguettes"
+          },
+          {
+            "poi_name": "Baked and Wired"
+          },
+          {
+            "poi_name": "Baked Joint"
+          },
+          {
+            "poi_name": "Baltimore Coffee and Tea Co"
+          },
+          {
+            "poi_name": "Bean & Bite"
+          },
+          {
+            "poi_name": "Bean Rush cafe"
+          },
+          {
+            "poi_name": "Big Bear Cafe"
+          },
+          {
+            "poi_name": "Bitty & Beau's"
+          },
+          {
+            "poi_name": "Bitty & Beau's Coffee"
+          },
+          {
+            "poi_name": "Blank Street Coffee"
+          },
+          {
+            "poi_name": "Blind Dog"
+          },
+          {
+            "poi_name": "Blue Bottle Coffee"
+          },
+          {
+            "poi_name": "Blue Rooster Cafe"
+          },
+          {
+            "poi_name": "Bluestone Lane"
+          },
+          {
+            "poi_name": "Bluestone Lane Coffee"
+          },
+          {
+            "poi_name": "Booeymonger Restaurant"
+          },
+          {
+            "poi_name": "Bourbon Coffee"
+          },
+          {
+            "poi_name": "Bread and Butter Kitchen"
+          },
+          {
+            "poi_name": "Breadline"
+          },
+          {
+            "poi_name": "Brij"
+          },
+          {
+            "poi_name": "Brown Mustache Coffee"
+          },
+          {
+            "poi_name": "Bub and Pop's"
+          },
+          {
+            "poi_name": "Busboys and Poets"
+          },
+          {
+            "poi_name": "Cafe Berlin"
+          },
+          {
+            "poi_name": "Caf\u00e9 Con Bagel"
+          },
+          {
+            "poi_name": "Cafe Cozy Corner"
+          },
+          {
+            "poi_name": "Cafe du Parc"
+          },
+          {
+            "poi_name": "Cafe Mezzanotte"
+          },
+          {
+            "poi_name": "Cafe Phillips"
+          },
+          {
+            "poi_name": "Caf\u00e9 Riggs"
+          },
+          {
+            "poi_name": "Capital One Cafe"
+          },
+          {
+            "poi_name": "Capitol Grounds Cafe"
+          },
+          {
+            "poi_name": "Cascade Caf\u00e9"
+          },
+          {
+            "poi_name": "Ceremony Coffee Roasters"
+          },
+          {
+            "poi_name": "CF Folks"
+          },
+          {
+            "poi_name": "Chad's BBQ"
+          },
+          {
+            "poi_name": "Ching Ching Cha"
+          },
+          {
+            "poi_name": "City Place Cafe"
+          },
+          {
+            "poi_name": "Coffee Republic"
+          },
+          {
+            "poi_name": "Colada Shop"
+          },
+          {
+            "poi_name": "Compass Coffee"
+          },
+          {
+            "poi_name": "Corner Bakery"
+          },
+          {
+            "poi_name": "Corner Cafe"
+          },
+          {
+            "poi_name": "Courtyard Cafe"
+          },
+          {
+            "poi_name": "Crumbs & Whiskers"
+          },
+          {
+            "poi_name": "Dasha cafe"
+          },
+          {
+            "poi_name": "Devon & Blakely"
+          },
+          {
+            "poi_name": "Dog Tag Bakery"
+          },
+          {
+            "poi_name": "Dolcezza"
+          },
+          {
+            "poi_name": "Earth Grocery and Cafe"
+          },
+          {
+            "poi_name": "Earth Tones Cafe"
+          },
+          {
+            "poi_name": "East St Cafe"
+          },
+          {
+            "poi_name": "Ellipse Cafe"
+          },
+          {
+            "poi_name": "Emissary"
+          },
+          {
+            "poi_name": "E-Tea"
+          },
+          {
+            "poi_name": "Filter"
+          },
+          {
+            "poi_name": "Firehook Bakery"
+          },
+          {
+            "poi_name": "Foxtrot"
+          },
+          {
+            "poi_name": "FOXTROT"
+          },
+          {
+            "poi_name": "Furin's"
+          },
+          {
+            "poi_name": "Galley Cafe"
+          },
+          {
+            "poi_name": "Gong Cha"
+          },
+          {
+            "poi_name": "Gori Cafe"
+          },
+          {
+            "poi_name": "Gregorys Coffee"
+          },
+          {
+            "poi_name": "Java Corner"
+          },
+          {
+            "poi_name": "Java House"
+          },
+          {
+            "poi_name": "Joe & The Juice"
+          },
+          {
+            "poi_name": "Jrink"
+          },
+          {
+            "poi_name": "Kogod's New York Deli"
+          },
+          {
+            "poi_name": "Kramerbooks & Afterwords Caf\u00e9"
+          },
+          {
+            "poi_name": "La Colombe Coffee Roasters"
+          },
+          {
+            "poi_name": "Ladur\u00e9e"
+          },
+          {
+            "poi_name": "Le Bon Cafe"
+          },
+          {
+            "poi_name": "Leeward Market"
+          },
+          {
+            "poi_name": "Le Pain Quotidien"
+          },
+          {
+            "poi_name": "Liberty Tree"
+          },
+          {
+            "poi_name": "Magic Gourd Restaurant - Chinese"
+          },
+          {
+            "poi_name": "Maison Kayser"
+          },
+          {
+            "poi_name": "Maman"
+          },
+          {
+            "poi_name": "McDowell Coffee Shop"
+          },
+          {
+            "poi_name": "M.E. Swing Coffee Roasters"
+          },
+          {
+            "poi_name": "M.E. Swing's"
+          },
+          {
+            "poi_name": "Met Cafe"
+          },
+          {
+            "poi_name": "Mikko"
+          },
+          {
+            "poi_name": "Milk Bar"
+          },
+          {
+            "poi_name": "Mon Amour"
+          },
+          {
+            "poi_name": "Naan & Beyond"
+          },
+          {
+            "poi_name": "New Dynasty- Chinese, Halal"
+          },
+          {
+            "poi_name": "NOMA Deli"
+          },
+          {
+            "poi_name": "Oak Berry"
+          },
+          {
+            "poi_name": "Officina Cafe"
+          },
+          {
+            "poi_name": "Oxford Cafe"
+          },
+          {
+            "poi_name": "Paul"
+          },
+          {
+            "poi_name": "Pearl's Bagels"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.077
+  },
+  {
+    "id": 2382,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.896
+  },
+  {
+    "id": 2383,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 5:        wikipedia,\n               ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 2384,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.232
+  },
+  {
+    "id": 2385,
+    "records": [
+      {
+        "output": [],
+        "error": "column t1.wikipedia does not exist\nLINE 2: ...STINCT ON (t1.poi_name) t1.poi_name, t1.wikidata, t1.wikiped...\n                                                             ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 2386,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikidata, wikipedia, addr_state, addr_city\n                                   ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 2387,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Monarch Eucalyptus Grove"
+          },
+          {
+            "poi_name": "Frog Hopper"
+          },
+          {
+            "poi_name": "Kiddie Swings"
+          },
+          {
+            "poi_name": "Saucer Swing"
+          },
+          {
+            "poi_name": "J. Rickards Winery"
+          },
+          {
+            "poi_name": "South County Backroads"
+          },
+          {
+            "poi_name": "Rainbow Garden Round Boats"
+          },
+          {
+            "poi_name": "Apple & Worm"
+          },
+          {
+            "poi_name": "Garlic Twirl"
+          },
+          {
+            "poi_name": "Artichoke Dip"
+          },
+          {
+            "poi_name": "Paddle Boats"
+          },
+          {
+            "poi_name": "Mushroom Swing"
+          },
+          {
+            "poi_name": "Panoramic Wheel"
+          },
+          {
+            "poi_name": "Quicksilver Express Mine Coaster"
+          },
+          {
+            "poi_name": "Balloon Flight"
+          },
+          {
+            "poi_name": "Big Red Fire Engine Co."
+          },
+          {
+            "poi_name": "Pit Stop Racers"
+          },
+          {
+            "poi_name": "Illions Supreme Carousel"
+          },
+          {
+            "poi_name": "Banana Split"
+          },
+          {
+            "poi_name": "Strawberry Sundae"
+          },
+          {
+            "poi_name": "Tubs-O-Fun"
+          },
+          {
+            "poi_name": "Bulgy the Goldfish"
+          },
+          {
+            "poi_name": "Timber Twister"
+          },
+          {
+            "poi_name": "Water Oasis"
+          },
+          {
+            "poi_name": "Friday Nights @ OMCA with Off the Grid"
+          },
+          {
+            "poi_name": "Colonel Young Tree"
+          },
+          {
+            "poi_name": "New Narrows"
+          },
+          {
+            "poi_name": "Barbeque Flats"
+          },
+          {
+            "poi_name": "Moy Mel"
+          },
+          {
+            "poi_name": "Worm Valley"
+          },
+          {
+            "poi_name": "Devils Gap"
+          },
+          {
+            "poi_name": "Nacimiento Grizzly Bend"
+          },
+          {
+            "poi_name": "The Narrows"
+          },
+          {
+            "poi_name": "South Shore Nacimiento Lake"
+          },
+          {
+            "poi_name": "Christmas Cove"
+          },
+          {
+            "poi_name": "Bee Rock"
+          },
+          {
+            "poi_name": "Franklin Hot Springs"
+          },
+          {
+            "poi_name": "Fig Tree"
+          },
+          {
+            "poi_name": "Bubblegum Alley"
+          },
+          {
+            "poi_name": "Star Tower"
+          },
+          {
+            "poi_name": "California and Powell streets"
+          },
+          {
+            "poi_name": "Merced Grove"
+          },
+          {
+            "poi_name": "Muir Beach Overlook"
+          },
+          {
+            "poi_name": "Missouri Bar"
+          },
+          {
+            "poi_name": "Illinois Bar"
+          },
+          {
+            "poi_name": "Edwards Crossing"
+          },
+          {
+            "poi_name": "China Dam"
+          },
+          {
+            "poi_name": "Emerald Pool"
+          },
+          {
+            "poi_name": "Purdon Crossing"
+          },
+          {
+            "poi_name": "Lover's Rock"
+          },
+          {
+            "poi_name": "Philosopher's Hill and Labyrinth"
+          },
+          {
+            "poi_name": "Gambier Plaza"
+          },
+          {
+            "poi_name": "Hidden Bridge"
+          },
+          {
+            "poi_name": "Hidden Bridge"
+          },
+          {
+            "poi_name": "Hidden Bridge"
+          },
+          {
+            "poi_name": "Paintball Jungle"
+          },
+          {
+            "poi_name": "Cypress Tree Tunnel"
+          },
+          {
+            "poi_name": "Cable Car Turntable (Hyde & Beach)"
+          },
+          {
+            "poi_name": "Cable Car Turntable (Taylor & Bay)"
+          },
+          {
+            "poi_name": "South Tufa Area"
+          },
+          {
+            "poi_name": "Tunnel Tree"
+          },
+          {
+            "poi_name": "Vernal Fall"
+          },
+          {
+            "poi_name": "Nevada Fall"
+          },
+          {
+            "poi_name": "Lower Stony Creek"
+          },
+          {
+            "poi_name": "Yellow Sky (movie site)"
+          },
+          {
+            "poi_name": "Tides Restaurant Original Facade"
+          },
+          {
+            "poi_name": "Historic Cement Factory Ruins"
+          },
+          {
+            "poi_name": "The Mira Vista Rock"
+          },
+          {
+            "poi_name": "Stinson tree"
+          },
+          {
+            "poi_name": "Seward Street Slides"
+          },
+          {
+            "poi_name": "Chimney Tree"
+          },
+          {
+            "poi_name": "Tharp's Log"
+          },
+          {
+            "poi_name": "Gamlin Cabin"
+          },
+          {
+            "poi_name": "Auto Log"
+          },
+          {
+            "poi_name": "Omescape"
+          },
+          {
+            "poi_name": "Oak Shores Marina"
+          },
+          {
+            "poi_name": "Little Puffer Steam Train Depot"
+          },
+          {
+            "poi_name": "Tower Well structure (historic)"
+          },
+          {
+            "poi_name": "El Palo Alto (city\u2019s namesake redwood tree)"
+          },
+          {
+            "poi_name": "Kite Surfing Windsock"
+          },
+          {
+            "poi_name": "Umbrella Alley"
+          },
+          {
+            "poi_name": "Crowley Lake Stone Columns"
+          },
+          {
+            "poi_name": "Hollister Hills SVRA Upper Ranch"
+          },
+          {
+            "poi_name": "Upper Ranch Entrance"
+          },
+          {
+            "poi_name": "Giant Picnic Table"
+          },
+          {
+            "poi_name": "B-52"
+          },
+          {
+            "poi_name": "Giant artichoke"
+          },
+          {
+            "poi_name": "Napa Valley Wine Train"
+          },
+          {
+            "poi_name": "Bradford Street"
+          },
+          {
+            "poi_name": "Salesforce Park Cable Car"
+          },
+          {
+            "poi_name": "Giant Trees"
+          },
+          {
+            "poi_name": "Hot Rock"
+          },
+          {
+            "poi_name": "Sturgeons Steam Mill \u2013 Historic"
+          },
+          {
+            "poi_name": "Mare Island Preserve Bunker 2"
+          },
+          {
+            "poi_name": "Mare Island Preserve Bunker 1"
+          },
+          {
+            "poi_name": "Wedding Site"
+          },
+          {
+            "poi_name": "Zebra"
+          },
+          {
+            "poi_name": "Hyena"
+          },
+          {
+            "poi_name": "Slender-Tailed Meerkat"
+          },
+          {
+            "poi_name": "Bird's House"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.128
+  },
+  {
+    "id": 2388,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Godfather's Pizza"
+          },
+          {
+            "poi_name": "Ichiban Ramen"
+          },
+          {
+            "poi_name": "King Buffet"
+          },
+          {
+            "poi_name": "Los Cabos"
+          },
+          {
+            "poi_name": "ND Asia"
+          },
+          {
+            "poi_name": "Uncle Maddio\u2019s Pizza"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.165
+  },
+  {
+    "id": 2389,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "10th Avenue West Scenic Overlook"
+          },
+          {
+            "poi_name": "1212 Sports Bar"
+          },
+          {
+            "poi_name": "270 degree overlook"
+          },
+          {
+            "poi_name": "2894 On Main"
+          },
+          {
+            "poi_name": "2nd Street Bistro"
+          },
+          {
+            "poi_name": "319 Bistro"
+          },
+          {
+            "poi_name": "3 Amigos"
+          },
+          {
+            "poi_name": "5th and Elm Coffee House"
+          },
+          {
+            "poi_name": "Ackley State Wildlife Areas"
+          },
+          {
+            "poi_name": "Agnes Jones Gallery"
+          },
+          {
+            "poi_name": "Ahrnsbrak Room"
+          },
+          {
+            "poi_name": "Akame Sushi"
+          },
+          {
+            "poi_name": "Alberta Village Museum"
+          },
+          {
+            "poi_name": "Alexander's Pizza"
+          },
+          {
+            "poi_name": "Alice's Supper Club"
+          },
+          {
+            "poi_name": "Amado's Restaurant"
+          },
+          {
+            "poi_name": "Amalia\u2019s Famiky Restaurant"
+          },
+          {
+            "poi_name": "Amasa Museum"
+          },
+          {
+            "poi_name": "American Legion Park"
+          },
+          {
+            "poi_name": "American Legion Post 144"
+          },
+          {
+            "poi_name": "Anchor Island"
+          },
+          {
+            "poi_name": "Andrew Warren Historic District"
+          },
+          {
+            "poi_name": "Angee B'z"
+          },
+          {
+            "poi_name": "Angelo's Pizza"
+          },
+          {
+            "poi_name": "Animal Haven Farm Zoo"
+          },
+          {
+            "poi_name": "Anita's Log Cabin"
+          },
+          {
+            "poi_name": "Annie's Burger Town"
+          },
+          {
+            "poi_name": "Anthony: Gallery Atelier Framing"
+          },
+          {
+            "poi_name": "Antigo Visual Arts Gallery"
+          },
+          {
+            "poi_name": "Apostle Islands National Lakeshore"
+          },
+          {
+            "poi_name": "Appleton Indoor Golf"
+          },
+          {
+            "poi_name": "Arby's"
+          },
+          {
+            "poi_name": "Argonne Experimental Forest"
+          },
+          {
+            "poi_name": "Aroma Coffee"
+          },
+          {
+            "poi_name": "Aroma Deli & Cafe"
+          },
+          {
+            "poi_name": "Arrowhead overlook"
+          },
+          {
+            "poi_name": "Artesian Well"
+          },
+          {
+            "poi_name": "Art Start"
+          },
+          {
+            "poi_name": "Asana Suka"
+          },
+          {
+            "poi_name": "Ashland Historical Society Museum"
+          },
+          {
+            "poi_name": "Asian Kitchen"
+          },
+          {
+            "poi_name": "A-Soshel"
+          },
+          {
+            "poi_name": "Aspirus Coffee Shop"
+          },
+          {
+            "poi_name": "Atkins Lake State Natural Area"
+          },
+          {
+            "poi_name": "Atlas Science Center"
+          },
+          {
+            "poi_name": "Aunty's Caf\u00e9"
+          },
+          {
+            "poi_name": "Autumn Leaf Cafe"
+          },
+          {
+            "poi_name": "A&W"
+          },
+          {
+            "poi_name": "Aylward Gallery"
+          },
+          {
+            "poi_name": "Baby E's BBQ"
+          },
+          {
+            "poi_name": "Backyard Bikes and Ski"
+          },
+          {
+            "poi_name": "Backyard Grille"
+          },
+          {
+            "poi_name": "Badger Burger Co."
+          },
+          {
+            "poi_name": "Baldwin Commons"
+          },
+          {
+            "poi_name": "Bamboo House"
+          },
+          {
+            "poi_name": "Bamboo Kitchen"
+          },
+          {
+            "poi_name": "Ban'Gi Bistro"
+          },
+          {
+            "poi_name": "Baraga County Historical Museum"
+          },
+          {
+            "poi_name": "Baraga Drive-In"
+          },
+          {
+            "poi_name": "Barley's Hops & Malt"
+          },
+          {
+            "poi_name": "Barlow Planetarium"
+          },
+          {
+            "poi_name": "Barnes & Noble Cafe"
+          },
+          {
+            "poi_name": "Barney Creek State Natural Area"
+          },
+          {
+            "poi_name": "Basil"
+          },
+          {
+            "poi_name": "Bass Lake Fen State Natural Area"
+          },
+          {
+            "poi_name": "Bass Lake Preserve State Natural Area"
+          },
+          {
+            "poi_name": "Bastile Lake State Natural Area"
+          },
+          {
+            "poi_name": "Bauer Dining Room"
+          },
+          {
+            "poi_name": "Bear Caves State Natural Area"
+          },
+          {
+            "poi_name": "Beaver Dam Lake State Wildlife Area"
+          },
+          {
+            "poi_name": "Beaver Hollow Nature Area"
+          },
+          {
+            "poi_name": "Bell 47 Helicopter Rides"
+          },
+          {
+            "poi_name": "Bella Gusto Restaurant, Deli, and Market"
+          },
+          {
+            "poi_name": "Bell Street Artbar"
+          },
+          {
+            "poi_name": "Ben's Place"
+          },
+          {
+            "poi_name": "Bentzin Family Town Square"
+          },
+          {
+            "poi_name": "Berlin Fen State Natural Area"
+          },
+          {
+            "poi_name": "Beulah Bog State Natural Area"
+          },
+          {
+            "poi_name": "Big Bay Sand Spit And Bog State Natural Area"
+          },
+          {
+            "poi_name": "Big Ben's Gyros"
+          },
+          {
+            "poi_name": "Biggby Coffee"
+          },
+          {
+            "poi_name": "Big Mama's Grill"
+          },
+          {
+            "poi_name": "Big Pot & Grill"
+          },
+          {
+            "poi_name": "Big Rock Wayside Park"
+          },
+          {
+            "poi_name": "Birch Terrace"
+          },
+          {
+            "poi_name": "Bittersweet Lakes State Natural Area"
+          },
+          {
+            "poi_name": "Bitzke Waterfowl Refuge"
+          },
+          {
+            "poi_name": "Black Cat Coffeehouse"
+          },
+          {
+            "poi_name": "Black River County Park"
+          },
+          {
+            "poi_name": "Black Tern Bog State Natural Area"
+          },
+          {
+            "poi_name": "Black Tern Marsh Viewing Platform Form"
+          },
+          {
+            "poi_name": "Blend Coffee Eagle River"
+          },
+          {
+            "poi_name": "Blind Rooster Cafe"
+          },
+          {
+            "poi_name": "Blue Collar Cafe"
+          },
+          {
+            "poi_name": "Bluefin Bay"
+          },
+          {
+            "poi_name": "Bluefin Grille"
+          },
+          {
+            "poi_name": "Blue Water Cafe"
+          },
+          {
+            "poi_name": "Blue Willow Cafe"
+          },
+          {
+            "poi_name": "Bog Brook State Wildlife Area"
+          },
+          {
+            "poi_name": "Bogus Swamp State Natural Area"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.316
+  },
+  {
+    "id": 2390,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Camino Hall"
+          },
+          {
+            "poi_name": "CSUSM"
+          },
+          {
+            "poi_name": "Founders Hall"
+          },
+          {
+            "poi_name": "Laguna College of Art and Design"
+          },
+          {
+            "poi_name": "Office of Academic Integrity & Student Conduct"
+          },
+          {
+            "poi_name": "School of Global Policy and Strategy"
+          },
+          {
+            "poi_name": "SDSU Department of Geography"
+          },
+          {
+            "poi_name": "Sdsu Mems Lab"
+          },
+          {
+            "poi_name": "The Basement"
+          },
+          {
+            "poi_name": "UCI Campus Assault Resources & Education (CARE)"
+          },
+          {
+            "poi_name": "USD School of law"
+          },
+          {
+            "poi_name": "West Coast University"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.096
+  },
+  {
+    "id": 2391,
+    "records": [
+      {
+        "output": [
+          {
+            "id": 248057,
+            "poi_name": "The Secret Garden",
+            "leisure": "garden"
+          },
+          {
+            "id": 250300,
+            "poi_name": "Morrison Memorial Butterfly Garden",
+            "leisure": "garden"
+          },
+          {
+            "id": 250307,
+            "poi_name": "Cossitt Rock Garden",
+            "leisure": "garden"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.017
+  },
+  {
+    "id": 2392,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Centroid(geography) unhandled geography type"
+      }
+    ],
+    "run_seconds": 1.312
+  },
+  {
+    "id": 2393,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Popeyes"
+          },
+          {
+            "poi_name": "Del Taco"
+          },
+          {
+            "poi_name": "Togo's"
+          },
+          {
+            "poi_name": "Jersey Mike's Subs"
+          },
+          {
+            "poi_name": "Auntie Anne's"
+          },
+          {
+            "poi_name": "The Kebab Shop"
+          },
+          {
+            "poi_name": "Panda Express"
+          },
+          {
+            "poi_name": "Panda Express"
+          },
+          {
+            "poi_name": "Panda Express"
+          },
+          {
+            "poi_name": "Beep's Burgers"
+          },
+          {
+            "poi_name": "Jamba"
+          },
+          {
+            "poi_name": "Wendy's"
+          },
+          {
+            "poi_name": "Mountain Mike's"
+          },
+          {
+            "poi_name": "CyBelle's Pizza"
+          },
+          {
+            "poi_name": "Dimond Slice Pizza"
+          },
+          {
+            "poi_name": "Dimond Kitchen"
+          },
+          {
+            "poi_name": "Baja Fresh"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "BurgerIM"
+          },
+          {
+            "poi_name": "Juice Zone"
+          },
+          {
+            "poi_name": "Nation's Giant Hamburgers"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "KFC"
+          },
+          {
+            "poi_name": "Jack in the Box"
+          },
+          {
+            "poi_name": "Project Burger"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Tacos Mi Rancho"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Togo's"
+          },
+          {
+            "poi_name": "Panera Bread"
+          },
+          {
+            "poi_name": "MOD Pizza"
+          },
+          {
+            "poi_name": "Chipotle"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Dairy Queen"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Papa Murphy's"
+          },
+          {
+            "poi_name": "Chipotle"
+          },
+          {
+            "poi_name": "Extreme Pizza"
+          },
+          {
+            "poi_name": "Mill's Hoagie & Deli Shop"
+          },
+          {
+            "poi_name": "Merritt College Cafeteria"
+          },
+          {
+            "poi_name": "Domino's"
+          },
+          {
+            "poi_name": "Kasper's Hot Dogs"
+          },
+          {
+            "poi_name": "Burger King"
+          },
+          {
+            "poi_name": "La Costa Taqueria"
+          },
+          {
+            "poi_name": "Dunkin'"
+          },
+          {
+            "poi_name": "Buckets"
+          },
+          {
+            "poi_name": "Dunkin' Express"
+          },
+          {
+            "poi_name": "Fosters Freeze"
+          },
+          {
+            "poi_name": "Papa Murphy's"
+          },
+          {
+            "poi_name": "Mr. Pickle\u2019s Sandwich Shop"
+          },
+          {
+            "poi_name": "Pizza Bello"
+          },
+          {
+            "poi_name": "Lee's Sandwiches"
+          },
+          {
+            "poi_name": "Happy Donuts"
+          },
+          {
+            "poi_name": "Jerry's Beefburgers"
+          },
+          {
+            "poi_name": "Bens Burgers"
+          },
+          {
+            "poi_name": "Sam's Super Burgers"
+          },
+          {
+            "poi_name": "Sam's Super Burgers"
+          },
+          {
+            "poi_name": "KFC"
+          },
+          {
+            "poi_name": "A&W"
+          },
+          {
+            "poi_name": "KFC"
+          },
+          {
+            "poi_name": "A&W"
+          },
+          {
+            "poi_name": "A&W"
+          },
+          {
+            "poi_name": "KFC"
+          },
+          {
+            "poi_name": "Pieology"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "McDonald's"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "KFC"
+          },
+          {
+            "poi_name": "Taco Bell"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Yogurt Mill"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Ike's Love and Sandwiches"
+          },
+          {
+            "poi_name": "Fosters Freeze"
+          },
+          {
+            "poi_name": "Burger King"
+          },
+          {
+            "poi_name": "Dairy Belle"
+          },
+          {
+            "poi_name": "McDonald's"
+          },
+          {
+            "poi_name": "Sourdough & Co."
+          },
+          {
+            "poi_name": "Sultan's Kebab"
+          },
+          {
+            "poi_name": "Noah's Bagels"
+          },
+          {
+            "poi_name": "Guadalajara Food Truck"
+          },
+          {
+            "poi_name": "Kaiser Permanente"
+          },
+          {
+            "poi_name": "Domino's"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Best Donuts"
+          },
+          {
+            "poi_name": "Sunrise Bagel Cafe"
+          },
+          {
+            "poi_name": "Sandwicheez"
+          },
+          {
+            "poi_name": "Mr. Pickle's"
+          },
+          {
+            "poi_name": "Jamba"
+          },
+          {
+            "poi_name": "Subway"
+          },
+          {
+            "poi_name": "Little Caesars"
+          },
+          {
+            "poi_name": "Raising Cane's"
+          },
+          {
+            "poi_name": "Diablo Bistro and Taqueria"
+          },
+          {
+            "poi_name": "Amazing Wok"
+          },
+          {
+            "poi_name": "Aryana Cuisine"
+          },
+          {
+            "poi_name": "Wingstop"
+          },
+          {
+            "poi_name": "Wendy's"
+          },
+          {
+            "poi_name": "Nation's Giant Hamburger"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.057
+  },
+  {
+    "id": 2394,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Jewel's Cafe"
+          },
+          {
+            "poi_name": "Farm Cafe"
+          },
+          {
+            "poi_name": "LadyBug Cafe"
+          },
+          {
+            "poi_name": "Patio Cafe"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.059
+  },
+  {
+    "id": 2395,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"r\"\nLINE 6:     (SELECT ST_Centroid(ST_Envelope(r.geometry))::geography\n                                            ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 2396,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.052
+  },
+  {
+    "id": 2397,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "632 Main Trails"
+          },
+          {
+            "poi_name": "Airport Observation Deck"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.059
+  },
+  {
+    "id": 2398,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Oregon Garden Resort"
+          },
+          {
+            "poi_name": "Drake Falls"
+          },
+          {
+            "poi_name": "South Falls"
+          },
+          {
+            "poi_name": "Lower North Falls"
+          },
+          {
+            "poi_name": "Lower South Falls"
+          },
+          {
+            "poi_name": "Twin Falls"
+          },
+          {
+            "poi_name": "Working Waterfront Maritime Museum"
+          },
+          {
+            "poi_name": "Wolf Point"
+          },
+          {
+            "poi_name": "Elk Point Viewpoint"
+          },
+          {
+            "poi_name": "Redwood National Park, Redwood Creek Overlook"
+          },
+          {
+            "poi_name": "White Point Lookout"
+          },
+          {
+            "poi_name": "Best Western Prairie Inn"
+          },
+          {
+            "poi_name": "World's Largest Egg"
+          },
+          {
+            "poi_name": "Riverview Inn"
+          },
+          {
+            "poi_name": "Lookout Tower"
+          },
+          {
+            "poi_name": "View of Uplands"
+          },
+          {
+            "poi_name": "Silver Cloud Inn"
+          },
+          {
+            "poi_name": "Rainbow Rock Viewpoint"
+          },
+          {
+            "poi_name": "Fish Ladder Viewing Gallery"
+          },
+          {
+            "poi_name": "North Falls"
+          },
+          {
+            "poi_name": "Gustavus Inn"
+          },
+          {
+            "poi_name": "Blue Heron Bed and Breakfast"
+          },
+          {
+            "poi_name": "Aimee's Guest House"
+          },
+          {
+            "poi_name": "Bald Mountain"
+          },
+          {
+            "poi_name": "Ship Peak"
+          },
+          {
+            "poi_name": "Lori Austen Gallery"
+          },
+          {
+            "poi_name": "Dawn Bench"
+          },
+          {
+            "poi_name": "Raptor Overlook"
+          },
+          {
+            "poi_name": "Pipsissewa Summit"
+          },
+          {
+            "poi_name": "Anderson Ridge Jack ash trail system trail head"
+          },
+          {
+            "poi_name": "Glass Ball Beach"
+          },
+          {
+            "poi_name": "Inn at Arch Cape"
+          },
+          {
+            "poi_name": "Mount Angel Street beach access 39A (Ocean Shore State Recreation Area)"
+          },
+          {
+            "poi_name": "Neskowin State Recreation Site\u2014beach access 39B (Ocean Shore State Recreation Area)"
+          },
+          {
+            "poi_name": "Fishers Point County Boat Launch"
+          },
+          {
+            "poi_name": "Little Nestucca County Boat Launch"
+          },
+          {
+            "poi_name": "Sandphifer Gallery"
+          },
+          {
+            "poi_name": "Troll Bridge"
+          },
+          {
+            "poi_name": "Toscano Kitchen"
+          },
+          {
+            "poi_name": "Heritage Center at the Maysonnave House"
+          },
+          {
+            "poi_name": "The Patch"
+          },
+          {
+            "poi_name": "Camp Govey"
+          },
+          {
+            "poi_name": "Alaska/Yukon Border"
+          },
+          {
+            "poi_name": "Sol Duc Falls"
+          },
+          {
+            "poi_name": "Tanana Valley Fairgrounds"
+          },
+          {
+            "poi_name": "Marymere Falls"
+          },
+          {
+            "poi_name": "North Falls Viewpoint"
+          },
+          {
+            "poi_name": "Benton County Historical Museum"
+          },
+          {
+            "poi_name": "Outlook #2"
+          },
+          {
+            "poi_name": "World's Largest Spruce"
+          },
+          {
+            "poi_name": "U.S. Creek Overlook"
+          },
+          {
+            "poi_name": "Shady Lady"
+          },
+          {
+            "poi_name": "Observation Tower"
+          },
+          {
+            "poi_name": "Lumi Island Gallery"
+          },
+          {
+            "poi_name": "Gude Erth Crafts"
+          },
+          {
+            "poi_name": "Blue Earth"
+          },
+          {
+            "poi_name": "Australia"
+          },
+          {
+            "poi_name": "Camel Rides"
+          },
+          {
+            "poi_name": "Cheetah Spot"
+          },
+          {
+            "poi_name": "Inspiration Point"
+          },
+          {
+            "poi_name": "Alila Napa Valley"
+          },
+          {
+            "poi_name": "Cape Ferrelo Viewpoint"
+          },
+          {
+            "poi_name": "House Rock Viewpoint"
+          },
+          {
+            "poi_name": "Whaleshead Viewpoint"
+          },
+          {
+            "poi_name": "Crooked Mile Gallery"
+          },
+          {
+            "poi_name": "Wine & Brush"
+          },
+          {
+            "poi_name": "Bluff Overlook"
+          },
+          {
+            "poi_name": "Steilacoom Tribal Cultural Center and Museum"
+          },
+          {
+            "poi_name": "Neville-Nye Memorial Grove"
+          },
+          {
+            "poi_name": "Hole in the wall"
+          },
+          {
+            "poi_name": "Olympic Lodge by Ayres"
+          },
+          {
+            "poi_name": "Best Western Tacoma Dome Hotel"
+          },
+          {
+            "poi_name": "Winema Beach Viewpoint"
+          },
+          {
+            "poi_name": "Window Tree"
+          },
+          {
+            "poi_name": "Martin Spring"
+          },
+          {
+            "poi_name": "Redwood Flat"
+          },
+          {
+            "poi_name": "Inspiration Point"
+          },
+          {
+            "poi_name": "MTB Freeride Park"
+          },
+          {
+            "poi_name": "Arrow Flat"
+          },
+          {
+            "poi_name": "Secret Place"
+          },
+          {
+            "poi_name": "4-H Camp"
+          },
+          {
+            "poi_name": "Balancing Rock"
+          },
+          {
+            "poi_name": "Freeride Park"
+          },
+          {
+            "poi_name": "Roosevelt Redwood Grove"
+          },
+          {
+            "poi_name": "Holm's Place (homestead)"
+          },
+          {
+            "poi_name": "Bear Rock Overlook"
+          },
+          {
+            "poi_name": "Lasky Point"
+          },
+          {
+            "poi_name": "Stevenson Memorial"
+          },
+          {
+            "poi_name": "Kloshe Nanitch"
+          },
+          {
+            "poi_name": "Leif Erikson Statue"
+          },
+          {
+            "poi_name": "Mount Sylvania"
+          },
+          {
+            "poi_name": "Oregon Caves National Monument"
+          },
+          {
+            "poi_name": "McGregor Park"
+          },
+          {
+            "poi_name": "Lower Lake Schoolhouse Museum"
+          },
+          {
+            "poi_name": "Old Faithful Geyser of California"
+          },
+          {
+            "poi_name": "China Camp Historic Area"
+          },
+          {
+            "poi_name": "Washington State Capitol Museum"
+          },
+          {
+            "poi_name": "Sinona Lodge"
+          },
+          {
+            "poi_name": "Siskiyou County Museum"
+          },
+          {
+            "poi_name": "Del Norte County Historical Society Museum"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.109
+  },
+  {
+    "id": 2399,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_transform(geography, integer) does not exist\nLINE 5:     SELECT ST_Buffer(ST_Transform(ST_Centroid(ST_Transform(p...\n                                                      ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.001
+  }
+]

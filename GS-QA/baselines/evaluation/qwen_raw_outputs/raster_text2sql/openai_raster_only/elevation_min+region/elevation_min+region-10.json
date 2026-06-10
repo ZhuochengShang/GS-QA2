@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 71.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 71.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-89.828792 36.264794, -89.82982 36.264803, -89.829838 36.269858, -89.827931 36.269835, -89.82259 36.269889, -89.821704 36.269877, -89.822016 36.266228, -89.822104 36.264782, -89.822111 36.264463, -89.826258 36.26447, -89.826262 36.264746, -89.828792 36.264794))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).min AS elevation\nFROM clipped;",
+  "id": "elevation_min+region-10",
+  "model_output": "```sql\nWITH pascola_geom AS (\n  SELECT ST_GeomFromText('POLYGON ((-89.828792 36.264794, -89.82982 36.264803, -89.829838 36.269858, -89.827931 36.269835, -89.82259 36.269889, -89.821704 36.269877, -89.822016 36.266228, -89.822104 36.264782, -89.822111 36.264463, -89.826258 36.26447, -89.826262 36.264746, -89.828792 36.264794))')::geometry AS geom\n)\nSELECT MIN(rast_val) AS min_elevation\nFROM (\n  SELECT ST_Value(r.rast, 1, p.geom) AS rast_val\n  FROM pascola_geom p\n  JOIN public.dem_us r\n    ON ST_Intersects(r.rast::geography, p.geom)\n  WHERE ST_Clip(r.rast, 1, p.geom, TRUE) IS NOT NULL\n) sub;\n```",
+  "predicted_exec": {
+    "error": "cannot cast type raster to geography\nLINE 9:     ON ST_Intersects(r.rast::geography, p.geom)\n                                   ^",
+    "output": []
+  },
+  "predicted_sql": "WITH pascola_geom AS (\n  SELECT ST_GeomFromText('POLYGON ((-89.828792 36.264794, -89.82982 36.264803, -89.829838 36.269858, -89.827931 36.269835, -89.82259 36.269889, -89.821704 36.269877, -89.822016 36.266228, -89.822104 36.264782, -89.822111 36.264463, -89.826258 36.26447, -89.826262 36.264746, -89.828792 36.264794))')::geometry AS geom\n)\nSELECT MIN(rast_val) AS min_elevation\nFROM (\n  SELECT ST_Value(r.rast, 1, p.geom) AS rast_val\n  FROM pascola_geom p\n  JOIN public.dem_us r\n    ON ST_Intersects(r.rast::geography, p.geom)\n  WHERE ST_Clip(r.rast, 1, p.geom, TRUE) IS NOT NULL\n) sub;",
+  "predicted_sql_candidates": [
+    "WITH pascola_geom AS (\n  SELECT ST_GeomFromText('POLYGON ((-89.828792 36.264794, -89.82982 36.264803, -89.829838 36.269858, -89.827931 36.269835, -89.82259 36.269889, -89.821704 36.269877, -89.822016 36.266228, -89.822104 36.264782, -89.822111 36.264463, -89.826258 36.26447, -89.826262 36.264746, -89.828792 36.264794))')::geometry AS geom\n)\nSELECT MIN(rast_val) AS min_elevation\nFROM (\n  SELECT ST_Value(r.rast, 1, p.geom) AS rast_val\n  FROM pascola_geom p\n  JOIN public.dem_us r\n    ON ST_Intersects(r.rast::geography, p.geom)\n  WHERE ST_Clip(r.rast, 1, p.geom, TRUE) IS NOT NULL\n) sub;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the min elevation value within Pascola, Missouri?",
+  "source_file": "elevation_min+region.jsonl",
+  "source_stem": "elevation_min+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 77.965,
+    "total_seconds": 77.966
+  },
+  "usage": {
+    "completion_tokens": 365,
+    "prompt_tokens": 1754,
+    "total_tokens": 2119
+  }
+}

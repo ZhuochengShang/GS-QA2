@@ -1,0 +1,113 @@
+{
+  "answer_type": "row/s",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "row/s",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "rowset_f1",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 281.0,
+      "geometry": "POINT (-77.909579 40.667011)",
+      "id": 245581,
+      "leisure": "park",
+      "operator": "Shaver's Creek Environmental Center",
+      "osm_id": 7204069522,
+      "poi_name": "Klingsberg Aviary"
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "addr_city": null,
+        "addr_housenumber": null,
+        "addr_postcode": null,
+        "addr_state": null,
+        "addr_street": null,
+        "amenity": null,
+        "artwork_type": null,
+        "building": null,
+        "capacity": null,
+        "cuisine": null,
+        "delivery": null,
+        "description": null,
+        "drive_through": null,
+        "elevation": 281.0,
+        "emergency": null,
+        "fast_food": null,
+        "fee": null,
+        "geometry": "0101000020E61000003788D68A367A53C069087D9F60554440",
+        "hairdresser": null,
+        "healthcare": null,
+        "historic": null,
+        "id": 245581,
+        "information": null,
+        "internet_access": null,
+        "leisure": "park",
+        "museum": null,
+        "official_name": null,
+        "opening_hours": null,
+        "operator": "Shaver's Creek Environmental Center",
+        "osm_id": 7204069522,
+        "outdoor_seating": null,
+        "parking": null,
+        "pastry_shop": null,
+        "phone": null,
+        "poi_name": "Klingsberg Aviary",
+        "resort": null,
+        "restaurant": null,
+        "school_type": null,
+        "shop": null,
+        "sport": null,
+        "sports": null,
+        "takeaway": null,
+        "toilets": null,
+        "tourism": null,
+        "website": null,
+        "wheelchair": null,
+        "wholesale": null,
+        "wikidata": null,
+        "zoo": null
+      }
+    ]
+  },
+  "gold_sql": "SELECT p.*, elev.z AS elevation\nFROM pois p\nJOIN LATERAL (\n  SELECT ST_Value(d.rast, 1, p.geometry::geometry) AS z\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, p.geometry::geometry)\n  LIMIT 1\n) elev ON elev.z IS NOT NULL\nWHERE ST_DWithin(p.geometry::geography, ST_GeomFromText('POINT (-77.909905 40.667715)',4326)::geography, 3700)\n  AND p.leisure = 'park'\n  AND elev.z >= 200;",
+  "id": "range+name+elevation_condition-8",
+  "model_output": "```sql\nWITH shavers_creek AS (\n  SELECT ST_SetSRID(ST_MakePoint(-77.909905, 40.667715), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT ST_Buffer(geom, 3700) AS geom\n  FROM shavers_creek\n),\ncandidate_parks AS (\n  SELECT p.park_name, p.geometry\n  FROM parks p\n  JOIN buffered_area b\n    ON ST_Intersects(p.geometry::geometry, b.geom::geometry)\n  WHERE ST_Value(\n    (SELECT rast FROM public.dem_us\n     WHERE ST_Intersects(rast, p.geometry::geometry)),\n    p.geometry::geometry\n  ) >= 200\n)\nSELECT park_name\nFROM candidate_parks;\n```",
+  "predicted_exec": {
+    "error": "more than one row returned by a subquery used as an expression",
+    "output": []
+  },
+  "predicted_sql": "WITH shavers_creek AS (\n  SELECT ST_SetSRID(ST_MakePoint(-77.909905, 40.667715), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT ST_Buffer(geom, 3700) AS geom\n  FROM shavers_creek\n),\ncandidate_parks AS (\n  SELECT p.park_name, p.geometry\n  FROM parks p\n  JOIN buffered_area b\n    ON ST_Intersects(p.geometry::geometry, b.geom::geometry)\n  WHERE ST_Value(\n    (SELECT rast FROM public.dem_us\n     WHERE ST_Intersects(rast, p.geometry::geometry)),\n    p.geometry::geometry\n  ) >= 200\n)\nSELECT park_name\nFROM candidate_parks;",
+  "predicted_sql_candidates": [
+    "WITH shavers_creek AS (\n  SELECT ST_SetSRID(ST_MakePoint(-77.909905, 40.667715), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT ST_Buffer(geom, 3700) AS geom\n  FROM shavers_creek\n),\ncandidate_parks AS (\n  SELECT p.park_name, p.geometry\n  FROM parks p\n  JOIN buffered_area b\n    ON ST_Intersects(p.geometry::geometry, b.geom::geometry)\n  WHERE ST_Value(\n    (SELECT rast FROM public.dem_us\n     WHERE ST_Intersects(rast, p.geometry::geometry)),\n    p.geometry::geometry\n  ) >= 200\n)\nSELECT park_name\nFROM candidate_parks;"
+  ],
+  "query_type": "extended",
+  "question": "Can you suggest a park that's within 3700 meters from Shavers Creek Environmental Center, Petersburg, PA with elevation at least 200 m?",
+  "source_file": "range+name+elevation_condition.jsonl",
+  "source_stem": "range+name+elevation_condition",
+  "timing": {
+    "execution_seconds": 0.039,
+    "generation_seconds": 38.25,
+    "total_seconds": 38.289
+  },
+  "usage": {
+    "completion_tokens": 179,
+    "prompt_tokens": 1780,
+    "total_tokens": 1959
+  }
+}

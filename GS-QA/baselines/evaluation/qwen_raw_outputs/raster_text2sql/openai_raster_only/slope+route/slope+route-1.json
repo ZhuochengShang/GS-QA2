@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope_degrees": 1.996588
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope_degrees": 1.996588
+      }
+    ]
+  },
+  "gold_sql": "WITH route AS (\n  SELECT ST_GeomFromText('LINESTRING (-117.257147 45.396457, -117.258332 45.399858, -117.25911 45.401048, -117.259304 45.401779, -117.259401 45.401848, -117.259692 45.403357, -117.260598 45.405941, -117.261149 45.406719, -117.261636 45.407108, -117.262057 45.407245, -117.264749 45.407235, -117.265095 45.407335, -117.268781 45.409813, -117.269651 45.410158, -117.270686 45.410496, -117.271156 45.410602, -117.271646 45.410653, -117.276468 45.410699)', 4326)::geometry AS geom\n),\ndem_clip AS (\n  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast\n  FROM public.dem_us d, route r\n  WHERE ST_Intersects(d.rast, r.geom)\n),\nsegments AS (\n  SELECT (ST_DumpSegments(r.geom)).geom AS seg\n  FROM route r\n),\nendpoints AS (\n  SELECT\n    ST_StartPoint(seg) AS p1,\n    ST_EndPoint(seg)   AS p2,\n    ST_Length(seg::geography) AS seg_len_m\n  FROM segments\n),\nelev AS (\n  SELECT\n    e.seg_len_m,\n    ST_Value(dc.rast, 1, e.p1) AS z1,\n    ST_Value(dc.rast, 1, e.p2) AS z2\n  FROM endpoints e, dem_clip dc\n),\nslopes AS (\n  SELECT\n    seg_len_m,\n    CASE WHEN seg_len_m > 0 THEN ABS(z2 - z1) / seg_len_m ELSE NULL END AS grade\n  FROM elev\n  WHERE z1 IS NOT NULL AND z2 IS NOT NULL\n),\navg_grade AS (\n  SELECT\n    SUM(grade * seg_len_m) / NULLIF(SUM(seg_len_m), 0) AS g\n  FROM slopes\n  WHERE grade IS NOT NULL\n)\nSELECT DEGREES(ATAN(g)) AS slope_degrees\nFROM avg_grade;",
+  "id": "slope+route-1",
+  "model_output": "```sql\nWITH green_valley_road AS (\n  SELECT geometry\n  FROM roads\n  WHERE road_name ILIKE 'Green Valley Road'\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(\n        r.rast,\n        (SELECT geometry::geometry FROM green_valley_road),\n        TRUE\n      ),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast,\n    (SELECT geometry::geometry FROM green_valley_road)\n  )\n)\nSELECT\n  ROUND(AVG(ST_Value(slope_rast, 1))::numeric, 2) AS avg_slope_degrees\nFROM slope_raster;\n```",
+  "predicted_exec": {
+    "error": "function st_value(raster, integer) does not exist\nLINE 24:   ROUND(AVG(ST_Value(slope_rast, 1))::numeric, 2) AS avg_slo...\n                     ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH green_valley_road AS (\n  SELECT geometry\n  FROM roads\n  WHERE road_name ILIKE 'Green Valley Road'\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(\n        r.rast,\n        (SELECT geometry::geometry FROM green_valley_road),\n        TRUE\n      ),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast,\n    (SELECT geometry::geometry FROM green_valley_road)\n  )\n)\nSELECT\n  ROUND(AVG(ST_Value(slope_rast, 1))::numeric, 2) AS avg_slope_degrees\nFROM slope_raster;",
+  "predicted_sql_candidates": [
+    "WITH green_valley_road AS (\n  SELECT geometry\n  FROM roads\n  WHERE road_name ILIKE 'Green Valley Road'\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(\n        r.rast,\n        (SELECT geometry::geometry FROM green_valley_road),\n        TRUE\n      ),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast,\n    (SELECT geometry::geometry FROM green_valley_road)\n  )\n)\nSELECT\n  ROUND(AVG(ST_Value(slope_rast, 1))::numeric, 2) AS avg_slope_degrees\nFROM slope_raster;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the average slope along Green Valley Road?",
+  "source_file": "slope+route.jsonl",
+  "source_stem": "slope+route",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 36.082,
+    "total_seconds": 36.083
+  },
+  "usage": {
+    "completion_tokens": 159,
+    "prompt_tokens": 1523,
+    "total_tokens": 1682
+  }
+}

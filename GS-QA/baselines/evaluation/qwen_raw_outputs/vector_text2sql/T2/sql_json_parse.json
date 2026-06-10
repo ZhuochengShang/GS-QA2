@@ -1,0 +1,502 @@
+[
+  {
+    "id": 2500,
+    "content": "```json\n{\n    \"name\": \"Rose Art Museum\",\n    \"address\": \"1150 Museum Drive, Waltham, MA 02453, USA\",\n    \"distance\": 190\n}\n```",
+    "run_seconds": 11.344
+  },
+  {
+    "id": 2501,
+    "content": "```json\n{\n    \"name\": \"Northwest Hills Surgical Hospital\",\n    \"address\": \"1001 Northwest Pkwy, San Antonio, TX 78213\",\n    \"distance\": 12\n}\n```",
+    "run_seconds": 11.603
+  },
+  {
+    "id": 2502,
+    "content": "```json\n{\n    \"name\": \"Bartlesville Historical Museum\",\n    \"address\": \"210 S Liberty St, Bartlesville, OK 74003\"\n}\n```",
+    "run_seconds": 9.681
+  },
+  {
+    "id": 2503,
+    "content": "```json\n{\n    \"name\": \"Sushi Oishii Inc\"\n}\n```",
+    "run_seconds": 4.546
+  },
+  {
+    "id": 2504,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"distance\": 70\n}\n```",
+    "run_seconds": 5.91
+  },
+  {
+    "id": 2505,
+    "content": "```json\n{\n    \"name\": \"Sherwood Forest Faire\",\n    \"address\": \"McDade, TX\",\n    \"distance\": 100\n}\n```",
+    "run_seconds": 8.861
+  },
+  {
+    "id": 2506,
+    "content": "```json\n{\n    \"name\": \"University of North Georgia (Oconee Campus)\",\n    \"address\": \"2200 Oconee Street, Watkinsville, GA 30677\",\n    \"distance\": 10\n}\n```",
+    "run_seconds": 12.633
+  },
+  {
+    "id": 2507,
+    "content": "```json\n{\n    \"name\": \"Treetop Zoofari Zip line and Adventure Park\",\n    \"address\": \"Moseley, VA\",\n    \"distance\": 170\n}\n```",
+    "run_seconds": 10.222
+  },
+  {
+    "id": 2508,
+    "content": "```json\n{\n    \"name\": \"Pita Plus Grill\"\n}\n```",
+    "run_seconds": 4.083
+  },
+  {
+    "id": 2509,
+    "content": "```json\n{\n    \"name\": \"Rutherford Regional Health System\",\n    \"address\": \"100 Health System Dr, Spindale, NC 28162, USA\"\n}\n```",
+    "run_seconds": 10.211
+  },
+  {
+    "id": 2510,
+    "content": "```json\n{\n    \"name\": \"Nyack Hospital\"\n}\n```",
+    "run_seconds": 3.868
+  },
+  {
+    "id": 2511,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.666
+  },
+  {
+    "id": 2512,
+    "content": "```json\n{\n    \"name\": \"Sense Fine Art\",\n    \"address\": \"1010 W El Camino Real, Menlo Park, CA 94025, USA\",\n    \"distance\": 100\n}\n```",
+    "run_seconds": 12.486
+  },
+  {
+    "id": 2513,
+    "content": "```json\n{\n    \"name\": \"Dudley House\",\n    \"address\": \"120 S Main St, Ventura, CA 93001\",\n    \"distance\": 90\n}\n```",
+    "run_seconds": 10.908
+  },
+  {
+    "id": 2514,
+    "content": "```json\n{\n    \"name\": \"Can you assist in finding a fusion restaurant within 120 kilometers of Bresnan Arena, Mankato, MN?\",\n    \"address\": \"Bresnan Arena, 1610 W. University Ave, Mankato, MN 56001, USA\",\n    \"distance\": 120\n}\n```",
+    "run_seconds": 18.688
+  },
+  {
+    "id": 2515,
+    "content": "```json\n{\n    \"name\": \"Indian Restaurant\",\n    \"address\": \"\",\n    \"distance\": 60\n}\n```",
+    "run_seconds": 6.569
+  },
+  {
+    "id": 2516,
+    "content": "```json\n{\n    \"name\": \"Curtis Motel\",\n    \"address\": \"Bridgeton, NC\",\n    \"distance\": 80\n}\n```",
+    "run_seconds": 8.887
+  },
+  {
+    "id": 2517,
+    "content": "```json\n{\n    \"name\": \"Red Wolf Sanctuary\",\n    \"address\": \"200 Sanctuary Rd, Rising Sun, IN 47465\",\n    \"distance\": 110\n}\n```",
+    "run_seconds": 10.901
+  },
+  {
+    "id": 2518,
+    "content": "```json\n{\n    \"name\": \"UNH Museum of Natural History & Science\",\n    \"address\": \"Durham, New Hampshire\",\n    \"distance\": 80\n}\n```",
+    "run_seconds": 9.348
+  },
+  {
+    "id": 2519,
+    "content": "```json\n{\n    \"name\": \"No results available\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 6.558
+  },
+  {
+    "id": 2520,
+    "content": "```json\n{\n    \"name\": \"No information available\",\n    \"address\": \"Not provided\",\n    \"distance\": 190\n}\n```",
+    "run_seconds": 7.744
+  },
+  {
+    "id": 2521,
+    "content": "```json\n{\n    \"name\": \"Pilar\",\n    \"address\": \"Pilar, NM\",\n    \"distance\": 70\n}\n```",
+    "run_seconds": 7.722
+  },
+  {
+    "id": 2522,
+    "content": "```json\n{\n    \"name\": \"Brandon Regional Hospital\",\n    \"address\": \"200 Medical Center Blvd, Brandon, MS 39047\"\n}\n```",
+    "run_seconds": 8.858
+  },
+  {
+    "id": 2523,
+    "content": "```json\n{\n    \"name\": \"Fort Walton Beach Medical Center\",\n    \"address\": \"100 Medical Center Blvd, Fort Walton Beach, FL 32548\"\n}\n```",
+    "run_seconds": 9.771
+  },
+  {
+    "id": 2524,
+    "content": "```json\n{\n    \"name\": \"Watauga Regional Hospital\"\n}\n```",
+    "run_seconds": 4.321
+  },
+  {
+    "id": 2525,
+    "content": "```json\n{\n    \"name\": \"Museum of Arts and Sciences\",\n    \"address\": \"451 S Nova Rd, Daytona Beach, FL 32114, USA\"\n}\n```",
+    "run_seconds": 10.258
+  },
+  {
+    "id": 2526,
+    "content": "```json\n{\n    \"name\": \"Peoria\",\n    \"address\": \"Peoria, IL\"\n}\n```",
+    "run_seconds": 5.91
+  },
+  {
+    "id": 2527,
+    "content": "```json\n{\n    \"name\": \"Fort Dodge\"\n}\n```",
+    "run_seconds": 3.634
+  },
+  {
+    "id": 2528,
+    "content": "```json\n{\n    \"name\": \"Minneapolis Institute of Art\",\n    \"address\": \"345 Kellogg Blvd W, Minneapolis, MN 55403, USA\"\n}\n```",
+    "run_seconds": 10.006
+  },
+  {
+    "id": 2529,
+    "content": "```json\n{\n    \"name\": \"Maritime History Museum of the Great Lakes\",\n    \"address\": \"500 N Harbor Drive, Milwaukee, WI 53201, USA\"\n}\n```",
+    "run_seconds": 10.479
+  },
+  {
+    "id": 2530,
+    "content": "```json\n{\n    \"name\": null,\n    \"address\": null,\n    \"count\": 0\n}\n```",
+    "run_seconds": 6.124
+  },
+  {
+    "id": 2531,
+    "content": "```json\n{\n    \"name\": \"Kettlewell & Edwards\",\n    \"address\": \"Saratoga Springs, NY\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 8.791
+  },
+  {
+    "id": 2532,
+    "content": "```json\n{\n    \"name\": \"San Francisco General Hospital\",\n    \"address\": \"1001 Potrero Ave, San Francisco, CA 94110, USA\"\n}\n```",
+    "run_seconds": 10.229
+  },
+  {
+    "id": 2533,
+    "content": "```json\n{\n    \"name\": \"University of Maryland Medical Center\"\n}\n```",
+    "run_seconds": 4.347
+  },
+  {
+    "id": 2534,
+    "content": "```json\n{\n    \"name\": \"Cobb & Douglas Medical Center\",\n    \"address\": \"2345 Hospital Drive NW, Marietta, GA 30066, USA\"\n}\n```",
+    "run_seconds": 10.532
+  },
+  {
+    "id": 2535,
+    "content": "```json\n{\"name\": \"no\"}\n```",
+    "run_seconds": 2.747
+  },
+  {
+    "id": 2536,
+    "content": "```json\n{\n    \"name\": \"Mount Sinai Medical Center\",\n    \"address\": \"12000 Biscayne Blvd, Miami, FL 33181, USA\",\n    \"distance\": 10\n}\n```",
+    "run_seconds": 12.217
+  },
+  {
+    "id": 2537,
+    "content": "```json\n{\n    \"name\": \"Aerospace Museum of King County\",\n    \"address\": \"Barons Bus Arena, Parma, OH\",\n    \"distance\": 70\n}\n```",
+    "run_seconds": 10.02
+  },
+  {
+    "id": 2538,
+    "content": "```json\n{\n    \"name\": \"Scottsdale Healthcare Shea Medical Center\",\n    \"address\": \"15055 N 83rd Ave, Scottsdale, AZ 85260, USA\",\n    \"distance\": 190\n}\n```",
+    "run_seconds": 13.379
+  },
+  {
+    "id": 2539,
+    "content": "```json\n{\n    \"name\": \"Children's Museum of Manhattan\",\n    \"address\": \"New York, NY\",\n    \"distance\": 90,\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 10.672
+  },
+  {
+    "id": 2540,
+    "content": "```json\n{\n    \"name\": \"Coram Hospital\",\n    \"address\": \"Amazing Fun Center, Coram, MT\"\n}\n```",
+    "run_seconds": 7.037
+  },
+  {
+    "id": 2541,
+    "content": "```json\n{\n    \"name\": \"No fish restaurant found\",\n    \"address\": \"Leon and Ethel Yeiser Rose Garden, Annville, PA\",\n    \"distance\": 40\n}\n```",
+    "run_seconds": 10.196
+  },
+  {
+    "id": 2542,
+    "content": "```json\n{\n    \"name\": \"Red Wolf Sanctuary\",\n    \"address\": \"100 Sanctuary Rd, Rising Sun, IN 47366, USA\"\n}\n```",
+    "run_seconds": 9.291
+  },
+  {
+    "id": 2543,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.652
+  },
+  {
+    "id": 2544,
+    "content": "```json\n{\n    \"name\": \"Hospitals\",\n    \"address\": \"Chopper's Lawn Equipment, Kissimmee, FL\",\n    \"distance\": 90\n}\n```",
+    "run_seconds": 9.508
+  },
+  {
+    "id": 2545,
+    "content": "```json\n{\n    \"name\": \"Memphis\",\n    \"address\": \"Memphis, TN\"\n}\n```",
+    "run_seconds": 5.872
+  },
+  {
+    "id": 2546,
+    "content": "```json\n{\n    \"name\": \"Plaza at the Shops by HTA\"\n}\n```",
+    "run_seconds": 4.979
+  },
+  {
+    "id": 2547,
+    "content": "```json\n{\n    \"name\": \"American Museum of Natural History\",\n    \"address\": \"Central Park West, New York, NY\",\n    \"distance\": 180\n}\n```",
+    "run_seconds": 9.529
+  },
+  {
+    "id": 2548,
+    "content": "```json\n{\n    \"name\": \"Chinese Restaurant\",\n    \"address\": \"Jeff Tabor Fine Art Gallery, Santa Fe, NM\",\n    \"distance\": 20\n}\n```",
+    "run_seconds": 9.226
+  },
+  {
+    "id": 2549,
+    "content": "```json\n{\n    \"name\": \"Maryland Science Center\",\n    \"address\": \"1740 N Charles St, Baltimore, MD 21201\",\n    \"distance\": 40\n}\n```",
+    "run_seconds": 11.039
+  },
+  {
+    "id": 2550,
+    "content": "```json\n{\n    \"name\": \"Mediterranean Restaurant\",\n    \"address\": \"\",\n    \"distance\": 80\n}\n```",
+    "run_seconds": 7.211
+  },
+  {
+    "id": 2551,
+    "content": "```json\n{\n    \"name\": \"Thai restaurant\",\n    \"address\": \"Not specified\",\n    \"distance\": 190\n}\n```",
+    "run_seconds": 7.434
+  },
+  {
+    "id": 2552,
+    "content": "```json\n{\n    \"name\": \"Fairfield Inn & Suites by Marriott\",\n    \"address\": \"100 S Memorial Dr, Belton, MO 64011, USA\",\n    \"distance\": 0\n}\n```",
+    "run_seconds": 11.926
+  },
+  {
+    "id": 2553,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0,\n    \"distance\": 170,\n    \"length\": 0,\n    \"area\": 0,\n    \"azimuth_angle\": 0\n}\n```",
+    "run_seconds": 12.843
+  },
+  {
+    "id": 2554,
+    "content": "```json\n{\n    \"name\": \"Gabriel Manor Assisted Living Center\",\n    \"address\": \"1000 S Church St, Clayton, NC 27520, USA\",\n    \"count\": 0,\n    \"distance\": 120\n}\n```",
+    "run_seconds": 13.937
+  },
+  {
+    "id": 2555,
+    "content": "```json\n{\n    \"name\": \"Russ Berrie Institute for Professional Sales\",\n    \"address\": \"2000 Union Campus Drive, Wayne, NJ 07470\",\n    \"distance\": 60\n}\n```",
+    "run_seconds": 11.689
+  },
+  {
+    "id": 2556,
+    "content": "```json\n{\n    \"name\": \"No information available\",\n    \"address\": \"Neversink Pit, Fackler, AL\",\n    \"distance\": 110\n}\n```",
+    "run_seconds": 9.447
+  },
+  {
+    "id": 2557,
+    "content": "```json\n{\n    \"name\": \"Colleton Regional Medical Center\",\n    \"address\": \"100 Medical Center Drive, Walterboro, SC 29401, United States\",\n    \"distance\": 50\n}\n```",
+    "run_seconds": 11.922
+  },
+  {
+    "id": 2558,
+    "content": "```json\n{\n    \"name\": \"Rockford Memorial Hospital\",\n    \"address\": \"1000 E State St, Rockford, IL 61604, USA\"\n}\n```",
+    "run_seconds": 9.909
+  },
+  {
+    "id": 2559,
+    "content": "```json\n{\n    \"name\": \"In the Game - Hollywood Park\",\n    \"address\": \"Crestwood, IL\",\n    \"distance\": 70\n}\n```",
+    "run_seconds": 8.951
+  },
+  {
+    "id": 2560,
+    "content": "```json\n{\n    \"name\": null,\n    \"address\": null,\n    \"count\": 0\n}\n```",
+    "run_seconds": 6.19
+  },
+  {
+    "id": 2561,
+    "content": "```json\n{\n    \"name\": \"University of Virginia Health System\",\n    \"address\": \"Cabell Gallery, Lexington, VA\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 8.869
+  },
+  {
+    "id": 2562,
+    "content": "```json\n{\n    \"name\": \"Bastion Studios\",\n    \"address\": \"Erie, PA\",\n    \"distance\": 150\n}\n```",
+    "run_seconds": 8.259
+  },
+  {
+    "id": 2563,
+    "content": "```json\n{\n    \"name\": \"emergency hospital\",\n    \"address\": \"Winlock, WA\",\n    \"distance\": 50\n}\n```",
+    "run_seconds": 7.292
+  },
+  {
+    "id": 2564,
+    "content": "```json\n{\n    \"name\": \"No emergency hospital found\",\n    \"address\": \"Wernick Farm Reserve, Dartmouth, MA\",\n    \"distance\": 90\n}\n```",
+    "run_seconds": 9.216
+  },
+  {
+    "id": 2565,
+    "content": "```json\n{\n    \"name\": \"no\"\n}\n```",
+    "run_seconds": 3.392
+  },
+  {
+    "id": 2566,
+    "content": "```json\n{\n    \"name\": \"north\"\n}\n```",
+    "run_seconds": 3.367
+  },
+  {
+    "id": 2567,
+    "content": "```json\n{\n    \"name\": \"Swanton Museum and Historical Society\",\n    \"address\": \"100 Maple Street, Swanton, VT 05488, USA\"\n}\n```",
+    "run_seconds": 9.903
+  },
+  {
+    "id": 2568,
+    "content": "```json\n{\n    \"name\": \"No results available\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 6.522
+  },
+  {
+    "id": 2569,
+    "content": "```json\n{\n    \"name\": \"Niagara Falls Memorial Medical Center\",\n    \"address\": \"2555 Niagara Falls Blvd, Niagara Falls, NY 14305\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 11.693
+  },
+  {
+    "id": 2570,
+    "content": "```json\n{\n    \"name\": \"The Field Museum of Natural History\",\n    \"address\": \"1400 S Lake Shore Dr, Chicago, IL 60605\",\n    \"distance\": 170,\n    \"azimuth_angle\": 315\n}\n```",
+    "run_seconds": 14.399
+  },
+  {
+    "id": 2571,
+    "content": "```json\n{\n    \"name\": \"Five Guys\",\n    \"address\": \"Tampa, Florida\",\n    \"distance\": 40\n}\n```",
+    "run_seconds": 7.651
+  },
+  {
+    "id": 2572,
+    "content": "```json\n{\n    \"name\": \"West End Gallery\",\n    \"address\": \"Corning, NY\",\n    \"distance\": 180\n}\n```",
+    "run_seconds": 8.087
+  },
+  {
+    "id": 2573,
+    "content": "```json\n{\n    \"name\": \"Kona Cloud Forest - Guided Walking Tours\",\n    \"address\": \"Kailua-Kona, HI\",\n    \"distance\": 130\n}\n```",
+    "run_seconds": 10.12
+  },
+  {
+    "id": 2574,
+    "content": "```json\n{\n    \"name\": \"Scottsdale Healthcare Shea Medical Center\",\n    \"address\": \"17000 North Shea Boulevard, Scottsdale, AZ 85255\"\n}\n```",
+    "run_seconds": 10.122
+  },
+  {
+    "id": 2575,
+    "content": "```json\n{\n    \"name\": \"Venice Community Hospital\"\n}\n```",
+    "run_seconds": 4.044
+  },
+  {
+    "id": 2576,
+    "content": "```json\n{\n    \"name\": \"Hague\",\n    \"address\": \"Hague, NY\",\n    \"distance\": 130\n}\n```",
+    "run_seconds": 7.859
+  },
+  {
+    "id": 2577,
+    "content": "```json\n{\n    \"name\": \"emergency hospital\",\n    \"address\": \"Illinois Central Depot, Bethany, IL\",\n    \"distance\": 160\n}\n```",
+    "run_seconds": 9.003
+  },
+  {
+    "id": 2578,
+    "content": "```json\n{\n    \"name\": \"Railroad Park Museum\",\n    \"address\": \"TECHealth | ER Staffing, EMR & ER Partnerships, Chandler, AZ\",\n    \"distance\": 90\n}\n```",
+    "run_seconds": 11.263
+  },
+  {
+    "id": 2579,
+    "content": "```json\n{\n    \"name\": null,\n    \"address\": null,\n    \"count\": 0\n}\n```",
+    "run_seconds": 6.113
+  },
+  {
+    "id": 2580,
+    "content": "```json\n{\n    \"name\": \"Lombard Street Pizza\",\n    \"address\": \"123 Lombard Street, Chicago, IL\"\n}\n```",
+    "run_seconds": 8.016
+  },
+  {
+    "id": 2581,
+    "content": "```json\n{\n    \"name\": null,\n    \"address\": null,\n    \"count\": 0\n}\n```",
+    "run_seconds": 6.098
+  },
+  {
+    "id": 2582,
+    "content": "```json\n{\n    \"name\": \"Radisson Hotel River Falls\",\n    \"address\": \"100 Hotel Dr, River Falls, WI 54023\",\n    \"distance\": 0\n}\n```",
+    "run_seconds": 10.783
+  },
+  {
+    "id": 2583,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0,\n    \"distance\": 190,\n    \"length\": 0,\n    \"area\": 0,\n    \"azimuth_angle\": 0\n}\n```",
+    "run_seconds": 12.794
+  },
+  {
+    "id": 2584,
+    "content": "```json\n{\"name\": \"City of Farmington Museum\", \"address\": \"1150 W 2000 N, Farmington, UT 84507\", \"distance\": 110}\n```",
+    "run_seconds": 11.447
+  },
+  {
+    "id": 2585,
+    "content": "```json\n{\n    \"name\": \"University of Tennessee Medical Center\",\n    \"address\": \"910 Madison Ave, Memphis, TN 38163, USA\"\n}\n```",
+    "run_seconds": 9.433
+  },
+  {
+    "id": 2586,
+    "content": "```json\n{\n    \"name\": \"Costello Stadium\",\n    \"address\": \"1 Stadium Dr, Palmyra, VA 22963, USA\",\n    \"distance\": 40\n}\n```",
+    "run_seconds": 10.779
+  },
+  {
+    "id": 2587,
+    "content": "```json\n{\n    \"name\": \"Korean restaurant\",\n    \"address\": \"Blue Ocean Discovery Center, 100 Ocean Blvd, Hampton, NH 03842, USA\",\n    \"distance\": 120\n}\n```",
+    "run_seconds": 12.377
+  },
+  {
+    "id": 2588,
+    "content": "```json\n{\n    \"name\": \"WakeMed Raleigh\",\n    \"address\": \"Raynay Alpaca Farm, Ruffin, NC\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 9.918
+  },
+  {
+    "id": 2589,
+    "content": "```json\n{\n    \"name\": \"No results available\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 6.519
+  },
+  {
+    "id": 2590,
+    "content": "```json\n{\n    \"name\": \"Centennial High School Football Stadium\",\n    \"address\": \"2000 Towne Park Dr, Roswell, GA 30077\",\n    \"distance\": 20\n}\n```",
+    "run_seconds": 11.981
+  },
+  {
+    "id": 2591,
+    "content": "```json\n{\n    \"name\": \"Bittersweet Falls\",\n    \"address\": \"Weybridge, VT\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 8.47
+  },
+  {
+    "id": 2592,
+    "content": "```json\n{\n    \"name\": \"seafood restaurant\",\n    \"address\": \"not provided\",\n    \"distance\": 40\n}\n```",
+    "run_seconds": 7.579
+  },
+  {
+    "id": 2593,
+    "content": "```json\n{\n    \"name\": \"Yale New Haven Hospital\",\n    \"address\": \"250 York Street, New Haven, CT 06510\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 11.257
+  },
+  {
+    "id": 2594,
+    "content": "```json\n{\n    \"name\": \"Mequon Museum\",\n    \"address\": \"Memory Garden, Mequon, WI\"\n}\n```",
+    "run_seconds": 7.354
+  },
+  {
+    "id": 2595,
+    "content": "```json\n{\n    \"name\": \"emergency hospital\",\n    \"address\": \"Center of the Universe, Wallace, ID\",\n    \"distance\": 170\n}\n```",
+    "run_seconds": 8.96
+  },
+  {
+    "id": 2596,
+    "content": "```json\n{\n    \"name\": \"Korean restaurant\",\n    \"distance\": 170\n}\n```",
+    "run_seconds": 6.012
+  },
+  {
+    "id": 2597,
+    "content": "```json\n{\n    \"name\": \"Seafood Restaurant\",\n    \"address\": \"15 kilometers east of Horrigan Hall, Louisville, KY\",\n    \"distance\": 15,\n    \"azimuth_angle\": 90\n}\n```",
+    "run_seconds": 12.552
+  },
+  {
+    "id": 2598,
+    "content": "```json\n{\n    \"name\": \"First Responders Park\",\n    \"address\": \"Germantown Hills, IL\",\n    \"count\": 0,\n    \"distance\": 130\n}\n```",
+    "run_seconds": 10.803
+  },
+  {
+    "id": 2599,
+    "content": "```json\n{\n    \"name\": \"Branson Regional Hospital\",\n    \"address\": \"123 Hospital Drive, Branson, MO 65860\",\n    \"distance\": 5\n}\n```",
+    "run_seconds": 10.756
+  }
+]

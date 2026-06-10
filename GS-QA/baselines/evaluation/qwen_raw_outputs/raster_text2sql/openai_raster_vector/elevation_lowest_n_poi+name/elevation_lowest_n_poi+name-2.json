@@ -1,0 +1,118 @@
+{
+  "answer_type": "row/s",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "row/s",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "rowset_f1",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "addr_city": "Stratton",
+      "addr_housenumber": "2148",
+      "addr_state": "Vermont",
+      "addr_street": "Maintenance Road",
+      "elevation": 1204.0,
+      "geometry": "POINT (-72.924966 43.086214)",
+      "id": 23048,
+      "osm_id": 356555377,
+      "poi_name": "Stratton Fire Tower",
+      "pt": "0101000020E6100000BC19DAA5323B52C0373C180C098B4540",
+      "tourism": "viewpoint"
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "addr_city": "Stratton",
+        "addr_housenumber": "2148",
+        "addr_postcode": null,
+        "addr_state": "Vermont",
+        "addr_street": "Maintenance Road",
+        "amenity": null,
+        "artwork_type": null,
+        "building": null,
+        "capacity": null,
+        "cuisine": null,
+        "delivery": null,
+        "description": null,
+        "drive_through": null,
+        "elevation": 1204.0,
+        "emergency": null,
+        "fast_food": null,
+        "fee": null,
+        "geometry": "0101000020E6100000BC19DAA5323B52C0373C180C098B4540",
+        "hairdresser": null,
+        "healthcare": null,
+        "historic": null,
+        "id": 23048,
+        "information": null,
+        "internet_access": null,
+        "leisure": null,
+        "museum": null,
+        "official_name": null,
+        "opening_hours": null,
+        "operator": null,
+        "osm_id": 356555377,
+        "outdoor_seating": null,
+        "parking": null,
+        "pastry_shop": null,
+        "phone": null,
+        "poi_name": "Stratton Fire Tower",
+        "pt": "0101000020E6100000BC19DAA5323B52C0373C180C098B4540",
+        "resort": null,
+        "restaurant": null,
+        "school_type": null,
+        "shop": null,
+        "sport": null,
+        "sports": null,
+        "takeaway": null,
+        "toilets": null,
+        "tourism": "viewpoint",
+        "website": null,
+        "wheelchair": null,
+        "wholesale": null,
+        "wikidata": null,
+        "zoo": null
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-72.872315 43.05364, -72.87159 43.064684, -72.87087 43.075618, -72.870369 43.086232, -72.86933 43.101331, -72.868451 43.111039, -72.868397 43.111637, -72.868242 43.113931, -72.870644 43.113988, -72.898276 43.114648, -72.91159 43.1154, -72.945296 43.117321, -72.946808 43.117418, -72.948417 43.117484, -72.975608 43.118184, -72.995968 43.1187, -72.99714 43.117458, -72.99732 43.115445, -72.998697 43.097488, -72.998319 43.096597, -73.001779 43.075124, -73.000608 43.03912, -73.000598 43.023565, -72.995199 43.023361, -72.946106 43.021804, -72.917934 43.020801, -72.920165 42.992715, -72.896837 42.99161, -72.888884 42.991309, -72.887786 42.991267, -72.879449 42.990952, -72.8785 43.003582, -72.878087 43.010445, -72.877722 43.017536, -72.875291 43.017464, -72.87397 43.02978, -72.873393 43.039604, -72.873244 43.043134, -72.872315 43.05364))', 4326) AS g\n),\ncandidates AS (\n  SELECT p.*, ST_PointOnSurface(p.geometry::geometry) AS pt\n  FROM pois p\n  JOIN region r ON ST_Intersects(p.geometry::geometry, r.g)\n  WHERE p.\"tourism\" = 'viewpoint'\n),\npoi_elev AS (\n  SELECT c.*, elev.z AS elevation\n  FROM candidates c\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, c.pt) AS z\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, c.pt)\n    LIMIT 1\n  ) elev ON elev.z IS NOT NULL\n)\nSELECT *\nFROM poi_elev\nORDER BY elevation ASC\nLIMIT 3;",
+  "id": "elevation_lowest_n_poi+name-2",
+  "model_output": "```sql\nWITH viewpoints AS (\n  SELECT \n    'Stratton Fire Tower, Stratton, Vermont'::text AS name,\n    ST_SetSRID(ST_MakePoint(-72.924966, 43.086214), 4326)::geography AS geom\n  UNION ALL\n  SELECT \n    poi.poi_name || ', ' || poi.addr_city || ', ' || poi.addr_state,\n    pois.geometry\n  FROM pois\n  WHERE pois.poi_name ILIKE '%viewpoint%' \n    AND pois.addr_city = 'Stratton' \n    AND pois.addr_state = 'Vermont'\n    AND pois.id != 23048 -- exclude the first viewpoint already listed\n  LIMIT 2\n),\nviewpoint_elevations AS (\n  SELECT \n    v.name,\n    ST_Value(\n      r.rast,\n      ST_Transform(ST_SetSRID(ST_PointN(ST_DumpPoints(v.geom::geometry)).geom, 4326), 4326),\n      1\n    ) AS elevation\n  FROM viewpoints v\n  CROSS JOIN public.dem_us r\n  WHERE ST_Intersects(r.rast, v.geom::geometry)\n)\nSELECT name, elevation\nFROM viewpoint_elevations\nORDER BY elevation ASC\nLIMIT 3;\n```",
+  "predicted_exec": {
+    "error": "syntax error at or near \".\"\nLINE 21: ...SetSRID(ST_PointN(ST_DumpPoints(v.geom::geometry)).geom, 432...\n                                                              ^",
+    "output": []
+  },
+  "predicted_sql": "WITH viewpoints AS (\n  SELECT \n    'Stratton Fire Tower, Stratton, Vermont'::text AS name,\n    ST_SetSRID(ST_MakePoint(-72.924966, 43.086214), 4326)::geography AS geom\n  UNION ALL\n  SELECT \n    poi.poi_name || ', ' || poi.addr_city || ', ' || poi.addr_state,\n    pois.geometry\n  FROM pois\n  WHERE pois.poi_name ILIKE '%viewpoint%' \n    AND pois.addr_city = 'Stratton' \n    AND pois.addr_state = 'Vermont'\n    AND pois.id != 23048 -- exclude the first viewpoint already listed\n  LIMIT 2\n),\nviewpoint_elevations AS (\n  SELECT \n    v.name,\n    ST_Value(\n      r.rast,\n      ST_Transform(ST_SetSRID(ST_PointN(ST_DumpPoints(v.geom::geometry)).geom, 4326), 4326),\n      1\n    ) AS elevation\n  FROM viewpoints v\n  CROSS JOIN public.dem_us r\n  WHERE ST_Intersects(r.rast, v.geom::geometry)\n)\nSELECT name, elevation\nFROM viewpoint_elevations\nORDER BY elevation ASC\nLIMIT 3;",
+  "predicted_sql_candidates": [
+    "WITH viewpoints AS (\n  SELECT \n    'Stratton Fire Tower, Stratton, Vermont'::text AS name,\n    ST_SetSRID(ST_MakePoint(-72.924966, 43.086214), 4326)::geography AS geom\n  UNION ALL\n  SELECT \n    poi.poi_name || ', ' || poi.addr_city || ', ' || poi.addr_state,\n    pois.geometry\n  FROM pois\n  WHERE pois.poi_name ILIKE '%viewpoint%' \n    AND pois.addr_city = 'Stratton' \n    AND pois.addr_state = 'Vermont'\n    AND pois.id != 23048 -- exclude the first viewpoint already listed\n  LIMIT 2\n),\nviewpoint_elevations AS (\n  SELECT \n    v.name,\n    ST_Value(\n      r.rast,\n      ST_Transform(ST_SetSRID(ST_PointN(ST_DumpPoints(v.geom::geometry)).geom, 4326), 4326),\n      1\n    ) AS elevation\n  FROM viewpoints v\n  CROSS JOIN public.dem_us r\n  WHERE ST_Intersects(r.rast, v.geom::geometry)\n)\nSELECT name, elevation\nFROM viewpoint_elevations\nORDER BY elevation ASC\nLIMIT 3;"
+  ],
+  "query_type": "raster_vector",
+  "question": "Which 3 viewpoints in Stratton, Vermont are at the lowest elevation?",
+  "source_file": "elevation_lowest_n_poi+name.jsonl",
+  "source_stem": "elevation_lowest_n_poi+name",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 59.925,
+    "total_seconds": 59.926
+  },
+  "usage": {
+    "completion_tokens": 281,
+    "prompt_tokens": 1656,
+    "total_tokens": 1937
+  }
+}

@@ -1,0 +1,502 @@
+[
+  {
+    "id": 300,
+    "content": "```sql\nSELECT road_name\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(roads.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Arapahoe County%' AND region_name ILIKE '%Colorado%' LIMIT 1))\nORDER BY ST_Length(roads.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 16.424
+  },
+  {
+    "id": 301,
+    "content": "```sql\nSELECT lake_name, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE waterway = 'canal'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Palm Bay%' AND addr_state ILIKE '%Florida%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 16.613
+  },
+  {
+    "id": 302,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE highway = 'motorway'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Cheektowaga%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.912
+  },
+  {
+    "id": 303,
+    "content": "```sql\nSELECT r.road_name, ST_Length(r.geometry::geography) AS length_meters\nFROM roads r\nJOIN regions reg ON ST_Intersects(r.geometry::geography, reg.geometry::geography)\nWHERE r.highway = 'footway'\n  AND reg.region_name ILIKE '%Nueces%'\n  AND reg.border_type = 'county'\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 18.957
+  },
+  {
+    "id": 304,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE highway = 'motorway'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Tarrant County%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.125
+  },
+  {
+    "id": 305,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%united states%' AND border_type = 'country' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 16.187
+  },
+  {
+    "id": 306,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE highway = 'motorway'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Ithaca%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.697
+  },
+  {
+    "id": 307,
+    "content": "```sql\nSELECT lake_name, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Perquimans County%' LIMIT 1))\n  AND waterway = 'river'\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.126
+  },
+  {
+    "id": 308,
+    "content": "```sql\nSELECT lake_name, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE addr_county ILIKE '%Polk%'\n  AND waterway = 'stream'\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 11.503
+  },
+  {
+    "id": 309,
+    "content": "```sql\nSELECT lake_name, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE waterway = 'canal'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Dania Beach%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.908
+  },
+  {
+    "id": 310,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE waterway = 'river'\nORDER BY ST_Length(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 7.453
+  },
+  {
+    "id": 311,
+    "content": "```sql\nSELECT lake_name, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Brookneal%' AND region_name ILIKE '%Virginia%' LIMIT 1))\n  AND waterway = 'river'\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 16.616
+  },
+  {
+    "id": 312,
+    "content": "```sql\nSELECT r.road_name, ST_Length(r.geometry::geography) AS length_meters\nFROM roads r\nWHERE r.highway = 'footway'\n  AND ST_Intersects(r.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%New York City%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 16.186
+  },
+  {
+    "id": 313,
+    "content": "```sql\nSELECT lake_name, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE waterway = 'canal'\n  AND ST_Intersects(\n    geometry,\n    (SELECT geometry FROM regions WHERE region_name ILIKE '%Larimer%' AND border_type = 'county' LIMIT 1)\n  )\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 17.464
+  },
+  {
+    "id": 314,
+    "content": "```sql\nSELECT highway, SUM(ST_Length(geometry::geography)) AS total_length\nFROM roads\nWHERE highway = 'motorway'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Pennsylvania%' LIMIT 1))\nGROUP BY highway\nORDER BY total_length DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.912
+  },
+  {
+    "id": 315,
+    "content": "```sql\nSELECT road_name\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(roads.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Cheyenne%' LIMIT 1))\nORDER BY ST_Length(roads.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.484
+  },
+  {
+    "id": 316,
+    "content": "```sql\nSELECT l.lake_name AS river_name, ST_Length(l.geometry::geography) AS length_meters\nFROM lakes l\nWHERE l.waterway = 'river'\n  AND ST_Intersects(l.geometry, (SELECT r.geometry FROM regions r WHERE r.region_name ILIKE '%Orange County%' AND r.border_type = 'county' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 18.743
+  },
+  {
+    "id": 317,
+    "content": "```sql\nSELECT r.road_name, ST_Length(r.geometry::geography) AS length_meters\nFROM roads r\nWHERE r.highway = 'motorway'\n  AND ST_Intersects(r.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Middlesex%' AND border_type = 'county' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 17.465
+  },
+  {
+    "id": 318,
+    "content": "```sql\nSELECT road_name\nFROM roads\nWHERE highway = 'motorway'\n  AND ST_Intersects(roads.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Lane County%' LIMIT 1))\nORDER BY ST_Length(roads.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.27
+  },
+  {
+    "id": 319,
+    "content": "```sql\nSELECT r.road_name, ST_Length(r.geometry::geography) AS length_meters\nFROM roads r\nWHERE ST_Intersects(r.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Umatilla%' AND border_type = 'county' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.549
+  },
+  {
+    "id": 320,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE highway = 'motorway'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Maywood%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.486
+  },
+  {
+    "id": 321,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%West Des Moines%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.696
+  },
+  {
+    "id": 322,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE waterway = 'stream'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Macon County%' LIMIT 1))\nORDER BY ST_Length(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.63
+  },
+  {
+    "id": 323,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE highway = 'footway'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%seattle%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.484
+  },
+  {
+    "id": 324,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%McLeod County%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.695
+  },
+  {
+    "id": 325,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Citrus County%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.417
+  },
+  {
+    "id": 326,
+    "content": "```sql\nSELECT road_name, ST_Length(roads.geometry::geography) AS length_meters\nFROM roads\nJOIN regions ON ST_Intersects(roads.geometry::geography, regions.geometry::geography)\nWHERE regions.region_name ILIKE '%Arlington County%' AND highway = 'cycleway'\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 16.186
+  },
+  {
+    "id": 327,
+    "content": "```sql\nSELECT lake_name, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Anderson County%' LIMIT 1))\n  AND waterway = 'stream'\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.482
+  },
+  {
+    "id": 328,
+    "content": "```sql\nSELECT road_name\nFROM roads\nWHERE ST_Intersects(roads.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Edinburg%' LIMIT 1))\nORDER BY ST_Length(roads.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 12.782
+  },
+  {
+    "id": 329,
+    "content": "```sql\nSELECT r.highway, SUM(ST_Length(r.geometry::geography)) AS total_length\nFROM roads r\nWHERE r.highway = 'motorway'\n  AND ST_Intersects(r.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%united states%' LIMIT 1))\nGROUP BY r.highway\nORDER BY total_length DESC\nLIMIT 1;\n```",
+    "run_seconds": 17.039
+  },
+  {
+    "id": 330,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE highway = 'footway'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%united states%' AND border_type = 'country' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 16.187
+  },
+  {
+    "id": 331,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Natick%' AND border_type = 'city' LIMIT 1))\n  AND highway = 'motorway'\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 16.824
+  },
+  {
+    "id": 332,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE waterway = 'river'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Swift County%' LIMIT 1))\nORDER BY ST_Length(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.417
+  },
+  {
+    "id": 333,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE highway = 'footway'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Connecticut%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.483
+  },
+  {
+    "id": 334,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE waterway = 'stream'\nORDER BY ST_Length(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 7.454
+  },
+  {
+    "id": 335,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Alexandria%' LIMIT 1))\n  AND highway = 'cycleway'\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.696
+  },
+  {
+    "id": 336,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE highway = 'footway'\n  AND ST_Intersects(\n        geometry,\n        (SELECT geometry FROM regions WHERE region_name ILIKE '%Cheltenham Township%' LIMIT 1)\n      )\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 16.187
+  },
+  {
+    "id": 337,
+    "content": "```sql\nSELECT lake_name, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE addr_county ILIKE '%green%'\n  AND addr_state ILIKE '%wisconsin%'\n  AND waterway = 'stream'\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.417
+  },
+  {
+    "id": 338,
+    "content": "```sql\nSELECT l.lake_name AS river_name, ST_Length(l.geometry::geography) AS length_meters\nFROM lakes l\nWHERE l.waterway IS NOT NULL\n  AND ST_Intersects(l.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Van Buren%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 17.253
+  },
+  {
+    "id": 339,
+    "content": "```sql\nSELECT waterway, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE waterway = 'stream'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Paulding County%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.696
+  },
+  {
+    "id": 340,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE waterway = 'canal'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Ulster County%' LIMIT 1))\nORDER BY ST_Length(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.846
+  },
+  {
+    "id": 341,
+    "content": "```sql\nSELECT lake_name, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE lake_name ILIKE '%canal%' AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Bluffton%' AND region_name ILIKE '%South Carolina%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 16.826
+  },
+  {
+    "id": 342,
+    "content": "```sql\nSELECT lake_name, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Bedford%' AND border_type = 'county' LIMIT 1))\n  AND waterway = 'river'\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.975
+  },
+  {
+    "id": 343,
+    "content": "```sql\nSELECT lake_name, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Jackson County%' AND border_type = 'county' LIMIT 1))\n  AND waterway = 'stream'\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.974
+  },
+  {
+    "id": 344,
+    "content": "```sql\nSELECT waterway, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE waterway = 'canal'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Lee County%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.696
+  },
+  {
+    "id": 345,
+    "content": "```sql\nSELECT road_name\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(roads.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Mecklenburg%' LIMIT 1))\nORDER BY ST_Length(roads.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.7
+  },
+  {
+    "id": 346,
+    "content": "```sql\nSELECT waterway, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Chester County%' AND border_type = 'county' LIMIT 1))\n  AND waterway = 'river'\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 16.188
+  },
+  {
+    "id": 347,
+    "content": "```sql\nSELECT r.road_name, ST_Length(r.geometry::geography) AS length_meters\nFROM roads r\nWHERE r.highway = 'motorway'\n  AND ST_Intersects(r.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Albany County%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 17.039
+  },
+  {
+    "id": 348,
+    "content": "```sql\nSELECT lake_name, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%West Jordan%' LIMIT 1))\n  AND waterway = 'canal'\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.7
+  },
+  {
+    "id": 349,
+    "content": "```sql\nSELECT lake_name, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Delaware County%' LIMIT 1))\n  AND waterway = 'stream'\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.698
+  },
+  {
+    "id": 350,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE highway = 'motorway'\n  AND ST_Intersects(\n        geometry,\n        (SELECT geometry FROM regions WHERE region_name ILIKE '%Prairie County%' AND region_name ILIKE '%Montana%' LIMIT 1)\n      )\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 17.892
+  },
+  {
+    "id": 351,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Rocky Mount%' LIMIT 1))\n  AND waterway = 'river'\nORDER BY ST_Length(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.635
+  },
+  {
+    "id": 352,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Dallas County%' LIMIT 1))\n  AND highway = 'motorway'\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.912
+  },
+  {
+    "id": 353,
+    "content": "```sql\nSELECT r.road_name, ST_Length(r.geometry::geography) AS length_meters\nFROM roads r\nWHERE ST_Intersects(r.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Cibola County%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.271
+  },
+  {
+    "id": 354,
+    "content": "```sql\nSELECT road_name\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(roads.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Tazewell County%' LIMIT 1))\nORDER BY ST_Length(roads.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.911
+  },
+  {
+    "id": 355,
+    "content": "```sql\nSELECT lake_name, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE waterway = 'canal'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Rio Grande County%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.911
+  },
+  {
+    "id": 356,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE waterway = 'river'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Greensville County%' AND border_type = 'county' LIMIT 1))\nORDER BY ST_Length(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.336
+  },
+  {
+    "id": 357,
+    "content": "```sql\nSELECT r.road_name, ST_Length(r.geometry::geography) AS length_meters\nFROM roads r\nWHERE r.highway = 'motorway'\n  AND ST_Intersects(r.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Monrovia%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 16.188
+  },
+  {
+    "id": 358,
+    "content": "```sql\nSELECT r.road_name, ST_Length(r.geometry::geography) AS length_meters\nFROM roads r\nWHERE ST_Intersects(r.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Seminole%' AND border_type = 'county' LIMIT 1))\nGROUP BY r.road_name, r.geometry\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 17.679
+  },
+  {
+    "id": 359,
+    "content": "```sql\nSELECT road_name\nFROM roads\nWHERE highway = 'motorway'\n  AND ST_Intersects(roads.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Schuyler%' LIMIT 1))\nORDER BY ST_Length(roads.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.486
+  },
+  {
+    "id": 360,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Summit County%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.699
+  },
+  {
+    "id": 361,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE waterway = 'river'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%cache county%' LIMIT 1))\nORDER BY ST_Length(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.419
+  },
+  {
+    "id": 362,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Georgia%' AND border_type = 'state' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.486
+  },
+  {
+    "id": 363,
+    "content": "```sql\nSELECT lake_name, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Halifax County%' LIMIT 1))\n  AND waterway = 'river'\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.699
+  },
+  {
+    "id": 364,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE waterway = 'river'\n  AND ST_Intersects(lakes.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Forsyth%' AND border_type = 'county' LIMIT 1))\nORDER BY ST_Length(lakes.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.977
+  },
+  {
+    "id": 365,
+    "content": "```sql\nSELECT lake_name, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Jefferson County%' AND border_type = 'county' LIMIT 1))\n  AND waterway = 'canal'\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 16.403
+  },
+  {
+    "id": 366,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE waterway = 'river'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Henry County%' AND region_name ILIKE '%Virginia%' LIMIT 1))\nORDER BY ST_Length(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.123
+  },
+  {
+    "id": 367,
+    "content": "```sql\nSELECT road_name\nFROM roads\nWHERE highway = 'footway'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Cuyahoga County%' LIMIT 1))\nORDER BY ST_Length(roads.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.274
+  },
+  {
+    "id": 368,
+    "content": "```sql\nSELECT road_name\nFROM roads\nWHERE highway = 'motorway'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Loudoun County%' AND region_name ILIKE '%Virginia%' LIMIT 1))\nORDER BY ST_Length(roads.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.766
+  },
+  {
+    "id": 369,
+    "content": "```sql\nSELECT lake_name, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE addr_city ILIKE '%tucson%' AND addr_state ILIKE '%arizona%' AND waterway = 'stream'\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 12.992
+  },
+  {
+    "id": 370,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE highway = 'footway'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Scarsdale%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.699
+  },
+  {
+    "id": 371,
+    "content": "```sql\nSELECT highway, road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE highway = 'motorway'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%San Diego%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.913
+  },
+  {
+    "id": 372,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Mesa%' AND border_type = 'county' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.271
+  },
+  {
+    "id": 373,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Dane County%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.421
+  },
+  {
+    "id": 374,
+    "content": "```sql\nSELECT lake_name, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE waterway = 'canal'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Arapahoe County%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.336
+  },
+  {
+    "id": 375,
+    "content": "```sql\nSELECT highway\nFROM roads\nWHERE highway = 'motorway'\n  AND ST_Intersects(roads.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%boston%' LIMIT 1))\nORDER BY ST_Length(roads.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.06
+  },
+  {
+    "id": 376,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Klamath County%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.631
+  },
+  {
+    "id": 377,
+    "content": "```sql\nSELECT r.road_name, ST_Length(r.geometry::geography) AS length_meters\nFROM roads r\nWHERE r.highway = 'footway'\n  AND ST_Intersects(r.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Ohio%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.761
+  },
+  {
+    "id": 378,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE waterway = 'river'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Wood County%' AND border_type = 'county' LIMIT 1))\nORDER BY ST_Length(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.907
+  },
+  {
+    "id": 379,
+    "content": "```sql\nSELECT lake_name, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Jackson County%' AND border_type = 'county' LIMIT 1))\n  AND waterway = 'river'\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.972
+  },
+  {
+    "id": 380,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE waterway = 'canal'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Washington County%' LIMIT 1))\nORDER BY ST_Length(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.633
+  },
+  {
+    "id": 381,
+    "content": "```sql\nSELECT lake_name, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Saguache%' AND border_type = 'county' LIMIT 1))\n  AND waterway = 'canal'\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 16.401
+  },
+  {
+    "id": 382,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Rio Grande County%' AND border_type = 'county' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.91
+  },
+  {
+    "id": 383,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Cabarrus County%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.632
+  },
+  {
+    "id": 384,
+    "content": "```sql\nSELECT road_name\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(roads.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Lafayette%' LIMIT 1))\nORDER BY ST_Length(roads.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.486
+  },
+  {
+    "id": 385,
+    "content": "```sql\nSELECT waterway AS river_type, lake_name AS river_name\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Brunswick%' LIMIT 1))\n  AND waterway = 'river'\nORDER BY ST_Length(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.763
+  },
+  {
+    "id": 386,
+    "content": "```sql\nSELECT lake_name, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE waterway = 'stream'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Georgia%' AND border_type = 'state' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.761
+  },
+  {
+    "id": 387,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE waterway = 'stream'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Walton County%' AND border_type = 'county' LIMIT 1))\nORDER BY ST_Length(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.123
+  },
+  {
+    "id": 388,
+    "content": "```sql\nSELECT lake_name, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE waterway = 'stream'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Milton%' AND border_type = 'city' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.974
+  },
+  {
+    "id": 389,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE highway = 'footway'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Raleigh%' AND region_name ILIKE '%North Carolina%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 16.401
+  },
+  {
+    "id": 390,
+    "content": "```sql\nSELECT lake_name, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Jasper County%' LIMIT 1))\n  AND waterway = 'river'\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.339
+  },
+  {
+    "id": 391,
+    "content": "```sql\nSELECT lake_name, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE waterway = 'canal'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Klamath County%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.764
+  },
+  {
+    "id": 392,
+    "content": "```sql\nSELECT lake_name, ST_Length(geometry::geography) AS length_meters\nFROM lakes\nWHERE waterway = 'canal' AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%united states%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.698
+  },
+  {
+    "id": 393,
+    "content": "```sql\nSELECT road_name, ST_Length(roads.geometry::geography) AS length_meters\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(roads.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Brentwood%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.549
+  },
+  {
+    "id": 394,
+    "content": "```sql\nSELECT r.road_name\nFROM roads r\nJOIN regions reg ON ST_Intersects(r.geometry::geography, reg.geometry::geography)\nWHERE reg.region_name ILIKE '%Hamilton County%' AND reg.border_type = 'county'\n  AND r.highway = 'motorway'\nORDER BY ST_Length(r.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 16.827
+  },
+  {
+    "id": 395,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%United States%' AND border_type = 'country' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.273
+  },
+  {
+    "id": 396,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Kentucky%' LIMIT 1))\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.484
+  },
+  {
+    "id": 397,
+    "content": "```sql\nSELECT road_name, ST_Length(geometry::geography) AS length_meters\nFROM roads\nWHERE ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%New Hampshire%' LIMIT 1))\n  AND highway = 'cycleway'\nORDER BY length_meters DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.122
+  },
+  {
+    "id": 398,
+    "content": "```sql\nSELECT road_name\nFROM roads\nWHERE highway = 'cycleway'\n  AND ST_Intersects(roads.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Beatrice%' AND border_type = 'city' LIMIT 1))\nORDER BY ST_Length(roads.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.761
+  },
+  {
+    "id": 399,
+    "content": "```sql\nSELECT road_name\nFROM roads\nWHERE highway = 'motorway'\n  AND ST_Intersects(roads.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Las Vegas%' LIMIT 1))\nORDER BY ST_Length(roads.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.271
+  }
+]

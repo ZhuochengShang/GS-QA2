@@ -1,0 +1,59 @@
+{
+  "answer_type": "distance",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "distance",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "distance_m": 5272.066049
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "distance_m": 5272.066049
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-106.960317 35.59114)',4326) AS pt\n),\nnearby_tiles AS (\n  SELECT d.rast\n  FROM public.dem_us d, origin o\n  WHERE d.rast && ST_Expand(o.pt, 1.0)\n),\nmasked AS (\n\t  SELECT ST_MapAlgebra(\n\t           rast,\n\t           1,\n\t           '32BF'::text,\n\t           'CASE WHEN [rast.val] > 1900 THEN [rast.val] ELSE NULL END'::text,\n\t           NULL::double precision\n\t         ) AS rast\n  FROM nearby_tiles\n),\nqualifying_pixels AS (\n  SELECT (pp).geom AS geom\n  FROM masked\n  CROSS JOIN LATERAL ST_PixelAsCentroids(rast, 1, TRUE) AS pp\n)\nSELECT MIN(ST_Distance(p.geom::geography, o.pt::geography)) AS distance_m\nFROM qualifying_pixels p, origin o;",
+  "id": "nearest_high_terrain+poi-15",
+  "model_output": "```sql\nWITH study_area_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-106.960317, 35.59114), 4326)::geography AS geom\n),\nelevation_raster_clip AS (\n  SELECT\n    (ST_DumpAsPolygons(r.rast, 1, TRUE)).*\n  FROM\n    public.dem_us r,\n    study_area_point p\n  WHERE\n    ST_Intersects(r.rast, p.geom)\n),\nabove_1900 AS (\n  SELECT\n    (geom) AS geom\n  FROM\n    elevation_raster_clip\n  WHERE\n    val > 1900\n),\nnearest_distance AS (\n  SELECT\n    ST_Distance(p.geom, a.geom) AS distance_meters\n  FROM\n    study_area_point p,\n    above_1900 a\n  ORDER BY\n    p.geom <-> a.geom\n  LIMIT 1\n)\nSELECT\n  distance_meters\nFROM\n  nearest_distance;\n```",
+  "predicted_exec": {
+    "error": "function st_intersects(raster, geography) does not exist\nLINE 11:     ST_Intersects(r.rast, p.geom)\n             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH study_area_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-106.960317, 35.59114), 4326)::geography AS geom\n),\nelevation_raster_clip AS (\n  SELECT\n    (ST_DumpAsPolygons(r.rast, 1, TRUE)).*\n  FROM\n    public.dem_us r,\n    study_area_point p\n  WHERE\n    ST_Intersects(r.rast, p.geom)\n),\nabove_1900 AS (\n  SELECT\n    (geom) AS geom\n  FROM\n    elevation_raster_clip\n  WHERE\n    val > 1900\n),\nnearest_distance AS (\n  SELECT\n    ST_Distance(p.geom, a.geom) AS distance_meters\n  FROM\n    study_area_point p,\n    above_1900 a\n  ORDER BY\n    p.geom <-> a.geom\n  LIMIT 1\n)\nSELECT\n  distance_meters\nFROM\n  nearest_distance;",
+  "predicted_sql_candidates": [
+    "WITH study_area_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-106.960317, 35.59114), 4326)::geography AS geom\n),\nelevation_raster_clip AS (\n  SELECT\n    (ST_DumpAsPolygons(r.rast, 1, TRUE)).*\n  FROM\n    public.dem_us r,\n    study_area_point p\n  WHERE\n    ST_Intersects(r.rast, p.geom)\n),\nabove_1900 AS (\n  SELECT\n    (geom) AS geom\n  FROM\n    elevation_raster_clip\n  WHERE\n    val > 1900\n),\nnearest_distance AS (\n  SELECT\n    ST_Distance(p.geom, a.geom) AS distance_meters\n  FROM\n    study_area_point p,\n    above_1900 a\n  ORDER BY\n    p.geom <-> a.geom\n  LIMIT 1\n)\nSELECT\n  distance_meters\nFROM\n  nearest_distance;"
+  ],
+  "query_type": "raster_only",
+  "question": "From Ojito Wilderness Study Area, San Luis, NM, what is the distance to the nearest cell of land above 1900 meters?",
+  "source_file": "nearest_high_terrain+poi.jsonl",
+  "source_stem": "nearest_high_terrain+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 48.04,
+    "total_seconds": 48.041
+  },
+  "usage": {
+    "completion_tokens": 224,
+    "prompt_tokens": 1645,
+    "total_tokens": 1869
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "answer_type": "distance+elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "distance+elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "addr_city": "Tigard",
+      "addr_housenumber": "12753",
+      "addr_postcode": "97223",
+      "addr_state": "OR",
+      "addr_street": "Southwest 68th Avenue",
+      "amenity": "university",
+      "distance": 0.032331,
+      "elevation": 85.0,
+      "geometry": "POINT (-122.747463 45.427886)",
+      "id": 51164,
+      "operator": "George Fox University",
+      "osm_id": 11061306203,
+      "phone": "+1-503-554-6150",
+      "poi_name": "Portland Seminary",
+      "website": "https://www.georgefox.edu/seminary/"
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "addr_city": "Tigard",
+        "addr_housenumber": "12753",
+        "addr_postcode": "97223",
+        "addr_state": "OR",
+        "addr_street": "Southwest 68th Avenue",
+        "amenity": "university",
+        "artwork_type": null,
+        "building": null,
+        "capacity": null,
+        "cuisine": null,
+        "delivery": null,
+        "description": null,
+        "distance": 0.032331,
+        "drive_through": null,
+        "elevation": 85.0,
+        "emergency": null,
+        "fast_food": null,
+        "fee": null,
+        "geometry": "0101000020E6100000751D4F70D6AF5EC072B499F9C4B64640",
+        "hairdresser": null,
+        "healthcare": null,
+        "historic": null,
+        "id": 51164,
+        "information": null,
+        "internet_access": null,
+        "leisure": null,
+        "museum": null,
+        "official_name": null,
+        "opening_hours": null,
+        "operator": "George Fox University",
+        "osm_id": 11061306203,
+        "outdoor_seating": null,
+        "parking": null,
+        "pastry_shop": null,
+        "phone": "+1-503-554-6150",
+        "poi_name": "Portland Seminary",
+        "resort": null,
+        "restaurant": null,
+        "school_type": null,
+        "shop": null,
+        "sport": null,
+        "sports": null,
+        "takeaway": null,
+        "toilets": null,
+        "tourism": null,
+        "website": "https://www.georgefox.edu/seminary/",
+        "wheelchair": null,
+        "wholesale": null,
+        "wikidata": null,
+        "zoo": null
+      }
+    ]
+  },
+  "gold_sql": "SELECT\n  p.*,\n  ST_Distance(\n    ST_GeomFromText('POINT (-122.747463 45.427886)',4326)::geography,\n    p.geometry::geography\n  ) AS distance,\n  elev.z AS elevation\nFROM pois p\nJOIN LATERAL (\n  SELECT ST_Value(d.rast, 1, p.geometry::geometry) AS z\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, p.geometry::geometry)\n  LIMIT 1\n) elev ON elev.z IS NOT NULL\nWHERE ST_DWithin(\n        p.geometry::geography,\n        ST_GeomFromText('POINT (-122.747463 45.427886)',4326)::geography,\n        4000\n      )\n  AND amenity = 'university';",
+  "id": "range+distance+elevation-18",
+  "model_output": "```sql\nWITH target_uni AS (\n  SELECT \n    ST_SetSRID(ST_GeomFromText('POINT (-122.747463 45.427886)'), 4326)::geography AS geom,\n    'Portland Seminary, Tigard, OR' AS name\n),\nsearch_area AS (\n  SELECT \n    ST_Buffer(ST_SetSRID(ST_GeomFromText('POINT (-122.747463 45.427886)'), 4326)::geography, 4000)::geometry AS buffer_geom\n),\nnearby_uni AS (\n  SELECT \n    'Strayer University, Charlotte, NC' AS name,\n    ST_SetSRID(ST_GeomFromText('POINT (-80.930371 35.139039)'), 4326)::geometry AS geom\n),\nfiltered_uni AS (\n  SELECT \n    nearby_uni.name,\n    nearby_uni.geom\n  FROM \n    nearby_uni,\n    search_area\n  WHERE \n    ST_DWithin(nearby_uni.geom::geography, search_area.buffer_geom::geography, 4000)\n),\nelevation AS (\n  SELECT \n    ST_Value(r.rast, f.geom) AS elevation\n  FROM \n    filtered_uni f,\n    public.dem_us r\n  WHERE \n    ST_Intersects(r.rast, f.geom)\n)\nSELECT \n  f.name,\n  ST_Distance(f.geom::geography, target_uni.geom::geography) AS distance_meters,\n  e.elevation\nFROM \n  filtered_uni f,\n  target_uni,\n  elevation e;\n```",
+  "predicted_exec": {
+    "error": "",
+    "output": []
+  },
+  "predicted_sql": "WITH target_uni AS (\n  SELECT \n    ST_SetSRID(ST_GeomFromText('POINT (-122.747463 45.427886)'), 4326)::geography AS geom,\n    'Portland Seminary, Tigard, OR' AS name\n),\nsearch_area AS (\n  SELECT \n    ST_Buffer(ST_SetSRID(ST_GeomFromText('POINT (-122.747463 45.427886)'), 4326)::geography, 4000)::geometry AS buffer_geom\n),\nnearby_uni AS (\n  SELECT \n    'Strayer University, Charlotte, NC' AS name,\n    ST_SetSRID(ST_GeomFromText('POINT (-80.930371 35.139039)'), 4326)::geometry AS geom\n),\nfiltered_uni AS (\n  SELECT \n    nearby_uni.name,\n    nearby_uni.geom\n  FROM \n    nearby_uni,\n    search_area\n  WHERE \n    ST_DWithin(nearby_uni.geom::geography, search_area.buffer_geom::geography, 4000)\n),\nelevation AS (\n  SELECT \n    ST_Value(r.rast, f.geom) AS elevation\n  FROM \n    filtered_uni f,\n    public.dem_us r\n  WHERE \n    ST_Intersects(r.rast, f.geom)\n)\nSELECT \n  f.name,\n  ST_Distance(f.geom::geography, target_uni.geom::geography) AS distance_meters,\n  e.elevation\nFROM \n  filtered_uni f,\n  target_uni,\n  elevation e;",
+  "predicted_sql_candidates": [
+    "WITH target_uni AS (\n  SELECT \n    ST_SetSRID(ST_GeomFromText('POINT (-122.747463 45.427886)'), 4326)::geography AS geom,\n    'Portland Seminary, Tigard, OR' AS name\n),\nsearch_area AS (\n  SELECT \n    ST_Buffer(ST_SetSRID(ST_GeomFromText('POINT (-122.747463 45.427886)'), 4326)::geography, 4000)::geometry AS buffer_geom\n),\nnearby_uni AS (\n  SELECT \n    'Strayer University, Charlotte, NC' AS name,\n    ST_SetSRID(ST_GeomFromText('POINT (-80.930371 35.139039)'), 4326)::geometry AS geom\n),\nfiltered_uni AS (\n  SELECT \n    nearby_uni.name,\n    nearby_uni.geom\n  FROM \n    nearby_uni,\n    search_area\n  WHERE \n    ST_DWithin(nearby_uni.geom::geography, search_area.buffer_geom::geography, 4000)\n),\nelevation AS (\n  SELECT \n    ST_Value(r.rast, f.geom) AS elevation\n  FROM \n    filtered_uni f,\n    public.dem_us r\n  WHERE \n    ST_Intersects(r.rast, f.geom)\n)\nSELECT \n  f.name,\n  ST_Distance(f.geom::geography, target_uni.geom::geography) AS distance_meters,\n  e.elevation\nFROM \n  filtered_uni f,\n  target_uni,\n  elevation e;"
+  ],
+  "query_type": "extended",
+  "question": "How far is a university from Portland Seminary, Tigard, OR within 4 kilometers, and what is its elevation?",
+  "source_file": "range+distance+elevation.jsonl",
+  "source_stem": "range+distance+elevation",
+  "timing": {
+    "execution_seconds": 0.035,
+    "generation_seconds": 79.607,
+    "total_seconds": 79.642
+  },
+  "usage": {
+    "completion_tokens": 373,
+    "prompt_tokens": 1768,
+    "total_tokens": 2141
+  }
+}

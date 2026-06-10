@@ -1,0 +1,1072 @@
+[
+  {
+    "id": 900,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 101.845
+  },
+  {
+    "id": 901,
+    "records": [
+      {
+        "output": [],
+        "error": "column p.wikipedia does not exist\nLINE 2: SELECT p.poi_name, p.wikidata, p.wikipedia\n                                       ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 902,
+    "records": [
+      {
+        "output": [
+          {
+            "park_name": "Herb Garden"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.161
+  },
+  {
+    "id": 903,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"region_name\" does not exist\nLINE 6: ... geometry FROM pois WHERE tourism = 'stadium' AND region_nam...\n                                                             ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 904,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 9:     AND wikipedia ILIKE '%Davis Partnership Architects and S...\n                ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 905,
+    "records": [
+      {
+        "output": [
+          {
+            "park_name": "Herb Garden"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.16
+  },
+  {
+    "id": 906,
+    "records": [
+      {
+        "output": [],
+        "error": "function pg_catalog.extract(unknown, text) does not exist\nLINE 5: ...IS NOT NULL AND EXTRACT(YEAR FROM CURRENT_DATE) - EXTRACT(YE...\n                                                             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 907,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 6: ...ometry FROM pois WHERE poi_name ILIKE '%zoo%' AND wikipedia ...\n                                                             ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 908,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "FLUXSpace",
+            "distance_meters": 9971.69290199
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.037
+  },
+  {
+    "id": 909,
+    "records": [
+      {
+        "output": [],
+        "error": "column r.addr_state does not exist\nLINE 8:   AND r.addr_state ILIKE '%AZ%'\n              ^\nHINT:  Perhaps you meant to reference the column \"p.addr_state\" or the column \"pr.addr_state\"."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 910,
+    "records": [
+      {
+        "output": [],
+        "error": "column t1.wikipedia does not exist\nLINE 2: SELECT t1.poi_name, t1.wikidata, t1.wikipedia\n                                         ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 911,
+    "records": [
+      {
+        "output": [],
+        "error": "column u.wikipedia does not exist\nLINE 9:   AND u.wikipedia ILIKE '%1911%'\n              ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 912,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.037
+  },
+  {
+    "id": 913,
+    "records": [
+      {
+        "output": [],
+        "error": "column p3.wikipedia does not exist\nLINE 17:           AND p3.wikipedia IS NOT NULL\n                       ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 914,
+    "records": [
+      {
+        "output": [],
+        "error": "syntax error at or near \"WHERE\"\nLINE 13: WHERE p.amenity = 'university'\n         ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 915,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.01
+  },
+  {
+    "id": 916,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.019
+  },
+  {
+    "id": 917,
+    "records": [
+      {
+        "output": [],
+        "error": "aggregate functions are not allowed in WHERE\nLINE 10: ... AND EXTRACT(YEAR FROM NOW()) - EXTRACT(YEAR FROM MIN(p.geom...\n                                                              ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 918,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.089
+  },
+  {
+    "id": 919,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 8:                     AND wikipedia ILIKE '%June 3, 1937%' \n                                ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 920,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.04
+  },
+  {
+    "id": 921,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.014
+  },
+  {
+    "id": 922,
+    "records": [
+      {
+        "output": [],
+        "error": "column p.wikipedia does not exist\nLINE 2: ... DISTINCT ON (p.poi_name) p.poi_name, p.wikidata, p.wikipedi...\n                                                             ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 923,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.185
+  },
+  {
+    "id": 924,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.989
+  },
+  {
+    "id": 925,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.014
+  },
+  {
+    "id": 926,
+    "records": [
+      {
+        "output": [],
+        "error": "more than one row returned by a subquery used as an expression"
+      }
+    ],
+    "run_seconds": 0.002
+  },
+  {
+    "id": 927,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.173
+  },
+  {
+    "id": 928,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Wayland University"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.031
+  },
+  {
+    "id": 929,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.036
+  },
+  {
+    "id": 930,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Panaewa Rainforest Zoo"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.042
+  },
+  {
+    "id": 931,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.023
+  },
+  {
+    "id": 932,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.032
+  },
+  {
+    "id": 933,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Tasting Room"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.027
+  },
+  {
+    "id": 934,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Homewood Suites"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.087
+  },
+  {
+    "id": 935,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.191
+  },
+  {
+    "id": 936,
+    "records": [
+      {
+        "output": [],
+        "error": "column r.addr_state does not exist\nLINE 10:                     AND r.addr_state = 'CO'\n                                 ^\nHINT:  Perhaps you meant to reference the column \"p.addr_state\"."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 937,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.096
+  },
+  {
+    "id": 938,
+    "records": [
+      {
+        "output": [],
+        "error": "column r.addr_state does not exist\nLINE 8:   AND r.addr_state ILIKE '%ky%'\n              ^\nHINT:  Perhaps you meant to reference the column \"p.addr_state\"."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 939,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.079
+  },
+  {
+    "id": 940,
+    "records": [
+      {
+        "output": [],
+        "error": "column p.wikipedia does not exist\nLINE 2: SELECT p.poi_name, p.wikidata, p.wikipedia\n                                       ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 941,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.02
+  },
+  {
+    "id": 942,
+    "records": [
+      {
+        "output": [
+          {
+            "park_name": "Herb Garden"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.158
+  },
+  {
+    "id": 943,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.07
+  },
+  {
+    "id": 944,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 7: ...try FROM pois WHERE poi_name ILIKE '%museum%' AND wikipedia ...\n                                                             ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 945,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"t1\"\nLINE 9: ... EXTRACT(YEAR FROM NOW()) - EXTRACT(YEAR FROM MIN(t1.geometr...\n                                                             ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 946,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.034
+  },
+  {
+    "id": 947,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Prairy Wind Animal Refuge"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.029
+  },
+  {
+    "id": 948,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.038
+  },
+  {
+    "id": 949,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.036
+  },
+  {
+    "id": 950,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.022
+  },
+  {
+    "id": 951,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Bergen County Zoological Park"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.037
+  },
+  {
+    "id": 952,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.061
+  },
+  {
+    "id": 953,
+    "records": [
+      {
+        "output": [
+          {
+            "park_name": "Herb Garden"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.272
+  },
+  {
+    "id": 954,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.019
+  },
+  {
+    "id": 955,
+    "records": [
+      {
+        "output": [],
+        "error": "argument of JOIN/ON must be type boolean, not type double precision\nLINE 4: JOIN parks p2 ON p1.geometry <-> p2.geometry\n                         ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 956,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.034
+  },
+  {
+    "id": 957,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.037
+  },
+  {
+    "id": 958,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.101
+  },
+  {
+    "id": 959,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.041
+  },
+  {
+    "id": 960,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.04
+  },
+  {
+    "id": 961,
+    "records": [
+      {
+        "output": [],
+        "error": "more than one row returned by a subquery used as an expression"
+      }
+    ],
+    "run_seconds": 0.002
+  },
+  {
+    "id": 962,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.033
+  },
+  {
+    "id": 963,
+    "records": [],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 964,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.032
+  },
+  {
+    "id": 965,
+    "records": [
+      {
+        "output": [],
+        "error": "column p2.wikipedia does not exist\nLINE 12:       AND p2.wikipedia IS NOT NULL\n                   ^\nHINT:  Perhaps you meant to reference the column \"p.wikipedia\"."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 966,
+    "records": [
+      {
+        "output": [],
+        "error": "column p.wikipedia does not exist\nLINE 2: SELECT p.poi_name, p.wikidata, p.wikipedia\n                                       ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 967,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.062
+  },
+  {
+    "id": 968,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.013
+  },
+  {
+    "id": 969,
+    "records": [
+      {
+        "output": [],
+        "error": "column t1.wikipedia does not exist\nLINE 2: SELECT t1.poi_name, t1.wikipedia, ST_Distance(t1.geometry::g...\n                            ^\nHINT:  Perhaps you meant to reference the column \"t2.wikipedia\"."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 970,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 6: ...y FROM pois WHERE poi_name ILIKE '%aquarium%' AND wikipedia ...\n                                                             ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 971,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.116
+  },
+  {
+    "id": 972,
+    "records": [
+      {
+        "output": [
+          {
+            "park_name": "Hermann Park Golf Course"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.272
+  },
+  {
+    "id": 973,
+    "records": [
+      {
+        "output": [],
+        "error": "column t1.wikipedia does not exist\nLINE 2: SELECT t1.poi_name, t1.wikipedia, t1.addr_state, t1.addr_cit...\n                            ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 974,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.03
+  },
+  {
+    "id": 975,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Prairy Wind Animal Refuge"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.054
+  },
+  {
+    "id": 976,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.038
+  },
+  {
+    "id": 977,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.053
+  },
+  {
+    "id": 978,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.091
+  },
+  {
+    "id": 979,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.075
+  },
+  {
+    "id": 980,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.042
+  },
+  {
+    "id": 981,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.028
+  },
+  {
+    "id": 982,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.147
+  },
+  {
+    "id": 983,
+    "records": [
+      {
+        "output": [
+          {
+            "park_name": "Jane M. Byrne Plaza",
+            "distance_meters": 23.32793503
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 44.851
+  },
+  {
+    "id": 984,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.164
+  },
+  {
+    "id": 985,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.041
+  },
+  {
+    "id": 986,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "University of Washington School of Medicine Spokane"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.039
+  },
+  {
+    "id": 987,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 12.233
+  },
+  {
+    "id": 988,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 9:       AND wikipedia ILIKE '%1830%'\n                  ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 989,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Texas Heart Institute - Denton A. Cooley Building",
+            "distance_meters": 420.1924651
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.061
+  },
+  {
+    "id": 990,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 9:                     AND wikipedia ILIKE '%1830%' \n                                ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 991,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.036
+  },
+  {
+    "id": 992,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 7: ...try FROM pois WHERE poi_name ILIKE '%museum%' AND wikipedia ...\n                                                             ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 993,
+    "records": [
+      {
+        "output": [],
+        "error": "column t2.wikipedia does not exist\nLINE 9:   AND t2.wikipedia ILIKE '%June 3, 1937%'\n              ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 994,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.096
+  },
+  {
+    "id": 995,
+    "records": [
+      {
+        "output": [],
+        "error": "function pg_catalog.extract(unknown, text) does not exist\nLINE 9:            AND EXTRACT(YEAR FROM (SELECT MIN(date_establishe...\n                       ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 996,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.151
+  },
+  {
+    "id": 997,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_ymin(geography) does not exist\nLINE 10:       AND EXTRACT(YEAR FROM ST_YMin(geometry::geography)) = ...\n                                     ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 998,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: ...FROM pois WHERE poi_name ILIKE '%attraction%' AND wikipedia ...\n                                                             ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 999,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Centro Cultural de Mexicali, Seminario Diocesano"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.027
+  }
+]

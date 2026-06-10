@@ -1,0 +1,119 @@
+{
+  "answer_type": "row/s",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "row/s",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "rowset_f1",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "addr_city": "Chicago",
+      "addr_housenumber": "2133",
+      "addr_postcode": "60614",
+      "addr_state": "IL",
+      "addr_street": "North Elston Avenue",
+      "description": "This is an indoor golf driving range simulator and entertainment center.",
+      "elevation": 178.0,
+      "geometry": "POINT (-87.670605 41.920519)",
+      "id": 267151,
+      "leisure": "golf_course",
+      "osm_id": 10186016485,
+      "poi_name": "The Green",
+      "website": "https://www.golfthegreen.com"
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "addr_city": "Chicago",
+        "addr_housenumber": "2133",
+        "addr_postcode": "60614",
+        "addr_state": "IL",
+        "addr_street": "North Elston Avenue",
+        "amenity": null,
+        "artwork_type": null,
+        "building": null,
+        "capacity": null,
+        "cuisine": null,
+        "delivery": null,
+        "description": "This is an indoor golf driving range simulator and entertainment center.",
+        "drive_through": null,
+        "elevation": 178.0,
+        "emergency": null,
+        "fast_food": null,
+        "fee": null,
+        "geometry": "0101000020E61000002EE23B31EBEA55C0A0ED878ED3F54440",
+        "hairdresser": null,
+        "healthcare": null,
+        "historic": null,
+        "id": 267151,
+        "information": null,
+        "internet_access": null,
+        "leisure": "golf_course",
+        "museum": null,
+        "official_name": null,
+        "opening_hours": null,
+        "operator": null,
+        "osm_id": 10186016485,
+        "outdoor_seating": null,
+        "parking": null,
+        "pastry_shop": null,
+        "phone": null,
+        "poi_name": "The Green",
+        "resort": null,
+        "restaurant": null,
+        "school_type": null,
+        "shop": null,
+        "sport": null,
+        "sports": null,
+        "takeaway": null,
+        "toilets": null,
+        "tourism": null,
+        "website": "https://www.golfthegreen.com",
+        "wheelchair": null,
+        "wholesale": null,
+        "wikidata": null,
+        "zoo": null
+      }
+    ]
+  },
+  "gold_sql": "SELECT p.*, elev.z AS elevation\nFROM pois p\nJOIN LATERAL (\n  SELECT ST_Value(d.rast, 1, p.geometry::geometry) AS z\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, p.geometry::geometry)\n  LIMIT 1\n) elev ON elev.z IS NOT NULL\nWHERE ST_DWithin(p.geometry::geography, ST_GeomFromText('POINT (-87.640721 41.892756)',4326)::geography, 5000)\n  AND p.leisure = 'golf_course'\n  AND elev.z >= 140;",
+  "id": "range+name+elevation_condition-14",
+  "model_output": "```sql\nWITH museum_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM pois\n  WHERE poi_name ILIKE 'National Public Housing Museum'\n    AND addr_city = 'Chicago'\n    AND addr_state = 'IL'\n),\ngolf_courses AS (\n  SELECT \n    poi_name,\n    geom\n  FROM (\n    SELECT \n      p.poi_name,\n      p.geometry::geometry AS geom\n    FROM pois p\n    JOIN museum_geom m ON ST_DWithin(p.geometry::geometry, m.geom, 5000)\n    WHERE p.leisure = 'golf_course'\n  ) sub\n),\nelevation_check AS (\n  SELECT \n    gc.poi_name,\n    gc.geom,\n    (ST_ValueCount(ST_Clip(r.rast, gc.geom, TRUE), 1)).val AS elevation\n  FROM golf_courses gc\n  JOIN public.dem_us r ON ST_Intersects(r.rast, gc.geom)\n)\nSELECT \n  poi_name\nFROM elevation_check\nWHERE elevation >= 140;\n```",
+  "predicted_exec": {
+    "error": "could not identify column \"val\" in record data type\nLINE 25:     (ST_ValueCount(ST_Clip(r.rast, gc.geom, TRUE), 1)).val A...\n              ^",
+    "output": []
+  },
+  "predicted_sql": "WITH museum_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM pois\n  WHERE poi_name ILIKE 'National Public Housing Museum'\n    AND addr_city = 'Chicago'\n    AND addr_state = 'IL'\n),\ngolf_courses AS (\n  SELECT \n    poi_name,\n    geom\n  FROM (\n    SELECT \n      p.poi_name,\n      p.geometry::geometry AS geom\n    FROM pois p\n    JOIN museum_geom m ON ST_DWithin(p.geometry::geometry, m.geom, 5000)\n    WHERE p.leisure = 'golf_course'\n  ) sub\n),\nelevation_check AS (\n  SELECT \n    gc.poi_name,\n    gc.geom,\n    (ST_ValueCount(ST_Clip(r.rast, gc.geom, TRUE), 1)).val AS elevation\n  FROM golf_courses gc\n  JOIN public.dem_us r ON ST_Intersects(r.rast, gc.geom)\n)\nSELECT \n  poi_name\nFROM elevation_check\nWHERE elevation >= 140;",
+  "predicted_sql_candidates": [
+    "WITH museum_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM pois\n  WHERE poi_name ILIKE 'National Public Housing Museum'\n    AND addr_city = 'Chicago'\n    AND addr_state = 'IL'\n),\ngolf_courses AS (\n  SELECT \n    poi_name,\n    geom\n  FROM (\n    SELECT \n      p.poi_name,\n      p.geometry::geometry AS geom\n    FROM pois p\n    JOIN museum_geom m ON ST_DWithin(p.geometry::geometry, m.geom, 5000)\n    WHERE p.leisure = 'golf_course'\n  ) sub\n),\nelevation_check AS (\n  SELECT \n    gc.poi_name,\n    gc.geom,\n    (ST_ValueCount(ST_Clip(r.rast, gc.geom, TRUE), 1)).val AS elevation\n  FROM golf_courses gc\n  JOIN public.dem_us r ON ST_Intersects(r.rast, gc.geom)\n)\nSELECT \n  poi_name\nFROM elevation_check\nWHERE elevation >= 140;"
+  ],
+  "query_type": "extended",
+  "question": "I'm looking for a golf course within 5 kilometers of National Public Housing Museum, Chicago, IL with elevation at least 140 m.",
+  "source_file": "range+name+elevation_condition.jsonl",
+  "source_stem": "range+name+elevation_condition",
+  "timing": {
+    "execution_seconds": 0.002,
+    "generation_seconds": 45.634,
+    "total_seconds": 45.636
+  },
+  "usage": {
+    "completion_tokens": 213,
+    "prompt_tokens": 1781,
+    "total_tokens": 1994
+  }
+}

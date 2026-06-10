@@ -1,0 +1,59 @@
+{
+  "answer_type": "percent",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "percent",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer_percent": 0.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer_percent": 0.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('MULTIPOLYGON (((-89.531651 31.41947, -89.527359 31.419509, -89.527441 31.422844, -89.531585 31.422846, -89.531651 31.41947)), ((-89.531847 31.429262, -89.531536 31.433955, -89.536634 31.433951, -89.54027 31.433876, -89.54028 31.433876, -89.541259 31.433863, -89.544949 31.433895, -89.552839 31.433972, -89.552708 31.432904, -89.552779 31.430636, -89.55275 31.428317, -89.552692 31.426456, -89.559067 31.426541, -89.55899 31.419868, -89.558924 31.415422, -89.558888 31.413864, -89.561253 31.413783, -89.561272 31.412225, -89.563111 31.412178, -89.565282 31.412213, -89.565361 31.410708, -89.56536 31.410584, -89.565428 31.408181, -89.564661 31.408202, -89.560637 31.408216, -89.558256 31.408231, -89.557815 31.408238, -89.556854 31.408258, -89.5528 31.408294, -89.552797 31.407345, -89.552688 31.404738, -89.551581 31.404749, -89.545779 31.40471, -89.545757 31.403318, -89.544357 31.40335, -89.544251 31.397737, -89.544169 31.391892, -89.544142 31.390919, -89.544148 31.390187, -89.53584 31.390136, -89.535802 31.397445, -89.531476 31.3974, -89.531524 31.399271, -89.535812 31.399271, -89.535835 31.401095, -89.53779 31.400981, -89.539922 31.400923, -89.539942 31.402521, -89.539938 31.404684, -89.539978 31.412026, -89.537648 31.412015, -89.537689 31.417538, -89.537258 31.41754, -89.536774 31.417544, -89.536201 31.417548, -89.536117 31.417556, -89.536037 31.41758, -89.535973 31.417626, -89.535926 31.417688, -89.535894 31.417755, -89.535879 31.417825, -89.535874 31.417896, -89.535875 31.418034, -89.535889 31.418431, -89.535868 31.419122, -89.534112 31.419144, -89.531614 31.419166, -89.531142 31.419167, -89.528355 31.419175, -89.527269 31.419173, -89.526942 31.419173, -89.525633 31.419171, -89.525052 31.41917, -89.523838 31.419165, -89.521723 31.419157, -89.519503 31.419124, -89.519452 31.419123, -89.516702 31.419106, -89.516721 31.419304, -89.516719 31.420004, -89.516678 31.4213, -89.516679 31.422556, -89.516736 31.424852, -89.518978 31.424874, -89.519267 31.428768, -89.519284 31.428892, -89.519556 31.428895, -89.521675 31.428909, -89.522295 31.428704, -89.523081 31.428577, -89.525126 31.42867, -89.525354 31.42838, -89.525347 31.427884, -89.52499 31.427559, -89.527484 31.425728, -89.527536 31.426601, -89.529016 31.426567, -89.531669 31.426491, -89.531847 31.429262)))',4326) AS geom\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.geom) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.geom)\n),\nhist AS (\n  SELECT\n    (vc).value::double precision AS val,\n    (vc).count::double precision AS cnt\n  FROM clipped c\n  CROSS JOIN LATERAL ST_ValueCount(c.rast, 1, TRUE) AS vc\n)\nSELECT\n  (\n    COALESCE(SUM(CASE WHEN val >= 460 THEN cnt ELSE 0 END), 0)\n    / NULLIF(SUM(cnt), 0)\n  ) * 100.0 AS answer_percent\nFROM hist;",
+  "id": "elevation+coverage-3",
+  "model_output": "```sql\nWITH sumrall_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Sumrall' AND border_type = 'city'\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM sumrall_geom), true) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM sumrall_geom))\n),\nelevation_stats AS (\n  SELECT\n    SUM(ST_Count(rast)) AS total_pixels,\n    SUM(ST_Count(ST_Reclass(rast, '1=1 where pixel>460'))::int) AS above_460_pixels\n  FROM clipped_dem\n)\nSELECT\n  ROUND((above_460_pixels * 100.0 / total_pixels)::numeric, 2) AS percent_above_460\nFROM elevation_stats;\n```",
+  "predicted_exec": {
+    "error": "malformed record literal: \"1=1 where pixel>460\"\nLINE 14:     SUM(ST_Count(ST_Reclass(rast, '1=1 where pixel>460'))::i...\n                                           ^\nDETAIL:  Missing left parenthesis.",
+    "output": []
+  },
+  "predicted_sql": "WITH sumrall_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Sumrall' AND border_type = 'city'\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM sumrall_geom), true) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM sumrall_geom))\n),\nelevation_stats AS (\n  SELECT\n    SUM(ST_Count(rast)) AS total_pixels,\n    SUM(ST_Count(ST_Reclass(rast, '1=1 where pixel>460'))::int) AS above_460_pixels\n  FROM clipped_dem\n)\nSELECT\n  ROUND((above_460_pixels * 100.0 / total_pixels)::numeric, 2) AS percent_above_460\nFROM elevation_stats;",
+  "predicted_sql_candidates": [
+    "WITH sumrall_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Sumrall' AND border_type = 'city'\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM sumrall_geom), true) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM sumrall_geom))\n),\nelevation_stats AS (\n  SELECT\n    SUM(ST_Count(rast)) AS total_pixels,\n    SUM(ST_Count(ST_Reclass(rast, '1=1 where pixel>460'))::int) AS above_460_pixels\n  FROM clipped_dem\n)\nSELECT\n  ROUND((above_460_pixels * 100.0 / total_pixels)::numeric, 2) AS percent_above_460\nFROM elevation_stats;"
+  ],
+  "query_type": "raster_only",
+  "question": "In Sumrall, Mississippi, what percentage of the area is at or above 460 m in elevation?",
+  "source_file": "elevation+coverage.jsonl",
+  "source_stem": "elevation+coverage",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 43.7,
+    "total_seconds": 43.701
+  },
+  "usage": {
+    "completion_tokens": 192,
+    "prompt_tokens": 1546,
+    "total_tokens": 1738
+  }
+}

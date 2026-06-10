@@ -1,0 +1,32 @@
+{
+  "stem": "elevation_average+name",
+  "query_type": "raster_vector",
+  "model": "Qwen/Qwen3-32B-AWQ",
+  "provider": "openai",
+  "question_count": 20,
+  "generation_timeouts": 0,
+  "successful_sql_generation": 20,
+  "successful_sql_execution": 0,
+  "timing": {
+    "total_wall_seconds": 1395.843,
+    "mean_generation_seconds": 69.791,
+    "mean_execution_seconds": 0.001,
+    "mean_total_seconds": 69.792,
+    "max_total_seconds": 100.737
+  },
+  "tokens": {
+    "total_prompt_tokens": 32873,
+    "total_completion_tokens": 6381,
+    "total_tokens": 39254,
+    "mean_prompt_tokens": 1643.7,
+    "mean_completion_tokens": 319.1,
+    "mean_total_tokens": 1962.7
+  },
+  "evaluation": {
+    "exact_matches": 0,
+    "numeric_tolerance_accuracy": null,
+    "mean_absolute_error": null,
+    "text_exact_accuracy": null,
+    "mean_rowset_f1": 0.0
+  }
+}

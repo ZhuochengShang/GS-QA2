@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 23.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 23.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-97.053354 36.81074, -97.05346 36.811838, -97.052673 36.811841, -97.049614 36.811855, -97.04962 36.812234, -97.050021 36.812212, -97.050046 36.812539, -97.050083 36.813011, -97.049452 36.813023, -97.049442 36.812628, -97.04944 36.812542, -97.049393 36.81074, -97.049051 36.810741, -97.04599 36.81075, -97.045859 36.810747, -97.04546 36.81074, -97.04532 36.810738, -97.045504 36.810425, -97.04556 36.810321, -97.04594 36.809622, -97.046176 36.809191, -97.046228 36.809043, -97.046391 36.808591, -97.046403 36.808555, -97.04644 36.80845, -97.046453 36.808415, -97.046529 36.808259, -97.04676 36.807795, -97.047298 36.806712, -97.047326 36.806658, -97.047816 36.805811, -97.047708 36.805665, -97.048619 36.804013, -97.048923 36.803463, -97.049329 36.803438, -97.04933 36.80362, -97.049328 36.803694, -97.049308 36.804465, -97.049302 36.804722, -97.0493 36.80481, -97.049299 36.804842, -97.049296 36.805205, -97.049296 36.805327, -97.050331 36.80534, -97.050656 36.805345, -97.050716 36.806361, -97.052481 36.806329, -97.053349 36.806314, -97.053335 36.806482, -97.053301 36.806983, -97.053764 36.806986, -97.053873 36.806987, -97.053888 36.809774, -97.053894 36.81074, -97.053786 36.81074, -97.053462 36.81074, -97.053354 36.81074))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n),\nstats AS (\n  SELECT ST_SummaryStats(ST_Union(rast)) AS s\n  FROM clipped\n)\nSELECT (s).max - (s).min AS elevation\nFROM stats;",
+  "id": "elevation_range+region-13",
+  "model_output": "```sql\nWITH kildare_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Kildare' AND border_type ILIKE 'city'\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM kildare_geom), TRUE) AS clipped_raster\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM kildare_geom))\n)\nSELECT \n  MAX(ST_Value(clipped_raster, 1)) - MIN(ST_Value(clipped_raster, 1)) AS vertical_range\nFROM clipped_dem;\n```",
+  "predicted_exec": {
+    "error": "function st_value(raster, integer) does not exist\nLINE 12:   MAX(ST_Value(clipped_raster, 1)) - MIN(ST_Value(clipped_ra...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH kildare_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Kildare' AND border_type ILIKE 'city'\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM kildare_geom), TRUE) AS clipped_raster\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM kildare_geom))\n)\nSELECT \n  MAX(ST_Value(clipped_raster, 1)) - MIN(ST_Value(clipped_raster, 1)) AS vertical_range\nFROM clipped_dem;",
+  "predicted_sql_candidates": [
+    "WITH kildare_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Kildare' AND border_type ILIKE 'city'\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM kildare_geom), TRUE) AS clipped_raster\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM kildare_geom))\n)\nSELECT \n  MAX(ST_Value(clipped_raster, 1)) - MIN(ST_Value(clipped_raster, 1)) AS vertical_range\nFROM clipped_dem;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the vertical range across Kildare, Oklahoma?",
+  "source_file": "elevation_range+region.jsonl",
+  "source_stem": "elevation_range+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 28.131,
+    "total_seconds": 28.132
+  },
+  "usage": {
+    "completion_tokens": 132,
+    "prompt_tokens": 1517,
+    "total_tokens": 1649
+  }
+}

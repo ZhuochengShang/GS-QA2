@@ -1,0 +1,63 @@
+{
+  "answer_type": "name",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "name",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer_name": "Southeast Anna Marie Court",
+      "slope_deg_3": 1.180011,
+      "slope_deg_4": 1.687554
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer_name": "Southeast Anna Marie Court",
+        "slope_deg_3": 1.180011,
+        "slope_deg_4": 1.687554
+      }
+    ]
+  },
+  "gold_sql": "WITH route3 AS (\n  SELECT ST_GeomFromText('LINESTRING (-123.104083 46.164628, -123.104123 46.165938, -123.104199 46.167398)', 4326)::geometry AS geom\n),\nroute4 AS (\n  SELECT ST_GeomFromText('LINESTRING (-122.589431 45.416123, -122.589455 45.416843, -122.589474 45.416946, -122.589516 45.417068, -122.589516 45.417144, -122.589519 45.417494)', 4326)::geometry AS geom\n),\ndem_clip3 AS (\n  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast\n  FROM public.dem_us d, route3 r\n  WHERE ST_Intersects(d.rast, r.geom)\n),\ndem_clip4 AS (\n  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast\n  FROM public.dem_us d, route4 r\n  WHERE ST_Intersects(d.rast, r.geom)\n),\nsegments AS (\n  SELECT 1 AS route_id, (ST_DumpSegments(r.geom)).geom AS seg FROM route3 r\n  UNION ALL\n  SELECT 2 AS route_id, (ST_DumpSegments(r.geom)).geom AS seg FROM route4 r\n),\nendpoints AS (\n  SELECT\n    route_id,\n    ST_StartPoint(seg)         AS p1,\n    ST_EndPoint(seg)           AS p2,\n    ST_Length(seg::geography)  AS seg_len_m\n  FROM segments\n),\nelev AS (\n  SELECT\n    e.route_id,\n    e.seg_len_m,\n    CASE WHEN e.route_id = 1 THEN ST_Value(dc3.rast, 1, e.p1)\n         ELSE ST_Value(dc4.rast, 1, e.p1) END AS z1,\n    CASE WHEN e.route_id = 1 THEN ST_Value(dc3.rast, 1, e.p2)\n         ELSE ST_Value(dc4.rast, 1, e.p2) END AS z2\n  FROM endpoints e, dem_clip3 dc3, dem_clip4 dc4\n),\ngrades AS (\n  SELECT\n    route_id,\n    seg_len_m,\n    CASE WHEN seg_len_m > 0 THEN ABS(z2 - z1) / seg_len_m END AS grade\n  FROM elev\n  WHERE z1 IS NOT NULL AND z2 IS NOT NULL\n),\navg_grade AS (\n  SELECT\n    route_id,\n    SUM(grade * seg_len_m) / NULLIF(SUM(seg_len_m), 0) AS g\n  FROM grades\n  WHERE grade IS NOT NULL\n  GROUP BY route_id\n)\nSELECT\n  CASE WHEN a1.g >= a2.g THEN 'Mayger Fill Road' ELSE 'Southeast Anna Marie Court' END AS answer_name,\n  DEGREES(ATAN(a1.g)) AS slope_deg_3,\n  DEGREES(ATAN(a2.g)) AS slope_deg_4\nFROM avg_grade a1\nJOIN avg_grade a2\n  ON a1.route_id = 1 AND a2.route_id = 2\nWHERE a1.g IS NOT NULL AND a2.g IS NOT NULL;",
+  "id": "slope+compare_route-3",
+  "model_output": "```sql\nWITH road_geoms AS (\n  SELECT \n    '[3]' AS id,\n    ST_GeomFromText('LINESTRING (-123.104083 46.164628, -123.104123 46.165938, -123.104199 46.167398)', 4326)::geometry AS geom\n  UNION ALL\n  SELECT \n    '[4]' AS id,\n    ST_GeomFromText('LINESTRING (-122.589431 45.416123, -122.589455 45.416843, -122.589474 45.416946, -122.589516 45.417068, -122.589516 45.417144, -122.589519 45.417494)', 4326)::geometry AS geom\n),\nslope_analysis AS (\n  SELECT\n    r.id,\n    ST_Avg(ST_Slope(ST_Clip(rast, true, geom), 1)) AS avg_slope\n  FROM\n    road_geoms r\n    CROSS JOIN public.dem_us d\n  WHERE\n    ST_Intersects(d.rast, r.geom)\n  GROUP BY\n    r.id, r.geom\n)\nSELECT\n  CASE\n    WHEN s1.avg_slope > s2.avg_slope THEN '[3]'\n    WHEN s1.avg_slope < s2.avg_slope THEN '[4]'\n    ELSE 'Equal'\n  END AS higher_slope_road,\n  s1.avg_slope AS slope_road_3,\n  s2.avg_slope AS slope_road_4\nFROM\n  slope_analysis s1\n  JOIN slope_analysis s2 ON s1.id = '[3]' AND s2.id = '[4]';\n```",
+  "predicted_exec": {
+    "error": "function st_clip(raster, boolean, geometry) does not exist\nLINE 13:     ST_Avg(ST_Slope(ST_Clip(rast, true, geom), 1)) AS avg_sl...\n                             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH road_geoms AS (\n  SELECT \n    '[3]' AS id,\n    ST_GeomFromText('LINESTRING (-123.104083 46.164628, -123.104123 46.165938, -123.104199 46.167398)', 4326)::geometry AS geom\n  UNION ALL\n  SELECT \n    '[4]' AS id,\n    ST_GeomFromText('LINESTRING (-122.589431 45.416123, -122.589455 45.416843, -122.589474 45.416946, -122.589516 45.417068, -122.589516 45.417144, -122.589519 45.417494)', 4326)::geometry AS geom\n),\nslope_analysis AS (\n  SELECT\n    r.id,\n    ST_Avg(ST_Slope(ST_Clip(rast, true, geom), 1)) AS avg_slope\n  FROM\n    road_geoms r\n    CROSS JOIN public.dem_us d\n  WHERE\n    ST_Intersects(d.rast, r.geom)\n  GROUP BY\n    r.id, r.geom\n)\nSELECT\n  CASE\n    WHEN s1.avg_slope > s2.avg_slope THEN '[3]'\n    WHEN s1.avg_slope < s2.avg_slope THEN '[4]'\n    ELSE 'Equal'\n  END AS higher_slope_road,\n  s1.avg_slope AS slope_road_3,\n  s2.avg_slope AS slope_road_4\nFROM\n  slope_analysis s1\n  JOIN slope_analysis s2 ON s1.id = '[3]' AND s2.id = '[4]';",
+  "predicted_sql_candidates": [
+    "WITH road_geoms AS (\n  SELECT \n    '[3]' AS id,\n    ST_GeomFromText('LINESTRING (-123.104083 46.164628, -123.104123 46.165938, -123.104199 46.167398)', 4326)::geometry AS geom\n  UNION ALL\n  SELECT \n    '[4]' AS id,\n    ST_GeomFromText('LINESTRING (-122.589431 45.416123, -122.589455 45.416843, -122.589474 45.416946, -122.589516 45.417068, -122.589516 45.417144, -122.589519 45.417494)', 4326)::geometry AS geom\n),\nslope_analysis AS (\n  SELECT\n    r.id,\n    ST_Avg(ST_Slope(ST_Clip(rast, true, geom), 1)) AS avg_slope\n  FROM\n    road_geoms r\n    CROSS JOIN public.dem_us d\n  WHERE\n    ST_Intersects(d.rast, r.geom)\n  GROUP BY\n    r.id, r.geom\n)\nSELECT\n  CASE\n    WHEN s1.avg_slope > s2.avg_slope THEN '[3]'\n    WHEN s1.avg_slope < s2.avg_slope THEN '[4]'\n    ELSE 'Equal'\n  END AS higher_slope_road,\n  s1.avg_slope AS slope_road_3,\n  s2.avg_slope AS slope_road_4\nFROM\n  slope_analysis s1\n  JOIN slope_analysis s2 ON s1.id = '[3]' AND s2.id = '[4]';"
+  ],
+  "query_type": "raster_only",
+  "question": "Does Mayger Fill Road have a higher average slope than Southeast Anna Marie Court?",
+  "source_file": "slope+compare_route.jsonl",
+  "source_stem": "slope+compare_route",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 101.783,
+    "total_seconds": 101.784
+  },
+  "usage": {
+    "completion_tokens": 455,
+    "prompt_tokens": 1745,
+    "total_tokens": 2200
+  }
+}

@@ -1,0 +1,502 @@
+[
+  {
+    "id": 0,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'university'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Levy%' AND region_name ILIKE '%Florida%' LIMIT 1));\n```",
+    "run_seconds": 12.731
+  },
+  {
+    "id": 1,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Kentucky%' LIMIT 1))\n  AND leisure = 'golf_course';\n```",
+    "run_seconds": 11.614
+  },
+  {
+    "id": 2,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'cafe'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%New Hampshire%' LIMIT 1));\n```",
+    "run_seconds": 10.952
+  },
+  {
+    "id": 3,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'theme_park'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Springfield%' AND border_type = 'city' LIMIT 1)::geography);\n```",
+    "run_seconds": 13.46
+  },
+  {
+    "id": 4,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%United States%' LIMIT 1));\n```",
+    "run_seconds": 9.617
+  },
+  {
+    "id": 5,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Georgia%' AND border_type = 'state' LIMIT 1));\n```",
+    "run_seconds": 10.875
+  },
+  {
+    "id": 6,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Bayonne%' LIMIT 1))\nAND leisure = 'garden';\n```",
+    "run_seconds": 11.082
+  },
+  {
+    "id": 7,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'viewpoint'\n  AND addr_state ILIKE '%georgia%';\n```",
+    "run_seconds": 6.819
+  },
+  {
+    "id": 8,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE tourism = 'zoo'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Hauppauge%' LIMIT 1)::geography);\n```",
+    "run_seconds": 11.506
+  },
+  {
+    "id": 9,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Fort Lauderdale%' AND border_type = 'city' LIMIT 1));\n```",
+    "run_seconds": 11.08
+  },
+  {
+    "id": 10,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'restaurant'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Denver%' LIMIT 1)::geography);\n```",
+    "run_seconds": 11.287
+  },
+  {
+    "id": 11,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Monroe County%' AND region_name ILIKE '%Tennessee%' LIMIT 1))\n  AND leisure = 'golf_course';\n```",
+    "run_seconds": 13.673
+  },
+  {
+    "id": 12,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'cafe'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Gloucester County%' AND region_name ILIKE '%Virginia%' LIMIT 1)::geography);\n```",
+    "run_seconds": 13.639
+  },
+  {
+    "id": 13,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE tourism = 'zoo'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Edgecombe County%' LIMIT 1)::geography);\n```",
+    "run_seconds": 11.505
+  },
+  {
+    "id": 14,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE tourism = 'gallery'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%St. Petersburg%' LIMIT 1)::geography);\n```",
+    "run_seconds": 11.292
+  },
+  {
+    "id": 15,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'hotel'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Schaumburg%' LIMIT 1)::geography);\n```",
+    "run_seconds": 11.719
+  },
+  {
+    "id": 16,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Springfield%' AND region_name ILIKE '%Illinois%' LIMIT 1))\n  AND leisure = 'garden';\n```",
+    "run_seconds": 13.215
+  },
+  {
+    "id": 17,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Pennsylvania%' LIMIT 1))\nAND leisure = 'golf_course';\n```",
+    "run_seconds": 11.294
+  },
+  {
+    "id": 18,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'hospital'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Clearwater%' LIMIT 1)::geography);\n```",
+    "run_seconds": 11.348
+  },
+  {
+    "id": 19,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'cafe'\n  AND addr_city ILIKE '%lake city%'\n  AND addr_state ILIKE '%michigan%';\n```",
+    "run_seconds": 9.238
+  },
+  {
+    "id": 20,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'museum'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Newport%' LIMIT 1)::geography);\n```",
+    "run_seconds": 11.514
+  },
+  {
+    "id": 21,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Kalamazoo%' AND border_type = 'county' LIMIT 1)::geography)\n  AND tourism = 'attraction';\n```",
+    "run_seconds": 13.211
+  },
+  {
+    "id": 22,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%United States%' LIMIT 1))\n  AND leisure = 'golf_course';\n```",
+    "run_seconds": 11.512
+  },
+  {
+    "id": 23,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'fast_food'\n  AND addr_state ILIKE '%Louisiana%';\n```",
+    "run_seconds": 6.915
+  },
+  {
+    "id": 24,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Geauga%' AND region_name ILIKE '%Ohio%' LIMIT 1))\n  AND leisure = 'golf_course';\n```",
+    "run_seconds": 14.094
+  },
+  {
+    "id": 25,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Contains(\n  (SELECT geometry FROM regions WHERE region_name ILIKE '%Crawford County%' AND region_name ILIKE '%Arkansas%' LIMIT 1)::geography,\n  parks.geometry::geography\n);\n```",
+    "run_seconds": 13.203
+  },
+  {
+    "id": 26,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Lufkin%' AND border_type = 'city' LIMIT 1))\n  AND leisure = 'golf_course';\n```",
+    "run_seconds": 14.086
+  },
+  {
+    "id": 27,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'zoo'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Georgia%' AND border_type = 'state' LIMIT 1)::geography);\n```",
+    "run_seconds": 13.943
+  },
+  {
+    "id": 28,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Georgetown%' LIMIT 1))\n  AND leisure = 'golf_course';\n```",
+    "run_seconds": 12.373
+  },
+  {
+    "id": 29,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'restaurant'\n  AND addr_city ILIKE '%seattle%';\n```",
+    "run_seconds": 6.992
+  },
+  {
+    "id": 30,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'museum'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Kit Carson%' AND border_type = 'county' LIMIT 1)::geography);\n```",
+    "run_seconds": 13.753
+  },
+  {
+    "id": 31,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'gallery'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Prince George''s County%' LIMIT 1)::geography);\n```",
+    "run_seconds": 12.618
+  },
+  {
+    "id": 32,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE tourism = 'aquarium'\n  AND addr_city ILIKE '%west palm beach%'\n  AND addr_state ILIKE '%florida%';\n```",
+    "run_seconds": 9.477
+  },
+  {
+    "id": 33,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Gwinnett%' AND border_type = 'county' LIMIT 1));\n```",
+    "run_seconds": 11.756
+  },
+  {
+    "id": 34,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Charleston County%' LIMIT 1)::geography)\n  AND tourism = 'zoo';\n```",
+    "run_seconds": 11.877
+  },
+  {
+    "id": 35,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'restaurant'\n  AND addr_country IS NOT NULL\n  AND addr_country ILIKE '%united states%';\n```",
+    "run_seconds": 9.052
+  },
+  {
+    "id": 36,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_Contains(\n  (SELECT geometry FROM regions WHERE region_name ILIKE '%Kennebec County%' LIMIT 1)::geography,\n  pois.geometry::geography\n)\nAND amenity = 'university';\n```",
+    "run_seconds": 13.152
+  },
+  {
+    "id": 37,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'cafe'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Charleston%' AND region_name ILIKE '%West Virginia%' LIMIT 1)::geography);\n```",
+    "run_seconds": 14.201
+  },
+  {
+    "id": 38,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Broome County%' AND border_type = 'county' LIMIT 1))\n  AND leisure = 'garden';\n```",
+    "run_seconds": 13.869
+  },
+  {
+    "id": 39,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'gallery'\n  AND addr_county ILIKE '%anne arundel%'\n  AND addr_state ILIKE '%maryland%';\n```",
+    "run_seconds": 10.032
+  },
+  {
+    "id": 40,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE tourism = 'gallery'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Corning%' LIMIT 1)::geography);\n```",
+    "run_seconds": 11.877
+  },
+  {
+    "id": 41,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'cafe'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Collin%' AND region_name ILIKE '%Texas%' LIMIT 1)::geography);\n```",
+    "run_seconds": 13.214
+  },
+  {
+    "id": 42,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'hotel'\n  AND addr_state ILIKE '%georgia%';\n```",
+    "run_seconds": 6.607
+  },
+  {
+    "id": 43,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'cafe'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Ohio%' LIMIT 1)::geography);\n```",
+    "run_seconds": 11.31
+  },
+  {
+    "id": 44,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'hospital'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Memphis%' LIMIT 1)::geography);\n```",
+    "run_seconds": 11.294
+  },
+  {
+    "id": 45,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Polk County%' AND region_name ILIKE '%Iowa%' LIMIT 1));\n```",
+    "run_seconds": 11.08
+  },
+  {
+    "id": 46,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Jackson%' AND border_type = 'county' LIMIT 1)::geography)\n  AND tourism = 'attraction';\n```",
+    "run_seconds": 13.03
+  },
+  {
+    "id": 47,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'gallery'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%St. Clair County%' LIMIT 1)::geography);\n```",
+    "run_seconds": 12.154
+  },
+  {
+    "id": 48,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Vermont%' LIMIT 1))\n  AND tourism = 'viewpoint';\n```",
+    "run_seconds": 11.091
+  },
+  {
+    "id": 49,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Harborcreek Township%' LIMIT 1)::geography)\n  AND tourism = 'viewpoint';\n```",
+    "run_seconds": 11.932
+  },
+  {
+    "id": 50,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'museum'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Corning%' LIMIT 1)::geography);\n```",
+    "run_seconds": 11.507
+  },
+  {
+    "id": 51,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'restaurant'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Ohio%' LIMIT 1)::geography);\n```",
+    "run_seconds": 11.083
+  },
+  {
+    "id": 52,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'restaurant'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Fresno%' LIMIT 1));\n```",
+    "run_seconds": 11.121
+  },
+  {
+    "id": 53,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Birmingham%' LIMIT 1))\n  AND leisure = 'stadium';\n```",
+    "run_seconds": 11.494
+  },
+  {
+    "id": 54,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Middlesex%' LIMIT 1))\n  AND amenity = 'restaurant';\n```",
+    "run_seconds": 10.818
+  },
+  {
+    "id": 55,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'university'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%United States%' LIMIT 1));\n```",
+    "run_seconds": 11.051
+  },
+  {
+    "id": 56,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Blaine%' LIMIT 1));\n```",
+    "run_seconds": 9.981
+  },
+  {
+    "id": 57,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Virginia%' LIMIT 1))\n  AND tourism = 'attraction';\n```",
+    "run_seconds": 10.705
+  },
+  {
+    "id": 58,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Iosco%' AND region_name ILIKE '%Michigan%' LIMIT 1))\n  AND tourism = 'attraction';\n```",
+    "run_seconds": 12.916
+  },
+  {
+    "id": 59,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Rensselaer%' AND border_type ILIKE '%county%' LIMIT 1)::geography)\n  AND leisure = 'nature_reserve';\n```",
+    "run_seconds": 14.395
+  },
+  {
+    "id": 60,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'restaurant'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%detroit%' LIMIT 1));\n```",
+    "run_seconds": 10.806
+  },
+  {
+    "id": 61,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'university'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Ohio%' LIMIT 1));\n```",
+    "run_seconds": 11.231
+  },
+  {
+    "id": 62,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'university'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Charlotte%' LIMIT 1));\n```",
+    "run_seconds": 10.799
+  },
+  {
+    "id": 63,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'restaurant'\n  AND addr_state ILIKE '%New York%';\n```",
+    "run_seconds": 6.654
+  },
+  {
+    "id": 64,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'fast_food'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Redmond%' LIMIT 1)::geography);\n```",
+    "run_seconds": 11.604
+  },
+  {
+    "id": 65,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Cuyahoga County%' LIMIT 1))\n  AND leisure = 'garden';\n```",
+    "run_seconds": 12.377
+  },
+  {
+    "id": 66,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'gallery'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Davis%' LIMIT 1));\n```",
+    "run_seconds": 10.747
+  },
+  {
+    "id": 67,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE leisure = 'nature_reserve'\n  AND ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%United States%' LIMIT 1));\n```",
+    "run_seconds": 11.432
+  },
+  {
+    "id": 68,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Will County%' LIMIT 1))\n  AND tourism = 'hotel';\n```",
+    "run_seconds": 10.471
+  },
+  {
+    "id": 69,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'museum'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Celoron%' LIMIT 1)::geography);\n```",
+    "run_seconds": 11.95
+  },
+  {
+    "id": 70,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'gallery'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Orange County%' LIMIT 1)::geography);\n```",
+    "run_seconds": 11.507
+  },
+  {
+    "id": 71,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'hospital'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Sandusky%' AND region_name ILIKE '%Ohio%' LIMIT 1)::geography);\n```",
+    "run_seconds": 13.214
+  },
+  {
+    "id": 72,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Oxford%' LIMIT 1))\n  AND leisure = 'golf_course';\n```",
+    "run_seconds": 11.536
+  },
+  {
+    "id": 73,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Middlesex%' LIMIT 1))\n  AND amenity = 'museum';\n```",
+    "run_seconds": 11.545
+  },
+  {
+    "id": 74,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%St. George%' LIMIT 1))\n  AND leisure = 'golf_course';\n```",
+    "run_seconds": 12.595
+  },
+  {
+    "id": 75,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'cafe'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Santa Cruz%' LIMIT 1)::geography);\n```",
+    "run_seconds": 12.235
+  },
+  {
+    "id": 76,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'hotel'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%New York City%' LIMIT 1)::geography);\n```",
+    "run_seconds": 12.232
+  },
+  {
+    "id": 77,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Palm Beach Gardens%' LIMIT 1)::geography)\n  AND leisure = 'nature_reserve';\n```",
+    "run_seconds": 12.473
+  },
+  {
+    "id": 78,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'zoo'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Gallatin%' AND border_type = 'county' LIMIT 1)::geography);\n```",
+    "run_seconds": 14.072
+  },
+  {
+    "id": 79,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'fast_food'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%United States%' LIMIT 1));\n```",
+    "run_seconds": 11.23
+  },
+  {
+    "id": 80,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE tourism = 'viewpoint'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%United States%' LIMIT 1));\n```",
+    "run_seconds": 10.662
+  },
+  {
+    "id": 81,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Ogden%' LIMIT 1))\n  AND leisure = 'stadium';\n```",
+    "run_seconds": 11.611
+  },
+  {
+    "id": 82,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Osceola%' AND region_name ILIKE '%Florida%' LIMIT 1))\n  AND leisure = 'golf_course';\n```",
+    "run_seconds": 13.005
+  },
+  {
+    "id": 83,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'university'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Kentucky%' LIMIT 1));\n```",
+    "run_seconds": 10.87
+  },
+  {
+    "id": 84,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'cafe'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Wayne County%' AND region_name ILIKE '%Michigan%' LIMIT 1)::geography);\n```",
+    "run_seconds": 13.545
+  },
+  {
+    "id": 85,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'fast_food'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Kentucky%' LIMIT 1));\n```",
+    "run_seconds": 11.038
+  },
+  {
+    "id": 86,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE tourism = 'zoo'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Morrison%' LIMIT 1)::geography);\n```",
+    "run_seconds": 12.033
+  },
+  {
+    "id": 87,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'restaurant'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Greenwood Village%' LIMIT 1)::geography);\n```",
+    "run_seconds": 11.98
+  },
+  {
+    "id": 88,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Shorewood%' LIMIT 1))\n  AND leisure = 'golf_course';\n```",
+    "run_seconds": 12.439
+  },
+  {
+    "id": 89,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Marion County%' AND region_name ILIKE '%Indiana%' LIMIT 1))\n  AND leisure = 'nature_reserve';\n```",
+    "run_seconds": 14.309
+  },
+  {
+    "id": 90,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'hotel'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Greenbrier County%' LIMIT 1)::geography);\n```",
+    "run_seconds": 12.93
+  },
+  {
+    "id": 91,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE tourism = 'theme_park'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Flathead%' AND region_name ILIKE '%Montana%' LIMIT 1)::geography);\n```",
+    "run_seconds": 14.806
+  },
+  {
+    "id": 92,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Virginia%' LIMIT 1))\n  AND leisure = 'stadium';\n```",
+    "run_seconds": 12.462
+  },
+  {
+    "id": 93,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'hospital'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Denver%' LIMIT 1));\n```",
+    "run_seconds": 11.163
+  },
+  {
+    "id": 94,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'hospital'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Blaine%' LIMIT 1)::geography);\n```",
+    "run_seconds": 12.578
+  },
+  {
+    "id": 95,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'university'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Rockford%' LIMIT 1)::geography);\n```",
+    "run_seconds": 12.608
+  },
+  {
+    "id": 96,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Hoonah%' LIMIT 1))\n  AND tourism = 'attraction';\n```",
+    "run_seconds": 12.034
+  },
+  {
+    "id": 97,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE tourism = 'aquarium'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Auburn Hills%' LIMIT 1)::geography);\n```",
+    "run_seconds": 12.956
+  },
+  {
+    "id": 98,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'hotel'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Bridgeton%' LIMIT 1)::geography);\n```",
+    "run_seconds": 12.694
+  },
+  {
+    "id": 99,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'cafe'\n  AND ST_Intersects(\n        geometry::geography,\n        (SELECT geometry FROM regions WHERE region_name ILIKE '%Seattle%' LIMIT 1)\n      );\n```",
+    "run_seconds": 12.468
+  }
+]

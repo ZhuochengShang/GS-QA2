@@ -1,0 +1,32 @@
+{
+  "stem": "intersects_length_max+name+slope",
+  "query_type": "extended",
+  "model": "Qwen/Qwen3-32B-AWQ",
+  "provider": "openai",
+  "question_count": 20,
+  "generation_timeouts": 0,
+  "successful_sql_generation": 20,
+  "successful_sql_execution": 1,
+  "timing": {
+    "total_wall_seconds": 1340.786,
+    "mean_generation_seconds": 58.035,
+    "mean_execution_seconds": 9.004,
+    "mean_total_seconds": 67.039,
+    "max_total_seconds": 236.715
+  },
+  "tokens": {
+    "total_prompt_tokens": 31006,
+    "total_completion_tokens": 5444,
+    "total_tokens": 36450,
+    "mean_prompt_tokens": 1550.3,
+    "mean_completion_tokens": 272.2,
+    "mean_total_tokens": 1822.5
+  },
+  "evaluation": {
+    "exact_matches": 0,
+    "numeric_tolerance_accuracy": null,
+    "mean_absolute_error": null,
+    "text_exact_accuracy": null,
+    "mean_rowset_f1": 0.0
+  }
+}

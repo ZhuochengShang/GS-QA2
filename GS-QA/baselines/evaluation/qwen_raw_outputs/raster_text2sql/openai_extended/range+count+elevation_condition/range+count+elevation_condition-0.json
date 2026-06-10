@@ -1,0 +1,70 @@
+{
+  "answer_type": "count, POIs -> Points",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "count, POIs -> Points",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "max_abs_numeric_delta": 114.0,
+    "mean_abs_numeric_delta": 114.0,
+    "numeric_deltas": [
+      114.0
+    ],
+    "predicted_row_count": 1,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "absolute_error": 114.0,
+      "gold_field": "count",
+      "gold_value": 0.0,
+      "metric_family": "primary_numeric",
+      "predicted_field": "golf_courses_below_500m",
+      "predicted_value": 114.0,
+      "relative_error": 114000000000000.0,
+      "within_tolerance": false
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "count": 0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "count": 0
+      }
+    ]
+  },
+  "gold_sql": "WITH candidates AS (\n  SELECT p.id, p.geometry\n  FROM pois p\n  WHERE ST_DWithin(p.geometry::geography, ST_GeomFromText('POINT (-75.381857 40.620477)',4326)::geography, 1700)\n    AND p.leisure = 'golf_course'\n),\npoi_elev AS (\n  SELECT c.id, elev.z\n  FROM candidates c\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, c.geometry::geometry) AS z\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, c.geometry::geometry)\n    LIMIT 1\n  ) elev ON elev.z IS NOT NULL\n)\nSELECT COUNT(*) AS count\nFROM poi_elev\nWHERE z <= 500;",
+  "id": "range+count+elevation_condition-0",
+  "model_output": "```sql\nWITH source_poi AS (\n  SELECT ST_SetSRID(ST_MakePoint(-75.381857, 40.620477), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT ST_Buffer(geom, 1700) AS geom\n  FROM source_poi\n),\ngolf_courses AS (\n  SELECT id, geometry\n  FROM pois\n  WHERE poi_name ILIKE '%golf course%'\n    AND ST_DWithin(geometry::geometry, (SELECT geom::geometry FROM buffered_area), 1700)\n),\nelevation_analysis AS (\n  SELECT gc.id\n  FROM golf_courses gc\n  JOIN LATERAL (\n    SELECT (ST_Value(r.rast, gc.geometry::geometry, true)) AS elevation\n    FROM public.dem_us r\n    WHERE ST_Intersects(r.rast, gc.geometry::geometry)\n  ) r ON true\n  WHERE elevation < 500\n)\nSELECT COUNT(*) AS golf_courses_below_500m\nFROM elevation_analysis;\n```",
+  "predicted_exec": {
+    "error": "",
+    "output": [
+      {
+        "golf_courses_below_500m": 114
+      }
+    ]
+  },
+  "predicted_sql": "WITH source_poi AS (\n  SELECT ST_SetSRID(ST_MakePoint(-75.381857, 40.620477), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT ST_Buffer(geom, 1700) AS geom\n  FROM source_poi\n),\ngolf_courses AS (\n  SELECT id, geometry\n  FROM pois\n  WHERE poi_name ILIKE '%golf course%'\n    AND ST_DWithin(geometry::geometry, (SELECT geom::geometry FROM buffered_area), 1700)\n),\nelevation_analysis AS (\n  SELECT gc.id\n  FROM golf_courses gc\n  JOIN LATERAL (\n    SELECT (ST_Value(r.rast, gc.geometry::geometry, true)) AS elevation\n    FROM public.dem_us r\n    WHERE ST_Intersects(r.rast, gc.geometry::geometry)\n  ) r ON true\n  WHERE elevation < 500\n)\nSELECT COUNT(*) AS golf_courses_below_500m\nFROM elevation_analysis;",
+  "predicted_sql_candidates": [
+    "WITH source_poi AS (\n  SELECT ST_SetSRID(ST_MakePoint(-75.381857, 40.620477), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT ST_Buffer(geom, 1700) AS geom\n  FROM source_poi\n),\ngolf_courses AS (\n  SELECT id, geometry\n  FROM pois\n  WHERE poi_name ILIKE '%golf course%'\n    AND ST_DWithin(geometry::geometry, (SELECT geom::geometry FROM buffered_area), 1700)\n),\nelevation_analysis AS (\n  SELECT gc.id\n  FROM golf_courses gc\n  JOIN LATERAL (\n    SELECT (ST_Value(r.rast, gc.geometry::geometry, true)) AS elevation\n    FROM public.dem_us r\n    WHERE ST_Intersects(r.rast, gc.geometry::geometry)\n  ) r ON true\n  WHERE elevation < 500\n)\nSELECT COUNT(*) AS golf_courses_below_500m\nFROM elevation_analysis;"
+  ],
+  "query_type": "extended",
+  "question": "Within 1700 meters from Johnny's Bagel & Deli, Bethlehem, PA, how many golf courses are present with elevation lower than 500 m?",
+  "source_file": "range+count+elevation_condition.jsonl",
+  "source_stem": "range+count+elevation_condition",
+  "timing": {
+    "execution_seconds": 0.187,
+    "generation_seconds": 49.132,
+    "total_seconds": 49.319
+  },
+  "usage": {
+    "completion_tokens": 230,
+    "prompt_tokens": 1802,
+    "total_tokens": 2032
+  }
+}

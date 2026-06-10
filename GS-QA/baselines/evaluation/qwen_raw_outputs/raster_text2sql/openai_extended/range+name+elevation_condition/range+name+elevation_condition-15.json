@@ -1,0 +1,119 @@
+{
+  "answer_type": "row/s",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "row/s",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "rowset_f1",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "addr_housenumber": "2425",
+      "addr_street": "Geary Boulevard",
+      "amenity": "hospital",
+      "elevation": 83.0,
+      "emergency": "yes",
+      "geometry": "POINT (-122.442708 37.782214)",
+      "healthcare": "hospital",
+      "id": 216642,
+      "operator": "Kaiser Permanente",
+      "osm_id": 8421830159,
+      "phone": "415-833-2000",
+      "poi_name": "Hospital",
+      "website": "https://thrive.kaiserpermanente.org/care-near-you/northern-california/sanfrancisco/locations/hospital-2/"
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "addr_city": null,
+        "addr_housenumber": "2425",
+        "addr_postcode": null,
+        "addr_state": null,
+        "addr_street": "Geary Boulevard",
+        "amenity": "hospital",
+        "artwork_type": null,
+        "building": null,
+        "capacity": null,
+        "cuisine": null,
+        "delivery": null,
+        "description": null,
+        "drive_through": null,
+        "elevation": 83.0,
+        "emergency": "yes",
+        "fast_food": null,
+        "fee": null,
+        "geometry": "0101000020E61000005D6BEF53559C5EC0027DC7951FE44240",
+        "hairdresser": null,
+        "healthcare": "hospital",
+        "historic": null,
+        "id": 216642,
+        "information": null,
+        "internet_access": null,
+        "leisure": null,
+        "museum": null,
+        "official_name": null,
+        "opening_hours": null,
+        "operator": "Kaiser Permanente",
+        "osm_id": 8421830159,
+        "outdoor_seating": null,
+        "parking": null,
+        "pastry_shop": null,
+        "phone": "415-833-2000",
+        "poi_name": "Hospital",
+        "resort": null,
+        "restaurant": null,
+        "school_type": null,
+        "shop": null,
+        "sport": null,
+        "sports": null,
+        "takeaway": null,
+        "toilets": null,
+        "tourism": null,
+        "website": "https://thrive.kaiserpermanente.org/care-near-you/northern-california/sanfrancisco/locations/hospital-2/",
+        "wheelchair": null,
+        "wholesale": null,
+        "wikidata": null,
+        "zoo": null
+      }
+    ]
+  },
+  "gold_sql": "SELECT p.*, elev.z AS elevation\nFROM pois p\nJOIN LATERAL (\n  SELECT ST_Value(d.rast, 1, p.geometry::geometry) AS z\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, p.geometry::geometry)\n  LIMIT 1\n) elev ON elev.z IS NOT NULL\nWHERE ST_DWithin(p.geometry::geography, ST_GeomFromText('POINT (-122.475512 37.768668)',4326)::geography, 3500)\n  AND p.amenity = 'hospital'\n  AND elev.z >= 40;",
+  "id": "range+name+elevation_condition-15",
+  "model_output": "```sql\nWITH strawberry_hill AS (\n  SELECT ST_Buffer(ST_SetSRID(ST_MakePoint(-122.475512, 37.768668), 4326)::geography, 3500) AS search_area\n),\nhospitals AS (\n  SELECT \n    p.poi_name,\n    p.geometry\n  FROM pois p\n  WHERE p.amenity = 'hospital'\n    AND p.addr_city ILIKE 'San Francisco'\n    AND p.addr_state ILIKE 'CA'\n),\nclipped_dem AS (\n  SELECT \n    ST_Union(ST_Clip(r.rast, (strawberry_hill.search_area)::geometry, TRUE)) AS clipped_raster\n  FROM public.dem_us r, strawberry_hill\n  WHERE ST_Intersects(r.rast, (strawberry_hill.search_area)::geometry)\n),\nelevation_values AS (\n  SELECT \n    (ST_DumpAsPolygons(clipped_dem.clipped_raster, 1)).val AS elevation,\n    (ST_DumpAsPolygons(clipped_dem.clipped_raster, 1)).geom AS rast_geom\n  FROM clipped_dem\n),\nhospital_elevations AS (\n  SELECT \n    h.poi_name,\n    MAX(e.elevation) AS max_elevation\n  FROM hospitals h\n  JOIN elevation_values e ON ST_Intersects(h.geometry::geometry, e.rast_geom)\n  GROUP BY h.poi_name\n)\nSELECT \n  poi_name,\n  max_elevation\nFROM hospital_elevations\nWHERE max_elevation >= 40;\n```",
+  "predicted_exec": {
+    "error": "",
+    "output": []
+  },
+  "predicted_sql": "WITH strawberry_hill AS (\n  SELECT ST_Buffer(ST_SetSRID(ST_MakePoint(-122.475512, 37.768668), 4326)::geography, 3500) AS search_area\n),\nhospitals AS (\n  SELECT \n    p.poi_name,\n    p.geometry\n  FROM pois p\n  WHERE p.amenity = 'hospital'\n    AND p.addr_city ILIKE 'San Francisco'\n    AND p.addr_state ILIKE 'CA'\n),\nclipped_dem AS (\n  SELECT \n    ST_Union(ST_Clip(r.rast, (strawberry_hill.search_area)::geometry, TRUE)) AS clipped_raster\n  FROM public.dem_us r, strawberry_hill\n  WHERE ST_Intersects(r.rast, (strawberry_hill.search_area)::geometry)\n),\nelevation_values AS (\n  SELECT \n    (ST_DumpAsPolygons(clipped_dem.clipped_raster, 1)).val AS elevation,\n    (ST_DumpAsPolygons(clipped_dem.clipped_raster, 1)).geom AS rast_geom\n  FROM clipped_dem\n),\nhospital_elevations AS (\n  SELECT \n    h.poi_name,\n    MAX(e.elevation) AS max_elevation\n  FROM hospitals h\n  JOIN elevation_values e ON ST_Intersects(h.geometry::geometry, e.rast_geom)\n  GROUP BY h.poi_name\n)\nSELECT \n  poi_name,\n  max_elevation\nFROM hospital_elevations\nWHERE max_elevation >= 40;",
+  "predicted_sql_candidates": [
+    "WITH strawberry_hill AS (\n  SELECT ST_Buffer(ST_SetSRID(ST_MakePoint(-122.475512, 37.768668), 4326)::geography, 3500) AS search_area\n),\nhospitals AS (\n  SELECT \n    p.poi_name,\n    p.geometry\n  FROM pois p\n  WHERE p.amenity = 'hospital'\n    AND p.addr_city ILIKE 'San Francisco'\n    AND p.addr_state ILIKE 'CA'\n),\nclipped_dem AS (\n  SELECT \n    ST_Union(ST_Clip(r.rast, (strawberry_hill.search_area)::geometry, TRUE)) AS clipped_raster\n  FROM public.dem_us r, strawberry_hill\n  WHERE ST_Intersects(r.rast, (strawberry_hill.search_area)::geometry)\n),\nelevation_values AS (\n  SELECT \n    (ST_DumpAsPolygons(clipped_dem.clipped_raster, 1)).val AS elevation,\n    (ST_DumpAsPolygons(clipped_dem.clipped_raster, 1)).geom AS rast_geom\n  FROM clipped_dem\n),\nhospital_elevations AS (\n  SELECT \n    h.poi_name,\n    MAX(e.elevation) AS max_elevation\n  FROM hospitals h\n  JOIN elevation_values e ON ST_Intersects(h.geometry::geometry, e.rast_geom)\n  GROUP BY h.poi_name\n)\nSELECT \n  poi_name,\n  max_elevation\nFROM hospital_elevations\nWHERE max_elevation >= 40;"
+  ],
+  "query_type": "extended",
+  "question": "I'm searching for a hospital within 3500 meters of Strawberry Hill, San Francisco, CA, any suggestions with elevation at least 40 m?",
+  "source_file": "range+name+elevation_condition.jsonl",
+  "source_stem": "range+name+elevation_condition",
+  "timing": {
+    "execution_seconds": 0.076,
+    "generation_seconds": 71.416,
+    "total_seconds": 71.492
+  },
+  "usage": {
+    "completion_tokens": 334,
+    "prompt_tokens": 1785,
+    "total_tokens": 2119
+  }
+}

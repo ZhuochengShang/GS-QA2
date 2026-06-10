@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope_degrees": 1.640247
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope_degrees": 1.640247
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-89.072332 42.453627)',4326) AS pt\n),\npatch AS (\n  SELECT ST_Buffer(pt::geography, 100)::geometry AS g FROM origin\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, p.g)) AS rast\n  FROM public.dem_us d\n  JOIN patch p ON ST_Intersects(d.rast, p.g)\n),\nslope_rast AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n)\nSELECT ST_Value(s.rast, 1, o.pt) AS slope_degrees\nFROM slope_rast s, origin o;",
+  "id": "slope+poi-12",
+  "model_output": "```sql\nWITH geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-89.072332, 42.453627), 4326)::geography AS geometry\n),\nraster_clip AS (\n  SELECT\n    ST_Clip(r.rast, 1, ST_Buffer(ST_Transform(g.geometry::geometry, 4326), 100), true) AS clipped_rast\n  FROM\n    geom g,\n    public.dem_us r\n  WHERE\n    ST_Intersects(ST_Transform(g.geometry::geometry, 4326), r.rast)\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, 'DEGREES') AS slope_rast\n  FROM\n    raster_clip\n)\nSELECT\n  ST_Value(slope_rast, 1) AS slope_angle_degrees\nFROM\n  slope_raster;\n```",
+  "predicted_exec": {
+    "error": "function st_value(raster, integer) does not exist\nLINE 20:   ST_Value(slope_rast, 1) AS slope_angle_degrees\n           ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-89.072332, 42.453627), 4326)::geography AS geometry\n),\nraster_clip AS (\n  SELECT\n    ST_Clip(r.rast, 1, ST_Buffer(ST_Transform(g.geometry::geometry, 4326), 100), true) AS clipped_rast\n  FROM\n    geom g,\n    public.dem_us r\n  WHERE\n    ST_Intersects(ST_Transform(g.geometry::geometry, 4326), r.rast)\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, 'DEGREES') AS slope_rast\n  FROM\n    raster_clip\n)\nSELECT\n  ST_Value(slope_rast, 1) AS slope_angle_degrees\nFROM\n  slope_raster;",
+  "predicted_sql_candidates": [
+    "WITH geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-89.072332, 42.453627), 4326)::geography AS geometry\n),\nraster_clip AS (\n  SELECT\n    ST_Clip(r.rast, 1, ST_Buffer(ST_Transform(g.geometry::geometry, 4326), 100), true) AS clipped_rast\n  FROM\n    geom g,\n    public.dem_us r\n  WHERE\n    ST_Intersects(ST_Transform(g.geometry::geometry, 4326), r.rast)\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, 'DEGREES') AS slope_rast\n  FROM\n    raster_clip\n)\nSELECT\n  ST_Value(slope_rast, 1) AS slope_angle_degrees\nFROM\n  slope_raster;"
+  ],
+  "query_type": "raster_only",
+  "question": "What slope angle does the surface have at Rockton Historic District, Rockton, IL?",
+  "source_file": "slope+poi.jsonl",
+  "source_stem": "slope+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 44.079,
+    "total_seconds": 44.08
+  },
+  "usage": {
+    "completion_tokens": 204,
+    "prompt_tokens": 1609,
+    "total_tokens": 1813
+  }
+}

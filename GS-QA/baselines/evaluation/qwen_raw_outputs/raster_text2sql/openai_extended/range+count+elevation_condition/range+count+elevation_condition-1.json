@@ -1,0 +1,59 @@
+{
+  "answer_type": "count, POIs -> Points",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "count, POIs -> Points",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "count": 0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "count": 0
+      }
+    ]
+  },
+  "gold_sql": "WITH candidates AS (\n  SELECT p.id, p.geometry\n  FROM pois p\n  WHERE ST_DWithin(p.geometry::geography, ST_GeomFromText('POINT (-85.591646 46.430601)',4326)::geography, 500)\n    AND p.amenity = 'restaurant'\n),\npoi_elev AS (\n  SELECT c.id, elev.z\n  FROM candidates c\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, c.geometry::geometry) AS z\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, c.geometry::geometry)\n    LIMIT 1\n  ) elev ON elev.z IS NOT NULL\n)\nSELECT COUNT(*) AS count\nFROM poi_elev\nWHERE z <= 440;",
+  "id": "range+count+elevation_condition-1",
+  "model_output": "```sql\nWITH bear_ranch AS (\n  SELECT ST_SetSRID(ST_MakePoint(-85.591646, 46.430601), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT ST_Buffer(geom, 500) AS geom\n  FROM bear_ranch\n),\nelevation_clip AS (\n  SELECT\n    (ST_Clip(r.rast, 1, buffered_area.geom, TRUE)).val AS elevation\n  FROM\n    public.dem_us r,\n    buffered_area\n  WHERE\n    ST_Intersects(r.rast, buffered_area.geom)\n),\nelevation_summary AS (\n  SELECT COUNT(*) AS count\n  FROM elevation_clip\n  WHERE elevation <= 440\n)\nSELECT count FROM elevation_summary;\n```",
+  "predicted_exec": {
+    "error": "function st_clip(raster, integer, geography, boolean) does not exist\nLINE 10:     (ST_Clip(r.rast, 1, buffered_area.geom, TRUE)).val AS el...\n              ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH bear_ranch AS (\n  SELECT ST_SetSRID(ST_MakePoint(-85.591646, 46.430601), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT ST_Buffer(geom, 500) AS geom\n  FROM bear_ranch\n),\nelevation_clip AS (\n  SELECT\n    (ST_Clip(r.rast, 1, buffered_area.geom, TRUE)).val AS elevation\n  FROM\n    public.dem_us r,\n    buffered_area\n  WHERE\n    ST_Intersects(r.rast, buffered_area.geom)\n),\nelevation_summary AS (\n  SELECT COUNT(*) AS count\n  FROM elevation_clip\n  WHERE elevation <= 440\n)\nSELECT count FROM elevation_summary;",
+  "predicted_sql_candidates": [
+    "WITH bear_ranch AS (\n  SELECT ST_SetSRID(ST_MakePoint(-85.591646, 46.430601), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT ST_Buffer(geom, 500) AS geom\n  FROM bear_ranch\n),\nelevation_clip AS (\n  SELECT\n    (ST_Clip(r.rast, 1, buffered_area.geom, TRUE)).val AS elevation\n  FROM\n    public.dem_us r,\n    buffered_area\n  WHERE\n    ST_Intersects(r.rast, buffered_area.geom)\n),\nelevation_summary AS (\n  SELECT COUNT(*) AS count\n  FROM elevation_clip\n  WHERE elevation <= 440\n)\nSELECT count FROM elevation_summary;"
+  ],
+  "query_type": "extended",
+  "question": "In the vicinity of Oswald's Bear Ranch, Newberry, MI, within 500 meters, how many restaurants are there at or below 440 m elevation?",
+  "source_file": "range+count+elevation_condition.jsonl",
+  "source_stem": "range+count+elevation_condition",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 37.414,
+    "total_seconds": 37.415
+  },
+  "usage": {
+    "completion_tokens": 175,
+    "prompt_tokens": 1795,
+    "total_tokens": 1970
+  }
+}

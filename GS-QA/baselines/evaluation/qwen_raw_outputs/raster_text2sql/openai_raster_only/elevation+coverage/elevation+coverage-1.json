@@ -1,0 +1,59 @@
+{
+  "answer_type": "percent",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "percent",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer_percent": 75.942322
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer_percent": 75.942322
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-111.108285 44.654019, -111.108255 44.657614, -111.11331 44.657574, -111.113303 44.664947, -111.113251 44.672391, -111.103142 44.672307, -111.103012 44.664887, -111.097235 44.665055, -111.097206 44.656978, -111.097196 44.654169, -111.108285 44.654019))',4326) AS geom\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.geom) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.geom)\n),\nhist AS (\n  SELECT\n    (vc).value::double precision AS val,\n    (vc).count::double precision AS cnt\n  FROM clipped c\n  CROSS JOIN LATERAL ST_ValueCount(c.rast, 1, TRUE) AS vc\n)\nSELECT\n  (\n    COALESCE(SUM(CASE WHEN val >= 280 THEN cnt ELSE 0 END), 0)\n    / NULLIF(SUM(cnt), 0)\n  ) * 100.0 AS answer_percent\nFROM hist;",
+  "id": "elevation+coverage-1",
+  "model_output": "```sql\nWITH west_yellowstone_area AS (\n  SELECT ST_GeomFromText('POLYGON ((-111.108285 44.654019, -111.108255 44.657614, -111.11331 44.657574, -111.113303 44.664947, -111.113251 44.672391, -111.103142 44.672307, -111.103012 44.664887, -111.097235 44.665055, -111.097206 44.656978, -111.097196 44.654169, -111.108285 44.654019))', 4326)::geometry AS geom\n),\ndem_subset AS (\n  SELECT \n    ST_Clip(rast, (west_yellowstone_area.geom)::geometry, true) AS clipped_rast\n  FROM \n    public.dem_us, west_yellowstone_area\n  WHERE \n    ST_Intersects(rast, west_yellowstone_area.geom)\n),\nelevation_stats AS (\n  SELECT\n    (ST_SummaryStats(ST_Reclass(clipped_rast, '1 280-9999:1', '8BUI', NULL, 1))).sum AS area_above_280,\n    (ST_SummaryStats(clipped_rast)).sum AS total_area\n  FROM dem_subset\n)\nSELECT \n  ROUND((area_above_280 / total_area) * 100, 2) AS percent_area_above_280\nFROM elevation_stats;\n```",
+  "predicted_exec": {
+    "error": "invalid input syntax for type integer: \"1 280-9999:1\"\nLINE 14:     (ST_SummaryStats(ST_Reclass(clipped_rast, '1 280-9999:1'...\n                                                       ^",
+    "output": []
+  },
+  "predicted_sql": "WITH west_yellowstone_area AS (\n  SELECT ST_GeomFromText('POLYGON ((-111.108285 44.654019, -111.108255 44.657614, -111.11331 44.657574, -111.113303 44.664947, -111.113251 44.672391, -111.103142 44.672307, -111.103012 44.664887, -111.097235 44.665055, -111.097206 44.656978, -111.097196 44.654169, -111.108285 44.654019))', 4326)::geometry AS geom\n),\ndem_subset AS (\n  SELECT \n    ST_Clip(rast, (west_yellowstone_area.geom)::geometry, true) AS clipped_rast\n  FROM \n    public.dem_us, west_yellowstone_area\n  WHERE \n    ST_Intersects(rast, west_yellowstone_area.geom)\n),\nelevation_stats AS (\n  SELECT\n    (ST_SummaryStats(ST_Reclass(clipped_rast, '1 280-9999:1', '8BUI', NULL, 1))).sum AS area_above_280,\n    (ST_SummaryStats(clipped_rast)).sum AS total_area\n  FROM dem_subset\n)\nSELECT \n  ROUND((area_above_280 / total_area) * 100, 2) AS percent_area_above_280\nFROM elevation_stats;",
+  "predicted_sql_candidates": [
+    "WITH west_yellowstone_area AS (\n  SELECT ST_GeomFromText('POLYGON ((-111.108285 44.654019, -111.108255 44.657614, -111.11331 44.657574, -111.113303 44.664947, -111.113251 44.672391, -111.103142 44.672307, -111.103012 44.664887, -111.097235 44.665055, -111.097206 44.656978, -111.097196 44.654169, -111.108285 44.654019))', 4326)::geometry AS geom\n),\ndem_subset AS (\n  SELECT \n    ST_Clip(rast, (west_yellowstone_area.geom)::geometry, true) AS clipped_rast\n  FROM \n    public.dem_us, west_yellowstone_area\n  WHERE \n    ST_Intersects(rast, west_yellowstone_area.geom)\n),\nelevation_stats AS (\n  SELECT\n    (ST_SummaryStats(ST_Reclass(clipped_rast, '1 280-9999:1', '8BUI', NULL, 1))).sum AS area_above_280,\n    (ST_SummaryStats(clipped_rast)).sum AS total_area\n  FROM dem_subset\n)\nSELECT \n  ROUND((area_above_280 / total_area) * 100, 2) AS percent_area_above_280\nFROM elevation_stats;"
+  ],
+  "query_type": "raster_only",
+  "question": "Within West Yellowstone, Montana, what share of the area has elevation at or above 280 meters?",
+  "source_file": "elevation+coverage.jsonl",
+  "source_stem": "elevation+coverage",
+  "timing": {
+    "execution_seconds": 0.002,
+    "generation_seconds": 100.744,
+    "total_seconds": 100.746
+  },
+  "usage": {
+    "completion_tokens": 454,
+    "prompt_tokens": 1773,
+    "total_tokens": 2227
+  }
+}

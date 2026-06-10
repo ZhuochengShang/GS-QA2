@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 410.012808
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 410.012808
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-78.038354 40.304176, -78.036328 40.304768, -78.033616 40.299354, -78.030834 40.296905, -78.031091 40.297332, -78.025501 40.296886, -78.023666 40.299324, -78.022213 40.298809, -78.025348 40.293662, -78.017628 40.293226, -78.018798 40.2899, -78.016465 40.289781, -78.016884 40.288784, -78.017276 40.286262, -78.025558 40.286548, -78.027188 40.286637, -78.031166 40.287614, -78.032864 40.29035, -78.033073 40.290607, -78.032773 40.293587, -78.034648 40.294812, -78.038354 40.304176))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).mean AS elevation\nFROM clipped;",
+  "id": "elevation_mean+region-4",
+  "model_output": "```sql\nWITH cassville_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Cassville'\n    AND border_type = 'city'\n    AND ST_SetSRID(ST_GeomFromText('omitted_large_wkt_491_chars'), 4326) IS NOT NULL\n)\nSELECT\n  ROUND(AVG(rast_val), 2) AS mean_elevation\nFROM\n  public.dem_us,\n  cassville_geom\nWHERE\n  ST_Intersects(rast, cassville_geom.geom)\n  AND ST_ValueCount(rast, cassville_geom.geom, true) > 0\n  AND ST_Band(rast, 1) IS NOT NULL\n  AND ST_IsEmpty(rast) = false\n  AND ST_Clip(rast, cassville_geom.geom, true) IS NOT NULL\n  AND ST_IsEmpty(ST_Clip(rast, cassville_geom.geom, true)) = false\nCROSS JOIN LATERAL (\n  SELECT\n    (ST_SummaryStats(ST_Clip(public.dem_us.rast, cassville_geom.geom, true))).mean AS rast_val\n) AS stats;\n```",
+  "predicted_exec": {
+    "error": "syntax error at or near \"CROSS\"\nLINE 20: CROSS JOIN LATERAL (\n         ^",
+    "output": []
+  },
+  "predicted_sql": "WITH cassville_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Cassville'\n    AND border_type = 'city'\n    AND ST_SetSRID(ST_GeomFromText('omitted_large_wkt_491_chars'), 4326) IS NOT NULL\n)\nSELECT\n  ROUND(AVG(rast_val), 2) AS mean_elevation\nFROM\n  public.dem_us,\n  cassville_geom\nWHERE\n  ST_Intersects(rast, cassville_geom.geom)\n  AND ST_ValueCount(rast, cassville_geom.geom, true) > 0\n  AND ST_Band(rast, 1) IS NOT NULL\n  AND ST_IsEmpty(rast) = false\n  AND ST_Clip(rast, cassville_geom.geom, true) IS NOT NULL\n  AND ST_IsEmpty(ST_Clip(rast, cassville_geom.geom, true)) = false\nCROSS JOIN LATERAL (\n  SELECT\n    (ST_SummaryStats(ST_Clip(public.dem_us.rast, cassville_geom.geom, true))).mean AS rast_val\n) AS stats;",
+  "predicted_sql_candidates": [
+    "WITH cassville_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Cassville'\n    AND border_type = 'city'\n    AND ST_SetSRID(ST_GeomFromText('omitted_large_wkt_491_chars'), 4326) IS NOT NULL\n)\nSELECT\n  ROUND(AVG(rast_val), 2) AS mean_elevation\nFROM\n  public.dem_us,\n  cassville_geom\nWHERE\n  ST_Intersects(rast, cassville_geom.geom)\n  AND ST_ValueCount(rast, cassville_geom.geom, true) > 0\n  AND ST_Band(rast, 1) IS NOT NULL\n  AND ST_IsEmpty(rast) = false\n  AND ST_Clip(rast, cassville_geom.geom, true) IS NOT NULL\n  AND ST_IsEmpty(ST_Clip(rast, cassville_geom.geom, true)) = false\nCROSS JOIN LATERAL (\n  SELECT\n    (ST_SummaryStats(ST_Clip(public.dem_us.rast, cassville_geom.geom, true))).mean AS rast_val\n) AS stats;"
+  ],
+  "query_type": "raster_only",
+  "question": "In Cassville, Pennsylvania, what is the mean elevation?",
+  "source_file": "elevation_mean+region.jsonl",
+  "source_stem": "elevation_mean+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 53.483,
+    "total_seconds": 53.484
+  },
+  "usage": {
+    "completion_tokens": 251,
+    "prompt_tokens": 1516,
+    "total_tokens": 1767
+  }
+}

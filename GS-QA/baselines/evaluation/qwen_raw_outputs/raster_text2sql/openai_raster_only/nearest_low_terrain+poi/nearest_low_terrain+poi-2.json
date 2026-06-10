@@ -1,0 +1,59 @@
+{
+  "answer_type": "distance",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "distance",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "distance_m": 11.21232
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "distance_m": 11.21232
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-91.189337 30.455516)',4326) AS pt\n),\nnearby_tiles AS (\n  SELECT d.rast\n  FROM public.dem_us d, origin o\n  WHERE d.rast && ST_Expand(o.pt, 1.0)\n),\nmasked AS (\n\t  SELECT ST_MapAlgebra(\n\t           rast,\n\t           1,\n\t           '32BF'::text,\n\t           'CASE WHEN [rast.val] < 380 THEN [rast.val] ELSE NULL END'::text,\n\t           NULL::double precision\n\t         ) AS rast\n  FROM nearby_tiles\n),\nqualifying_pixels AS (\n  SELECT (pp).geom AS geom\n  FROM masked\n  CROSS JOIN LATERAL ST_PixelAsCentroids(rast, 1, TRUE) AS pp\n)\nSELECT MIN(ST_Distance(p.geom::geography, o.pt::geography)) AS distance_m\nFROM qualifying_pixels p, origin o;",
+  "id": "nearest_low_terrain+poi-2",
+  "model_output": "```sql\nWITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-91.189337, 30.455516), 4326)::geography AS geom\n),\nraster_analysis AS (\n  SELECT\n    ST_Distance(p.geom, (ST_DumpAsPolygons(r.rast, 1, TRUE)).geom) AS distance_meters\n  FROM\n    public.dem_us r,\n    poi_geom p\n  WHERE\n    ST_Intersects(r.rast, p.geom::geometry)\n    AND (ST_DumpAsPolygons(r.rast, 1, TRUE)).val < 380\n  ORDER BY\n    distance_meters\n  LIMIT 1\n)\nSELECT ROUND(distance_meters) AS distance_to_lowest_cell_meters\nFROM raster_analysis;\n```",
+  "predicted_exec": {
+    "error": "set-returning functions are not allowed in WHERE\nLINE 12:     AND (ST_DumpAsPolygons(r.rast, 1, TRUE)).val < 380\n                  ^",
+    "output": []
+  },
+  "predicted_sql": "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-91.189337, 30.455516), 4326)::geography AS geom\n),\nraster_analysis AS (\n  SELECT\n    ST_Distance(p.geom, (ST_DumpAsPolygons(r.rast, 1, TRUE)).geom) AS distance_meters\n  FROM\n    public.dem_us r,\n    poi_geom p\n  WHERE\n    ST_Intersects(r.rast, p.geom::geometry)\n    AND (ST_DumpAsPolygons(r.rast, 1, TRUE)).val < 380\n  ORDER BY\n    distance_meters\n  LIMIT 1\n)\nSELECT ROUND(distance_meters) AS distance_to_lowest_cell_meters\nFROM raster_analysis;",
+  "predicted_sql_candidates": [
+    "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-91.189337, 30.455516), 4326)::geography AS geom\n),\nraster_analysis AS (\n  SELECT\n    ST_Distance(p.geom, (ST_DumpAsPolygons(r.rast, 1, TRUE)).geom) AS distance_meters\n  FROM\n    public.dem_us r,\n    poi_geom p\n  WHERE\n    ST_Intersects(r.rast, p.geom::geometry)\n    AND (ST_DumpAsPolygons(r.rast, 1, TRUE)).val < 380\n  ORDER BY\n    distance_meters\n  LIMIT 1\n)\nSELECT ROUND(distance_meters) AS distance_to_lowest_cell_meters\nFROM raster_analysis;"
+  ],
+  "query_type": "raster_only",
+  "question": "From Pentagon Barracks Museum, Baton Rouge, LA, what is the distance to the closest cell beneath 380 meters elevation?",
+  "source_file": "nearest_low_terrain+poi.jsonl",
+  "source_stem": "nearest_low_terrain+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 41.409,
+    "total_seconds": 41.41
+  },
+  "usage": {
+    "completion_tokens": 182,
+    "prompt_tokens": 1640,
+    "total_tokens": 1822
+  }
+}

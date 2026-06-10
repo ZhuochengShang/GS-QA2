@@ -1,0 +1,66 @@
+{
+  "answer_type": "yes-no",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "yes-no",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 1,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "exact_match": true,
+      "gold_field": "answer",
+      "gold_value": "no",
+      "metric_family": "primary_text",
+      "predicted_field": "answer",
+      "predicted_value": "no"
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer": "no",
+      "elevation_m": 126.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer": "no",
+        "elevation_m": 126.0
+      }
+    ]
+  },
+  "gold_sql": "SELECT\n  CASE\n    WHEN ST_Value(d.rast, 1, ST_GeomFromText('POINT (-87.53358 38.672428)',4326)) > 320\n    THEN 'yes' ELSE 'no'\n  END AS answer,\n  ST_Value(d.rast, 1, ST_GeomFromText('POINT (-87.53358 38.672428)',4326)) AS elevation_m\nFROM public.dem_us d\nWHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-87.53358 38.672428)',4326))\nLIMIT 1;",
+  "id": "elevation_threshold+poi-13",
+  "model_output": "```sql\nWITH hospital_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-87.53358 38.672428)'), 4326)::geometry AS geom\n)\nSELECT \n  CASE \n    WHEN (ST_Value(r.rast, h.geom::geometry) > 320) THEN 'yes'\n    ELSE 'no'\n  END AS answer\nFROM \n  hospital_geom h,\n  LATERAL (\n    SELECT rast\n    FROM public.dem_us\n    WHERE ST_Intersects(rast, h.geom::geometry)\n  ) r;\n```",
+  "predicted_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer": "no"
+      }
+    ]
+  },
+  "predicted_sql": "WITH hospital_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-87.53358 38.672428)'), 4326)::geometry AS geom\n)\nSELECT \n  CASE \n    WHEN (ST_Value(r.rast, h.geom::geometry) > 320) THEN 'yes'\n    ELSE 'no'\n  END AS answer\nFROM \n  hospital_geom h,\n  LATERAL (\n    SELECT rast\n    FROM public.dem_us\n    WHERE ST_Intersects(rast, h.geom::geometry)\n  ) r;",
+  "predicted_sql_candidates": [
+    "WITH hospital_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-87.53358 38.672428)'), 4326)::geometry AS geom\n)\nSELECT \n  CASE \n    WHEN (ST_Value(r.rast, h.geom::geometry) > 320) THEN 'yes'\n    ELSE 'no'\n  END AS answer\nFROM \n  hospital_geom h,\n  LATERAL (\n    SELECT rast\n    FROM public.dem_us\n    WHERE ST_Intersects(rast, h.geom::geometry)\n  ) r;"
+  ],
+  "query_type": "raster_only",
+  "question": "Is the elevation at Good Samaritan Hospital, Vincennes, IN greater than 320 meters?",
+  "source_file": "elevation_threshold+poi.jsonl",
+  "source_stem": "elevation_threshold+poi",
+  "timing": {
+    "execution_seconds": 0.035,
+    "generation_seconds": 28.964,
+    "total_seconds": 28.999
+  },
+  "usage": {
+    "completion_tokens": 135,
+    "prompt_tokens": 1640,
+    "total_tokens": 1775
+  }
+}

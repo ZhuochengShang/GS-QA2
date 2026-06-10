@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 10.113472
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 10.113472
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-97.811924 46.398537, -97.812405 46.398537, -97.814204 46.398526, -97.814829 46.398527, -97.81709 46.398531, -97.818105 46.398533, -97.818074 46.404751, -97.816916 46.404697, -97.816998 46.406186, -97.814836 46.406192, -97.811764 46.406189, -97.811726 46.404475, -97.811924 46.398537))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).max AS slope\nFROM region_slope;",
+  "id": "max_slope+area-8",
+  "model_output": "```sql\nWITH elliott_geom AS (\n  SELECT ST_GeomFromText('POLYGON ((-97.811924 46.398537, -97.812405 46.398537, -97.814204 46.398526, -97.814829 46.398527, -97.81709 46.398531, -97.818105 46.398533, -97.818074 46.404751, -97.816916 46.404697, -97.816998 46.406186, -97.814836 46.406192, -97.811764 46.406189, -97.811726 46.404475, -97.811924 46.398537))', 4326)::geometry AS geom\n),\ndem_subset AS (\n  SELECT \n    ST_Clip(rast, (SELECT geom FROM elliott_geom), true) AS clipped_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM elliott_geom))\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(clipped_rast, 1, '32BF', true) AS slope_rast\n  FROM dem_subset\n)\nSELECT \n  MAX(ST_Value(slope_rast, 1)) AS max_slope_degrees\nFROM slope_raster;\n```",
+  "predicted_exec": {
+    "error": "function st_slope(raster, integer, unknown, boolean) does not exist\nLINE 12:     ST_Slope(clipped_rast, 1, '32BF', true) AS slope_rast\n             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH elliott_geom AS (\n  SELECT ST_GeomFromText('POLYGON ((-97.811924 46.398537, -97.812405 46.398537, -97.814204 46.398526, -97.814829 46.398527, -97.81709 46.398531, -97.818105 46.398533, -97.818074 46.404751, -97.816916 46.404697, -97.816998 46.406186, -97.814836 46.406192, -97.811764 46.406189, -97.811726 46.404475, -97.811924 46.398537))', 4326)::geometry AS geom\n),\ndem_subset AS (\n  SELECT \n    ST_Clip(rast, (SELECT geom FROM elliott_geom), true) AS clipped_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM elliott_geom))\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(clipped_rast, 1, '32BF', true) AS slope_rast\n  FROM dem_subset\n)\nSELECT \n  MAX(ST_Value(slope_rast, 1)) AS max_slope_degrees\nFROM slope_raster;",
+  "predicted_sql_candidates": [
+    "WITH elliott_geom AS (\n  SELECT ST_GeomFromText('POLYGON ((-97.811924 46.398537, -97.812405 46.398537, -97.814204 46.398526, -97.814829 46.398527, -97.81709 46.398531, -97.818105 46.398533, -97.818074 46.404751, -97.816916 46.404697, -97.816998 46.406186, -97.814836 46.406192, -97.811764 46.406189, -97.811726 46.404475, -97.811924 46.398537))', 4326)::geometry AS geom\n),\ndem_subset AS (\n  SELECT \n    ST_Clip(rast, (SELECT geom FROM elliott_geom), true) AS clipped_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM elliott_geom))\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(clipped_rast, 1, '32BF', true) AS slope_rast\n  FROM dem_subset\n)\nSELECT \n  MAX(ST_Value(slope_rast, 1)) AS max_slope_degrees\nFROM slope_raster;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the maximum slope in Elliott, North Dakota?",
+  "source_file": "max_slope+area.jsonl",
+  "source_stem": "max_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 92.812,
+    "total_seconds": 92.813
+  },
+  "usage": {
+    "completion_tokens": 426,
+    "prompt_tokens": 1775,
+    "total_tokens": 2201
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "answer_type": "count, POIs -> Points",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "count, POIs -> Points",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "count": 0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "count": 0
+      }
+    ]
+  },
+  "gold_sql": "WITH candidates AS (\n  SELECT p.id, p.geometry\n  FROM pois p\n  WHERE ST_DWithin(p.geometry::geography, ST_GeomFromText('POINT (-92.668612 41.30199)',4326)::geography, 2700)\n    AND p.tourism = 'viewpoint'\n),\npoi_elev AS (\n  SELECT c.id, elev.z\n  FROM candidates c\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, c.geometry::geometry) AS z\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, c.geometry::geometry)\n    LIMIT 1\n  ) elev ON elev.z IS NOT NULL\n)\nSELECT COUNT(*) AS count\nFROM poi_elev\nWHERE z <= 140;",
+  "id": "range+count+elevation_condition-12",
+  "model_output": "```sql\nWITH center_point AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-92.668612 41.30199)'), 4326)::geography AS geom\n),\nviewpoints AS (\n  SELECT id, geometry\n  FROM pois\n  WHERE poi_name ILIKE '%viewpoint%' AND ST_DWithin(geometry::geometry, (SELECT geom::geometry FROM center_point), 2700)\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geometry::geometry FROM viewpoints), TRUE) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geometry::geometry FROM viewpoints))\n),\nelevation_filtered_viewpoints AS (\n  SELECT v.id\n  FROM viewpoints v\n  JOIN clipped_dem d ON ST_Intersects(v.geometry::geometry, d.rast)\n  WHERE ST_Value(d.rast, v.geometry::geometry) <= 140\n)\nSELECT COUNT(*) AS total_viewpoints\nFROM elevation_filtered_viewpoints;\n```",
+  "predicted_exec": {
+    "error": "more than one row returned by a subquery used as an expression",
+    "output": []
+  },
+  "predicted_sql": "WITH center_point AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-92.668612 41.30199)'), 4326)::geography AS geom\n),\nviewpoints AS (\n  SELECT id, geometry\n  FROM pois\n  WHERE poi_name ILIKE '%viewpoint%' AND ST_DWithin(geometry::geometry, (SELECT geom::geometry FROM center_point), 2700)\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geometry::geometry FROM viewpoints), TRUE) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geometry::geometry FROM viewpoints))\n),\nelevation_filtered_viewpoints AS (\n  SELECT v.id\n  FROM viewpoints v\n  JOIN clipped_dem d ON ST_Intersects(v.geometry::geometry, d.rast)\n  WHERE ST_Value(d.rast, v.geometry::geometry) <= 140\n)\nSELECT COUNT(*) AS total_viewpoints\nFROM elevation_filtered_viewpoints;",
+  "predicted_sql_candidates": [
+    "WITH center_point AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-92.668612 41.30199)'), 4326)::geography AS geom\n),\nviewpoints AS (\n  SELECT id, geometry\n  FROM pois\n  WHERE poi_name ILIKE '%viewpoint%' AND ST_DWithin(geometry::geometry, (SELECT geom::geometry FROM center_point), 2700)\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geometry::geometry FROM viewpoints), TRUE) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geometry::geometry FROM viewpoints))\n),\nelevation_filtered_viewpoints AS (\n  SELECT v.id\n  FROM viewpoints v\n  JOIN clipped_dem d ON ST_Intersects(v.geometry::geometry, d.rast)\n  WHERE ST_Value(d.rast, v.geometry::geometry) <= 140\n)\nSELECT COUNT(*) AS total_viewpoints\nFROM elevation_filtered_viewpoints;"
+  ],
+  "query_type": "extended",
+  "question": "What's the total count of viewpoints within 2700 meters from Oskaloosa Care Center, Oskaloosa, IA at or under 140 m elevation?",
+  "source_file": "range+count+elevation_condition.jsonl",
+  "source_stem": "range+count+elevation_condition",
+  "timing": {
+    "execution_seconds": 0.043,
+    "generation_seconds": 47.85,
+    "total_seconds": 47.893
+  },
+  "usage": {
+    "completion_tokens": 224,
+    "prompt_tokens": 1812,
+    "total_tokens": 2036
+  }
+}

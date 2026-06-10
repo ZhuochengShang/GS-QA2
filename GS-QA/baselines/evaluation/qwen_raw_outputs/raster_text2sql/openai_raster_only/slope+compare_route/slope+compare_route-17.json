@@ -1,0 +1,63 @@
+{
+  "answer_type": "name",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "name",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer_name": "Gudrun Drive",
+      "slope_deg_3": 4.340164,
+      "slope_deg_4": 5.770068
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer_name": "Gudrun Drive",
+        "slope_deg_3": 4.340164,
+        "slope_deg_4": 5.770068
+      }
+    ]
+  },
+  "gold_sql": "WITH route3 AS (\n  SELECT ST_GeomFromText('LINESTRING (-121.678908 48.669553, -121.678854 48.669978, -121.679042 48.670407, -121.678968 48.670582, -121.677476 48.672374, -121.67705 48.672534, -121.676933 48.672576, -121.676736 48.67257, -121.676378 48.672402, -121.676333 48.672134, -121.676621 48.671702, -121.677621 48.670765, -121.677834 48.670571, -121.677787 48.670377, -121.677622 48.670161, -121.677369 48.669715)', 4326)::geometry AS geom\n),\nroute4 AS (\n  SELECT ST_GeomFromText('LINESTRING (-123.041691 43.265228, -123.041476 43.265542, -123.041378 43.265761, -123.041411 43.265986, -123.041476 43.266211, -123.041728 43.266471, -123.042012 43.266809, -123.042167 43.266821, -123.042443 43.266827, -123.043061 43.266779, -123.043826 43.266684, -123.044393 43.266611, -123.044679 43.266649, -123.044948 43.26672, -123.045257 43.26698, -123.045907 43.267555, -123.04685 43.268443, -123.047119 43.268662)', 4326)::geometry AS geom\n),\ndem_clip3 AS (\n  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast\n  FROM public.dem_us d, route3 r\n  WHERE ST_Intersects(d.rast, r.geom)\n),\ndem_clip4 AS (\n  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast\n  FROM public.dem_us d, route4 r\n  WHERE ST_Intersects(d.rast, r.geom)\n),\nsegments AS (\n  SELECT 1 AS route_id, (ST_DumpSegments(r.geom)).geom AS seg FROM route3 r\n  UNION ALL\n  SELECT 2 AS route_id, (ST_DumpSegments(r.geom)).geom AS seg FROM route4 r\n),\nendpoints AS (\n  SELECT\n    route_id,\n    ST_StartPoint(seg)         AS p1,\n    ST_EndPoint(seg)           AS p2,\n    ST_Length(seg::geography)  AS seg_len_m\n  FROM segments\n),\nelev AS (\n  SELECT\n    e.route_id,\n    e.seg_len_m,\n    CASE WHEN e.route_id = 1 THEN ST_Value(dc3.rast, 1, e.p1)\n         ELSE ST_Value(dc4.rast, 1, e.p1) END AS z1,\n    CASE WHEN e.route_id = 1 THEN ST_Value(dc3.rast, 1, e.p2)\n         ELSE ST_Value(dc4.rast, 1, e.p2) END AS z2\n  FROM endpoints e, dem_clip3 dc3, dem_clip4 dc4\n),\ngrades AS (\n  SELECT\n    route_id,\n    seg_len_m,\n    CASE WHEN seg_len_m > 0 THEN ABS(z2 - z1) / seg_len_m END AS grade\n  FROM elev\n  WHERE z1 IS NOT NULL AND z2 IS NOT NULL\n),\navg_grade AS (\n  SELECT\n    route_id,\n    SUM(grade * seg_len_m) / NULLIF(SUM(seg_len_m), 0) AS g\n  FROM grades\n  WHERE grade IS NOT NULL\n  GROUP BY route_id\n)\nSELECT\n  CASE WHEN a1.g >= a2.g THEN 'National Forest Development Road 012' ELSE 'Gudrun Drive' END AS answer_name,\n  DEGREES(ATAN(a1.g)) AS slope_deg_3,\n  DEGREES(ATAN(a2.g)) AS slope_deg_4\nFROM avg_grade a1\nJOIN avg_grade a2\n  ON a1.route_id = 1 AND a2.route_id = 2\nWHERE a1.g IS NOT NULL AND a2.g IS NOT NULL;",
+  "id": "slope+compare_route-17",
+  "model_output": "```sql\nWITH road_geoms AS (\n  SELECT \n    '[3]' AS id,\n    ST_GeomFromText('LINESTRING (-121.678908 48.669553, -121.678854 48.669978, -121.679042 48.670407, -121.678968 48.670582, -121.677476 48.672374, -121.67705 48.672534, -121.676933 48.672576, -121.676736 48.67257, -121.676378 48.672402, -121.676333 48.672134, -121.676621 48.671702, -121.677621 48.670765, -121.677834 48.670571, -121.677787 48.670377, -121.677622 48.670161, -121.677369 48.669715)')::geometry AS geom\n  UNION ALL\n  SELECT \n    '[4]' AS id,\n    geometry::geometry AS geom\n  FROM roads\n  WHERE road_name ILIKE 'Gudrun Drive'\n),\nslope_analysis AS (\n  SELECT\n    r.id,\n    ST_Avg(ST_Slope(rast, 1)) AS avg_slope\n  FROM road_geoms r\n  JOIN public.dem_us d\n    ON ST_Intersects(d.rast, r.geom)\n  WHERE ST_GeometryType(r.geom) = 'ST_LineString'\n  GROUP BY r.id\n)\nSELECT\n  CASE\n    WHEN s1.avg_slope > s2.avg_slope THEN '[3]'\n    WHEN s1.avg_slope < s2.avg_slope THEN '[4]'\n    ELSE 'Equal'\n  END AS higher_slope_road,\n  s1.avg_slope AS slope_road_012,\n  s2.avg_slope AS slope_gudrun_drive\nFROM slope_analysis s1\nJOIN slope_analysis s2\n  ON s1.id = '[3]' AND s2.id = '[4]';\n```",
+  "predicted_exec": {
+    "error": "function st_avg(raster) does not exist\nLINE 15:     ST_Avg(ST_Slope(rast, 1)) AS avg_slope\n             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH road_geoms AS (\n  SELECT \n    '[3]' AS id,\n    ST_GeomFromText('LINESTRING (-121.678908 48.669553, -121.678854 48.669978, -121.679042 48.670407, -121.678968 48.670582, -121.677476 48.672374, -121.67705 48.672534, -121.676933 48.672576, -121.676736 48.67257, -121.676378 48.672402, -121.676333 48.672134, -121.676621 48.671702, -121.677621 48.670765, -121.677834 48.670571, -121.677787 48.670377, -121.677622 48.670161, -121.677369 48.669715)')::geometry AS geom\n  UNION ALL\n  SELECT \n    '[4]' AS id,\n    geometry::geometry AS geom\n  FROM roads\n  WHERE road_name ILIKE 'Gudrun Drive'\n),\nslope_analysis AS (\n  SELECT\n    r.id,\n    ST_Avg(ST_Slope(rast, 1)) AS avg_slope\n  FROM road_geoms r\n  JOIN public.dem_us d\n    ON ST_Intersects(d.rast, r.geom)\n  WHERE ST_GeometryType(r.geom) = 'ST_LineString'\n  GROUP BY r.id\n)\nSELECT\n  CASE\n    WHEN s1.avg_slope > s2.avg_slope THEN '[3]'\n    WHEN s1.avg_slope < s2.avg_slope THEN '[4]'\n    ELSE 'Equal'\n  END AS higher_slope_road,\n  s1.avg_slope AS slope_road_012,\n  s2.avg_slope AS slope_gudrun_drive\nFROM slope_analysis s1\nJOIN slope_analysis s2\n  ON s1.id = '[3]' AND s2.id = '[4]';",
+  "predicted_sql_candidates": [
+    "WITH road_geoms AS (\n  SELECT \n    '[3]' AS id,\n    ST_GeomFromText('LINESTRING (-121.678908 48.669553, -121.678854 48.669978, -121.679042 48.670407, -121.678968 48.670582, -121.677476 48.672374, -121.67705 48.672534, -121.676933 48.672576, -121.676736 48.67257, -121.676378 48.672402, -121.676333 48.672134, -121.676621 48.671702, -121.677621 48.670765, -121.677834 48.670571, -121.677787 48.670377, -121.677622 48.670161, -121.677369 48.669715)')::geometry AS geom\n  UNION ALL\n  SELECT \n    '[4]' AS id,\n    geometry::geometry AS geom\n  FROM roads\n  WHERE road_name ILIKE 'Gudrun Drive'\n),\nslope_analysis AS (\n  SELECT\n    r.id,\n    ST_Avg(ST_Slope(rast, 1)) AS avg_slope\n  FROM road_geoms r\n  JOIN public.dem_us d\n    ON ST_Intersects(d.rast, r.geom)\n  WHERE ST_GeometryType(r.geom) = 'ST_LineString'\n  GROUP BY r.id\n)\nSELECT\n  CASE\n    WHEN s1.avg_slope > s2.avg_slope THEN '[3]'\n    WHEN s1.avg_slope < s2.avg_slope THEN '[4]'\n    ELSE 'Equal'\n  END AS higher_slope_road,\n  s1.avg_slope AS slope_road_012,\n  s2.avg_slope AS slope_gudrun_drive\nFROM slope_analysis s1\nJOIN slope_analysis s2\n  ON s1.id = '[3]' AND s2.id = '[4]';"
+  ],
+  "query_type": "raster_only",
+  "question": "Does National Forest Development Road 012 have a higher average slope than Gudrun Drive?",
+  "source_file": "slope+compare_route.jsonl",
+  "source_stem": "slope+compare_route",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 135.794,
+    "total_seconds": 135.795
+  },
+  "usage": {
+    "completion_tokens": 606,
+    "prompt_tokens": 1916,
+    "total_tokens": 2522
+  }
+}

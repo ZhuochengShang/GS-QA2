@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 10.050316
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 10.050316
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-80.148061 25.974372, -80.146935 25.95083, -80.147048 25.948785, -80.150319 25.937716, -80.149807 25.93773, -80.14963 25.938265, -80.148699 25.937672, -80.148217 25.937679, -80.147986 25.933617, -80.147833 25.931092, -80.140425 25.938212, -80.132818 25.938415, -80.13227 25.938288, -80.131965 25.938043, -80.13159 25.938603, -80.131294 25.939615, -80.129674 25.941562, -80.12917 25.942777, -80.127869 25.944515, -80.127409 25.947031, -80.128315 25.948982, -80.128016 25.950617, -80.126511 25.951936, -80.126413 25.952388, -80.125875 25.954126, -80.125138 25.957027, -80.124742 25.958663, -80.124275 25.958434, -80.123306 25.975049, -80.123325 25.975048, -80.123726 25.975041, -80.1238 25.974383, -80.133929 25.974173, -80.133934 25.974762, -80.148061 25.974372))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).mean AS elevation\nFROM clipped;",
+  "id": "elevation_mean+region-19",
+  "model_output": "```sql\nWITH avientura_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Aventura' AND addr_state ILIKE 'Florida'\n)\nSELECT\n  ST_ValueCount(\n    ST_Clip(\n      r.rast,\n      a.geom,\n      TRUE\n    ),\n    1\n  ) AS elevation_stats\nFROM\n  public.dem_us r,\n  avientura_geom a\nWHERE\n  ST_Intersects(r.rast, a.geom);\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 4:   WHERE region_name ILIKE 'Aventura' AND addr_state ILIKE 'F...\n                                                 ^",
+    "output": []
+  },
+  "predicted_sql": "WITH avientura_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Aventura' AND addr_state ILIKE 'Florida'\n)\nSELECT\n  ST_ValueCount(\n    ST_Clip(\n      r.rast,\n      a.geom,\n      TRUE\n    ),\n    1\n  ) AS elevation_stats\nFROM\n  public.dem_us r,\n  avientura_geom a\nWHERE\n  ST_Intersects(r.rast, a.geom);",
+  "predicted_sql_candidates": [
+    "WITH avientura_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Aventura' AND addr_state ILIKE 'Florida'\n)\nSELECT\n  ST_ValueCount(\n    ST_Clip(\n      r.rast,\n      a.geom,\n      TRUE\n    ),\n    1\n  ) AS elevation_stats\nFROM\n  public.dem_us r,\n  avientura_geom a\nWHERE\n  ST_Intersects(r.rast, a.geom);"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the average elevation in Aventura, Florida?",
+  "source_file": "elevation_mean+region.jsonl",
+  "source_stem": "elevation_mean+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 23.231,
+    "total_seconds": 23.232
+  },
+  "usage": {
+    "completion_tokens": 109,
+    "prompt_tokens": 1516,
+    "total_tokens": 1625
+  }
+}

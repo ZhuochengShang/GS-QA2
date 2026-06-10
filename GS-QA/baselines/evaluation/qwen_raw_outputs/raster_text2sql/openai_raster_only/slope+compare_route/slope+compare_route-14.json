@@ -1,0 +1,63 @@
+{
+  "answer_type": "name",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "name",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer_name": "National Grid parking lot",
+      "slope_deg_3": 2.420579,
+      "slope_deg_4": 1.661341
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer_name": "National Grid parking lot",
+        "slope_deg_3": 2.420579,
+        "slope_deg_4": 1.661341
+      }
+    ]
+  },
+  "gold_sql": "WITH route3 AS (\n  SELECT ST_GeomFromText('POLYGON ((-73.784258 42.895102, -73.78413 42.89402, -73.782758 42.894089, -73.78258 42.894108, -73.782528 42.894134, -73.782505 42.894169, -73.782489 42.894238, -73.782645 42.895252, -73.782676 42.89528, -73.782742 42.895287, -73.784175 42.895175, -73.784238 42.89515, -73.784258 42.895102))', 4326)::geometry AS geom\n),\nroute4 AS (\n  SELECT ST_GeomFromText('LINESTRING (-110.042392 46.635993, -110.04207 46.635493, -110.040953 46.634248, -110.039704 46.632867, -110.038858 46.631887, -110.038224 46.63119, -110.037486 46.630647, -110.036811 46.630299, -110.035619 46.629911, -110.033639 46.629108, -110.03291 46.628739, -110.032674 46.628459, -110.030802 46.627391, -110.030437 46.62715, -110.029648 46.626814, -110.028817 46.626431, -110.02851 46.626243, -110.028226 46.62597, -110.027036 46.6245, -110.025928 46.62343, -110.025215 46.622684, -110.024663 46.622248, -110.023648 46.621316, -110.02191 46.619697, -110.02059 46.618464, -110.019853 46.617884, -110.019584 46.617699, -110.019298 46.617519, -110.019008 46.617305, -110.018082 46.616307, -110.017829 46.615993)', 4326)::geometry AS geom\n),\ndem_clip3 AS (\n  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast\n  FROM public.dem_us d, route3 r\n  WHERE ST_Intersects(d.rast, r.geom)\n),\ndem_clip4 AS (\n  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast\n  FROM public.dem_us d, route4 r\n  WHERE ST_Intersects(d.rast, r.geom)\n),\nsegments AS (\n  SELECT 1 AS route_id, (ST_DumpSegments(r.geom)).geom AS seg FROM route3 r\n  UNION ALL\n  SELECT 2 AS route_id, (ST_DumpSegments(r.geom)).geom AS seg FROM route4 r\n),\nendpoints AS (\n  SELECT\n    route_id,\n    ST_StartPoint(seg)         AS p1,\n    ST_EndPoint(seg)           AS p2,\n    ST_Length(seg::geography)  AS seg_len_m\n  FROM segments\n),\nelev AS (\n  SELECT\n    e.route_id,\n    e.seg_len_m,\n    CASE WHEN e.route_id = 1 THEN ST_Value(dc3.rast, 1, e.p1)\n         ELSE ST_Value(dc4.rast, 1, e.p1) END AS z1,\n    CASE WHEN e.route_id = 1 THEN ST_Value(dc3.rast, 1, e.p2)\n         ELSE ST_Value(dc4.rast, 1, e.p2) END AS z2\n  FROM endpoints e, dem_clip3 dc3, dem_clip4 dc4\n),\ngrades AS (\n  SELECT\n    route_id,\n    seg_len_m,\n    CASE WHEN seg_len_m > 0 THEN ABS(z2 - z1) / seg_len_m END AS grade\n  FROM elev\n  WHERE z1 IS NOT NULL AND z2 IS NOT NULL\n),\navg_grade AS (\n  SELECT\n    route_id,\n    SUM(grade * seg_len_m) / NULLIF(SUM(seg_len_m), 0) AS g\n  FROM grades\n  WHERE grade IS NOT NULL\n  GROUP BY route_id\n)\nSELECT\n  CASE WHEN a1.g >= a2.g THEN 'National Grid parking lot' ELSE 'Middle Fork Road' END AS answer_name,\n  DEGREES(ATAN(a1.g)) AS slope_deg_3,\n  DEGREES(ATAN(a2.g)) AS slope_deg_4\nFROM avg_grade a1\nJOIN avg_grade a2\n  ON a1.route_id = 1 AND a2.route_id = 2\nWHERE a1.g IS NOT NULL AND a2.g IS NOT NULL;",
+  "id": "slope+compare_route-14",
+  "model_output": "```sql\nWITH route_geoms AS (\n  SELECT \n    '[3]' AS entity_id,\n    ST_GeomFromText('POLYGON ((-73.784258 42.895102, -73.78413 42.89402, -73.782758 42.894089, -73.78258 42.894108, -73.782528 42.894134, -73.782505 42.894169, -73.782489 42.894238, -73.782645 42.895252, -73.782676 42.89528, -73.782742 42.895287, -73.784175 42.895175, -73.784238 42.89515, -73.784258 42.895102))', 4326)::geometry AS geom\n  UNION ALL\n  SELECT \n    '[4]' AS entity_id,\n    r.geometry::geometry AS geom\n  FROM roads\n  WHERE road_name ILIKE '%Middle Fork Road%'\n    AND ST_GeometryType(r.geometry) = 'ST_LineString'\n    AND ST_IsValid(r.geometry)\n  LIMIT 1\n),\nslope_analysis AS (\n  SELECT\n    r.entity_id,\n    r.display_name,\n    ROUND(AVG(ST_Slope(ST_Clip(d.rast, r.geom, TRUE), 1)) * 100, 2) AS avg_slope_percent\n  FROM route_geoms r\n  JOIN public.dem_us d ON ST_Intersects(d.rast, r.geom)\n  CROSS JOIN LATERAL (\n    SELECT ST_Union(d.rast) AS rast\n    FROM public.dem_us\n    WHERE ST_Intersects(r.geom, d.rast)\n  ) AS sub\n  GROUP BY r.entity_id, r.display_name\n)\nSELECT \n  CASE\n    WHEN s1.avg_slope_percent > s2.avg_slope_percent THEN s1.display_name\n    WHEN s2.avg_slope_percent > s1.avg_slope_percent THEN s2.display_name\n    ELSE 'Equal'\n  END AS higher_slope_route,\n  s1.display_name AS route1,\n  s1.avg_slope_percent AS slope1,\n  s2.display_name AS route2,\n  s2.avg_slope_percent AS slope2\nFROM slope_analysis s1\nJOIN slope_analysis s2 ON s1.entity_id != s2.entity_id;\n```",
+  "predicted_exec": {
+    "error": "missing FROM-clause entry for table \"r\"\nLINE 8:     r.geometry::geometry AS geom\n            ^",
+    "output": []
+  },
+  "predicted_sql": "WITH route_geoms AS (\n  SELECT \n    '[3]' AS entity_id,\n    ST_GeomFromText('POLYGON ((-73.784258 42.895102, -73.78413 42.89402, -73.782758 42.894089, -73.78258 42.894108, -73.782528 42.894134, -73.782505 42.894169, -73.782489 42.894238, -73.782645 42.895252, -73.782676 42.89528, -73.782742 42.895287, -73.784175 42.895175, -73.784238 42.89515, -73.784258 42.895102))', 4326)::geometry AS geom\n  UNION ALL\n  SELECT \n    '[4]' AS entity_id,\n    r.geometry::geometry AS geom\n  FROM roads\n  WHERE road_name ILIKE '%Middle Fork Road%'\n    AND ST_GeometryType(r.geometry) = 'ST_LineString'\n    AND ST_IsValid(r.geometry)\n  LIMIT 1\n),\nslope_analysis AS (\n  SELECT\n    r.entity_id,\n    r.display_name,\n    ROUND(AVG(ST_Slope(ST_Clip(d.rast, r.geom, TRUE), 1)) * 100, 2) AS avg_slope_percent\n  FROM route_geoms r\n  JOIN public.dem_us d ON ST_Intersects(d.rast, r.geom)\n  CROSS JOIN LATERAL (\n    SELECT ST_Union(d.rast) AS rast\n    FROM public.dem_us\n    WHERE ST_Intersects(r.geom, d.rast)\n  ) AS sub\n  GROUP BY r.entity_id, r.display_name\n)\nSELECT \n  CASE\n    WHEN s1.avg_slope_percent > s2.avg_slope_percent THEN s1.display_name\n    WHEN s2.avg_slope_percent > s1.avg_slope_percent THEN s2.display_name\n    ELSE 'Equal'\n  END AS higher_slope_route,\n  s1.display_name AS route1,\n  s1.avg_slope_percent AS slope1,\n  s2.display_name AS route2,\n  s2.avg_slope_percent AS slope2\nFROM slope_analysis s1\nJOIN slope_analysis s2 ON s1.entity_id != s2.entity_id;",
+  "predicted_sql_candidates": [
+    "WITH route_geoms AS (\n  SELECT \n    '[3]' AS entity_id,\n    ST_GeomFromText('POLYGON ((-73.784258 42.895102, -73.78413 42.89402, -73.782758 42.894089, -73.78258 42.894108, -73.782528 42.894134, -73.782505 42.894169, -73.782489 42.894238, -73.782645 42.895252, -73.782676 42.89528, -73.782742 42.895287, -73.784175 42.895175, -73.784238 42.89515, -73.784258 42.895102))', 4326)::geometry AS geom\n  UNION ALL\n  SELECT \n    '[4]' AS entity_id,\n    r.geometry::geometry AS geom\n  FROM roads\n  WHERE road_name ILIKE '%Middle Fork Road%'\n    AND ST_GeometryType(r.geometry) = 'ST_LineString'\n    AND ST_IsValid(r.geometry)\n  LIMIT 1\n),\nslope_analysis AS (\n  SELECT\n    r.entity_id,\n    r.display_name,\n    ROUND(AVG(ST_Slope(ST_Clip(d.rast, r.geom, TRUE), 1)) * 100, 2) AS avg_slope_percent\n  FROM route_geoms r\n  JOIN public.dem_us d ON ST_Intersects(d.rast, r.geom)\n  CROSS JOIN LATERAL (\n    SELECT ST_Union(d.rast) AS rast\n    FROM public.dem_us\n    WHERE ST_Intersects(r.geom, d.rast)\n  ) AS sub\n  GROUP BY r.entity_id, r.display_name\n)\nSELECT \n  CASE\n    WHEN s1.avg_slope_percent > s2.avg_slope_percent THEN s1.display_name\n    WHEN s2.avg_slope_percent > s1.avg_slope_percent THEN s2.display_name\n    ELSE 'Equal'\n  END AS higher_slope_route,\n  s1.display_name AS route1,\n  s1.avg_slope_percent AS slope1,\n  s2.display_name AS route2,\n  s2.avg_slope_percent AS slope2\nFROM slope_analysis s1\nJOIN slope_analysis s2 ON s1.entity_id != s2.entity_id;"
+  ],
+  "query_type": "raster_only",
+  "question": "Between National Grid parking lot and Middle Fork Road, which route has the higher average slope?",
+  "source_file": "slope+compare_route.jsonl",
+  "source_stem": "slope+compare_route",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 139.003,
+    "total_seconds": 139.004
+  },
+  "usage": {
+    "completion_tokens": 629,
+    "prompt_tokens": 1828,
+    "total_tokens": 2457
+  }
+}

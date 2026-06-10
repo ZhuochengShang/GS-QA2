@@ -1,0 +1,502 @@
+[
+  {
+    "id": 1200,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.tourism = 'attraction'\n  AND ST_Azimuth(p.geometry, (SELECT geometry FROM pois WHERE poi_name ILIKE '%House of Air%' AND addr_city ILIKE '%San Francisco%' LIMIT 1)) BETWEEN RADIANS(67.5) AND RADIANS(112.5)\nORDER BY p.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%House of Air%' AND addr_city ILIKE '%San Francisco%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 27.097
+  },
+  {
+    "id": 1201,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, \n                    ST_Buffer((SELECT geometry FROM pois WHERE poi_name ILIKE '%Central Florida Zoo & Botanical Gardens%' AND addr_city ILIKE '%Sanford%' LIMIT 1)::geography, 10000))\n  AND leisure = 'nature_reserve'\nORDER BY parks.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Central Florida Zoo & Botanical Gardens%' AND addr_city ILIKE '%Sanford%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 27.028
+  },
+  {
+    "id": 1202,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%joliet%' LIMIT 1))\n  AND amenity = 'museum'\n  AND pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Holiday Inn & Suites Joliet Southwest%' LIMIT 1) < 10000\nORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Holiday Inn & Suites Joliet Southwest%' LIMIT 1) ASC\nLIMIT 1;\n```",
+    "run_seconds": 28.118
+  },
+  {
+    "id": 1203,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Erie, PA%' LIMIT 1))\n  AND degrees(ST_Azimuth((SELECT geometry FROM pois WHERE poi_name ILIKE '%AHN Cancer Institute%' LIMIT 1), parks.geometry)) BETWEEN 202.5 AND 247.5\nORDER BY (SELECT geometry FROM pois WHERE poi_name ILIKE '%AHN Cancer Institute%' LIMIT 1) <-> parks.geometry\nLIMIT 1;\n```",
+    "run_seconds": 26.924
+  },
+  {
+    "id": 1204,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE tourism = 'hotel'\nORDER BY pois.geometry <-> (\n  SELECT geometry\n  FROM pois\n  WHERE poi_name ILIKE '%South Suburban College Oak Forest Center%' AND addr_city ILIKE '%Oak Forest%'\n  LIMIT 1\n) ASC\nLIMIT 1;\n```",
+    "run_seconds": 15.703
+  },
+  {
+    "id": 1205,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'stadium'\nORDER BY ST_Azimuth(\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Kenilworth Historical Society%' LIMIT 1)::geography,\n    pois.geometry::geography\n) BETWEEN RADIANS(157.5) AND RADIANS(202.5)\nLIMIT 1;\n```",
+    "run_seconds": 19.787
+  },
+  {
+    "id": 1206,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'fast_food'\n  AND ST_Azimuth(ST_Centroid((SELECT geometry FROM pois WHERE poi_name ILIKE '%Curtis Motel%' AND addr_city ILIKE '%Bridgeton%' AND addr_state ILIKE '%NC%' LIMIT 1)::geography), ST_Centroid(pois.geometry::geography)) BETWEEN RADIANS(112.5) AND RADIANS(157.5)\nORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Curtis Motel%' AND addr_city ILIKE '%Bridgeton%' AND addr_state ILIKE '%NC%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 35.536
+  },
+  {
+    "id": 1207,
+    "content": "```sql\nSELECT poi_name, ST_Distance(p.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Glenwood Caverns Adventure Park%' LIMIT 1)::geography) AS distance_meters\nFROM pois\nWHERE tourism = 'zoo'\n  AND ST_Within((SELECT geometry FROM pois WHERE poi_name ILIKE '%Glenwood Caverns Adventure Park%' LIMIT 1)::geography, ST_Buffer(p.geometry::geography, 100000))\n  AND degrees(ST_Azimuth(p.geometry, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Glenwood Caverns Adventure Park%' LIMIT 1))) BETWEEN 157.5 AND 202.5\nORDER BY p.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Glenwood Caverns Adventure Park%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 43.48
+  },
+  {
+    "id": 1208,
+    "content": "```sql\nSELECT poi_name, ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1\nJOIN pois p2 ON ST_DWithin(p1.geometry::geography, p2.geometry::geography, 10000)\nWHERE p1.tourism = 'gallery'\n  AND p2.poi_name ILIKE '%Tilt Studio%'\n  AND degrees(ST_Azimuth(p2.geometry, p1.geometry)) BETWEEN 157.5 AND 202.5\nORDER BY p1.geometry <-> p2.geometry\nLIMIT 1;\n```",
+    "run_seconds": 30.529
+  },
+  {
+    "id": 1209,
+    "content": "```sql\nSELECT p.poi_name, ST_Distance(p.geometry::geography, (SELECT geometry FROM parks WHERE park_name ILIKE '%Latvian Cultural Garden%' LIMIT 1)::geography) AS distance_meters\nFROM pois p\nWHERE p.tourism = 'attraction'\n  AND ST_Intersects(p.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Cleveland%' LIMIT 1))\n  AND degrees(ST_Azimuth((SELECT geometry FROM parks WHERE park_name ILIKE '%Latvian Cultural Garden%' LIMIT 1), p.geometry)) BETWEEN 157.5 AND 202.5\nORDER BY p.geometry <-> (SELECT geometry FROM parks WHERE park_name ILIKE '%Latvian Cultural Garden%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 37.526
+  },
+  {
+    "id": 1210,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE tourism = 'gallery'\n  AND ST_Azimuth(ST_Centroid((SELECT geometry FROM pois WHERE poi_name ILIKE '%Denison Biological Reserve%' OR poi_name ILIKE '%Polly Anderson Field Station%' LIMIT 1)::geography), geometry::geography) BETWEEN degrees(202.5) AND degrees(247.5)\nORDER BY geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Denison Biological Reserve%' OR poi_name ILIKE '%Polly Anderson Field Station%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 28.996
+  },
+  {
+    "id": 1211,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Portage Des Sioux%' LIMIT 1))\n  AND leisure = 'garden'\nORDER BY parks.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Our Lady of the Rivers Shrine%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 19.041
+  },
+  {
+    "id": 1212,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'restaurant'\n  AND ST_Azimuth(ST_Centroid((SELECT geometry FROM pois WHERE poi_name ILIKE '%Mindful Pediatrics & Adolescent Medicine%' LIMIT 1)::geography), geometry::geography) BETWEEN degrees(292.5) AND degrees(337.5)\nORDER BY geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Mindful Pediatrics & Adolescent Medicine%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 24.785
+  },
+  {
+    "id": 1213,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE tourism = 'zoo'\n  AND ST_Azimuth(\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Broadbent Arena%' AND addr_city ILIKE '%Louisville%' AND addr_state ILIKE '%KY%' LIMIT 1),\n        pois.geometry\n      ) BETWEEN degrees(67.5) AND degrees(112.5)\nORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Broadbent Arena%' AND addr_city ILIKE '%Louisville%' AND addr_state ILIKE '%KY%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 30.285
+  },
+  {
+    "id": 1214,
+    "content": "```sql\nSELECT p.poi_name, ST_Distance(p.geometry::geography, pl.geometry::geography) AS distance_meters\nFROM pois p\nJOIN pois pl ON ST_Distance(p.geometry::geography, pl.geometry::geography) > 0\nWHERE pl.poi_name ILIKE '%Phoenix Urban Research Laboratory%'\n  AND p.amenity = 'stadium'\n  AND degrees(ST_Azimuth(pl.geometry, p.geometry)) BETWEEN 22.5 AND 67.5\nORDER BY p.geometry <-> pl.geometry\nLIMIT 1;\n```",
+    "run_seconds": 26.787
+  },
+  {
+    "id": 1215,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE leisure = 'garden'\n  AND ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Germantown Hills%' LIMIT 1))\nORDER BY ST_Azimuth(ST_Centroid((SELECT geometry FROM parks WHERE park_name ILIKE '%First Responders Park%' LIMIT 1)), ST_Centroid(parks.geometry)) BETWEEN 157.5 AND 202.5\n   AND parks.geometry <-> (SELECT geometry FROM parks WHERE park_name ILIKE '%First Responders Park%' LIMIT 1) ASC\nLIMIT 1;\n```",
+    "run_seconds": 29.002
+  },
+  {
+    "id": 1216,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE tourism = 'zoo'\n  AND ST_Azimuth(ST_Centroid((SELECT geometry FROM pois WHERE poi_name ILIKE '%Cardiovascular Institute of New England%' LIMIT 1)::geography), ST_Centroid(pois.geometry::geography)) BETWEEN degrees(292.5) AND degrees(337.5)\nORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Cardiovascular Institute of New England%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 25.881
+  },
+  {
+    "id": 1217,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE tourism = 'hotel'\n  AND ST_Azimuth(ST_Centroid((SELECT geometry FROM pois WHERE poi_name ILIKE '%Sacajawea Interpretive Center%' LIMIT 1)::geography), ST_Centroid(pois.geometry::geography)) BETWEEN degrees(67.5) AND degrees(112.5)\nORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Sacajawea Interpretive Center%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 25.464
+  },
+  {
+    "id": 1218,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\nORDER BY ST_Azimuth((SELECT geometry FROM pois WHERE poi_name ILIKE '%Homewood Suites%' AND addr_city ILIKE '%Schaumburg%' AND addr_state ILIKE '%IL%' LIMIT 1)::geography, p.geometry::geography) BETWEEN degrees(247.5) AND degrees(292.5)\nLIMIT 1;\n```",
+    "run_seconds": 21.437
+  },
+  {
+    "id": 1219,
+    "content": "```sql\nSELECT t1.poi_name\nFROM pois AS t1\nWHERE t1.tourism = 'zoo'\n  AND degrees(ST_Azimuth(\n      (SELECT geometry FROM pois WHERE poi_name ILIKE '%University of Tennessee Health Science Center%' AND addr_city ILIKE '%memphis%' LIMIT 1),\n      t1.geometry\n  )) BETWEEN 112.5 AND 157.5\nORDER BY t1.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%University of Tennessee Health Science Center%' AND addr_city ILIKE '%memphis%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 28.531
+  },
+  {
+    "id": 1220,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Moseley%' LIMIT 1))\n  AND tourism = 'attraction'\n  AND geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Treetop Zoofari Zip line and Adventure Park%' LIMIT 1) IS NOT NULL\nORDER BY geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Treetop Zoofari Zip line and Adventure Park%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 26.342
+  },
+  {
+    "id": 1221,
+    "content": "```sql\nSELECT t.poi_name, t.geometry\nFROM pois t\nWHERE t.poi_name ILIKE '%hotel%'\n  AND t.tourism = 'hotel'\n  AND ST_Azimuth(ST_Centroid((SELECT geometry FROM pois WHERE poi_name ILIKE '%denver hospice%' AND addr_city ILIKE '%denver%' AND addr_state ILIKE '%co%' LIMIT 1)::geography), ST_Centroid(t.geometry::geography)) BETWEEN 0 AND 22.5\nORDER BY t.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%denver hospice%' AND addr_city ILIKE '%denver%' AND addr_state ILIKE '%co%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 33.592
+  },
+  {
+    "id": 1222,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Touches(parks.geometry::geography, ST_Buffer((SELECT geometry FROM pois WHERE poi_name ILIKE '%Wagner Hotel%' AND addr_city ILIKE '%New York%' LIMIT 1)::geography, 1000))\n  AND degrees(ST_Azimuth((SELECT geometry FROM pois WHERE poi_name ILIKE '%Wagner Hotel%' AND addr_city ILIKE '%New York%' LIMIT 1)::geography, parks.geometry::geography)) BETWEEN 67.5 AND 112.5\nORDER BY parks.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Wagner Hotel%' AND addr_city ILIKE '%New York%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 34.646
+  },
+  {
+    "id": 1223,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE tourism = 'attraction'\n  AND ST_Within(\n        pois.geometry,\n        ST_Buffer(\n            (SELECT geometry FROM pois WHERE poi_name ILIKE '%St. Charles Hotel%' AND addr_city ILIKE '%Hudson%' LIMIT 1),\n            1000\n        )\n    )\nORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%St. Charles Hotel%' AND addr_city ILIKE '%Hudson%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 24.08
+  },
+  {
+    "id": 1224,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Grand Junction%' LIMIT 1))\n  AND leisure = 'nature_reserve'\n  AND degrees(ST_Azimuth((SELECT geometry FROM pois WHERE poi_name ILIKE '%Childrens%Nature%Center%' LIMIT 1), parks.geometry)) BETWEEN 195 AND 265\nORDER BY (SELECT geometry FROM pois WHERE poi_name ILIKE '%Childrens%Nature%Center%' LIMIT 1) <-> parks.geometry\nLIMIT 1;\n```",
+    "run_seconds": 26.847
+  },
+  {
+    "id": 1225,
+    "content": "```sql\nSELECT t1.poi_name\nFROM pois t1\nWHERE t1.tourism = 'aquarium'\nORDER BY t1.geometry <-> (\n  SELECT ST_Centroid(t2.geometry)\n  FROM pois t2\n  WHERE t2.poi_name ILIKE '%Plaza at the Shops by HTA%' AND t2.addr_city ILIKE '%Hoonah%' AND t2.addr_state ILIKE '%AK%'\n  LIMIT 1\n) ASC\nLIMIT 1;\n```",
+    "run_seconds": 22.828
+  },
+  {
+    "id": 1226,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'university'\n  AND ST_Azimuth(p.geometry, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Outdoor Biological Research Facility%' AND addr_city ILIKE '%Vestal%' LIMIT 1)) BETWEEN RADIANS(67.5) AND RADIANS(112.5)\nORDER BY p.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Outdoor Biological Research Facility%' AND addr_city ILIKE '%Vestal%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 27.42
+  },
+  {
+    "id": 1227,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Memphis%' LIMIT 1))\nORDER BY ST_Azimuth((SELECT geometry FROM pois WHERE poi_name ILIKE '%Spence and Becky Wilson Baptist Children''s Hospital%' LIMIT 1), parks.geometry::geography) BETWEEN degrees(112.5) AND degrees(157.5)\n   AND parks.geometry::geography <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Spence and Becky Wilson Baptist Children''s Hospital%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 30.133
+  },
+  {
+    "id": 1228,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE tourism = 'viewpoint'\n  AND ST_Touches(\n        pois.geometry::geography,\n        ST_Buffer(\n          (SELECT geometry FROM pois WHERE poi_name ILIKE '%Cal, Sr.\\'s Yard%' LIMIT 1)::geography,\n          100000\n        )\n      )\n  AND degrees(ST_Azimuth(\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Cal, Sr.\\'s Yard%' LIMIT 1)::geography,\n        pois.geometry::geography\n      )) BETWEEN 67.5 AND 112.5\nORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Cal, Sr.\\'s Yard%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 36.909
+  },
+  {
+    "id": 1229,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Roswell%' LIMIT 1))\n  AND leisure = 'garden'\n  AND degrees(ST_Azimuth(ST_Centroid((SELECT geometry FROM pois WHERE poi_name ILIKE '%Centennial High School Football Stadium%' LIMIT 1)), ST_Centroid(parks.geometry))) BETWEEN 67.5 AND 112.5\nORDER BY parks.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Centennial High School Football Stadium%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 29.08
+  },
+  {
+    "id": 1230,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'cafe'\nORDER BY p.geometry <-> (\n  SELECT geometry\n  FROM pois\n  WHERE poi_name ILIKE '%Potted Plant Inc%' AND addr_city ILIKE '%Scottsdale%' AND addr_state ILIKE '%AZ%'\n  LIMIT 1\n),\ndegrees(ST_Azimuth(\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Potted Plant Inc%' AND addr_city ILIKE '%Scottsdale%' AND addr_state ILIKE '%AZ%' LIMIT 1),\n  p.geometry\n)) BETWEEN 180 AND 270\nLIMIT 1;\n```",
+    "run_seconds": 29.196
+  },
+  {
+    "id": 1231,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Alma%' LIMIT 1))\n  AND leisure = 'nature_reserve'\n  AND degrees(ST_Azimuth(ST_Centroid((SELECT geometry FROM pois WHERE poi_name ILIKE '%Blasingame Soccer Complex%' LIMIT 1)), ST_Centroid(parks.geometry))) BETWEEN 112.5 AND 157.5\nORDER BY parks.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Blasingame Soccer Complex%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 28.776
+  },
+  {
+    "id": 1232,
+    "content": "```sql\nSELECT t1.poi_name\nFROM pois t1\nWHERE t1.tourism = 'viewpoint'\nORDER BY t1.geometry <-> (\n  SELECT ST_Transform(ST_MakePoint(-85.3047, 32.4643), 4326)\n  OFFSET ST_Azimuth(ST_Transform(ST_MakePoint(-85.3047, 32.4643), 4326), t1.geometry)\n  WHERE degrees(ST_Azimuth(ST_Transform(ST_MakePoint(-85.3047, 32.4643), 4326), t1.geometry)) BETWEEN 180 AND 270\n) ASC\nLIMIT 1;\n```",
+    "run_seconds": 36.019
+  },
+  {
+    "id": 1233,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE tourism = 'aquarium'\nORDER BY ST_Azimuth(\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%White Memorial Foundation%' AND addr_city ILIKE '%Litchfield%' AND addr_state ILIKE '%CT%' LIMIT 1)::geography,\n    pois.geometry::geography\n) BETWEEN degrees(292.5) AND degrees(337.5)\nLIMIT 1;\n```",
+    "run_seconds": 20.885
+  },
+  {
+    "id": 1234,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE tourism = 'hotel'\n  AND ST_Azimuth(ST_Centroid((SELECT geometry FROM pois WHERE poi_name ILIKE '%Red Wolf Sanctuary%' LIMIT 1)::geography), geometry::geography) BETWEEN degrees(22.5) AND degrees(67.5)\nORDER BY geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Red Wolf Sanctuary%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 21.097
+  },
+  {
+    "id": 1235,
+    "content": "```sql\nSELECT t1.poi_name, t1.addr_city, t1.addr_state, ST_Distance(t1.geometry::geography, t2.geometry::geography) AS distance_meters\nFROM pois t1\nJOIN pois t2 ON t1.id != t2.id\nWHERE t1.poi_name ILIKE '%View Lounge%' AND t2.poi_name ILIKE '%hotel%'\n  AND degrees(ST_Azimuth(t2.geometry, t1.geometry)) BETWEEN 157.5 AND 202.5\n  AND t2.addr_city ILIKE '%San Francisco%' AND t2.addr_state ILIKE '%CA%'\nORDER BY t1.geometry <-> t2.geometry\nLIMIT 1;\n```",
+    "run_seconds": 31.753
+  },
+  {
+    "id": 1236,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.leisure = 'golf_course'\n  AND ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Kailua-Kona%' LIMIT 1))\n  AND degrees(ST_Azimuth(p.geometry, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Kona Cloud Forest - Guided Walking Tours%' LIMIT 1))) BETWEEN 67.5 AND 112.5\nORDER BY p.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Kona Cloud Forest - Guided Walking Tours%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 29.838
+  },
+  {
+    "id": 1237,
+    "content": "```sql\nSELECT s.poi_name\nFROM pois s\nWHERE s.leisure = 'stadium'\nORDER BY ST_Azimuth((SELECT geometry FROM pois WHERE poi_name ILIKE '%Neversink Pit%' AND addr_city ILIKE '%Fackler%' LIMIT 1)::geography, s.geometry::geography) BETWEEN degrees(112.5) AND degrees(157.5)\nLIMIT 1;\n```",
+    "run_seconds": 19.392
+  },
+  {
+    "id": 1238,
+    "content": "```sql\nSELECT p.park_name\nFROM parks p\nWHERE p.leisure = 'garden'\n  AND ST_Touches(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%kartway%' LIMIT 1))\n  AND degrees(ST_Azimuth(ST_Centroid((SELECT geometry FROM regions WHERE region_name ILIKE '%kartway%' LIMIT 1)), ST_Centroid(p.geometry::geography))) BETWEEN 247.5 AND 292.5\nORDER BY p.geometry <-> (SELECT geometry FROM regions WHERE region_name ILIKE '%kartway%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 28.983
+  },
+  {
+    "id": 1239,
+    "content": "```sql\nSELECT poi_name, amenity, tourism\nFROM pois\nWHERE tourism = 'attraction'\n  AND ST_Azimuth(ST_Centroid((SELECT geometry FROM lakes WHERE lake_name ILIKE '%Plantaganet Southeast Public Access%' LIMIT 1)::geography), ST_Centroid(pois.geometry::geography)) BETWEEN degrees(292.5) AND degrees(337.5)\nORDER BY pois.geometry <-> (SELECT geometry FROM lakes WHERE lake_name ILIKE '%Plantaganet Southeast Public Access%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 25.88
+  },
+  {
+    "id": 1240,
+    "content": "```sql\nSELECT p.park_name\nFROM parks p\nWHERE p.leisure = 'garden'\n  AND ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Easton%' LIMIT 1))\n  AND degrees(ST_Azimuth((SELECT geometry FROM pois WHERE poi_name ILIKE '%Easton Hospital%' LIMIT 1), p.geometry)) BETWEEN 0 AND 22.5\nORDER BY (SELECT geometry FROM pois WHERE poi_name ILIKE '%Easton Hospital%' LIMIT 1) <-> p.geometry\nLIMIT 1;\n```",
+    "run_seconds": 26.287
+  },
+  {
+    "id": 1241,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'restaurant'\nORDER BY pois.geometry <-> (\n  SELECT ST_Centroid(geometry)\n  FROM parks\n  WHERE park_name ILIKE '%Canyon View Park%'\n    AND ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Afton%' LIMIT 1))\n)\nLIMIT 1;\n```",
+    "run_seconds": 18.327
+  },
+  {
+    "id": 1242,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'university'\n  AND ST_Azimuth(ST_Centroid((SELECT geometry FROM pois WHERE poi_name ILIKE '%Cabell Gallery%' AND addr_city ILIKE '%Lexington%' LIMIT 1)::geography), geometry::geography) BETWEEN degrees(292.5) AND degrees(337.5)\nORDER BY geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Cabell Gallery%' AND addr_city ILIKE '%Lexington%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 26.768
+  },
+  {
+    "id": 1243,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.poi_name ILIKE '%Manatee Viewing Center%'\n  AND p.addr_city ILIKE '%Apollo Beach%'\n  AND p.addr_state ILIKE '%FL%'\n  AND p.amenity = 'restaurant'\nORDER BY p.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Manatee Viewing Center%' LIMIT 1)\n  AND degrees(ST_Azimuth((SELECT geometry FROM pois WHERE poi_name ILIKE '%Manatee Viewing Center%' LIMIT 1), p.geometry)) BETWEEN 0 AND 22.5\nLIMIT 1;\n```",
+    "run_seconds": 27.914
+  },
+  {
+    "id": 1244,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE tourism = 'aquarium'\nORDER BY ST_Azimuth(\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Harbor Oaks Hospital%' AND addr_city ILIKE '%New Baltimore%' LIMIT 1)::geography,\n    pois.geometry::geography\n) BETWEEN degrees(247.5) AND degrees(292.5)\nAND pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Harbor Oaks Hospital%' AND addr_city ILIKE '%New Baltimore%' LIMIT 1) ASC\nLIMIT 1;\n```",
+    "run_seconds": 27.302
+  },
+  {
+    "id": 1245,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE tourism = 'hotel'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%WORKS/San Jos\u00e9%' LIMIT 1))\nORDER BY ST_Azimuth(ST_Centroid((SELECT geometry FROM regions WHERE region_name ILIKE '%WORKS/San Jos\u00e9%' LIMIT 1)), pois.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 20.763
+  },
+  {
+    "id": 1246,
+    "content": "```sql\nSELECT p.park_name\nFROM parks p\nWHERE ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Bronx%' LIMIT 1))\n  AND degrees(ST_Azimuth(p.geometry, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Children''s Hospital at Montefiore%' LIMIT 1))) BETWEEN 22.5 AND 67.5\nORDER BY p.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Children''s Hospital at Montefiore%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 27.175
+  },
+  {
+    "id": 1247,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'stadium'\nORDER BY degrees(ST_Azimuth((SELECT geometry FROM pois WHERE poi_name ILIKE '%Kelly Inn%' AND addr_city ILIKE '%Minot%' AND addr_state ILIKE '%ND%' LIMIT 1)::geography, p.geometry::geography)) BETWEEN 67.5 AND 112.5\n   AND (SELECT geometry FROM pois WHERE poi_name ILIKE '%Kelly Inn%' AND addr_city ILIKE '%Minot%' AND addr_state ILIKE '%ND%' LIMIT 1)::geography <-> p.geometry\nLIMIT 1;\n```",
+    "run_seconds": 29.737
+  },
+  {
+    "id": 1248,
+    "content": "```sql\nSELECT t1.poi_name, t1.geometry::geography\nFROM pois t1\nWHERE t1.tourism = 'gallery'\n  AND degrees(ST_Azimuth(t1.geometry, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Parker Manatee Aquarium%' AND region_name ILIKE '%Bradenston%' LIMIT 1))) BETWEEN 247.5 AND 292.5\nORDER BY t1.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Parker Manatee Aquarium%' AND region_name ILIKE '%Bradenston%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 28.841
+  },
+  {
+    "id": 1249,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'restaurant'\n  AND ST_Azimuth(ST_Centroid((SELECT geometry FROM pois WHERE poi_name ILIKE '%Elyria Arts Council%' LIMIT 1)::geography), geometry::geography) BETWEEN RADIANS(112.5) AND RADIANS(157.5)\nORDER BY geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Elyria Arts Council%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 24.012
+  },
+  {
+    "id": 1250,
+    "content": "```sql\nSELECT poi_name, wikidata, wikipedia\nFROM pois\nWHERE amenity = 'museum'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%San Antonio%' LIMIT 1))\n  AND degrees(ST_Azimuth((SELECT geometry FROM pois WHERE poi_name ILIKE '%Action Behavior Centers%' LIMIT 1), pois.geometry)) BETWEEN 247.5 AND 292.5\nORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Action Behavior Centers%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 28.032
+  },
+  {
+    "id": 1251,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'university'\nORDER BY ST_Azimuth(\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%John Natsoulas Gallery%' LIMIT 1)::geography,\n    pois.geometry::geography\n) BETWEEN degrees(112.5) AND degrees(157.5)\nAND pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%John Natsoulas Gallery%' LIMIT 1) ASC\nLIMIT 1;\n```",
+    "run_seconds": 24.708
+  },
+  {
+    "id": 1252,
+    "content": "```sql\nSELECT p.park_name\nFROM parks p\nWHERE ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Oconto Falls%' LIMIT 1))\n  AND degrees(ST_Azimuth((SELECT geometry FROM pois WHERE poi_name ILIKE '%Coachlight Inn Motel%' LIMIT 1), p.geometry::geography)) BETWEEN 292.5 AND 337.5\nORDER BY (SELECT geometry FROM pois WHERE poi_name ILIKE '%Coachlight Inn Motel%' LIMIT 1) <-> p.geometry\nLIMIT 1;\n```",
+    "run_seconds": 27.333
+  },
+  {
+    "id": 1253,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'fast_food'\nORDER BY ST_Azimuth(\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Acadia Cliffs Wildlife Area%' LIMIT 1),\n    pois.geometry\n) BETWEEN degrees(292.5) AND degrees(337.5)\n  AND pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Acadia Cliffs Wildlife Area%' LIMIT 1) ASC\nLIMIT 1;\n```",
+    "run_seconds": 23.418
+  },
+  {
+    "id": 1254,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Minneola%' LIMIT 1))\n  AND leisure = 'nature_reserve'\n  AND degrees(ST_Azimuth(ST_Centroid((SELECT geometry FROM parks WHERE park_name ILIKE '%Ferndale Preserve%' LIMIT 1)), ST_Centroid(parks.geometry))) BETWEEN 292.5 AND 337.5\nORDER BY parks.geometry <-> (SELECT geometry FROM parks WHERE park_name ILIKE '%Ferndale Preserve%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 29.468
+  },
+  {
+    "id": 1255,
+    "content": "```sql\nSELECT p.poi_name, p.wikidata, p.wikipedia\nFROM pois p\nWHERE p.poi_name ILIKE '%museum%'\n  AND p.addr_city = 'Erie'\n  AND p.addr_state = 'PA'\n  AND degrees(ST_Azimuth(p.geometry::geography, \n                         (SELECT geometry FROM pois WHERE poi_name ILIKE '%AHN Cancer Institute%' AND addr_city = 'Erie' AND addr_state = 'PA' LIMIT 1)::geography)) BETWEEN 202.5 AND 247.5\nORDER BY p.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%AHN Cancer Institute%' AND addr_city = 'Erie' AND addr_state = 'PA' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 35.708
+  },
+  {
+    "id": 1256,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE wikipedia IS NOT NULL\n  AND tourism = 'aquarium'\n  AND degrees(ST_Azimuth(\n      (SELECT geometry FROM pois WHERE poi_name ILIKE '%Neversink Pit%' AND addr_city ILIKE '%Fackler%' AND addr_state ILIKE '%AL%' LIMIT 1)::geography,\n      pois.geometry::geography\n  )) BETWEEN 22.5 AND 67.5\nORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Neversink Pit%' AND addr_city ILIKE '%Fackler%' AND addr_state ILIKE '%AL%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 133.124
+  },
+  {
+    "id": 1257,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Point Lookout, PA%' LIMIT 1)::geography)\n  AND leisure = 'garden'\n  AND degrees(ST_Azimuth(ST_Centroid((SELECT geometry FROM regions WHERE region_name ILIKE '%Point Lookout, PA%' LIMIT 1)::geography), ST_Centroid(parks.geometry::geography))) BETWEEN 202.5 AND 247.5\nORDER BY parks.geometry <-> (SELECT geometry FROM regions WHERE region_name ILIKE '%Point Lookout, PA%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 31.315
+  },
+  {
+    "id": 1258,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\nORDER BY ST_Azimuth(p.geometry::geography, \n                    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Santa Barbara Museum of Natural History Sea Center%' LIMIT 1)::geography) BETWEEN degrees(22.5) AND degrees(67.5)\nLIMIT 1;\n```",
+    "run_seconds": 18.008
+  },
+  {
+    "id": 1259,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'hospital'\n  AND ST_Azimuth(ST_Centroid((SELECT geometry FROM pois WHERE poi_name ILIKE '%South Suburban College Oak Forest Center%' LIMIT 1)::geography), geometry::geography) BETWEEN RADIANS(202.5) AND RADIANS(247.5)\nORDER BY geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%South Suburban College Oak Forest Center%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 24.777
+  },
+  {
+    "id": 1260,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'university'\n  AND ST_Azimuth(ST_Centroid((SELECT geometry FROM pois WHERE poi_name ILIKE '%Lucille Ball Childhood Home%' AND addr_city ILIKE '%Jamestown%')::geography), ST_Centroid(pois.geometry::geography)) BETWEEN degrees(22.5) AND degrees(67.5)\nORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Lucille Ball Childhood Home%' AND addr_city ILIKE '%Jamestown%')\nLIMIT 1;\n```",
+    "run_seconds": 27.287
+  },
+  {
+    "id": 1261,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'cafe'\n  AND ST_Touches(geometry, (SELECT geometry FROM pois WHERE poi_name ILIKE '%CUNY School of Professional Studies%' LIMIT 1)::geography)\nORDER BY geometry <-> (SELECT ST_Centroid(geometry) FROM pois WHERE poi_name ILIKE '%CUNY School of Professional Studies%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 19.38
+  },
+  {
+    "id": 1262,
+    "content": "```sql\nSELECT p.poi_name, ST_Distance(p.geometry::geography, r.geometry::geography) AS distance_meters\nFROM pois p\nJOIN regions r ON ST_Intersects(p.geometry::geography, r.geometry::geography)\nWHERE p.amenity = 'university'\n  AND r.region_name ILIKE '%Eddy Lookout Tower%'\n  AND r.region_name ILIKE '%Sanderson%'\n  AND r.region_name ILIKE '%FL%'\n  AND degrees(ST_Azimuth(r.geometry::geography, p.geometry::geography)) BETWEEN 0 AND 22.5\nORDER BY p.geometry::geography <-> r.geometry::geography\nLIMIT 1;\n```",
+    "run_seconds": 30.882
+  },
+  {
+    "id": 1263,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'cafe'\n  AND ST_Touches(geometry, ST_MakePoint(-119.2927, 46.3833)::geography) IS FALSE\nORDER BY geometry <-> (SELECT ST_Centroid(geometry) FROM pois WHERE poi_name ILIKE '%Fran Rish Stadium%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 19.385
+  },
+  {
+    "id": 1264,
+    "content": "```sql\nSELECT p.poi_name, ST_Distance(p.geometry::geography, f.geometry::geography) AS distance_meters\nFROM pois p\nJOIN pois f ON ST_DWithin(p.geometry::geography, f.geometry::geography, 100000)\nWHERE p.poi_name ILIKE '%golf_course%' AND p.leisure = 'golf_course'\n  AND f.poi_name ILIKE '%Raynay Alpaca Farm%'\n  AND degrees(ST_Azimuth(f.geometry, p.geometry)) BETWEEN 247.5 AND 292.5\nORDER BY p.geometry <-> f.geometry\nLIMIT 1;\n```",
+    "run_seconds": 29.607
+  },
+  {
+    "id": 1265,
+    "content": "```sql\nSELECT t.poi_name\nFROM pois t\nWHERE t.tourism = 'attraction'\n  AND degrees(ST_Azimuth(\n      (SELECT geometry FROM parks WHERE park_name ILIKE '%Xtreme Action Park%' LIMIT 1),\n      t.geometry\n  )) BETWEEN 22.5 AND 67.5\nORDER BY t.geometry <-> (SELECT geometry FROM parks WHERE park_name ILIKE '%Xtreme Action Park%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 22.151
+  },
+  {
+    "id": 1266,
+    "content": "```sql\nSELECT poi_name, wikidata, wikipedia\nFROM pois\nWHERE tourism = 'gallery'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Greenbank%' LIMIT 1))\nORDER BY ST_Azimuth((SELECT geometry FROM pois WHERE poi_name ILIKE '%Meerkerk Gardens%' LIMIT 1), pois.geometry::geography) BETWEEN 0 AND 22.5 OR\n       ST_Azimuth((SELECT geometry FROM pois WHERE poi_name ILIKE '%Meerkerk Gardens%' LIMIT 1), pois.geometry::geography) BETWEEN 337.5 AND 360\n  AND pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Meerkerk Gardens%' LIMIT 1) ASC\nLIMIT 1;\n```",
+    "run_seconds": 37.276
+  },
+  {
+    "id": 1267,
+    "content": "```sql\nSELECT p1.poi_name, ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1\nJOIN parks p2 ON ST_Intersects(p1.geometry::geography, p2.geometry::geography)\nWHERE p1.amenity = 'stadium'\n  AND p2.park_name ILIKE '%Canyon View Park%'\n  AND degrees(ST_Azimuth(p2.geometry::geography, p1.geometry::geography)) BETWEEN 247.5 AND 292.5\nORDER BY p1.geometry::geography <-> p2.geometry::geography\nLIMIT 1;\n```",
+    "run_seconds": 30.455
+  },
+  {
+    "id": 1268,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE tourism = 'hotel'\n  AND ST_Within(\n        geometry,\n        (SELECT geometry FROM regions WHERE region_name ILIKE '%Wayne, NJ%' LIMIT 1)\n      )\nORDER BY geometry <-> ST_MakePoint(-74.2203, 40.6965) -- Approximate coordinates of Russ Berrie Institute\nLIMIT 1;\n```",
+    "run_seconds": 19.382
+  },
+  {
+    "id": 1269,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Schaumburg%' LIMIT 1))\n  AND leisure = 'nature_reserve'\nORDER BY ST_Azimuth((SELECT geometry FROM pois WHERE poi_name ILIKE '%Legoland Discovery Center Chicago%' LIMIT 1)::geography, parks.geometry) BETWEEN 0 AND 22.5 OR\n       ST_Azimuth((SELECT geometry FROM pois WHERE poi_name ILIKE '%Legoland Discovery Center Chicago%' LIMIT 1)::geography, parks.geometry) BETWEEN 337.5 AND 360\nLIMIT 1;\n```",
+    "run_seconds": 30.246
+  },
+  {
+    "id": 1270,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'hotel'\n  AND ST_Azimuth(\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Money Museum%' AND addr_city ILIKE '%Chicago%' LIMIT 1),\n        pois.geometry::geography\n      ) BETWEEN degrees(292.5) AND degrees(337.5)\nORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Money Museum%' AND addr_city ILIKE '%Chicago%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 24.706
+  },
+  {
+    "id": 1271,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'hospital'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%College Park%' LIMIT 1))\nORDER BY ST_Azimuth((SELECT geometry FROM pois WHERE poi_name ILIKE '%SpringHill Suites Atlanta Airport Gateway%' LIMIT 1), pois.geometry::geography) BETWEEN degrees(157.5) AND degrees(202.5)\n   AND pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%SpringHill Suites Atlanta Airport Gateway%' LIMIT 1) ASC\nLIMIT 1;\n```",
+    "run_seconds": 29.178
+  },
+  {
+    "id": 1272,
+    "content": "```sql\nSELECT p.poi_name, ST_Distance(p.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Sea Life Aquarium%' AND addr_city ILIKE '%Auburn Hills%' LIMIT 1)::geography) AS distance_meters\nFROM pois p\nWHERE p.amenity = 'university'\n  AND degrees(ST_Azimuth((SELECT geometry FROM pois WHERE poi_name ILIKE '%Sea Life Aquarium%' AND addr_city ILIKE '%Auburn Hills%' LIMIT 1), p.geometry)) BETWEEN 247.5 AND 292.5\nORDER BY p.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Sea Life Aquarium%' AND addr_city ILIKE '%Auburn Hills%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 35.144
+  },
+  {
+    "id": 1273,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'restaurant'\n  AND ST_Azimuth(ST_Centroid((SELECT geometry FROM pois WHERE poi_name ILIKE '%Eddy Lookout Tower%' LIMIT 1)::geography), ST_Centroid(pois.geometry::geography)) BETWEEN degrees(67.5) AND degrees(112.5)\nORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Eddy Lookout Tower%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 23.856
+  },
+  {
+    "id": 1274,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'restaurant'\n  AND ST_Azimuth(ST_Centroid((SELECT geometry FROM pois WHERE poi_name ILIKE '%Leon and Ethel Yeiser Rose Garden%' LIMIT 1)::geography), geometry::geography) BETWEEN RADIANS(247.5) AND RADIANS(292.5)\nORDER BY geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Leon and Ethel Yeiser Rose Garden%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 24.707
+  },
+  {
+    "id": 1275,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Houston%' LIMIT 1))\n  AND leisure = 'nature_reserve'\nORDER BY ST_Azimuth((SELECT geometry FROM pois WHERE poi_name ILIKE '%Michael E. Debakey Center%' LIMIT 1), parks.geometry::geography) BETWEEN 247.5 AND 292.5\n   AND parks.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Michael E. Debakey Center%' LIMIT 1) ASC\nLIMIT 1;\n```",
+    "run_seconds": 28.326
+  },
+  {
+    "id": 1276,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'museum'\n  AND ST_Azimuth(ST_Centroid((SELECT geometry FROM pois WHERE poi_name ILIKE '%SEP Stadium%' LIMIT 1)::geography), geometry::geography) BETWEEN degrees(292.5) AND degrees(337.5)\nORDER BY (SELECT geometry FROM pois WHERE poi_name ILIKE '%SEP Stadium%' LIMIT 1) <-> geometry\nLIMIT 1;\n```",
+    "run_seconds": 21.725
+  },
+  {
+    "id": 1277,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE tourism = 'zoo'\n  AND ST_Azimuth(ST_Centroid((SELECT geometry FROM pois WHERE poi_name ILIKE '%Leon and Ethel Yeiser Rose Garden%' LIMIT 1)::geography), geometry::geography) BETWEEN 22.5 AND 67.5\nORDER BY (SELECT geometry FROM pois WHERE poi_name ILIKE '%Leon and Ethel Yeiser Rose Garden%' LIMIT 1) <-> geometry\nLIMIT 1;\n```",
+    "run_seconds": 23.026
+  },
+  {
+    "id": 1278,
+    "content": "```sql\nSELECT poi_name, wikipedia, ST_Azimuth(p.geometry::geography, ST_Centroid(r.geometry::geography)) AS bearing_degrees\nFROM pois p\nJOIN regions r ON ST_Intersects(p.geometry::geography, r.geometry::geography)\nWHERE p.poi_name ILIKE '%aquarium%'\n  AND r.region_name ILIKE '%Boerne%' AND r.border_type = 'city'\nORDER BY p.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Roundup Beer Garden & Food Park%' LIMIT 1)\nLIMIT 1\n```",
+    "run_seconds": 25.772
+  },
+  {
+    "id": 1279,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'cafe'\nORDER BY ST_Azimuth(ST_Centroid(parks.geometry), pois.geometry) BETWEEN degrees(292.5) AND degrees(337.5)\n  AND ST_Distance(pois.geometry::geography, ST_Centroid(parks.geometry::geography)) ASC\nLIMIT 1\n```",
+    "run_seconds": 18.102
+  },
+  {
+    "id": 1280,
+    "content": "```sql\nSELECT park_name, ST_Azimuth(ST_Centroid(p.geometry)::geography, p.geometry::geography) AS bearing\nFROM parks p\nWHERE ST_Intersects(p.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Astoria%' LIMIT 1))\n  AND leisure = 'nature_reserve'\n  AND degrees(ST_Azimuth((SELECT ST_Centroid(geometry)::geography FROM pois WHERE poi_name ILIKE '%Hellsgate Farms%' LIMIT 1), ST_Centroid(p.geometry)::geography)) BETWEEN 22.5 AND 67.5\nORDER BY p.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Hellsgate Farms%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 34.502
+  },
+  {
+    "id": 1281,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'university'\nORDER BY ST_Azimuth(p.geometry::geography, \n                    (SELECT geometry FROM lakes WHERE lake_name ILIKE '%Plantaganet Southeast Public Access%' AND addr_city ILIKE '%Bemidji%' LIMIT 1)::geography) BETWEEN degrees(157.5) AND degrees(202.5)\nLIMIT 1;\n```",
+    "run_seconds": 20.446
+  },
+  {
+    "id": 1282,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE tourism = 'aquarium'\n  AND ST_Azimuth(ST_Centroid((SELECT geometry FROM pois WHERE poi_name ILIKE '%Pioneer Museum%' AND addr_city ILIKE '%Pleasant Grove%' LIMIT 1)::geography), ST_Centroid(pois.geometry::geography)) BETWEEN degrees(67.5) AND degrees(112.5)\nORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Pioneer Museum%' AND addr_city ILIKE '%Pleasant Grove%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 27.693
+  },
+  {
+    "id": 1283,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Louisville%' LIMIT 1))\nORDER BY ST_Azimuth((SELECT geometry FROM pois WHERE poi_name ILIKE '%Horrigan Hall%' LIMIT 1), parks.geometry::geography) BETWEEN 0 AND 22.5 OR\n       ST_Azimuth((SELECT geometry FROM pois WHERE poi_name ILIKE '%Horrigan Hall%' LIMIT 1), parks.geometry::geography) BETWEEN 337.5 AND 360\nLIMIT 1;\n```",
+    "run_seconds": 28.328
+  },
+  {
+    "id": 1284,
+    "content": "```sql\nSELECT p.poi_name, ST_Distance(p.geometry::geography, a.geometry::geography) AS distance_meters,\n       degrees(ST_Azimuth(a.geometry, p.geometry)) AS bearing_degrees\nFROM pois p\nJOIN pois a ON ST_Distance(p.geometry::geography, a.geometry::geography) IS NOT NULL\nWHERE p.amenity = 'zoo'\n  AND a.poi_name ILIKE '%Parker Manatee Aquarium%'\n  AND a.addr_city ILIKE '%Bradenton%'\n  AND a.addr_state ILIKE '%FL%'\nORDER BY p.geometry <-> a.geometry\nLIMIT 1;\n```",
+    "run_seconds": 27.906
+  },
+  {
+    "id": 1285,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE leisure = 'golf_course'\n  AND ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Neenah%' LIMIT 1))\nORDER BY ST_Azimuth((SELECT geometry FROM pois WHERE poi_name ILIKE '%Children''s Wisconsin-Fox Valley Hospital%' LIMIT 1), parks.geometry) BETWEEN 292.5 AND 337.5\n   AND ST_Distance((SELECT geometry FROM pois WHERE poi_name ILIKE '%Children''s Wisconsin-Fox Valley Hospital%' LIMIT 1)::geography, parks.geometry::geography) ASC\nLIMIT 1;\n```",
+    "run_seconds": 30.033
+  },
+  {
+    "id": 1286,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE leisure = 'golf_course'\n  AND ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Rising Sun%' LIMIT 1))\nORDER BY ST_Azimuth(ST_Centroid((SELECT geometry FROM parks WHERE park_name ILIKE '%Red Wolf Sanctuary%' LIMIT 1)), ST_Centroid(parks.geometry::geography)) BETWEEN 0 AND 22.5 OR\n       ST_Azimuth(ST_Centroid((SELECT geometry FROM parks WHERE park_name ILIKE '%Red Wolf Sanctuary%' LIMIT 1)), ST_Centroid(parks.geometry::geography)) BETWEEN 337.5 AND 360\n  AND parks.geometry <-> (SELECT geometry FROM parks WHERE park_name ILIKE '%Red Wolf Sanctuary%' LIMIT 1) ASC\nLIMIT 1;\n```",
+    "run_seconds": 39.405
+  },
+  {
+    "id": 1287,
+    "content": "```sql\nSELECT t.poi_name, ST_Distance(t.geometry::geography, p.geometry::geography) AS distance_meters\nFROM pois t\nJOIN pois p ON ST_DWithin(t.geometry::geography, p.geometry::geography, 10000)\nWHERE t.tourism = 'viewpoint'\n  AND p.poi_name ILIKE '%Wildlife Sanctuary%' \n  AND p.addr_city ILIKE '%Irvine%' \n  AND p.addr_state ILIKE '%CA%'\n  AND degrees(ST_Azimuth(p.geometry, t.geometry)) BETWEEN 157.5 AND 202.5\nORDER BY t.geometry::geography <-> p.geometry::geography\nLIMIT 1;\n```",
+    "run_seconds": 32.374
+  },
+  {
+    "id": 1288,
+    "content": "```sql\nSELECT p.poi_name, ST_Distance(p.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Joppa Hill Farm%' LIMIT 1)::geography) AS distance_meters\nFROM pois p\nWHERE p.amenity = 'university'\n  AND degrees(ST_Azimuth((SELECT geometry FROM pois WHERE poi_name ILIKE '%Joppa Hill Farm%' LIMIT 1), p.geometry)) BETWEEN 202.5 AND 247.5\nORDER BY p.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Joppa Hill Farm%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 29.394
+  },
+  {
+    "id": 1289,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'fast_food'\n  AND ST_Intersects(pois.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Dayton Historic Depot%' LIMIT 1))\nORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Dayton Historic Depot%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 17.465
+  },
+  {
+    "id": 1290,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'cafe'\nORDER BY ST_Azimuth(p.geometry::geography, \n                    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Pioneer Stadium%' AND addr_city ILIKE '%Ogden%' LIMIT 1)::geography) \n        BETWEEN 0 AND 22.5 OR \n       ST_Azimuth(p.geometry::geography, \n                  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Pioneer Stadium%' AND addr_city ILIKE '%Ogden%' LIMIT 1)::geography) \n        BETWEEN 337.5 AND 360\nLIMIT 1;\n```",
+    "run_seconds": 31.309
+  },
+  {
+    "id": 1291,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'restaurant'\n  AND ST_Within(\n        pois.geometry,\n        ST_Buffer(\n          ST_Centroid(\n            (SELECT geometry FROM pois WHERE poi_name ILIKE '%John D. Barrow Gallery%' LIMIT 1)\n          ),\n          10000\n        )::geography\n      )\n  AND degrees(ST_Azimuth(\n        ST_Centroid((SELECT geometry FROM pois WHERE poi_name ILIKE '%John D. Barrow Gallery%' LIMIT 1)),\n        pois.geometry\n      )) BETWEEN 157.5 AND 202.5\nORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%John D. Barrow Gallery%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 35.78
+  },
+  {
+    "id": 1292,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\nORDER BY ST_Azimuth(ST_Centroid((SELECT geometry FROM parks WHERE park_name ILIKE '%Memory Garden%')::geography), ST_Centroid(p.geometry::geography)) BETWEEN degrees(112.5) AND degrees(157.5)\n   AND p.geometry <-> ST_Centroid((SELECT geometry FROM parks WHERE park_name ILIKE '%Memory Garden%')::geography) ASC\nLIMIT 1;\n```",
+    "run_seconds": 24.281
+  },
+  {
+    "id": 1293,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'fast_food'\n  AND ST_Azimuth(\n        ST_Centroid((SELECT geometry FROM pois WHERE poi_name ILIKE '%Horrigan Hall%' AND addr_city ILIKE '%Louisville%' AND addr_state ILIKE '%KY%' LIMIT 1)::geography),\n        ST_Centroid(pois.geometry::geography)\n      ) BETWEEN degrees(67.5) AND degrees(112.5)\nORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Horrigan Hall%' AND addr_city ILIKE '%Louisville%' AND addr_state ILIKE '%KY%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 31.946
+  },
+  {
+    "id": 1294,
+    "content": "```sql\nSELECT p.poi_name, ST_Distance(p.geometry::geography, ST_Centroid(r.geometry::geography)) AS distance_meters\nFROM pois p\nJOIN regions r ON ST_Intersects(p.geometry::geography, r.geometry::geography)\nWHERE p.amenity = 'stadium'\n  AND r.region_name ILIKE '%Pinellas Park%' \nORDER BY p.geometry <-> ST_Centroid((SELECT geometry FROM regions WHERE region_name ILIKE '%Freedom Lake Park%' LIMIT 1)::geography)\nLIMIT 1;\n```",
+    "run_seconds": 24.493
+  },
+  {
+    "id": 1295,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE tourism = 'zoo'\nORDER BY ST_Azimuth(\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Barrett, the Honors College at ASU%' LIMIT 1)::geography,\n    pois.geometry::geography\n) BETWEEN degrees(247.5) AND degrees(292.5)\nAND pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Barrett, the Honors College at ASU%' LIMIT 1) ASC\nLIMIT 1;\n```",
+    "run_seconds": 25.348
+  },
+  {
+    "id": 1296,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'fast_food'\n  AND ST_Y(ST_Centroid(geometry::geography)) > (\n    SELECT ST_Y(ST_Centroid(geometry::geography))\n    FROM pois\n    WHERE poi_name ILIKE '%Watkins Community Museum of History%' AND addr_city ILIKE '%Lawrence%' AND addr_state ILIKE '%KS%'\n    LIMIT 1\n  )\nORDER BY geometry <-> (\n  SELECT geometry\n  FROM pois\n  WHERE poi_name ILIKE '%Watkins Community Museum of History%' AND addr_city ILIKE '%Lawrence%' AND addr_state ILIKE '%KS%'\n  LIMIT 1\n)\nLIMIT 1;\n```",
+    "run_seconds": 30.883
+  },
+  {
+    "id": 1297,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%New York%' LIMIT 1))\nORDER BY degrees(ST_Azimuth((SELECT geometry FROM pois WHERE poi_name ILIKE '%Hyatt Centric%' LIMIT 1), parks.geometry)) BETWEEN 67.5 AND 112.5 DESC,\n         (parks.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Hyatt Centric%' LIMIT 1)) ASC\nLIMIT 1;\n```",
+    "run_seconds": 25.986
+  },
+  {
+    "id": 1298,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE tourism = 'viewpoint'\n  AND ST_Azimuth(\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Hashimoto Contemporary%' LIMIT 1),\n        pois.geometry::geography\n      ) BETWEEN degrees(292.5) AND degrees(337.5)\nORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Hashimoto Contemporary%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 21.725
+  },
+  {
+    "id": 1299,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'fast_food'\n  AND ST_Azimuth(ST_Centroid((SELECT geometry FROM pois WHERE poi_name ILIKE '%Blue Ocean Discovery Center%' LIMIT 1)::geography), ST_Centroid(pois.geometry::geography)) BETWEEN degrees(202.5) AND degrees(247.5)\n  AND ST_Distance(ST_Centroid((SELECT geometry FROM pois WHERE poi_name ILIKE '%Blue Ocean Discovery Center%' LIMIT 1)::geography), ST_Centroid(pois.geometry::geography)) = (\n    SELECT MIN(ST_Distance(ST_Centroid((SELECT geometry FROM pois WHERE poi_name ILIKE '%Blue Ocean Discovery Center%' LIMIT 1)::geography), ST_Centroid(pois.geometry::geography)))\n    FROM pois\n    WHERE amenity = 'fast_food'\n      AND ST_Azimuth(ST_Centroid((SELECT geometry FROM pois WHERE poi_name ILIKE '%Blue Ocean Discovery Center%' LIMIT 1)::geography), ST_Centroid(pois.geometry::geography)) BETWEEN degrees(202.5) AND degrees(247.5)\n  )\n```",
+    "run_seconds": 53.035
+  }
+]

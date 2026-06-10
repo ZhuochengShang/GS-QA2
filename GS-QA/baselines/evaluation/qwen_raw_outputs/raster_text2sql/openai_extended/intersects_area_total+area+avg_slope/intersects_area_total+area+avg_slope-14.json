@@ -1,0 +1,61 @@
+{
+  "answer_type": "area+slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "area+slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "area": 130746.439961,
+      "slope": 5.342224
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "area": 130746.439961,
+        "slope": 5.342224
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_CollectionExtract(ST_MakeValid(ST_GeomFromText('POLYGON ((-75.363072 39.997989, -75.353415 40.002126, -75.351549 40.002925, -75.350737 40.001644, -75.34301 40.004953, -75.342316 40.004556, -75.342252 40.004523, -75.342192 40.004501, -75.342138 40.004494, -75.342046 40.004489, -75.341541 40.004501, -75.341465 40.004499, -75.341389 40.004493, -75.341344 40.004488, -75.341304 40.004476, -75.341259 40.004457, -75.341205 40.004428, -75.341135 40.004377, -75.341117 40.004359, -75.332852 40.007953, -75.331886 40.008372, -75.329612 40.009361, -75.329325 40.009487, -75.32924 40.009525, -75.328821 40.00971, -75.327902 40.010115, -75.327473 40.010308, -75.329012 40.012373, -75.329096 40.012486, -75.328943 40.012559, -75.328055 40.012961, -75.324732 40.014417, -75.322984 40.015188, -75.321463 40.015859, -75.320684 40.016213, -75.32176 40.017376, -75.32208 40.01786, -75.32213 40.017936, -75.322661 40.018651, -75.323565 40.019798, -75.325033 40.021684, -75.325344 40.022114, -75.325519 40.022338, -75.325752 40.02264, -75.326314 40.023365, -75.326701 40.023855, -75.32721 40.02452, -75.327437 40.024817, -75.327539 40.024951, -75.327888 40.025408, -75.32885 40.026856, -75.328858 40.026866, -75.329495 40.027578, -75.331392 40.030004, -75.332484 40.031352, -75.332638 40.031542, -75.333869 40.033062, -75.334205 40.033478, -75.335945 40.03577, -75.337647 40.037973, -75.338643 40.039303, -75.339236 40.040094, -75.339399 40.040312, -75.339982 40.041095, -75.342272 40.043923, -75.342385 40.044045, -75.342599 40.04435, -75.343544 40.045498, -75.344402 40.046558, -75.345637 40.048083, -75.345647 40.048098, -75.346453 40.049127, -75.347574 40.050575, -75.348706 40.052022, -75.349398 40.052931, -75.350226 40.053975, -75.351184 40.055312, -75.353106 40.057922, -75.35362 40.058641, -75.353631 40.058657, -75.35404 40.059249, -75.354909 40.06045, -75.354919 40.060463, -75.35919 40.066303, -75.360922 40.065584, -75.409465 40.044177, -75.414976 40.041777, -75.410118 40.035286, -75.404713 40.027944, -75.40433 40.027422, -75.394025 40.014713, -75.393912 40.014573, -75.393865 40.014516, -75.374185 39.990236, -75.370433 39.994505, -75.363072 39.997989))',4326)), 3) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\narea_sum AS (\n  SELECT SUM(ST_Area(parks.geometry::geography)) AS area\n  FROM parks\n  WHERE leisure = 'garden'\n    AND ST_Intersects(parks.geometry::geography, (SELECT g::geography FROM region))\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d, buffered_region r\n  WHERE ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n),\nslope_agg AS (\n  SELECT (ST_SummaryStats(rast, 1, TRUE)).mean AS slope\n  FROM region_slope\n)\nSELECT a.area, s.slope\nFROM area_sum a, slope_agg s;",
+  "id": "intersects_area_total+area+avg_slope-14",
+  "model_output": "```sql\nWITH radnor_township AS (\n  SELECT geometry\n  FROM regions\n  WHERE region_name ILIKE 'Radnor Township'\n    AND border_type = 'municipal'\n    AND addr_state = 'Pennsylvania'\n),\ngardens AS (\n  SELECT geometry\n  FROM parks\n  WHERE leisure = 'garden'\n    AND ST_Intersects(geometry::geometry, (SELECT geometry FROM radnor_township)::geometry)\n),\nclipped_dem AS (\n  SELECT ST_Clip(r.rast, (SELECT geometry FROM radnor_township)::geometry, TRUE) AS rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(r.rast, (SELECT geometry FROM radnor_township)::geometry)\n),\nslope_raster AS (\n  SELECT ST_Slope(rast, 1, '32BF') AS rast\n  FROM clipped_dem\n),\naverage_slope AS (\n  SELECT\n    (ST_Stats(slope_raster.rast, 1, TRUE)).mean AS slope_mean\n  FROM slope_raster\n)\nSELECT\n  (SELECT SUM(ST_Area(g.geometry)) / 1000000 FROM gardens g) AS total_garden_area_sqkm,\n  (SELECT slope_mean FROM average_slope) AS average_slope_degrees;\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 6:     AND addr_state = 'Pennsylvania'\n                ^",
+    "output": []
+  },
+  "predicted_sql": "WITH radnor_township AS (\n  SELECT geometry\n  FROM regions\n  WHERE region_name ILIKE 'Radnor Township'\n    AND border_type = 'municipal'\n    AND addr_state = 'Pennsylvania'\n),\ngardens AS (\n  SELECT geometry\n  FROM parks\n  WHERE leisure = 'garden'\n    AND ST_Intersects(geometry::geometry, (SELECT geometry FROM radnor_township)::geometry)\n),\nclipped_dem AS (\n  SELECT ST_Clip(r.rast, (SELECT geometry FROM radnor_township)::geometry, TRUE) AS rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(r.rast, (SELECT geometry FROM radnor_township)::geometry)\n),\nslope_raster AS (\n  SELECT ST_Slope(rast, 1, '32BF') AS rast\n  FROM clipped_dem\n),\naverage_slope AS (\n  SELECT\n    (ST_Stats(slope_raster.rast, 1, TRUE)).mean AS slope_mean\n  FROM slope_raster\n)\nSELECT\n  (SELECT SUM(ST_Area(g.geometry)) / 1000000 FROM gardens g) AS total_garden_area_sqkm,\n  (SELECT slope_mean FROM average_slope) AS average_slope_degrees;",
+  "predicted_sql_candidates": [
+    "WITH radnor_township AS (\n  SELECT geometry\n  FROM regions\n  WHERE region_name ILIKE 'Radnor Township'\n    AND border_type = 'municipal'\n    AND addr_state = 'Pennsylvania'\n),\ngardens AS (\n  SELECT geometry\n  FROM parks\n  WHERE leisure = 'garden'\n    AND ST_Intersects(geometry::geometry, (SELECT geometry FROM radnor_township)::geometry)\n),\nclipped_dem AS (\n  SELECT ST_Clip(r.rast, (SELECT geometry FROM radnor_township)::geometry, TRUE) AS rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(r.rast, (SELECT geometry FROM radnor_township)::geometry)\n),\nslope_raster AS (\n  SELECT ST_Slope(rast, 1, '32BF') AS rast\n  FROM clipped_dem\n),\naverage_slope AS (\n  SELECT\n    (ST_Stats(slope_raster.rast, 1, TRUE)).mean AS slope_mean\n  FROM slope_raster\n)\nSELECT\n  (SELECT SUM(ST_Area(g.geometry)) / 1000000 FROM gardens g) AS total_garden_area_sqkm,\n  (SELECT slope_mean FROM average_slope) AS average_slope_degrees;"
+  ],
+  "query_type": "extended",
+  "question": "Can you tell me the total area of all gardens in Radnor Township, Pennsylvania and the average slope of Radnor Township, Pennsylvania?",
+  "source_file": "intersects_area_total+area+avg_slope.jsonl",
+  "source_stem": "intersects_area_total+area+avg_slope",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 57.783,
+    "total_seconds": 57.784
+  },
+  "usage": {
+    "completion_tokens": 271,
+    "prompt_tokens": 1558,
+    "total_tokens": 1829
+  }
+}

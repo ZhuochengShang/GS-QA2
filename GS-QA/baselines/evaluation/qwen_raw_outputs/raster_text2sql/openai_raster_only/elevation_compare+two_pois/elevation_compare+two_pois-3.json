@@ -1,0 +1,63 @@
+{
+  "answer_type": "name",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "name",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "higher_poi": "Grace Christian University, Wyoming, MI",
+      "poi1_elevation_m": 19.0,
+      "poi2_elevation_m": 208.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "higher_poi": "Grace Christian University, Wyoming, MI",
+        "poi1_elevation_m": 19.0,
+        "poi2_elevation_m": 208.0
+      }
+    ]
+  },
+  "gold_sql": "WITH p1 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-122.68279 45.52496)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-122.68279 45.52496)',4326))\n  LIMIT 1\n),\np2 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-85.692172 42.919232)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-85.692172 42.919232)',4326))\n  LIMIT 1\n)\nSELECT\n  CASE\n    WHEN p1.elev > p2.elev THEN 'Oven and Shaker, Portland, OR'\n    WHEN p2.elev > p1.elev THEN 'Grace Christian University, Wyoming, MI'\n    ELSE 'equal'\n  END AS higher_poi,\n  p1.elev AS poi1_elevation_m,\n  p2.elev AS poi2_elevation_m\nFROM p1, p2;",
+  "id": "elevation_compare+two_pois-3",
+  "model_output": "```sql\nWITH\n  oven_and_shaker_geom AS (\n    SELECT ST_SetSRID(ST_GeomFromText('POINT (-122.68279 45.52496)'), 4326)::geography AS geom\n  ),\n  grace_uni_geom AS (\n    SELECT ST_SetSRID(ST_GeomFromText('POINT (-85.692172 42.919232)'), 4326)::geography AS geom\n  ),\n  oven_and_shaker_dem AS (\n    SELECT\n      ST_Value(rast, ST_Transform(oven_and_shaker_geom.geom, 4326)) AS elevation\n    FROM\n      public.dem_us,\n      oven_and_shaker_geom\n    WHERE\n      ST_Intersects(rast, ST_Transform(oven_and_shaker_geom.geom, 4326))\n  ),\n  grace_uni_dem AS (\n    SELECT\n      ST_Value(rast, ST_Transform(grace_uni_geom.geom, 4326)) AS elevation\n    FROM\n      public.dem_us,\n      grace_uni_geom\n    WHERE\n      ST_Intersects(rast, ST_Transform(grace_uni_geom.geom, 4326))\n  )\nSELECT\n  CASE\n    WHEN o.elevation > g.elevation THEN 'Oven and Shaker, Portland, OR'\n    WHEN g.elevation > o.elevation THEN 'Grace Christian University, Wyoming, MI'\n    ELSE 'Equal'\n  END AS higher_elevation,\n  o.elevation AS oven_and_shaker_elevation,\n  g.elevation AS grace_uni_elevation\nFROM\n  oven_and_shaker_dem o,\n  grace_uni_dem g;\n```",
+  "predicted_exec": {
+    "error": "function st_transform(geography, integer) does not exist\nLINE 10:       ST_Value(rast, ST_Transform(oven_and_shaker_geom.geom,...\n                              ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH\n  oven_and_shaker_geom AS (\n    SELECT ST_SetSRID(ST_GeomFromText('POINT (-122.68279 45.52496)'), 4326)::geography AS geom\n  ),\n  grace_uni_geom AS (\n    SELECT ST_SetSRID(ST_GeomFromText('POINT (-85.692172 42.919232)'), 4326)::geography AS geom\n  ),\n  oven_and_shaker_dem AS (\n    SELECT\n      ST_Value(rast, ST_Transform(oven_and_shaker_geom.geom, 4326)) AS elevation\n    FROM\n      public.dem_us,\n      oven_and_shaker_geom\n    WHERE\n      ST_Intersects(rast, ST_Transform(oven_and_shaker_geom.geom, 4326))\n  ),\n  grace_uni_dem AS (\n    SELECT\n      ST_Value(rast, ST_Transform(grace_uni_geom.geom, 4326)) AS elevation\n    FROM\n      public.dem_us,\n      grace_uni_geom\n    WHERE\n      ST_Intersects(rast, ST_Transform(grace_uni_geom.geom, 4326))\n  )\nSELECT\n  CASE\n    WHEN o.elevation > g.elevation THEN 'Oven and Shaker, Portland, OR'\n    WHEN g.elevation > o.elevation THEN 'Grace Christian University, Wyoming, MI'\n    ELSE 'Equal'\n  END AS higher_elevation,\n  o.elevation AS oven_and_shaker_elevation,\n  g.elevation AS grace_uni_elevation\nFROM\n  oven_and_shaker_dem o,\n  grace_uni_dem g;",
+  "predicted_sql_candidates": [
+    "WITH\n  oven_and_shaker_geom AS (\n    SELECT ST_SetSRID(ST_GeomFromText('POINT (-122.68279 45.52496)'), 4326)::geography AS geom\n  ),\n  grace_uni_geom AS (\n    SELECT ST_SetSRID(ST_GeomFromText('POINT (-85.692172 42.919232)'), 4326)::geography AS geom\n  ),\n  oven_and_shaker_dem AS (\n    SELECT\n      ST_Value(rast, ST_Transform(oven_and_shaker_geom.geom, 4326)) AS elevation\n    FROM\n      public.dem_us,\n      oven_and_shaker_geom\n    WHERE\n      ST_Intersects(rast, ST_Transform(oven_and_shaker_geom.geom, 4326))\n  ),\n  grace_uni_dem AS (\n    SELECT\n      ST_Value(rast, ST_Transform(grace_uni_geom.geom, 4326)) AS elevation\n    FROM\n      public.dem_us,\n      grace_uni_geom\n    WHERE\n      ST_Intersects(rast, ST_Transform(grace_uni_geom.geom, 4326))\n  )\nSELECT\n  CASE\n    WHEN o.elevation > g.elevation THEN 'Oven and Shaker, Portland, OR'\n    WHEN g.elevation > o.elevation THEN 'Grace Christian University, Wyoming, MI'\n    ELSE 'Equal'\n  END AS higher_elevation,\n  o.elevation AS oven_and_shaker_elevation,\n  g.elevation AS grace_uni_elevation\nFROM\n  oven_and_shaker_dem o,\n  grace_uni_dem g;"
+  ],
+  "query_type": "raster_only",
+  "question": "Which is at a higher elevation, Oven and Shaker, Portland, OR Grace Christian University, Wyoming, MI?",
+  "source_file": "elevation_compare+two_pois.jsonl",
+  "source_stem": "elevation_compare+two_pois",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 79.772,
+    "total_seconds": 79.773
+  },
+  "usage": {
+    "completion_tokens": 374,
+    "prompt_tokens": 1744,
+    "total_tokens": 2118
+  }
+}

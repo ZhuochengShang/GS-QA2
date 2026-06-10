@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 0.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 0.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-68.720757 44.863652, -68.722122 44.862643, -68.724171 44.860834, -68.724666 44.860394, -68.729754 44.855901, -68.730812 44.854976, -68.730751 44.85476, -68.729586 44.850224, -68.729315 44.849094, -68.72911 44.848315, -68.729019 44.847964, -68.728965 44.847756, -68.728723 44.846833, -68.728392 44.845568, -68.728136 44.844568, -68.726389 44.837767, -68.726108 44.836632, -68.725777 44.835393, -68.724879 44.835504, -68.723525 44.835676, -68.722449 44.835817, -68.722209 44.834854, -68.721933 44.833714, -68.721391 44.83144, -68.721125 44.8303, -68.720406 44.827391, -68.720288 44.8269, -68.720012 44.825765, -68.719825 44.824968, -68.719818 44.824936, -68.719746 44.824635, -68.719685 44.824373, -68.71948 44.8235, -68.719199 44.822374, -68.719074 44.821838, -68.718958 44.821347, -68.718736 44.820392, -68.718933 44.820306, -68.724253 44.819272, -68.72782 44.817715, -68.730395 44.815967, -68.733523 44.814534, -68.735915 44.813308, -68.735981 44.813281, -68.738111 44.811868, -68.741754 44.810349, -68.74346 44.809842, -68.746203 44.809028, -68.747886 44.808062, -68.753821 44.804655, -68.754418 44.804313, -68.754575 44.804224, -68.75787 44.802332, -68.761265 44.800385, -68.762094 44.799909, -68.762923 44.799433, -68.763034 44.79938, -68.763368 44.799223, -68.76348 44.799171, -68.763566 44.799112, -68.763825 44.798935, -68.763912 44.798877, -68.76475 44.798331, -68.767267 44.796693, -68.768106 44.796148, -68.76848 44.795712, -68.768829 44.795308, -68.769552 44.794468, -68.769604 44.794406, -68.769702 44.794292, -68.769851 44.794117, -68.769916 44.794044, -68.76998 44.793971, -68.770978 44.792011, -68.771558 44.790873, -68.772159 44.789696, -68.773975 44.786132, -68.774338 44.785422, -68.774618 44.784874, -68.774897 44.784325, -68.774936 44.784249, -68.774975 44.784173, -68.775164 44.783793, -68.775354 44.783412, -68.775424 44.783271, -68.775497 44.783206, -68.775992 44.782766, -68.778092 44.780902, -68.779957 44.779244, -68.780687 44.778597, -68.780983 44.778334, -68.78128 44.778071, -68.781362 44.778119, -68.781535 44.77822, -68.781959 44.778468, -68.7823 44.778667, -68.782556 44.778816, -68.782559 44.778813, -68.782568 44.778807, -68.782572 44.778805, -68.784004 44.779517, -68.784069 44.779572, -68.784242 44.779658, -68.784326 44.7797, -68.78433 44.779702, -68.784342 44.779709, -68.784346 44.779712, -68.784445 44.779765, -68.784743 44.779924, -68.784843 44.779977, -68.786795 44.781001, -68.791752 44.783387, -68.813488 44.780601, -68.836429 44.777546, -68.859041 44.864947, -68.795221 44.873528, -68.78718 44.874563, -68.785885 44.874769, -68.784731 44.874911, -68.775932 44.87607, -68.757188 44.878514, -68.744425 44.880178, -68.741941 44.879226, -68.741547 44.878915, -68.737296 44.875829, -68.725102 44.866786, -68.723653 44.86574, -68.720757 44.863652))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).min AS elevation\nFROM clipped;",
+  "id": "elevation_min+region-14",
+  "model_output": "```sql\nWITH bangor_geometry AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Bangor'\n    AND border_type ILIKE 'city'\n    AND addr_state ILIKE 'Maine'\n)\nSELECT MIN(ST_Value(r.rast, 1, b.geom)) AS min_elevation\nFROM bangor_geometry b\nJOIN public.dem_us r\n  ON ST_Intersects(r.rast, b.geom);\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 6:     AND addr_state ILIKE 'Maine'\n                ^",
+    "output": []
+  },
+  "predicted_sql": "WITH bangor_geometry AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Bangor'\n    AND border_type ILIKE 'city'\n    AND addr_state ILIKE 'Maine'\n)\nSELECT MIN(ST_Value(r.rast, 1, b.geom)) AS min_elevation\nFROM bangor_geometry b\nJOIN public.dem_us r\n  ON ST_Intersects(r.rast, b.geom);",
+  "predicted_sql_candidates": [
+    "WITH bangor_geometry AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Bangor'\n    AND border_type ILIKE 'city'\n    AND addr_state ILIKE 'Maine'\n)\nSELECT MIN(ST_Value(r.rast, 1, b.geom)) AS min_elevation\nFROM bangor_geometry b\nJOIN public.dem_us r\n  ON ST_Intersects(r.rast, b.geom);"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the min elevation value within Bangor, Maine?",
+  "source_file": "elevation_min+region.jsonl",
+  "source_stem": "elevation_min+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 20.678,
+    "total_seconds": 20.679
+  },
+  "usage": {
+    "completion_tokens": 97,
+    "prompt_tokens": 1517,
+    "total_tokens": 1614
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "answer_type": "count, POIs -> Points",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "count, POIs -> Points",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "count": 0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "count": 0
+      }
+    ]
+  },
+  "gold_sql": "WITH candidates AS (\n  SELECT p.id, p.geometry\n  FROM pois p\n  WHERE ST_DWithin(p.geometry::geography, ST_GeomFromText('POINT (-97.715155 30.344507)',4326)::geography, 1700)\n    AND p.leisure = 'golf_course'\n),\npoi_elev AS (\n  SELECT c.id, elev.z\n  FROM candidates c\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, c.geometry::geometry) AS z\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, c.geometry::geometry)\n    LIMIT 1\n  ) elev ON elev.z IS NOT NULL\n)\nSELECT COUNT(*) AS count\nFROM poi_elev\nWHERE z <= 240;",
+  "id": "range+count+elevation_condition-10",
+  "model_output": "```sql\nWITH zero_whiskey AS (\n  SELECT ST_SetSRID(ST_MakePoint(-97.715155, 30.344507), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT ST_Buffer(geom, 1700) AS geom\n  FROM zero_whiskey\n),\ndem_clip AS (\n  SELECT ST_Union(rast) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM buffered_area))\n),\ngolf_courses AS (\n  SELECT id\n  FROM pois\n  WHERE poi_name ILIKE '%golf%' AND leisure = 'golf_course'\n    AND ST_DWithin(pois.geometry::geometry, (SELECT geom FROM zero_whiskey), 1700)\n    AND ST_Value(\n      (SELECT rast FROM dem_clip),\n      pois.geometry::geometry\n    ) <= 240\n)\nSELECT COUNT(*) AS golf_course_count\nFROM golf_courses;\n```",
+  "predicted_exec": {
+    "error": "function st_intersects(raster, geography) does not exist\nLINE 11:   WHERE ST_Intersects(rast, (SELECT geom FROM buffered_area)...\n                 ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH zero_whiskey AS (\n  SELECT ST_SetSRID(ST_MakePoint(-97.715155, 30.344507), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT ST_Buffer(geom, 1700) AS geom\n  FROM zero_whiskey\n),\ndem_clip AS (\n  SELECT ST_Union(rast) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM buffered_area))\n),\ngolf_courses AS (\n  SELECT id\n  FROM pois\n  WHERE poi_name ILIKE '%golf%' AND leisure = 'golf_course'\n    AND ST_DWithin(pois.geometry::geometry, (SELECT geom FROM zero_whiskey), 1700)\n    AND ST_Value(\n      (SELECT rast FROM dem_clip),\n      pois.geometry::geometry\n    ) <= 240\n)\nSELECT COUNT(*) AS golf_course_count\nFROM golf_courses;",
+  "predicted_sql_candidates": [
+    "WITH zero_whiskey AS (\n  SELECT ST_SetSRID(ST_MakePoint(-97.715155, 30.344507), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT ST_Buffer(geom, 1700) AS geom\n  FROM zero_whiskey\n),\ndem_clip AS (\n  SELECT ST_Union(rast) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM buffered_area))\n),\ngolf_courses AS (\n  SELECT id\n  FROM pois\n  WHERE poi_name ILIKE '%golf%' AND leisure = 'golf_course'\n    AND ST_DWithin(pois.geometry::geometry, (SELECT geom FROM zero_whiskey), 1700)\n    AND ST_Value(\n      (SELECT rast FROM dem_clip),\n      pois.geometry::geometry\n    ) <= 240\n)\nSELECT COUNT(*) AS golf_course_count\nFROM golf_courses;"
+  ],
+  "query_type": "extended",
+  "question": "How many golf courses can be found within 1700 meters of Zero Whiskey Tactical Arms, Austin, TX at elevations no higher than 240 m?",
+  "source_file": "range+count+elevation_condition.jsonl",
+  "source_stem": "range+count+elevation_condition",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 46.796,
+    "total_seconds": 46.797
+  },
+  "usage": {
+    "completion_tokens": 219,
+    "prompt_tokens": 1795,
+    "total_tokens": 2014
+  }
+}

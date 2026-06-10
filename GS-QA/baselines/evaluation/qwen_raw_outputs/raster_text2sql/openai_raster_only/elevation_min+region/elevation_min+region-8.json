@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 344.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 344.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-96.142526 40.115293, -96.142503 40.113502, -96.142477 40.111988, -96.142484 40.111436, -96.14249 40.111, -96.142485 40.110722, -96.142469 40.109322, -96.142459 40.107838, -96.142455 40.107404, -96.142453 40.107069, -96.14245 40.105033, -96.142421 40.102007, -96.147203 40.102017, -96.149165 40.102047, -96.149209 40.102054, -96.149256 40.102043, -96.14951 40.102044, -96.151922 40.102049, -96.153114 40.102093, -96.153565 40.102097, -96.154364 40.102131, -96.154387 40.10211, -96.154441 40.102079, -96.154497 40.102067, -96.154643 40.102057, -96.154757 40.102042, -96.154855 40.102022, -96.154947 40.101987, -96.15506 40.101924, -96.155185 40.101831, -96.155374 40.101674, -96.155413 40.101639, -96.157142 40.101761, -96.157755 40.101821, -96.161491 40.102076, -96.161376 40.102562, -96.1616 40.103292, -96.16159 40.10351, -96.16154 40.104506, -96.161578 40.105524, -96.161465 40.108268, -96.161395 40.108966, -96.161426 40.109429, -96.161244 40.109862, -96.161226 40.110363, -96.161193 40.11125, -96.161182 40.111899, -96.161172 40.112273, -96.161167 40.112588, -96.16113 40.113557, -96.16115 40.113571, -96.161239 40.11364, -96.161306 40.113676, -96.161332 40.11369, -96.161356 40.113701, -96.161439 40.113713, -96.161588 40.113737, -96.162015 40.113752, -96.163076 40.113758, -96.165958 40.113797, -96.165995 40.113789, -96.166038 40.113772, -96.166074 40.113747, -96.166068 40.114679, -96.166055 40.116728, -96.164655 40.116724, -96.162543 40.116716, -96.162207 40.11672, -96.161413 40.116727, -96.161179 40.116729, -96.161179 40.117271, -96.161185 40.117972, -96.161216 40.118067, -96.161345 40.118364, -96.161377 40.118601, -96.161366 40.118856, -96.161355 40.120394, -96.161351 40.120547, -96.157336 40.120534, -96.156699 40.120562, -96.155517 40.120578, -96.15431 40.120598, -96.154272 40.121403, -96.153705 40.121407, -96.15318 40.121409, -96.153136 40.121403, -96.153089 40.121387, -96.153053 40.121368, -96.153016 40.121331, -96.152989 40.121287, -96.152969 40.121214, -96.153004 40.120637, -96.153004 40.120605, -96.151949 40.120605, -96.151821 40.120604, -96.151826 40.120485, -96.151831 40.120334, -96.151856 40.116709, -96.150811 40.116701, -96.148438 40.11668, -96.146066 40.116655, -96.142536 40.116614, -96.142531 40.115594, -96.142526 40.115293))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).min AS elevation\nFROM clipped;",
+  "id": "elevation_min+region-8",
+  "model_output": "```sql\nWITH pawnee_city AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Pawnee City' AND border_type ILIKE 'city'\n)\nSELECT MIN(rast_val) AS lowest_elevation\nFROM (\n  SELECT ST_Value(rast, 1, geom) AS rast_val\n  FROM pawnee_city\n  CROSS JOIN public.dem_us\n  WHERE ST_Intersects(rast, geom)\n) sub;\n```",
+  "predicted_exec": {
+    "error": "Attempting to get the value of a pixel with a non-point geometry",
+    "output": []
+  },
+  "predicted_sql": "WITH pawnee_city AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Pawnee City' AND border_type ILIKE 'city'\n)\nSELECT MIN(rast_val) AS lowest_elevation\nFROM (\n  SELECT ST_Value(rast, 1, geom) AS rast_val\n  FROM pawnee_city\n  CROSS JOIN public.dem_us\n  WHERE ST_Intersects(rast, geom)\n) sub;",
+  "predicted_sql_candidates": [
+    "WITH pawnee_city AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Pawnee City' AND border_type ILIKE 'city'\n)\nSELECT MIN(rast_val) AS lowest_elevation\nFROM (\n  SELECT ST_Value(rast, 1, geom) AS rast_val\n  FROM pawnee_city\n  CROSS JOIN public.dem_us\n  WHERE ST_Intersects(rast, geom)\n) sub;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the lowest elevation in Pawnee City, Nebraska?",
+  "source_file": "elevation_min+region.jsonl",
+  "source_stem": "elevation_min+region",
+  "timing": {
+    "execution_seconds": 0.049,
+    "generation_seconds": 21.532,
+    "total_seconds": 21.581
+  },
+  "usage": {
+    "completion_tokens": 101,
+    "prompt_tokens": 1517,
+    "total_tokens": 1618
+  }
+}

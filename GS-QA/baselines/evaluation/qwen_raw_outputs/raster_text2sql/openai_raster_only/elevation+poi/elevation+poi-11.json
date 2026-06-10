@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation - point based",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation - point based",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 1444.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 1444.0
+      }
+    ]
+  },
+  "gold_sql": "SELECT ST_Value(rast, 1, ST_GeomFromText('POINT (-111.713273 40.315412)',4326)) AS elevation\nFROM public.dem_us\nWHERE ST_Intersects(rast, ST_GeomFromText('POINT (-111.713273 40.315412)',4326))\nLIMIT 1;",
+  "id": "elevation+poi-11",
+  "model_output": "```sql\nWITH greenspace_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-111.713273, 40.315412), 4326)::geography AS geom\n)\nSELECT \n  ST_Value(r.rast, ST_Transform(g.geom, 4326)) AS elevation\nFROM \n  greenspace_geom g\n  CROSS JOIN public.dem_us r\nWHERE \n  ST_Intersects(r.rast, ST_Transform(g.geom, 4326));\n```",
+  "predicted_exec": {
+    "error": "function st_transform(geography, integer) does not exist\nLINE 5:   ST_Value(r.rast, ST_Transform(g.geom, 4326)) AS elevation\n                           ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH greenspace_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-111.713273, 40.315412), 4326)::geography AS geom\n)\nSELECT \n  ST_Value(r.rast, ST_Transform(g.geom, 4326)) AS elevation\nFROM \n  greenspace_geom g\n  CROSS JOIN public.dem_us r\nWHERE \n  ST_Intersects(r.rast, ST_Transform(g.geom, 4326));",
+  "predicted_sql_candidates": [
+    "WITH greenspace_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-111.713273, 40.315412), 4326)::geography AS geom\n)\nSELECT \n  ST_Value(r.rast, ST_Transform(g.geom, 4326)) AS elevation\nFROM \n  greenspace_geom g\n  CROSS JOIN public.dem_us r\nWHERE \n  ST_Intersects(r.rast, ST_Transform(g.geom, 4326));"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the elevation at the location of Timp Hospital Greenspace, Orem, UT?",
+  "source_file": "elevation+poi.jsonl",
+  "source_stem": "elevation+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 25.399,
+    "total_seconds": 25.4
+  },
+  "usage": {
+    "completion_tokens": 119,
+    "prompt_tokens": 1617,
+    "total_tokens": 1736
+  }
+}

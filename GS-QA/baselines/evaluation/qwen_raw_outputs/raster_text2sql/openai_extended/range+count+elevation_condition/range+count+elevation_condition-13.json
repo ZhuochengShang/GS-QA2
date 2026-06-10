@@ -1,0 +1,59 @@
+{
+  "answer_type": "count, POIs -> Points",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "count, POIs -> Points",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "count": 0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "count": 0
+      }
+    ]
+  },
+  "gold_sql": "WITH candidates AS (\n  SELECT p.id, p.geometry\n  FROM pois p\n  WHERE ST_DWithin(p.geometry::geography, ST_GeomFromText('POINT (-83.696429 40.238092)',4326)::geography, 3000)\n    AND p.amenity = 'cafe'\n),\npoi_elev AS (\n  SELECT c.id, elev.z\n  FROM candidates c\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, c.geometry::geometry) AS z\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, c.geometry::geometry)\n    LIMIT 1\n  ) elev ON elev.z IS NOT NULL\n)\nSELECT COUNT(*) AS count\nFROM poi_elev\nWHERE z <= 80;",
+  "id": "range+count+elevation_condition-13",
+  "model_output": "```sql\nWITH caverns_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-83.696429, 40.238092), 4326)::geography AS geom\n),\ncafes_within_distance AS (\n  SELECT p.*\n  FROM pois p, caverns_geom c\n  WHERE ST_DWithin(p.geometry::geography, c.geom, 3000)\n    AND p.amenity = 'cafe'\n),\nelevation_clip AS (\n  SELECT ST_Clip(\n             rast,\n             true,\n             ST_Buffer(ST_Transform(c.geom, 32616), 5000) -- buffer to ensure full raster coverage\n           ) AS clipped_rast\n  FROM public.dem_us, caverns_geom c\n  WHERE ST_Intersects(rast, ST_Transform(c.geom, 32616))\n),\ncafes_with_elevation AS (\n  SELECT c.id\n  FROM cafes_within_distance c\n  JOIN elevation_clip e\n    ON ST_Contains(ST_Transform(ST_Envelope(e.clipped_rast), 4326), c.geometry::geometry)\n  WHERE ST_Value(e.clipped_rast, c.geometry::geometry) <= 80\n)\nSELECT COUNT(*) AS cafe_count\nFROM cafes_with_elevation;\n```",
+  "predicted_exec": {
+    "error": "function st_transform(geography, integer) does not exist\nLINE 14:              ST_Buffer(ST_Transform(c.geom, 32616), 5000) --...\n                                ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH caverns_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-83.696429, 40.238092), 4326)::geography AS geom\n),\ncafes_within_distance AS (\n  SELECT p.*\n  FROM pois p, caverns_geom c\n  WHERE ST_DWithin(p.geometry::geography, c.geom, 3000)\n    AND p.amenity = 'cafe'\n),\nelevation_clip AS (\n  SELECT ST_Clip(\n             rast,\n             true,\n             ST_Buffer(ST_Transform(c.geom, 32616), 5000) -- buffer to ensure full raster coverage\n           ) AS clipped_rast\n  FROM public.dem_us, caverns_geom c\n  WHERE ST_Intersects(rast, ST_Transform(c.geom, 32616))\n),\ncafes_with_elevation AS (\n  SELECT c.id\n  FROM cafes_within_distance c\n  JOIN elevation_clip e\n    ON ST_Contains(ST_Transform(ST_Envelope(e.clipped_rast), 4326), c.geometry::geometry)\n  WHERE ST_Value(e.clipped_rast, c.geometry::geometry) <= 80\n)\nSELECT COUNT(*) AS cafe_count\nFROM cafes_with_elevation;",
+  "predicted_sql_candidates": [
+    "WITH caverns_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-83.696429, 40.238092), 4326)::geography AS geom\n),\ncafes_within_distance AS (\n  SELECT p.*\n  FROM pois p, caverns_geom c\n  WHERE ST_DWithin(p.geometry::geography, c.geom, 3000)\n    AND p.amenity = 'cafe'\n),\nelevation_clip AS (\n  SELECT ST_Clip(\n             rast,\n             true,\n             ST_Buffer(ST_Transform(c.geom, 32616), 5000) -- buffer to ensure full raster coverage\n           ) AS clipped_rast\n  FROM public.dem_us, caverns_geom c\n  WHERE ST_Intersects(rast, ST_Transform(c.geom, 32616))\n),\ncafes_with_elevation AS (\n  SELECT c.id\n  FROM cafes_within_distance c\n  JOIN elevation_clip e\n    ON ST_Contains(ST_Transform(ST_Envelope(e.clipped_rast), 4326), c.geometry::geometry)\n  WHERE ST_Value(e.clipped_rast, c.geometry::geometry) <= 80\n)\nSELECT COUNT(*) AS cafe_count\nFROM cafes_with_elevation;"
+  ],
+  "query_type": "extended",
+  "question": "Could you tell me how many cafes are present within 3 kilometers of Ohio Caverns, West Liberty, OH with elevation no greater than 80 m?",
+  "source_file": "range+count+elevation_condition.jsonl",
+  "source_stem": "range+count+elevation_condition",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 60.208,
+    "total_seconds": 60.209
+  },
+  "usage": {
+    "completion_tokens": 282,
+    "prompt_tokens": 1785,
+    "total_tokens": 2067
+  }
+}

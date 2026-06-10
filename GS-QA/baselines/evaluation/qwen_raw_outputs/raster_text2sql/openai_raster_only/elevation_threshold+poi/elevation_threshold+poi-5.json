@@ -1,0 +1,61 @@
+{
+  "answer_type": "yes-no",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "yes-no",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer": "yes",
+      "elevation_m": 335.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer": "yes",
+        "elevation_m": 335.0
+      }
+    ]
+  },
+  "gold_sql": "SELECT\n  CASE\n    WHEN ST_Value(d.rast, 1, ST_GeomFromText('POINT (-112.173653 33.489497)',4326)) > 240\n    THEN 'yes' ELSE 'no'\n  END AS answer,\n  ST_Value(d.rast, 1, ST_GeomFromText('POINT (-112.173653 33.489497)',4326)) AS elevation_m\nFROM public.dem_us d\nWHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-112.173653 33.489497)',4326))\nLIMIT 1;",
+  "id": "elevation_threshold+poi-5",
+  "model_output": "```sql\nWITH park_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-112.173653 33.489497)'), 4326)::geometry AS geom\n)\nSELECT \n  CASE \n    WHEN (SELECT ST_Value(rast, park_geom.geom) FROM public.dem_us WHERE ST_Intersects(rast, park_geom.geom)) > 240 THEN 'yes'\n    ELSE 'no'\n  END AS is_above_240m;\n```",
+  "predicted_exec": {
+    "error": "missing FROM-clause entry for table \"park_geom\"\nLINE 6:     WHEN (SELECT ST_Value(rast, park_geom.geom) FROM public....\n                                        ^",
+    "output": []
+  },
+  "predicted_sql": "WITH park_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-112.173653 33.489497)'), 4326)::geometry AS geom\n)\nSELECT \n  CASE \n    WHEN (SELECT ST_Value(rast, park_geom.geom) FROM public.dem_us WHERE ST_Intersects(rast, park_geom.geom)) > 240 THEN 'yes'\n    ELSE 'no'\n  END AS is_above_240m;",
+  "predicted_sql_candidates": [
+    "WITH park_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-112.173653 33.489497)'), 4326)::geometry AS geom\n)\nSELECT \n  CASE \n    WHEN (SELECT ST_Value(rast, park_geom.geom) FROM public.dem_us WHERE ST_Intersects(rast, park_geom.geom)) > 240 THEN 'yes'\n    ELSE 'no'\n  END AS is_above_240m;"
+  ],
+  "query_type": "raster_only",
+  "question": "Is Maryvale Baseball Park, Phoenix, AZ above the 240-meter elevation mark?",
+  "source_file": "elevation_threshold+poi.jsonl",
+  "source_stem": "elevation_threshold+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 24.917,
+    "total_seconds": 24.918
+  },
+  "usage": {
+    "completion_tokens": 116,
+    "prompt_tokens": 1628,
+    "total_tokens": 1744
+  }
+}

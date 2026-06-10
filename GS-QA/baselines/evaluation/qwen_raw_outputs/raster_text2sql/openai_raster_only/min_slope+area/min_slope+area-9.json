@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 0.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 0.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-94.460667 36.58586, -94.461772 36.585934, -94.462808 36.586004, -94.462929 36.586012, -94.46305 36.58602, -94.463144 36.586025, -94.463162 36.586026, -94.463273 36.586031, -94.46343 36.586039, -94.463525 36.586044, -94.463728 36.586059, -94.464338 36.586104, -94.464542 36.58612, -94.46479 36.586137, -94.465536 36.586189, -94.465785 36.586207, -94.46577 36.587054, -94.465727 36.589599, -94.465713 36.590447, -94.465712 36.590497, -94.465694 36.591277, -94.465671 36.592291, -94.46509 36.592275, -94.460226 36.592149, -94.460235 36.593877, -94.459551 36.593879, -94.458306 36.593884, -94.457126 36.593888, -94.456903 36.593886, -94.456236 36.593883, -94.456014 36.593882, -94.455424 36.593882, -94.455424 36.593841, -94.455424 36.591947, -94.455424 36.591317, -94.455424 36.590876, -94.455424 36.590383, -94.454594 36.590381, -94.454154 36.590381, -94.453702 36.590314, -94.453701 36.590011, -94.4537 36.589824, -94.4537 36.589668, -94.453699 36.589326, -94.45369 36.586985, -94.453687 36.586039, -94.453827 36.586037, -94.454249 36.58603, -94.45439 36.586029, -94.454771 36.586022, -94.455914 36.586004, -94.45612 36.586001, -94.456208 36.586, -94.456295 36.585998, -94.456367 36.585996, -94.456417 36.585996, -94.456586 36.585993, -94.456659 36.585993, -94.457937 36.58594, -94.460362 36.58584, -94.460667 36.58586))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).min AS slope\nFROM region_slope;",
+  "id": "min_slope+area-9",
+  "model_output": "```sql\nWITH ginger_blue_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE '%Ginger Blue%' AND addr_state = 'Missouri'\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM ginger_blue_geom), TRUE),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM ginger_blue_geom))\n)\nSELECT\n  MIN(ST_Value(slope_rast, 1)) AS least_steep_slope\nFROM slope_raster;\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 4:   WHERE region_name ILIKE '%Ginger Blue%' AND addr_state = '...\n                                                      ^",
+    "output": []
+  },
+  "predicted_sql": "WITH ginger_blue_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE '%Ginger Blue%' AND addr_state = 'Missouri'\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM ginger_blue_geom), TRUE),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM ginger_blue_geom))\n)\nSELECT\n  MIN(ST_Value(slope_rast, 1)) AS least_steep_slope\nFROM slope_raster;",
+  "predicted_sql_candidates": [
+    "WITH ginger_blue_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE '%Ginger Blue%' AND addr_state = 'Missouri'\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM ginger_blue_geom), TRUE),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM ginger_blue_geom))\n)\nSELECT\n  MIN(ST_Value(slope_rast, 1)) AS least_steep_slope\nFROM slope_raster;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the least steep slope across Ginger Blue, Missouri?",
+  "source_file": "min_slope+area.jsonl",
+  "source_stem": "min_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 29.628,
+    "total_seconds": 29.629
+  },
+  "usage": {
+    "completion_tokens": 139,
+    "prompt_tokens": 1516,
+    "total_tokens": 1655
+  }
+}

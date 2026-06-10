@@ -1,0 +1,2102 @@
+[
+  {
+    "id": 400,
+    "run_seconds": 4.281,
+    "content": "```json\n{\n    \"length\": 120000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 190,
+      "output_tokens": 19,
+      "total_tokens": 209,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 190,
+        "total_tokens": 209,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 401,
+    "run_seconds": 6.383,
+    "content": "```json\n{\n    \"name\": \"The full combined length of motorways in the Bronx\",\n    \"length\": null\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 29,
+      "total_tokens": 215,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 29,
+        "prompt_tokens": 186,
+        "total_tokens": 215,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 402,
+    "run_seconds": 1.487,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 6,
+      "total_tokens": 193,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 187,
+        "total_tokens": 193,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 403,
+    "run_seconds": 3.19,
+    "content": "```json\n{\n    \"length\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 174,
+      "output_tokens": 14,
+      "total_tokens": 188,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 174,
+        "total_tokens": 188,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 404,
+    "run_seconds": 4.042,
+    "content": "```json\n{\n    \"length\": 16000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 171,
+      "output_tokens": 18,
+      "total_tokens": 189,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 171,
+        "total_tokens": 189,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 405,
+    "run_seconds": 1.487,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 189,
+      "output_tokens": 6,
+      "total_tokens": 195,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 189,
+        "total_tokens": 195,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 406,
+    "run_seconds": 3.616,
+    "content": "```json\n{\n    \"length\": 200\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 191,
+      "output_tokens": 16,
+      "total_tokens": 207,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 191,
+        "total_tokens": 207,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 407,
+    "run_seconds": 3.616,
+    "content": "```json\n{\n    \"distance\": 130\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 191,
+      "output_tokens": 16,
+      "total_tokens": 207,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 191,
+        "total_tokens": 207,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 408,
+    "run_seconds": 1.488,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 195,
+      "output_tokens": 6,
+      "total_tokens": 201,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 195,
+        "total_tokens": 201,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 409,
+    "run_seconds": 7.66,
+    "content": "```json\n{\n    \"name\": \"Bluffton\",\n    \"address\": \"Bluffton, South Carolina\",\n    \"distance\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 174,
+      "output_tokens": 35,
+      "total_tokens": 209,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 35,
+        "prompt_tokens": 174,
+        "total_tokens": 209,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 410,
+    "run_seconds": 4.042,
+    "content": "```json\n{\n    \"length\": 30000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 18,
+      "total_tokens": 206,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 188,
+        "total_tokens": 206,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 411,
+    "run_seconds": 3.403,
+    "content": "```json\n{\n    \"length\": 90\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 192,
+      "output_tokens": 15,
+      "total_tokens": 207,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 192,
+        "total_tokens": 207,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 412,
+    "run_seconds": 3.191,
+    "content": "```json\n{\n    \"length\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 189,
+      "output_tokens": 14,
+      "total_tokens": 203,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 189,
+        "total_tokens": 203,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 413,
+    "run_seconds": 7.662,
+    "content": "```json\n{\n    \"name\": \"total distance spanned by all rivers in Halifax County\",\n    \"address\": \"Halifax County, North Carolina\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 193,
+      "output_tokens": 35,
+      "total_tokens": 228,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 35,
+        "prompt_tokens": 193,
+        "total_tokens": 228,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 414,
+    "run_seconds": 3.616,
+    "content": "```json\n{\n    \"length\": 100\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 184,
+      "output_tokens": 16,
+      "total_tokens": 200,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 184,
+        "total_tokens": 200,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 415,
+    "run_seconds": 7.873,
+    "content": "```json\n{\n    \"name\": \"Brentwood cycleways\",\n    \"address\": \"Brentwood, California\",\n    \"length\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 189,
+      "output_tokens": 36,
+      "total_tokens": 225,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 36,
+        "prompt_tokens": 189,
+        "total_tokens": 225,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 416,
+    "run_seconds": 4.255,
+    "content": "```json\n{\n    \"length\": 200000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 19,
+      "total_tokens": 207,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 188,
+        "total_tokens": 207,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 417,
+    "run_seconds": 4.255,
+    "content": "```json\n{\n    \"length\": 170000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 185,
+      "output_tokens": 19,
+      "total_tokens": 204,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 185,
+        "total_tokens": 204,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 418,
+    "run_seconds": 3.615,
+    "content": "```json\n{\n    \"length\": 260\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 172,
+      "output_tokens": 16,
+      "total_tokens": 188,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 172,
+        "total_tokens": 188,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 419,
+    "run_seconds": 5.956,
+    "content": "```json\n{\n    \"name\": \"Las Vegas\",\n    \"address\": \"Las Vegas, Nevada, USA\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 27,
+      "total_tokens": 205,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 27,
+        "prompt_tokens": 178,
+        "total_tokens": 205,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 420,
+    "run_seconds": 1.488,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 190,
+      "output_tokens": 6,
+      "total_tokens": 196,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 190,
+        "total_tokens": 196,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 421,
+    "run_seconds": 3.616,
+    "content": "```json\n{\n    \"length\": 291\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 193,
+      "output_tokens": 16,
+      "total_tokens": 209,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 193,
+        "total_tokens": 209,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 422,
+    "run_seconds": 9.151,
+    "content": "```json\n{\n    \"name\": \"Cibola County\",\n    \"address\": \"Cibola County, New Mexico\",\n    \"distance\": 140000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 197,
+      "output_tokens": 42,
+      "total_tokens": 239,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 42,
+        "prompt_tokens": 197,
+        "total_tokens": 239,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 423,
+    "run_seconds": 4.041,
+    "content": "```json\n{\n    \"distance\": 51000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 174,
+      "output_tokens": 18,
+      "total_tokens": 192,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 174,
+        "total_tokens": 192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 424,
+    "run_seconds": 4.255,
+    "content": "```json\n{\n    \"length\": 110000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 192,
+      "output_tokens": 19,
+      "total_tokens": 211,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 192,
+        "total_tokens": 211,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 425,
+    "run_seconds": 5.531,
+    "content": "```json\n{\n    \"name\": \"motorways\",\n    \"length\": 1000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 180,
+      "output_tokens": 25,
+      "total_tokens": 205,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 180,
+        "total_tokens": 205,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 426,
+    "run_seconds": 4.468,
+    "content": "```json\n{\n    \"length\": 1000000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 20,
+      "total_tokens": 206,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 186,
+        "total_tokens": 206,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 427,
+    "run_seconds": 1.488,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 6,
+      "total_tokens": 192,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 186,
+        "total_tokens": 192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 428,
+    "run_seconds": 3.616,
+    "content": "```json\n{\n    \"distance\": 100\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 189,
+      "output_tokens": 16,
+      "total_tokens": 205,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 189,
+        "total_tokens": 205,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 429,
+    "run_seconds": 7.235,
+    "content": "```json\n{\n    \"name\": \"motorways\",\n    \"address\": \"Natick, Massachusetts\",\n    \"length\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 171,
+      "output_tokens": 33,
+      "total_tokens": 204,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 33,
+        "prompt_tokens": 171,
+        "total_tokens": 204,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 430,
+    "run_seconds": 7.448,
+    "content": "```json\n{\n    \"name\": \"Albion\",\n    \"address\": \"Albion, Michigan\",\n    \"distance\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 191,
+      "output_tokens": 34,
+      "total_tokens": 225,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 34,
+        "prompt_tokens": 191,
+        "total_tokens": 225,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 431,
+    "run_seconds": 3.189,
+    "content": "```json\n{\n    \"distance\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 171,
+      "output_tokens": 14,
+      "total_tokens": 185,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 171,
+        "total_tokens": 185,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 432,
+    "run_seconds": 1.487,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 198,
+      "output_tokens": 6,
+      "total_tokens": 204,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 198,
+        "total_tokens": 204,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 433,
+    "run_seconds": 1.487,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 179,
+      "output_tokens": 6,
+      "total_tokens": 185,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 179,
+        "total_tokens": 185,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 434,
+    "run_seconds": 1.487,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 183,
+      "output_tokens": 6,
+      "total_tokens": 189,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 183,
+        "total_tokens": 189,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 435,
+    "run_seconds": 3.616,
+    "content": "```json\n{\n    \"length\": 180\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 16,
+      "total_tokens": 204,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 188,
+        "total_tokens": 204,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 436,
+    "run_seconds": 3.617,
+    "content": "```json\n{\n    \"length\": 130\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 16,
+      "total_tokens": 203,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 187,
+        "total_tokens": 203,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 437,
+    "run_seconds": 7.021,
+    "content": "```json\n{\n    \"name\": \"motorways\",\n    \"address\": \"Cuba, New York\",\n    \"length\": null\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 193,
+      "output_tokens": 32,
+      "total_tokens": 225,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 32,
+        "prompt_tokens": 193,
+        "total_tokens": 225,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 438,
+    "run_seconds": 4.042,
+    "content": "```json\n{\n    \"distance\": 30000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 196,
+      "output_tokens": 18,
+      "total_tokens": 214,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 196,
+        "total_tokens": 214,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 439,
+    "run_seconds": 3.617,
+    "content": "```json\n{\n    \"length\": 180\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 195,
+      "output_tokens": 16,
+      "total_tokens": 211,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 195,
+        "total_tokens": 211,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 440,
+    "run_seconds": 3.402,
+    "content": "```json\n{\n    \"length\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 15,
+      "total_tokens": 203,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 188,
+        "total_tokens": 203,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 441,
+    "run_seconds": 1.488,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 184,
+      "output_tokens": 6,
+      "total_tokens": 190,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 184,
+        "total_tokens": 190,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 442,
+    "run_seconds": 8.087,
+    "content": "```json\n{\n    \"name\": \"Cabarrus County\",\n    \"address\": \"Cabarrus County, North Carolina\",\n    \"length\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 190,
+      "output_tokens": 37,
+      "total_tokens": 227,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 37,
+        "prompt_tokens": 190,
+        "total_tokens": 227,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 443,
+    "run_seconds": 4.042,
+    "content": "```json\n{\n    \"length\": 65000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 191,
+      "output_tokens": 18,
+      "total_tokens": 209,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 191,
+        "total_tokens": 209,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 444,
+    "run_seconds": 4.042,
+    "content": "```json\n{\n    \"distance\": 60000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 18,
+      "total_tokens": 205,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 187,
+        "total_tokens": 205,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 445,
+    "run_seconds": 3.615,
+    "content": "```json\n{\n    \"length\": 200\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 16,
+      "total_tokens": 203,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 187,
+        "total_tokens": 203,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 446,
+    "run_seconds": 4.254,
+    "content": "```json\n{\n    \"length\": 100000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 183,
+      "output_tokens": 19,
+      "total_tokens": 202,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 183,
+        "total_tokens": 202,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 447,
+    "run_seconds": 6.383,
+    "content": "```json\n{\n    \"name\": \"Umatilla County\",\n    \"address\": \"Umatilla County, Oregon\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 193,
+      "output_tokens": 29,
+      "total_tokens": 222,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 29,
+        "prompt_tokens": 193,
+        "total_tokens": 222,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 448,
+    "run_seconds": 4.255,
+    "content": "```json\n{\n    \"length\": 120000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 196,
+      "output_tokens": 19,
+      "total_tokens": 215,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 196,
+        "total_tokens": 215,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 449,
+    "run_seconds": 7.448,
+    "content": "```json\n{\n    \"name\": \"Middlesex County\",\n    \"address\": \"Middlesex County, Massachusetts\",\n    \"distance\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 191,
+      "output_tokens": 34,
+      "total_tokens": 225,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 34,
+        "prompt_tokens": 191,
+        "total_tokens": 225,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 450,
+    "run_seconds": 4.042,
+    "content": "```json\n{\n    \"length\": 30000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 18,
+      "total_tokens": 206,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 188,
+        "total_tokens": 206,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 451,
+    "run_seconds": 1.486,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 199,
+      "output_tokens": 6,
+      "total_tokens": 205,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 199,
+        "total_tokens": 205,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 452,
+    "run_seconds": 1.488,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 192,
+      "output_tokens": 6,
+      "total_tokens": 198,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 192,
+        "total_tokens": 198,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 453,
+    "run_seconds": 1.487,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 196,
+      "output_tokens": 6,
+      "total_tokens": 202,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 196,
+        "total_tokens": 202,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 454,
+    "run_seconds": 7.873,
+    "content": "```json\n{\n    \"name\": \"Tarrant County motorways\",\n    \"address\": \"Tarrant County, Texas\",\n    \"length\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 192,
+      "output_tokens": 36,
+      "total_tokens": 228,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 36,
+        "prompt_tokens": 192,
+        "total_tokens": 228,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 455,
+    "run_seconds": 3.616,
+    "content": "```json\n{\n    \"length\": 290\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 16,
+      "total_tokens": 204,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 188,
+        "total_tokens": 204,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 456,
+    "run_seconds": 1.487,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 179,
+      "output_tokens": 6,
+      "total_tokens": 185,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 179,
+        "total_tokens": 185,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 457,
+    "run_seconds": 3.615,
+    "content": "```json\n{\n    \"length\": 291\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 16,
+      "total_tokens": 189,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 173,
+        "total_tokens": 189,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 458,
+    "run_seconds": 3.19,
+    "content": "```json\n{\n    \"length\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 179,
+      "output_tokens": 14,
+      "total_tokens": 193,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 179,
+        "total_tokens": 193,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 459,
+    "run_seconds": 7.873,
+    "content": "```json\n{\n    \"name\": \"rivers\",\n    \"address\": \"Rocky Mount, North Carolina\",\n    \"length\": 120\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 36,
+      "total_tokens": 224,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 36,
+        "prompt_tokens": 188,
+        "total_tokens": 224,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 460,
+    "run_seconds": 3.616,
+    "content": "```json\n{\n    \"length\": 150\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 16,
+      "total_tokens": 203,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 187,
+        "total_tokens": 203,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 461,
+    "run_seconds": 1.486,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 180,
+      "output_tokens": 6,
+      "total_tokens": 186,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 180,
+        "total_tokens": 186,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 462,
+    "run_seconds": 1.487,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 179,
+      "output_tokens": 6,
+      "total_tokens": 185,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 179,
+        "total_tokens": 185,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 463,
+    "run_seconds": 3.616,
+    "content": "```json\n{\n    \"length\": 190\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 16,
+      "total_tokens": 203,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 187,
+        "total_tokens": 203,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 464,
+    "run_seconds": 3.403,
+    "content": "```json\n{\n    \"length\": 35\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 15,
+      "total_tokens": 201,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 186,
+        "total_tokens": 201,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 465,
+    "run_seconds": 3.615,
+    "content": "```json\n{\n    \"length\": 160\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 192,
+      "output_tokens": 16,
+      "total_tokens": 208,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 192,
+        "total_tokens": 208,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 466,
+    "run_seconds": 4.042,
+    "content": "```json\n{\n    \"length\": 45000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 18,
+      "total_tokens": 206,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 188,
+        "total_tokens": 206,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 467,
+    "run_seconds": 3.615,
+    "content": "```json\n{\n    \"length\": 190\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 190,
+      "output_tokens": 16,
+      "total_tokens": 206,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 190,
+        "total_tokens": 206,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 468,
+    "run_seconds": 3.616,
+    "content": "```json\n{\n    \"length\": 190\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 189,
+      "output_tokens": 16,
+      "total_tokens": 205,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 189,
+        "total_tokens": 205,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 469,
+    "run_seconds": 3.828,
+    "content": "```json\n{\n    \"length\": 3500\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 189,
+      "output_tokens": 17,
+      "total_tokens": 206,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 189,
+        "total_tokens": 206,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 470,
+    "run_seconds": 3.616,
+    "content": "```json\n{\n    \"length\": 100\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 16,
+      "total_tokens": 204,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 188,
+        "total_tokens": 204,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 471,
+    "run_seconds": 3.616,
+    "content": "```json\n{\n    \"length\": 100\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 191,
+      "output_tokens": 16,
+      "total_tokens": 207,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 191,
+        "total_tokens": 207,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 472,
+    "run_seconds": 1.487,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 195,
+      "output_tokens": 6,
+      "total_tokens": 201,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 195,
+        "total_tokens": 201,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 473,
+    "run_seconds": 3.19,
+    "content": "```json\n{\n    \"length\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 172,
+      "output_tokens": 14,
+      "total_tokens": 186,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 172,
+        "total_tokens": 186,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 474,
+    "run_seconds": 3.616,
+    "content": "```json\n{\n    \"distance\": 130\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 16,
+      "total_tokens": 204,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 188,
+        "total_tokens": 204,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 475,
+    "run_seconds": 6.595,
+    "content": "```json\n{\n    \"name\": \"cycleways\",\n    \"address\": \"New Hampshire\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 181,
+      "output_tokens": 30,
+      "total_tokens": 211,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 30,
+        "prompt_tokens": 181,
+        "total_tokens": 211,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 476,
+    "run_seconds": 7.66,
+    "content": "```json\n{\n    \"name\": \"St. Louis Park\",\n    \"address\": \"St. Louis Park, Minnesota\",\n    \"length\": null\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 192,
+      "output_tokens": 35,
+      "total_tokens": 227,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 35,
+        "prompt_tokens": 192,
+        "total_tokens": 227,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 477,
+    "run_seconds": 4.254,
+    "content": "```json\n{\n    \"length\": 370000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 19,
+      "total_tokens": 192,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 173,
+        "total_tokens": 192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 478,
+    "run_seconds": 1.486,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 195,
+      "output_tokens": 6,
+      "total_tokens": 201,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 195,
+        "total_tokens": 201,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 479,
+    "run_seconds": 1.486,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 6,
+      "total_tokens": 194,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 188,
+        "total_tokens": 194,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 480,
+    "run_seconds": 3.616,
+    "content": "```json\n{\n    \"length\": 100\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 16,
+      "total_tokens": 204,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 188,
+        "total_tokens": 204,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 481,
+    "run_seconds": 3.615,
+    "content": "```json\n{\n    \"length\": 100\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 16,
+      "total_tokens": 204,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 188,
+        "total_tokens": 204,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 482,
+    "run_seconds": 3.616,
+    "content": "```json\n{\n    \"length\": 190\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 16,
+      "total_tokens": 203,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 187,
+        "total_tokens": 203,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 483,
+    "run_seconds": 3.615,
+    "content": "```json\n{\n    \"length\": 100\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 16,
+      "total_tokens": 203,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 187,
+        "total_tokens": 203,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 484,
+    "run_seconds": 6.384,
+    "content": "```json\n{\n    \"name\": \"footways\",\n    \"address\": \"Seattle\",\n    \"length\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 184,
+      "output_tokens": 29,
+      "total_tokens": 213,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 29,
+        "prompt_tokens": 184,
+        "total_tokens": 213,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 485,
+    "run_seconds": 7.66,
+    "content": "```json\n{\n    \"name\": \"footway\",\n    \"address\": \"Dobbs Ferry, New York\",\n    \"length\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 192,
+      "output_tokens": 35,
+      "total_tokens": 227,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 35,
+        "prompt_tokens": 192,
+        "total_tokens": 227,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 486,
+    "run_seconds": 3.403,
+    "content": "```json\n{\n    \"length\": 70\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 185,
+      "output_tokens": 15,
+      "total_tokens": 200,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 185,
+        "total_tokens": 200,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 487,
+    "run_seconds": 8.086,
+    "content": "```json\n{\n    \"name\": \"rivers\",\n    \"count\": 35000,\n    \"distance\": 35000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 37,
+      "total_tokens": 224,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 37,
+        "prompt_tokens": 187,
+        "total_tokens": 224,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 488,
+    "run_seconds": 3.615,
+    "content": "```json\n{\n    \"distance\": 200\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 16,
+      "total_tokens": 204,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 188,
+        "total_tokens": 204,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 489,
+    "run_seconds": 3.829,
+    "content": "```json\n{\n    \"length\": 1800\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 17,
+      "total_tokens": 204,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 187,
+        "total_tokens": 204,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 490,
+    "run_seconds": 4.254,
+    "content": "```json\n{\n    \"length\": 250000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 19,
+      "total_tokens": 206,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 187,
+        "total_tokens": 206,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 491,
+    "run_seconds": 1.486,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 6,
+      "total_tokens": 193,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 187,
+        "total_tokens": 193,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 492,
+    "run_seconds": 1.486,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 6,
+      "total_tokens": 193,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 187,
+        "total_tokens": 193,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 493,
+    "run_seconds": 3.615,
+    "content": "```json\n{\n    \"distance\": 130\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 191,
+      "output_tokens": 16,
+      "total_tokens": 207,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 191,
+        "total_tokens": 207,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 494,
+    "run_seconds": 3.615,
+    "content": "```json\n{\n    \"length\": 100\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 16,
+      "total_tokens": 202,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 186,
+        "total_tokens": 202,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 495,
+    "run_seconds": 3.828,
+    "content": "```json\n{\n    \"length\": 1000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 182,
+      "output_tokens": 17,
+      "total_tokens": 199,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 182,
+        "total_tokens": 199,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 496,
+    "run_seconds": 7.66,
+    "content": "```json\n{\n    \"name\": \"canals\",\n    \"address\": \"Palm Bay, Florida\",\n    \"length\": 120\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 189,
+      "output_tokens": 35,
+      "total_tokens": 224,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 35,
+        "prompt_tokens": 189,
+        "total_tokens": 224,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 497,
+    "run_seconds": 7.234,
+    "content": "```json\n{\n    \"name\": \"canals\",\n    \"address\": \"Saguache County, Colorado\",\n    \"length\": null\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 193,
+      "output_tokens": 33,
+      "total_tokens": 226,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 33,
+        "prompt_tokens": 193,
+        "total_tokens": 226,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 498,
+    "run_seconds": 3.402,
+    "content": "```json\n{\n    \"length\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 15,
+      "total_tokens": 201,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 186,
+        "total_tokens": 201,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 499,
+    "run_seconds": 3.828,
+    "content": "```json\n{\n    \"length\": 2000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 17,
+      "total_tokens": 205,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 188,
+        "total_tokens": 205,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  }
+]

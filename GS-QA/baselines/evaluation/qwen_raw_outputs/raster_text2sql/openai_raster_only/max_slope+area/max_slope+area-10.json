@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 21.198273
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 21.198273
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('MULTIPOLYGON (((-93.717542 44.398983, -93.71756 44.395306, -93.717587 44.39167, -93.717618 44.386688, -93.718818 44.386803, -93.718806 44.386871, -93.720394 44.387023, -93.720395 44.38723, -93.7217 44.387355, -93.722802 44.387457, -93.722803 44.388194, -93.722994 44.388194, -93.722947 44.384362, -93.717912 44.384368, -93.717827 44.380826, -93.727692 44.380647, -93.727649 44.378876, -93.727555 44.374973, -93.727545 44.369804, -93.732671 44.369809, -93.732686 44.377072, -93.727988 44.377061, -93.728032 44.378874, -93.735442 44.378825, -93.735805 44.377079, -93.74287 44.377095, -93.742881 44.380744, -93.747889 44.380729, -93.747924 44.384205, -93.747947 44.387756, -93.747948 44.387853, -93.743022 44.38789, -93.742902 44.387891, -93.742914 44.389157, -93.742915 44.389222, -93.742937 44.391534, -93.740398 44.391554, -93.740389 44.390697, -93.740528 44.389896, -93.740539 44.389832, -93.739246 44.389842, -93.739242 44.38992, -93.739214 44.390458, -93.73903 44.390476, -93.739032 44.390597, -93.738398 44.390598, -93.737878 44.390591, -93.737903 44.393319, -93.735793 44.393332, -93.735777 44.393272, -93.733606 44.393275, -93.733594 44.395251, -93.732952 44.395257, -93.732919 44.39551, -93.732788 44.398884, -93.730051 44.398909, -93.730062 44.398112, -93.726889 44.398108, -93.726907 44.398932, -93.717542 44.398983)), ((-93.727967 44.393346, -93.728362 44.393337, -93.728362 44.394117, -93.727968 44.394121, -93.727967 44.393346)), ((-93.726637 44.395258, -93.726658 44.39355, -93.727684 44.39354, -93.727677 44.394673, -93.727791 44.394679, -93.727792 44.395214, -93.727965 44.39521, -93.727948 44.394325, -93.728394 44.394329, -93.728386 44.395234, -93.728488 44.395233, -93.728491 44.393199, -93.72779 44.393211, -93.72779 44.39345, -93.725755 44.393464, -93.725757 44.393552, -93.726363 44.393554, -93.726367 44.395248, -93.726637 44.395258)))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).max AS slope\nFROM region_slope;",
+  "id": "max_slope+area-10",
+  "model_output": "```sql\nWITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Le Center' AND addr_state ILIKE 'Minnesota'\n)\n, clipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM region_geom), true) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM region_geom))\n)\n, slope_raster AS (\n  SELECT ST_Slope(rast, 1, '32BF') AS rast\n  FROM clipped_dem\n)\nSELECT MAX(value) AS steepest_slope_degrees\nFROM (\n  SELECT (ST_DumpAsPolygons(rast)).*\n  FROM slope_raster\n) AS slope_values;\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 4:   WHERE region_name ILIKE 'Le Center' AND addr_state ILIKE '...\n                                                  ^",
+    "output": []
+  },
+  "predicted_sql": "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Le Center' AND addr_state ILIKE 'Minnesota'\n)\n, clipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM region_geom), true) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM region_geom))\n)\n, slope_raster AS (\n  SELECT ST_Slope(rast, 1, '32BF') AS rast\n  FROM clipped_dem\n)\nSELECT MAX(value) AS steepest_slope_degrees\nFROM (\n  SELECT (ST_DumpAsPolygons(rast)).*\n  FROM slope_raster\n) AS slope_values;",
+  "predicted_sql_candidates": [
+    "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Le Center' AND addr_state ILIKE 'Minnesota'\n)\n, clipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM region_geom), true) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM region_geom))\n)\n, slope_raster AS (\n  SELECT ST_Slope(rast, 1, '32BF') AS rast\n  FROM clipped_dem\n)\nSELECT MAX(value) AS steepest_slope_degrees\nFROM (\n  SELECT (ST_DumpAsPolygons(rast)).*\n  FROM slope_raster\n) AS slope_values;"
+  ],
+  "query_type": "raster_only",
+  "question": "How steep is the steepest part of Le Center, Minnesota?",
+  "source_file": "max_slope+area.jsonl",
+  "source_stem": "max_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 35.001,
+    "total_seconds": 35.002
+  },
+  "usage": {
+    "completion_tokens": 160,
+    "prompt_tokens": 1518,
+    "total_tokens": 1678
+  }
+}

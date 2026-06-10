@@ -1,0 +1,59 @@
+{
+  "answer_type": "distance",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "distance",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "distance_m": 14.014259
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "distance_m": 14.014259
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-105.6114 42.733737)',4326) AS pt\n),\nnearby_tiles AS (\n  SELECT d.rast\n  FROM public.dem_us d, origin o\n  WHERE d.rast && ST_Expand(o.pt, 1.0)\n),\nmasked AS (\n\t  SELECT ST_MapAlgebra(\n\t           rast,\n\t           1,\n\t           '32BF'::text,\n\t           'CASE WHEN [rast.val] > 1100 THEN [rast.val] ELSE NULL END'::text,\n\t           NULL::double precision\n\t         ) AS rast\n  FROM nearby_tiles\n),\nqualifying_pixels AS (\n  SELECT (pp).geom AS geom\n  FROM masked\n  CROSS JOIN LATERAL ST_PixelAsCentroids(rast, 1, TRUE) AS pp\n)\nSELECT MIN(ST_Distance(p.geom::geography, o.pt::geography)) AS distance_m\nFROM qualifying_pixels p, origin o;",
+  "id": "nearest_high_terrain+poi-17",
+  "model_output": "```sql\nWITH park_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-105.6114, 42.733737), 4326)::geography AS geom\n),\nhigher_points AS (\n  SELECT\n    (ST_DumpAsPolygons(r.rast, 1)).geom AS geom\n  FROM\n    public.dem_us r\n  WHERE\n    ST_Intersects(r.rast, park_point.geom)\n    AND (ST_DumpAsPolygons(r.rast, 1)).val > 1100\n),\nnearest_high_point AS (\n  SELECT\n    geom\n  FROM\n    higher_points\n  ORDER BY\n    park_point.geom <-> geom\n  LIMIT 1\n)\nSELECT\n  ST_Distance(park_point.geom, nearest_high_point.geom) AS distance_meters\nFROM\n  park_point,\n  nearest_high_point;\n```",
+  "predicted_exec": {
+    "error": "missing FROM-clause entry for table \"park_point\"\nLINE 10:     ST_Intersects(r.rast, park_point.geom)\n                                   ^",
+    "output": []
+  },
+  "predicted_sql": "WITH park_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-105.6114, 42.733737), 4326)::geography AS geom\n),\nhigher_points AS (\n  SELECT\n    (ST_DumpAsPolygons(r.rast, 1)).geom AS geom\n  FROM\n    public.dem_us r\n  WHERE\n    ST_Intersects(r.rast, park_point.geom)\n    AND (ST_DumpAsPolygons(r.rast, 1)).val > 1100\n),\nnearest_high_point AS (\n  SELECT\n    geom\n  FROM\n    higher_points\n  ORDER BY\n    park_point.geom <-> geom\n  LIMIT 1\n)\nSELECT\n  ST_Distance(park_point.geom, nearest_high_point.geom) AS distance_meters\nFROM\n  park_point,\n  nearest_high_point;",
+  "predicted_sql_candidates": [
+    "WITH park_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-105.6114, 42.733737), 4326)::geography AS geom\n),\nhigher_points AS (\n  SELECT\n    (ST_DumpAsPolygons(r.rast, 1)).geom AS geom\n  FROM\n    public.dem_us r\n  WHERE\n    ST_Intersects(r.rast, park_point.geom)\n    AND (ST_DumpAsPolygons(r.rast, 1)).val > 1100\n),\nnearest_high_point AS (\n  SELECT\n    geom\n  FROM\n    higher_points\n  ORDER BY\n    park_point.geom <-> geom\n  LIMIT 1\n)\nSELECT\n  ST_Distance(park_point.geom, nearest_high_point.geom) AS distance_meters\nFROM\n  park_point,\n  nearest_high_point;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the distance from Ayres Natural Bridge State Park, Douglas, WY to the closest point higher than 1100 meters in elevation?",
+  "source_file": "nearest_high_terrain+poi.jsonl",
+  "source_stem": "nearest_high_terrain+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 44.439,
+    "total_seconds": 44.44
+  },
+  "usage": {
+    "completion_tokens": 196,
+    "prompt_tokens": 1645,
+    "total_tokens": 1841
+  }
+}

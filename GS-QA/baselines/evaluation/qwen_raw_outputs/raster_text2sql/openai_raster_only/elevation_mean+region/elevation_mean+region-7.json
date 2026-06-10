@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 109.95238
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 109.95238
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-75.971307 40.454796, -75.964617 40.451357, -75.964475 40.45126, -75.964332 40.451152, -75.957985 40.445856, -75.957456 40.44541, -75.961143 40.442532, -75.961627 40.442396, -75.961185 40.441938, -75.960703 40.44126, -75.960156 40.440738, -75.959662 40.440117, -75.959018 40.439015, -75.95845 40.437512, -75.957784 40.436002, -75.957548 40.434858, -75.957312 40.434107, -75.957248 40.433609, -75.957538 40.432572, -75.957763 40.431576, -75.957795 40.430775, -75.957742 40.430171, -75.957591 40.429795, -75.956905 40.42893, -75.955724 40.427647, -75.954619 40.426626, -75.954147 40.426177, -75.953042 40.425132, -75.952205 40.424487, -75.951158 40.423883, -75.951057 40.423825, -75.949716 40.423147, -75.949528 40.423027, -75.949412 40.422953, -75.948922 40.422641, -75.948257 40.422061, -75.947892 40.420934, -75.947817 40.420199, -75.947345 40.41966, -75.946669 40.417618, -75.946476 40.417111, -75.946262 40.416768, -75.945918 40.416547, -75.945478 40.416376, -75.945092 40.41631, -75.944631 40.416286, -75.943837 40.416262, -75.942775 40.416033, -75.94124 40.415641, -75.940168 40.414987, -75.939524 40.414489, -75.939331 40.414056, -75.939202 40.413656, -75.939224 40.413215, -75.939449 40.412814, -75.939612 40.412674, -75.932559 40.414327, -75.898988 40.425643, -75.905497 40.432673, -75.906025 40.43323, -75.906458 40.43369, -75.907004 40.434264, -75.907326 40.434604, -75.908294 40.435626, -75.908786 40.436143, -75.908996 40.436365, -75.909107 40.436438, -75.909284 40.43661, -75.909412 40.436734, -75.909581 40.436938, -75.909773 40.437274, -75.909927 40.437544, -75.91004 40.437743, -75.910182 40.437991, -75.910336 40.438262, -75.9105 40.438456, -75.910818 40.438784, -75.910827 40.438799, -75.910877 40.438885, -75.911012 40.439115, -75.911081 40.439232, -75.911113 40.439296, -75.911369 40.439806, -75.911616 40.440299, -75.911927 40.440919, -75.914741 40.44648, -75.915345 40.447673, -75.915934 40.448503, -75.914772 40.448166, -75.915447 40.449436, -75.914747 40.449687, -75.915485 40.451637, -75.916384 40.45244, -75.918093 40.453561, -75.919985 40.45434, -75.920916 40.45498, -75.921083 40.455293, -75.921051 40.455493, -75.922851 40.458193, -75.926152 40.458993, -75.926195 40.459015, -75.926726 40.45909, -75.927954 40.459352, -75.928459 40.459527, -75.928719 40.459645, -75.928964 40.459825, -75.931868 40.46177, -75.932036 40.461788, -75.932168 40.461856, -75.932249 40.46196, -75.932994 40.462416, -75.933107 40.462474, -75.933217 40.462531, -75.933938 40.462743, -75.93417 40.462919, -75.934216 40.463084, -75.934349 40.463556, -75.934513 40.464036, -75.935319 40.465414, -75.935396 40.465524, -75.935491 40.46564, -75.935576 40.46573, -75.935822 40.465953, -75.936957 40.466955, -75.93776 40.467702, -75.938558 40.468451, -75.940273 40.469859, -75.940697 40.470207, -75.940994 40.470424, -75.942277 40.471153, -75.943429 40.471807, -75.943818 40.47209, -75.944469 40.472636, -75.945795 40.473871, -75.947797 40.476939, -75.947953 40.477191, -75.948029 40.47732, -75.948156 40.477536, -75.94819 40.477601, -75.948214 40.477647, -75.958474 40.473062, -75.965214 40.470702, -75.965219 40.470569, -75.976562 40.466435, -75.976342 40.465944, -75.976234 40.465414, -75.975945 40.464712, -75.975612 40.464181, -75.975531 40.46376, -75.975387 40.463014, -75.975086 40.461986, -75.974807 40.461316, -75.974893 40.460728, -75.975301 40.459928, -75.97558 40.459504, -75.976782 40.457708, -75.977058 40.456946, -75.977296 40.456288, -75.977382 40.455194, -75.97691 40.453936, -75.976546 40.452451, -75.976378 40.45208, -75.976007 40.452304, -75.973474 40.453581, -75.973037 40.453798, -75.972181 40.45434, -75.971771 40.454554, -75.971653 40.454615, -75.971621 40.454632, -75.971562 40.454663, -75.971307 40.454796))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).mean AS elevation\nFROM clipped;",
+  "id": "elevation_mean+region-7",
+  "model_output": "```sql\nWITH geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Ontelaunee Township'\n    AND border_type = 'township'\n    AND ST_Intersects(geometry, (SELECT geom FROM (VALUES (ST_GeomFromText('POLYGON((...)))) AS wkt_geom) AS sub))\n),\nclipped_rast AS (\n  SELECT ST_Clip(r.rast, (SELECT geom FROM geom), TRUE) AS rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(r.rast, (SELECT geom FROM geom))\n)\nSELECT ST_ValueCount(rast, 1).sum / ST_Area(ST_Union(ST_Envelope(rast))) * 10000 AS avg_elevation_meters\nFROM clipped_rast;\n```",
+  "predicted_exec": {
+    "error": "unterminated quoted string at or near \"'POLYGON((...)))) AS wkt_geom) AS sub))\n),\nclipped_rast AS (\n  SELECT ST_Clip(r.rast, (SELECT geom FROM geom), TRUE) AS rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(r.rast, (SELECT geom FROM geom))\n)\nSELECT ST_ValueCount(rast, 1).sum / ST_Area(ST_Union(ST_Envelope(rast))) * 10000 AS avg_elevation_meters\nFROM clipped_rast;\"\nLINE 6: ...metry, (SELECT geom FROM (VALUES (ST_GeomFromText('POLYGON((...\n                                                             ^",
+    "output": []
+  },
+  "predicted_sql": "WITH geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Ontelaunee Township'\n    AND border_type = 'township'\n    AND ST_Intersects(geometry, (SELECT geom FROM (VALUES (ST_GeomFromText('POLYGON((...)))) AS wkt_geom) AS sub))\n),\nclipped_rast AS (\n  SELECT ST_Clip(r.rast, (SELECT geom FROM geom), TRUE) AS rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(r.rast, (SELECT geom FROM geom))\n)\nSELECT ST_ValueCount(rast, 1).sum / ST_Area(ST_Union(ST_Envelope(rast))) * 10000 AS avg_elevation_meters\nFROM clipped_rast;",
+  "predicted_sql_candidates": [
+    "WITH geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Ontelaunee Township'\n    AND border_type = 'township'\n    AND ST_Intersects(geometry, (SELECT geom FROM (VALUES (ST_GeomFromText('POLYGON((...)))) AS wkt_geom) AS sub))\n),\nclipped_rast AS (\n  SELECT ST_Clip(r.rast, (SELECT geom FROM geom), TRUE) AS rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(r.rast, (SELECT geom FROM geom))\n)\nSELECT ST_ValueCount(rast, 1).sum / ST_Area(ST_Union(ST_Envelope(rast))) * 10000 AS avg_elevation_meters\nFROM clipped_rast;"
+  ],
+  "query_type": "raster_only",
+  "question": "How high is Ontelaunee Township, Berks County, Pennsylvania on average?",
+  "source_file": "elevation_mean+region.jsonl",
+  "source_stem": "elevation_mean+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 36.799,
+    "total_seconds": 36.8
+  },
+  "usage": {
+    "completion_tokens": 172,
+    "prompt_tokens": 1522,
+    "total_tokens": 1694
+  }
+}

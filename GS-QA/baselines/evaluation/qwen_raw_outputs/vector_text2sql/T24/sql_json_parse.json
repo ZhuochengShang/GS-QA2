@@ -1,0 +1,502 @@
+[
+  {
+    "id": 0,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "run_seconds": 3.409
+  },
+  {
+    "id": 1,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "run_seconds": 3.433
+  },
+  {
+    "id": 2,
+    "content": "```json\n{\n    \"name\": \"caf\u00e9s\",\n    \"count\": 125\n}\n```",
+    "run_seconds": 5.658
+  },
+  {
+    "id": 3,
+    "content": "```json\n{\n    \"name\": \"Springfield\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.197
+  },
+  {
+    "id": 4,
+    "content": "```json\n{\n    \"count\": 6000000\n}\n```",
+    "run_seconds": 4.767
+  },
+  {
+    "id": 5,
+    "content": "```json\n{\n    \"count\": 54400\n}\n```",
+    "run_seconds": 4.278
+  },
+  {
+    "id": 6,
+    "content": "```json\n{\n    \"name\": \"gardens\",\n    \"count\": 3,\n    \"address\": \"Bayonne, New Jersey\"\n}\n```",
+    "run_seconds": 7.722
+  },
+  {
+    "id": 7,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "run_seconds": 3.39
+  },
+  {
+    "id": 8,
+    "content": "```json\n{\n    \"name\": \"zoo\",\n    \"count\": 1,\n    \"address\": \"Hauppauge, New York\"\n}\n```",
+    "run_seconds": 7.956
+  },
+  {
+    "id": 9,
+    "content": "```json\n{\n    \"name\": \"theme parks\",\n    \"address\": \"Fort Lauderdale, Florida\",\n    \"count\": 220\n}\n```",
+    "run_seconds": 7.985
+  },
+  {
+    "id": 10,
+    "content": "```json\n{\n    \"name\": \"restaurants\",\n    \"address\": \"Denver\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 6.349
+  },
+  {
+    "id": 11,
+    "content": "```json\n{\n    \"name\": \"golf courses\",\n    \"address\": \"Monroe County, Tennessee\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 7.483
+  },
+  {
+    "id": 12,
+    "content": "```json\n{\n    \"name\": \"Gloucester County\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.468
+  },
+  {
+    "id": 13,
+    "content": "```json\n{\n    \"name\": \"Edgecombe County Zoo\",\n    \"count\": 1\n}\n```",
+    "run_seconds": 5.335
+  },
+  {
+    "id": 14,
+    "content": "```json\n{\n    \"name\": \"St. Petersburg\",\n    \"address\": \"St. Petersburg, Florida\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 7.467
+  },
+  {
+    "id": 15,
+    "content": "```json\n{\n    \"name\": \"Schaumburg\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.333
+  },
+  {
+    "id": 16,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "run_seconds": 3.199
+  },
+  {
+    "id": 17,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "run_seconds": 3.197
+  },
+  {
+    "id": 18,
+    "content": "```json\n{\n    \"name\": \"hospitals\",\n    \"address\": \"Clearwater, Florida\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 7.254
+  },
+  {
+    "id": 19,
+    "content": "```json\n{\n    \"name\": \"caf\u00e9s\",\n    \"address\": \"Lake City, Michigan\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 7.04
+  },
+  {
+    "id": 20,
+    "content": "```json\n{\n    \"name\": \"museums\",\n    \"address\": \"Newport, Rhode Island\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 7.467
+  },
+  {
+    "id": 21,
+    "content": "```json\n{\n    \"name\": \"Kalamazoo County\",\n    \"count\": 4\n}\n```",
+    "run_seconds": 5.545
+  },
+  {
+    "id": 22,
+    "content": "```json\n{\n    \"count\": 16643\n}\n```",
+    "run_seconds": 4.054
+  },
+  {
+    "id": 23,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "run_seconds": 3.199
+  },
+  {
+    "id": 24,
+    "content": "```json\n{\n    \"name\": \"Geauga County\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.119
+  },
+  {
+    "id": 25,
+    "content": "```json\n{\n    \"name\": \"parks\",\n    \"count\": 20\n}\n```",
+    "run_seconds": 5.12
+  },
+  {
+    "id": 26,
+    "content": "```json\n{\n    \"name\": \"golf courses\",\n    \"address\": \"Lufkin, Texas\",\n    \"count\": 2\n}\n```",
+    "run_seconds": 7.465
+  },
+  {
+    "id": 27,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "run_seconds": 3.293
+  },
+  {
+    "id": 28,
+    "content": "```json\n{\n    \"name\": \"golf courses\",\n    \"count\": 3\n}\n```",
+    "run_seconds": 5.134
+  },
+  {
+    "id": 29,
+    "content": "```json\n{\n    \"name\": \"restaurants\",\n    \"count\": 950\n}\n```",
+    "run_seconds": 5.112
+  },
+  {
+    "id": 30,
+    "content": "```json\n{\n    \"name\": \"Kit Carson County\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.152
+  },
+  {
+    "id": 31,
+    "content": "```json\n{\n    \"name\": \"Prince George's County\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.321
+  },
+  {
+    "id": 32,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "run_seconds": 3.191
+  },
+  {
+    "id": 33,
+    "content": "```json\n{\n    \"count\": 6500\n}\n```",
+    "run_seconds": 3.831
+  },
+  {
+    "id": 34,
+    "content": "```json\n{\n    \"count\": 2\n}\n```",
+    "run_seconds": 3.192
+  },
+  {
+    "id": 35,
+    "content": "```json\n{}\n```",
+    "run_seconds": 1.488
+  },
+  {
+    "id": 36,
+    "content": "```json\n{\n    \"name\": \"Kennebec County\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.322
+  },
+  {
+    "id": 37,
+    "content": "```json\n{\n    \"name\": \"Charleston\",\n    \"address\": \"Charleston, West Virginia\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 7.238
+  },
+  {
+    "id": 38,
+    "content": "```json\n{\n    \"name\": \"Broome County\",\n    \"count\": 16\n}\n```",
+    "run_seconds": 5.321
+  },
+  {
+    "id": 39,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "run_seconds": 3.261
+  },
+  {
+    "id": 40,
+    "content": "```json\n{\n    \"name\": \"Corning\",\n    \"count\": 3\n}\n```",
+    "run_seconds": 5.056
+  },
+  {
+    "id": 41,
+    "content": "```json\n{\n    \"name\": \"caf\u00e9s\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.122
+  },
+  {
+    "id": 42,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "run_seconds": 3.433
+  },
+  {
+    "id": 43,
+    "content": "```json\n{\n    \"name\": \"caf\u00e9\",\n    \"count\": 1\n}\n```",
+    "run_seconds": 5.165
+  },
+  {
+    "id": 44,
+    "content": "```json\n{\n    \"name\": \"hospitals\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.192
+  },
+  {
+    "id": 45,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "run_seconds": 3.414
+  },
+  {
+    "id": 46,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "run_seconds": 3.401
+  },
+  {
+    "id": 47,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "run_seconds": 3.383
+  },
+  {
+    "id": 48,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "run_seconds": 3.401
+  },
+  {
+    "id": 49,
+    "content": "```json\n{\n    \"name\": \"viewpoints\",\n    \"count\": 1\n}\n```",
+    "run_seconds": 5.207
+  },
+  {
+    "id": 50,
+    "content": "```json\n{\n    \"name\": \"Corning\",\n    \"address\": \"Corning, New York\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 7.706
+  },
+  {
+    "id": 51,
+    "content": "```json\n{\n    \"count\": 2\n}\n```",
+    "run_seconds": 3.413
+  },
+  {
+    "id": 52,
+    "content": "```json\n{\n    \"name\": \"restaurants\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.023
+  },
+  {
+    "id": 53,
+    "content": "```json\n{\n    \"name\": \"Birmingham\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.284
+  },
+  {
+    "id": 54,
+    "content": "```json\n{\n    \"count\": 260\n}\n```",
+    "run_seconds": 3.909
+  },
+  {
+    "id": 55,
+    "content": "```json\n{\n    \"count\": 590\n}\n```",
+    "run_seconds": 3.903
+  },
+  {
+    "id": 56,
+    "content": "```json\n{\n    \"count\": 220\n}\n```",
+    "run_seconds": 3.902
+  },
+  {
+    "id": 57,
+    "content": "```json\n{\n    \"count\": 200\n}\n```",
+    "run_seconds": 3.855
+  },
+  {
+    "id": 58,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "run_seconds": 3.39
+  },
+  {
+    "id": 59,
+    "content": "```json\n{\n    \"name\": \"nature reserves\",\n    \"count\": 20\n}\n```",
+    "run_seconds": 5.443
+  },
+  {
+    "id": 60,
+    "content": "```json\n{\n    \"count\": 16\n}\n```",
+    "run_seconds": 3.61
+  },
+  {
+    "id": 61,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "run_seconds": 3.404
+  },
+  {
+    "id": 62,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "run_seconds": 3.395
+  },
+  {
+    "id": 63,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "run_seconds": 3.392
+  },
+  {
+    "id": 64,
+    "content": "```json\n{\n    \"name\": \"Redmond, Washington\",\n    \"count\": 5\n}\n```",
+    "run_seconds": 5.662
+  },
+  {
+    "id": 65,
+    "content": "```json\n{\n    \"count\": 750\n}\n```",
+    "run_seconds": 3.853
+  },
+  {
+    "id": 66,
+    "content": "```json\n{\n    \"name\": \"galleries\",\n    \"address\": \"Davis, California\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 7.224
+  },
+  {
+    "id": 67,
+    "content": "```json\n{\n    \"count\": 46500\n}\n```",
+    "run_seconds": 4.316
+  },
+  {
+    "id": 68,
+    "content": "```json\n{\n    \"name\": \"hotels\",\n    \"count\": 5\n}\n```",
+    "run_seconds": 5.114
+  },
+  {
+    "id": 69,
+    "content": "```json\n{\n    \"name\": \"Celoron\",\n    \"address\": \"Celoron, New York\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 7.771
+  },
+  {
+    "id": 70,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "run_seconds": 3.262
+  },
+  {
+    "id": 71,
+    "content": "```json\n{\n    \"name\": \"hospitals\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.225
+  },
+  {
+    "id": 72,
+    "content": "```json\n{\n    \"count\": 6\n}\n```",
+    "run_seconds": 3.298
+  },
+  {
+    "id": 73,
+    "content": "```json\n{\n    \"name\": \"Middlesex County\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.386
+  },
+  {
+    "id": 74,
+    "content": "```json\n{\n    \"name\": \"St. George\",\n    \"address\": \"St. George, Utah\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 7.914
+  },
+  {
+    "id": 75,
+    "content": "```json\n{\n    \"name\": \"caf\u00e9s\",\n    \"address\": \"Santa Cruz, California\",\n    \"count\": 100\n}\n```",
+    "run_seconds": 7.627
+  },
+  {
+    "id": 76,
+    "content": "```json\n{\n    \"name\": \"hotels\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.074
+  },
+  {
+    "id": 77,
+    "content": "```json\n{\n    \"count\": 3\n}\n```",
+    "run_seconds": 3.364
+  },
+  {
+    "id": 78,
+    "content": "```json\n{\n    \"name\": \"Gallatin County\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.41
+  },
+  {
+    "id": 79,
+    "content": "```json\n{\n    \"count\": 69400\n}\n```",
+    "run_seconds": 4.115
+  },
+  {
+    "id": 80,
+    "content": "```json\n{\n    \"count\": 6000\n}\n```",
+    "run_seconds": 3.898
+  },
+  {
+    "id": 81,
+    "content": "```json\n{\n    \"name\": \"stadia\",\n    \"address\": \"Ogden, Utah\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 7.395
+  },
+  {
+    "id": 82,
+    "content": "```json\n{\n    \"name\": \"golf courses\",\n    \"address\": \"Osceola County, Florida\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 7.834
+  },
+  {
+    "id": 83,
+    "content": "```json\n{\n    \"count\": 4\n}\n```",
+    "run_seconds": 3.241
+  },
+  {
+    "id": 84,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "run_seconds": 3.224
+  },
+  {
+    "id": 85,
+    "content": "```json\n{\n    \"count\": 750\n}\n```",
+    "run_seconds": 3.65
+  },
+  {
+    "id": 86,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "run_seconds": 3.222
+  },
+  {
+    "id": 87,
+    "content": "```json\n{\n    \"count\": 60\n}\n```",
+    "run_seconds": 3.465
+  },
+  {
+    "id": 88,
+    "content": "```json\n{\n    \"name\": \"golf courses\",\n    \"address\": \"Shorewood, Minnesota\",\n    \"count\": 1\n}\n```",
+    "run_seconds": 7.522
+  },
+  {
+    "id": 89,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "run_seconds": 3.248
+  },
+  {
+    "id": 90,
+    "content": "```json\n{\n    \"name\": \"hotels\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 4.977
+  },
+  {
+    "id": 91,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "run_seconds": 3.245
+  },
+  {
+    "id": 92,
+    "content": "```json\n{\n    \"count\": 0\n}\n```",
+    "run_seconds": 3.262
+  },
+  {
+    "id": 93,
+    "content": "```json\n{\n    \"name\": \"hospitals\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.213
+  },
+  {
+    "id": 94,
+    "content": "```json\n{\n    \"name\": \"Blaine County\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.213
+  },
+  {
+    "id": 95,
+    "content": "```json\n{\n    \"name\": \"Rockford\",\n    \"address\": \"Rockford, Illinois\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 7.169
+  },
+  {
+    "id": 96,
+    "content": "```json\n{\n    \"count\": 2\n}\n```",
+    "run_seconds": 3.254
+  },
+  {
+    "id": 97,
+    "content": "```json\n{\n    \"name\": \"aquaria\",\n    \"address\": \"Auburn Hills, Michigan\",\n    \"count\": 1\n}\n```",
+    "run_seconds": 7.611
+  },
+  {
+    "id": 98,
+    "content": "```json\n{\n    \"name\": \"Bridgeton\",\n    \"address\": \"Bridgeton, North Carolina\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 8.251
+  },
+  {
+    "id": 99,
+    "content": "```json\n{\n    \"name\": \"caf\u00e9s\",\n    \"count\": 640\n}\n```",
+    "run_seconds": 5.436
+  }
+]

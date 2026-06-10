@@ -1,0 +1,2102 @@
+[
+  {
+    "id": 700,
+    "run_seconds": 3.752,
+    "content": "The nearest gallery is 190 kilometers away in a northeast direction.",
+    "usage_metadata": {
+      "input_tokens": 1235,
+      "output_tokens": 16,
+      "total_tokens": 1251,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 1235,
+        "total_tokens": 1251,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 701,
+    "run_seconds": 2.351,
+    "content": "The nearest gallery is twelve kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1692,
+      "output_tokens": 9,
+      "total_tokens": 1701,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 1692,
+        "total_tokens": 1701,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 702,
+    "run_seconds": 5.175,
+    "content": "The nearest museum is the C. E. Smith Museum of Anthropology, located approximately twenty thousand meters away.",
+    "usage_metadata": {
+      "input_tokens": 1089,
+      "output_tokens": 23,
+      "total_tokens": 1112,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 1089,
+        "total_tokens": 1112,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 703,
+    "run_seconds": 8.08,
+    "content": "The nearest hospital is Saint Barnabas Medical Center, located in Livingston, NJ. It is approximately thirty kilometers away from Frank Sinatra's Birthplace in Hoboken, NJ.",
+    "usage_metadata": {
+      "input_tokens": 1608,
+      "output_tokens": 36,
+      "total_tokens": 1644,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 36,
+        "prompt_tokens": 1608,
+        "total_tokens": 1644,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 704,
+    "run_seconds": 2.929,
+    "content": "There is no relevant information provided to answer the question.",
+    "usage_metadata": {
+      "input_tokens": 1423,
+      "output_tokens": 12,
+      "total_tokens": 1435,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1423,
+        "total_tokens": 1435,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 705,
+    "run_seconds": 2.648,
+    "content": "Taco Bell in Tidioute, Pennsylvania.",
+    "usage_metadata": {
+      "input_tokens": 1188,
+      "output_tokens": 11,
+      "total_tokens": 1199,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1188,
+        "total_tokens": 1199,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 706,
+    "run_seconds": 3.584,
+    "content": "Fairleigh Dickinson University: College at Florham is approximately seventeen kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 764,
+      "output_tokens": 16,
+      "total_tokens": 780,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 764,
+        "total_tokens": 780,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 707,
+    "run_seconds": 3.409,
+    "content": "Cromwell Meadows State Wildlife Area is located about thirty kilometers southeast.",
+    "usage_metadata": {
+      "input_tokens": 835,
+      "output_tokens": 15,
+      "total_tokens": 850,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 835,
+        "total_tokens": 850,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 708,
+    "run_seconds": 2.323,
+    "content": "Winthrop Avenue, 160",
+    "usage_metadata": {
+      "input_tokens": 1532,
+      "output_tokens": 9,
+      "total_tokens": 1541,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 1532,
+        "total_tokens": 1541,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 709,
+    "run_seconds": 6.1,
+    "content": "The closest fast food restaurant is Little Caesars, located on Winthrop Avenue. It is approximately fifteen kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 2055,
+      "output_tokens": 25,
+      "total_tokens": 2080,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 2055,
+        "total_tokens": 2080,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 710,
+    "run_seconds": 7.248,
+    "content": "The nearest hospital is Banner Thunderbird Medical Center, located in Glendale, Arizona. It is approximately thirty kilometers northwest of Maryvale Baseball Park.",
+    "usage_metadata": {
+      "input_tokens": 2352,
+      "output_tokens": 30,
+      "total_tokens": 2382,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 30,
+        "prompt_tokens": 2352,
+        "total_tokens": 2382,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 711,
+    "run_seconds": 3.656,
+    "content": "The nearest zoo is approximately twelve kilometers away from Inn at Bay Harbor.",
+    "usage_metadata": {
+      "input_tokens": 1663,
+      "output_tokens": 15,
+      "total_tokens": 1678,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 1663,
+        "total_tokens": 1678,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 712,
+    "run_seconds": 2.923,
+    "content": "The closest restaurant is approximately twenty thousand meters away.",
+    "usage_metadata": {
+      "input_tokens": 2079,
+      "output_tokens": 11,
+      "total_tokens": 2090,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 2079,
+        "total_tokens": 2090,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 713,
+    "run_seconds": 4.756,
+    "content": "The closest theme park is located approximately ten kilometers away from Bastion Studios, Erie, PA.",
+    "usage_metadata": {
+      "input_tokens": 1745,
+      "output_tokens": 20,
+      "total_tokens": 1765,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 1745,
+        "total_tokens": 1765,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 714,
+    "run_seconds": 5.353,
+    "content": "Lehigh Valley Hospital-Muhlenberg is located in Bethlehem, PA. It is approximately forty kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1586,
+      "output_tokens": 23,
+      "total_tokens": 1609,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 1586,
+        "total_tokens": 1609,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 715,
+    "run_seconds": 5.51,
+    "content": "Crown Fried Chicken & Pizza is the nearest fast food restaurant. It is located seven kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 2294,
+      "output_tokens": 21,
+      "total_tokens": 2315,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 2294,
+        "total_tokens": 2315,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 716,
+    "run_seconds": 5.495,
+    "content": "Springfield Riverfront Park is the closest nature reserve, located about two kilometers east of Malibu Jack's.",
+    "usage_metadata": {
+      "input_tokens": 2134,
+      "output_tokens": 23,
+      "total_tokens": 2157,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 2134,
+        "total_tokens": 2157,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 717,
+    "run_seconds": 5.855,
+    "content": "Lazy Susan Gallery is located in New York. The distance from Troll Bridge, Portland, OR is approximately sixty-three kilometers.",
+    "usage_metadata": {
+      "input_tokens": 1952,
+      "output_tokens": 25,
+      "total_tokens": 1977,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 1952,
+        "total_tokens": 1977,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 718,
+    "run_seconds": 4.459,
+    "content": "Village Coffee and Goods is situated approximately thirty-five kilometers northeast of Vestal, NY.",
+    "usage_metadata": {
+      "input_tokens": 1583,
+      "output_tokens": 19,
+      "total_tokens": 1602,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 1583,
+        "total_tokens": 1602,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 719,
+    "run_seconds": 0.965,
+    "content": "Just Salad",
+    "usage_metadata": {
+      "input_tokens": 1286,
+      "output_tokens": 3,
+      "total_tokens": 1289,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1286,
+        "total_tokens": 1289,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 720,
+    "run_seconds": 5.299,
+    "content": "The nearest nature reserve is about two kilometers away from Denver Health Medical Center Emergency Department Trauma Center.",
+    "usage_metadata": {
+      "input_tokens": 2174,
+      "output_tokens": 21,
+      "total_tokens": 2195,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 2174,
+        "total_tokens": 2195,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 721,
+    "run_seconds": 5.412,
+    "content": "The nearest museum to Memory Garden in Baltimore, MD is the Maryland Science Center. It is approximately ninety meters away.",
+    "usage_metadata": {
+      "input_tokens": 1143,
+      "output_tokens": 24,
+      "total_tokens": 1167,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 1143,
+        "total_tokens": 1167,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 722,
+    "run_seconds": 2.848,
+    "content": "Belmont Playground is located approximately twenty-two kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1125,
+      "output_tokens": 12,
+      "total_tokens": 1137,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1125,
+        "total_tokens": 1137,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 723,
+    "run_seconds": 4.587,
+    "content": "The nearest zoo is the Miami Seaquarium, located approximately thirty kilometers west of Miami Beach.",
+    "usage_metadata": {
+      "input_tokens": 1277,
+      "output_tokens": 20,
+      "total_tokens": 1297,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 1277,
+        "total_tokens": 1297,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 724,
+    "run_seconds": 3.692,
+    "content": "Holiday Inn Express & Suites Cartersville is sixty six kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1724,
+      "output_tokens": 15,
+      "total_tokens": 1739,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 1724,
+        "total_tokens": 1739,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 725,
+    "run_seconds": 4.975,
+    "content": "The nearest caf\u00e9 to Sawgrass Lake Park, Saint Petersburg, FL is forty kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 2580,
+      "output_tokens": 19,
+      "total_tokens": 2599,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 2580,
+        "total_tokens": 2599,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 726,
+    "run_seconds": 7.509,
+    "content": "The nearest hospital from Adam Peck Gallery, Provincetown, MA is Provincetown Hospital. It is located approximately one hundred and sixty meters away.",
+    "usage_metadata": {
+      "input_tokens": 1114,
+      "output_tokens": 34,
+      "total_tokens": 1148,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 34,
+        "prompt_tokens": 1114,
+        "total_tokens": 1148,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 727,
+    "run_seconds": 1.289,
+    "content": "Akenac Park",
+    "usage_metadata": {
+      "input_tokens": 881,
+      "output_tokens": 5,
+      "total_tokens": 886,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 881,
+        "total_tokens": 886,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 728,
+    "run_seconds": 3.012,
+    "content": "The closest museum is approximately one hundred forty nine kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 916,
+      "output_tokens": 13,
+      "total_tokens": 929,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 916,
+        "total_tokens": 929,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 729,
+    "run_seconds": 0.898,
+    "content": "Houston Street",
+    "usage_metadata": {
+      "input_tokens": 1010,
+      "output_tokens": 3,
+      "total_tokens": 1013,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1010,
+        "total_tokens": 1013,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 730,
+    "run_seconds": 4.89,
+    "content": "The closest caf\u00e9 to the Rockwell Museum in Corning, NY is approximately thirty metres away.",
+    "usage_metadata": {
+      "input_tokens": 1587,
+      "output_tokens": 20,
+      "total_tokens": 1607,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 1587,
+        "total_tokens": 1607,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 731,
+    "run_seconds": 1.284,
+    "content": "Morton.",
+    "usage_metadata": {
+      "input_tokens": 1615,
+      "output_tokens": 4,
+      "total_tokens": 1619,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1615,
+        "total_tokens": 1619,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 732,
+    "run_seconds": 4.022,
+    "content": "The information provided does not include hospitals or locations in Scottsdale, AZ.",
+    "usage_metadata": {
+      "input_tokens": 2120,
+      "output_tokens": 16,
+      "total_tokens": 2136,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 2120,
+        "total_tokens": 2136,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 733,
+    "run_seconds": 3.561,
+    "content": "The nearest garden is thirty kilometers away from Carson Park Stadium.",
+    "usage_metadata": {
+      "input_tokens": 2114,
+      "output_tokens": 13,
+      "total_tokens": 2127,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 2114,
+        "total_tokens": 2127,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 734,
+    "run_seconds": 3.95,
+    "content": "The closest theme park near Ole Haugsrud Stadium is approximately thirty kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1318,
+      "output_tokens": 17,
+      "total_tokens": 1335,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 1318,
+        "total_tokens": 1335,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 735,
+    "run_seconds": 6.199,
+    "content": "Lawrence Park Historical Society is the closest attraction, located in Erie, Pennsylvania. It is approximately six thousand nine hundred meters away.",
+    "usage_metadata": {
+      "input_tokens": 1621,
+      "output_tokens": 27,
+      "total_tokens": 1648,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 27,
+        "prompt_tokens": 1621,
+        "total_tokens": 1648,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 736,
+    "run_seconds": 3.389,
+    "content": "The closest hotel is approximately thirty meters north of the Meadow Museum.",
+    "usage_metadata": {
+      "input_tokens": 1491,
+      "output_tokens": 14,
+      "total_tokens": 1505,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 1491,
+        "total_tokens": 1505,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 737,
+    "run_seconds": 4.425,
+    "content": "The closest stadium is approximately fifty kilometers away from Memory Garden, Mequon, WI.",
+    "usage_metadata": {
+      "input_tokens": 1409,
+      "output_tokens": 19,
+      "total_tokens": 1428,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 1409,
+        "total_tokens": 1428,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 738,
+    "run_seconds": 2.326,
+    "content": "None of the provided records indicate a university.",
+    "usage_metadata": {
+      "input_tokens": 842,
+      "output_tokens": 10,
+      "total_tokens": 852,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 842,
+        "total_tokens": 852,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 739,
+    "run_seconds": 4.539,
+    "content": "Waterford Historical Museum and Cultural Center is the nearest museum. It is approximately sixteen kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1056,
+      "output_tokens": 20,
+      "total_tokens": 1076,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 1056,
+        "total_tokens": 1076,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 740,
+    "run_seconds": 5.076,
+    "content": "There is no golf course listed in the provided data near Northwest Nazarene University, Idaho Falls, ID.",
+    "usage_metadata": {
+      "input_tokens": 756,
+      "output_tokens": 23,
+      "total_tokens": 779,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 756,
+        "total_tokens": 779,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 741,
+    "run_seconds": 1.124,
+    "content": "Granville",
+    "usage_metadata": {
+      "input_tokens": 1200,
+      "output_tokens": 3,
+      "total_tokens": 1203,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1200,
+        "total_tokens": 1203,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 742,
+    "run_seconds": 1.329,
+    "content": "Irvington",
+    "usage_metadata": {
+      "input_tokens": 1739,
+      "output_tokens": 4,
+      "total_tokens": 1743,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1739,
+        "total_tokens": 1743,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 743,
+    "run_seconds": 6.065,
+    "content": "The closest university to Memory Garden, Baltimore, MD is the University of Maryland, Baltimore. It is located approximately twenty kilometers northeast.",
+    "usage_metadata": {
+      "input_tokens": 1227,
+      "output_tokens": 27,
+      "total_tokens": 1254,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 27,
+        "prompt_tokens": 1227,
+        "total_tokens": 1254,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 744,
+    "run_seconds": 5.875,
+    "content": "Copper Canyon Golf Club is the nearest golf course. It is situated twenty-one kilometers southwest of Maryvale Baseball Park.",
+    "usage_metadata": {
+      "input_tokens": 1930,
+      "output_tokens": 25,
+      "total_tokens": 1955,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 1930,
+        "total_tokens": 1955,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 745,
+    "run_seconds": 4.806,
+    "content": "The nearest hotel to Malibu Jack's in Springfield, IL is approximately two hundred meters away.",
+    "usage_metadata": {
+      "input_tokens": 1946,
+      "output_tokens": 20,
+      "total_tokens": 1966,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 1946,
+        "total_tokens": 1966,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 746,
+    "run_seconds": 1.264,
+    "content": "Red Lobster",
+    "usage_metadata": {
+      "input_tokens": 1572,
+      "output_tokens": 4,
+      "total_tokens": 1576,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1572,
+        "total_tokens": 1576,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 747,
+    "run_seconds": 4.939,
+    "content": "The closest theme park to Hairpin Turn, Clarksburg, MA is approximately thirty kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1075,
+      "output_tokens": 21,
+      "total_tokens": 1096,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 1075,
+        "total_tokens": 1096,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 748,
+    "run_seconds": 5.41,
+    "content": "The closest hotel is the Hilton Garden Inn Midtown Park Avenue. It is located approximately sixty-five kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1946,
+      "output_tokens": 23,
+      "total_tokens": 1969,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 1946,
+        "total_tokens": 1969,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 749,
+    "run_seconds": 5.472,
+    "content": "The nearest zoo is located in Madison, Wisconsin. It is approximately one hundred kilometers south of Wausau.",
+    "usage_metadata": {
+      "input_tokens": 2009,
+      "output_tokens": 23,
+      "total_tokens": 2032,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 2009,
+        "total_tokens": 2032,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 750,
+    "run_seconds": 3.363,
+    "content": "The nearest fast food restaurant is approximately thirty six kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 2123,
+      "output_tokens": 13,
+      "total_tokens": 2136,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 2123,
+        "total_tokens": 2136,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 751,
+    "run_seconds": 1.025,
+    "content": "Minneapolis",
+    "usage_metadata": {
+      "input_tokens": 1510,
+      "output_tokens": 3,
+      "total_tokens": 1513,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1510,
+        "total_tokens": 1513,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 752,
+    "run_seconds": 5.004,
+    "content": "The closest golf course is approximately thirty kilometers away from Shechem Ministries in Lawrenceburg, KY.",
+    "usage_metadata": {
+      "input_tokens": 1939,
+      "output_tokens": 21,
+      "total_tokens": 1960,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 1939,
+        "total_tokens": 1960,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 753,
+    "run_seconds": 7.676,
+    "content": "The nearest university to Taylor's Aquarium in Dunn, NC is the University of North Carolina at Chapel Hill. It is located approximately thirty-five kilometers to the northwest.",
+    "usage_metadata": {
+      "input_tokens": 1670,
+      "output_tokens": 33,
+      "total_tokens": 1703,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 33,
+        "prompt_tokens": 1670,
+        "total_tokens": 1703,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 754,
+    "run_seconds": 4.171,
+    "content": "Lazy Susan Gallery is located in New York. It is approximately sixty kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1984,
+      "output_tokens": 17,
+      "total_tokens": 2001,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 1984,
+        "total_tokens": 2001,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 755,
+    "run_seconds": 6.526,
+    "content": "The nearest stadium to Homewood Suites in Schaumburg, IL is Soldier Field. It is located in Chicago, approximately thirty kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1327,
+      "output_tokens": 29,
+      "total_tokens": 1356,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 29,
+        "prompt_tokens": 1327,
+        "total_tokens": 1356,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 756,
+    "run_seconds": 5.562,
+    "content": "The nearest golf course is approximately thirty kilometers away from Sherwood Forest Faire, McDade, TX.",
+    "usage_metadata": {
+      "input_tokens": 2419,
+      "output_tokens": 22,
+      "total_tokens": 2441,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 2419,
+        "total_tokens": 2441,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 757,
+    "run_seconds": 3.507,
+    "content": "Comers Rock Recreation Area is located on top of Iron Mountain.",
+    "usage_metadata": {
+      "input_tokens": 1309,
+      "output_tokens": 14,
+      "total_tokens": 1323,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 1309,
+        "total_tokens": 1323,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 758,
+    "run_seconds": 3.363,
+    "content": "The nearest fast food restaurant is approximately twelve thousand meters away.",
+    "usage_metadata": {
+      "input_tokens": 2138,
+      "output_tokens": 13,
+      "total_tokens": 2151,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 2138,
+        "total_tokens": 2151,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 759,
+    "run_seconds": 4.77,
+    "content": "The closest hotel to Peteyville Christmas Lights in Hammond, IN is approximately thirty kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1781,
+      "output_tokens": 20,
+      "total_tokens": 1801,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 1781,
+        "total_tokens": 1801,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 760,
+    "run_seconds": 5.576,
+    "content": "The nearest museum is the Rocky Hill Historical Society Museum, located in Connecticut. It is approximately one hundred forty kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 973,
+      "output_tokens": 25,
+      "total_tokens": 998,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 973,
+        "total_tokens": 998,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 761,
+    "run_seconds": 4.578,
+    "content": "The closest hospital to Sea Life Aquarium in San Antonio, TX is approximately thirty kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1945,
+      "output_tokens": 19,
+      "total_tokens": 1964,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 1945,
+        "total_tokens": 1964,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 762,
+    "run_seconds": 4.915,
+    "content": "The nearest golf course is Boulder Golf Club, located approximately thirty kilometers southeast of Longmont.",
+    "usage_metadata": {
+      "input_tokens": 2416,
+      "output_tokens": 19,
+      "total_tokens": 2435,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 2416,
+        "total_tokens": 2435,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 763,
+    "run_seconds": 3.568,
+    "content": "None of the provided records mention a hospital near Broadbent Arena.",
+    "usage_metadata": {
+      "input_tokens": 1353,
+      "output_tokens": 15,
+      "total_tokens": 1368,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 1353,
+        "total_tokens": 1368,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 764,
+    "run_seconds": 1.928,
+    "content": "Pine Grove Park and Zoo.",
+    "usage_metadata": {
+      "input_tokens": 893,
+      "output_tokens": 8,
+      "total_tokens": 901,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 893,
+        "total_tokens": 901,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 765,
+    "run_seconds": 1.984,
+    "content": "Irvington, New Jersey",
+    "usage_metadata": {
+      "input_tokens": 1723,
+      "output_tokens": 7,
+      "total_tokens": 1730,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 1723,
+        "total_tokens": 1730,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 766,
+    "run_seconds": 2.798,
+    "content": "The closest zoo is approximately eight hundred twenty kilometers northeast.",
+    "usage_metadata": {
+      "input_tokens": 897,
+      "output_tokens": 12,
+      "total_tokens": 909,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 897,
+        "total_tokens": 909,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 767,
+    "run_seconds": 3.627,
+    "content": "The nearest stadium is approximately forty kilometers away from Horrigan Hall.",
+    "usage_metadata": {
+      "input_tokens": 1563,
+      "output_tokens": 15,
+      "total_tokens": 1578,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 1563,
+        "total_tokens": 1578,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 768,
+    "run_seconds": 6.14,
+    "content": "The nearest museum is the Rhode Island Museum of Natural History, located in Cranston, RI. It is approximately twenty metres away.",
+    "usage_metadata": {
+      "input_tokens": 1410,
+      "output_tokens": 27,
+      "total_tokens": 1437,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 27,
+        "prompt_tokens": 1410,
+        "total_tokens": 1437,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 769,
+    "run_seconds": 3.2,
+    "content": "Hickory Grove Riverfront is not a golf course.",
+    "usage_metadata": {
+      "input_tokens": 1614,
+      "output_tokens": 13,
+      "total_tokens": 1627,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 1614,
+        "total_tokens": 1627,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 770,
+    "run_seconds": 6.827,
+    "content": "The nearest golf course from Strawberry Hill, San Francisco, CA is the San Francisco Golf Club. It is located approximately twenty-five kilometers to the southeast.",
+    "usage_metadata": {
+      "input_tokens": 932,
+      "output_tokens": 31,
+      "total_tokens": 963,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 31,
+        "prompt_tokens": 932,
+        "total_tokens": 963,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 771,
+    "run_seconds": 4.36,
+    "content": "The closest fast food restaurant is approximately twenty-five thousand meters away in a direction of southwest.",
+    "usage_metadata": {
+      "input_tokens": 1239,
+      "output_tokens": 19,
+      "total_tokens": 1258,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 1239,
+        "total_tokens": 1258,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 772,
+    "run_seconds": 3.307,
+    "content": "Hawa Smoothie is situated approximately twenty-two thousand meters away.",
+    "usage_metadata": {
+      "input_tokens": 1287,
+      "output_tokens": 14,
+      "total_tokens": 1301,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 1287,
+        "total_tokens": 1301,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 773,
+    "run_seconds": 2.77,
+    "content": "The nearest hospital is located in Oak Ridge, Tennessee.",
+    "usage_metadata": {
+      "input_tokens": 879,
+      "output_tokens": 12,
+      "total_tokens": 891,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 879,
+        "total_tokens": 891,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 774,
+    "run_seconds": 4.51,
+    "content": "Miller's Bar and Grille is the closest restaurant. It is about thirty thousand meters away.",
+    "usage_metadata": {
+      "input_tokens": 984,
+      "output_tokens": 20,
+      "total_tokens": 1004,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 984,
+        "total_tokens": 1004,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 775,
+    "run_seconds": 4.393,
+    "content": "Common Grounds Caf\u00e9 & Creamery is the nearest caf\u00e9, located approximately ninety kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1268,
+      "output_tokens": 19,
+      "total_tokens": 1287,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 1268,
+        "total_tokens": 1287,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 776,
+    "run_seconds": 5.146,
+    "content": "The closest museum is the Grand Lodge of Virginia Library and Museum. It is located approximately one hundred meters away.",
+    "usage_metadata": {
+      "input_tokens": 956,
+      "output_tokens": 23,
+      "total_tokens": 979,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 956,
+        "total_tokens": 979,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 777,
+    "run_seconds": 2.083,
+    "content": "Rochester, NY.",
+    "usage_metadata": {
+      "input_tokens": 2099,
+      "output_tokens": 7,
+      "total_tokens": 2106,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 2099,
+        "total_tokens": 2106,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 778,
+    "run_seconds": 3.833,
+    "content": "Treetop Quest Gwinnett is located in Buford, Georgia.",
+    "usage_metadata": {
+      "input_tokens": 1573,
+      "output_tokens": 16,
+      "total_tokens": 1589,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 1573,
+        "total_tokens": 1589,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 779,
+    "run_seconds": 6.561,
+    "content": "The closest zoo to Balance Treatment Center in Calabasas, CA is the Santa Monica Zoo, located approximately thirty kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 2168,
+      "output_tokens": 27,
+      "total_tokens": 2195,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 27,
+        "prompt_tokens": 2168,
+        "total_tokens": 2195,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 780,
+    "run_seconds": 2.77,
+    "content": "Clarksville Regional Museum is approximately sixteen kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 961,
+      "output_tokens": 11,
+      "total_tokens": 972,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 961,
+        "total_tokens": 972,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 781,
+    "run_seconds": 4.702,
+    "content": "The closest museum is the Benjamin Franklin Museum. It is located approximately one hundred forty three kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 990,
+      "output_tokens": 21,
+      "total_tokens": 1011,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 990,
+        "total_tokens": 1011,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 782,
+    "run_seconds": 7.975,
+    "content": "Captain Mike's Fun Park is located in Bridgman, Michigan. The distance from Garibaldi, Oregon to Bridgman, Michigan is approximately eight hundred thirty kilometers.",
+    "usage_metadata": {
+      "input_tokens": 1200,
+      "output_tokens": 36,
+      "total_tokens": 1236,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 36,
+        "prompt_tokens": 1200,
+        "total_tokens": 1236,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 783,
+    "run_seconds": 4.226,
+    "content": "The nearest beach resort is approximately thirty kilometers away from San Antonio, TX.",
+    "usage_metadata": {
+      "input_tokens": 2252,
+      "output_tokens": 16,
+      "total_tokens": 2268,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 2252,
+        "total_tokens": 2268,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 784,
+    "run_seconds": 2.458,
+    "content": "The nearest caf\u00e9 is approximately sixty kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1322,
+      "output_tokens": 10,
+      "total_tokens": 1332,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 1322,
+        "total_tokens": 1332,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 785,
+    "run_seconds": 4.741,
+    "content": "The nearest university to Canyon View Park, Afton, WY is approximately thirty kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1102,
+      "output_tokens": 21,
+      "total_tokens": 1123,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 1102,
+        "total_tokens": 1123,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 786,
+    "run_seconds": 1.203,
+    "content": "Silver Spoon Restaurant",
+    "usage_metadata": {
+      "input_tokens": 1367,
+      "output_tokens": 4,
+      "total_tokens": 1371,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1367,
+        "total_tokens": 1371,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 787,
+    "run_seconds": 7.871,
+    "content": "The nearest golf course to Dupp & Swat in Charlotte, NC is The Golf Club at Ballantyne. It is located approximately thirty meters away.",
+    "usage_metadata": {
+      "input_tokens": 2382,
+      "output_tokens": 32,
+      "total_tokens": 2414,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 32,
+        "prompt_tokens": 2382,
+        "total_tokens": 2414,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 788,
+    "run_seconds": 3.183,
+    "content": "The nearest zoo is approximately nine thousand meters away.",
+    "usage_metadata": {
+      "input_tokens": 2289,
+      "output_tokens": 11,
+      "total_tokens": 2300,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 2289,
+        "total_tokens": 2300,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 789,
+    "run_seconds": 3.158,
+    "content": "Cromwell Meadows State Wildlife Area is approximately thirty kilometers southeast.",
+    "usage_metadata": {
+      "input_tokens": 742,
+      "output_tokens": 14,
+      "total_tokens": 756,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 742,
+        "total_tokens": 756,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 790,
+    "run_seconds": 3.336,
+    "content": "The closest golf course is not in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 2081,
+      "output_tokens": 12,
+      "total_tokens": 2093,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 2081,
+        "total_tokens": 2093,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 791,
+    "run_seconds": 1.284,
+    "content": "Santa Barbara.",
+    "usage_metadata": {
+      "input_tokens": 1603,
+      "output_tokens": 4,
+      "total_tokens": 1607,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1603,
+        "total_tokens": 1607,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 792,
+    "run_seconds": 6.461,
+    "content": "Vicksburg National Military Park is the closest stadium-like facility, located approximately sixteen kilometers north of Clarendon County Museum & History Center.",
+    "usage_metadata": {
+      "input_tokens": 1183,
+      "output_tokens": 29,
+      "total_tokens": 1212,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 29,
+        "prompt_tokens": 1183,
+        "total_tokens": 1212,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 793,
+    "run_seconds": 5.439,
+    "content": "The closest fast food restaurant is approximately fourteen thousand five hundred meters away in the direction of two hundred forty-two degrees.",
+    "usage_metadata": {
+      "input_tokens": 1299,
+      "output_tokens": 24,
+      "total_tokens": 1323,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 1299,
+        "total_tokens": 1323,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 794,
+    "run_seconds": 4.1,
+    "content": "There is no zoo listed near the Center of the Universe in Wallace, ID.",
+    "usage_metadata": {
+      "input_tokens": 1756,
+      "output_tokens": 17,
+      "total_tokens": 1773,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 1756,
+        "total_tokens": 1773,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 795,
+    "run_seconds": 2.873,
+    "content": "The nearest hotel is approximately eight hundred meters away.",
+    "usage_metadata": {
+      "input_tokens": 1930,
+      "output_tokens": 11,
+      "total_tokens": 1941,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1930,
+        "total_tokens": 1941,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 796,
+    "run_seconds": 5.213,
+    "content": "Pratt Manhattan Gallery is the closest gallery. It is approximately four kilometers away in a direction of twelve degrees.",
+    "usage_metadata": {
+      "input_tokens": 1237,
+      "output_tokens": 23,
+      "total_tokens": 1260,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 1237,
+        "total_tokens": 1260,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 797,
+    "run_seconds": 3.247,
+    "content": "The nearest fast food restaurant is approximately twenty metres away.",
+    "usage_metadata": {
+      "input_tokens": 1835,
+      "output_tokens": 12,
+      "total_tokens": 1847,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1835,
+        "total_tokens": 1847,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 798,
+    "run_seconds": 7.459,
+    "content": "The closest stadium to Children's Hospital Colorado at Memorial Hospital in Colorado Springs, CO is Weidner Field. It is approximately one thousand meters away.",
+    "usage_metadata": {
+      "input_tokens": 2289,
+      "output_tokens": 31,
+      "total_tokens": 2320,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 31,
+        "prompt_tokens": 2289,
+        "total_tokens": 2320,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 799,
+    "run_seconds": 3.809,
+    "content": "The nearest stadium is located approximately one hundred and thirty kilometers northeast.",
+    "usage_metadata": {
+      "input_tokens": 2251,
+      "output_tokens": 14,
+      "total_tokens": 2265,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 2251,
+        "total_tokens": 2265,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  }
+]

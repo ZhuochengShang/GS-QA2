@@ -1,0 +1,1101 @@
+[
+  {
+    "id": 500,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.058
+  },
+  {
+    "id": 501,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.327
+  },
+  {
+    "id": 502,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 13:   ORDER BY p1.geometry <-> pois.geometry\n                    ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 503,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 13:     ORDER BY p1.geometry <-> pois.geometry\n                      ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 504,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 12:     ORDER BY p1.geometry <-> parks.geometry\n                      ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 505,
+    "records": [
+      {
+        "output": [],
+        "error": "argument of JOIN/ON must be type boolean, not type double precision\nLINE 15: JOIN pois h ON h.geometry <-> ST_Centroid(p.geometry)\n                        ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 506,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 10:   ORDER BY p1.geometry <-> parks.geometry ASC LIMIT 1\n                    ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 507,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 118.29619743788217
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 3.684
+  },
+  {
+    "id": 508,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 13:     ORDER BY p1.geometry <-> pois.geometry\n                      ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 509,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 50.01665475078297
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.802
+  },
+  {
+    "id": 510,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 257.25737494738024
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.039
+  },
+  {
+    "id": 511,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 17:     ORDER BY p1.geometry <-> geometry\n                      ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 512,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 42.502
+  },
+  {
+    "id": 513,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 13:     ORDER BY p1.geometry <-> pois.geometry\n                      ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 514,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p\"\nLINE 14:   ORDER BY p.geometry <-> geometry\n                    ^\nDETAIL:  There is an entry for table \"p\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 515,
+    "records": [
+      {
+        "output": [
+          {
+            "bearing_degrees": 151.6902822348565
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.261
+  },
+  {
+    "id": 516,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 13:     ORDER BY p1.geometry <-> geometry\n                      ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 517,
+    "records": [
+      {
+        "output": [
+          {
+            "heading_degrees": 314.0110271896865
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.019
+  },
+  {
+    "id": 518,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.172
+  },
+  {
+    "id": 519,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.013
+  },
+  {
+    "id": 520,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 13:     ORDER BY p1.geometry <-> pois.geometry\n                      ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 521,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_union(geography) does not exist\nLINE 2: ...ees(ST_Azimuth(p.geometry::geography, ST_Centroid(ST_Union(p...\n                                                             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 522,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p\"\nLINE 8:     ORDER BY p.geometry <-> geometry\n                     ^\nDETAIL:  There is an entry for table \"p\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 523,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"r\"\nLINE 2: ...s(ST_Azimuth(ST_Centroid(p.geometry), ST_Centroid(r.geometry...\n                                                             ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 524,
+    "records": [
+      {
+        "output": [],
+        "error": "syntax error at or near \"AS\"\nLINE 5: )) AS bearing_degrees;\n           ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 525,
+    "records": [
+      {
+        "output": [
+          {
+            "degrees": 232.42439181695806
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.183
+  },
+  {
+    "id": 526,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.2
+  },
+  {
+    "id": 527,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.183
+  },
+  {
+    "id": 528,
+    "records": [
+      {
+        "output": [
+          {
+            "bearing_degrees": 142.77696306071363
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.04
+  },
+  {
+    "id": 529,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.02
+  },
+  {
+    "id": 530,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.013
+  },
+  {
+    "id": 531,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 13:     ORDER BY p1.geometry <-> geometry\n                      ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 532,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.035
+  },
+  {
+    "id": 533,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.033
+  },
+  {
+    "id": 534,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 157.27039985996734
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.046
+  },
+  {
+    "id": 535,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 13:     ORDER BY p1.geometry <-> pois.geometry\n                      ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 536,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 13:     ORDER BY p1.geometry <-> pois.geometry\n                      ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 537,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 13:     ORDER BY p1.geometry <-> pois.geometry\n                      ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 538,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.292
+  },
+  {
+    "id": 539,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 15:     ORDER BY p1.geometry <-> geometry\n                      ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 540,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.084
+  },
+  {
+    "id": 541,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 279.31226412476826
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.055
+  },
+  {
+    "id": 542,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.04
+  },
+  {
+    "id": 543,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 6.143
+  },
+  {
+    "id": 544,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 199.4238268279674
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.065
+  },
+  {
+    "id": 545,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.109
+  },
+  {
+    "id": 546,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.009
+  },
+  {
+    "id": 547,
+    "records": [
+      {
+        "output": [
+          {
+            "degrees": 87.88078992388809
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.077
+  },
+  {
+    "id": 548,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 14:     ORDER BY p1.geometry <-> pois.geometry\n                      ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 549,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 13.094
+  },
+  {
+    "id": 550,
+    "records": [
+      {
+        "output": [],
+        "error": "syntax error at or near \"s\"\nLINE 3: ...ometry FROM pois WHERE poi_name ILIKE '%Cal, Sr.\\'s Yard%' L...\n                                                             ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 551,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.016
+  },
+  {
+    "id": 552,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 13:     ORDER BY p1.geometry <-> pois.geometry\n                      ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 553,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 112.39546459901845
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.008
+  },
+  {
+    "id": 554,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 63.99576205088661
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.065
+  },
+  {
+    "id": 555,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 13:     ORDER BY p1.geometry <-> pois.geometry\n                      ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 556,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 151.675
+  },
+  {
+    "id": 557,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 150.68699772709542
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.05
+  },
+  {
+    "id": 558,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 15:     ORDER BY p1.geometry <-> pois.geometry\n                      ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 559,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.017
+  },
+  {
+    "id": 560,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.018
+  },
+  {
+    "id": 561,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 1.124
+  },
+  {
+    "id": 562,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 12:     ORDER BY p1.geometry <-> parks.geometry\n                      ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 563,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"park\"\nLINE 2: SELECT degrees(ST_Azimuth(p.geometry::geography, park.geomet...\n                                                         ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 564,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 207.42022464862043
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.455
+  },
+  {
+    "id": 565,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 13:     ORDER BY p1.geometry <-> pois.geometry\n                      ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 566,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 13:     ORDER BY p1.geometry <-> pois.geometry\n                      ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 567,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.573
+  },
+  {
+    "id": 568,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 13:     ORDER BY p1.geometry <-> pois.geometry\n                      ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 569,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 172.50839204667375
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.059
+  },
+  {
+    "id": 570,
+    "records": [
+      {
+        "output": [
+          {
+            "bearing_degrees": 77.07933398452678
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.863
+  },
+  {
+    "id": 571,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 356.69385901042625
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 193.104
+  },
+  {
+    "id": 572,
+    "records": [
+      {
+        "output": [
+          {
+            "bearing_degrees": 353.4877189562411
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.07
+  },
+  {
+    "id": 573,
+    "records": [
+      {
+        "output": [
+          {
+            "bearing_degrees": 141.3770669059582
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.564
+  },
+  {
+    "id": 574,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.045
+  },
+  {
+    "id": 575,
+    "records": [
+      {
+        "output": [
+          {
+            "bearing_degrees": 299.5861119957163
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.071
+  },
+  {
+    "id": 576,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 31.527
+  },
+  {
+    "id": 577,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.029
+  },
+  {
+    "id": 578,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Dream Lab",
+            "bearing_radians": 3.792102305039087
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.045
+  },
+  {
+    "id": 579,
+    "records": [
+      {
+        "output": [
+          {
+            "degrees": 191.84061379121283
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.101
+  },
+  {
+    "id": 580,
+    "records": [
+      {
+        "output": [
+          {
+            "bearing_degrees": 69.71620124698039
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.044
+  },
+  {
+    "id": 581,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 13:     ORDER BY p1.geometry <-> geometry\n                      ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 582,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 13:     ORDER BY p1.geometry <-> parks.geometry\n                      ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 583,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 13:     ORDER BY p1.geometry <-> pois.geometry\n                      ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 584,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.02
+  },
+  {
+    "id": 585,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 13:     ORDER BY p1.geometry <-> pois.geometry\n                      ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 586,
+    "records": [
+      {
+        "output": [],
+        "error": "Task exceeded 360 seconds"
+      }
+    ],
+    "run_seconds": 360.0
+  },
+  {
+    "id": 587,
+    "records": [
+      {
+        "output": [],
+        "error": "sending query failed: another command is already in progress\nanother command is already in progress"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 588,
+    "records": [
+      {
+        "output": [],
+        "error": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 589,
+    "records": [
+      {
+        "output": [],
+        "error": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 590,
+    "records": [
+      {
+        "output": [],
+        "error": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 591,
+    "records": [
+      {
+        "output": [],
+        "error": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 592,
+    "records": [
+      {
+        "output": [],
+        "error": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 593,
+    "records": [
+      {
+        "output": [],
+        "error": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 594,
+    "records": [
+      {
+        "output": [],
+        "error": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 595,
+    "records": [
+      {
+        "output": [],
+        "error": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 596,
+    "records": [
+      {
+        "output": [],
+        "error": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 597,
+    "records": [
+      {
+        "output": [],
+        "error": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 598,
+    "records": [
+      {
+        "output": [],
+        "error": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 599,
+    "records": [
+      {
+        "output": [],
+        "error": "sending query failed: another command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress\nanother command is already in progress"
+      }
+    ],
+    "run_seconds": 0.0
+  }
+]

@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 0.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 0.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-92.436106 30.480185, -92.458738 30.480419, -92.493102 30.480433, -92.487366 30.48777, -92.48053 30.492405, -92.471001 30.49386, -92.465736 30.496651, -92.463661 30.500786, -92.465897 30.510826, -92.46225 30.516346, -92.461137 30.519328, -92.459167 30.524605, -92.450768 30.531994, -92.439667 30.536203, -92.428528 30.536299, -92.422714 30.538633, -92.415716 30.538575, -92.313191 30.539051, -92.262719 30.538738, -92.262238 30.568209, -92.211288 30.569006, -92.21167 30.612894, -92.210663 30.619759, -92.206436 30.621614, -92.203812 30.625746, -92.205971 30.629847, -92.204407 30.633057, -92.20549 30.635336, -92.203384 30.637177, -92.204987 30.638996, -92.200813 30.647709, -92.20089 30.656395, -92.194542 30.659634, -92.188744 30.6647, -92.186104 30.667002, -92.179718 30.666126, -92.175018 30.676212, -92.17289 30.675768, -92.169388 30.767664, -92.177376 30.76853, -92.181641 30.769419, -92.187019 30.775784, -92.191826 30.778496, -92.197693 30.779831, -92.207314 30.784798, -92.207878 30.788904, -92.212723 30.794815, -92.212638 30.848614, -92.126207 30.849766, -92.110101 30.850015, -92.098836 30.849925, -92.041339 30.84953, -92.003417 30.849256, -91.987068 30.849311, -91.970566 30.849429, -91.952552 30.849351, -91.814496 30.847645, -91.805503 30.842193, -91.801105 30.838757, -91.797745 30.833715, -91.797609 30.829871, -91.799006 30.8266, -91.800893 30.82468, -91.805715 30.82189, -91.808965 30.817148, -91.809139 30.815648, -91.808685 30.813097, -91.807602 30.810756, -91.806709 30.810387, -91.80554 30.809076, -91.8025 30.807905, -91.797644 30.805624, -91.786972 30.797644, -91.777908 30.794008, -91.768837 30.785805, -91.76133 30.767542, -91.756523 30.760696, -91.755432 30.753387, -91.757545 30.749269, -91.758057 30.741499, -91.748451 30.730095, -91.746834 30.7237, -91.737228 30.711836, -91.733475 30.701788, -91.736603 30.679382, -91.73233 30.672537, -91.732849 30.667965, -91.744522 30.662455, -91.746635 30.658792, -91.744453 30.640053, -91.741249 30.632746, -91.744942 30.625423, -91.750778 30.623123, -91.753944 30.617632, -91.754997 30.6126, -91.751236 30.599352, -91.754379 30.586084, -91.754875 30.574196, -91.756981 30.568705, -91.757492 30.562761, -91.75589 30.559565, -91.742538 30.531702, -91.732964 30.520292, -91.73188 30.51252, -91.732399 30.510233, -91.736107 30.508396, -91.747246 30.509285, -91.752548 30.507902, -91.755874 30.498, -91.754601 30.485491, -91.75087 30.47864, -91.74395 30.470882, -91.742325 30.457623, -91.740137 30.45387, -91.739662 30.453054, -91.736473 30.451691, -91.722702 30.452633, -91.718979 30.44944, -91.713104 30.432072, -91.698761 30.414719, -91.697693 30.411976, -91.694489 30.401918, -91.680183 30.397369, -91.679115 30.395084, -91.734086 30.395527, -91.812576 30.39616, -91.820526 30.397966, -91.830078 30.402514, -91.832741 30.405706, -91.843338 30.407503, -91.849693 30.406569, -91.854485 30.411585, -91.85714 30.412949, -91.865631 30.41658, -91.868813 30.418398, -91.891556 30.410088, -91.895256 30.408701, -91.907417 30.404541, -91.914291 30.402685, -91.93174 30.397129, -91.938095 30.397104, -91.942879 30.39983, -91.954567 30.406643, -91.965187 30.410717, -91.97049 30.412067, -91.978409 30.407915, -91.980507 30.404247, -91.983086 30.392344, -91.981438 30.38183, -91.986168 30.375406, -91.989319 30.370361, -91.996201 30.370787, -92.001472 30.367104, -92.005173 30.366173, -92.008896 30.368443, -92.012619 30.371628, -92.022636 30.36426, -92.025787 30.361044, -92.029495 30.360569, -92.035339 30.364201, -92.040665 30.369205, -92.042297 30.375143, -92.046555 30.37924, -92.049736 30.380138, -92.052515 30.37825, -92.052718 30.378112, -92.052955 30.37795, -92.053144 30.377823, -92.054482 30.376913, -92.058167 30.373692, -92.063446 30.371378, -92.072403 30.364471, -92.081375 30.361221, -92.085052 30.357544, -92.086044 30.347475, -92.088074 30.335569, -92.093338 30.331425, -92.098625 30.330481, -92.142296 30.299126, -92.141891 30.31514, -92.141907 30.316971, -92.141937 30.320631, -92.150406 30.321037, -92.158875 30.320988, -92.158432 30.331968, -92.159103 30.350264, -92.175522 30.351078, -92.17569 30.371662, -92.176262 30.376234, -92.176399 30.393158, -92.175926 30.400478, -92.177299 30.437973, -92.211746 30.438213, -92.244591 30.437084, -92.244728 30.451717, -92.244795 30.480193, -92.380343 30.480187, -92.401859 30.480065, -92.414696 30.480094, -92.419994 30.48008, -92.427034 30.480134, -92.431736 30.48017, -92.436106 30.480185))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).min AS slope\nFROM region_slope;",
+  "id": "min_slope+area-19",
+  "model_output": "```sql\nWITH parish_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'St. Landry Parish' AND border_type ILIKE 'parish'\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM parish_geom)),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM parish_geom))\n)\nSELECT\n  MIN(value) AS min_slope\nFROM (\n  SELECT\n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM slope_raster\n) AS dump;\n```",
+  "predicted_exec": {
+    "error": "column \"value\" does not exist\nLINE 17:   MIN(value) AS min_slope\n               ^\nHINT:  Perhaps you meant to reference the column \"dump.val\".",
+    "output": []
+  },
+  "predicted_sql": "WITH parish_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'St. Landry Parish' AND border_type ILIKE 'parish'\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM parish_geom)),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM parish_geom))\n)\nSELECT\n  MIN(value) AS min_slope\nFROM (\n  SELECT\n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM slope_raster\n) AS dump;",
+  "predicted_sql_candidates": [
+    "WITH parish_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'St. Landry Parish' AND border_type ILIKE 'parish'\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM parish_geom)),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM parish_geom))\n)\nSELECT\n  MIN(value) AS min_slope\nFROM (\n  SELECT\n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM slope_raster\n) AS dump;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the min slope value within St. Landry Parish, Louisiana?",
+  "source_file": "min_slope+area.jsonl",
+  "source_stem": "min_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 32.55,
+    "total_seconds": 32.551
+  },
+  "usage": {
+    "completion_tokens": 151,
+    "prompt_tokens": 1519,
+    "total_tokens": 1670
+  }
+}

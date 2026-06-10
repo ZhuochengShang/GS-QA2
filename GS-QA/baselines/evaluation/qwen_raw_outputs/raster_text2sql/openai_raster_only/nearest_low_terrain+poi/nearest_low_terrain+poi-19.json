@@ -1,0 +1,59 @@
+{
+  "answer_type": "distance",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "distance",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "distance_m": 8.030549
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "distance_m": 8.030549
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-74.007033 40.745807)',4326) AS pt\n),\nnearby_tiles AS (\n  SELECT d.rast\n  FROM public.dem_us d, origin o\n  WHERE d.rast && ST_Expand(o.pt, 1.0)\n),\nmasked AS (\n\t  SELECT ST_MapAlgebra(\n\t           rast,\n\t           1,\n\t           '32BF'::text,\n\t           'CASE WHEN [rast.val] < 140 THEN [rast.val] ELSE NULL END'::text,\n\t           NULL::double precision\n\t         ) AS rast\n  FROM nearby_tiles\n),\nqualifying_pixels AS (\n  SELECT (pp).geom AS geom\n  FROM masked\n  CROSS JOIN LATERAL ST_PixelAsCentroids(rast, 1, TRUE) AS pp\n)\nSELECT MIN(ST_Distance(p.geom::geography, o.pt::geography)) AS distance_m\nFROM qualifying_pixels p, origin o;",
+  "id": "nearest_low_terrain+poi-19",
+  "model_output": "```sql\nWITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-74.007033, 40.745807), 4326)::geography AS geometry\n),\nraster_points AS (\n  SELECT\n    (ST_DumpAsPolygons(ST_Clip(r.rast, 1, ST_Buffer(p.geometry::geometry, 0.001)))).geom AS geom\n  FROM\n    public.dem_us r,\n    poi_geom p\n  WHERE\n    ST_Intersects(r.rast, p.geometry::geometry)\n    AND (ST_Value(r.rast, 1, (ST_DumpAsPolygons(ST_Clip(r.rast, 1, ST_Buffer(p.geometry::geometry, 0.001)))).path)) < 140\n),\nnearest_point AS (\n  SELECT\n    geom\n  FROM\n    raster_points\n  ORDER BY\n    geom <-> (SELECT geometry FROM poi_geom)\n  LIMIT 1\n)\nSELECT\n  ST_Distance(\n    (SELECT geometry FROM poi_geom),\n    (SELECT geom FROM nearest_point)\n  ) AS distance_meters;\n```",
+  "predicted_exec": {
+    "error": "set-returning functions are not allowed in WHERE\nLINE 12:     AND (ST_Value(r.rast, 1, (ST_DumpAsPolygons(ST_Clip(r.ra...\n                                       ^",
+    "output": []
+  },
+  "predicted_sql": "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-74.007033, 40.745807), 4326)::geography AS geometry\n),\nraster_points AS (\n  SELECT\n    (ST_DumpAsPolygons(ST_Clip(r.rast, 1, ST_Buffer(p.geometry::geometry, 0.001)))).geom AS geom\n  FROM\n    public.dem_us r,\n    poi_geom p\n  WHERE\n    ST_Intersects(r.rast, p.geometry::geometry)\n    AND (ST_Value(r.rast, 1, (ST_DumpAsPolygons(ST_Clip(r.rast, 1, ST_Buffer(p.geometry::geometry, 0.001)))).path)) < 140\n),\nnearest_point AS (\n  SELECT\n    geom\n  FROM\n    raster_points\n  ORDER BY\n    geom <-> (SELECT geometry FROM poi_geom)\n  LIMIT 1\n)\nSELECT\n  ST_Distance(\n    (SELECT geometry FROM poi_geom),\n    (SELECT geom FROM nearest_point)\n  ) AS distance_meters;",
+  "predicted_sql_candidates": [
+    "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-74.007033, 40.745807), 4326)::geography AS geometry\n),\nraster_points AS (\n  SELECT\n    (ST_DumpAsPolygons(ST_Clip(r.rast, 1, ST_Buffer(p.geometry::geometry, 0.001)))).geom AS geom\n  FROM\n    public.dem_us r,\n    poi_geom p\n  WHERE\n    ST_Intersects(r.rast, p.geometry::geometry)\n    AND (ST_Value(r.rast, 1, (ST_DumpAsPolygons(ST_Clip(r.rast, 1, ST_Buffer(p.geometry::geometry, 0.001)))).path)) < 140\n),\nnearest_point AS (\n  SELECT\n    geom\n  FROM\n    raster_points\n  ORDER BY\n    geom <-> (SELECT geometry FROM poi_geom)\n  LIMIT 1\n)\nSELECT\n  ST_Distance(\n    (SELECT geometry FROM poi_geom),\n    (SELECT geom FROM nearest_point)\n  ) AS distance_meters;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the distance from David Zwirner, New York, NY to the closest point under 140 meters in elevation?",
+  "source_file": "nearest_low_terrain+poi.jsonl",
+  "source_stem": "nearest_low_terrain+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 54.591,
+    "total_seconds": 54.592
+  },
+  "usage": {
+    "completion_tokens": 250,
+    "prompt_tokens": 1634,
+    "total_tokens": 1884
+  }
+}

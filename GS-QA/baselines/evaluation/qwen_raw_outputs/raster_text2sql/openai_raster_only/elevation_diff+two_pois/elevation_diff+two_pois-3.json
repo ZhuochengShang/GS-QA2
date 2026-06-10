@@ -1,0 +1,73 @@
+{
+  "answer_type": "elevation difference",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation difference",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 2,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "absolute_error": null,
+      "gold_field": "elevation_difference_m",
+      "gold_value": 1466.0,
+      "metric_family": "primary_numeric",
+      "predicted_field": null,
+      "predicted_value": null,
+      "relative_error": null,
+      "within_tolerance": false
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation_difference_m": 1466.0,
+      "poi1_elevation_m": 28.0,
+      "poi2_elevation_m": 1494.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation_difference_m": 1466.0,
+        "poi1_elevation_m": 28.0,
+        "poi2_elevation_m": 1494.0
+      }
+    ]
+  },
+  "gold_sql": "WITH p1 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-71.095885 42.309542)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-71.095885 42.309542)',4326))\n  LIMIT 1\n),\np2 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-111.835626 40.766885)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-111.835626 40.766885)',4326))\n  LIMIT 1\n)\nSELECT\n  ABS(p1.elev - p2.elev) AS elevation_difference_m,\n  p1.elev AS poi1_elevation_m,\n  p2.elev AS poi2_elevation_m\nFROM p1, p2;",
+  "id": "elevation_diff+two_pois-3",
+  "model_output": "```sql\nWITH elevations AS (\n  SELECT \n    ST_Value(rast, ST_SetSRID(ST_Point(-71.095885, 42.309542), 4326)) AS white_stadium_elevation,\n    ST_Value(rast, ST_SetSRID(ST_Point(-111.835626, 40.766885), 4326)) AS guest_house_elevation\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, ST_SetSRID(ST_Point(-71.095885, 42.309542), 4326))\n    OR ST_Intersects(rast, ST_SetSRID(ST_Point(-111.835626, 40.766885), 4326))\n)\nSELECT \n  white_stadium_elevation - guest_house_elevation AS elevation_difference\nFROM elevations;\n```",
+  "predicted_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation_difference": null
+      },
+      {
+        "elevation_difference": null
+      }
+    ]
+  },
+  "predicted_sql": "WITH elevations AS (\n  SELECT \n    ST_Value(rast, ST_SetSRID(ST_Point(-71.095885, 42.309542), 4326)) AS white_stadium_elevation,\n    ST_Value(rast, ST_SetSRID(ST_Point(-111.835626, 40.766885), 4326)) AS guest_house_elevation\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, ST_SetSRID(ST_Point(-71.095885, 42.309542), 4326))\n    OR ST_Intersects(rast, ST_SetSRID(ST_Point(-111.835626, 40.766885), 4326))\n)\nSELECT \n  white_stadium_elevation - guest_house_elevation AS elevation_difference\nFROM elevations;",
+  "predicted_sql_candidates": [
+    "WITH elevations AS (\n  SELECT \n    ST_Value(rast, ST_SetSRID(ST_Point(-71.095885, 42.309542), 4326)) AS white_stadium_elevation,\n    ST_Value(rast, ST_SetSRID(ST_Point(-111.835626, 40.766885), 4326)) AS guest_house_elevation\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, ST_SetSRID(ST_Point(-71.095885, 42.309542), 4326))\n    OR ST_Intersects(rast, ST_SetSRID(ST_Point(-111.835626, 40.766885), 4326))\n)\nSELECT \n  white_stadium_elevation - guest_house_elevation AS elevation_difference\nFROM elevations;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the elevation difference between White Stadium, Jamaica Plain, MA and University Guest House & Conference Center, Salt Lake City, UT?",
+  "source_file": "elevation_diff+two_pois.jsonl",
+  "source_stem": "elevation_diff+two_pois",
+  "timing": {
+    "execution_seconds": 0.037,
+    "generation_seconds": 47.329,
+    "total_seconds": 47.366
+  },
+  "usage": {
+    "completion_tokens": 221,
+    "prompt_tokens": 1740,
+    "total_tokens": 1961
+  }
+}

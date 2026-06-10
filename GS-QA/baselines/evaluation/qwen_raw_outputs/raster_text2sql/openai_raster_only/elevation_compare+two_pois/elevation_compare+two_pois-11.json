@@ -1,0 +1,73 @@
+{
+  "answer_type": "name",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "name",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "max_abs_numeric_delta": 1322.0,
+    "mean_abs_numeric_delta": 1322.0,
+    "numeric_deltas": [
+      1322.0
+    ],
+    "predicted_row_count": 1,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "exact_match": true,
+      "gold_field": "higher_poi",
+      "gold_value": "Ojito Wilderness Study Area, San Luis, NM",
+      "metric_family": "primary_text",
+      "predicted_field": "name",
+      "predicted_value": "Ojito Wilderness Study Area, San Luis, NM"
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "higher_poi": "Ojito Wilderness Study Area, San Luis, NM",
+      "poi1_elevation_m": 437.0,
+      "poi2_elevation_m": 1759.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "higher_poi": "Ojito Wilderness Study Area, San Luis, NM",
+        "poi1_elevation_m": 437.0,
+        "poi2_elevation_m": 1759.0
+      }
+    ]
+  },
+  "gold_sql": "WITH p1 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-82.760985 36.173714)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-82.760985 36.173714)',4326))\n  LIMIT 1\n),\np2 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-106.960317 35.59114)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-106.960317 35.59114)',4326))\n  LIMIT 1\n)\nSELECT\n  CASE\n    WHEN p1.elev > p2.elev THEN 'Tusculum University Historical District, Greeneville, TN'\n    WHEN p2.elev > p1.elev THEN 'Ojito Wilderness Study Area, San Luis, NM'\n    ELSE 'equal'\n  END AS higher_poi,\n  p1.elev AS poi1_elevation_m,\n  p2.elev AS poi2_elevation_m\nFROM p1, p2;",
+  "id": "elevation_compare+two_pois-11",
+  "model_output": "```sql\nWITH tusculum_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-82.760985, 36.173714), 4326)::geography AS geom\n),\nojito_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-106.960317, 35.59114), 4326)::geography AS geom\n),\ntusculum_elevation AS (\n  SELECT ST_Value(rast, ST_Transform(t.geom::geometry, 4326)) AS elevation\n  FROM public.dem_us, tusculum_point t\n  WHERE ST_Intersects(rast, ST_Transform(t.geom::geometry, 4326))\n),\nojito_elevation AS (\n  SELECT ST_Value(rast, ST_Transform(o.geom::geometry, 4326)) AS elevation\n  FROM public.dem_us, ojito_point o\n  WHERE ST_Intersects(rast, ST_Transform(o.geom::geometry, 4326))\n)\nSELECT \n  'Tusculum University Historical District, Greeneville, TN' AS name,\n  t.elevation\nFROM tusculum_elevation t\nWHERE t.elevation > (SELECT elevation FROM ojito_elevation)\nUNION ALL\nSELECT \n  'Ojito Wilderness Study Area, San Luis, NM' AS name,\n  o.elevation\nFROM ojito_elevation o\nWHERE o.elevation > (SELECT elevation FROM tusculum_elevation)\nUNION ALL\nSELECT \n  'Tusculum University Historical District, Greeneville, TN' AS name,\n  t.elevation\nFROM tusculum_elevation t\nWHERE (SELECT elevation FROM ojito_elevation) IS NULL OR t.elevation IS NULL;\n```",
+  "predicted_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 1759.0,
+        "name": "Ojito Wilderness Study Area, San Luis, NM"
+      }
+    ]
+  },
+  "predicted_sql": "WITH tusculum_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-82.760985, 36.173714), 4326)::geography AS geom\n),\nojito_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-106.960317, 35.59114), 4326)::geography AS geom\n),\ntusculum_elevation AS (\n  SELECT ST_Value(rast, ST_Transform(t.geom::geometry, 4326)) AS elevation\n  FROM public.dem_us, tusculum_point t\n  WHERE ST_Intersects(rast, ST_Transform(t.geom::geometry, 4326))\n),\nojito_elevation AS (\n  SELECT ST_Value(rast, ST_Transform(o.geom::geometry, 4326)) AS elevation\n  FROM public.dem_us, ojito_point o\n  WHERE ST_Intersects(rast, ST_Transform(o.geom::geometry, 4326))\n)\nSELECT \n  'Tusculum University Historical District, Greeneville, TN' AS name,\n  t.elevation\nFROM tusculum_elevation t\nWHERE t.elevation > (SELECT elevation FROM ojito_elevation)\nUNION ALL\nSELECT \n  'Ojito Wilderness Study Area, San Luis, NM' AS name,\n  o.elevation\nFROM ojito_elevation o\nWHERE o.elevation > (SELECT elevation FROM tusculum_elevation)\nUNION ALL\nSELECT \n  'Tusculum University Historical District, Greeneville, TN' AS name,\n  t.elevation\nFROM tusculum_elevation t\nWHERE (SELECT elevation FROM ojito_elevation) IS NULL OR t.elevation IS NULL;",
+  "predicted_sql_candidates": [
+    "WITH tusculum_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-82.760985, 36.173714), 4326)::geography AS geom\n),\nojito_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-106.960317, 35.59114), 4326)::geography AS geom\n),\ntusculum_elevation AS (\n  SELECT ST_Value(rast, ST_Transform(t.geom::geometry, 4326)) AS elevation\n  FROM public.dem_us, tusculum_point t\n  WHERE ST_Intersects(rast, ST_Transform(t.geom::geometry, 4326))\n),\nojito_elevation AS (\n  SELECT ST_Value(rast, ST_Transform(o.geom::geometry, 4326)) AS elevation\n  FROM public.dem_us, ojito_point o\n  WHERE ST_Intersects(rast, ST_Transform(o.geom::geometry, 4326))\n)\nSELECT \n  'Tusculum University Historical District, Greeneville, TN' AS name,\n  t.elevation\nFROM tusculum_elevation t\nWHERE t.elevation > (SELECT elevation FROM ojito_elevation)\nUNION ALL\nSELECT \n  'Ojito Wilderness Study Area, San Luis, NM' AS name,\n  o.elevation\nFROM ojito_elevation o\nWHERE o.elevation > (SELECT elevation FROM tusculum_elevation)\nUNION ALL\nSELECT \n  'Tusculum University Historical District, Greeneville, TN' AS name,\n  t.elevation\nFROM tusculum_elevation t\nWHERE (SELECT elevation FROM ojito_elevation) IS NULL OR t.elevation IS NULL;"
+  ],
+  "query_type": "raster_only",
+  "question": "Which has a higher elevation, Tusculum University Historical District, Greeneville, TN or Ojito Wilderness Study Area, San Luis, NM?",
+  "source_file": "elevation_compare+two_pois.jsonl",
+  "source_stem": "elevation_compare+two_pois",
+  "timing": {
+    "execution_seconds": 0.037,
+    "generation_seconds": 84.252,
+    "total_seconds": 84.289
+  },
+  "usage": {
+    "completion_tokens": 395,
+    "prompt_tokens": 1749,
+    "total_tokens": 2144
+  }
+}

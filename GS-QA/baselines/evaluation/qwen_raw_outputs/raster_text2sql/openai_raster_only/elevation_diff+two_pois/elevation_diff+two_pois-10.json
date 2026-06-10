@@ -1,0 +1,63 @@
+{
+  "answer_type": "elevation difference",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation difference",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation_difference_m": 370.0,
+      "poi1_elevation_m": 12.0,
+      "poi2_elevation_m": 382.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation_difference_m": 370.0,
+        "poi1_elevation_m": 12.0,
+        "poi2_elevation_m": 382.0
+      }
+    ]
+  },
+  "gold_sql": "WITH p1 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-72.098236 41.351365)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-72.098236 41.351365)',4326))\n  LIMIT 1\n),\np2 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-78.691404 39.316489)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-78.691404 39.316489)',4326))\n  LIMIT 1\n)\nSELECT\n  ABS(p1.elev - p2.elev) AS elevation_difference_m,\n  p1.elev AS poi1_elevation_m,\n  p2.elev AS poi2_elevation_m\nFROM p1, p2;",
+  "id": "elevation_diff+two_pois-10",
+  "model_output": "```sql\nWITH\n  point1 AS (\n    SELECT ST_SetSRID(ST_MakePoint(-72.098236, 41.351365), 4326)::geography AS geom\n  ),\n  point2 AS (\n    SELECT ST_SetSRID(ST_MakePoint(-78.691404, 39.316489), 4326)::geography AS geom\n  ),\n  elevation1 AS (\n    SELECT (ST_Value(rast, ST_Transform((SELECT geom FROM point1), 4326)::geometry, true))::numeric AS elev\n    FROM public.dem_us\n    WHERE ST_Intersects(rast, ST_Transform((SELECT geom FROM point1), 4326)::geometry)\n  ),\n  elevation2 AS (\n    SELECT (ST_Value(rast, ST_Transform((SELECT geom FROM point2), 4326)::geometry, true))::numeric AS elev\n    FROM public.dem_us\n    WHERE ST_Intersects(rast, ST_Transform((SELECT geom FROM point2), 4326)::geometry)\n  )\nSELECT \n  (e1.elev - e2.elev) AS elevation_difference_meters,\n  (SELECT 'New London County Historical Society, New London, CT') AS point1_name,\n  (SELECT 'Shanks Roadside Park, Shanks, WV') AS point2_name\nFROM elevation1 e1, elevation2 e2;\n```",
+  "predicted_exec": {
+    "error": "function st_transform(geography, integer) does not exist\nLINE 9:     SELECT (ST_Value(rast, ST_Transform((SELECT geom FROM po...\n                                   ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH\n  point1 AS (\n    SELECT ST_SetSRID(ST_MakePoint(-72.098236, 41.351365), 4326)::geography AS geom\n  ),\n  point2 AS (\n    SELECT ST_SetSRID(ST_MakePoint(-78.691404, 39.316489), 4326)::geography AS geom\n  ),\n  elevation1 AS (\n    SELECT (ST_Value(rast, ST_Transform((SELECT geom FROM point1), 4326)::geometry, true))::numeric AS elev\n    FROM public.dem_us\n    WHERE ST_Intersects(rast, ST_Transform((SELECT geom FROM point1), 4326)::geometry)\n  ),\n  elevation2 AS (\n    SELECT (ST_Value(rast, ST_Transform((SELECT geom FROM point2), 4326)::geometry, true))::numeric AS elev\n    FROM public.dem_us\n    WHERE ST_Intersects(rast, ST_Transform((SELECT geom FROM point2), 4326)::geometry)\n  )\nSELECT \n  (e1.elev - e2.elev) AS elevation_difference_meters,\n  (SELECT 'New London County Historical Society, New London, CT') AS point1_name,\n  (SELECT 'Shanks Roadside Park, Shanks, WV') AS point2_name\nFROM elevation1 e1, elevation2 e2;",
+  "predicted_sql_candidates": [
+    "WITH\n  point1 AS (\n    SELECT ST_SetSRID(ST_MakePoint(-72.098236, 41.351365), 4326)::geography AS geom\n  ),\n  point2 AS (\n    SELECT ST_SetSRID(ST_MakePoint(-78.691404, 39.316489), 4326)::geography AS geom\n  ),\n  elevation1 AS (\n    SELECT (ST_Value(rast, ST_Transform((SELECT geom FROM point1), 4326)::geometry, true))::numeric AS elev\n    FROM public.dem_us\n    WHERE ST_Intersects(rast, ST_Transform((SELECT geom FROM point1), 4326)::geometry)\n  ),\n  elevation2 AS (\n    SELECT (ST_Value(rast, ST_Transform((SELECT geom FROM point2), 4326)::geometry, true))::numeric AS elev\n    FROM public.dem_us\n    WHERE ST_Intersects(rast, ST_Transform((SELECT geom FROM point2), 4326)::geometry)\n  )\nSELECT \n  (e1.elev - e2.elev) AS elevation_difference_meters,\n  (SELECT 'New London County Historical Society, New London, CT') AS point1_name,\n  (SELECT 'Shanks Roadside Park, Shanks, WV') AS point2_name\nFROM elevation1 e1, elevation2 e2;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the vertical separation in meters between New London County Historical Society, New London, CT and Shanks Roadside Park, Shanks, WV?",
+  "source_file": "elevation_diff+two_pois.jsonl",
+  "source_stem": "elevation_diff+two_pois",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 69.129,
+    "total_seconds": 69.13
+  },
+  "usage": {
+    "completion_tokens": 324,
+    "prompt_tokens": 1744,
+    "total_tokens": 2068
+  }
+}

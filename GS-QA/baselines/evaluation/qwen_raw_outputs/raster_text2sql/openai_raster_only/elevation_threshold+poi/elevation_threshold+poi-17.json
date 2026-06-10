@@ -1,0 +1,66 @@
+{
+  "answer_type": "yes-no",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "yes-no",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 1,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "exact_match": true,
+      "gold_field": "answer",
+      "gold_value": "no",
+      "metric_family": "primary_text",
+      "predicted_field": "is_above_420m",
+      "predicted_value": "no"
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer": "no",
+      "elevation_m": 307.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer": "no",
+        "elevation_m": 307.0
+      }
+    ]
+  },
+  "gold_sql": "SELECT\n  CASE\n    WHEN ST_Value(d.rast, 1, ST_GeomFromText('POINT (-81.221948 35.663044)',4326)) > 420\n    THEN 'yes' ELSE 'no'\n  END AS answer,\n  ST_Value(d.rast, 1, ST_GeomFromText('POINT (-81.221948 35.663044)',4326)) AS elevation_m\nFROM public.dem_us d\nWHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-81.221948 35.663044)',4326))\nLIMIT 1;",
+  "id": "elevation_threshold+poi-17",
+  "model_output": "```sql\nWITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-81.221948, 35.663044), 4326)::geography AS geom\n),\nraster_value AS (\n  SELECT (ST_Value(r.rast, p.geom::geometry, true)) AS elevation\n  FROM public.dem_us r,\n  poi_geom p\n  WHERE ST_Intersects(r.rast, p.geom::geometry)\n)\nSELECT \n  CASE \n    WHEN elevation > 420 THEN 'yes'\n    ELSE 'no'\n  END AS is_above_420m\nFROM raster_value;\n```",
+  "predicted_exec": {
+    "error": "",
+    "output": [
+      {
+        "is_above_420m": "no"
+      }
+    ]
+  },
+  "predicted_sql": "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-81.221948, 35.663044), 4326)::geography AS geom\n),\nraster_value AS (\n  SELECT (ST_Value(r.rast, p.geom::geometry, true)) AS elevation\n  FROM public.dem_us r,\n  poi_geom p\n  WHERE ST_Intersects(r.rast, p.geom::geometry)\n)\nSELECT \n  CASE \n    WHEN elevation > 420 THEN 'yes'\n    ELSE 'no'\n  END AS is_above_420m\nFROM raster_value;",
+  "predicted_sql_candidates": [
+    "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-81.221948, 35.663044), 4326)::geography AS geom\n),\nraster_value AS (\n  SELECT (ST_Value(r.rast, p.geom::geometry, true)) AS elevation\n  FROM public.dem_us r,\n  poi_geom p\n  WHERE ST_Intersects(r.rast, p.geom::geometry)\n)\nSELECT \n  CASE \n    WHEN elevation > 420 THEN 'yes'\n    ELSE 'no'\n  END AS is_above_420m\nFROM raster_value;"
+  ],
+  "query_type": "raster_only",
+  "question": "Is Catawba County Historical Museum, Newton, NC at an elevation above 420 meters?",
+  "source_file": "elevation_threshold+poi.jsonl",
+  "source_stem": "elevation_threshold+poi",
+  "timing": {
+    "execution_seconds": 0.034,
+    "generation_seconds": 30.674,
+    "total_seconds": 30.708
+  },
+  "usage": {
+    "completion_tokens": 143,
+    "prompt_tokens": 1633,
+    "total_tokens": 1776
+  }
+}

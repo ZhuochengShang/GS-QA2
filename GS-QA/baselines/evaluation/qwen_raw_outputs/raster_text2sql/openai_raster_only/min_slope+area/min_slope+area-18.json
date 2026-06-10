@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 0.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 0.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-86.418919 38.124359, -86.418701 38.124228, -86.418048 38.123837, -86.417831 38.123707, -86.417669 38.123625, -86.417183 38.123382, -86.417022 38.123301, -86.416571 38.12291, -86.41522 38.121738, -86.41477 38.121348, -86.414571 38.121208, -86.413975 38.120789, -86.413777 38.12065, -86.413738 38.120622, -86.413624 38.120539, -86.413586 38.120512, -86.413684 38.120366, -86.413782 38.12022, -86.413935 38.119991, -86.414137 38.119672, -86.414319 38.119389, -86.414735 38.118797, -86.415058 38.118415, -86.415305 38.118049, -86.415373 38.117982, -86.415679 38.117676, -86.416038 38.117352, -86.416461 38.116972, -86.416894 38.116927, -86.416905 38.116922, -86.41694 38.116908, -86.416952 38.116904, -86.417121 38.116964, -86.417199 38.116991, -86.417441 38.117078, -86.417962 38.117174, -86.418013 38.117184, -86.418211 38.117258, -86.418761 38.117693, -86.419859 38.118436, -86.422804 38.12043, -86.424827 38.121945, -86.426451 38.123161, -86.426397 38.123205, -86.426238 38.123336, -86.426185 38.123381, -86.426074 38.123464, -86.425744 38.123715, -86.425634 38.123799, -86.425333 38.124033, -86.42443 38.124737, -86.42413 38.124972, -86.42406 38.125037, -86.423681 38.124736, -86.423033 38.124223, -86.42233 38.123644, -86.422224 38.123556, -86.421979 38.12319, -86.421936 38.123156, -86.421809 38.123057, -86.421767 38.123024, -86.421579 38.12318, -86.421469 38.123261, -86.421061 38.123565, -86.420576 38.123972, -86.420285 38.124217, -86.420201 38.12432, -86.42016 38.124359, -86.420034 38.124481, -86.419732 38.124731, -86.41966 38.124792, -86.419601 38.124867, -86.419464 38.124765, -86.419055 38.12446, -86.418919 38.124359))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).min AS slope\nFROM region_slope;",
+  "id": "min_slope+area-18",
+  "model_output": "```sql\nWITH alton_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Alton' AND addr_state ILIKE 'Indiana'\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM alton_geom), TRUE),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM alton_geom))\n)\nSELECT\n  MIN(value) AS min_slope_degrees\nFROM (\n  SELECT\n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM slope_raster\n) AS dump;\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 4:   WHERE region_name ILIKE 'Alton' AND addr_state ILIKE 'Indi...\n                                              ^",
+    "output": []
+  },
+  "predicted_sql": "WITH alton_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Alton' AND addr_state ILIKE 'Indiana'\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM alton_geom), TRUE),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM alton_geom))\n)\nSELECT\n  MIN(value) AS min_slope_degrees\nFROM (\n  SELECT\n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM slope_raster\n) AS dump;",
+  "predicted_sql_candidates": [
+    "WITH alton_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Alton' AND addr_state ILIKE 'Indiana'\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM alton_geom), TRUE),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM alton_geom))\n)\nSELECT\n  MIN(value) AS min_slope_degrees\nFROM (\n  SELECT\n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM slope_raster\n) AS dump;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the minimum slope in Alton, Indiana?",
+  "source_file": "min_slope+area.jsonl",
+  "source_stem": "min_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 33.209,
+    "total_seconds": 33.21
+  },
+  "usage": {
+    "completion_tokens": 154,
+    "prompt_tokens": 1515,
+    "total_tokens": 1669
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 0.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 0.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-96.875038 39.711336, -96.875693 39.711373, -96.875692 39.711872, -96.877479 39.71186, -96.877478 39.712129, -96.875888 39.712147, -96.875885 39.717225, -96.874761 39.717195, -96.874771 39.717366, -96.874332 39.717359, -96.874314 39.716931, -96.872695 39.716917, -96.87272 39.715175, -96.87229 39.715163, -96.87229 39.714994, -96.870325 39.714999, -96.870301 39.712124, -96.869167 39.712123, -96.869169 39.71182, -96.868934 39.711806, -96.868924 39.710487, -96.870865 39.711112, -96.870811 39.707358, -96.872763 39.70737, -96.872757 39.705837, -96.874092 39.705722, -96.874055 39.707151, -96.874392 39.707406, -96.875031 39.707427, -96.875038 39.711336))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).min AS slope\nFROM region_slope;",
+  "id": "min_slope+area-10",
+  "model_output": "```sql\nWITH barnes_geometry AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Barnes' AND addr_state ILIKE 'Kansas'\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM barnes_geometry)),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM barnes_geometry))\n)\nSELECT\n  MIN(value) AS lowest_slope\nFROM (\n  SELECT\n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM slope_raster\n) AS dumps;\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 4:   WHERE region_name ILIKE 'Barnes' AND addr_state ILIKE 'Kan...\n                                               ^",
+    "output": []
+  },
+  "predicted_sql": "WITH barnes_geometry AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Barnes' AND addr_state ILIKE 'Kansas'\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM barnes_geometry)),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM barnes_geometry))\n)\nSELECT\n  MIN(value) AS lowest_slope\nFROM (\n  SELECT\n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM slope_raster\n) AS dumps;",
+  "predicted_sql_candidates": [
+    "WITH barnes_geometry AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Barnes' AND addr_state ILIKE 'Kansas'\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM barnes_geometry)),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM barnes_geometry))\n)\nSELECT\n  MIN(value) AS lowest_slope\nFROM (\n  SELECT\n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM slope_raster\n) AS dumps;"
+  ],
+  "query_type": "raster_only",
+  "question": "In Barnes, Kansas, what is the lowest slope?",
+  "source_file": "min_slope+area.jsonl",
+  "source_stem": "min_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 33.055,
+    "total_seconds": 33.056
+  },
+  "usage": {
+    "completion_tokens": 154,
+    "prompt_tokens": 1514,
+    "total_tokens": 1668
+  }
+}

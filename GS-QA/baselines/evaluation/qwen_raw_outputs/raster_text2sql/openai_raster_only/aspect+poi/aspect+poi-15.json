@@ -1,0 +1,59 @@
+{
+  "answer_type": "aspect",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "aspect",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "aspect_degrees": 225.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "aspect_degrees": 225.0
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-118.264199 34.125454)',4326) AS pt\n),\npatch AS (\n  SELECT ST_Buffer(pt::geography, 100)::geometry AS g FROM origin\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, p.g)) AS rast\n  FROM public.dem_us d\n  JOIN patch p ON ST_Intersects(d.rast, p.g)\n),\naspect_rast AS (\n  SELECT ST_Aspect(rast, 1, '32BF', 'DEGREES') AS rast\n  FROM clipped_dem\n)\nSELECT ST_Value(a.rast, 1, o.pt) AS aspect_degrees\nFROM aspect_rast a, origin o;",
+  "id": "aspect+poi-15",
+  "model_output": "```sql\nWITH poi_geom AS (\n  SELECT\n    id,\n    geometry::geometry AS geom\n  FROM\n    pois\n  WHERE\n    poi_name ILIKE 'Tam O%Shanter'\n    AND addr_city = 'Los Angeles'\n    AND addr_state = 'CA'\n    AND amenity = 'restaurant'\n    AND id = 31658\n)\nSELECT\n  degrees(ST_Azimuth(ST_Centroid(p.geom), ST_3DInterpolate(p.geom, r.rast, 1))) AS aspect_degrees\nFROM\n  poi_geom p,\n  public.dem_us r\nWHERE\n  ST_Intersects(r.rast::geometry, p.geom)\n  AND ST_Clip(r.rast, p.geom, TRUE) IS NOT NULL;\n```",
+  "predicted_exec": {
+    "error": "function st_3dinterpolate(geometry, raster, integer) does not exist\nLINE 15:   degrees(ST_Azimuth(ST_Centroid(p.geom), ST_3DInterpolate(p...\n                                                   ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH poi_geom AS (\n  SELECT\n    id,\n    geometry::geometry AS geom\n  FROM\n    pois\n  WHERE\n    poi_name ILIKE 'Tam O%Shanter'\n    AND addr_city = 'Los Angeles'\n    AND addr_state = 'CA'\n    AND amenity = 'restaurant'\n    AND id = 31658\n)\nSELECT\n  degrees(ST_Azimuth(ST_Centroid(p.geom), ST_3DInterpolate(p.geom, r.rast, 1))) AS aspect_degrees\nFROM\n  poi_geom p,\n  public.dem_us r\nWHERE\n  ST_Intersects(r.rast::geometry, p.geom)\n  AND ST_Clip(r.rast, p.geom, TRUE) IS NOT NULL;",
+  "predicted_sql_candidates": [
+    "WITH poi_geom AS (\n  SELECT\n    id,\n    geometry::geometry AS geom\n  FROM\n    pois\n  WHERE\n    poi_name ILIKE 'Tam O%Shanter'\n    AND addr_city = 'Los Angeles'\n    AND addr_state = 'CA'\n    AND amenity = 'restaurant'\n    AND id = 31658\n)\nSELECT\n  degrees(ST_Azimuth(ST_Centroid(p.geom), ST_3DInterpolate(p.geom, r.rast, 1))) AS aspect_degrees\nFROM\n  poi_geom p,\n  public.dem_us r\nWHERE\n  ST_Intersects(r.rast::geometry, p.geom)\n  AND ST_Clip(r.rast, p.geom, TRUE) IS NOT NULL;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the aspect of the slope at Tam O'Shanter, Los Angeles, CA?",
+  "source_file": "aspect+poi.jsonl",
+  "source_stem": "aspect+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 35.278,
+    "total_seconds": 35.279
+  },
+  "usage": {
+    "completion_tokens": 164,
+    "prompt_tokens": 1620,
+    "total_tokens": 1784
+  }
+}

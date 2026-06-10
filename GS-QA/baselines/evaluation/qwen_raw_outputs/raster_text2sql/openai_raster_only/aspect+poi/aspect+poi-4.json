@@ -1,0 +1,59 @@
+{
+  "answer_type": "aspect",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "aspect",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "aspect_degrees": 174.805573
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "aspect_degrees": 174.805573
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-106.68725 35.778228)',4326) AS pt\n),\npatch AS (\n  SELECT ST_Buffer(pt::geography, 100)::geometry AS g FROM origin\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, p.g)) AS rast\n  FROM public.dem_us d\n  JOIN patch p ON ST_Intersects(d.rast, p.g)\n),\naspect_rast AS (\n  SELECT ST_Aspect(rast, 1, '32BF', 'DEGREES') AS rast\n  FROM clipped_dem\n)\nSELECT ST_Value(a.rast, 1, o.pt) AS aspect_degrees\nFROM aspect_rast a, origin o;",
+  "id": "aspect+poi-4",
+  "model_output": "```sql\nWITH geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-106.68725, 35.778228), 4326)::geography AS geometry\n),\naspect_raster AS (\n  SELECT \n    ST_Aspect(\n      ST_Clip(\n        r.rast, \n        true, \n        ST_Transform(ST_SetSRID(ST_MakePoint(-106.68725, 35.778228), 4326), 4326)::geometry\n      ),\n      1\n    ) AS aspect_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast, \n    ST_Transform(ST_SetSRID(ST_MakePoint(-106.68725, 35.778228), 4326), 4326)::geometry\n  )\n)\nSELECT \n  ST_Value(aspect_rast, 1, 1) AS terrain_aspect_angle_degrees\nFROM aspect_raster;\n```",
+  "predicted_exec": {
+    "error": "function st_clip(raster, boolean, geometry) does not exist\nLINE 7:       ST_Clip(\n              ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-106.68725, 35.778228), 4326)::geography AS geometry\n),\naspect_raster AS (\n  SELECT \n    ST_Aspect(\n      ST_Clip(\n        r.rast, \n        true, \n        ST_Transform(ST_SetSRID(ST_MakePoint(-106.68725, 35.778228), 4326), 4326)::geometry\n      ),\n      1\n    ) AS aspect_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast, \n    ST_Transform(ST_SetSRID(ST_MakePoint(-106.68725, 35.778228), 4326), 4326)::geometry\n  )\n)\nSELECT \n  ST_Value(aspect_rast, 1, 1) AS terrain_aspect_angle_degrees\nFROM aspect_raster;",
+  "predicted_sql_candidates": [
+    "WITH geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-106.68725, 35.778228), 4326)::geography AS geometry\n),\naspect_raster AS (\n  SELECT \n    ST_Aspect(\n      ST_Clip(\n        r.rast, \n        true, \n        ST_Transform(ST_SetSRID(ST_MakePoint(-106.68725, 35.778228), 4326), 4326)::geometry\n      ),\n      1\n    ) AS aspect_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast, \n    ST_Transform(ST_SetSRID(ST_MakePoint(-106.68725, 35.778228), 4326), 4326)::geometry\n  )\n)\nSELECT \n  ST_Value(aspect_rast, 1, 1) AS terrain_aspect_angle_degrees\nFROM aspect_raster;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the terrain aspect angle at Jemez State Monument, Jemez Springs, NM?",
+  "source_file": "aspect+poi.jsonl",
+  "source_stem": "aspect+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 55.119,
+    "total_seconds": 55.12
+  },
+  "usage": {
+    "completion_tokens": 241,
+    "prompt_tokens": 1617,
+    "total_tokens": 1858
+  }
+}

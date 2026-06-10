@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 7.336823
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 7.336823
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-95.172735 31.902804, -95.16399 31.901218, -95.162725 31.900964, -95.161971 31.900781, -95.161365 31.900588, -95.160521 31.900317, -95.147375 31.895179, -95.147355 31.895658, -95.151466 31.897176, -95.151531 31.903952, -95.151536 31.904426, -95.153659 31.904427, -95.15367 31.908643, -95.154589 31.908657, -95.154543 31.9149, -95.15657 31.915085, -95.156568 31.918867, -95.156014 31.918868, -95.156185 31.926299, -95.153119 31.926305, -95.15325 31.92955, -95.149986 31.92958, -95.149985 31.929547, -95.149928 31.922812, -95.143916 31.920293, -95.142263 31.919543, -95.140885 31.918867, -95.138052 31.917287, -95.137629 31.909389, -95.142929 31.909317, -95.142918 31.906211, -95.138382 31.906227, -95.137175 31.906235, -95.135638 31.906251, -95.13597 31.886556, -95.138245 31.886476, -95.138745 31.886472, -95.139279 31.886544, -95.139252 31.885879, -95.141711 31.886356, -95.141582 31.87786, -95.142277 31.87785, -95.142271 31.877992, -95.151763 31.877892, -95.151773 31.876969, -95.160437 31.876979, -95.160433 31.876101, -95.168541 31.87609, -95.168581 31.878662, -95.167744 31.878664, -95.167739 31.879218, -95.168599 31.879213, -95.168601 31.879849, -95.169246 31.879782, -95.16953 31.879765, -95.170211 31.879793, -95.170473 31.879787, -95.172038 31.879595, -95.171978 31.879886, -95.171885 31.880552, -95.171723 31.882552, -95.171691 31.882713, -95.171635 31.88289, -95.171526 31.883068, -95.171418 31.883209, -95.17128 31.883322, -95.170219 31.883974, -95.169915 31.884209, -95.169808 31.884277, -95.169268 31.884553, -95.169153 31.884612, -95.16903 31.884731, -95.168978 31.884817, -95.168966 31.884896, -95.169079 31.885912, -95.169107 31.886031, -95.169169 31.886134, -95.169289 31.886213, -95.169912 31.886438, -95.17008 31.8865, -95.170256 31.886591, -95.170411 31.886699, -95.17056 31.886846, -95.171302 31.887657, -95.17139 31.887774, -95.171422 31.887876, -95.171421 31.887997, -95.170628 31.892992, -95.170578 31.893188, -95.169841 31.89573, -95.169802 31.895952, -95.169794 31.896189, -95.16982 31.896405, -95.169868 31.896674, -95.169914 31.896923, -95.170075 31.89759, -95.170318 31.898308, -95.170391 31.898491, -95.170476 31.898697, -95.170569 31.898886, -95.17073 31.899157, -95.171809 31.901026, -95.172063 31.901486, -95.172735 31.902804))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).mean AS slope\nFROM region_slope;",
+  "id": "avg_slope+area-1",
+  "model_output": "```sql\nWITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Gallatin' AND addr_state ILIKE 'Texas'\n)\n, slope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM region_geom), TRUE),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM region_geom))\n)\nSELECT\n  ROUND(AVG(value), 2) AS avg_slope_degrees\nFROM (\n  SELECT\n    (ST_SummaryStats(slope_rast, TRUE)).*\n  FROM slope_raster\n) AS stats;\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 4:   WHERE region_name ILIKE 'Gallatin' AND addr_state ILIKE 'T...\n                                                 ^",
+    "output": []
+  },
+  "predicted_sql": "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Gallatin' AND addr_state ILIKE 'Texas'\n)\n, slope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM region_geom), TRUE),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM region_geom))\n)\nSELECT\n  ROUND(AVG(value), 2) AS avg_slope_degrees\nFROM (\n  SELECT\n    (ST_SummaryStats(slope_rast, TRUE)).*\n  FROM slope_raster\n) AS stats;",
+  "predicted_sql_candidates": [
+    "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Gallatin' AND addr_state ILIKE 'Texas'\n)\n, slope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM region_geom), TRUE),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM region_geom))\n)\nSELECT\n  ROUND(AVG(value), 2) AS avg_slope_degrees\nFROM (\n  SELECT\n    (ST_SummaryStats(slope_rast, TRUE)).*\n  FROM slope_raster\n) AS stats;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the avg slope value within Gallatin, Texas?",
+  "source_file": "avg_slope+area.jsonl",
+  "source_stem": "avg_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 36.062,
+    "total_seconds": 36.063
+  },
+  "usage": {
+    "completion_tokens": 159,
+    "prompt_tokens": 1516,
+    "total_tokens": 1675
+  }
+}

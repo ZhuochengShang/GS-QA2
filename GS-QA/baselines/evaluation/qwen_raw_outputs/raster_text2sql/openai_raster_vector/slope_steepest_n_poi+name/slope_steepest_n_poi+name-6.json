@@ -1,0 +1,121 @@
+{
+  "answer_type": "row/s",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "row/s",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "rowset_f1",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "addr_city": "Sugarcreek",
+      "addr_housenumber": "4147",
+      "addr_postcode": "44681",
+      "addr_state": "OH",
+      "addr_street": "CR 114",
+      "geometry": "POINT (-81.737201 40.522778)",
+      "id": 9443,
+      "opening_hours": "08:30-18:00",
+      "osm_id": 4341174209,
+      "poi_name": "The Farm at Walnut Creek",
+      "pt": "0101000020E610000071A5434C2E6F54C06A8A5B60EA424440",
+      "slope_degrees": 3.421798,
+      "tourism": "zoo",
+      "website": "https://thefarmatwalnutcreek.com/"
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "addr_city": "Sugarcreek",
+        "addr_housenumber": "4147",
+        "addr_postcode": "44681",
+        "addr_state": "OH",
+        "addr_street": "CR 114",
+        "amenity": null,
+        "artwork_type": null,
+        "building": null,
+        "capacity": null,
+        "cuisine": null,
+        "delivery": null,
+        "description": null,
+        "drive_through": null,
+        "emergency": null,
+        "fast_food": null,
+        "fee": null,
+        "geometry": "0101000020E610000071A5434C2E6F54C06A8A5B60EA424440",
+        "hairdresser": null,
+        "healthcare": null,
+        "historic": null,
+        "id": 9443,
+        "information": null,
+        "internet_access": null,
+        "leisure": null,
+        "museum": null,
+        "official_name": null,
+        "opening_hours": "08:30-18:00",
+        "operator": null,
+        "osm_id": 4341174209,
+        "outdoor_seating": null,
+        "parking": null,
+        "pastry_shop": null,
+        "phone": null,
+        "poi_name": "The Farm at Walnut Creek",
+        "pt": "0101000020E610000071A5434C2E6F54C06A8A5B60EA424440",
+        "resort": null,
+        "restaurant": null,
+        "school_type": null,
+        "shop": null,
+        "slope_degrees": 3.421798,
+        "sport": null,
+        "sports": null,
+        "takeaway": null,
+        "toilets": null,
+        "tourism": "zoo",
+        "website": "https://thefarmatwalnutcreek.com/",
+        "wheelchair": null,
+        "wholesale": null,
+        "wikidata": null,
+        "zoo": null
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-82.085953 40.452886, -82.085839 40.454122, -82.034103 40.452446, -82.027458 40.452419, -81.988712 40.451007, -81.988703 40.451367, -81.906106 40.448625, -81.895087 40.448324, -81.894515 40.448717, -81.893892 40.448722, -81.893899 40.448125, -81.893524 40.44812, -81.882906 40.447963, -81.875244 40.44785, -81.874315 40.447837, -81.872236 40.447806, -81.870098 40.447775, -81.804608 40.446811, -81.709228 40.444866, -81.695544 40.444633, -81.669749 40.443999, -81.669132 40.45853, -81.668464 40.477976, -81.667138 40.50958, -81.666426 40.524793, -81.666042 40.531897, -81.665422 40.546308, -81.664839 40.56089, -81.665617 40.560912, -81.664892 40.575393, -81.664344 40.591522, -81.66332 40.614788, -81.662671 40.627256, -81.66835 40.627402, -81.668329 40.632349, -81.662014 40.633068, -81.66059 40.63323, -81.65777 40.633551, -81.652194 40.634186, -81.649076 40.634542, -81.649077 40.636714, -81.649077 40.638423, -81.649079 40.641918, -81.649085 40.655398, -81.649086 40.656856, -81.649086 40.656899, -81.649086 40.65858, -81.649087 40.660431, -81.649087 40.660786, -81.64909 40.667786, -81.658476 40.667824, -81.659201 40.667827, -81.662798 40.667841, -81.687841 40.667943, -81.689637 40.667947, -81.691205 40.667955, -81.694964 40.66797, -81.696504 40.667986, -81.697042 40.667991, -81.697227 40.667993, -81.698945 40.667994, -81.700509 40.667994, -81.704262 40.668021, -81.705197 40.668039, -81.706451 40.668034, -81.707156 40.668024, -81.707623 40.668016, -81.708116 40.668009, -81.709806 40.66801, -81.710761 40.668004, -81.711208 40.668002, -81.712141 40.667996, -81.712679 40.667995, -81.713008 40.667995, -81.714316 40.667992, -81.714369 40.667992, -81.716066 40.668002, -81.716561 40.668008, -81.717644 40.66802, -81.718645 40.668015, -81.720265 40.668023, -81.721669 40.668033, -81.723176 40.668046, -81.724505 40.668052, -81.725345 40.668069, -81.726178 40.668069, -81.726308 40.668069, -81.729504 40.668046, -81.740106 40.667978, -81.745913 40.667882, -81.760849 40.667831, -81.765051 40.667835, -81.774603 40.667903, -81.784144 40.667911, -81.803536 40.667981, -81.817706 40.667953, -81.828907 40.667798, -81.829768 40.667792, -81.841945 40.667629, -81.861244 40.667338, -81.875719 40.66706, -81.878839 40.667135, -81.893306 40.66695, -81.952412 40.667518, -81.971395 40.667701, -81.974384 40.667734, -81.974894 40.667739, -81.975031 40.66774, -81.978508 40.667767, -81.978857 40.66777, -81.980403 40.66779, -81.983314 40.66783, -81.983324 40.66783, -81.984282 40.667842, -81.987656 40.667886, -81.992641 40.667951, -81.995303 40.66796, -82.002564 40.66797, -82.004722 40.667943, -82.008347 40.667959, -82.014215 40.667958, -82.01453 40.667963, -82.015882 40.667982, -82.017566 40.668025, -82.018963 40.668049, -82.020427 40.668084, -82.021936 40.668108, -82.025184 40.668153, -82.028001 40.668203, -82.028194 40.668205, -82.030148 40.668233, -82.032078 40.668269, -82.033832 40.668289, -82.038991 40.668324, -82.040942 40.668338, -82.044145 40.66836, -82.047044 40.668378, -82.048753 40.668388, -82.050137 40.668396, -82.052873 40.668411, -82.054549 40.668406, -82.05593 40.668401, -82.056054 40.668401, -82.059817 40.668381, -82.061925 40.668381, -82.064784 40.66837, -82.069567 40.668345, -82.070412 40.668339, -82.070497 40.668339, -82.074862 40.668285, -82.077066 40.668254, -82.07984 40.668206, -82.082082 40.668173, -82.086183 40.668118, -82.08781 40.668095, -82.089324 40.668073, -82.090327 40.668057, -82.095448 40.668075, -82.109968 40.668138, -82.116514 40.668236, -82.12601 40.668307, -82.221153 40.667515, -82.220883 40.645654, -82.220793 40.638357, -82.220729 40.628758, -82.220718 40.627288, -82.220329 40.568184, -82.178551 40.573074, -82.183568 40.471082, -82.18367 40.469005, -82.183702 40.46811, -82.183729 40.467775, -82.183726 40.467276, -82.184236 40.456456, -82.090361 40.452984, -82.085953 40.452886))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope_raster AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\ncandidates AS (\n  SELECT p.*, ST_PointOnSurface(p.geometry::geometry) AS pt\n  FROM pois p\n  JOIN buffered_region r ON ST_Intersects(p.geometry::geometry, r.g)\n  WHERE p.\"tourism\" = 'zoo'\n),\npoi_slope AS (\n  SELECT c.*, slope.s AS slope_degrees\n  FROM candidates c\n  JOIN LATERAL (\n    SELECT ST_Value(sr.rast, 1, c.pt) AS s\n    FROM slope_raster sr\n    WHERE ST_Intersects(sr.rast, c.pt)\n    LIMIT 1\n  ) slope ON slope.s IS NOT NULL\n)\nSELECT *\nFROM poi_slope\nORDER BY slope_degrees DESC\nLIMIT 3;",
+  "id": "slope_steepest_n_poi+name-6",
+  "model_output": "```sql\nWITH zoo_geoms AS (\n  SELECT \n    'The Farm at Walnut Creek, Sugarcreek, OH'::text AS zoo_name,\n    ST_SetSRID(ST_GeomFromText('POINT (-81.737201 40.522778)'), 4326)::geography AS geom\n  UNION ALL\n  SELECT \n    regions.region_name || ', Holmes County, OH'::text AS zoo_name,\n    regions.geometry AS geom\n  FROM regions\n  WHERE regions.region_name ILIKE '%zoo%' \n    AND regions.addr_state = 'OH'\n    AND regions.addr_county = 'Holmes'\n    AND regions.border_type = 'municipal'\n),\nzoo_slope AS (\n  SELECT \n    zoo_geoms.zoo_name,\n    ST_Slope(\n      ST_Clip(\n        public.dem_us.rast, \n        true, \n        zoo_geoms.geom::geometry\n      ), \n      1\n    ) AS slope_rast\n  FROM zoo_geoms\n  JOIN public.dem_us ON ST_Intersects(public.dem_us.rast, zoo_geoms.geom::geometry)\n),\nzoo_slope_stats AS (\n  SELECT \n    zoo_name,\n    ROUND(AVG(ST_Value(slope_rast, 1)) * 100, 2) AS avg_slope_percent\n  FROM zoo_slope\n  GROUP BY zoo_name\n)\nSELECT \n  zoo_name,\n  avg_slope_percent\nFROM zoo_slope_stats\nORDER BY avg_slope_percent DESC\nLIMIT 3;\n```",
+  "predicted_exec": {
+    "error": "column regions.addr_state does not exist\nLINE 11:     AND regions.addr_state = 'OH'\n                 ^",
+    "output": []
+  },
+  "predicted_sql": "WITH zoo_geoms AS (\n  SELECT \n    'The Farm at Walnut Creek, Sugarcreek, OH'::text AS zoo_name,\n    ST_SetSRID(ST_GeomFromText('POINT (-81.737201 40.522778)'), 4326)::geography AS geom\n  UNION ALL\n  SELECT \n    regions.region_name || ', Holmes County, OH'::text AS zoo_name,\n    regions.geometry AS geom\n  FROM regions\n  WHERE regions.region_name ILIKE '%zoo%' \n    AND regions.addr_state = 'OH'\n    AND regions.addr_county = 'Holmes'\n    AND regions.border_type = 'municipal'\n),\nzoo_slope AS (\n  SELECT \n    zoo_geoms.zoo_name,\n    ST_Slope(\n      ST_Clip(\n        public.dem_us.rast, \n        true, \n        zoo_geoms.geom::geometry\n      ), \n      1\n    ) AS slope_rast\n  FROM zoo_geoms\n  JOIN public.dem_us ON ST_Intersects(public.dem_us.rast, zoo_geoms.geom::geometry)\n),\nzoo_slope_stats AS (\n  SELECT \n    zoo_name,\n    ROUND(AVG(ST_Value(slope_rast, 1)) * 100, 2) AS avg_slope_percent\n  FROM zoo_slope\n  GROUP BY zoo_name\n)\nSELECT \n  zoo_name,\n  avg_slope_percent\nFROM zoo_slope_stats\nORDER BY avg_slope_percent DESC\nLIMIT 3;",
+  "predicted_sql_candidates": [
+    "WITH zoo_geoms AS (\n  SELECT \n    'The Farm at Walnut Creek, Sugarcreek, OH'::text AS zoo_name,\n    ST_SetSRID(ST_GeomFromText('POINT (-81.737201 40.522778)'), 4326)::geography AS geom\n  UNION ALL\n  SELECT \n    regions.region_name || ', Holmes County, OH'::text AS zoo_name,\n    regions.geometry AS geom\n  FROM regions\n  WHERE regions.region_name ILIKE '%zoo%' \n    AND regions.addr_state = 'OH'\n    AND regions.addr_county = 'Holmes'\n    AND regions.border_type = 'municipal'\n),\nzoo_slope AS (\n  SELECT \n    zoo_geoms.zoo_name,\n    ST_Slope(\n      ST_Clip(\n        public.dem_us.rast, \n        true, \n        zoo_geoms.geom::geometry\n      ), \n      1\n    ) AS slope_rast\n  FROM zoo_geoms\n  JOIN public.dem_us ON ST_Intersects(public.dem_us.rast, zoo_geoms.geom::geometry)\n),\nzoo_slope_stats AS (\n  SELECT \n    zoo_name,\n    ROUND(AVG(ST_Value(slope_rast, 1)) * 100, 2) AS avg_slope_percent\n  FROM zoo_slope\n  GROUP BY zoo_name\n)\nSELECT \n  zoo_name,\n  avg_slope_percent\nFROM zoo_slope_stats\nORDER BY avg_slope_percent DESC\nLIMIT 3;"
+  ],
+  "query_type": "raster_vector",
+  "question": "List the 3 steepest-terrain zoos in Holmes County, Ohio.",
+  "source_file": "slope_steepest_n_poi+name.jsonl",
+  "source_stem": "slope_steepest_n_poi+name",
+  "timing": {
+    "execution_seconds": 0.002,
+    "generation_seconds": 70.116,
+    "total_seconds": 70.118
+  },
+  "usage": {
+    "completion_tokens": 329,
+    "prompt_tokens": 1658,
+    "total_tokens": 1987
+  }
+}

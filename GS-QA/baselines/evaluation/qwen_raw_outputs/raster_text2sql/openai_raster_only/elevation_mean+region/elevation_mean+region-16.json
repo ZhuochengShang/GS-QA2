@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 245.424227
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 245.424227
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-84.046618 44.083792, -84.04732 44.112764, -84.047277 44.126997, -84.047358 44.161801, -84.032142 44.161925, -84.024956 44.161896, -84.017348 44.161936, -84.012425 44.161944, -84.004771 44.161906, -83.978871 44.161921, -83.967332 44.16189, -83.95901 44.161864, -83.927506 44.161772, -83.92706 44.083946, -84.046618 44.083792))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).mean AS elevation\nFROM clipped;",
+  "id": "elevation_mean+region-16",
+  "model_output": "```sql\nWITH clinton_township_geom AS (\n  SELECT ST_GeomFromText('POLYGON ((-84.046618 44.083792, -84.04732 44.112764, -84.047277 44.126997, -84.047358 44.161801, -84.032142 44.161925, -84.024956 44.161896, -84.017348 44.161936, -84.012425 44.161944, -84.004771 44.161906, -83.978871 44.161921, -83.967332 44.16189, -83.95901 44.161864, -83.927506 44.161772, -83.92706 44.083946, -84.046618 44.083792))', 4326)::geometry AS geom\n)\nSELECT\n  ST_ValueCount(\n    ST_Clip(\n      r.rast,\n      true,\n      ct.geom\n    ),\n    true\n  ) AS elevation_stats\nFROM\n  public.dem_us r,\n  clinton_township_geom ct\nWHERE\n  ST_Intersects(r.rast, ct.geom);\n```",
+  "predicted_exec": {
+    "error": "function st_clip(raster, boolean, geometry) does not exist\nLINE 6:     ST_Clip(\n            ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH clinton_township_geom AS (\n  SELECT ST_GeomFromText('POLYGON ((-84.046618 44.083792, -84.04732 44.112764, -84.047277 44.126997, -84.047358 44.161801, -84.032142 44.161925, -84.024956 44.161896, -84.017348 44.161936, -84.012425 44.161944, -84.004771 44.161906, -83.978871 44.161921, -83.967332 44.16189, -83.95901 44.161864, -83.927506 44.161772, -83.92706 44.083946, -84.046618 44.083792))', 4326)::geometry AS geom\n)\nSELECT\n  ST_ValueCount(\n    ST_Clip(\n      r.rast,\n      true,\n      ct.geom\n    ),\n    true\n  ) AS elevation_stats\nFROM\n  public.dem_us r,\n  clinton_township_geom ct\nWHERE\n  ST_Intersects(r.rast, ct.geom);",
+  "predicted_sql_candidates": [
+    "WITH clinton_township_geom AS (\n  SELECT ST_GeomFromText('POLYGON ((-84.046618 44.083792, -84.04732 44.112764, -84.047277 44.126997, -84.047358 44.161801, -84.032142 44.161925, -84.024956 44.161896, -84.017348 44.161936, -84.012425 44.161944, -84.004771 44.161906, -83.978871 44.161921, -83.967332 44.16189, -83.95901 44.161864, -83.927506 44.161772, -83.92706 44.083946, -84.046618 44.083792))', 4326)::geometry AS geom\n)\nSELECT\n  ST_ValueCount(\n    ST_Clip(\n      r.rast,\n      true,\n      ct.geom\n    ),\n    true\n  ) AS elevation_stats\nFROM\n  public.dem_us r,\n  clinton_township_geom ct\nWHERE\n  ST_Intersects(r.rast, ct.geom);"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the avg elevation value within Clayton Township, Arenac County, Michigan?",
+  "source_file": "elevation_mean+region.jsonl",
+  "source_stem": "elevation_mean+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 88.544,
+    "total_seconds": 88.545
+  },
+  "usage": {
+    "completion_tokens": 415,
+    "prompt_tokens": 1820,
+    "total_tokens": 2235
+  }
+}

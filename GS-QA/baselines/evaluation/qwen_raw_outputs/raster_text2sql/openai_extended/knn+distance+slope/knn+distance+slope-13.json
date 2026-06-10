@@ -1,0 +1,63 @@
+{
+  "answer_type": "name+distance+slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "name+distance+slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "dist_m": 12963.950696,
+      "road_name": "Folsom South Canal",
+      "slope_deg": 0.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "dist_m": 12963.950696,
+        "road_name": "Folsom South Canal",
+        "slope_deg": 0.0
+      }
+    ]
+  },
+  "gold_sql": "WITH ref AS (\n  SELECT ST_GeomFromText('POINT (-121.414332 38.575175)', 4326)::geometry AS g\n),\nnearest AS (\n  SELECT r.road_name,\n         r.geometry::geometry AS geom,\n         ST_Distance(r.geometry::geography, ST_GeomFromText('POINT (-121.414332 38.575175)', 4326)::geography) AS dist_m\n  FROM roads r, ref\n  WHERE r.highway = 'cycleway'\n    AND r.road_name IS NOT NULL\n    AND ST_Dimension(r.geometry::geometry) = 1\n    AND ST_NPoints(r.geometry::geometry) BETWEEN 2 AND 50\n    AND r.geometry::geometry && ST_MakeEnvelope(-126, 24, -66, 50, 4326)\n    AND ST_DWithin(r.geometry::geography, ST_GeomFromText('POINT (-121.414332 38.575175)', 4326)::geography, 100000)\n  ORDER BY r.geometry::geometry <-> ref.g\n  LIMIT 1\n),\nsegments AS (\n  SELECT (ST_DumpSegments(n.geom)).geom AS seg FROM nearest n\n),\nendpoints AS (\n  SELECT ST_StartPoint(seg) AS p1,\n         ST_EndPoint(seg)   AS p2,\n         ST_Length(seg::geography) AS seg_len_m\n  FROM segments\n),\nelev AS (\n  SELECT e.seg_len_m,\n         z1.v AS z1,\n         z2.v AS z2\n  FROM endpoints e\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, e.p1) AS v\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, e.p1)\n    LIMIT 1\n  ) z1 ON z1.v IS NOT NULL\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, e.p2) AS v\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, e.p2)\n    LIMIT 1\n  ) z2 ON z2.v IS NOT NULL\n),\nslopes AS (\n  SELECT seg_len_m,\n         CASE WHEN seg_len_m > 0 THEN ABS(z2 - z1) / seg_len_m ELSE NULL END AS grade\n  FROM elev\n  WHERE z1 IS NOT NULL AND z2 IS NOT NULL\n)\nSELECT n.road_name,\n       n.dist_m,\n       DEGREES(ATAN(SUM(grade * seg_len_m) / NULLIF(SUM(seg_len_m), 0))) AS slope_deg\nFROM nearest n\nCROSS JOIN slopes\nWHERE grade IS NOT NULL\nGROUP BY n.road_name, n.dist_m;",
+  "id": "knn+distance+slope-13",
+  "model_output": "```sql\nWITH nearest_cycleway AS (\n  SELECT \n    r.id,\n    r.geometry,\n    ST_Distance(\n      ST_SetSRID(ST_Point(-121.414332, 38.575175), 4326)::geography,\n      r.geometry\n    ) AS distance_meters\n  FROM roads r\n  WHERE r.highway IS NOT NULL\n    AND r.highway ILIKE '%cycleway%'\n  ORDER BY distance_meters\n  LIMIT 1\n),\nraster_analysis AS (\n  SELECT\n    ST_Area(ST_Transform(r.geometry, 3857)) AS length_meters,\n    ST_AvgGrade(\n      ST_Clip(\n        rast.rast,\n        ST_Transform(r.geometry, 4326),\n        TRUE\n      ),\n      ST_Transform(r.geometry, 3857)\n    ) AS average_grade\n  FROM nearest_cycleway r\n  CROSS JOIN public.dem_us rast\n  WHERE ST_Intersects(\n    ST_Transform(r.geometry, 4326),\n    rast.rast\n  )\n)\nSELECT\n  'Valley Recovery Center of California' AS facility_name,\n  (SELECT distance_meters FROM nearest_cycleway) AS distance_to_cycleway_meters,\n  (SELECT average_grade FROM raster_analysis) AS average_grade\n```",
+  "predicted_exec": {
+    "error": "function st_transform(geography, integer) does not exist\nLINE 17:     ST_Area(ST_Transform(r.geometry, 3857)) AS length_meters...\n                     ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH nearest_cycleway AS (\n  SELECT \n    r.id,\n    r.geometry,\n    ST_Distance(\n      ST_SetSRID(ST_Point(-121.414332, 38.575175), 4326)::geography,\n      r.geometry\n    ) AS distance_meters\n  FROM roads r\n  WHERE r.highway IS NOT NULL\n    AND r.highway ILIKE '%cycleway%'\n  ORDER BY distance_meters\n  LIMIT 1\n),\nraster_analysis AS (\n  SELECT\n    ST_Area(ST_Transform(r.geometry, 3857)) AS length_meters,\n    ST_AvgGrade(\n      ST_Clip(\n        rast.rast,\n        ST_Transform(r.geometry, 4326),\n        TRUE\n      ),\n      ST_Transform(r.geometry, 3857)\n    ) AS average_grade\n  FROM nearest_cycleway r\n  CROSS JOIN public.dem_us rast\n  WHERE ST_Intersects(\n    ST_Transform(r.geometry, 4326),\n    rast.rast\n  )\n)\nSELECT\n  'Valley Recovery Center of California' AS facility_name,\n  (SELECT distance_meters FROM nearest_cycleway) AS distance_to_cycleway_meters,\n  (SELECT average_grade FROM raster_analysis) AS average_grade",
+  "predicted_sql_candidates": [
+    "WITH nearest_cycleway AS (\n  SELECT \n    r.id,\n    r.geometry,\n    ST_Distance(\n      ST_SetSRID(ST_Point(-121.414332, 38.575175), 4326)::geography,\n      r.geometry\n    ) AS distance_meters\n  FROM roads r\n  WHERE r.highway IS NOT NULL\n    AND r.highway ILIKE '%cycleway%'\n  ORDER BY distance_meters\n  LIMIT 1\n),\nraster_analysis AS (\n  SELECT\n    ST_Area(ST_Transform(r.geometry, 3857)) AS length_meters,\n    ST_AvgGrade(\n      ST_Clip(\n        rast.rast,\n        ST_Transform(r.geometry, 4326),\n        TRUE\n      ),\n      ST_Transform(r.geometry, 3857)\n    ) AS average_grade\n  FROM nearest_cycleway r\n  CROSS JOIN public.dem_us rast\n  WHERE ST_Intersects(\n    ST_Transform(r.geometry, 4326),\n    rast.rast\n  )\n)\nSELECT\n  'Valley Recovery Center of California' AS facility_name,\n  (SELECT distance_meters FROM nearest_cycleway) AS distance_to_cycleway_meters,\n  (SELECT average_grade FROM raster_analysis) AS average_grade"
+  ],
+  "query_type": "extended",
+  "question": "How far away is the nearest cycle way with respect to Valley Recovery Center of California, Sacramento, CA, and what is the average grade along it?",
+  "source_file": "knn+distance+slope.jsonl",
+  "source_stem": "knn+distance+slope",
+  "timing": {
+    "execution_seconds": 0.003,
+    "generation_seconds": 61.855,
+    "total_seconds": 61.858
+  },
+  "usage": {
+    "completion_tokens": 290,
+    "prompt_tokens": 1662,
+    "total_tokens": 1952
+  }
+}

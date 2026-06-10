@@ -1,0 +1,59 @@
+{
+  "answer_type": "percent",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "percent",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer_percent": 65.282509
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer_percent": 65.282509
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-76.553881 42.025415, -76.55317 42.026804, -76.549198 42.03525, -76.541442 42.051565, -76.550665 42.079839, -76.552166 42.094824, -76.555141 42.113132, -76.605833 42.112097, -76.605648 42.108651, -76.645024 42.107931, -76.642776 42.058283, -76.684243 42.057224, -76.70028 42.056749, -76.712219 42.056434, -76.719909 42.056192, -76.719539 42.04776, -76.719164 42.039423, -76.719018 42.039201, -76.718891 42.038846, -76.719056 42.037866, -76.719205 42.037348, -76.719162 42.036849, -76.718517 42.035557, -76.718075 42.034955, -76.717655 42.034485, -76.717435 42.034146, -76.717407 42.033927, -76.71796 42.033719, -76.718973 42.033374, -76.719523 42.032968, -76.719658 42.032521, -76.719519 42.0317, -76.719294 42.030995, -76.719021 42.030406, -76.718735 42.029723, -76.71819 42.028703, -76.718148 42.028624, -76.717977 42.027902, -76.718034 42.027572, -76.718369 42.026607, -76.718363 42.026365, -76.718039 42.026313, -76.717647 42.026397, -76.717083 42.026596, -76.716894 42.026495, -76.716933 42.026249, -76.717231 42.025833, -76.717253 42.025586, -76.716954 42.025404, -76.715453 42.024817, -76.714936 42.024736, -76.714776 42.024783, -76.714833 42.025001, -76.715087 42.025379, -76.71494 42.025519, -76.714813 42.025564, -76.71421 42.025599, -76.712369 42.025384, -76.711877 42.025201, -76.711449 42.0247, -76.711016 42.024448, -76.710587 42.02435, -76.710242 42.024455, -76.710074 42.024683, -76.70989 42.024737, -76.709677 42.024611, -76.709638 42.02376, -76.709284 42.023732, -76.709028 42.02406, -76.709016 42.024439, -76.708948 42.024708, -76.705778 42.024288, -76.703765 42.02417, -76.701657 42.001246, -76.695297 42.001205, -76.676493 42.001104, -76.657038 42.000818, -76.638156 42.000683, -76.637986 42.000682, -76.625041 42.000578, -76.618471 42.000526, -76.579573 42.000204, -76.557695 42.000158, -76.557689 42.000638, -76.55765 42.001007, -76.557525 42.001601, -76.557513 42.001738, -76.557537 42.002065, -76.557413 42.002233, -76.557338 42.003079, -76.557371 42.003781, -76.557429 42.004343, -76.557656 42.005149, -76.557843 42.005623, -76.558422 42.006428, -76.558863 42.007034, -76.560738 42.00899, -76.561342 42.009559, -76.553881 42.025415))',4326) AS geom\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.geom) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.geom)\n),\nhist AS (\n  SELECT\n    (vc).value::double precision AS val,\n    (vc).count::double precision AS cnt\n  FROM clipped c\n  CROSS JOIN LATERAL ST_ValueCount(c.rast, 1, TRUE) AS vc\n)\nSELECT\n  (\n    COALESCE(SUM(CASE WHEN val >= 300 THEN cnt ELSE 0 END), 0)\n    / NULLIF(SUM(cnt), 0)\n  ) * 100.0 AS answer_percent\nFROM hist;",
+  "id": "elevation+coverage-10",
+  "model_output": "```sql\nWITH chemung_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Chemung' AND border_type = 'city'\n),\nelevation_analysis AS (\n  SELECT\n    (ST_Area(ST_Clip(r.rast, true, c.geom, true)) / ST_Area(c.geom)) * 100 AS percent_area_above_300\n  FROM chemung_geom c\n  CROSS JOIN public.dem_us r\n  WHERE ST_Intersects(r.rast, c.geom)\n    AND ST_ValueCount(\n      ST_Clip(r.rast, true, c.geom, true),\n      1,\n      300,\n      true\n    ) > 0\n)\nSELECT percent_area_above_300\nFROM elevation_analysis;\n```",
+  "predicted_exec": {
+    "error": "function st_clip(raster, boolean, geometry, boolean) does not exist\nLINE 8:     (ST_Area(ST_Clip(r.rast, true, c.geom, true)) / ST_Area(...\n                     ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH chemung_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Chemung' AND border_type = 'city'\n),\nelevation_analysis AS (\n  SELECT\n    (ST_Area(ST_Clip(r.rast, true, c.geom, true)) / ST_Area(c.geom)) * 100 AS percent_area_above_300\n  FROM chemung_geom c\n  CROSS JOIN public.dem_us r\n  WHERE ST_Intersects(r.rast, c.geom)\n    AND ST_ValueCount(\n      ST_Clip(r.rast, true, c.geom, true),\n      1,\n      300,\n      true\n    ) > 0\n)\nSELECT percent_area_above_300\nFROM elevation_analysis;",
+  "predicted_sql_candidates": [
+    "WITH chemung_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Chemung' AND border_type = 'city'\n),\nelevation_analysis AS (\n  SELECT\n    (ST_Area(ST_Clip(r.rast, true, c.geom, true)) / ST_Area(c.geom)) * 100 AS percent_area_above_300\n  FROM chemung_geom c\n  CROSS JOIN public.dem_us r\n  WHERE ST_Intersects(r.rast, c.geom)\n    AND ST_ValueCount(\n      ST_Clip(r.rast, true, c.geom, true),\n      1,\n      300,\n      true\n    ) > 0\n)\nSELECT percent_area_above_300\nFROM elevation_analysis;"
+  ],
+  "query_type": "raster_only",
+  "question": "Within Chemung, New York, what share of the area has elevation at or above 300 meters?",
+  "source_file": "elevation+coverage.jsonl",
+  "source_stem": "elevation+coverage",
+  "timing": {
+    "execution_seconds": 0.002,
+    "generation_seconds": 36.614,
+    "total_seconds": 36.616
+  },
+  "usage": {
+    "completion_tokens": 171,
+    "prompt_tokens": 1545,
+    "total_tokens": 1716
+  }
+}

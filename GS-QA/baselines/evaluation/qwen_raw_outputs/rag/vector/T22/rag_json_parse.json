@@ -1,0 +1,2102 @@
+[
+  {
+    "id": 500,
+    "run_seconds": 4.068,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 18,
+      "total_tokens": 196,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 178,
+        "total_tokens": 196,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 501,
+    "run_seconds": 4.042,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 177,
+      "output_tokens": 18,
+      "total_tokens": 195,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 177,
+        "total_tokens": 195,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 502,
+    "run_seconds": 4.042,
+    "content": "```json\n{\n    \"azimuth_angle\": 240\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 182,
+      "output_tokens": 18,
+      "total_tokens": 200,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 182,
+        "total_tokens": 200,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 503,
+    "run_seconds": 11.492,
+    "content": "```json\n{\n    \"name\": \"Oak Ridge Children's Museum\",\n    \"address\": \"300 Wongsong Rd, Oak Ridge, TN 37830\",\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 53,
+      "total_tokens": 231,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 53,
+        "prompt_tokens": 178,
+        "total_tokens": 231,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 504,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 18,
+      "total_tokens": 191,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 173,
+        "total_tokens": 191,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 505,
+    "run_seconds": 3.828,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 179,
+      "output_tokens": 17,
+      "total_tokens": 196,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 179,
+        "total_tokens": 196,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 506,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 176,
+      "output_tokens": 18,
+      "total_tokens": 194,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 176,
+        "total_tokens": 194,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 507,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 18,
+      "total_tokens": 196,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 178,
+        "total_tokens": 196,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 508,
+    "run_seconds": 4.041,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 18,
+      "total_tokens": 196,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 178,
+        "total_tokens": 196,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 509,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 172,
+      "output_tokens": 18,
+      "total_tokens": 190,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 172,
+        "total_tokens": 190,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 510,
+    "run_seconds": 3.828,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 17,
+      "total_tokens": 195,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 178,
+        "total_tokens": 195,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 511,
+    "run_seconds": 4.041,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 175,
+      "output_tokens": 18,
+      "total_tokens": 193,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 175,
+        "total_tokens": 193,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 512,
+    "run_seconds": 5.104,
+    "content": "```json\n{\n    \"name\": \"closest restaurant\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 180,
+      "output_tokens": 23,
+      "total_tokens": 203,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 180,
+        "total_tokens": 203,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 513,
+    "run_seconds": 4.039,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 176,
+      "output_tokens": 18,
+      "total_tokens": 194,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 176,
+        "total_tokens": 194,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 514,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 174,
+      "output_tokens": 18,
+      "total_tokens": 192,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 174,
+        "total_tokens": 192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 515,
+    "run_seconds": 4.041,
+    "content": "```json\n{\n    \"azimuth_angle\": 120\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 190,
+      "output_tokens": 18,
+      "total_tokens": 208,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 190,
+        "total_tokens": 208,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 516,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 18,
+      "total_tokens": 196,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 178,
+        "total_tokens": 196,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 517,
+    "run_seconds": 5.531,
+    "content": "```json\n{\n    \"name\": \"nearest zoo\",\n    \"azimuth_angle\": 45\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 194,
+      "output_tokens": 25,
+      "total_tokens": 219,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 194,
+        "total_tokens": 219,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 518,
+    "run_seconds": 9.148,
+    "content": "```json\n{\n    \"name\": \"nearest caf\u00e9\",\n    \"address\": \"Ruffner Park, Irondale, AL\",\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 174,
+      "output_tokens": 42,
+      "total_tokens": 216,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 42,
+        "prompt_tokens": 174,
+        "total_tokens": 216,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 519,
+    "run_seconds": 3.827,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 172,
+      "output_tokens": 17,
+      "total_tokens": 189,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 172,
+        "total_tokens": 189,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 520,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 18,
+      "total_tokens": 191,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 173,
+        "total_tokens": 191,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 521,
+    "run_seconds": 4.042,
+    "content": "```json\n{\n    \"azimuth_angle\": 230\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 182,
+      "output_tokens": 18,
+      "total_tokens": 200,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 182,
+        "total_tokens": 200,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 522,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 175,
+      "output_tokens": 18,
+      "total_tokens": 193,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 175,
+        "total_tokens": 193,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 523,
+    "run_seconds": 3.827,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 175,
+      "output_tokens": 17,
+      "total_tokens": 192,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 175,
+        "total_tokens": 192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 524,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 175,
+      "output_tokens": 18,
+      "total_tokens": 193,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 175,
+        "total_tokens": 193,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 525,
+    "run_seconds": 3.827,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 17,
+      "total_tokens": 190,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 173,
+        "total_tokens": 190,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 526,
+    "run_seconds": 12.339,
+    "content": "```json\n{\n    \"name\": \"Fort Benjamin Harrison State Park and Nature Preserve\",\n    \"address\": \"10000 Fort Benjamin Harrison Dr, Indianapolis, IN 46241\",\n    \"azimuth_angle\": 130\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 201,
+      "output_tokens": 57,
+      "total_tokens": 258,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 57,
+        "prompt_tokens": 201,
+        "total_tokens": 258,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 527,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 176,
+      "output_tokens": 18,
+      "total_tokens": 194,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 176,
+        "total_tokens": 194,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 528,
+    "run_seconds": 5.742,
+    "content": "```json\n{\n    \"name\": \"nearest university\",\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 177,
+      "output_tokens": 26,
+      "total_tokens": 203,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 26,
+        "prompt_tokens": 177,
+        "total_tokens": 203,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 529,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 18,
+      "total_tokens": 196,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 178,
+        "total_tokens": 196,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 530,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 179,
+      "output_tokens": 18,
+      "total_tokens": 197,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 179,
+        "total_tokens": 197,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 531,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 174,
+      "output_tokens": 18,
+      "total_tokens": 192,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 174,
+        "total_tokens": 192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 532,
+    "run_seconds": 8.936,
+    "content": "```json\n{\n    \"name\": \"Hobbit Cabin\",\n    \"address\": \"Talkeetna, AK\",\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 175,
+      "output_tokens": 41,
+      "total_tokens": 216,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 41,
+        "prompt_tokens": 175,
+        "total_tokens": 216,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 533,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 180,
+      "output_tokens": 18,
+      "total_tokens": 198,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 180,
+        "total_tokens": 198,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 534,
+    "run_seconds": 4.039,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 18,
+      "total_tokens": 188,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 170,
+        "total_tokens": 188,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 535,
+    "run_seconds": 3.827,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 17,
+      "total_tokens": 190,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 173,
+        "total_tokens": 190,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 536,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 175,
+      "output_tokens": 18,
+      "total_tokens": 193,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 175,
+        "total_tokens": 193,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 537,
+    "run_seconds": 5.955,
+    "content": "```json\n{\n    \"name\": \"Caf\u00e9\",\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 174,
+      "output_tokens": 27,
+      "total_tokens": 201,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 27,
+        "prompt_tokens": 174,
+        "total_tokens": 201,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 538,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 182,
+      "output_tokens": 18,
+      "total_tokens": 200,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 182,
+        "total_tokens": 200,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 539,
+    "run_seconds": 3.827,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 177,
+      "output_tokens": 17,
+      "total_tokens": 194,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 177,
+        "total_tokens": 194,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 540,
+    "run_seconds": 3.827,
+    "content": "```json\n{\n    \"azimuth_angle\": 90\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 17,
+      "total_tokens": 190,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 173,
+        "total_tokens": 190,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 541,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 175,
+      "output_tokens": 18,
+      "total_tokens": 193,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 175,
+        "total_tokens": 193,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 542,
+    "run_seconds": 4.039,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 176,
+      "output_tokens": 18,
+      "total_tokens": 194,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 176,
+        "total_tokens": 194,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 543,
+    "run_seconds": 12.551,
+    "content": "```json\n{\n    \"name\": \"Hyatt Regency Bellevue\",\n    \"address\": \"1500 112th Ave NE, Bellevue, WA 98004\",\n    \"azimuth_angle\": 315\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 182,
+      "output_tokens": 58,
+      "total_tokens": 240,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 58,
+        "prompt_tokens": 182,
+        "total_tokens": 240,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 544,
+    "run_seconds": 4.041,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 18,
+      "total_tokens": 191,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 173,
+        "total_tokens": 191,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 545,
+    "run_seconds": 10.211,
+    "content": "```json\n{\n    \"name\": \"garden\",\n    \"address\": \"Brooklyn, New York\",\n    \"distance\": 6400,\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 197,
+      "output_tokens": 47,
+      "total_tokens": 244,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 47,
+        "prompt_tokens": 197,
+        "total_tokens": 244,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 546,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 176,
+      "output_tokens": 18,
+      "total_tokens": 194,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 176,
+        "total_tokens": 194,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 547,
+    "run_seconds": 10.637,
+    "content": "```json\n{\n    \"name\": \"New Mexico Highlands University\",\n    \"address\": \"800 University Blvd, Las Vegas, NM 87701\",\n    \"azimuth_angle\": 45\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 174,
+      "output_tokens": 49,
+      "total_tokens": 223,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 49,
+        "prompt_tokens": 174,
+        "total_tokens": 223,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 548,
+    "run_seconds": 3.827,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 179,
+      "output_tokens": 17,
+      "total_tokens": 196,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 179,
+        "total_tokens": 196,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 549,
+    "run_seconds": 4.039,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 174,
+      "output_tokens": 18,
+      "total_tokens": 192,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 174,
+        "total_tokens": 192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 550,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 177,
+      "output_tokens": 18,
+      "total_tokens": 195,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 177,
+        "total_tokens": 195,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 551,
+    "run_seconds": 3.827,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 172,
+      "output_tokens": 17,
+      "total_tokens": 189,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 172,
+        "total_tokens": 189,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 552,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"azimuth_angle\": 270\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 180,
+      "output_tokens": 18,
+      "total_tokens": 198,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 180,
+        "total_tokens": 198,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 553,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 18,
+      "total_tokens": 191,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 173,
+        "total_tokens": 191,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 554,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 176,
+      "output_tokens": 18,
+      "total_tokens": 194,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 176,
+        "total_tokens": 194,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 555,
+    "run_seconds": 4.039,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 176,
+      "output_tokens": 18,
+      "total_tokens": 194,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 176,
+        "total_tokens": 194,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 556,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"azimuth_angle\": 270\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 177,
+      "output_tokens": 18,
+      "total_tokens": 195,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 177,
+        "total_tokens": 195,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 557,
+    "run_seconds": 12.124,
+    "content": "```json\n{\n    \"name\": \"Wenatchee Valley Museum and Cultural Center\",\n    \"address\": \"191 S Mission St, Wenatchee, WA 98801\",\n    \"azimuth_angle\": 45\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 200,
+      "output_tokens": 56,
+      "total_tokens": 256,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 56,
+        "prompt_tokens": 200,
+        "total_tokens": 256,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 558,
+    "run_seconds": 4.042,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 177,
+      "output_tokens": 18,
+      "total_tokens": 195,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 177,
+        "total_tokens": 195,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 559,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 18,
+      "total_tokens": 188,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 170,
+        "total_tokens": 188,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 560,
+    "run_seconds": 9.363,
+    "content": "```json\n{\n    \"name\": \"Tensas River National Wildlife Refuge\",\n    \"address\": \"Tallulah, LA\",\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 177,
+      "output_tokens": 43,
+      "total_tokens": 220,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 43,
+        "prompt_tokens": 177,
+        "total_tokens": 220,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 561,
+    "run_seconds": 10.385,
+    "content": "```json\n{\n    \"name\": \"Blue Ocean Discovery Center\",\n    \"address\": \"100 Ocean Blvd, Hampton, NH 03842\",\n    \"azimuth_angle\": 45\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 48,
+      "total_tokens": 221,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 48,
+        "prompt_tokens": 173,
+        "total_tokens": 221,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 562,
+    "run_seconds": 4.041,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 177,
+      "output_tokens": 18,
+      "total_tokens": 195,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 177,
+        "total_tokens": 195,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 563,
+    "run_seconds": 4.041,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 171,
+      "output_tokens": 18,
+      "total_tokens": 189,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 171,
+        "total_tokens": 189,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 564,
+    "run_seconds": 4.041,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 177,
+      "output_tokens": 18,
+      "total_tokens": 195,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 177,
+        "total_tokens": 195,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 565,
+    "run_seconds": 4.041,
+    "content": "```json\n{\n    \"azimuth_angle\": 315\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 183,
+      "output_tokens": 18,
+      "total_tokens": 201,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 183,
+        "total_tokens": 201,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 566,
+    "run_seconds": 8.513,
+    "content": "```json\n{\n    \"name\": \"nearest hospital\",\n    \"address\": \"Riverside Studios, Asheville, NC\",\n    \"azimuth_angle\": 90\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 175,
+      "output_tokens": 39,
+      "total_tokens": 214,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 39,
+        "prompt_tokens": 175,
+        "total_tokens": 214,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 567,
+    "run_seconds": 4.041,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 180,
+      "output_tokens": 18,
+      "total_tokens": 198,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 180,
+        "total_tokens": 198,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 568,
+    "run_seconds": 3.828,
+    "content": "```json\n{\n    \"azimuth_angle\": 60\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 17,
+      "total_tokens": 195,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 178,
+        "total_tokens": 195,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 569,
+    "run_seconds": 4.041,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 175,
+      "output_tokens": 18,
+      "total_tokens": 193,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 175,
+        "total_tokens": 193,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 570,
+    "run_seconds": 4.041,
+    "content": "```json\n{\n    \"azimuth_angle\": 146\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 195,
+      "output_tokens": 18,
+      "total_tokens": 213,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 195,
+        "total_tokens": 213,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 571,
+    "run_seconds": 4.042,
+    "content": "```json\n{\n    \"azimuth_angle\": 315\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 182,
+      "output_tokens": 18,
+      "total_tokens": 200,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 182,
+        "total_tokens": 200,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 572,
+    "run_seconds": 10.853,
+    "content": "```json\n{\n    \"name\": \"Georgia Nature Center\",\n    \"address\": \"1000 Center Park Dr, Watkinsville, GA 30677\",\n    \"azimuth_angle\": 45\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 50,
+      "total_tokens": 223,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 50,
+        "prompt_tokens": 173,
+        "total_tokens": 223,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 573,
+    "run_seconds": 9.15,
+    "content": "```json\n{\n    \"name\": \"garden\",\n    \"address\": \"Sherwood Forest Faire, McDade, TX\",\n    \"azimuth_angle\": 225\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 176,
+      "output_tokens": 42,
+      "total_tokens": 218,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 42,
+        "prompt_tokens": 176,
+        "total_tokens": 218,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 574,
+    "run_seconds": 5.744,
+    "content": "```json\n{\n    \"name\": \"nearest nature reserve\",\n    \"azimuth_angle\": 45\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 26,
+      "total_tokens": 199,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 26,
+        "prompt_tokens": 173,
+        "total_tokens": 199,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 575,
+    "run_seconds": 4.042,
+    "content": "```json\n{\n    \"azimuth_angle\": 268\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 179,
+      "output_tokens": 18,
+      "total_tokens": 197,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 179,
+        "total_tokens": 197,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 576,
+    "run_seconds": 4.043,
+    "content": "```json\n{\n    \"azimuth_angle\": 225\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 172,
+      "output_tokens": 18,
+      "total_tokens": 190,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 172,
+        "total_tokens": 190,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 577,
+    "run_seconds": 3.828,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 17,
+      "total_tokens": 187,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 170,
+        "total_tokens": 187,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 578,
+    "run_seconds": 3.828,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 17,
+      "total_tokens": 187,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 170,
+        "total_tokens": 187,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 579,
+    "run_seconds": 9.364,
+    "content": "```json\n{\n    \"name\": \"nearest hospital\",\n    \"address\": \"Rio Grande Gorge Visitor Center, Pilar, NM\",\n    \"azimuth_angle\": 225\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 180,
+      "output_tokens": 43,
+      "total_tokens": 223,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 43,
+        "prompt_tokens": 180,
+        "total_tokens": 223,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 580,
+    "run_seconds": 12.13,
+    "content": "```json\n{\n    \"name\": \"New York Institute of Technology\",\n    \"address\": \"1001 E 23rd St, New York, NY 10010\",\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 56,
+      "total_tokens": 234,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 56,
+        "prompt_tokens": 178,
+        "total_tokens": 234,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 581,
+    "run_seconds": 5.53,
+    "content": "```json\n{\n    \"name\": \"nearest gallery\",\n    \"azimuth_angle\": 45\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 176,
+      "output_tokens": 25,
+      "total_tokens": 201,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 176,
+        "total_tokens": 201,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 582,
+    "run_seconds": 3.827,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 172,
+      "output_tokens": 17,
+      "total_tokens": 189,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 172,
+        "total_tokens": 189,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 583,
+    "run_seconds": 4.041,
+    "content": "```json\n{\n    \"azimuth_angle\": 131\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 179,
+      "output_tokens": 18,
+      "total_tokens": 197,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 179,
+        "total_tokens": 197,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 584,
+    "run_seconds": 11.279,
+    "content": "```json\n{\n    \"name\": \"Barons Bus Arena\",\n    \"address\": \"1000 Barons Road, Parma, OH 44130\",\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 177,
+      "output_tokens": 52,
+      "total_tokens": 229,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 52,
+        "prompt_tokens": 177,
+        "total_tokens": 229,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 585,
+    "run_seconds": 9.15,
+    "content": "```json\n{\n    \"name\": \"Dolphins Plus Bayside\",\n    \"address\": \"Key Largo, FL\",\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 175,
+      "output_tokens": 42,
+      "total_tokens": 217,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 42,
+        "prompt_tokens": 175,
+        "total_tokens": 217,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 586,
+    "run_seconds": 3.828,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 172,
+      "output_tokens": 17,
+      "total_tokens": 189,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 172,
+        "total_tokens": 189,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 587,
+    "run_seconds": 3.828,
+    "content": "```json\n{\n    \"azimuth_angle\": 45\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 179,
+      "output_tokens": 17,
+      "total_tokens": 196,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 179,
+        "total_tokens": 196,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 588,
+    "run_seconds": 4.041,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 18,
+      "total_tokens": 196,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 178,
+        "total_tokens": 196,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 589,
+    "run_seconds": 11.918,
+    "content": "```json\n{\n    \"name\": \"ABQ BioPark (Botanic Garden)\",\n    \"address\": \"1601 Central Ave NW, Albuquerque, NM 87102\",\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 55,
+      "total_tokens": 233,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 55,
+        "prompt_tokens": 178,
+        "total_tokens": 233,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 590,
+    "run_seconds": 8.937,
+    "content": "```json\n{\n    \"name\": \"hospital\",\n    \"address\": \"Last House on Mulholland, Los Angeles, CA\",\n    \"azimuth_angle\": 90\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 175,
+      "output_tokens": 41,
+      "total_tokens": 216,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 41,
+        "prompt_tokens": 175,
+        "total_tokens": 216,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 591,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 18,
+      "total_tokens": 196,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 178,
+        "total_tokens": 196,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 592,
+    "run_seconds": 6.17,
+    "content": "```json\n{\n    \"name\": \"Cafe Leonelli\",\n    \"distance\": 28000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 184,
+      "output_tokens": 28,
+      "total_tokens": 212,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 28,
+        "prompt_tokens": 184,
+        "total_tokens": 212,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 593,
+    "run_seconds": 3.827,
+    "content": "```json\n{\n    \"azimuth_angle\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 180,
+      "output_tokens": 17,
+      "total_tokens": 197,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 180,
+        "total_tokens": 197,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 594,
+    "run_seconds": 9.789,
+    "content": "```json\n{\n    \"name\": \"closest hotel\",\n    \"address\": \"Fireside Farm & Sawmill, Efland, NC\",\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 45,
+      "total_tokens": 223,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 45,
+        "prompt_tokens": 178,
+        "total_tokens": 223,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 595,
+    "run_seconds": 11.705,
+    "content": "```json\n{\n    \"name\": \"Fran Rish Stadium\",\n    \"address\": \"1201 W 12th Ave, Richland, WA 99354\",\n    \"azimuth_angle\": 45\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 174,
+      "output_tokens": 54,
+      "total_tokens": 228,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 54,
+        "prompt_tokens": 174,
+        "total_tokens": 228,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 596,
+    "run_seconds": 11.28,
+    "content": "```json\n{\n    \"name\": \"Out of Africa Wildlife Park\",\n    \"address\": \"1001 Wildlife Way, Camp Verde, AZ 86322\",\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 174,
+      "output_tokens": 52,
+      "total_tokens": 226,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 52,
+        "prompt_tokens": 174,
+        "total_tokens": 226,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 597,
+    "run_seconds": 4.042,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 174,
+      "output_tokens": 18,
+      "total_tokens": 192,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 174,
+        "total_tokens": 192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 598,
+    "run_seconds": 4.041,
+    "content": "```json\n{\n    \"azimuth_angle\": 310\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 183,
+      "output_tokens": 18,
+      "total_tokens": 201,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 183,
+        "total_tokens": 201,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 599,
+    "run_seconds": 4.041,
+    "content": "```json\n{\n    \"azimuth_angle\": 135\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 18,
+      "total_tokens": 196,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 178,
+        "total_tokens": 196,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  }
+]

@@ -1,0 +1,122 @@
+{
+  "answer_type": "row/s",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "row/s",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "rowset_f1",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "addr_city": "Baltimore",
+      "addr_housenumber": "929",
+      "addr_postcode": "21217",
+      "addr_state": "MD",
+      "addr_street": "North Carey Street",
+      "description": "Established by Ms. Justine Bonner. Maintained by Ms. Hannah Trent and the Sandtown South Neighborhood Alliance. A mural in this location depicts Ms. Bonner, Ms. Trent, and Ms. Sandra Smith. The mural was painted by local artist Justin Nethercut.",
+      "geometry": "POINT (-76.638575 39.300016)",
+      "id": 250314,
+      "leisure": "garden",
+      "mean": -9423.199104,
+      "osm_id": 3432403574,
+      "poi_name": "Memory Garden",
+      "pt": "0101000020E61000008EA2186ADE2853C001E374ED66A64340",
+      "z": 46.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "addr_city": "Baltimore",
+        "addr_housenumber": "929",
+        "addr_postcode": "21217",
+        "addr_state": "MD",
+        "addr_street": "North Carey Street",
+        "amenity": null,
+        "artwork_type": null,
+        "building": null,
+        "capacity": null,
+        "cuisine": null,
+        "delivery": null,
+        "description": "Established by Ms. Justine Bonner. Maintained by Ms. Hannah Trent and the Sandtown South Neighborhood Alliance. A mural in this location depicts Ms. Bonner, Ms. Trent, and Ms. Sandra Smith. The mural was painted by local artist Justin Nethercut.",
+        "drive_through": null,
+        "emergency": null,
+        "fast_food": null,
+        "fee": null,
+        "geometry": "0101000020E61000008EA2186ADE2853C001E374ED66A64340",
+        "hairdresser": null,
+        "healthcare": null,
+        "historic": null,
+        "id": 250314,
+        "information": null,
+        "internet_access": null,
+        "leisure": "garden",
+        "mean": -9423.199104,
+        "museum": null,
+        "official_name": null,
+        "opening_hours": null,
+        "operator": null,
+        "osm_id": 3432403574,
+        "outdoor_seating": null,
+        "parking": null,
+        "pastry_shop": null,
+        "phone": null,
+        "poi_name": "Memory Garden",
+        "pt": "0101000020E61000008EA2186ADE2853C001E374ED66A64340",
+        "resort": null,
+        "restaurant": null,
+        "school_type": null,
+        "shop": null,
+        "sport": null,
+        "sports": null,
+        "takeaway": null,
+        "toilets": null,
+        "tourism": null,
+        "website": null,
+        "wheelchair": null,
+        "wholesale": null,
+        "wikidata": null,
+        "z": 46.0,
+        "zoo": null
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-76.647747 39.30271, -76.647764 39.303006, -76.647767 39.303058, -76.647785 39.303389, -76.647797 39.303596, -76.647828 39.30415, -76.647858 39.304689, -76.647872 39.304931, -76.647884 39.305147, -76.647889 39.305231, -76.647894 39.305319, -76.647908 39.30556, -76.647949 39.306293, -76.647962 39.306529, -76.647966 39.3066, -76.647971 39.306688, -76.648033 39.307786, -76.648037 39.307862, -76.648041 39.307933, -76.64809 39.30879, -76.648125 39.309415, -76.648146 39.309797, -76.647337 39.309839, -76.647293 39.309841, -76.646649 39.309876, -76.646584 39.30988, -76.64657 39.30988, -76.646488 39.309885, -76.646368 39.309892, -76.646285 39.309896, -76.646263 39.309897, -76.646181 39.309901, -76.645691 39.309924, -76.645657 39.309926, -76.644997 39.309955, -76.644363 39.309984, -76.644321 39.309986, -76.644284 39.309989, -76.6442 39.309993, -76.643768 39.310011, -76.643683 39.310014, -76.643677 39.309907, -76.643661 39.309648, -76.64366 39.309625, -76.643656 39.309572, -76.643563 39.309495, -76.643016 39.309046, -76.642618 39.308719, -76.642553 39.308666, -76.642483 39.308716, -76.642092 39.308994, -76.64169 39.309278, -76.641615 39.309331, -76.641085 39.308882, -76.640876 39.308705, -76.640803 39.308643, -76.640734 39.308585, -76.640713 39.308569, -76.640692 39.308551, -76.640373 39.308286, -76.63986 39.30785, -76.639485 39.307537, -76.639425 39.307487, -76.639356 39.307429, -76.638814 39.306972, -76.63875 39.306923, -76.638691 39.306774, -76.638647 39.306664, -76.638632 39.306624, -76.638487 39.306433, -76.638254 39.306008, -76.638106 39.305739, -76.638054 39.305644, -76.638014 39.305571, -76.637972 39.305496, -76.637469 39.304581, -76.637297 39.304266, -76.636972 39.303673, -76.636843 39.303441, -76.636647 39.303086, -76.636376 39.30259, -76.636338 39.30252, -76.635976 39.301805, -76.635908 39.301659, -76.635632 39.301231, -76.635335 39.30069, -76.63509 39.300247, -76.634771 39.29967, -76.63473 39.299597, -76.634505 39.299191, -76.635136 39.299164, -76.635861 39.299144, -76.637214 39.299097, -76.637299 39.299094, -76.638001 39.29907, -76.638713 39.299045, -76.640124 39.298996, -76.64083 39.298971, -76.641048 39.298964, -76.641532 39.298947, -76.641967 39.298932, -76.642247 39.298922, -76.64247 39.298914, -76.642941 39.298898, -76.643648 39.298878, -76.644363 39.298853, -76.645216 39.298824, -76.645709 39.298806, -76.645827 39.298802, -76.646372 39.298783, -76.646741 39.298771, -76.647507 39.298744, -76.647525 39.299063, -76.64755 39.299499, -76.647569 39.299821, -76.647585 39.300142, -76.647606 39.300574, -76.647622 39.300902, -76.647647 39.301223, -76.647705 39.301984, -76.647718 39.30217, -76.647726 39.302316, -76.647747 39.30271))', 4326) AS g\n),\nmean_elev AS (\n  SELECT SUM(stats.sum) / NULLIF(SUM(stats.count), 0) AS mean\n  FROM public.dem_us d\n  JOIN region r ON ST_Intersects(d.rast, r.g)\n  JOIN LATERAL ST_SummaryStats(ST_Clip(d.rast, r.g)) AS stats ON stats.count > 0\n),\ncandidates AS (\n  SELECT p.*, ST_PointOnSurface(p.geometry::geometry) AS pt\n  FROM pois p\n  JOIN region r\n    ON ST_Intersects(p.geometry::geometry, r.g)\n  WHERE p.\"leisure\" = 'garden'\n),\npoi_elev AS (\n  SELECT c.*, elev.z\n  FROM candidates c\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, c.pt) AS z\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, c.pt)\n    LIMIT 1\n  ) elev ON elev.z IS NOT NULL\n)\nSELECT DISTINCT ON (id) *\nFROM poi_elev\nCROSS JOIN mean_elev\nWHERE z > mean;",
+  "id": "elevation_average+name-17",
+  "model_output": "```sql\nWITH garden_geom AS (\n  SELECT \n    ST_SetSRID(ST_MakePoint(-76.638575, 39.300016), 4326)::geography AS geom\n),\narea_avg_elevation AS (\n  SELECT \n    AVG(ST_Value(r.rast, 1)) AS avg_elevation\n  FROM \n    public.dem_us r\n  WHERE \n    ST_Intersects(r.rast, (SELECT geom FROM garden_geom)::geometry)\n),\ngarden_elevation AS (\n  SELECT \n    ST_Value(r.rast, 1) AS elevation\n  FROM \n    public.dem_us r\n  WHERE \n    ST_Intersects(r.rast, (SELECT geom FROM garden_geom)::geometry)\n    AND ST_Clip(r.rast, (SELECT geom FROM garden_geom)::geometry, TRUE) IS NOT NULL\n)\nSELECT \n  'Memory Garden' AS garden_name,\n  (SELECT elevation FROM garden_elevation) AS garden_elevation,\n  (SELECT avg_elevation FROM area_avg_elevation) AS area_avg_elevation\nWHERE \n  (SELECT elevation FROM garden_elevation) > (SELECT avg_elevation FROM area_avg_elevation);\n```",
+  "predicted_exec": {
+    "error": "function st_value(raster, integer) does not exist\nLINE 7:     AVG(ST_Value(r.rast, 1)) AS avg_elevation\n                ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH garden_geom AS (\n  SELECT \n    ST_SetSRID(ST_MakePoint(-76.638575, 39.300016), 4326)::geography AS geom\n),\narea_avg_elevation AS (\n  SELECT \n    AVG(ST_Value(r.rast, 1)) AS avg_elevation\n  FROM \n    public.dem_us r\n  WHERE \n    ST_Intersects(r.rast, (SELECT geom FROM garden_geom)::geometry)\n),\ngarden_elevation AS (\n  SELECT \n    ST_Value(r.rast, 1) AS elevation\n  FROM \n    public.dem_us r\n  WHERE \n    ST_Intersects(r.rast, (SELECT geom FROM garden_geom)::geometry)\n    AND ST_Clip(r.rast, (SELECT geom FROM garden_geom)::geometry, TRUE) IS NOT NULL\n)\nSELECT \n  'Memory Garden' AS garden_name,\n  (SELECT elevation FROM garden_elevation) AS garden_elevation,\n  (SELECT avg_elevation FROM area_avg_elevation) AS area_avg_elevation\nWHERE \n  (SELECT elevation FROM garden_elevation) > (SELECT avg_elevation FROM area_avg_elevation);",
+  "predicted_sql_candidates": [
+    "WITH garden_geom AS (\n  SELECT \n    ST_SetSRID(ST_MakePoint(-76.638575, 39.300016), 4326)::geography AS geom\n),\narea_avg_elevation AS (\n  SELECT \n    AVG(ST_Value(r.rast, 1)) AS avg_elevation\n  FROM \n    public.dem_us r\n  WHERE \n    ST_Intersects(r.rast, (SELECT geom FROM garden_geom)::geometry)\n),\ngarden_elevation AS (\n  SELECT \n    ST_Value(r.rast, 1) AS elevation\n  FROM \n    public.dem_us r\n  WHERE \n    ST_Intersects(r.rast, (SELECT geom FROM garden_geom)::geometry)\n    AND ST_Clip(r.rast, (SELECT geom FROM garden_geom)::geometry, TRUE) IS NOT NULL\n)\nSELECT \n  'Memory Garden' AS garden_name,\n  (SELECT elevation FROM garden_elevation) AS garden_elevation,\n  (SELECT avg_elevation FROM area_avg_elevation) AS area_avg_elevation\nWHERE \n  (SELECT elevation FROM garden_elevation) > (SELECT avg_elevation FROM area_avg_elevation);"
+  ],
+  "query_type": "raster_vector",
+  "question": "List a garden in Sandtown-Winchester, Baltimore with elevation above the area's average.",
+  "source_file": "elevation_average+name.jsonl",
+  "source_stem": "elevation_average+name",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 54.406,
+    "total_seconds": 54.407
+  },
+  "usage": {
+    "completion_tokens": 255,
+    "prompt_tokens": 1637,
+    "total_tokens": 1892
+  }
+}

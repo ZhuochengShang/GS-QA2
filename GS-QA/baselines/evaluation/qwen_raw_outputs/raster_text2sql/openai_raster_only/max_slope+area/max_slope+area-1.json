@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 12.294312
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 12.294312
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-91.763827 39.131775, -91.767488 39.13181, -91.767385 39.136278, -91.767096 39.13633, -91.767069 39.137398, -91.762222 39.13728, -91.762445 39.131796, -91.763827 39.131775))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).max AS slope\nFROM region_slope;",
+  "id": "max_slope+area-1",
+  "model_output": "```sql\nWITH geometry_wkt AS (\n  SELECT ST_GeomFromText('POLYGON ((-91.763827 39.131775, -91.767488 39.13181, -91.767385 39.136278, -91.767096 39.13633, -91.767069 39.137398, -91.762222 39.13728, -91.762445 39.131796, -91.763827 39.131775))', 4326)::geometry AS geom\n),\nclipped_raster AS (\n  SELECT \n    ST_Clip(\n      r.rast,\n      1,\n      (SELECT geom FROM geometry_wkt),\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast::geometry,\n    (SELECT geom FROM geometry_wkt)\n  )\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(clipped_rast, 1, '32BF', TRUE) AS slope_rast\n  FROM clipped_raster\n)\nSELECT \n  MAX(value) AS max_slope_degrees\nFROM (\n  SELECT \n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM slope_raster\n) AS dump;\n```",
+  "predicted_exec": {
+    "error": "function st_slope(raster, integer, unknown, boolean) does not exist\nLINE 20:     ST_Slope(clipped_rast, 1, '32BF', TRUE) AS slope_rast\n             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH geometry_wkt AS (\n  SELECT ST_GeomFromText('POLYGON ((-91.763827 39.131775, -91.767488 39.13181, -91.767385 39.136278, -91.767096 39.13633, -91.767069 39.137398, -91.762222 39.13728, -91.762445 39.131796, -91.763827 39.131775))', 4326)::geometry AS geom\n),\nclipped_raster AS (\n  SELECT \n    ST_Clip(\n      r.rast,\n      1,\n      (SELECT geom FROM geometry_wkt),\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast::geometry,\n    (SELECT geom FROM geometry_wkt)\n  )\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(clipped_rast, 1, '32BF', TRUE) AS slope_rast\n  FROM clipped_raster\n)\nSELECT \n  MAX(value) AS max_slope_degrees\nFROM (\n  SELECT \n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM slope_raster\n) AS dump;",
+  "predicted_sql_candidates": [
+    "WITH geometry_wkt AS (\n  SELECT ST_GeomFromText('POLYGON ((-91.763827 39.131775, -91.767488 39.13181, -91.767385 39.136278, -91.767096 39.13633, -91.767069 39.137398, -91.762222 39.13728, -91.762445 39.131796, -91.763827 39.131775))', 4326)::geometry AS geom\n),\nclipped_raster AS (\n  SELECT \n    ST_Clip(\n      r.rast,\n      1,\n      (SELECT geom FROM geometry_wkt),\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast::geometry,\n    (SELECT geom FROM geometry_wkt)\n  )\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(clipped_rast, 1, '32BF', TRUE) AS slope_rast\n  FROM clipped_raster\n)\nSELECT \n  MAX(value) AS max_slope_degrees\nFROM (\n  SELECT \n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM slope_raster\n) AS dump;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the maximum slope in Benton City, Missouri?",
+  "source_file": "max_slope+area.jsonl",
+  "source_stem": "max_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 75.707,
+    "total_seconds": 75.708
+  },
+  "usage": {
+    "completion_tokens": 355,
+    "prompt_tokens": 1668,
+    "total_tokens": 2023
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "answer_type": "count, POIs -> Points",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "count, POIs -> Points",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "count": 0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "count": 0
+      }
+    ]
+  },
+  "gold_sql": "WITH candidates AS (\n  SELECT p.id, p.geometry\n  FROM pois p\n  WHERE ST_DWithin(p.geometry::geography, ST_GeomFromText('POINT (-77.810389 35.918011)',4326)::geography, 700)\n    AND p.leisure = 'golf_course'\n),\npoi_elev AS (\n  SELECT c.id, elev.z\n  FROM candidates c\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, c.geometry::geometry) AS z\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, c.geometry::geometry)\n    LIMIT 1\n  ) elev ON elev.z IS NOT NULL\n)\nSELECT COUNT(*) AS count\nFROM poi_elev\nWHERE z <= 480;",
+  "id": "range+count+elevation_condition-2",
+  "model_output": "```sql\nWITH home_street_park AS (\n  SELECT ST_Buffer(ST_SetSRID(ST_MakePoint(-77.810389, 35.918011), 4326)::geography, 700) AS geom\n),\ngolf_courses AS (\n  SELECT\n    p.id,\n    p.poi_name,\n    p.addr_city,\n    p.addr_state,\n    p.geometry\n  FROM pois p\n  WHERE p.leisure = 'golf course'\n    AND p.addr_state = 'NC'\n),\nclipped_dem AS (\n  SELECT\n    ST_Clip(r.rast, (SELECT geom FROM home_street_park), TRUE) AS rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(r.rast, (SELECT geom FROM home_street_park))\n),\nelevation_values AS (\n  SELECT\n    gc.id,\n    gc.poi_name,\n    gc.addr_city,\n    gc.addr_state,\n    ST_Value(r.rast, ST_Transform(gc.geometry, 4326)) AS elevation\n  FROM golf_courses gc\n  CROSS JOIN clipped_dem r\n  WHERE ST_Intersects(ST_Transform(gc.geometry, 4326), r.rast)\n)\nSELECT COUNT(*) AS golf_courses_below_480m\nFROM elevation_values\nWHERE elevation <= 480;\n```",
+  "predicted_exec": {
+    "error": "function st_clip(raster, geography, boolean) does not exist\nLINE 17:     ST_Clip(r.rast, (SELECT geom FROM home_street_park), TRU...\n             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH home_street_park AS (\n  SELECT ST_Buffer(ST_SetSRID(ST_MakePoint(-77.810389, 35.918011), 4326)::geography, 700) AS geom\n),\ngolf_courses AS (\n  SELECT\n    p.id,\n    p.poi_name,\n    p.addr_city,\n    p.addr_state,\n    p.geometry\n  FROM pois p\n  WHERE p.leisure = 'golf course'\n    AND p.addr_state = 'NC'\n),\nclipped_dem AS (\n  SELECT\n    ST_Clip(r.rast, (SELECT geom FROM home_street_park), TRUE) AS rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(r.rast, (SELECT geom FROM home_street_park))\n),\nelevation_values AS (\n  SELECT\n    gc.id,\n    gc.poi_name,\n    gc.addr_city,\n    gc.addr_state,\n    ST_Value(r.rast, ST_Transform(gc.geometry, 4326)) AS elevation\n  FROM golf_courses gc\n  CROSS JOIN clipped_dem r\n  WHERE ST_Intersects(ST_Transform(gc.geometry, 4326), r.rast)\n)\nSELECT COUNT(*) AS golf_courses_below_480m\nFROM elevation_values\nWHERE elevation <= 480;",
+  "predicted_sql_candidates": [
+    "WITH home_street_park AS (\n  SELECT ST_Buffer(ST_SetSRID(ST_MakePoint(-77.810389, 35.918011), 4326)::geography, 700) AS geom\n),\ngolf_courses AS (\n  SELECT\n    p.id,\n    p.poi_name,\n    p.addr_city,\n    p.addr_state,\n    p.geometry\n  FROM pois p\n  WHERE p.leisure = 'golf course'\n    AND p.addr_state = 'NC'\n),\nclipped_dem AS (\n  SELECT\n    ST_Clip(r.rast, (SELECT geom FROM home_street_park), TRUE) AS rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(r.rast, (SELECT geom FROM home_street_park))\n),\nelevation_values AS (\n  SELECT\n    gc.id,\n    gc.poi_name,\n    gc.addr_city,\n    gc.addr_state,\n    ST_Value(r.rast, ST_Transform(gc.geometry, 4326)) AS elevation\n  FROM golf_courses gc\n  CROSS JOIN clipped_dem r\n  WHERE ST_Intersects(ST_Transform(gc.geometry, 4326), r.rast)\n)\nSELECT COUNT(*) AS golf_courses_below_480m\nFROM elevation_values\nWHERE elevation <= 480;"
+  ],
+  "query_type": "extended",
+  "question": "In the vicinity of Home street park, Rocky Mount, NC, within 700 meters, how many golf courses are there at or below 480 m elevation?",
+  "source_file": "range+count+elevation_condition.jsonl",
+  "source_stem": "range+count+elevation_condition",
+  "timing": {
+    "execution_seconds": 0.002,
+    "generation_seconds": 61.487,
+    "total_seconds": 61.489
+  },
+  "usage": {
+    "completion_tokens": 288,
+    "prompt_tokens": 1781,
+    "total_tokens": 2069
+  }
+}

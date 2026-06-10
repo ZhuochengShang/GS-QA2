@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 0.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 0.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-92.138753 42.14859, -92.138766 42.147393, -92.13882 42.145444, -92.138181 42.145435, -92.138274 42.141378, -92.138191 42.141378, -92.138228 42.13992, -92.138584 42.139965, -92.139066 42.140052, -92.139844 42.140207, -92.140431 42.140373, -92.140903 42.140539, -92.141242 42.140689, -92.14177 42.140945, -92.142132 42.141146, -92.150946 42.141299, -92.150804 42.148751, -92.138753 42.14859))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).min AS slope\nFROM region_slope;",
+  "id": "min_slope+area-5",
+  "model_output": "```sql\nWITH garrison_geometry AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE '%Garrison%' AND border_type = 'city'\n  LIMIT 1\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM garrison_geometry)),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM garrison_geometry))\n),\nlowest_slope_value AS (\n  SELECT\n    MIN(ST_Value(slope_rast, 1)) AS lowest_slope\n  FROM slope_raster\n)\nSELECT\n  (SELECT region_name FROM garrison_geometry) AS location,\n  lowest_slope\nFROM lowest_slope_value;\n```",
+  "predicted_exec": {
+    "error": "function st_value(raster, integer) does not exist\nLINE 19:     MIN(ST_Value(slope_rast, 1)) AS lowest_slope\n                 ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH garrison_geometry AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE '%Garrison%' AND border_type = 'city'\n  LIMIT 1\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM garrison_geometry)),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM garrison_geometry))\n),\nlowest_slope_value AS (\n  SELECT\n    MIN(ST_Value(slope_rast, 1)) AS lowest_slope\n  FROM slope_raster\n)\nSELECT\n  (SELECT region_name FROM garrison_geometry) AS location,\n  lowest_slope\nFROM lowest_slope_value;",
+  "predicted_sql_candidates": [
+    "WITH garrison_geometry AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE '%Garrison%' AND border_type = 'city'\n  LIMIT 1\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM garrison_geometry)),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM garrison_geometry))\n),\nlowest_slope_value AS (\n  SELECT\n    MIN(ST_Value(slope_rast, 1)) AS lowest_slope\n  FROM slope_raster\n)\nSELECT\n  (SELECT region_name FROM garrison_geometry) AS location,\n  lowest_slope\nFROM lowest_slope_value;"
+  ],
+  "query_type": "raster_only",
+  "question": "In Garrison, Iowa, what is the lowest slope?",
+  "source_file": "min_slope+area.jsonl",
+  "source_stem": "min_slope+area",
+  "timing": {
+    "execution_seconds": 0.002,
+    "generation_seconds": 37.568,
+    "total_seconds": 37.57
+  },
+  "usage": {
+    "completion_tokens": 170,
+    "prompt_tokens": 1514,
+    "total_tokens": 1684
+  }
+}

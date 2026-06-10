@@ -1,0 +1,59 @@
+{
+  "answer_type": "count, POIs -> Points",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "count, POIs -> Points",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "count": 647
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "count": 647
+      }
+    ]
+  },
+  "gold_sql": "WITH candidates AS (\n  SELECT p.id, p.geometry\n  FROM pois p\n  WHERE ST_DWithin(p.geometry::geography, ST_GeomFromText('POINT (-73.98756 40.744668)',4326)::geography, 3000)\n    AND p.amenity = 'cafe'\n),\npoi_elev AS (\n  SELECT c.id, elev.z\n  FROM candidates c\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, c.geometry::geometry) AS z\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, c.geometry::geometry)\n    LIMIT 1\n  ) elev ON elev.z IS NOT NULL\n)\nSELECT COUNT(*) AS count\nFROM poi_elev\nWHERE z <= 420;",
+  "id": "range+count+elevation_condition-8",
+  "model_output": "```sql\nWITH target_cafe AS (\n  SELECT geometry\n  FROM pois\n  WHERE poi_name ILIKE 'Think Coffee'\n    AND addr_city = 'New York'\n    AND addr_state = 'NY'\n    AND amenity = 'cafe'\n    AND id = 27827\n),\nbuffered_area AS (\n  SELECT ST_Buffer(geometry::geometry, 3000) AS geom\n  FROM target_cafe\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, true, geom) AS rast\n  FROM public.dem_us, buffered_area\n  WHERE ST_Intersects(rast, geom)\n),\ncafes_in_buffer AS (\n  SELECT p.id\n  FROM pois p, buffered_area b\n  WHERE p.amenity = 'cafe'\n    AND ST_DWithin(p.geometry::geometry, b.geom, 0)\n    AND p.id != 27827 -- exclude the target cafe itself\n),\nelevations AS (\n  SELECT c.id,\n         ST_Value(cd.rast, p.geometry::geometry) AS elevation\n  FROM cafes_in_buffer c\n  JOIN pois p ON p.id = c.id\n  JOIN clipped_dem cd ON ST_Intersects(cd.rast, p.geometry::geometry)\n)\nSELECT COUNT(*) AS cafe_count\nFROM elevations\nWHERE elevation < 420;\n```",
+  "predicted_exec": {
+    "error": "function st_clip(raster, boolean, geometry) does not exist\nLINE 15:   SELECT ST_Clip(rast, true, geom) AS rast\n                  ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH target_cafe AS (\n  SELECT geometry\n  FROM pois\n  WHERE poi_name ILIKE 'Think Coffee'\n    AND addr_city = 'New York'\n    AND addr_state = 'NY'\n    AND amenity = 'cafe'\n    AND id = 27827\n),\nbuffered_area AS (\n  SELECT ST_Buffer(geometry::geometry, 3000) AS geom\n  FROM target_cafe\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, true, geom) AS rast\n  FROM public.dem_us, buffered_area\n  WHERE ST_Intersects(rast, geom)\n),\ncafes_in_buffer AS (\n  SELECT p.id\n  FROM pois p, buffered_area b\n  WHERE p.amenity = 'cafe'\n    AND ST_DWithin(p.geometry::geometry, b.geom, 0)\n    AND p.id != 27827 -- exclude the target cafe itself\n),\nelevations AS (\n  SELECT c.id,\n         ST_Value(cd.rast, p.geometry::geometry) AS elevation\n  FROM cafes_in_buffer c\n  JOIN pois p ON p.id = c.id\n  JOIN clipped_dem cd ON ST_Intersects(cd.rast, p.geometry::geometry)\n)\nSELECT COUNT(*) AS cafe_count\nFROM elevations\nWHERE elevation < 420;",
+  "predicted_sql_candidates": [
+    "WITH target_cafe AS (\n  SELECT geometry\n  FROM pois\n  WHERE poi_name ILIKE 'Think Coffee'\n    AND addr_city = 'New York'\n    AND addr_state = 'NY'\n    AND amenity = 'cafe'\n    AND id = 27827\n),\nbuffered_area AS (\n  SELECT ST_Buffer(geometry::geometry, 3000) AS geom\n  FROM target_cafe\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, true, geom) AS rast\n  FROM public.dem_us, buffered_area\n  WHERE ST_Intersects(rast, geom)\n),\ncafes_in_buffer AS (\n  SELECT p.id\n  FROM pois p, buffered_area b\n  WHERE p.amenity = 'cafe'\n    AND ST_DWithin(p.geometry::geometry, b.geom, 0)\n    AND p.id != 27827 -- exclude the target cafe itself\n),\nelevations AS (\n  SELECT c.id,\n         ST_Value(cd.rast, p.geometry::geometry) AS elevation\n  FROM cafes_in_buffer c\n  JOIN pois p ON p.id = c.id\n  JOIN clipped_dem cd ON ST_Intersects(cd.rast, p.geometry::geometry)\n)\nSELECT COUNT(*) AS cafe_count\nFROM elevations\nWHERE elevation < 420;"
+  ],
+  "query_type": "extended",
+  "question": "Within 3 kilometers from Think Coffee, New York, NY, how many cafes are present with elevation lower than 420 m?",
+  "source_file": "range+count+elevation_condition.jsonl",
+  "source_stem": "range+count+elevation_condition",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 60.642,
+    "total_seconds": 60.643
+  },
+  "usage": {
+    "completion_tokens": 284,
+    "prompt_tokens": 1807,
+    "total_tokens": 2091
+  }
+}

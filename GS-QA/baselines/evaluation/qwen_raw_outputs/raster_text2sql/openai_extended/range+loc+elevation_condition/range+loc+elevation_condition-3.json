@@ -1,0 +1,114 @@
+{
+  "answer_type": "row/s",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "row/s",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "rowset_f1",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "addr_city": "Little Falls",
+      "addr_state": "MN",
+      "elevation": 351.0,
+      "geometry": "POINT (-94.383834 45.977764)",
+      "id": 245569,
+      "leisure": "park",
+      "osm_id": 7185157934,
+      "poi_name": "Pine Grove Park and Zoo"
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "addr_city": "Little Falls",
+        "addr_housenumber": null,
+        "addr_postcode": null,
+        "addr_state": "MN",
+        "addr_street": null,
+        "amenity": null,
+        "artwork_type": null,
+        "building": null,
+        "capacity": null,
+        "cuisine": null,
+        "delivery": null,
+        "description": null,
+        "drive_through": null,
+        "elevation": 351.0,
+        "emergency": null,
+        "fast_food": null,
+        "fee": null,
+        "geometry": "0101000020E61000001BC528BE909857C0391B3C5D27FD4640",
+        "hairdresser": null,
+        "healthcare": null,
+        "historic": null,
+        "id": 245569,
+        "information": null,
+        "internet_access": null,
+        "leisure": "park",
+        "museum": null,
+        "official_name": null,
+        "opening_hours": null,
+        "operator": null,
+        "osm_id": 7185157934,
+        "outdoor_seating": null,
+        "parking": null,
+        "pastry_shop": null,
+        "phone": null,
+        "poi_name": "Pine Grove Park and Zoo",
+        "resort": null,
+        "restaurant": null,
+        "school_type": null,
+        "shop": null,
+        "sport": null,
+        "sports": null,
+        "takeaway": null,
+        "toilets": null,
+        "tourism": null,
+        "website": null,
+        "wheelchair": null,
+        "wholesale": null,
+        "wikidata": null,
+        "zoo": null
+      }
+    ]
+  },
+  "gold_sql": "SELECT p.*, elev.z AS elevation\nFROM pois p\nJOIN LATERAL (\n  SELECT ST_Value(d.rast, 1, p.geometry::geometry) AS z\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, p.geometry::geometry)\n  LIMIT 1\n) elev ON elev.z IS NOT NULL\nWHERE ST_DWithin(p.geometry::geography, ST_GeomFromText('POINT (-94.383608 45.979142)',4326)::geography, 3900)\n  AND p.leisure = 'park'\n  AND elev.z >= 80;",
+  "id": "range+loc+elevation_condition-3",
+  "model_output": "```sql\nWITH zoo_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-94.383608, 45.979142), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT ST_Buffer(geom, 3900) AS geom\n  FROM zoo_geom\n),\ndem_clip AS (\n  SELECT ST_Union(rast) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM buffered_area))\n),\nelevation_filter AS (\n  SELECT (ST_DumpAsPolygons(ST_Union(rast), 1)).geom AS geom\n  FROM dem_clip\n  WHERE (ST_DumpAsPolygons(ST_Union(rast), 1)).val >= 80\n),\npark_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-86.964261, 36.076845), 4326)::geography AS geom\n)\nSELECT \n  'Harpeth River State Park Coley Davis Access' AS park_name,\n  ST_Distance((SELECT geom FROM buffered_area), (SELECT geom FROM park_geom)) < 3900 AS within_distance,\n  (SELECT val FROM ST_SummaryStats(ST_Union(rast), 1) WHERE val >= 80) AS elevation_status\nFROM dem_clip;\n```",
+  "predicted_exec": {
+    "error": "function st_intersects(raster, geography) does not exist\nLINE 11:   WHERE ST_Intersects(rast, (SELECT geom FROM buffered_area)...\n                 ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH zoo_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-94.383608, 45.979142), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT ST_Buffer(geom, 3900) AS geom\n  FROM zoo_geom\n),\ndem_clip AS (\n  SELECT ST_Union(rast) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM buffered_area))\n),\nelevation_filter AS (\n  SELECT (ST_DumpAsPolygons(ST_Union(rast), 1)).geom AS geom\n  FROM dem_clip\n  WHERE (ST_DumpAsPolygons(ST_Union(rast), 1)).val >= 80\n),\npark_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-86.964261, 36.076845), 4326)::geography AS geom\n)\nSELECT \n  'Harpeth River State Park Coley Davis Access' AS park_name,\n  ST_Distance((SELECT geom FROM buffered_area), (SELECT geom FROM park_geom)) < 3900 AS within_distance,\n  (SELECT val FROM ST_SummaryStats(ST_Union(rast), 1) WHERE val >= 80) AS elevation_status\nFROM dem_clip;",
+  "predicted_sql_candidates": [
+    "WITH zoo_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-94.383608, 45.979142), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT ST_Buffer(geom, 3900) AS geom\n  FROM zoo_geom\n),\ndem_clip AS (\n  SELECT ST_Union(rast) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM buffered_area))\n),\nelevation_filter AS (\n  SELECT (ST_DumpAsPolygons(ST_Union(rast), 1)).geom AS geom\n  FROM dem_clip\n  WHERE (ST_DumpAsPolygons(ST_Union(rast), 1)).val >= 80\n),\npark_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-86.964261, 36.076845), 4326)::geography AS geom\n)\nSELECT \n  'Harpeth River State Park Coley Davis Access' AS park_name,\n  ST_Distance((SELECT geom FROM buffered_area), (SELECT geom FROM park_geom)) < 3900 AS within_distance,\n  (SELECT val FROM ST_SummaryStats(ST_Union(rast), 1) WHERE val >= 80) AS elevation_status\nFROM dem_clip;"
+  ],
+  "query_type": "extended",
+  "question": "Could you help me locate a park that's within 3900 meters from Pine Grove Zoo, Little Falls, MN with elevation at least 80 m?",
+  "source_file": "range+loc+elevation_condition.jsonl",
+  "source_stem": "range+loc+elevation_condition",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 65.417,
+    "total_seconds": 65.418
+  },
+  "usage": {
+    "completion_tokens": 306,
+    "prompt_tokens": 1789,
+    "total_tokens": 2095
+  }
+}

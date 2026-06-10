@@ -1,0 +1,2102 @@
+[
+  {
+    "id": 500,
+    "run_seconds": 1.075,
+    "content": "Southwest",
+    "usage_metadata": {
+      "input_tokens": 1574,
+      "output_tokens": 3,
+      "total_tokens": 1577,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1574,
+        "total_tokens": 1577,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 501,
+    "run_seconds": 1.23,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 2104,
+      "output_tokens": 3,
+      "total_tokens": 2107,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2104,
+        "total_tokens": 2107,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 502,
+    "run_seconds": 2.495,
+    "content": "The orientation is approximately two hundred forty degrees.",
+    "usage_metadata": {
+      "input_tokens": 1350,
+      "output_tokens": 10,
+      "total_tokens": 1360,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 1350,
+        "total_tokens": 1360,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 503,
+    "run_seconds": 1.024,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1425,
+      "output_tokens": 3,
+      "total_tokens": 1428,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1425,
+        "total_tokens": 1428,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 504,
+    "run_seconds": 1.284,
+    "content": "Southwest",
+    "usage_metadata": {
+      "input_tokens": 1677,
+      "output_tokens": 3,
+      "total_tokens": 1680,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1677,
+        "total_tokens": 1680,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 505,
+    "run_seconds": 1.024,
+    "content": "Northeast",
+    "usage_metadata": {
+      "input_tokens": 1499,
+      "output_tokens": 3,
+      "total_tokens": 1502,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1499,
+        "total_tokens": 1502,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 506,
+    "run_seconds": 0.924,
+    "content": "southwest",
+    "usage_metadata": {
+      "input_tokens": 1120,
+      "output_tokens": 3,
+      "total_tokens": 1123,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1120,
+        "total_tokens": 1123,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 507,
+    "run_seconds": 0.785,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 670,
+      "output_tokens": 3,
+      "total_tokens": 673,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 670,
+        "total_tokens": 673,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 508,
+    "run_seconds": 0.932,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1081,
+      "output_tokens": 3,
+      "total_tokens": 1084,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1081,
+        "total_tokens": 1084,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 509,
+    "run_seconds": 0.991,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1489,
+      "output_tokens": 3,
+      "total_tokens": 1492,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1489,
+        "total_tokens": 1492,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 510,
+    "run_seconds": 1.477,
+    "content": "northeast",
+    "usage_metadata": {
+      "input_tokens": 2307,
+      "output_tokens": 3,
+      "total_tokens": 2310,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2307,
+        "total_tokens": 2310,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 511,
+    "run_seconds": 1.653,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 2288,
+      "output_tokens": 3,
+      "total_tokens": 2291,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2288,
+        "total_tokens": 2291,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 512,
+    "run_seconds": 3.003,
+    "content": "The closest restaurant is approximately thirty kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 2367,
+      "output_tokens": 10,
+      "total_tokens": 2377,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 2367,
+        "total_tokens": 2377,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 513,
+    "run_seconds": 1.213,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1969,
+      "output_tokens": 3,
+      "total_tokens": 1972,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1969,
+        "total_tokens": 1972,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 514,
+    "run_seconds": 1.146,
+    "content": "southwest",
+    "usage_metadata": {
+      "input_tokens": 1791,
+      "output_tokens": 3,
+      "total_tokens": 1794,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1791,
+        "total_tokens": 1794,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 515,
+    "run_seconds": 2.93,
+    "content": "The orientation is approximately one hundred and twenty degrees.",
+    "usage_metadata": {
+      "input_tokens": 2276,
+      "output_tokens": 11,
+      "total_tokens": 2287,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 2276,
+        "total_tokens": 2287,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 516,
+    "run_seconds": 1.188,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1959,
+      "output_tokens": 3,
+      "total_tokens": 1962,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1959,
+        "total_tokens": 1962,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 517,
+    "run_seconds": 4.383,
+    "content": "The heading toward the nearest zoo from Medicine Park Aquarium & Natural Sciences Center is northeast.",
+    "usage_metadata": {
+      "input_tokens": 1948,
+      "output_tokens": 18,
+      "total_tokens": 1966,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 1948,
+        "total_tokens": 1966,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 518,
+    "run_seconds": 1.072,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1532,
+      "output_tokens": 3,
+      "total_tokens": 1535,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1532,
+        "total_tokens": 1535,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 519,
+    "run_seconds": 0.883,
+    "content": "Northeast",
+    "usage_metadata": {
+      "input_tokens": 909,
+      "output_tokens": 3,
+      "total_tokens": 912,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 909,
+        "total_tokens": 912,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 520,
+    "run_seconds": 0.949,
+    "content": "southwest",
+    "usage_metadata": {
+      "input_tokens": 1462,
+      "output_tokens": 3,
+      "total_tokens": 1465,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1462,
+        "total_tokens": 1465,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 521,
+    "run_seconds": 2.114,
+    "content": "The bearing is two hundred thirty degrees.",
+    "usage_metadata": {
+      "input_tokens": 875,
+      "output_tokens": 9,
+      "total_tokens": 884,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 875,
+        "total_tokens": 884,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 522,
+    "run_seconds": 1.316,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1763,
+      "output_tokens": 3,
+      "total_tokens": 1766,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1763,
+        "total_tokens": 1766,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 523,
+    "run_seconds": 1.067,
+    "content": "Northeast",
+    "usage_metadata": {
+      "input_tokens": 1521,
+      "output_tokens": 3,
+      "total_tokens": 1524,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1521,
+        "total_tokens": 1524,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 524,
+    "run_seconds": 0.832,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 833,
+      "output_tokens": 3,
+      "total_tokens": 836,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 833,
+        "total_tokens": 836,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 525,
+    "run_seconds": 1.13,
+    "content": "northeast",
+    "usage_metadata": {
+      "input_tokens": 1799,
+      "output_tokens": 3,
+      "total_tokens": 1802,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1799,
+        "total_tokens": 1802,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 526,
+    "run_seconds": 5.258,
+    "content": "Fort Benjamin Harrison State Park and Nature Preserve is the closest park. The directional course is approximately one hundred thirty degrees.",
+    "usage_metadata": {
+      "input_tokens": 664,
+      "output_tokens": 24,
+      "total_tokens": 688,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 664,
+        "total_tokens": 688,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 527,
+    "run_seconds": 0.987,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1428,
+      "output_tokens": 3,
+      "total_tokens": 1431,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1428,
+        "total_tokens": 1431,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 528,
+    "run_seconds": 1.086,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1694,
+      "output_tokens": 3,
+      "total_tokens": 1697,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1694,
+        "total_tokens": 1697,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 529,
+    "run_seconds": 0.947,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1182,
+      "output_tokens": 3,
+      "total_tokens": 1185,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1182,
+        "total_tokens": 1185,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 530,
+    "run_seconds": 0.818,
+    "content": "southwest",
+    "usage_metadata": {
+      "input_tokens": 716,
+      "output_tokens": 3,
+      "total_tokens": 719,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 716,
+        "total_tokens": 719,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 531,
+    "run_seconds": 0.922,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1046,
+      "output_tokens": 3,
+      "total_tokens": 1049,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1046,
+        "total_tokens": 1049,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 532,
+    "run_seconds": 0.869,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1003,
+      "output_tokens": 3,
+      "total_tokens": 1006,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1003,
+        "total_tokens": 1006,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 533,
+    "run_seconds": 1.319,
+    "content": "Southeast.",
+    "usage_metadata": {
+      "input_tokens": 1679,
+      "output_tokens": 4,
+      "total_tokens": 1683,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1679,
+        "total_tokens": 1683,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 534,
+    "run_seconds": 1.136,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1928,
+      "output_tokens": 3,
+      "total_tokens": 1931,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1928,
+        "total_tokens": 1931,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 535,
+    "run_seconds": 0.837,
+    "content": "Northeast",
+    "usage_metadata": {
+      "input_tokens": 905,
+      "output_tokens": 3,
+      "total_tokens": 908,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 905,
+        "total_tokens": 908,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 536,
+    "run_seconds": 1.233,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 2140,
+      "output_tokens": 3,
+      "total_tokens": 2143,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2140,
+        "total_tokens": 2143,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 537,
+    "run_seconds": 1.204,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1986,
+      "output_tokens": 3,
+      "total_tokens": 1989,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1986,
+        "total_tokens": 1989,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 538,
+    "run_seconds": 1.666,
+    "content": "Southeast.",
+    "usage_metadata": {
+      "input_tokens": 2246,
+      "output_tokens": 4,
+      "total_tokens": 2250,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 2246,
+        "total_tokens": 2250,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 539,
+    "run_seconds": 0.933,
+    "content": "northeast",
+    "usage_metadata": {
+      "input_tokens": 1095,
+      "output_tokens": 3,
+      "total_tokens": 1098,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1095,
+        "total_tokens": 1098,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 540,
+    "run_seconds": 0.872,
+    "content": "East",
+    "usage_metadata": {
+      "input_tokens": 1658,
+      "output_tokens": 2,
+      "total_tokens": 1660,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1658,
+        "total_tokens": 1660,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 541,
+    "run_seconds": 1.028,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1413,
+      "output_tokens": 3,
+      "total_tokens": 1416,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1413,
+        "total_tokens": 1416,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 542,
+    "run_seconds": 1.124,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1158,
+      "output_tokens": 3,
+      "total_tokens": 1161,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1158,
+        "total_tokens": 1161,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 543,
+    "run_seconds": 1.024,
+    "content": "northwest",
+    "usage_metadata": {
+      "input_tokens": 1528,
+      "output_tokens": 3,
+      "total_tokens": 1531,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1528,
+        "total_tokens": 1531,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 544,
+    "run_seconds": 0.956,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1235,
+      "output_tokens": 3,
+      "total_tokens": 1238,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1235,
+        "total_tokens": 1238,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 545,
+    "run_seconds": 4.814,
+    "content": "The closest garden is approximately six thousand four hundred metres away in the direction of Brooklyn, New York.",
+    "usage_metadata": {
+      "input_tokens": 1313,
+      "output_tokens": 21,
+      "total_tokens": 1334,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 1313,
+        "total_tokens": 1334,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 546,
+    "run_seconds": 1.007,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1516,
+      "output_tokens": 3,
+      "total_tokens": 1519,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1516,
+        "total_tokens": 1519,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 547,
+    "run_seconds": 1.117,
+    "content": "northeast",
+    "usage_metadata": {
+      "input_tokens": 1762,
+      "output_tokens": 3,
+      "total_tokens": 1765,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1762,
+        "total_tokens": 1765,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 548,
+    "run_seconds": 1.021,
+    "content": "Northeast",
+    "usage_metadata": {
+      "input_tokens": 1430,
+      "output_tokens": 3,
+      "total_tokens": 1433,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1430,
+        "total_tokens": 1433,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 549,
+    "run_seconds": 1.179,
+    "content": "Southeast.",
+    "usage_metadata": {
+      "input_tokens": 1311,
+      "output_tokens": 4,
+      "total_tokens": 1315,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1311,
+        "total_tokens": 1315,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 550,
+    "run_seconds": 1.459,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 2197,
+      "output_tokens": 3,
+      "total_tokens": 2200,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2197,
+        "total_tokens": 2200,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 551,
+    "run_seconds": 1.072,
+    "content": "Northeast",
+    "usage_metadata": {
+      "input_tokens": 1612,
+      "output_tokens": 3,
+      "total_tokens": 1615,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1612,
+        "total_tokens": 1615,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 552,
+    "run_seconds": 1.442,
+    "content": "Two hundred seventy degrees",
+    "usage_metadata": {
+      "input_tokens": 1446,
+      "output_tokens": 5,
+      "total_tokens": 1451,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1446,
+        "total_tokens": 1451,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 553,
+    "run_seconds": 1.151,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1900,
+      "output_tokens": 3,
+      "total_tokens": 1903,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1900,
+        "total_tokens": 1903,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 554,
+    "run_seconds": 1.253,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 2116,
+      "output_tokens": 3,
+      "total_tokens": 2119,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2116,
+        "total_tokens": 2119,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 555,
+    "run_seconds": 0.837,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 866,
+      "output_tokens": 3,
+      "total_tokens": 869,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 866,
+        "total_tokens": 869,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 556,
+    "run_seconds": 1.887,
+    "content": "Two hundred seventy degrees",
+    "usage_metadata": {
+      "input_tokens": 2201,
+      "output_tokens": 5,
+      "total_tokens": 2206,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 2201,
+        "total_tokens": 2206,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 557,
+    "run_seconds": 5.608,
+    "content": "The direction connecting Wenatchee Valley Museum and Cultural Center, Wenatchee, WA to the nearest attraction is northeast.",
+    "usage_metadata": {
+      "input_tokens": 1021,
+      "output_tokens": 25,
+      "total_tokens": 1046,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 1021,
+        "total_tokens": 1046,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 558,
+    "run_seconds": 1.073,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1567,
+      "output_tokens": 3,
+      "total_tokens": 1570,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1567,
+        "total_tokens": 1570,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 559,
+    "run_seconds": 1.049,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1535,
+      "output_tokens": 3,
+      "total_tokens": 1538,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1535,
+        "total_tokens": 1538,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 560,
+    "run_seconds": 1.087,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1638,
+      "output_tokens": 3,
+      "total_tokens": 1641,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1638,
+        "total_tokens": 1641,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 561,
+    "run_seconds": 0.893,
+    "content": "Northeast",
+    "usage_metadata": {
+      "input_tokens": 968,
+      "output_tokens": 3,
+      "total_tokens": 971,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 968,
+        "total_tokens": 971,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 562,
+    "run_seconds": 1.219,
+    "content": "southwest",
+    "usage_metadata": {
+      "input_tokens": 2066,
+      "output_tokens": 3,
+      "total_tokens": 2069,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2066,
+        "total_tokens": 2069,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 563,
+    "run_seconds": 0.837,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 868,
+      "output_tokens": 3,
+      "total_tokens": 871,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 868,
+        "total_tokens": 871,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 564,
+    "run_seconds": 1.476,
+    "content": "southwest",
+    "usage_metadata": {
+      "input_tokens": 2283,
+      "output_tokens": 3,
+      "total_tokens": 2286,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2283,
+        "total_tokens": 2286,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 565,
+    "run_seconds": 1.645,
+    "content": "The orientation is northwest.",
+    "usage_metadata": {
+      "input_tokens": 1433,
+      "output_tokens": 6,
+      "total_tokens": 1439,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 1433,
+        "total_tokens": 1439,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 566,
+    "run_seconds": 0.855,
+    "content": "East",
+    "usage_metadata": {
+      "input_tokens": 1553,
+      "output_tokens": 2,
+      "total_tokens": 1555,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1553,
+        "total_tokens": 1555,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 567,
+    "run_seconds": 1.099,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1653,
+      "output_tokens": 3,
+      "total_tokens": 1656,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1653,
+        "total_tokens": 1656,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 568,
+    "run_seconds": 2.067,
+    "content": "The orientation is sixty degrees.",
+    "usage_metadata": {
+      "input_tokens": 1981,
+      "output_tokens": 7,
+      "total_tokens": 1988,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 1981,
+        "total_tokens": 1988,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 569,
+    "run_seconds": 1.026,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1450,
+      "output_tokens": 3,
+      "total_tokens": 1453,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1450,
+        "total_tokens": 1453,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 570,
+    "run_seconds": 3.444,
+    "content": "The directional bearing to the nearest garden is one hundred forty-six degrees.",
+    "usage_metadata": {
+      "input_tokens": 972,
+      "output_tokens": 15,
+      "total_tokens": 987,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 972,
+        "total_tokens": 987,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 571,
+    "run_seconds": 1.102,
+    "content": "northwest",
+    "usage_metadata": {
+      "input_tokens": 1707,
+      "output_tokens": 3,
+      "total_tokens": 1710,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1707,
+        "total_tokens": 1710,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 572,
+    "run_seconds": 1.087,
+    "content": "northeast",
+    "usage_metadata": {
+      "input_tokens": 1693,
+      "output_tokens": 3,
+      "total_tokens": 1696,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1693,
+        "total_tokens": 1696,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 573,
+    "run_seconds": 0.888,
+    "content": "southwest",
+    "usage_metadata": {
+      "input_tokens": 984,
+      "output_tokens": 3,
+      "total_tokens": 987,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 984,
+        "total_tokens": 987,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 574,
+    "run_seconds": 1.233,
+    "content": "Northeast",
+    "usage_metadata": {
+      "input_tokens": 2096,
+      "output_tokens": 3,
+      "total_tokens": 2099,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2096,
+        "total_tokens": 2099,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 575,
+    "run_seconds": 1.507,
+    "content": "Two hundred sixty eight degrees",
+    "usage_metadata": {
+      "input_tokens": 955,
+      "output_tokens": 6,
+      "total_tokens": 961,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 955,
+        "total_tokens": 961,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 576,
+    "run_seconds": 1.186,
+    "content": "southwest",
+    "usage_metadata": {
+      "input_tokens": 1961,
+      "output_tokens": 3,
+      "total_tokens": 1964,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1961,
+        "total_tokens": 1964,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 577,
+    "run_seconds": 0.891,
+    "content": "Northeast",
+    "usage_metadata": {
+      "input_tokens": 996,
+      "output_tokens": 3,
+      "total_tokens": 999,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 996,
+        "total_tokens": 999,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 578,
+    "run_seconds": 0.9,
+    "content": "northeast",
+    "usage_metadata": {
+      "input_tokens": 1060,
+      "output_tokens": 3,
+      "total_tokens": 1063,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1060,
+        "total_tokens": 1063,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 579,
+    "run_seconds": 1.018,
+    "content": "southwest",
+    "usage_metadata": {
+      "input_tokens": 795,
+      "output_tokens": 3,
+      "total_tokens": 798,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 795,
+        "total_tokens": 798,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 580,
+    "run_seconds": 0.989,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1356,
+      "output_tokens": 3,
+      "total_tokens": 1359,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1356,
+        "total_tokens": 1359,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 581,
+    "run_seconds": 1.107,
+    "content": "northeast",
+    "usage_metadata": {
+      "input_tokens": 1886,
+      "output_tokens": 3,
+      "total_tokens": 1889,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1886,
+        "total_tokens": 1889,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 582,
+    "run_seconds": 1.316,
+    "content": "Northeast",
+    "usage_metadata": {
+      "input_tokens": 1752,
+      "output_tokens": 3,
+      "total_tokens": 1755,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1752,
+        "total_tokens": 1755,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 583,
+    "run_seconds": 2.074,
+    "content": "One hundred thirty-one degrees.",
+    "usage_metadata": {
+      "input_tokens": 2089,
+      "output_tokens": 7,
+      "total_tokens": 2096,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 2089,
+        "total_tokens": 2096,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 584,
+    "run_seconds": 1.172,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1851,
+      "output_tokens": 3,
+      "total_tokens": 1854,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1851,
+        "total_tokens": 1854,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 585,
+    "run_seconds": 1.23,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 2043,
+      "output_tokens": 3,
+      "total_tokens": 2046,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2043,
+        "total_tokens": 2046,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 586,
+    "run_seconds": 0.966,
+    "content": "Northeast",
+    "usage_metadata": {
+      "input_tokens": 1279,
+      "output_tokens": 3,
+      "total_tokens": 1282,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1279,
+        "total_tokens": 1282,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 587,
+    "run_seconds": 1.234,
+    "content": "northeast",
+    "usage_metadata": {
+      "input_tokens": 2121,
+      "output_tokens": 3,
+      "total_tokens": 2124,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2121,
+        "total_tokens": 2124,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 588,
+    "run_seconds": 0.836,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 824,
+      "output_tokens": 3,
+      "total_tokens": 827,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 824,
+        "total_tokens": 827,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 589,
+    "run_seconds": 0.908,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1111,
+      "output_tokens": 3,
+      "total_tokens": 1114,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1111,
+        "total_tokens": 1114,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 590,
+    "run_seconds": 0.836,
+    "content": "East",
+    "usage_metadata": {
+      "input_tokens": 1540,
+      "output_tokens": 2,
+      "total_tokens": 1542,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1540,
+        "total_tokens": 1542,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 591,
+    "run_seconds": 0.977,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1207,
+      "output_tokens": 3,
+      "total_tokens": 1210,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1207,
+        "total_tokens": 1210,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 592,
+    "run_seconds": 2.966,
+    "content": "Cafe Leonelli lies approximately twenty-eight thousand meters away.",
+    "usage_metadata": {
+      "input_tokens": 850,
+      "output_tokens": 13,
+      "total_tokens": 863,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 850,
+        "total_tokens": 863,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 593,
+    "run_seconds": 2.742,
+    "content": "The directional course is thirty degrees.",
+    "usage_metadata": {
+      "input_tokens": 2330,
+      "output_tokens": 8,
+      "total_tokens": 2338,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 2330,
+        "total_tokens": 2338,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 594,
+    "run_seconds": 1.089,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1618,
+      "output_tokens": 3,
+      "total_tokens": 1621,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1618,
+        "total_tokens": 1621,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 595,
+    "run_seconds": 1.221,
+    "content": "Northeast",
+    "usage_metadata": {
+      "input_tokens": 2091,
+      "output_tokens": 3,
+      "total_tokens": 2094,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2091,
+        "total_tokens": 2094,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 596,
+    "run_seconds": 1.317,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1773,
+      "output_tokens": 3,
+      "total_tokens": 1776,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1773,
+        "total_tokens": 1776,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 597,
+    "run_seconds": 0.838,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 948,
+      "output_tokens": 3,
+      "total_tokens": 951,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 948,
+        "total_tokens": 951,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 598,
+    "run_seconds": 1.937,
+    "content": "Three hundred and ten degrees.",
+    "usage_metadata": {
+      "input_tokens": 1651,
+      "output_tokens": 7,
+      "total_tokens": 1658,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 1651,
+        "total_tokens": 1658,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 599,
+    "run_seconds": 0.85,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 868,
+      "output_tokens": 3,
+      "total_tokens": 871,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 868,
+        "total_tokens": 871,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  }
+]

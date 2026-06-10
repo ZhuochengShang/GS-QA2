@@ -1,0 +1,502 @@
+[
+  {
+    "id": 1500,
+    "content": "```json\n{\n    \"name\": \"Dave and Bev's Diner\"\n}\n```",
+    "run_seconds": 4.622
+  },
+  {
+    "id": 1501,
+    "content": "```json\n{\n    \"distance\": 30\n}\n```",
+    "run_seconds": 3.53
+  },
+  {
+    "id": 1502,
+    "content": "```json\n{\n    \"name\": \"Caf\u00e9 121\"\n}\n```",
+    "run_seconds": 4.5
+  },
+  {
+    "id": 1503,
+    "content": "```json\n{\n    \"name\": \"The Original Joe's Pizza\",\n    \"address\": \"\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 7.108
+  },
+  {
+    "id": 1504,
+    "content": "```json\n{\n    \"name\": \"New York Hall of Science\",\n    \"address\": \"45-01 69th Ave, Flushing, NY 11373\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 11.903
+  },
+  {
+    "id": 1505,
+    "content": "```json\n{\n    \"name\": \"The Local Market\",\n    \"address\": \"Broomfield, CO\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 7.905
+  },
+  {
+    "id": 1506,
+    "content": "```json\n{\n    \"name\": \"Erie Art Museum\",\n    \"address\": \"250 Park Erie, Pennsylvania\"\n}\n```",
+    "run_seconds": 6.801
+  },
+  {
+    "id": 1507,
+    "content": "```json\n{\n    \"name\": \"McDonald's\",\n    \"address\": \"Fremont, CA\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 7.795
+  },
+  {
+    "id": 1508,
+    "content": "```json\n{\n    \"name\": \"Sarasota Art Museum\",\n    \"address\": \"501 South Lemon Avenue, Sarasota, FL 34236\",\n    \"distance\": 0\n}\n```",
+    "run_seconds": 10.844
+  },
+  {
+    "id": 1509,
+    "content": "```json\n{\n    \"name\": \"closest fast food restaurant\",\n    \"address\": \"along the route toward Planet Word, Washington, DC from Mario & Alberto De La Cruz Art Gallery, Washington, DC\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 12.045
+  },
+  {
+    "id": 1510,
+    "content": "```json\n{\n    \"name\": \"Oakland Museum of California\",\n    \"address\": \"1000 Oak Street, Oakland, CA 94607\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 10.729
+  },
+  {
+    "id": 1511,
+    "content": "```json\n{\n    \"name\": \"The nearest restaurant encountered en route\",\n    \"address\": \"Herndon, Virginia\"\n}\n```",
+    "run_seconds": 6.542
+  },
+  {
+    "id": 1512,
+    "content": "```json\n{\n    \"name\": \"nearest hotel\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 5.165
+  },
+  {
+    "id": 1513,
+    "content": "```json\n{\n    \"name\": \"Holiday Inn & Suites Joliet Southwest\",\n    \"address\": \"15000 S State St, Joliet, IL 60435\"\n}\n```",
+    "run_seconds": 10.409
+  },
+  {
+    "id": 1514,
+    "content": "```json\n{\n    \"distance\": 1230\n}\n```",
+    "run_seconds": 3.855
+  },
+  {
+    "id": 1515,
+    "content": "```json\n{\n    \"distance\": 30\n}\n```",
+    "run_seconds": 3.466
+  },
+  {
+    "id": 1516,
+    "content": "```json\n{\n    \"name\": \"deCordova Sculpture Park and Museum\",\n    \"address\": \"5390 Iron Hill Road, Lincoln, MA 01765, United States\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 12.244
+  },
+  {
+    "id": 1517,
+    "content": "```json\n{\n    \"name\": \"The Roti Shop\",\n    \"address\": \"San Jose, California\"\n}\n```",
+    "run_seconds": 6.055
+  },
+  {
+    "id": 1518,
+    "content": "```json\n{\n    \"name\": \"Java Joe's Caf\u00e9\",\n    \"address\": \"Eagleville Road WRGT Trailhead and Parking, Jefferson, Ohio\",\n    \"distance\": 20\n}\n```",
+    "run_seconds": 10.341
+  },
+  {
+    "id": 1519,
+    "content": "```json\n{\n    \"name\": \"Chestatee Overlook\",\n    \"address\": \"Dahlonega, GA\",\n    \"distance\": 40\n}\n```",
+    "run_seconds": 8.592
+  },
+  {
+    "id": 1520,
+    "content": "```json\n{\n    \"name\": \"Mount Vernon Museum Complex\",\n    \"address\": \"3200 George Washington Memorial Pkwy, Mount Vernon, NY 10550, USA\"\n}\n```",
+    "run_seconds": 10.283
+  },
+  {
+    "id": 1521,
+    "content": "```json\n{\n    \"name\": \"Sunset Grill and Pizza\"\n}\n```",
+    "run_seconds": 4.05
+  },
+  {
+    "id": 1522,
+    "content": "```json\n{\n    \"name\": \"Caf\u00e9\",\n    \"address\": \"1000 North I-35 Frontage Road\"\n}\n```",
+    "run_seconds": 7.609
+  },
+  {
+    "id": 1523,
+    "content": "```json\n{\n    \"distance\": 30\n}\n```",
+    "run_seconds": 3.457
+  },
+  {
+    "id": 1524,
+    "content": "```json\n{\n    \"name\": \"Maryland Science Center\",\n    \"address\": \"1740 N Charles St, Baltimore, MD 21201\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 10.561
+  },
+  {
+    "id": 1525,
+    "content": "```json\n{\n    \"name\": \"Maple Avenue\",\n    \"address\": \"Maple Avenue, West Chester, PA\",\n    \"azimuth_angle\": 270\n}\n```",
+    "run_seconds": 9.117
+  },
+  {
+    "id": 1526,
+    "content": "```json\n{\n    \"name\": \"Jack in the Box\"\n}\n```",
+    "run_seconds": 3.873
+  },
+  {
+    "id": 1527,
+    "content": "```json\n{\n    \"name\": \"Governors Island Hotel\",\n    \"address\": \"Governor's Island, New York, NY\",\n    \"distance\": 8\n}\n```",
+    "run_seconds": 8.828
+  },
+  {
+    "id": 1528,
+    "content": "```json\n{\n    \"name\": \"Jack in the Box\",\n    \"address\": \"Muncie, Indiana\"\n}\n```",
+    "run_seconds": 6.354
+  },
+  {
+    "id": 1529,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.468
+  },
+  {
+    "id": 1530,
+    "content": "```json\n{\n    \"name\": \"Hilton Garden Inn\",\n    \"address\": \"Secaucus, New Jersey\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 8.37
+  },
+  {
+    "id": 1531,
+    "content": "```json\n{\n    \"name\": \"Comfort Inn & Suites\",\n    \"address\": \"York, PA\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 7.746
+  },
+  {
+    "id": 1532,
+    "content": "```json\n{\n    \"name\": \"nearest hotel\",\n    \"address\": \"Roswell, GA\"\n}\n```",
+    "run_seconds": 5.679
+  },
+  {
+    "id": 1533,
+    "content": "```json\n{\n    \"name\": \"McDonald's\",\n    \"address\": \"Nassau County, New York\"\n}\n```",
+    "run_seconds": 6.592
+  },
+  {
+    "id": 1534,
+    "content": "```json\n{\n    \"name\": \"The Pit\",\n    \"address\": \"North Hillsborough Street, Raleigh, NC\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 8.28
+  },
+  {
+    "id": 1535,
+    "content": "```json\n{\n    \"name\": \"Buffalo Wild Wings\",\n    \"address\": \"Schaumburg, Illinois\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 8.267
+  },
+  {
+    "id": 1536,
+    "content": "```json\n{\n    \"distance\": 30\n}\n```",
+    "run_seconds": 3.454
+  },
+  {
+    "id": 1537,
+    "content": "```json\n{\n    \"name\": \"New Castle Historic District\",\n    \"address\": \"New Castle, NH\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 7.768
+  },
+  {
+    "id": 1538,
+    "content": "```json\n{\n    \"name\": \"nearest fast food restaurant\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 5.748
+  },
+  {
+    "id": 1539,
+    "content": "```json\n{\n    \"distance\": 30\n}\n```",
+    "run_seconds": 3.529
+  },
+  {
+    "id": 1540,
+    "content": "```json\n{\n    \"name\": \"California State University, Sacramento Art Gallery\",\n    \"address\": \"600 J Street, Sacramento, CA 95819, USA\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 11.478
+  },
+  {
+    "id": 1541,
+    "content": "```json\n{\n    \"name\": \"McDonald's\",\n    \"address\": \"Route 123, near Wernick Farm Reserve, Dartmouth, MA\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 10.594
+  },
+  {
+    "id": 1542,
+    "content": "```json\n{\n    \"name\": \"nearest restaurant\",\n    \"address\": \"\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 6.466
+  },
+  {
+    "id": 1543,
+    "content": "```json\n{\n    \"name\": \"River Stone Resorts and Bear Paw Suites\",\n    \"address\": \"Estes Park, CO\",\n    \"azimuth_angle\": 315\n}\n```",
+    "run_seconds": 9.561
+  },
+  {
+    "id": 1544,
+    "content": "```json\n{\n    \"name\": \"McDonald's\",\n    \"address\": \"Colorado Springs, CO\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 8.013
+  },
+  {
+    "id": 1545,
+    "content": "```json\n{\n    \"name\": \"Cape Codder Resort Hotel\",\n    \"address\": \"1000 Iyannough Rd, Hyannis, MA 02601, USA\"\n}\n```",
+    "run_seconds": 11.01
+  },
+  {
+    "id": 1546,
+    "content": "```json\n{\n    \"name\": \"The closest restaurant\",\n    \"address\": \"Tulsa, Oklahoma\"\n}\n```",
+    "run_seconds": 6.556
+  },
+  {
+    "id": 1547,
+    "content": "```json\n{\n    \"name\": \"Bronx Museum of the Arts\",\n    \"address\": \"1551 Park Ave, Bronx, NY 10462\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 11.777
+  },
+  {
+    "id": 1548,
+    "content": "```json\n{\n    \"name\": \"Mount Washington Observatory\",\n    \"address\": \"Mount Washington, Wolfeboro, NH\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 8.902
+  },
+  {
+    "id": 1549,
+    "content": "```json\n{\n    \"name\": \"nearest hotel\",\n    \"address\": \"Edgewater, Maryland\"\n}\n```",
+    "run_seconds": 6.101
+  },
+  {
+    "id": 1550,
+    "content": "```json\n{\n    \"name\": \"McDonald's\"\n}\n```",
+    "run_seconds": 3.996
+  },
+  {
+    "id": 1551,
+    "content": "```json\n{\n    \"name\": \"Kettle Creek Environmental Education Center\",\n    \"address\": \"1000 Kettle Creek Road, Stroudsburg, PA 18360\"\n}\n```",
+    "run_seconds": 10.814
+  },
+  {
+    "id": 1552,
+    "content": "```json\n{\n    \"name\": \"Anything for Princess!\",\n    \"address\": \"Sewaren, NJ\"\n}\n```",
+    "run_seconds": 6.603
+  },
+  {
+    "id": 1553,
+    "content": "```json\n{\n    \"name\": \"Atlanta History Center\",\n    \"address\": \"130 West Paces Ferry Road NW, Atlanta, GA 30305, USA\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 12.237
+  },
+  {
+    "id": 1554,
+    "content": "```json\n{\n    \"name\": \"Bottle & Bottega\",\n    \"address\": \"North Olmsted, OH\"\n}\n```",
+    "run_seconds": 7.325
+  },
+  {
+    "id": 1555,
+    "content": "```json\n{\n    \"name\": \"No fast food restaurant found\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 7.336
+  },
+  {
+    "id": 1556,
+    "content": "```json\n{\n    \"name\": \"Presque Isle State Park\",\n    \"address\": \"Presque Isle State Park, Erie, PA\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 9.929
+  },
+  {
+    "id": 1557,
+    "content": "```json\n{\n    \"name\": \"Massachusetts General Hospital\",\n    \"address\": \"Boston, Massachusetts\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 8.297
+  },
+  {
+    "id": 1558,
+    "content": "```json\n{\n    \"name\": \"The Bagel Place\",\n    \"address\": \"\",\n    \"distance\": 10\n}\n```",
+    "run_seconds": 7.377
+  },
+  {
+    "id": 1559,
+    "content": "```json\n{\n    \"name\": \"George Washington Bridge\"\n}\n```",
+    "run_seconds": 3.998
+  },
+  {
+    "id": 1560,
+    "content": "```json\n{\n    \"name\": \"Latvian Cultural Garden\",\n    \"address\": \"11111 Euclid Ave, Cleveland, OH 44106\"\n}\n```",
+    "run_seconds": 10.197
+  },
+  {
+    "id": 1561,
+    "content": "```json\n{\n    \"name\": \"restaurant\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 5.487
+  },
+  {
+    "id": 1562,
+    "content": "```json\n{\n    \"name\": \"Caf\u00e9 101\",\n    \"distance\": 100\n}\n```",
+    "run_seconds": 7.061
+  },
+  {
+    "id": 1563,
+    "content": "```json\n{\n    \"name\": \"Hotel Zephyr\",\n    \"address\": \"1900 California St, San Francisco, CA 94109\",\n    \"distance\": 500\n}\n```",
+    "run_seconds": 11.849
+  },
+  {
+    "id": 1564,
+    "content": "```json\n{\n    \"name\": \"The Hermosa Beach Pier Caf\u00e9\"\n}\n```",
+    "run_seconds": 4.674
+  },
+  {
+    "id": 1565,
+    "content": "```json\n{\n    \"name\": \"Chillicothe History Center\",\n    \"address\": \"125 S Washington St, Chillicothe, OH 45601\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 12.4
+  },
+  {
+    "id": 1566,
+    "content": "```json\n{\n    \"name\": \"Annville Community Hospital\"\n}\n```",
+    "run_seconds": 4.201
+  },
+  {
+    "id": 1567,
+    "content": "```json\n{\n    \"name\": \"Art Gallery of the Berkshires\",\n    \"address\": \"Lenox, Massachusetts\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 9.133
+  },
+  {
+    "id": 1568,
+    "content": "```json\n{\n    \"name\": \"The Cambridge Brewing Company\",\n    \"address\": \"Cambridge, Massachusetts\"\n}\n```",
+    "run_seconds": 6.64
+  },
+  {
+    "id": 1569,
+    "content": "```json\n{\n    \"name\": \"closest restaurant\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 5.687
+  },
+  {
+    "id": 1570,
+    "content": "```json\n{\n    \"name\": \"USS Constitution Museum\",\n    \"address\": \"1 Building, Charlestown, Boston, MA 02129, USA\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 11.831
+  },
+  {
+    "id": 1571,
+    "content": "```json\n{\n    \"name\": \"University of Southern Maine\",\n    \"address\": \"Portland, Maine\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 8.292
+  },
+  {
+    "id": 1572,
+    "content": "```json\n{\n    \"name\": \"New York Academy of Art\",\n    \"address\": \"1111 6th Ave, New York, NY 10036\",\n    \"distance\": 30,\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 14.889
+  },
+  {
+    "id": 1573,
+    "content": "```json\n{\n    \"name\": \"Caldwell Woods\"\n}\n```",
+    "run_seconds": 4.205
+  },
+  {
+    "id": 1574,
+    "content": "```json\n{\n    \"name\": \"Casey Farm Gallery\",\n    \"address\": \"Casey Farm, Saunderstown, RI\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 9.524
+  },
+  {
+    "id": 1575,
+    "content": "```json\n{\n    \"name\": \"Holiday Inn Express Elkins Park\",\n    \"address\": \"Elkins Park, Pennsylvania\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 9.125
+  },
+  {
+    "id": 1576,
+    "content": "```json\n{\n    \"name\": \"Mt Airy Inn\",\n    \"address\": \"Mt Airy, NC\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 8.63
+  },
+  {
+    "id": 1577,
+    "content": "```json\n{\n    \"name\": \"LVH Coordinated Allentown\",\n    \"address\": \"LVH Coordinated Allentown, Allentown, PA\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 11.236
+  },
+  {
+    "id": 1578,
+    "content": "```json\n{\n    \"name\": \"Chick-fil-A\",\n    \"address\": \"Ellijay, GA\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 8.845
+  },
+  {
+    "id": 1579,
+    "content": "```json\n{\n    \"name\": \"closest restaurant\",\n    \"address\": \"Jay walk, New York, NY\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 8.613
+  },
+  {
+    "id": 1580,
+    "content": "```json\n{\n    \"name\": \"Wellington Reservation\",\n    \"address\": \"10000 Chagrin River Rd, Wellington, OH 44090\"\n}\n```",
+    "run_seconds": 9.962
+  },
+  {
+    "id": 1581,
+    "content": "```json\n{\n    \"distance\": 30\n}\n```",
+    "run_seconds": 3.753
+  },
+  {
+    "id": 1582,
+    "content": "```json\n{\n    \"name\": \"The closest restaurant aligned with the route\",\n    \"address\": \"IIT Stuart School of Business, Chicago, IL\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 10.49
+  },
+  {
+    "id": 1583,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0,\n    \"distance\": 0,\n    \"length\": 0,\n    \"area\": 0,\n    \"azimuth_angle\": 0\n}\n```",
+    "run_seconds": 12.821
+  },
+  {
+    "id": 1584,
+    "content": "```json\n{\n    \"name\": \"Sherwood Forest Faire\"\n}\n```",
+    "run_seconds": 4.455
+  },
+  {
+    "id": 1585,
+    "content": "```json\n{\n    \"name\": \"Bruce Museum\",\n    \"address\": \"195 Mountain Avenue, Greenwich, CT 06830\"\n}\n```",
+    "run_seconds": 8.683
+  },
+  {
+    "id": 1586,
+    "content": "```json\n{\n    \"name\": \"nearest restaurant\",\n    \"address\": \"along the corridor from Art Clinic, New York, NY to Stanford in New York Center, New York, NY\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 11.953
+  },
+  {
+    "id": 1587,
+    "content": "```json\n{\n    \"name\": \"nearest hotel\",\n    \"address\": \"Not provided\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 7.26
+  },
+  {
+    "id": 1588,
+    "content": "```json\n{\n    \"name\": \"McDonald's\",\n    \"address\": \"Downtown Boston\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 7.67
+  },
+  {
+    "id": 1589,
+    "content": "```json\n{\n    \"name\": \"Holiday Inn Express & Suites\",\n    \"address\": \"\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 7.145
+  },
+  {
+    "id": 1590,
+    "content": "```json\n{\n    \"name\": \"There is no relevant information available to answer the question.\"\n}\n```",
+    "run_seconds": 5.371
+  },
+  {
+    "id": 1591,
+    "content": "```json\n{\n    \"name\": \"McDonald's\",\n    \"address\": \"Northlake, IL\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 7.776
+  },
+  {
+    "id": 1592,
+    "content": "```json\n{\n}\n```",
+    "run_seconds": 1.805
+  },
+  {
+    "id": 1593,
+    "content": "```json\n{\n    \"name\": \"Battle of the Bulge Memorial\",\n    \"address\": \"1000 Memorial Dr, Shepherdstown, WV 25560\",\n    \"azimuth_angle\": 180\n}\n```",
+    "run_seconds": 12.042
+  },
+  {
+    "id": 1594,
+    "content": "```json\n{\n    \"name\": \"nearest caf\u00e9\",\n    \"address\": \"\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 6.491
+  },
+  {
+    "id": 1595,
+    "content": "```json\n{\n    \"name\": \"Museum of the American Indian\",\n    \"address\": \"14th St & Constitution Ave NW, Washington, DC 20001, USA\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 12.224
+  },
+  {
+    "id": 1596,
+    "content": "```json\n{\n    \"distance\": 30\n}\n```",
+    "run_seconds": 3.68
+  },
+  {
+    "id": 1597,
+    "content": "```json\n{\n    \"name\": \"nearest restaurant\",\n    \"address\": \"along the direction of travel from Sea Life Aquarium, San Antonio, TX to the Cross at Kerrville, Kerrville, TX\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 12.253
+  },
+  {
+    "id": 1598,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.712
+  },
+  {
+    "id": 1599,
+    "content": "```json\n{\n    \"name\": \"nearest fast food restaurant\",\n    \"address\": \"\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 7.025
+  }
+]

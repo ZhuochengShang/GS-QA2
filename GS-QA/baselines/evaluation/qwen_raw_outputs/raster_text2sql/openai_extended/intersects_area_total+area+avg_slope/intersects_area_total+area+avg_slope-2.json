@@ -1,0 +1,61 @@
+{
+  "answer_type": "area+slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "area+slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "area": 66622718.899475,
+      "slope": 6.654012
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "area": 66622718.899475,
+        "slope": 6.654012
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_CollectionExtract(ST_MakeValid(ST_GeomFromText('MULTIPOLYGON (((-79.898033 41.009638, -79.893677 41.009289, -79.894647 41.002851, -79.899014 41.003219, -79.898033 41.009638)), ((-79.878952 40.956811, -79.880261 41.027928, -79.979954 41.026892, -79.977073 40.971744, -79.97622 40.955854, -79.878952 40.956811)))',4326)), 3) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\narea_sum AS (\n  SELECT SUM(ST_Area(parks.geometry::geography)) AS area\n  FROM parks\n  WHERE leisure = 'nature_reserve'\n    AND ST_Intersects(parks.geometry::geography, (SELECT g::geography FROM region))\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d, buffered_region r\n  WHERE ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n),\nslope_agg AS (\n  SELECT (ST_SummaryStats(rast, 1, TRUE)).mean AS slope\n  FROM region_slope\n)\nSELECT a.area, s.slope\nFROM area_sum a, slope_agg s;",
+  "id": "intersects_area_total+area+avg_slope-2",
+  "model_output": "```sql\nWITH clay_township AS (\n  SELECT ST_GeomFromText('MULTIPOLYGON (((-79.898033 41.009638, -79.893677 41.009289, -79.894647 41.002851, -79.899014 41.003219, -79.898033 41.009638)), ((-79.878952 40.956811, -79.880261 41.027928, -79.979954 41.026892, -79.977073 40.971744, -79.97622 40.955854, -79.878952 40.956811)))', 4326)::geometry AS geom\n),\nnature_reserves AS (\n  SELECT p.geometry\n  FROM parks p, clay_township ct\n  WHERE p.leisure = 'nature reserve'\n    AND ST_Intersects(p.geometry::geometry, ct.geom)\n),\ndem_clip AS (\n  SELECT ST_Clip(rast, true, ct.geom) AS rast\n  FROM public.dem_us, clay_township ct\n  WHERE ST_Intersects(rast, ct.geom)\n),\nslope_raster AS (\n  SELECT ST_Slope(rast, 1) AS rast\n  FROM dem_clip\n),\narea_and_slope AS (\n  SELECT\n    SUM(ST_Area(nr.geometry)) / 10000 AS area_hectares,\n    ROUND(AVG(ST_Stats(slope_rast.rast, 1, TRUE).mean), 2) AS avg_slope_degrees\n  FROM nature_reserves nr, slope_raster slope_rast\n)\nSELECT * FROM area_and_slope;\n```",
+  "predicted_exec": {
+    "error": "syntax error at or near \".\"\nLINE 22:     ROUND(AVG(ST_Stats(slope_rast.rast, 1, TRUE).mean), 2) A...\n                                                         ^",
+    "output": []
+  },
+  "predicted_sql": "WITH clay_township AS (\n  SELECT ST_GeomFromText('MULTIPOLYGON (((-79.898033 41.009638, -79.893677 41.009289, -79.894647 41.002851, -79.899014 41.003219, -79.898033 41.009638)), ((-79.878952 40.956811, -79.880261 41.027928, -79.979954 41.026892, -79.977073 40.971744, -79.97622 40.955854, -79.878952 40.956811)))', 4326)::geometry AS geom\n),\nnature_reserves AS (\n  SELECT p.geometry\n  FROM parks p, clay_township ct\n  WHERE p.leisure = 'nature reserve'\n    AND ST_Intersects(p.geometry::geometry, ct.geom)\n),\ndem_clip AS (\n  SELECT ST_Clip(rast, true, ct.geom) AS rast\n  FROM public.dem_us, clay_township ct\n  WHERE ST_Intersects(rast, ct.geom)\n),\nslope_raster AS (\n  SELECT ST_Slope(rast, 1) AS rast\n  FROM dem_clip\n),\narea_and_slope AS (\n  SELECT\n    SUM(ST_Area(nr.geometry)) / 10000 AS area_hectares,\n    ROUND(AVG(ST_Stats(slope_rast.rast, 1, TRUE).mean), 2) AS avg_slope_degrees\n  FROM nature_reserves nr, slope_raster slope_rast\n)\nSELECT * FROM area_and_slope;",
+  "predicted_sql_candidates": [
+    "WITH clay_township AS (\n  SELECT ST_GeomFromText('MULTIPOLYGON (((-79.898033 41.009638, -79.893677 41.009289, -79.894647 41.002851, -79.899014 41.003219, -79.898033 41.009638)), ((-79.878952 40.956811, -79.880261 41.027928, -79.979954 41.026892, -79.977073 40.971744, -79.97622 40.955854, -79.878952 40.956811)))', 4326)::geometry AS geom\n),\nnature_reserves AS (\n  SELECT p.geometry\n  FROM parks p, clay_township ct\n  WHERE p.leisure = 'nature reserve'\n    AND ST_Intersects(p.geometry::geometry, ct.geom)\n),\ndem_clip AS (\n  SELECT ST_Clip(rast, true, ct.geom) AS rast\n  FROM public.dem_us, clay_township ct\n  WHERE ST_Intersects(rast, ct.geom)\n),\nslope_raster AS (\n  SELECT ST_Slope(rast, 1) AS rast\n  FROM dem_clip\n),\narea_and_slope AS (\n  SELECT\n    SUM(ST_Area(nr.geometry)) / 10000 AS area_hectares,\n    ROUND(AVG(ST_Stats(slope_rast.rast, 1, TRUE).mean), 2) AS avg_slope_degrees\n  FROM nature_reserves nr, slope_raster slope_rast\n)\nSELECT * FROM area_and_slope;"
+  ],
+  "query_type": "extended",
+  "question": "What is the aggregate area of all nature reserves in Clay Township, Butler County, Pennsylvania, and what is the average slope of Clay Township, Butler County, Pennsylvania?",
+  "source_file": "intersects_area_total+area+avg_slope.jsonl",
+  "source_stem": "intersects_area_total+area+avg_slope",
+  "timing": {
+    "execution_seconds": 0.0,
+    "generation_seconds": 99.635,
+    "total_seconds": 99.635
+  },
+  "usage": {
+    "completion_tokens": 467,
+    "prompt_tokens": 1787,
+    "total_tokens": 2254
+  }
+}

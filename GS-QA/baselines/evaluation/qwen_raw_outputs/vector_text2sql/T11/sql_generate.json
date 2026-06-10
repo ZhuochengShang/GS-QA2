@@ -1,0 +1,502 @@
+[
+  {
+    "id": 100,
+    "content": "```sql\nSELECT park_name, ST_Area(geometry::geography) AS area\nFROM parks\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Pennsylvania%' LIMIT 1))\n  AND leisure = 'common'\nORDER BY area DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.44
+  },
+  {
+    "id": 101,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Cedar Falls%' LIMIT 1))\n  AND leisure = 'golf_course'\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.548
+  },
+  {
+    "id": 102,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Santa Rosa%' LIMIT 1))\nORDER BY ST_Area(lakes.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 12.782
+  },
+  {
+    "id": 103,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Livingston County%' LIMIT 1))\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.001
+  },
+  {
+    "id": 104,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Dukes County%' LIMIT 1))\n  AND leisure = 'golf_course'\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.277
+  },
+  {
+    "id": 105,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Virginia%' LIMIT 1))\n  AND leisure = 'sports_centre'\nORDER BY ST_Area(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.276
+  },
+  {
+    "id": 106,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Ohio%' LIMIT 1))\n  AND leisure = 'recreation_ground'\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.129
+  },
+  {
+    "id": 107,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Cowen%' LIMIT 1))\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 12.147
+  },
+  {
+    "id": 108,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Summit County%' LIMIT 1))\n  AND water = 'reservoir'\nORDER BY ST_Area(lakes.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.704
+  },
+  {
+    "id": 109,
+    "content": "```sql\nSELECT leisure, COUNT(*) AS count\nFROM pois\nWHERE addr_city ILIKE '%boston%'\n  AND leisure IS NOT NULL\nGROUP BY leisure\nORDER BY count DESC\nLIMIT 1;\n```",
+    "run_seconds": 9.802
+  },
+  {
+    "id": 110,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%united states%' LIMIT 1))\n  AND leisure = 'golf_course'\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.277
+  },
+  {
+    "id": 111,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE water = 'harbour'\nORDER BY ST_Area(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 7.672
+  },
+  {
+    "id": 112,
+    "content": "```sql\nSELECT park_name, ST_Area(geometry::geography) AS area\nFROM parks\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%united states%' LIMIT 1))\n  AND leisure = 'nature_reserve'\nORDER BY area DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.065
+  },
+  {
+    "id": 113,
+    "content": "```sql\nSELECT park_name, ST_Area(geometry::geography) AS area\nFROM parks\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Tuxedo%' LIMIT 1))\n  AND leisure = 'golf_course'\nORDER BY area DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.278
+  },
+  {
+    "id": 114,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Burke County%' LIMIT 1))\n  AND leisure = 'golf_course'\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.916
+  },
+  {
+    "id": 115,
+    "content": "```sql\nSELECT park_name, ST_Area(geometry::geography) AS area\nFROM parks\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Whiteside%' LIMIT 1))\n  AND leisure = 'garden'\nORDER BY area DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.064
+  },
+  {
+    "id": 116,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE addr_county ILIKE '%steuben%'\nORDER BY ST_Area(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 8.31
+  },
+  {
+    "id": 117,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE addr_county ILIKE '%worcester%'\n  AND addr_state ILIKE '%massachusetts%'\n  AND water = 'reservoir'\nORDER BY ST_Area(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 12.358
+  },
+  {
+    "id": 118,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Hawthorn Woods%' LIMIT 1))\n  AND leisure = 'golf_course'\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.981
+  },
+  {
+    "id": 119,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Lewis County%' LIMIT 1))\n  AND leisure = 'golf_course'\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.705
+  },
+  {
+    "id": 120,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Geneva%' LIMIT 1))\nORDER BY ST_Area(lakes.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 12.784
+  },
+  {
+    "id": 121,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE water = 'reservoir'\n  AND ST_Intersects(geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Richland County%' AND border_type = 'county' LIMIT 1))\nORDER BY ST_Area(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.983
+  },
+  {
+    "id": 122,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE water = 'reservoir'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%boston%' LIMIT 1))\nORDER BY ST_Area(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.639
+  },
+  {
+    "id": 123,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Portland%' LIMIT 1))\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 12.572
+  },
+  {
+    "id": 124,
+    "content": "```sql\nSELECT park_name, ST_Area(geometry::geography) AS area\nFROM parks\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%seattle%' LIMIT 1))\n  AND leisure = 'nature_reserve'\nORDER BY area DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.85
+  },
+  {
+    "id": 125,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE water = 'reservoir'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Grand Coulee%' LIMIT 1))\nORDER BY ST_Area(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.851
+  },
+  {
+    "id": 126,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Pennsylvania%' LIMIT 1))\nAND leisure = 'garden'\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.916
+  },
+  {
+    "id": 127,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%united states%' LIMIT 1))\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 12.361
+  },
+  {
+    "id": 128,
+    "content": "```sql\nSELECT p.park_name\nFROM parks p\nWHERE ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Lewis County%' LIMIT 1))\n  AND p.leisure = 'nature_reserve'\nORDER BY ST_Area(p.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.129
+  },
+  {
+    "id": 129,
+    "content": "```sql\nSELECT park_name, ST_Area(geometry::geography) AS area\nFROM parks\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Wheelock%' AND border_type = 'city' LIMIT 1))\n  AND leisure = 'nature_reserve'\nORDER BY area DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.344
+  },
+  {
+    "id": 130,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%El Paso%' AND border_type = 'county' LIMIT 1))\n  AND water = 'reservoir'\nORDER BY ST_Area(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.129
+  },
+  {
+    "id": 131,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Bear Creek%' AND region_name ILIKE '%Michigan%' LIMIT 1))\nORDER BY ST_Area(lakes.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.127
+  },
+  {
+    "id": 132,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Mississippi%' LIMIT 1))\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.427
+  },
+  {
+    "id": 133,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Whiteside%' AND region_name ILIKE '%Illinois%' LIMIT 1))\n  AND leisure = 'golf_course'\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 17.473
+  },
+  {
+    "id": 134,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Cowen%' LIMIT 1))\n  AND leisure = 'nature_reserve'\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.128
+  },
+  {
+    "id": 135,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE addr_county ILIKE '%mclennan%'\n  AND water = 'reservoir'\nORDER BY ST_Area(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 10.444
+  },
+  {
+    "id": 136,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Berkshire County%' LIMIT 1))\n  AND park_name ILIKE '%garden%'\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.342
+  },
+  {
+    "id": 137,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Tobyhanna Township%' LIMIT 1))\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.424
+  },
+  {
+    "id": 138,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%New York City%' LIMIT 1))\nAND leisure = 'golf_course'\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.062
+  },
+  {
+    "id": 139,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE leisure = 'nature_reserve'\n  AND ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Mississippi%' LIMIT 1))\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.489
+  },
+  {
+    "id": 140,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Highlands County%' AND border_type = 'county' LIMIT 1))\nORDER BY ST_Area(lakes.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.488
+  },
+  {
+    "id": 141,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Chesapeake%' AND border_type = 'city' LIMIT 1))\nORDER BY ST_Area(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.635
+  },
+  {
+    "id": 142,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE leisure = 'golf_course'\n  AND ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Ohio%' LIMIT 1))\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.489
+  },
+  {
+    "id": 143,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Grand Traverse%' AND border_type ILIKE '%county%' LIMIT 1))\nORDER BY ST_Area(lakes.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.491
+  },
+  {
+    "id": 144,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Mamakating%' LIMIT 1))\nORDER BY ST_Area(lakes.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.851
+  },
+  {
+    "id": 145,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Chisago%' LIMIT 1))\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Minnesota%' LIMIT 1))\nORDER BY ST_Area(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 17.899
+  },
+  {
+    "id": 146,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Virginia%' LIMIT 1))\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 12.578
+  },
+  {
+    "id": 147,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE water = 'bay'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Virginia Beach%' LIMIT 1))\nORDER BY ST_Area(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.423
+  },
+  {
+    "id": 148,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%boston%' LIMIT 1))\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 12.146
+  },
+  {
+    "id": 149,
+    "content": "```sql\nSELECT park_name, ST_Area(geometry::geography) AS area\nFROM parks\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Dukes County%' LIMIT 1))\n  AND leisure = 'recreation_ground'\nORDER BY area DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.277
+  },
+  {
+    "id": 150,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE addr_city ILIKE '%oil city%'\n  AND addr_state ILIKE '%louisiana%'\nORDER BY ST_Area(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 10.44
+  },
+  {
+    "id": 151,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%mississippi%' LIMIT 1))\n  AND leisure = 'garden'\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.13
+  },
+  {
+    "id": 152,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Connecticut%' LIMIT 1))\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.423
+  },
+  {
+    "id": 153,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Lincoln County%' LIMIT 1))\n  AND water = 'reservoir'\nORDER BY ST_Area(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.849
+  },
+  {
+    "id": 154,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Pennsylvania%' LIMIT 1))\n  AND leisure = 'nature_reserve'\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.128
+  },
+  {
+    "id": 155,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Galway%' LIMIT 1))\nORDER BY ST_Area(lakes.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 12.787
+  },
+  {
+    "id": 156,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Berkshire County%' LIMIT 1))\n  AND leisure = 'recreation_ground'\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.768
+  },
+  {
+    "id": 157,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Muskegon%' AND border_type = 'county' LIMIT 1))\nORDER BY ST_Area(lakes.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.134
+  },
+  {
+    "id": 158,
+    "content": "```sql\nSELECT park_name, ST_Area(geometry::geography) AS area\nFROM parks\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%United States%' LIMIT 1))\n  AND leisure = 'common'\nORDER BY area DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.638
+  },
+  {
+    "id": 159,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE addr_city ILIKE '%aberdeen%'\n  AND water = 'reservoir'\nORDER BY ST_Area(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 9.801
+  },
+  {
+    "id": 160,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%boston%' LIMIT 1))\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 12.787
+  },
+  {
+    "id": 161,
+    "content": "```sql\nSELECT lake_name, ST_Area(geometry::geography) AS area_sqm\nFROM lakes\nWHERE water = 'reservoir'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%united states%' LIMIT 1))\nORDER BY area_sqm DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.915
+  },
+  {
+    "id": 162,
+    "content": "```sql\nSELECT park_name, ST_Area(geometry::geography) AS area\nFROM parks\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Pennsylvania%' LIMIT 1))\n  AND leisure = 'golf_course'\nORDER BY area DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.064
+  },
+  {
+    "id": 163,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Livingston County%' AND border_type = 'county' LIMIT 1))\n  AND leisure = 'golf_course'\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 17.048
+  },
+  {
+    "id": 164,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE leisure = 'golf_course'\n  AND ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Berkshire County%' LIMIT 1))\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.488
+  },
+  {
+    "id": 165,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Washington Township%' AND region_name ILIKE '%Westmoreland County%' LIMIT 1))\n  AND water = 'reservoir'\nORDER BY ST_Area(lakes.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 16.835
+  },
+  {
+    "id": 166,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE ST_Intersects(geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Mayes County%' LIMIT 1))\n  AND water = 'reservoir'\nORDER BY ST_Area(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.488
+  },
+  {
+    "id": 167,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Burke County%' LIMIT 1))\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 12.357
+  },
+  {
+    "id": 168,
+    "content": "```sql\nSELECT p.park_name, ST_Area(p.geometry::geography) AS area\nFROM parks p\nWHERE ST_Intersects(p.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Ohio%' LIMIT 1))\n  AND p.leisure = 'nature_reserve'\nORDER BY area DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.126
+  },
+  {
+    "id": 169,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE water = 'reservoir'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Missouri%' LIMIT 1))\nORDER BY ST_Area(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.637
+  },
+  {
+    "id": 170,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE leisure = 'golf_course'\n  AND ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Asheville%' LIMIT 1))\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.275
+  },
+  {
+    "id": 171,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Lane%' AND region_name ILIKE '%Oregon%' LIMIT 1))\n  AND water = 'reservoir'\nORDER BY ST_Area(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.127
+  },
+  {
+    "id": 172,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Virginia%' LIMIT 1))\n  AND leisure = 'golf_course'\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.131
+  },
+  {
+    "id": 173,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Harrietstown%' LIMIT 1))\nORDER BY ST_Area(lakes.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.637
+  },
+  {
+    "id": 174,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%boston%' LIMIT 1))\n  AND leisure = 'golf_course'\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.063
+  },
+  {
+    "id": 175,
+    "content": "```sql\nSELECT park_name, ST_Area(geometry::geography) AS area\nFROM parks\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%New York City%' LIMIT 1))\n  AND leisure = 'nature_reserve'\nORDER BY area DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.063
+  },
+  {
+    "id": 176,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE water = 'reservoir'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%East Tawakoni%' LIMIT 1))\nORDER BY ST_Area(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.278
+  },
+  {
+    "id": 177,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Marion County%' AND border_type = 'county' LIMIT 1))\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.49
+  },
+  {
+    "id": 178,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Carver%' AND border_type = 'city' LIMIT 1))\n  AND water = 'reservoir'\nORDER BY ST_Area(lakes.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 16.623
+  },
+  {
+    "id": 179,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Livingston County%' AND border_type = 'county' LIMIT 1))\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.853
+  },
+  {
+    "id": 180,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Tobyhanna Township%' LIMIT 1))\n  AND leisure = 'nature_reserve'\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.129
+  },
+  {
+    "id": 181,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Connecticut%' LIMIT 1))\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 12.146
+  },
+  {
+    "id": 182,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE water = 'reservoir'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Carbon County%' AND region_name ILIKE '%Utah%' LIMIT 1))\nORDER BY ST_Area(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.556
+  },
+  {
+    "id": 183,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Pennsylvania%' LIMIT 1))\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 12.148
+  },
+  {
+    "id": 184,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Asheville%' LIMIT 1))\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 12.997
+  },
+  {
+    "id": 185,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Dukes County%' LIMIT 1))\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 12.997
+  },
+  {
+    "id": 186,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Mathias Township%' LIMIT 1))\nORDER BY ST_Area(lakes.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.637
+  },
+  {
+    "id": 187,
+    "content": "```sql\nSELECT leisure, park_name, ST_Area(geometry::geography) AS area\nFROM parks\nWHERE leisure = 'marina'\nORDER BY area DESC\nLIMIT 1;\n```",
+    "run_seconds": 8.952
+  },
+  {
+    "id": 188,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE addr_state ILIKE '%connecticut%'\n  AND water = 'reservoir'\nORDER BY ST_Area(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 9.802
+  },
+  {
+    "id": 189,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE water = 'reservoir'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Kentucky%' LIMIT 1))\nORDER BY ST_Area(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.638
+  },
+  {
+    "id": 190,
+    "content": "```sql\nSELECT lake_name, ST_Area(geometry::geography) AS area\nFROM lakes\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%United States%' LIMIT 1))\nORDER BY area DESC\nLIMIT 1;\n```",
+    "run_seconds": 12.145
+  },
+  {
+    "id": 191,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE water = 'reservoir'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Mastodon Township%' LIMIT 1))\nORDER BY ST_Area(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.063
+  },
+  {
+    "id": 192,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Portland%' LIMIT 1))\nAND leisure = 'garden'\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.701
+  },
+  {
+    "id": 193,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE water = 'reservoir'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Pennsylvania%' LIMIT 1))\nORDER BY ST_Area(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.639
+  },
+  {
+    "id": 194,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Freeman Township%' AND region_name ILIKE '%Michigan%' LIMIT 1))\nORDER BY ST_Area(lakes.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.701
+  },
+  {
+    "id": 195,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE water = 'reservoir'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Custer County%' AND border_type = 'county' LIMIT 1))\nORDER BY ST_Area(geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.345
+  },
+  {
+    "id": 196,
+    "content": "```sql\nSELECT park_name, ST_Area(geometry::geography) AS area\nFROM parks\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%seattle%' LIMIT 1))\n  AND leisure = 'common'\nORDER BY area DESC\nLIMIT 1;\n```",
+    "run_seconds": 13.64
+  },
+  {
+    "id": 197,
+    "content": "```sql\nSELECT park_name, ST_Area(geometry::geography) AS area\nFROM parks\nWHERE ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%united states%' LIMIT 1))\n  AND leisure = 'recreation_ground'\nORDER BY area DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.277
+  },
+  {
+    "id": 198,
+    "content": "```sql\nSELECT lake_name\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Eaton%' LIMIT 1))\n  AND water = 'reservoir'\nORDER BY ST_Area(lakes.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 15.129
+  },
+  {
+    "id": 199,
+    "content": "```sql\nSELECT park_name\nFROM parks\nWHERE leisure = 'nature_reserve'\n  AND ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Virginia%' LIMIT 1))\nORDER BY ST_Area(parks.geometry::geography) DESC\nLIMIT 1;\n```",
+    "run_seconds": 14.276
+  }
+]

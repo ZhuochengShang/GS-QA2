@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 4.786883
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 4.786883
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-85.664879 38.046005, -85.672777 38.046495, -85.675581 38.046513, -85.677349 38.046741, -85.679245 38.046942, -85.67917 38.047145, -85.679128 38.047259, -85.678921 38.047847, -85.678875 38.047995, -85.678714 38.048425, -85.678674 38.048531, -85.678626 38.048655, -85.678589 38.048771, -85.678537 38.048934, -85.67848 38.049108, -85.678339 38.049535, -85.678234 38.049822, -85.678099 38.050181, -85.678064 38.050271, -85.67799 38.050442, -85.677797 38.050853, -85.67759 38.051242, -85.677499 38.051384, -85.677369 38.051608, -85.677022 38.052158, -85.676788 38.05252, -85.67646 38.05302, -85.676032 38.053672, -85.675843 38.053958, -85.67564 38.054368, -85.675518 38.054633, -85.674161 38.054438, -85.663258 38.05358, -85.657183 38.053102, -85.657216 38.052867, -85.657232 38.052762, -85.657364 38.052641, -85.657746 38.05252, -85.65785 38.052449, -85.657982 38.052295, -85.658198 38.052207, -85.658378 38.052087, -85.658531 38.051889, -85.658601 38.051697, -85.658552 38.051482, -85.658407 38.051323, -85.658233 38.051186, -85.657622 38.050916, -85.657233 38.050713, -85.657103 38.050327, -85.657672 38.050241, -85.657755 38.04887, -85.658336 38.048873, -85.658327 38.046248, -85.657565 38.046196, -85.65746 38.046081, -85.658129 38.045639, -85.657561 38.044916, -85.658905 38.045139, -85.658999 38.045292, -85.659094 38.045396, -85.65942 38.045505, -85.659624 38.045586, -85.659863 38.045656, -85.660153 38.045691, -85.660617 38.045743, -85.661016 38.04579, -85.661785 38.045644, -85.663782 38.046037, -85.664879 38.046005))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).mean AS slope\nFROM region_slope;",
+  "id": "avg_slope+area-0",
+  "model_output": "```sql\nWITH hebron_estates_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE '%Hebron Estates%' AND border_type = 'neighbourhood'\n),\nraster_subset AS (\n  SELECT\n    ST_Clip(\n      rast,\n      (SELECT geom FROM hebron_estates_geom),\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM hebron_estates_geom))\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF', TRUE) AS slope_rast\n  FROM raster_subset\n)\nSELECT\n  ROUND(AVG(value), 2) AS avg_slope_degrees\nFROM (\n  SELECT\n    (ST_SummaryStats(slope_rast, TRUE)).*\n  FROM slope_raster\n) AS stats;\n```",
+  "predicted_exec": {
+    "error": "function st_slope(raster, integer, unknown, boolean) does not exist\nLINE 18:     ST_Slope(clipped_rast, 1, '32BF', TRUE) AS slope_rast\n             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH hebron_estates_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE '%Hebron Estates%' AND border_type = 'neighbourhood'\n),\nraster_subset AS (\n  SELECT\n    ST_Clip(\n      rast,\n      (SELECT geom FROM hebron_estates_geom),\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM hebron_estates_geom))\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF', TRUE) AS slope_rast\n  FROM raster_subset\n)\nSELECT\n  ROUND(AVG(value), 2) AS avg_slope_degrees\nFROM (\n  SELECT\n    (ST_SummaryStats(slope_rast, TRUE)).*\n  FROM slope_raster\n) AS stats;",
+  "predicted_sql_candidates": [
+    "WITH hebron_estates_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE '%Hebron Estates%' AND border_type = 'neighbourhood'\n),\nraster_subset AS (\n  SELECT\n    ST_Clip(\n      rast,\n      (SELECT geom FROM hebron_estates_geom),\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM hebron_estates_geom))\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF', TRUE) AS slope_rast\n  FROM raster_subset\n)\nSELECT\n  ROUND(AVG(value), 2) AS avg_slope_degrees\nFROM (\n  SELECT\n    (ST_SummaryStats(slope_rast, TRUE)).*\n  FROM slope_raster\n) AS stats;"
+  ],
+  "query_type": "raster_only",
+  "question": "How steep is Hebron Estates, Kentucky on average?",
+  "source_file": "avg_slope+area.jsonl",
+  "source_stem": "avg_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 43.067,
+    "total_seconds": 43.068
+  },
+  "usage": {
+    "completion_tokens": 195,
+    "prompt_tokens": 1515,
+    "total_tokens": 1710
+  }
+}

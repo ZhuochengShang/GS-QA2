@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 45.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 45.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-89.021261 44.460738, -89.021477 44.446139, -89.041988 44.446352, -89.041767 44.460848, -89.021261 44.460738))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n),\nstats AS (\n  SELECT ST_SummaryStats(ST_Union(rast)) AS s\n  FROM clipped\n)\nSELECT (s).max - (s).min AS elevation\nFROM stats;",
+  "id": "elevation_range+region-10",
+  "model_output": "```sql\nWITH clipped_dem AS (\n  SELECT \n    ST_Clip(\n      r.rast, \n      1, \n      ST_GeomFromText('POLYGON ((-89.021261 44.460738, -89.021477 44.446139, -89.041988 44.446352, -89.041767 44.460848, -89.021261 44.460738))', 4326)::geometry\n    ) AS clipped_rast\n  FROM \n    public.dem_us r\n  WHERE \n    ST_Intersects(\n      r.rast, \n      ST_GeomFromText('POLYGON ((-89.021261 44.460738, -89.021477 44.446139, -89.041988 44.446352, -89.041767 44.460848, -89.021261 44.460738))', 4326)::geometry\n    )\n)\nSELECT \n  MIN(ST_Value(clipped_rast, 1)) AS min_elevation,\n  MAX(ST_Value(clipped_rast, 1)) AS max_elevation\nFROM \n  clipped_dem;\n```",
+  "predicted_exec": {
+    "error": "function st_value(raster, integer) does not exist\nLINE 17:   MIN(ST_Value(clipped_rast, 1)) AS min_elevation,\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH clipped_dem AS (\n  SELECT \n    ST_Clip(\n      r.rast, \n      1, \n      ST_GeomFromText('POLYGON ((-89.021261 44.460738, -89.021477 44.446139, -89.041988 44.446352, -89.041767 44.460848, -89.021261 44.460738))', 4326)::geometry\n    ) AS clipped_rast\n  FROM \n    public.dem_us r\n  WHERE \n    ST_Intersects(\n      r.rast, \n      ST_GeomFromText('POLYGON ((-89.021261 44.460738, -89.021477 44.446139, -89.041988 44.446352, -89.041767 44.460848, -89.021261 44.460738))', 4326)::geometry\n    )\n)\nSELECT \n  MIN(ST_Value(clipped_rast, 1)) AS min_elevation,\n  MAX(ST_Value(clipped_rast, 1)) AS max_elevation\nFROM \n  clipped_dem;",
+  "predicted_sql_candidates": [
+    "WITH clipped_dem AS (\n  SELECT \n    ST_Clip(\n      r.rast, \n      1, \n      ST_GeomFromText('POLYGON ((-89.021261 44.460738, -89.021477 44.446139, -89.041988 44.446352, -89.041767 44.460848, -89.021261 44.460738))', 4326)::geometry\n    ) AS clipped_rast\n  FROM \n    public.dem_us r\n  WHERE \n    ST_Intersects(\n      r.rast, \n      ST_GeomFromText('POLYGON ((-89.021261 44.460738, -89.021477 44.446139, -89.041988 44.446352, -89.041767 44.460848, -89.021261 44.460738))', 4326)::geometry\n    )\n)\nSELECT \n  MIN(ST_Value(clipped_rast, 1)) AS min_elevation,\n  MAX(ST_Value(clipped_rast, 1)) AS max_elevation\nFROM \n  clipped_dem;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the elevation range in Ogdensburg, Wisconsin?",
+  "source_file": "elevation_range+region.jsonl",
+  "source_stem": "elevation_range+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 75.689,
+    "total_seconds": 75.69
+  },
+  "usage": {
+    "completion_tokens": 355,
+    "prompt_tokens": 1610,
+    "total_tokens": 1965
+  }
+}

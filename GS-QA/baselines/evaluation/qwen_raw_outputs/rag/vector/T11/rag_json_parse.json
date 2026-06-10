@@ -1,0 +1,2102 @@
+[
+  {
+    "id": 100,
+    "run_seconds": 3.643,
+    "content": "```json\n{\n    \"name\": \"Delaware County\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 165,
+      "output_tokens": 16,
+      "total_tokens": 181,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 165,
+        "total_tokens": 181,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 101,
+    "run_seconds": 11.064,
+    "content": "```json\n{\n    \"name\": null,\n    \"address\": null,\n    \"count\": null,\n    \"distance\": null,\n    \"length\": null,\n    \"area\": null,\n    \"azimuth_angle\": null\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 185,
+      "output_tokens": 51,
+      "total_tokens": 236,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 51,
+        "prompt_tokens": 185,
+        "total_tokens": 236,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 102,
+    "run_seconds": 5.53,
+    "content": "```json\n{\n    \"name\": \"There is no widely recognized lake in Santa Rosa, New Mexico.\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 182,
+      "output_tokens": 25,
+      "total_tokens": 207,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 182,
+        "total_tokens": 207,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 103,
+    "run_seconds": 7.232,
+    "content": "```json\n{\n    \"name\": \"The largest park in Livingston County, Michigan\",\n    \"address\": \"Not listed in the provided data\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 180,
+      "output_tokens": 33,
+      "total_tokens": 213,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 33,
+        "prompt_tokens": 180,
+        "total_tokens": 213,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 104,
+    "run_seconds": 11.701,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0,\n    \"distance\": 0,\n    \"length\": 0,\n    \"area\": 0,\n    \"azimuth_angle\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 54,
+      "total_tokens": 232,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 54,
+        "prompt_tokens": 178,
+        "total_tokens": 232,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 105,
+    "run_seconds": 11.7,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0,\n    \"distance\": 0,\n    \"length\": 0,\n    \"area\": 0,\n    \"azimuth_angle\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 179,
+      "output_tokens": 54,
+      "total_tokens": 233,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 54,
+        "prompt_tokens": 179,
+        "total_tokens": 233,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 106,
+    "run_seconds": 4.255,
+    "content": "```json\n{\n    \"name\": \"Pinckney State Recreation Area\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 19,
+      "total_tokens": 189,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 170,
+        "total_tokens": 189,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 107,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"name\": \"Franklin Park Natural Area\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 18,
+      "total_tokens": 191,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 173,
+        "total_tokens": 191,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 108,
+    "run_seconds": 3.826,
+    "content": "```json\n{\n    \"name\": \"Dillon Reservoir\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 182,
+      "output_tokens": 17,
+      "total_tokens": 199,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 182,
+        "total_tokens": 199,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 109,
+    "run_seconds": 1.486,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 6,
+      "total_tokens": 179,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 173,
+        "total_tokens": 179,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 110,
+    "run_seconds": 4.254,
+    "content": "```json\n{\n    \"name\": \"Pebble Beach Golf Links\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 185,
+      "output_tokens": 19,
+      "total_tokens": 204,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 185,
+        "total_tokens": 204,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 111,
+    "run_seconds": 3.614,
+    "content": "```json\n{\n    \"name\": \"New York Harbor\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 16,
+      "total_tokens": 186,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 170,
+        "total_tokens": 186,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 112,
+    "run_seconds": 3.828,
+    "content": "```json\n{\n    \"name\": \"Yosemite National Park\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 169,
+      "output_tokens": 17,
+      "total_tokens": 186,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 169,
+        "total_tokens": 186,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 113,
+    "run_seconds": 4.252,
+    "content": "```json\n{\n    \"name\": \"Tuxedo Park Golf Club\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 177,
+      "output_tokens": 19,
+      "total_tokens": 196,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 177,
+        "total_tokens": 196,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 114,
+    "run_seconds": 5.529,
+    "content": "```json\n{\n    \"name\": \"There is no known golf course in Burke County, North Carolina.\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 181,
+      "output_tokens": 25,
+      "total_tokens": 206,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 181,
+        "total_tokens": 206,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 115,
+    "run_seconds": 4.252,
+    "content": "```json\n{\n    \"name\": \"Hickory Grove Riverfront\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 172,
+      "output_tokens": 19,
+      "total_tokens": 191,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 172,
+        "total_tokens": 191,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 116,
+    "run_seconds": 3.4,
+    "content": "```json\n{\n    \"name\": \"Lake George\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 15,
+      "total_tokens": 185,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 170,
+        "total_tokens": 185,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 117,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"name\": \"Quabbin Reservoir\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 18,
+      "total_tokens": 191,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 173,
+        "total_tokens": 191,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 118,
+    "run_seconds": 6.807,
+    "content": "```json\n{\n    \"name\": \"The largest known golf course in Hawthorn Woods, Illinois is not listed in the provided data.\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 31,
+      "total_tokens": 218,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 31,
+        "prompt_tokens": 187,
+        "total_tokens": 218,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 119,
+    "run_seconds": 3.188,
+    "content": "```json\n{\n    \"name\": \"None\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 14,
+      "total_tokens": 184,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 170,
+        "total_tokens": 184,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 120,
+    "run_seconds": 3.402,
+    "content": "```json\n{\n    \"name\": \"Lake Geneva\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 185,
+      "output_tokens": 15,
+      "total_tokens": 200,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 185,
+        "total_tokens": 200,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 121,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"name\": \"Beaver Run Reservoir\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 171,
+      "output_tokens": 18,
+      "total_tokens": 189,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 171,
+        "total_tokens": 189,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 122,
+    "run_seconds": 4.252,
+    "content": "```json\n{\n    \"name\": \"Wachusett Reservoir\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 168,
+      "output_tokens": 19,
+      "total_tokens": 187,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 168,
+        "total_tokens": 187,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 123,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"name\": \"Oaks Crossing Natural Area\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 18,
+      "total_tokens": 188,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 170,
+        "total_tokens": 188,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 124,
+    "run_seconds": 7.019,
+    "content": "```json\n{\n    \"name\": \"The largest-scale nature reserve in Seattle\",\n    \"address\": \"Not listed in the provided data\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 179,
+      "output_tokens": 32,
+      "total_tokens": 211,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 32,
+        "prompt_tokens": 179,
+        "total_tokens": 211,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 125,
+    "run_seconds": 3.401,
+    "content": "```json\n{\n    \"name\": \"Lake Roosevelt\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 171,
+      "output_tokens": 15,
+      "total_tokens": 186,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 171,
+        "total_tokens": 186,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 126,
+    "run_seconds": 3.614,
+    "content": "```json\n{\n    \"name\": \"Longwood Gardens\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 16,
+      "total_tokens": 189,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 173,
+        "total_tokens": 189,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 127,
+    "run_seconds": 3.827,
+    "content": "```json\n{\n    \"name\": \"Yosemite National Park\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 169,
+      "output_tokens": 17,
+      "total_tokens": 186,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 169,
+        "total_tokens": 186,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 128,
+    "run_seconds": 3.144,
+    "content": "```json\n{\n    \"name\": \"None\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 168,
+      "output_tokens": 14,
+      "total_tokens": 182,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 168,
+        "total_tokens": 182,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 129,
+    "run_seconds": 6.168,
+    "content": "```json\n{\n    \"name\": \"There is no nature reserve in Wheelock, Vermont listed in the provided data.\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 183,
+      "output_tokens": 28,
+      "total_tokens": 211,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 28,
+        "prompt_tokens": 183,
+        "total_tokens": 211,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 130,
+    "run_seconds": 3.827,
+    "content": "```json\n{\n    \"name\": \"Pueblo Reservoir\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 17,
+      "total_tokens": 205,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 188,
+        "total_tokens": 205,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 131,
+    "run_seconds": 3.401,
+    "content": "```json\n{\n    \"name\": \"Bear Lake\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 169,
+      "output_tokens": 15,
+      "total_tokens": 184,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 169,
+        "total_tokens": 184,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 132,
+    "run_seconds": 3.399,
+    "content": "```json\n{\n    \"name\": \"Jackson County\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 165,
+      "output_tokens": 15,
+      "total_tokens": 180,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 165,
+        "total_tokens": 180,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 133,
+    "run_seconds": 4.039,
+    "content": "```json\n{\n    \"name\": \"Sage Valley Golf Club\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 172,
+      "output_tokens": 18,
+      "total_tokens": 190,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 172,
+        "total_tokens": 190,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 134,
+    "run_seconds": 4.464,
+    "content": "```json\n{\n    \"name\": \"Chestnut Ridge Natural Area Preserve\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 174,
+      "output_tokens": 20,
+      "total_tokens": 194,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 174,
+        "total_tokens": 194,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 135,
+    "run_seconds": 3.615,
+    "content": "```json\n{\n    \"name\": \"Lake Waco\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 184,
+      "output_tokens": 16,
+      "total_tokens": 200,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 184,
+        "total_tokens": 200,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 136,
+    "run_seconds": 4.252,
+    "content": "```json\n{\n    \"name\": \"Berkshire Botanical Garden\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 19,
+      "total_tokens": 205,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 186,
+        "total_tokens": 205,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 137,
+    "run_seconds": 4.252,
+    "content": "```json\n{\n    \"name\": \"Kenney Askew County Park\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 19,
+      "total_tokens": 192,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 173,
+        "total_tokens": 192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 138,
+    "run_seconds": 5.315,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 24,
+      "total_tokens": 202,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 178,
+        "total_tokens": 202,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 139,
+    "run_seconds": 11.063,
+    "content": "```json\n{\n    \"name\": null,\n    \"address\": null,\n    \"count\": null,\n    \"distance\": null,\n    \"length\": null,\n    \"area\": null,\n    \"azimuth_angle\": null\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 185,
+      "output_tokens": 51,
+      "total_tokens": 236,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 51,
+        "prompt_tokens": 185,
+        "total_tokens": 236,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 140,
+    "run_seconds": 3.401,
+    "content": "```json\n{\n    \"name\": \"Lake June\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 168,
+      "output_tokens": 15,
+      "total_tokens": 183,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 168,
+        "total_tokens": 183,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 141,
+    "run_seconds": 3.827,
+    "content": "```json\n{\n    \"name\": \"Chesapeake Bay\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 171,
+      "output_tokens": 17,
+      "total_tokens": 188,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 171,
+        "total_tokens": 188,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 142,
+    "run_seconds": 11.061,
+    "content": "```json\n{\n    \"name\": null,\n    \"address\": null,\n    \"count\": null,\n    \"distance\": null,\n    \"length\": null,\n    \"area\": null,\n    \"azimuth_angle\": null\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 197,
+      "output_tokens": 51,
+      "total_tokens": 248,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 51,
+        "prompt_tokens": 197,
+        "total_tokens": 248,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 143,
+    "run_seconds": 6.38,
+    "content": "```json\n{\n    \"name\": \"Grand Traverse County\",\n    \"address\": \"Grand Traverse County, Michigan, USA\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 29,
+      "total_tokens": 199,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 29,
+        "prompt_tokens": 170,
+        "total_tokens": 199,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 144,
+    "run_seconds": 3.614,
+    "content": "```json\n{\n    \"name\": \"Lake Mohawk\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 183,
+      "output_tokens": 16,
+      "total_tokens": 199,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 183,
+        "total_tokens": 199,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 145,
+    "run_seconds": 6.381,
+    "content": "```json\n{\n    \"name\": \"There is no lake named or recorded as being in Chisago City, Minnesota.\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 185,
+      "output_tokens": 29,
+      "total_tokens": 214,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 29,
+        "prompt_tokens": 185,
+        "total_tokens": 214,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 146,
+    "run_seconds": 3.615,
+    "content": "```json\n{\n    \"name\": \"Middlesex County\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 166,
+      "output_tokens": 16,
+      "total_tokens": 182,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 166,
+        "total_tokens": 182,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 147,
+    "run_seconds": 3.826,
+    "content": "```json\n{\n    \"name\": \"Chesapeake Bay\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 169,
+      "output_tokens": 17,
+      "total_tokens": 186,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 169,
+        "total_tokens": 186,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 148,
+    "run_seconds": 4.464,
+    "content": "```json\n{\n    \"name\": \"Shady Glade - Trail Head\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 171,
+      "output_tokens": 20,
+      "total_tokens": 191,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 171,
+        "total_tokens": 191,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 149,
+    "run_seconds": 4.004,
+    "content": "```json\n{\n    \"name\": \"Fort Fisher State Recreation Area\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 191,
+      "output_tokens": 18,
+      "total_tokens": 209,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 191,
+        "total_tokens": 209,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 150,
+    "run_seconds": 3.4,
+    "content": "```json\n{\n    \"name\": \"Lake Charles\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 15,
+      "total_tokens": 185,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 170,
+        "total_tokens": 185,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 151,
+    "run_seconds": 11.699,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0,\n    \"distance\": 0,\n    \"length\": 0,\n    \"area\": 0,\n    \"azimuth_angle\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 175,
+      "output_tokens": 54,
+      "total_tokens": 229,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 54,
+        "prompt_tokens": 175,
+        "total_tokens": 229,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 152,
+    "run_seconds": 4.252,
+    "content": "```json\n{\n    \"name\": \"Cockaponset State Forest\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 169,
+      "output_tokens": 19,
+      "total_tokens": 188,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 169,
+        "total_tokens": 188,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 153,
+    "run_seconds": 3.827,
+    "content": "```json\n{\n    \"name\": \"Lake Hefner\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 180,
+      "output_tokens": 17,
+      "total_tokens": 197,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 180,
+        "total_tokens": 197,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 154,
+    "run_seconds": 4.89,
+    "content": "```json\n{\n    \"name\": \"Robert B. Gordon Natural Area for Environmental Studies\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 175,
+      "output_tokens": 22,
+      "total_tokens": 197,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 175,
+        "total_tokens": 197,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 155,
+    "run_seconds": 7.231,
+    "content": "```json\n{\n    \"name\": \"Galway\",\n    \"address\": \"Galway, New York\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 175,
+      "output_tokens": 33,
+      "total_tokens": 208,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 33,
+        "prompt_tokens": 175,
+        "total_tokens": 208,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 156,
+    "run_seconds": 8.722,
+    "content": "```json\n{\n    \"name\": \"Shady Glade - Trail Head\",\n    \"address\": \"Tyngsborough, Massachusetts\",\n    \"area\": 70\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 190,
+      "output_tokens": 40,
+      "total_tokens": 230,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 40,
+        "prompt_tokens": 190,
+        "total_tokens": 230,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 157,
+    "run_seconds": 3.826,
+    "content": "```json\n{\n    \"name\": \"Muskegon Lake\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 172,
+      "output_tokens": 17,
+      "total_tokens": 189,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 172,
+        "total_tokens": 189,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 158,
+    "run_seconds": 3.4,
+    "content": "```json\n{\n    \"name\": \"Boston Common\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 15,
+      "total_tokens": 193,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 178,
+        "total_tokens": 193,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 159,
+    "run_seconds": 4.252,
+    "content": "```json\n{\n    \"name\": \"Chehalis River Reservoir\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 184,
+      "output_tokens": 19,
+      "total_tokens": 203,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 184,
+        "total_tokens": 203,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 160,
+    "run_seconds": 1.487,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 6,
+      "total_tokens": 179,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 173,
+        "total_tokens": 179,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 161,
+    "run_seconds": 3.614,
+    "content": "```json\n{\n    \"name\": \"Oahe\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 169,
+      "output_tokens": 16,
+      "total_tokens": 185,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 169,
+        "total_tokens": 185,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 162,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"name\": \"Hershey Country Club\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 179,
+      "output_tokens": 18,
+      "total_tokens": 197,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 179,
+        "total_tokens": 197,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 163,
+    "run_seconds": 6.38,
+    "content": "```json\n{\n    \"name\": \"There is no golf course listed in the provided data located in Livingston County, Michigan.\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 184,
+      "output_tokens": 29,
+      "total_tokens": 213,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 29,
+        "prompt_tokens": 184,
+        "total_tokens": 213,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 164,
+    "run_seconds": 1.485,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 204,
+      "output_tokens": 6,
+      "total_tokens": 210,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 204,
+        "total_tokens": 210,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 165,
+    "run_seconds": 6.594,
+    "content": "```json\n{\n    \"name\": \"There is no record of a reservoir in Washington Township, Westmoreland County, Pennsylvania.\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 189,
+      "output_tokens": 30,
+      "total_tokens": 219,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 30,
+        "prompt_tokens": 189,
+        "total_tokens": 219,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 166,
+    "run_seconds": 11.061,
+    "content": "```json\n{\n    \"name\": null,\n    \"address\": null,\n    \"count\": null,\n    \"distance\": null,\n    \"length\": null,\n    \"area\": null,\n    \"azimuth_angle\": null\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 183,
+      "output_tokens": 51,
+      "total_tokens": 234,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 51,
+        "prompt_tokens": 183,
+        "total_tokens": 234,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 167,
+    "run_seconds": 12.125,
+    "content": "```json\n{\n    \"name\": \"None\",\n    \"address\": \"\",\n    \"count\": 0,\n    \"distance\": 0,\n    \"length\": 0,\n    \"area\": 0,\n    \"azimuth_angle\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 169,
+      "output_tokens": 56,
+      "total_tokens": 225,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 56,
+        "prompt_tokens": 169,
+        "total_tokens": 225,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 168,
+    "run_seconds": 5.53,
+    "content": "```json\n{\n    \"name\": \"Richard and Lucile Durrell Edge of Appalachia Preserve\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 177,
+      "output_tokens": 25,
+      "total_tokens": 202,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 177,
+        "total_tokens": 202,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 169,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"name\": \"Lake of the Ozarks\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 18,
+      "total_tokens": 196,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 178,
+        "total_tokens": 196,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 170,
+    "run_seconds": 3.188,
+    "content": "```json\n{\n    \"name\": \"None\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 168,
+      "output_tokens": 14,
+      "total_tokens": 182,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 168,
+        "total_tokens": 182,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 171,
+    "run_seconds": 3.828,
+    "content": "```json\n{\n    \"name\": \"Dexter Reservoir\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 17,
+      "total_tokens": 195,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 178,
+        "total_tokens": 195,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 172,
+    "run_seconds": 4.252,
+    "content": "```json\n{\n    \"name\": \"Kingston Plantation Golf Club\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 182,
+      "output_tokens": 19,
+      "total_tokens": 201,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 182,
+        "total_tokens": 201,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 173,
+    "run_seconds": 3.401,
+    "content": "```json\n{\n    \"name\": \"Lake George\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 15,
+      "total_tokens": 185,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 170,
+        "total_tokens": 185,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 174,
+    "run_seconds": 1.273,
+    "content": "```json\n```",
+    "usage_metadata": {
+      "input_tokens": 174,
+      "output_tokens": 5,
+      "total_tokens": 179,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 174,
+        "total_tokens": 179,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 175,
+    "run_seconds": 5.955,
+    "content": "```json\n{\n    \"name\": \"There is no nature reserve listed in the provided data for New York City.\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 181,
+      "output_tokens": 27,
+      "total_tokens": 208,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 27,
+        "prompt_tokens": 181,
+        "total_tokens": 208,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 176,
+    "run_seconds": 10.848,
+    "content": "```json\n{\n    \"name\": \"East Tawakoni State Park\",\n    \"address\": \"10000 FM 1422, Tawakoni, TX 75161\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 50,
+      "total_tokens": 236,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 50,
+        "prompt_tokens": 186,
+        "total_tokens": 236,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 177,
+    "run_seconds": 3.827,
+    "content": "```json\n{\n    \"name\": \"Indianapolis Motor Speedway\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 180,
+      "output_tokens": 17,
+      "total_tokens": 197,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 180,
+        "total_tokens": 197,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 178,
+    "run_seconds": 3.827,
+    "content": "```json\n{\n    \"name\": \"Mill Pond Reservoir\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 184,
+      "output_tokens": 17,
+      "total_tokens": 201,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 184,
+        "total_tokens": 201,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 179,
+    "run_seconds": 4.252,
+    "content": "```json\n{\n    \"name\": \"Jamesburg County Park Conservation Area\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 19,
+      "total_tokens": 192,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 173,
+        "total_tokens": 192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 180,
+    "run_seconds": 4.891,
+    "content": "```json\n{\n    \"name\": \"Negri-Nepote Native Grassland Preserve\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 179,
+      "output_tokens": 22,
+      "total_tokens": 201,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 179,
+        "total_tokens": 201,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 181,
+    "run_seconds": 4.253,
+    "content": "```json\n{\n    \"name\": \"Cockaponset State Forest\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 169,
+      "output_tokens": 19,
+      "total_tokens": 188,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 169,
+        "total_tokens": 188,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 182,
+    "run_seconds": 3.401,
+    "content": "```json\n{\n    \"name\": \"Lake Powell\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 15,
+      "total_tokens": 193,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 178,
+        "total_tokens": 193,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 183,
+    "run_seconds": 4.039,
+    "content": "```json\n{\n    \"name\": \"Sproul State Forest\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 167,
+      "output_tokens": 18,
+      "total_tokens": 185,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 167,
+        "total_tokens": 185,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 184,
+    "run_seconds": 1.487,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 181,
+      "output_tokens": 6,
+      "total_tokens": 187,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 181,
+        "total_tokens": 187,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 185,
+    "run_seconds": 4.678,
+    "content": "```json\n{\n    \"name\": \"None\",\n    \"address\": \"None\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 182,
+      "output_tokens": 21,
+      "total_tokens": 203,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 182,
+        "total_tokens": 203,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 186,
+    "run_seconds": 3.827,
+    "content": "```json\n{\n    \"name\": \"Muskegon Lake\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 171,
+      "output_tokens": 17,
+      "total_tokens": 188,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 171,
+        "total_tokens": 188,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 187,
+    "run_seconds": 6.592,
+    "content": "```json\n{\n    \"name\": \"United States\u2019s largest marina\",\n    \"address\": \"Islamorada, Florida\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 179,
+      "output_tokens": 30,
+      "total_tokens": 209,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 30,
+        "prompt_tokens": 179,
+        "total_tokens": 209,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 188,
+    "run_seconds": 3.826,
+    "content": "```json\n{\n    \"name\": \"East Branch Reservoir\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 168,
+      "output_tokens": 17,
+      "total_tokens": 185,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 168,
+        "total_tokens": 185,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 189,
+    "run_seconds": 3.4,
+    "content": "```json\n{\n    \"name\": \"Lake Cumberland\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 15,
+      "total_tokens": 188,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 173,
+        "total_tokens": 188,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 190,
+    "run_seconds": 3.4,
+    "content": "```json\n{\n    \"name\": \"Lake Superior\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 169,
+      "output_tokens": 15,
+      "total_tokens": 184,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 169,
+        "total_tokens": 184,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 191,
+    "run_seconds": 3.402,
+    "content": "```json\n{\n    \"name\": \"Lake Superior\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 182,
+      "output_tokens": 15,
+      "total_tokens": 197,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 182,
+        "total_tokens": 197,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 192,
+    "run_seconds": 3.613,
+    "content": "```json\n{\n    \"name\": \"Portland Japanese Garden\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 16,
+      "total_tokens": 194,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 178,
+        "total_tokens": 194,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 193,
+    "run_seconds": 4.038,
+    "content": "```json\n{\n    \"name\": \"Raystown Branch Reservoir\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 176,
+      "output_tokens": 18,
+      "total_tokens": 194,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 176,
+        "total_tokens": 194,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 194,
+    "run_seconds": 5.324,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 210,
+      "output_tokens": 24,
+      "total_tokens": 234,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 210,
+        "total_tokens": 234,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 195,
+    "run_seconds": 3.828,
+    "content": "```json\n{\n    \"name\": \"Tenkiller Ferry Lake\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 17,
+      "total_tokens": 190,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 173,
+        "total_tokens": 190,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 196,
+    "run_seconds": 3.403,
+    "content": "```json\n{\n    \"name\": \"Seattle Commons\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 174,
+      "output_tokens": 15,
+      "total_tokens": 189,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 174,
+        "total_tokens": 189,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 197,
+    "run_seconds": 4.253,
+    "content": "```json\n{\n    \"name\": \"Pinckney State Recreation Area\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 172,
+      "output_tokens": 19,
+      "total_tokens": 191,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 172,
+        "total_tokens": 191,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 198,
+    "run_seconds": 1.487,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 181,
+      "output_tokens": 6,
+      "total_tokens": 187,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 181,
+        "total_tokens": 187,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 199,
+    "run_seconds": 4.254,
+    "content": "```json\n{\n    \"name\": \"Shenandoah National Park\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 19,
+      "total_tokens": 197,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 178,
+        "total_tokens": 197,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  }
+]

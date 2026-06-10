@@ -1,0 +1,63 @@
+{
+  "answer_type": "elevation difference",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation difference",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation_difference_m": 230.0,
+      "poi1_elevation_m": 86.0,
+      "poi2_elevation_m": 316.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation_difference_m": 230.0,
+        "poi1_elevation_m": 86.0,
+        "poi2_elevation_m": 316.0
+      }
+    ]
+  },
+  "gold_sql": "WITH p1 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-73.878898 40.880372)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-73.878898 40.880372)',4326))\n  LIMIT 1\n),\np2 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-79.958626 40.443874)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-79.958626 40.443874)',4326))\n  LIMIT 1\n)\nSELECT\n  ABS(p1.elev - p2.elev) AS elevation_difference_m,\n  p1.elev AS poi1_elevation_m,\n  p2.elev AS poi2_elevation_m\nFROM p1, p2;",
+  "id": "elevation_diff+two_pois-15",
+  "model_output": "```sql\nWITH\n  -- Extract the two points from the structured context\n  points AS (\n    SELECT \n      ST_SetSRID(ST_MakePoint(-73.878898, 40.880372), 4326)::geography AS geom_hospital,\n      ST_SetSRID(ST_MakePoint(-79.958626, 40.443874), 4326)::geography AS geom_university\n  ),\n  -- Get elevation at each point using ST_Value\n  elevations AS (\n    SELECT\n      ST_Value(r.rast, ST_Transform(p.geom_hospital::geometry, 4326)) AS elev_hospital,\n      ST_Value(r.rast, ST_Transform(p.geom_university::geometry, 4326)) AS elev_university\n    FROM\n      points p,\n      public.dem_us r\n    WHERE\n      ST_Intersects(r.rast, ST_Transform(p.geom_hospital::geometry, 4326))\n      OR ST_Intersects(r.rast, ST_Transform(p.geom_university::geometry, 4326))\n  )\n-- Calculate the vertical separation in meters\nSELECT \n  (elev_hospital - elev_university) AS vertical_separation_meters\nFROM\n  elevations\nWHERE\n  elev_hospital IS NOT NULL AND elev_university IS NOT NULL;\n```",
+  "predicted_exec": {
+    "error": "",
+    "output": []
+  },
+  "predicted_sql": "WITH\n  -- Extract the two points from the structured context\n  points AS (\n    SELECT \n      ST_SetSRID(ST_MakePoint(-73.878898, 40.880372), 4326)::geography AS geom_hospital,\n      ST_SetSRID(ST_MakePoint(-79.958626, 40.443874), 4326)::geography AS geom_university\n  ),\n  -- Get elevation at each point using ST_Value\n  elevations AS (\n    SELECT\n      ST_Value(r.rast, ST_Transform(p.geom_hospital::geometry, 4326)) AS elev_hospital,\n      ST_Value(r.rast, ST_Transform(p.geom_university::geometry, 4326)) AS elev_university\n    FROM\n      points p,\n      public.dem_us r\n    WHERE\n      ST_Intersects(r.rast, ST_Transform(p.geom_hospital::geometry, 4326))\n      OR ST_Intersects(r.rast, ST_Transform(p.geom_university::geometry, 4326))\n  )\n-- Calculate the vertical separation in meters\nSELECT \n  (elev_hospital - elev_university) AS vertical_separation_meters\nFROM\n  elevations\nWHERE\n  elev_hospital IS NOT NULL AND elev_university IS NOT NULL;",
+  "predicted_sql_candidates": [
+    "WITH\n  -- Extract the two points from the structured context\n  points AS (\n    SELECT \n      ST_SetSRID(ST_MakePoint(-73.878898, 40.880372), 4326)::geography AS geom_hospital,\n      ST_SetSRID(ST_MakePoint(-79.958626, 40.443874), 4326)::geography AS geom_university\n  ),\n  -- Get elevation at each point using ST_Value\n  elevations AS (\n    SELECT\n      ST_Value(r.rast, ST_Transform(p.geom_hospital::geometry, 4326)) AS elev_hospital,\n      ST_Value(r.rast, ST_Transform(p.geom_university::geometry, 4326)) AS elev_university\n    FROM\n      points p,\n      public.dem_us r\n    WHERE\n      ST_Intersects(r.rast, ST_Transform(p.geom_hospital::geometry, 4326))\n      OR ST_Intersects(r.rast, ST_Transform(p.geom_university::geometry, 4326))\n  )\n-- Calculate the vertical separation in meters\nSELECT \n  (elev_hospital - elev_university) AS vertical_separation_meters\nFROM\n  elevations\nWHERE\n  elev_hospital IS NOT NULL AND elev_university IS NOT NULL;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the vertical separation in meters between Children's Hospital at Montefiore, Bronx, NY and Swanson School of Engineering, Pittsburgh, PA?",
+  "source_file": "elevation_diff+two_pois.jsonl",
+  "source_stem": "elevation_diff+two_pois",
+  "timing": {
+    "execution_seconds": 0.037,
+    "generation_seconds": 65.937,
+    "total_seconds": 65.974
+  },
+  "usage": {
+    "completion_tokens": 309,
+    "prompt_tokens": 1765,
+    "total_tokens": 2074
+  }
+}

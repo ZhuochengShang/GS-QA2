@@ -1,0 +1,119 @@
+{
+  "answer_type": "row/s",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "row/s",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "rowset_f1",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "addr_city": "Orchid",
+      "addr_housenumber": "1",
+      "addr_postcode": "32963",
+      "addr_state": "FL",
+      "addr_street": "Beachside Drive",
+      "geometry": "POINT (-80.4022 27.773371)",
+      "id": 246694,
+      "leisure": "beach_resort",
+      "osm_id": 6231201516,
+      "poi_name": "Orchid Island Beach Club",
+      "pt": "0101000020E6100000E09C11A5BD1954C0C1AC50A4FBC53B40",
+      "slope_degrees": 2.801387
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "addr_city": "Orchid",
+        "addr_housenumber": "1",
+        "addr_postcode": "32963",
+        "addr_state": "FL",
+        "addr_street": "Beachside Drive",
+        "amenity": null,
+        "artwork_type": null,
+        "building": null,
+        "capacity": null,
+        "cuisine": null,
+        "delivery": null,
+        "description": null,
+        "drive_through": null,
+        "emergency": null,
+        "fast_food": null,
+        "fee": null,
+        "geometry": "0101000020E6100000E09C11A5BD1954C0C1AC50A4FBC53B40",
+        "hairdresser": null,
+        "healthcare": null,
+        "historic": null,
+        "id": 246694,
+        "information": null,
+        "internet_access": null,
+        "leisure": "beach_resort",
+        "museum": null,
+        "official_name": null,
+        "opening_hours": null,
+        "operator": null,
+        "osm_id": 6231201516,
+        "outdoor_seating": null,
+        "parking": null,
+        "pastry_shop": null,
+        "phone": null,
+        "poi_name": "Orchid Island Beach Club",
+        "pt": "0101000020E6100000E09C11A5BD1954C0C1AC50A4FBC53B40",
+        "resort": null,
+        "restaurant": null,
+        "school_type": null,
+        "shop": null,
+        "slope_degrees": 2.801387,
+        "sport": null,
+        "sports": null,
+        "takeaway": null,
+        "toilets": null,
+        "tourism": null,
+        "website": null,
+        "wheelchair": null,
+        "wholesale": null,
+        "wikidata": null,
+        "zoo": null
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-80.410621 27.781223, -80.410471 27.781103, -80.410326 27.780758, -80.410341 27.774704, -80.410296 27.774555, -80.410192 27.774407, -80.410034 27.774293, -80.409871 27.774235, -80.408553 27.7742, -80.408103 27.774253, -80.40755 27.774112, -80.40722 27.774013, -80.406953 27.773934, -80.406365 27.773758, -80.405788 27.773585, -80.404946 27.773641, -80.404539 27.773675, -80.404101 27.772204, -80.403905 27.772274, -80.403635 27.772082, -80.403576 27.771655, -80.40363 27.771454, -80.403864 27.771118, -80.404094 27.770963, -80.403842 27.770848, -80.403745 27.770846, -80.403549 27.770918, -80.402929 27.771044, -80.402664 27.771064, -80.402182 27.771131, -80.403798 27.774213, -80.40244 27.774602, -80.402097 27.77473, -80.401899 27.774447, -80.401707 27.774047, -80.401408 27.773522, -80.400327 27.771661, -80.399939 27.770812, -80.399336 27.769422, -80.401347 27.769431, -80.402272 27.770568, -80.406074 27.770572, -80.406101 27.770492, -80.406196 27.764823, -80.406151 27.76353, -80.406276 27.763423, -80.40824 27.763431, -80.412074 27.763478, -80.412546 27.76345, -80.413036 27.763346, -80.413464 27.763189, -80.414157 27.76275, -80.414412 27.762959, -80.414622 27.763337, -80.414844 27.763567, -80.415078 27.763585, -80.415303 27.763699, -80.415712 27.763989, -80.415874 27.764137, -80.41632 27.764376, -80.416843 27.764735, -80.417116 27.764942, -80.41728 27.765185, -80.417434 27.765372, -80.417565 27.765593, -80.417832 27.765921, -80.417763 27.765973, -80.416857 27.766325, -80.416346 27.766358, -80.416222 27.766575, -80.416046 27.76677, -80.41584 27.766917, -80.415541 27.767042, -80.415513 27.76787, -80.415433 27.768419, -80.415328 27.768967, -80.415302 27.769242, -80.415284 27.769792, -80.415241 27.770125, -80.415087 27.770974, -80.415002 27.771271, -80.414896 27.771562, -80.41477 27.77184, -80.414622 27.772121, -80.414472 27.772362, -80.414172 27.772795, -80.414044 27.773094, -80.413984 27.773376, -80.413936 27.773552, -80.413775 27.773899, -80.413927 27.774182, -80.414063 27.774504, -80.414225 27.774816, -80.414418 27.775116, -80.414854 27.775696, -80.415005 27.776015, -80.415059 27.776155, -80.415094 27.7763, -80.415109 27.776528, -80.415094 27.776878, -80.415028 27.777225, -80.414909 27.777574, -80.41473 27.777931, -80.415539 27.780862, -80.416674 27.780863, -80.417012 27.780506, -80.417322 27.780222, -80.417751 27.780005, -80.418009 27.77999, -80.418306 27.780135, -80.418428 27.780385, -80.418448 27.780623, -80.418443 27.780994, -80.418296 27.781397, -80.418108 27.781624, -80.415238 27.781549, -80.413566 27.781552, -80.410587 27.781548, -80.410621 27.781223))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope_raster AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\ncandidates AS (\n  SELECT p.*, ST_PointOnSurface(p.geometry::geometry) AS pt\n  FROM pois p\n  JOIN buffered_region r ON ST_Intersects(p.geometry::geometry, r.g)\n  WHERE p.\"leisure\" = 'beach_resort'\n),\npoi_slope AS (\n  SELECT c.*, slope.s AS slope_degrees\n  FROM candidates c\n  JOIN LATERAL (\n    SELECT ST_Value(sr.rast, 1, c.pt) AS s\n    FROM slope_raster sr\n    WHERE ST_Intersects(sr.rast, c.pt)\n    LIMIT 1\n  ) slope ON slope.s IS NOT NULL\n)\nSELECT *\nFROM poi_slope\nORDER BY slope_degrees DESC\nLIMIT 10;",
+  "id": "slope_steepest_n_poi+name-0",
+  "model_output": "```sql\nWITH resorts AS (\n  SELECT \n    poi.poi_name,\n    ST_SetSRID(ST_GeomFromText('POINT (-80.4022 27.773371)'), 4326)::geometry AS geom\n  FROM \n    public.pois poi\n  WHERE \n    poi.poi_name ILIKE '%Orchid Island Beach Club%' \n    AND poi.addr_city = 'Orchid' \n    AND poi.addr_state = 'FL'\n),\nslope_analysis AS (\n  SELECT \n    r.poi_name,\n    ST_Slope(\n      ST_Clip(\n        public.dem_us.rast, \n        true, \n        r.geom\n      ), \n      1\n    ) AS slope_rast\n  FROM \n    resorts r\n  JOIN \n    public.dem_us \n  ON \n    ST_Intersects(public.dem_us.rast, r.geom)\n),\nslope_values AS (\n  SELECT \n    poi_name,\n    ST_Value(slope_rast, 1) AS slope_value\n  FROM \n    slope_analysis\n)\nSELECT \n  poi_name,\n  slope_value\nFROM \n  slope_values\nORDER BY \n  slope_value DESC\nLIMIT 10;\n```",
+  "predicted_exec": {
+    "error": "function st_clip(raster, boolean, geometry) does not exist\nLINE 16:       ST_Clip(\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH resorts AS (\n  SELECT \n    poi.poi_name,\n    ST_SetSRID(ST_GeomFromText('POINT (-80.4022 27.773371)'), 4326)::geometry AS geom\n  FROM \n    public.pois poi\n  WHERE \n    poi.poi_name ILIKE '%Orchid Island Beach Club%' \n    AND poi.addr_city = 'Orchid' \n    AND poi.addr_state = 'FL'\n),\nslope_analysis AS (\n  SELECT \n    r.poi_name,\n    ST_Slope(\n      ST_Clip(\n        public.dem_us.rast, \n        true, \n        r.geom\n      ), \n      1\n    ) AS slope_rast\n  FROM \n    resorts r\n  JOIN \n    public.dem_us \n  ON \n    ST_Intersects(public.dem_us.rast, r.geom)\n),\nslope_values AS (\n  SELECT \n    poi_name,\n    ST_Value(slope_rast, 1) AS slope_value\n  FROM \n    slope_analysis\n)\nSELECT \n  poi_name,\n  slope_value\nFROM \n  slope_values\nORDER BY \n  slope_value DESC\nLIMIT 10;",
+  "predicted_sql_candidates": [
+    "WITH resorts AS (\n  SELECT \n    poi.poi_name,\n    ST_SetSRID(ST_GeomFromText('POINT (-80.4022 27.773371)'), 4326)::geometry AS geom\n  FROM \n    public.pois poi\n  WHERE \n    poi.poi_name ILIKE '%Orchid Island Beach Club%' \n    AND poi.addr_city = 'Orchid' \n    AND poi.addr_state = 'FL'\n),\nslope_analysis AS (\n  SELECT \n    r.poi_name,\n    ST_Slope(\n      ST_Clip(\n        public.dem_us.rast, \n        true, \n        r.geom\n      ), \n      1\n    ) AS slope_rast\n  FROM \n    resorts r\n  JOIN \n    public.dem_us \n  ON \n    ST_Intersects(public.dem_us.rast, r.geom)\n),\nslope_values AS (\n  SELECT \n    poi_name,\n    ST_Value(slope_rast, 1) AS slope_value\n  FROM \n    slope_analysis\n)\nSELECT \n  poi_name,\n  slope_value\nFROM \n  slope_values\nORDER BY \n  slope_value DESC\nLIMIT 10;"
+  ],
+  "query_type": "raster_vector",
+  "question": "What are the 10 beach resorts in Orchid, Florida located on the most steeply sloped terrain?",
+  "source_file": "slope_steepest_n_poi+name.jsonl",
+  "source_stem": "slope_steepest_n_poi+name",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 54.91,
+    "total_seconds": 54.911
+  },
+  "usage": {
+    "completion_tokens": 258,
+    "prompt_tokens": 1666,
+    "total_tokens": 1924
+  }
+}

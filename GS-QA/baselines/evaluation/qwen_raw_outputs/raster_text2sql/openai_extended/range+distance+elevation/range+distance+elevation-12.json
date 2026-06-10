@@ -1,0 +1,120 @@
+{
+  "answer_type": "distance+elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "distance+elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "addr_city": "Beaumont",
+      "addr_housenumber": "21159",
+      "addr_postcode": "77705",
+      "addr_state": "TX",
+      "addr_street": "Farm to Market Road 365",
+      "distance": 0.022266,
+      "elevation": 6.0,
+      "geometry": "POINT (-94.274211 29.929639)",
+      "id": 1377,
+      "osm_id": 4252509346,
+      "poi_name": "Gator Country Wildlife Adventure Park",
+      "tourism": "zoo",
+      "website": "https://www.gatorrescue.com/"
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "addr_city": "Beaumont",
+        "addr_housenumber": "21159",
+        "addr_postcode": "77705",
+        "addr_state": "TX",
+        "addr_street": "Farm to Market Road 365",
+        "amenity": null,
+        "artwork_type": null,
+        "building": null,
+        "capacity": null,
+        "cuisine": null,
+        "delivery": null,
+        "description": null,
+        "distance": 0.022266,
+        "drive_through": null,
+        "elevation": 6.0,
+        "emergency": null,
+        "fast_food": null,
+        "fee": null,
+        "geometry": "0101000020E6100000718D74AB8C9157C03795FBD3FCED3D40",
+        "hairdresser": null,
+        "healthcare": null,
+        "historic": null,
+        "id": 1377,
+        "information": null,
+        "internet_access": null,
+        "leisure": null,
+        "museum": null,
+        "official_name": null,
+        "opening_hours": null,
+        "operator": null,
+        "osm_id": 4252509346,
+        "outdoor_seating": null,
+        "parking": null,
+        "pastry_shop": null,
+        "phone": null,
+        "poi_name": "Gator Country Wildlife Adventure Park",
+        "resort": null,
+        "restaurant": null,
+        "school_type": null,
+        "shop": null,
+        "sport": null,
+        "sports": null,
+        "takeaway": null,
+        "toilets": null,
+        "tourism": "zoo",
+        "website": "https://www.gatorrescue.com/",
+        "wheelchair": null,
+        "wholesale": null,
+        "wikidata": null,
+        "zoo": null
+      }
+    ]
+  },
+  "gold_sql": "SELECT\n  p.*,\n  ST_Distance(\n    ST_GeomFromText('POINT (-94.274211 29.929639)',4326)::geography,\n    p.geometry::geography\n  ) AS distance,\n  elev.z AS elevation\nFROM pois p\nJOIN LATERAL (\n  SELECT ST_Value(d.rast, 1, p.geometry::geometry) AS z\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, p.geometry::geometry)\n  LIMIT 1\n) elev ON elev.z IS NOT NULL\nWHERE ST_DWithin(\n        p.geometry::geography,\n        ST_GeomFromText('POINT (-94.274211 29.929639)',4326)::geography,\n        2200\n      )\n  AND tourism = 'zoo';",
+  "id": "range+distance+elevation-12",
+  "model_output": "```sql\nWITH zoo1 AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-85.591646 46.430601)'), 4326)::geography AS geom\n),\nzoo2 AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-94.274211 29.929639)'), 4326)::geography AS geom\n),\ndistance_result AS (\n  SELECT \n    ST_Distance(zoo1.geom, zoo2.geom) AS distance_meters\n  FROM zoo1, zoo2\n),\nclip_area AS (\n  SELECT \n    ST_Buffer(zoo2.geom, 2200) AS search_area\n  FROM zoo2\n),\nelevation_result AS (\n  SELECT \n    ST_Value(r.rast, ST_Centroid(clip_area.search_area)) AS elevation_meters\n  FROM clip_area, public.dem_us r\n  WHERE ST_Intersects(r.rast, clip_area.search_area)\n)\nSELECT \n  distance_result.distance_meters,\n  elevation_result.elevation_meters\nFROM distance_result, elevation_result;\n```",
+  "predicted_exec": {
+    "error": "function st_value(raster, geography) does not exist\nLINE 19:     ST_Value(r.rast, ST_Centroid(clip_area.search_area)) AS ...\n             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH zoo1 AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-85.591646 46.430601)'), 4326)::geography AS geom\n),\nzoo2 AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-94.274211 29.929639)'), 4326)::geography AS geom\n),\ndistance_result AS (\n  SELECT \n    ST_Distance(zoo1.geom, zoo2.geom) AS distance_meters\n  FROM zoo1, zoo2\n),\nclip_area AS (\n  SELECT \n    ST_Buffer(zoo2.geom, 2200) AS search_area\n  FROM zoo2\n),\nelevation_result AS (\n  SELECT \n    ST_Value(r.rast, ST_Centroid(clip_area.search_area)) AS elevation_meters\n  FROM clip_area, public.dem_us r\n  WHERE ST_Intersects(r.rast, clip_area.search_area)\n)\nSELECT \n  distance_result.distance_meters,\n  elevation_result.elevation_meters\nFROM distance_result, elevation_result;",
+  "predicted_sql_candidates": [
+    "WITH zoo1 AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-85.591646 46.430601)'), 4326)::geography AS geom\n),\nzoo2 AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-94.274211 29.929639)'), 4326)::geography AS geom\n),\ndistance_result AS (\n  SELECT \n    ST_Distance(zoo1.geom, zoo2.geom) AS distance_meters\n  FROM zoo1, zoo2\n),\nclip_area AS (\n  SELECT \n    ST_Buffer(zoo2.geom, 2200) AS search_area\n  FROM zoo2\n),\nelevation_result AS (\n  SELECT \n    ST_Value(r.rast, ST_Centroid(clip_area.search_area)) AS elevation_meters\n  FROM clip_area, public.dem_us r\n  WHERE ST_Intersects(r.rast, clip_area.search_area)\n)\nSELECT \n  distance_result.distance_meters,\n  elevation_result.elevation_meters\nFROM distance_result, elevation_result;"
+  ],
+  "query_type": "extended",
+  "question": "How far away is a zoo from Gator Country Wildlife Adventure Park, Beaumont, TX within 2200 meters, and what is the elevation above sea level there?",
+  "source_file": "range+distance+elevation.jsonl",
+  "source_stem": "range+distance+elevation",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 54.344,
+    "total_seconds": 54.345
+  },
+  "usage": {
+    "completion_tokens": 254,
+    "prompt_tokens": 1772,
+    "total_tokens": 2026
+  }
+}

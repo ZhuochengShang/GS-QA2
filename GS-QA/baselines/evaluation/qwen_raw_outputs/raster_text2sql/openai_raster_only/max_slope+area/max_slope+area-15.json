@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 46.839527
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 46.839527
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-71.846095 44.946032, -71.858095 44.875062, -71.857965 44.86803, -71.85317 44.865438, -71.834282 44.855222, -71.815353 44.875048, -71.81517 44.875258, -71.811133 44.879898, -71.777887 44.918093, -71.76652 44.931146, -71.754887 44.944628, -71.752211 44.947728, -71.785666 44.947196, -71.796196 44.947029, -71.846095 44.946032))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).max AS slope\nFROM region_slope;",
+  "id": "max_slope+area-15",
+  "model_output": "```sql\nWITH clipped_dem AS (\n  SELECT \n    ST_Clip(rast, geometry::geometry, true) AS clipped_rast\n  FROM \n    public.dem_us,\n    (SELECT ST_GeomFromText('POLYGON ((-71.846095 44.946032, -71.858095 44.875062, -71.857965 44.86803, -71.85317 44.865438, -71.834282 44.855222, -71.815353 44.875048, -71.81517 44.875258, -71.811133 44.879898, -71.777887 44.918093, -71.76652 44.931146, -71.754887 44.944628, -71.752211 44.947728, -71.785666 44.947196, -71.796196 44.947029, -71.846095 44.946032))', 4326)::geography) AS geom\n  WHERE \n    ST_Intersects(rast, geometry::geometry)\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM \n    clipped_dem\n),\nmax_slope_value AS (\n  SELECT \n    MAX((ST_DumpAsPolygons(slope_rast)).val) AS max_slope_degrees\n  FROM \n    slope_raster\n)\nSELECT \n  ROUND(max_slope_degrees::numeric, 2) AS highest_slope_degrees;\n```",
+  "predicted_exec": {
+    "error": "column \"geometry\" does not exist\nLINE 3:     ST_Clip(rast, geometry::geometry, true) AS clipped_rast\n                          ^",
+    "output": []
+  },
+  "predicted_sql": "WITH clipped_dem AS (\n  SELECT \n    ST_Clip(rast, geometry::geometry, true) AS clipped_rast\n  FROM \n    public.dem_us,\n    (SELECT ST_GeomFromText('POLYGON ((-71.846095 44.946032, -71.858095 44.875062, -71.857965 44.86803, -71.85317 44.865438, -71.834282 44.855222, -71.815353 44.875048, -71.81517 44.875258, -71.811133 44.879898, -71.777887 44.918093, -71.76652 44.931146, -71.754887 44.944628, -71.752211 44.947728, -71.785666 44.947196, -71.796196 44.947029, -71.846095 44.946032))', 4326)::geography) AS geom\n  WHERE \n    ST_Intersects(rast, geometry::geometry)\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM \n    clipped_dem\n),\nmax_slope_value AS (\n  SELECT \n    MAX((ST_DumpAsPolygons(slope_rast)).val) AS max_slope_degrees\n  FROM \n    slope_raster\n)\nSELECT \n  ROUND(max_slope_degrees::numeric, 2) AS highest_slope_degrees;",
+  "predicted_sql_candidates": [
+    "WITH clipped_dem AS (\n  SELECT \n    ST_Clip(rast, geometry::geometry, true) AS clipped_rast\n  FROM \n    public.dem_us,\n    (SELECT ST_GeomFromText('POLYGON ((-71.846095 44.946032, -71.858095 44.875062, -71.857965 44.86803, -71.85317 44.865438, -71.834282 44.855222, -71.815353 44.875048, -71.81517 44.875258, -71.811133 44.879898, -71.777887 44.918093, -71.76652 44.931146, -71.754887 44.944628, -71.752211 44.947728, -71.785666 44.947196, -71.796196 44.947029, -71.846095 44.946032))', 4326)::geography) AS geom\n  WHERE \n    ST_Intersects(rast, geometry::geometry)\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM \n    clipped_dem\n),\nmax_slope_value AS (\n  SELECT \n    MAX((ST_DumpAsPolygons(slope_rast)).val) AS max_slope_degrees\n  FROM \n    slope_raster\n)\nSELECT \n  ROUND(max_slope_degrees::numeric, 2) AS highest_slope_degrees;"
+  ],
+  "query_type": "raster_only",
+  "question": "In Averys Gore, Vermont, what is the highest slope?",
+  "source_file": "max_slope+area.jsonl",
+  "source_stem": "max_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 106.867,
+    "total_seconds": 106.868
+  },
+  "usage": {
+    "completion_tokens": 489,
+    "prompt_tokens": 1817,
+    "total_tokens": 2306
+  }
+}

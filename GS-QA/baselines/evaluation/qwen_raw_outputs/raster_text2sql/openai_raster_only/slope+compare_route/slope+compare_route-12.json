@@ -1,0 +1,63 @@
+{
+  "answer_type": "name",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "name",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer_name": "Pedway",
+      "slope_deg_3": 15.710614,
+      "slope_deg_4": 4.340164
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer_name": "Pedway",
+        "slope_deg_3": 15.710614,
+        "slope_deg_4": 4.340164
+      }
+    ]
+  },
+  "gold_sql": "WITH route3 AS (\n  SELECT ST_GeomFromText('LINESTRING (-87.621382 41.88722, -87.621106 41.887223, -87.620986 41.887224, -87.620592 41.887224, -87.62041 41.887225)', 4326)::geometry AS geom\n),\nroute4 AS (\n  SELECT ST_GeomFromText('LINESTRING (-121.678908 48.669553, -121.678854 48.669978, -121.679042 48.670407, -121.678968 48.670582, -121.677476 48.672374, -121.67705 48.672534, -121.676933 48.672576, -121.676736 48.67257, -121.676378 48.672402, -121.676333 48.672134, -121.676621 48.671702, -121.677621 48.670765, -121.677834 48.670571, -121.677787 48.670377, -121.677622 48.670161, -121.677369 48.669715)', 4326)::geometry AS geom\n),\ndem_clip3 AS (\n  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast\n  FROM public.dem_us d, route3 r\n  WHERE ST_Intersects(d.rast, r.geom)\n),\ndem_clip4 AS (\n  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast\n  FROM public.dem_us d, route4 r\n  WHERE ST_Intersects(d.rast, r.geom)\n),\nsegments AS (\n  SELECT 1 AS route_id, (ST_DumpSegments(r.geom)).geom AS seg FROM route3 r\n  UNION ALL\n  SELECT 2 AS route_id, (ST_DumpSegments(r.geom)).geom AS seg FROM route4 r\n),\nendpoints AS (\n  SELECT\n    route_id,\n    ST_StartPoint(seg)         AS p1,\n    ST_EndPoint(seg)           AS p2,\n    ST_Length(seg::geography)  AS seg_len_m\n  FROM segments\n),\nelev AS (\n  SELECT\n    e.route_id,\n    e.seg_len_m,\n    CASE WHEN e.route_id = 1 THEN ST_Value(dc3.rast, 1, e.p1)\n         ELSE ST_Value(dc4.rast, 1, e.p1) END AS z1,\n    CASE WHEN e.route_id = 1 THEN ST_Value(dc3.rast, 1, e.p2)\n         ELSE ST_Value(dc4.rast, 1, e.p2) END AS z2\n  FROM endpoints e, dem_clip3 dc3, dem_clip4 dc4\n),\ngrades AS (\n  SELECT\n    route_id,\n    seg_len_m,\n    CASE WHEN seg_len_m > 0 THEN ABS(z2 - z1) / seg_len_m END AS grade\n  FROM elev\n  WHERE z1 IS NOT NULL AND z2 IS NOT NULL\n),\navg_grade AS (\n  SELECT\n    route_id,\n    SUM(grade * seg_len_m) / NULLIF(SUM(seg_len_m), 0) AS g\n  FROM grades\n  WHERE grade IS NOT NULL\n  GROUP BY route_id\n)\nSELECT\n  CASE WHEN a1.g >= a2.g THEN 'Pedway' ELSE 'National Forest Development Road 012' END AS answer_name,\n  DEGREES(ATAN(a1.g)) AS slope_deg_3,\n  DEGREES(ATAN(a2.g)) AS slope_deg_4\nFROM avg_grade a1\nJOIN avg_grade a2\n  ON a1.route_id = 1 AND a2.route_id = 2\nWHERE a1.g IS NOT NULL AND a2.g IS NOT NULL;",
+  "id": "slope+compare_route-12",
+  "model_output": "```sql\nWITH pedway_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-87.621382 41.88722, -87.621106 41.887223, -87.620986 41.887224, -87.620592 41.887224, -87.62041 41.887225)', 4326)::geometry AS geom\n),\nroad_012_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-121.678908 48.669553, -121.678854 48.669978, -121.679042 48.670407, -121.678968 48.670582, -121.677476 48.672374, -121.67705 48.672534, -121.676933 48.672576, -121.676736 48.67257, -121.676378 48.672402, -121.676333 48.672134, -121.676621 48.671702, -121.677621 48.670765, -121.677834 48.670571, -121.677787 48.670377, -121.677622 48.670161, -121.677369 48.669715)', 4326)::geometry AS geom\n),\npedway_slope AS (\n  SELECT\n    ST_3DAnalysis(\n      'public.dem_us',\n      'rast',\n      'geom',\n      'ST_Slope',\n      'AVG',\n      1\n    ) AS avg_slope\n  FROM pedway_geom\n),\nroad_012_slope AS (\n  SELECT\n    ST_3DAnalysis(\n      'public.dem_us',\n      'rast',\n      'geom',\n      'ST_Slope',\n      'AVG',\n      1\n    ) AS avg_slope\n  FROM road_012_geom\n)\nSELECT\n  CASE\n    WHEN pedway.avg_slope > road_012.avg_slope THEN 'Pedway'\n    WHEN pedway.avg_slope < road_012.avg_slope THEN 'National Forest Development Road 012'\n    ELSE 'Equal'\n  END AS steeper_route,\n  pedway.avg_slope AS pedway_avg_slope,\n  road_012.avg_slope AS road_012_avg_slope\nFROM pedway_slope pedway, road_012_slope road_012;\n```",
+  "predicted_exec": {
+    "error": "function st_3danalysis(unknown, unknown, unknown, unknown, unknown, integer) does not exist\nLINE 9:     ST_3DAnalysis(\n            ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH pedway_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-87.621382 41.88722, -87.621106 41.887223, -87.620986 41.887224, -87.620592 41.887224, -87.62041 41.887225)', 4326)::geometry AS geom\n),\nroad_012_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-121.678908 48.669553, -121.678854 48.669978, -121.679042 48.670407, -121.678968 48.670582, -121.677476 48.672374, -121.67705 48.672534, -121.676933 48.672576, -121.676736 48.67257, -121.676378 48.672402, -121.676333 48.672134, -121.676621 48.671702, -121.677621 48.670765, -121.677834 48.670571, -121.677787 48.670377, -121.677622 48.670161, -121.677369 48.669715)', 4326)::geometry AS geom\n),\npedway_slope AS (\n  SELECT\n    ST_3DAnalysis(\n      'public.dem_us',\n      'rast',\n      'geom',\n      'ST_Slope',\n      'AVG',\n      1\n    ) AS avg_slope\n  FROM pedway_geom\n),\nroad_012_slope AS (\n  SELECT\n    ST_3DAnalysis(\n      'public.dem_us',\n      'rast',\n      'geom',\n      'ST_Slope',\n      'AVG',\n      1\n    ) AS avg_slope\n  FROM road_012_geom\n)\nSELECT\n  CASE\n    WHEN pedway.avg_slope > road_012.avg_slope THEN 'Pedway'\n    WHEN pedway.avg_slope < road_012.avg_slope THEN 'National Forest Development Road 012'\n    ELSE 'Equal'\n  END AS steeper_route,\n  pedway.avg_slope AS pedway_avg_slope,\n  road_012.avg_slope AS road_012_avg_slope\nFROM pedway_slope pedway, road_012_slope road_012;",
+  "predicted_sql_candidates": [
+    "WITH pedway_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-87.621382 41.88722, -87.621106 41.887223, -87.620986 41.887224, -87.620592 41.887224, -87.62041 41.887225)', 4326)::geometry AS geom\n),\nroad_012_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-121.678908 48.669553, -121.678854 48.669978, -121.679042 48.670407, -121.678968 48.670582, -121.677476 48.672374, -121.67705 48.672534, -121.676933 48.672576, -121.676736 48.67257, -121.676378 48.672402, -121.676333 48.672134, -121.676621 48.671702, -121.677621 48.670765, -121.677834 48.670571, -121.677787 48.670377, -121.677622 48.670161, -121.677369 48.669715)', 4326)::geometry AS geom\n),\npedway_slope AS (\n  SELECT\n    ST_3DAnalysis(\n      'public.dem_us',\n      'rast',\n      'geom',\n      'ST_Slope',\n      'AVG',\n      1\n    ) AS avg_slope\n  FROM pedway_geom\n),\nroad_012_slope AS (\n  SELECT\n    ST_3DAnalysis(\n      'public.dem_us',\n      'rast',\n      'geom',\n      'ST_Slope',\n      'AVG',\n      1\n    ) AS avg_slope\n  FROM road_012_geom\n)\nSELECT\n  CASE\n    WHEN pedway.avg_slope > road_012.avg_slope THEN 'Pedway'\n    WHEN pedway.avg_slope < road_012.avg_slope THEN 'National Forest Development Road 012'\n    ELSE 'Equal'\n  END AS steeper_route,\n  pedway.avg_slope AS pedway_avg_slope,\n  road_012.avg_slope AS road_012_avg_slope\nFROM pedway_slope pedway, road_012_slope road_012;"
+  ],
+  "query_type": "raster_only",
+  "question": "Which route has the greater slope on average, Pedway or National Forest Development Road 012?",
+  "source_file": "slope+compare_route.jsonl",
+  "source_stem": "slope+compare_route",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 163.612,
+    "total_seconds": 163.613
+  },
+  "usage": {
+    "completion_tokens": 748,
+    "prompt_tokens": 2006,
+    "total_tokens": 2754
+  }
+}

@@ -1,0 +1,1143 @@
+[
+  {
+    "id": 1400,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.084
+  },
+  {
+    "id": 1401,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.1
+  },
+  {
+    "id": 1402,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.043
+  },
+  {
+    "id": 1403,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.033
+  },
+  {
+    "id": 1404,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.056
+  },
+  {
+    "id": 1405,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.084
+  },
+  {
+    "id": 1406,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "UDON"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.044
+  },
+  {
+    "id": 1407,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.041
+  },
+  {
+    "id": 1408,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "UK Healthcare"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.056
+  },
+  {
+    "id": 1409,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Emergency Entrance"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.056
+  },
+  {
+    "id": 1410,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.054
+  },
+  {
+    "id": 1411,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.067
+  },
+  {
+    "id": 1412,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.054
+  },
+  {
+    "id": 1413,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.018
+  },
+  {
+    "id": 1414,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.068
+  },
+  {
+    "id": 1415,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.045
+  },
+  {
+    "id": 1416,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.068
+  },
+  {
+    "id": 1417,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.08
+  },
+  {
+    "id": 1418,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.058
+  },
+  {
+    "id": 1419,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikidata, wikipedia, ST_Distance(p.geometry...\n                                   ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1420,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.027
+  },
+  {
+    "id": 1421,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.061
+  },
+  {
+    "id": 1422,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Hong Anh Palace"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.05
+  },
+  {
+    "id": 1423,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.021
+  },
+  {
+    "id": 1424,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.043
+  },
+  {
+    "id": 1425,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.063
+  },
+  {
+    "id": 1426,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Feather Factory Hotel"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.043
+  },
+  {
+    "id": 1427,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Lovelace Women's Hopsital"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.092
+  },
+  {
+    "id": 1428,
+    "records": [
+      {
+        "output": [],
+        "error": "column reference \"poi_name\" is ambiguous\nLINE 2: SELECT poi_name, amenity, ST_Distance(p1.geometry::geography...\n               ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1429,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikidata, wikipedia, ST_Distance(p.geometry...\n                                   ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1430,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Ellett Memorial Hospital"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.014
+  },
+  {
+    "id": 1431,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikidata, wikipedia, addr_state, addr_city,...\n                                   ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1432,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Sushi Stop Hollywood"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.05
+  },
+  {
+    "id": 1433,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 2.318
+  },
+  {
+    "id": 1434,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.052
+  },
+  {
+    "id": 1435,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.168
+  },
+  {
+    "id": 1436,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "New York Pizza Dept.",
+            "amenity": "restaurant",
+            "addr_state": "AZ",
+            "addr_city": "Avondale"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.031
+  },
+  {
+    "id": 1437,
+    "records": [
+      {
+        "output": [],
+        "error": "syntax error at or near \"WHERE\"\nLINE 13: WHERE p.amenity = 'hospital' AND p.emergency = 'yes'\n         ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1438,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Miami Beach Urgent Care"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.032
+  },
+  {
+    "id": 1439,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikidata, wikipedia, ST_Distance(p.geometry...\n                                   ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1440,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.028
+  },
+  {
+    "id": 1441,
+    "records": [
+      {
+        "output": [],
+        "error": "argument of IS TRUE must be type boolean, not type character varying\nLINE 5:   AND outdoor_seating IS TRUE\n              ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1442,
+    "records": [
+      {
+        "output": [],
+        "error": "argument of IS TRUE must be type boolean, not type character varying\nLINE 5:   AND outdoor_seating IS TRUE\n              ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1443,
+    "records": [
+      {
+        "output": [],
+        "error": "column reference \"wikidata\" is ambiguous\nLINE 2: SELECT poi_name, wikidata, wikipedia, ST_Distance(p.geometry...\n                         ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1444,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.015
+  },
+  {
+    "id": 1445,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.049
+  },
+  {
+    "id": 1446,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.04
+  },
+  {
+    "id": 1447,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Hana Health"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.052
+  },
+  {
+    "id": 1448,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Palomar Medical Center Poway"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.073
+  },
+  {
+    "id": 1449,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikidata, wikipedia, addr_state, addr_city\n                                   ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1450,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Doty Museum"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.09
+  },
+  {
+    "id": 1451,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.052
+  },
+  {
+    "id": 1452,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.032
+  },
+  {
+    "id": 1453,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.28
+  },
+  {
+    "id": 1454,
+    "records": [
+      {
+        "output": [],
+        "error": "more than one row returned by a subquery used as an expression"
+      }
+    ],
+    "run_seconds": 0.034
+  },
+  {
+    "id": 1455,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.098
+  },
+  {
+    "id": 1456,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.038
+  },
+  {
+    "id": 1457,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.072
+  },
+  {
+    "id": 1458,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Dominion Plastic Surgery"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.05
+  },
+  {
+    "id": 1459,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.106
+  },
+  {
+    "id": 1460,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Children's Wisconsin-Fox Valley Hospital"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.062
+  },
+  {
+    "id": 1461,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "CHI Memorial Hospital"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 1.596
+  },
+  {
+    "id": 1462,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Poke Sushi Bowl"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.032
+  },
+  {
+    "id": 1463,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Johnny Rockets",
+            "amenity": "restaurant",
+            "distance_meters": 1620.88068705
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.081
+  },
+  {
+    "id": 1464,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.121
+  },
+  {
+    "id": 1465,
+    "records": [
+      {
+        "output": [],
+        "error": "column reference \"wikidata\" is ambiguous\nLINE 2: SELECT poi_name, wikidata, wikipedia, ST_Distance(p.geometry...\n                         ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1466,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.216
+  },
+  {
+    "id": 1467,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.013
+  },
+  {
+    "id": 1468,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Saison Market",
+            "addr_state": "VA",
+            "addr_city": "Richmond City",
+            "amenity": "restaurant",
+            "cuisine": "new_american"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.051
+  },
+  {
+    "id": 1469,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.095
+  },
+  {
+    "id": 1470,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikidata, wikipedia\n                                   ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1471,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "South China Buffet"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.141
+  },
+  {
+    "id": 1472,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikidata, wikipedia, ST_Distance(p.geometry...\n                                   ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1473,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.074
+  },
+  {
+    "id": 1474,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "B. Cafe"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.031
+  },
+  {
+    "id": 1475,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "AdventHealth Palm Coast Emergency Room"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.054
+  },
+  {
+    "id": 1476,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Musashi"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.049
+  },
+  {
+    "id": 1477,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Spence and Becky Wilson Baptist Children's Hospital"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.063
+  },
+  {
+    "id": 1478,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Sanford Medical Center Bemidji Emergency Room"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.055
+  },
+  {
+    "id": 1479,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "True Life Care Center"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.044
+  },
+  {
+    "id": 1480,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Ops"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.026
+  },
+  {
+    "id": 1481,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Einstein Bros. Bagels"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.12
+  },
+  {
+    "id": 1482,
+    "records": [
+      {
+        "output": [],
+        "error": "syntax error at or near \"WHERE\"\nLINE 10: WHERE p.amenity = 'museum' AND p.tourism = 'museum'\n         ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1483,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Central Vermont Hospital"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.045
+  },
+  {
+    "id": 1484,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.041
+  },
+  {
+    "id": 1485,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Home Slice Pizza"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.056
+  },
+  {
+    "id": 1486,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "West Littleton Health Center"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.06
+  },
+  {
+    "id": 1487,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.052
+  },
+  {
+    "id": 1488,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.058
+  },
+  {
+    "id": 1489,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.073
+  },
+  {
+    "id": 1490,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.051
+  },
+  {
+    "id": 1491,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Sekisui"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.059
+  },
+  {
+    "id": 1492,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.25
+  },
+  {
+    "id": 1493,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.029
+  },
+  {
+    "id": 1494,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.081
+  },
+  {
+    "id": 1495,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.068
+  },
+  {
+    "id": 1496,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.027
+  },
+  {
+    "id": 1497,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.049
+  },
+  {
+    "id": 1498,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Hays House Restaurant & Tavern"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.079
+  },
+  {
+    "id": 1499,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.022
+  }
+]
