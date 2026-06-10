@@ -1,0 +1,51 @@
+Which category has the higher average elevation in [3]: [1] or [2]?
+In [3], which category is higher on average: [1] or [2]?
+Between [1] and [2] in [3], which category sits higher on average?
+Which category is at higher average elevation in [3]: [1] or [2]?
+In [3], which category tends to be at higher elevation: [1] or [2]?
+
+-- SQL_TEMPLATE_START
+-- Answer type: name
+-- [1] POI category 1; [1_type] POI tag column; [2] POI category 2; [2_type] POI tag column; [3] region/city
+WITH region AS (
+  SELECT ST_GeomFromText('[3_wkt]', 4326) AS g
+),
+cat1 AS (
+  SELECT p.id, ST_PointOnSurface(p.geometry::geometry) AS pt
+  FROM pois p
+  JOIN region r ON ST_Intersects(p.geometry::geometry, r.g)
+  WHERE p."[1_type]" = '[1]'
+),
+cat2 AS (
+  SELECT p.id, ST_PointOnSurface(p.geometry::geometry) AS pt
+  FROM pois p
+  JOIN region r ON ST_Intersects(p.geometry::geometry, r.g)
+  WHERE p."[2_type]" = '[2]'
+),
+avg1 AS (
+  SELECT AVG(elev.z) AS avg_elev
+  FROM cat1 c
+  JOIN LATERAL (
+    SELECT ST_Value(d.rast, 1, c.pt) AS z
+    FROM public.dem_us d
+    WHERE ST_Intersects(d.rast, c.pt)
+    LIMIT 1
+  ) elev ON elev.z IS NOT NULL
+),
+avg2 AS (
+  SELECT AVG(elev.z) AS avg_elev
+  FROM cat2 c
+  JOIN LATERAL (
+    SELECT ST_Value(d.rast, 1, c.pt) AS z
+    FROM public.dem_us d
+    WHERE ST_Intersects(d.rast, c.pt)
+    LIMIT 1
+  ) elev ON elev.z IS NOT NULL
+)
+SELECT
+  CASE WHEN a1.avg_elev >= a2.avg_elev THEN '[1]' ELSE '[2]' END AS answer_name,
+  a1.avg_elev AS avg_elev_1,
+  a2.avg_elev AS avg_elev_2
+FROM avg1 a1, avg2 a2
+WHERE a1.avg_elev IS NOT NULL AND a2.avg_elev IS NOT NULL;
+-- SQL_TEMPLATE_END

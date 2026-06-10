@@ -1,0 +1,61 @@
+Which [1] in [4] are within [2] meters of areas with elevation at least [3] m?
+Find [1] in [4] within [2] m of terrain at or above [3] m elevation.
+Show [1] in [4] located within [2] meters of areas no lower than [3] m.
+List [1] in [4] that are within [2] meters of terrain at or over [3] m elevation.
+Where are [1] in [4] within [2] meters of areas with elevation above [3] meters?
+
+-- SQL_TEMPLATE_START
+-- Answer type: row/s
+-- [1] POI category value
+-- [1_type] POI tag column (amenity/tourism/shop/...)
+-- [2] distance (meters)
+-- [3] elevation threshold (m)
+-- [4] region/city
+-- Strategy: validate/fix region geometry first, then per-POI compute maximum
+-- elevation inside a [2]-meter buffer directly from intersecting DEM tiles.
+-- This avoids a global ST_Union/ST_Clip pass and is more robust against
+-- topology exceptions from invalid region geometries.
+WITH region AS (
+  SELECT ST_UnaryUnion(
+           ST_CollectionExtract(
+             ST_MakeValid(ST_GeomFromText('[4_wkt]', 4326)),
+             3
+           )
+         ) AS g
+),
+candidates AS (
+  SELECT
+    p.*,
+    ST_PointOnSurface(p.geometry::geometry) AS pt,
+    ST_Buffer(ST_PointOnSurface(p.geometry::geometry)::geography, [2])::geometry AS buf
+  FROM pois p
+  JOIN region r
+    ON ST_Intersects(p.geometry::geometry, r.g)
+  WHERE p."[1_type]" = '[1]'
+),
+poi_nearby AS (
+  SELECT c.*,
+         nearby.max_elev
+  FROM candidates c
+  JOIN LATERAL (
+    SELECT MAX((s.stats).max) AS max_elev
+    FROM (
+      SELECT ST_SummaryStats(
+               ST_Clip(
+                 d.rast,
+                 ST_Intersection(
+                   c.buf,
+                   r.g
+                 )
+               )
+             ) AS stats
+      FROM public.dem_us d
+      JOIN region r ON ST_Intersects(d.rast, r.g)
+      WHERE ST_Intersects(d.rast, c.buf)
+    ) s
+  ) nearby ON nearby.max_elev IS NOT NULL
+)
+SELECT DISTINCT ON (id) *
+FROM poi_nearby
+WHERE max_elev >= [3];
+-- SQL_TEMPLATE_END

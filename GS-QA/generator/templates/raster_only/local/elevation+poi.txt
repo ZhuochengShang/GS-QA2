@@ -1,0 +1,14 @@
+What is the elevation at [3]?
+What is the elevation at the location of [3]?
+How high is [3] above sea level?
+What is the elevation of the ground at [3]?
+What is the elevation where [3] is located?
+How high is the terrain at [3]?
+
+-- SQL_TEMPLATE_START
+-- Answer type: elevation - point based
+SELECT ST_Value(rast, 1, ST_GeomFromText('[3_wkt]',4326)) AS elevation
+FROM public.dem_us
+WHERE ST_Intersects(rast, ST_GeomFromText('[3_wkt]',4326))
+LIMIT 1;
+-- SQL_TEMPLATE_END

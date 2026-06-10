@@ -1,0 +1,31 @@
+Can you suggest [1] that's within [2_text] from [3] with elevation at least [4] m?
+I'm looking for [1] within [2_text] of [3] with elevation at least [4] m.
+Do you know of any [1] within [2_text] of [3] with elevation at least [4] m?
+Could you find me [1] within [2_text] from [3] with elevation at least [4] m?
+Is there [1] within [2_text] from [3] with elevation at least [4] m?
+Can you recommend [1] that's not too far from [3]? Maximum distance: [2_text], elevation at least [4] m.
+I'm searching for [1] within [2_text] of [3], any suggestions with elevation at least [4] m?
+Is there [1] within [2_text] from [3] with elevation at least [4] m?
+Can you find me [1] that's [2_text] from [3] with elevation at least [4] m?
+I'm interested in finding [1] that's [2_text] from [3], any recommendations with elevation at least [4] m?
+Do you have any suggestions for [1] within [2_text] of [3] with elevation at least [4] m?
+Is there [1] within [2_text] from [3] with elevation at least [4] m?
+Can you suggest [1] within [2_text] of [3] with elevation at least [4] m?
+I'm looking for [1] within [2_text] from [3], any ideas with elevation at least [4] m?
+Do you know of any [1] within [2_text] from [3] with elevation at least [4] m?
+
+-- SQL_TEMPLATE_START
+-- Answer type: row/s
+-- [1] POI category; [2] distance (meters); [3] anchor POI; [4] elevation threshold (meters)
+SELECT p.*, elev.z AS elevation
+FROM pois p
+JOIN LATERAL (
+  SELECT ST_Value(d.rast, 1, p.geometry::geometry) AS z
+  FROM public.dem_us d
+  WHERE ST_Intersects(d.rast, p.geometry::geometry)
+  LIMIT 1
+) elev ON elev.z IS NOT NULL
+WHERE ST_DWithin(p.geometry::geography, ST_GeomFromText('[3_wkt]',4326)::geography, [2])
+  AND p.[1_type] = '[1]'
+  AND elev.z >= [4];
+-- SQL_TEMPLATE_END

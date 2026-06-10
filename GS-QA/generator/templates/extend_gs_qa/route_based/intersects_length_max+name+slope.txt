@@ -1,0 +1,64 @@
+What is the longest [1] in [2], and what is the slope?
+Which is the longest [1] in [2], and how steep is it?
+Can you tell me the longest [1] in [2] and its slope?
+What is the name of the longest [1] in [2], and what is its slope?
+Which [1] is the longest in [2], and what is the slope along it?
+What [1] is the longest in [2], and how steep is it?
+Do you know the longest [1] in [2], and its slope?
+What is the lengthiest [1] in [2], and what is the slope?
+Which [1] in [2] is the longest, and how steep is it?
+What is the longest [1] in [2], and what is the slope along it?
+Can you name the longest [1] in [2], and what is its slope?
+
+-- SQL_TEMPLATE_START
+-- Answer type: name+slope
+-- [1] feature category; [1_table] feature table; [2] region.
+-- Definition: length-weighted average slope along the longest line clipped to the region.
+WITH candidates AS (
+  SELECT *,
+         ST_Length([1_table].geometry::geography) AS computed_length,
+         ST_CollectionExtract(
+           ST_Intersection([1_table].geometry::geometry, ST_GeomFromText('[2_wkt]',4326)),
+           2
+         ) AS geom
+  FROM [1_table]
+  WHERE [1_type] = '[1]'
+    AND ST_Intersects([1_table].geometry::geography, ST_GeomFromText('[2_wkt]',4326)::geography)
+),
+longest AS (
+  SELECT * FROM candidates
+  WHERE geom IS NOT NULL AND NOT ST_IsEmpty(geom)
+  ORDER BY computed_length DESC
+  LIMIT 1
+),
+dem_clip AS (
+  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(l.geom))) AS rast
+  FROM public.dem_us d, longest l
+  WHERE ST_Intersects(d.rast, l.geom)
+),
+segments AS (
+  SELECT (ST_DumpSegments(geom)).geom AS seg FROM longest
+),
+endpoints AS (
+  SELECT seg, ST_StartPoint(seg) AS p1, ST_EndPoint(seg) AS p2, ST_Length(seg::geography) AS seg_len_m
+  FROM segments
+),
+elev AS (
+  SELECT e.seg, e.seg_len_m,
+         ST_Value(dc.rast, 1, e.p1) AS z1,
+         ST_Value(dc.rast, 1, e.p2) AS z2
+  FROM endpoints e, dem_clip dc
+),
+slopes AS (
+  SELECT seg_len_m, CASE WHEN seg_len_m > 0 THEN ABS(z2 - z1) / seg_len_m ELSE NULL END AS slope
+  FROM elev WHERE z1 IS NOT NULL AND z2 IS NOT NULL
+)
+SELECT
+  l.*,
+  s.slope
+FROM longest l
+CROSS JOIN (
+  SELECT DEGREES(ATAN(SUM(slope * seg_len_m) / NULLIF(SUM(seg_len_m), 0))) AS slope
+  FROM slopes
+) s;
+-- SQL_TEMPLATE_END

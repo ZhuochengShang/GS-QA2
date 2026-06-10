@@ -1,0 +1,49 @@
+Which [3] [1] in [2] are on the steepest terrain?
+Find the [3] [1] on the steepest slopes in [2].
+Show the [3] [1] in [2] that sit on the steepest ground.
+List the [3] steepest-terrain [1] in [2].
+What are the [3] [1] in [2] located on the most steeply sloped terrain?
+
+-- SQL_TEMPLATE_START
+-- Answer type: row/s
+-- [1] POI category value; [1_type] POI tag column; [2] region/city; [3] number of results (3/5/10)
+WITH region AS (
+  SELECT ST_GeomFromText('[2_wkt]', 4326) AS g
+),
+buffered_region AS (
+  SELECT
+    g,
+    ST_Buffer(g::geography, 100)::geometry AS g_buffer
+  FROM region
+),
+clipped_dem AS (
+  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast
+  FROM public.dem_us d
+  JOIN buffered_region r
+    ON ST_Intersects(d.rast, r.g_buffer)
+),
+slope_raster AS (
+  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast
+  FROM clipped_dem
+),
+candidates AS (
+  SELECT p.*, ST_PointOnSurface(p.geometry::geometry) AS pt
+  FROM pois p
+  JOIN buffered_region r ON ST_Intersects(p.geometry::geometry, r.g)
+  WHERE p."[1_type]" = '[1]'
+),
+poi_slope AS (
+  SELECT c.*, slope.s AS slope_degrees
+  FROM candidates c
+  JOIN LATERAL (
+    SELECT ST_Value(sr.rast, 1, c.pt) AS s
+    FROM slope_raster sr
+    WHERE ST_Intersects(sr.rast, c.pt)
+    LIMIT 1
+  ) slope ON slope.s IS NOT NULL
+)
+SELECT *
+FROM poi_slope
+ORDER BY slope_degrees DESC
+LIMIT [3];
+-- SQL_TEMPLATE_END

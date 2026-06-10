@@ -1,0 +1,20 @@
+Is [3] at an elevation above [2] meters?
+Does [3] sit higher than [2] meters above sea level?
+Is [3] more than [2] meters in elevation?
+Is the elevation at [3] greater than [2] meters?
+Does [3] exceed [2] meters in elevation?
+Is [3] above the [2]-meter elevation mark?
+
+-- SQL_TEMPLATE_START
+-- Answer type: yes-no
+-- Local raster operation: single ST_Value lookup at the POI coordinate anchor.
+SELECT
+  CASE
+    WHEN ST_Value(d.rast, 1, ST_GeomFromText('[3_wkt]',4326)) > [2]
+    THEN 'yes' ELSE 'no'
+  END AS answer,
+  ST_Value(d.rast, 1, ST_GeomFromText('[3_wkt]',4326)) AS elevation_m
+FROM public.dem_us d
+WHERE ST_Intersects(d.rast, ST_GeomFromText('[3_wkt]',4326))
+LIMIT 1;
+-- SQL_TEMPLATE_END

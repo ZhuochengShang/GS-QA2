@@ -1,0 +1,32 @@
+How steep is the terrain at [3]?
+What is the slope of the ground at [3]?
+How sharply does the terrain incline at [3]?
+What is the gradient of the terrain at [3]?
+What slope angle does the surface have at [3]?
+What is the terrain slope in degrees at [3]?
+
+-- SQL_TEMPLATE_START
+-- Answer type: slope
+-- Focal raster operation: ST_Slope on a small patch around the POI, then sample at the POI.
+-- Patch is a ~100m geography buffer; clipping a patch (rather than running ST_Slope on whole
+-- tiles) keeps the focal kernel correct across tile seams and bounds the work per query.
+-- ST_Slope uses scale=111120 because the DEM is stored in EPSG:4326 (degrees) with elevation
+-- in meters; this scale converts horizontal degrees to meters before computing the gradient.
+WITH origin AS (
+  SELECT ST_GeomFromText('[3_wkt]',4326) AS pt
+),
+patch AS (
+  SELECT ST_Buffer(pt::geography, 100)::geometry AS g FROM origin
+),
+clipped_dem AS (
+  SELECT ST_Union(ST_Clip(d.rast, p.g)) AS rast
+  FROM public.dem_us d
+  JOIN patch p ON ST_Intersects(d.rast, p.g)
+),
+slope_rast AS (
+  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast
+  FROM clipped_dem
+)
+SELECT ST_Value(s.rast, 1, o.pt) AS slope_degrees
+FROM slope_rast s, origin o;
+-- SQL_TEMPLATE_END

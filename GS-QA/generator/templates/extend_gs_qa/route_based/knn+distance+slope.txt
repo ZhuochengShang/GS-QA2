@@ -1,0 +1,86 @@
+How far is the closest [1] from [2], and what is the average slope along that road?
+What's the distance to the nearest [1] from [2], and how steep is that road on average?
+How far is the closest [1] from [2], and what is the mean slope along it?
+What is the distance from [2] to the closest [1], and what is the mean slope along it?
+How far away is the nearest [1] from [2], and how steep is the terrain along that road?
+What is the distance to the closest [1] from [2], and what is the average grade along it?
+How far is the nearest [1] situated from [2], and what is the average slope along that road?
+What's the distance between [2] and the nearest [1], and how steep is it on average?
+How far is the closest [1] located from [2], and what is the mean slope along that road?
+What's the distance to the closest [1] in reference to [2], and how steep is that road?
+How far away is the nearest [1] positioned from [2], and what is the average slope along it?
+What's the separation between [2] and the nearest [1], and what is the average grade along that road?
+How far is the nearest [1] from the location [2], and how steep is the terrain along it?
+What's the distance to the closest [1] with respect to [2], and what is the mean slope along that road?
+How far is the closest [1] from the point [2], and how steep is it on average?
+What is the distance from [2] to the nearest [1], and what is the average slope along that road?
+How far away is the nearest [1] with respect to [2], and what is the average grade along it?
+What is the distance from [2] to the closest [1], and how steep is that road on average?
+How far is the nearest [1] from the reference point [2], and what is the mean slope along it?
+What's the distance between [2] and the closest [1], and how steep is the terrain along that road?
+How far is the closest [1] from the reference location [2], and what is the average slope along it?
+
+-- SQL_TEMPLATE_START
+-- Answer type: name+distance+slope
+-- [1] road type label (display); [1_sql] road type value for SQL WHERE clause; [2] reference POI
+-- Finds the nearest short road of type [1_sql] to POI [2] within 100 km,
+-- then computes the length-weighted average slope along that road using the segment endpoint method.
+-- Slope definition: grade = |z2 - z1| / segment_length_m per segment; length-weighted average; DEGREES(ATAN(avg_grade)).
+WITH ref AS (
+  SELECT ST_GeomFromText('[2_wkt]', 4326)::geometry AS g
+),
+nearest AS (
+  SELECT r.road_name,
+         r.geometry::geometry AS geom,
+         ST_Distance(r.geometry::geography, ST_GeomFromText('[2_wkt]', 4326)::geography) AS dist_m
+  FROM roads r, ref
+  WHERE r.highway = '[1_sql]'
+    AND r.road_name IS NOT NULL
+    AND ST_Dimension(r.geometry::geometry) = 1
+    AND ST_NPoints(r.geometry::geometry) BETWEEN 2 AND 50
+    AND r.geometry::geometry && ST_MakeEnvelope(-126, 24, -66, 50, 4326)
+    AND ST_DWithin(r.geometry::geography, ST_GeomFromText('[2_wkt]', 4326)::geography, 100000)
+  ORDER BY r.geometry::geometry <-> ref.g
+  LIMIT 1
+),
+segments AS (
+  SELECT (ST_DumpSegments(n.geom)).geom AS seg FROM nearest n
+),
+endpoints AS (
+  SELECT ST_StartPoint(seg) AS p1,
+         ST_EndPoint(seg)   AS p2,
+         ST_Length(seg::geography) AS seg_len_m
+  FROM segments
+),
+elev AS (
+  SELECT e.seg_len_m,
+         z1.v AS z1,
+         z2.v AS z2
+  FROM endpoints e
+  JOIN LATERAL (
+    SELECT ST_Value(d.rast, 1, e.p1) AS v
+    FROM public.dem_us d
+    WHERE ST_Intersects(d.rast, e.p1)
+    LIMIT 1
+  ) z1 ON z1.v IS NOT NULL
+  JOIN LATERAL (
+    SELECT ST_Value(d.rast, 1, e.p2) AS v
+    FROM public.dem_us d
+    WHERE ST_Intersects(d.rast, e.p2)
+    LIMIT 1
+  ) z2 ON z2.v IS NOT NULL
+),
+slopes AS (
+  SELECT seg_len_m,
+         CASE WHEN seg_len_m > 0 THEN ABS(z2 - z1) / seg_len_m ELSE NULL END AS grade
+  FROM elev
+  WHERE z1 IS NOT NULL AND z2 IS NOT NULL
+)
+SELECT n.road_name,
+       n.dist_m,
+       DEGREES(ATAN(SUM(grade * seg_len_m) / NULLIF(SUM(seg_len_m), 0))) AS slope_deg
+FROM nearest n
+CROSS JOIN slopes
+WHERE grade IS NOT NULL
+GROUP BY n.road_name, n.dist_m;
+-- SQL_TEMPLATE_END

@@ -1,0 +1,43 @@
+List [1] in [2] with elevation above the area's average.
+Find [1] in [2] whose elevation is above the regional mean.
+Show [1] in [2] with elevation higher than the average elevation in [2].
+Return [1] in [2] located above [2]'s mean elevation.
+Give [1] in [2] where local elevation exceeds the area average.
+Identify [1] in [2] positioned above the average terrain elevation.
+
+-- SQL_TEMPLATE_START
+-- Answer type: row/s
+-- [1] POI category value (e.g., hospital)
+-- [1_type] POI tag column (amenity/tourism/shop/healthcare/...)
+-- [2] region/city
+WITH region AS (
+  SELECT ST_GeomFromText('[2_wkt]', 4326) AS g
+),
+mean_elev AS (
+  SELECT SUM(stats.sum) / NULLIF(SUM(stats.count), 0) AS mean
+  FROM public.dem_us d
+  JOIN region r ON ST_Intersects(d.rast, r.g)
+  JOIN LATERAL ST_SummaryStats(ST_Clip(d.rast, r.g)) AS stats ON stats.count > 0
+),
+candidates AS (
+  SELECT p.*, ST_PointOnSurface(p.geometry::geometry) AS pt
+  FROM pois p
+  JOIN region r
+    ON ST_Intersects(p.geometry::geometry, r.g)
+  WHERE p."[1_type]" = '[1]'
+),
+poi_elev AS (
+  SELECT c.*, elev.z
+  FROM candidates c
+  JOIN LATERAL (
+    SELECT ST_Value(d.rast, 1, c.pt) AS z
+    FROM public.dem_us d
+    WHERE ST_Intersects(d.rast, c.pt)
+    LIMIT 1
+  ) elev ON elev.z IS NOT NULL
+)
+SELECT DISTINCT ON (id) *
+FROM poi_elev
+CROSS JOIN mean_elev
+WHERE z > mean;
+-- SQL_TEMPLATE_END

@@ -1,0 +1,78 @@
+Which route is steeper, [3] or [4]?
+Between [3] and [4], which route has the higher average slope?
+Which route has the greater slope on average, [3] or [4]?
+Is [3] steeper than [4]?
+Does [3] have a higher average slope than [4]?
+
+-- SQL_TEMPLATE_START
+-- Answer type: name
+-- Definition: split each route into straight segments between consecutive vertices.
+-- For each segment, sample elevation at its two endpoints (z1 = start, z2 = end),
+-- compute grade = |z2 - z1| / segment_length_meters, then take a length-weighted average
+-- across all segments. Convert to degrees via DEGREES(ATAN(avg_grade)).
+-- Similar to this definition: https://support.esri.com/en-us/knowledge-base/how-to-calculate-the-slope-of-a-line-feature-across-a-s-000025428
+-- [3_wkt] and [4_wkt] are LineString WKTs for two routes
+WITH route3 AS (
+  SELECT ST_GeomFromText('[3_wkt]', 4326)::geometry AS geom
+),
+route4 AS (
+  SELECT ST_GeomFromText('[4_wkt]', 4326)::geometry AS geom
+),
+dem_clip3 AS (
+  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast
+  FROM public.dem_us d, route3 r
+  WHERE ST_Intersects(d.rast, r.geom)
+),
+dem_clip4 AS (
+  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast
+  FROM public.dem_us d, route4 r
+  WHERE ST_Intersects(d.rast, r.geom)
+),
+segments AS (
+  SELECT 1 AS route_id, (ST_DumpSegments(r.geom)).geom AS seg FROM route3 r
+  UNION ALL
+  SELECT 2 AS route_id, (ST_DumpSegments(r.geom)).geom AS seg FROM route4 r
+),
+endpoints AS (
+  SELECT
+    route_id,
+    ST_StartPoint(seg)         AS p1,
+    ST_EndPoint(seg)           AS p2,
+    ST_Length(seg::geography)  AS seg_len_m
+  FROM segments
+),
+elev AS (
+  SELECT
+    e.route_id,
+    e.seg_len_m,
+    CASE WHEN e.route_id = 1 THEN ST_Value(dc3.rast, 1, e.p1)
+         ELSE ST_Value(dc4.rast, 1, e.p1) END AS z1,
+    CASE WHEN e.route_id = 1 THEN ST_Value(dc3.rast, 1, e.p2)
+         ELSE ST_Value(dc4.rast, 1, e.p2) END AS z2
+  FROM endpoints e, dem_clip3 dc3, dem_clip4 dc4
+),
+grades AS (
+  SELECT
+    route_id,
+    seg_len_m,
+    CASE WHEN seg_len_m > 0 THEN ABS(z2 - z1) / seg_len_m END AS grade
+  FROM elev
+  WHERE z1 IS NOT NULL AND z2 IS NOT NULL
+),
+avg_grade AS (
+  SELECT
+    route_id,
+    SUM(grade * seg_len_m) / NULLIF(SUM(seg_len_m), 0) AS g
+  FROM grades
+  WHERE grade IS NOT NULL
+  GROUP BY route_id
+)
+SELECT
+  CASE WHEN a1.g >= a2.g THEN '[3]' ELSE '[4]' END AS answer_name,
+  DEGREES(ATAN(a1.g)) AS slope_deg_3,
+  DEGREES(ATAN(a2.g)) AS slope_deg_4
+FROM avg_grade a1
+JOIN avg_grade a2
+  ON a1.route_id = 1 AND a2.route_id = 2
+WHERE a1.g IS NOT NULL AND a2.g IS NOT NULL;
+-- SQL_TEMPLATE_END

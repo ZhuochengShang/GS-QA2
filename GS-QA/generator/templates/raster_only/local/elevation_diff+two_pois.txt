@@ -1,0 +1,29 @@
+What is the elevation difference between [3] and [4]?
+What is the vertical separation in meters between [3] and [4]?
+How many meters apart in elevation are [3] and [4]?
+What is the absolute elevation difference between [3] and [4]?
+By how many meters do the elevations of [3] and [4] differ?
+What is the magnitude of the elevation gap between [3] and [4]?
+
+-- SQL_TEMPLATE_START
+-- Answer type: elevation difference
+-- Local raster operation: two ST_Value lookups, one per POI coordinate anchor.
+-- Returns absolute elevation difference in meters.
+WITH p1 AS (
+  SELECT ST_Value(d.rast, 1, ST_GeomFromText('[3_wkt]',4326)) AS elev
+  FROM public.dem_us d
+  WHERE ST_Intersects(d.rast, ST_GeomFromText('[3_wkt]',4326))
+  LIMIT 1
+),
+p2 AS (
+  SELECT ST_Value(d.rast, 1, ST_GeomFromText('[4_wkt]',4326)) AS elev
+  FROM public.dem_us d
+  WHERE ST_Intersects(d.rast, ST_GeomFromText('[4_wkt]',4326))
+  LIMIT 1
+)
+SELECT
+  ABS(p1.elev - p2.elev) AS elevation_difference_m,
+  p1.elev AS poi1_elevation_m,
+  p2.elev AS poi2_elevation_m
+FROM p1, p2;
+-- SQL_TEMPLATE_END
