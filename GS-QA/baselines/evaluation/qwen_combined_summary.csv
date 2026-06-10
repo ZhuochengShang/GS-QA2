@@ -1,0 +1,13 @@
+method,eval_kind,query_type,total,correct,accuracy,attempted_rate,sql_gen_rate,sql_exec_rate,timeouts,nonanswer_count,mean_score
+qwen_text2sql_raster,official_sql_row,ALL,680,47,0.0691,,0.9941,0.1544,4,,1.9565
+qwen_text2sql_raster,official_sql_row,extended,160,3,0.0187,,1.0,0.0875,0,,3.9256
+qwen_text2sql_raster,official_sql_row,raster_only,380,38,0.1,,0.9895,0.1789,4,,1.8346
+qwen_text2sql_raster,official_sql_row,raster_vector,140,6,0.0429,,1.0,0.1643,0,,0.037
+qwen_raster_rag,heuristic_text,ALL,680,104,0.1529,,,,,268,
+qwen_raster_rag,heuristic_text,raster_only,380,40,0.1053,,,,,191,
+qwen_raster_rag,heuristic_text,raster_vector,140,47,0.3357,,,,,33,
+qwen_raster_rag,heuristic_text,extended,160,17,0.1062,,,,,44,
+qwen_rag_vector,parsed,vector_only,2800,57,0.0204,0.7929,,,,,
+qwen_rag_vector,text,vector_only,2800,3,0.0011,0.9918,,,,,
+qwen_text2sql_vector,parsed,vector_only,2800,341,0.1218,0.8929,,,,,
+qwen_text2sql_vector,text,vector_only,2800,73,0.0261,0.9914,,,,,

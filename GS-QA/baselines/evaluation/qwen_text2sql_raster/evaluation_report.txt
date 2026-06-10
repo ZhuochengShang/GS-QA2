@@ -1,0 +1,74 @@
+========================================================================
+  EXTENDED EVALUATION REPORT
+========================================================================
+
+────────────────────────────────────────────────────────────────────────
+  EXTENDED
+────────────────────────────────────────────────────────────────────────
+  Stem                                         N  Correct     Acc  MeanScore
+  ---------------------------------------- -----  -------  ------  ---------
+  intersects_area_max+name+max_elevation      20        0   0.000      0.000
+  intersects_area_total+area+avg_slope        20        0   0.000      0.000
+  intersects_length_max+name+slope            20        0   0.000      0.000
+  knn+distance+slope                          20        0   0.000      0.000
+  range+count+elevation_condition             20        2   0.100      0.000
+  range+distance+elevation                    20        0   0.000     31.355
+  range+loc+elevation_condition               20        0   0.000      0.000
+  range+name+elevation_condition              20        1   0.050      0.050
+  ──────────────────────────────────────── ─────  ───────  ──────  ─────────
+  TOTAL                                      160        3   0.019      3.926
+  SQL gen=100.00%  exec=8.75%  timeouts=0
+
+────────────────────────────────────────────────────────────────────────
+  RASTER_ONLY
+────────────────────────────────────────────────────────────────────────
+  Stem                                         N  Correct     Acc  MeanScore
+  ---------------------------------------- -----  -------  ------  ---------
+  aspect+poi                                  20        0   0.000      9.909
+  avg_slope+area                              20        0   0.000      0.000
+  elevation+coverage                          20        0   0.000      0.000
+  elevation+poi                               20       17   0.850      0.000
+  elevation_compare+two_pois                  20        3   0.150      0.150
+  elevation_diff+two_pois                     20        9   0.450     23.500
+  elevation_max+region                        20        0   0.000      0.000
+  elevation_mean+region                       20        0   0.000      0.849
+  elevation_min+region                        20        0   0.000      0.000
+  elevation_range+region                      20        0   0.000      0.000
+  elevation_threshold+poi                     20        9   0.450      0.450
+  max_slope+area                              20        0   0.000      0.000
+  min_slope+area                              20        0   0.000      0.000
+  nearest_high_terrain+poi                    20        0   0.000      0.000
+  nearest_low_terrain+poi                     20        0   0.000      0.000
+  ruggedness+poi                              20        0   0.000      0.000
+  slope+compare_route                         20        0   0.000      0.000
+  slope+poi                                   20        0   0.000      0.000
+  slope+route                                 20        0   0.000      0.000
+  ──────────────────────────────────────── ─────  ───────  ──────  ─────────
+  TOTAL                                      380       38   0.100      1.835
+  SQL gen=98.95%  exec=17.89%  timeouts=4
+
+────────────────────────────────────────────────────────────────────────
+  RASTER_VECTOR
+────────────────────────────────────────────────────────────────────────
+  Stem                                         N  Correct     Acc  MeanScore
+  ---------------------------------------- -----  -------  ------  ---------
+  elevation_average+name                      20        0   0.000      0.000
+  elevation_compare_categories+name           20        0   0.000      0.000
+  elevation_count_threshold+count             20        4   0.200      0.085
+  elevation_lowest_n_poi+name                 20        2   0.100      0.171
+  elevation_proximity_zone+name               20        0   0.000      0.000
+  slope_condition+name                        20        0   0.000      0.003
+  slope_steepest_n_poi+name                   20        0   0.000      0.000
+  ──────────────────────────────────────── ─────  ───────  ──────  ─────────
+  TOTAL                                      140        6   0.043      0.037
+  SQL gen=100.00%  exec=16.43%  timeouts=0
+
+========================================================================
+  OVERALL
+========================================================================
+  Total questions : 680
+  Correct         : 47
+  Accuracy        : 0.069
+  SQL gen rate    : 99.41%
+  SQL exec rate   : 15.44%
+  Timeouts        : 4

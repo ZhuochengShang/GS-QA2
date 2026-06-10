@@ -1,0 +1,244 @@
+{
+  "overall": {
+    "total": 680,
+    "correct": 104,
+    "accuracy": 0.1529,
+    "nonanswer_count": 268
+  },
+  "by_query_type": {
+    "raster_only": {
+      "total": {
+        "total": 380,
+        "correct": 40,
+        "accuracy": 0.1053,
+        "nonanswer_count": 191
+      },
+      "stems": {
+        "aspect+poi": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "nonanswer_count": 17
+        },
+        "avg_slope+area": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "nonanswer_count": 18
+        },
+        "elevation+coverage": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "nonanswer_count": 20
+        },
+        "elevation+poi": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "nonanswer_count": 9
+        },
+        "elevation_compare+two_pois": {
+          "total": 20,
+          "correct": 2,
+          "accuracy": 0.1,
+          "nonanswer_count": 0
+        },
+        "elevation_diff+two_pois": {
+          "total": 20,
+          "correct": 1,
+          "accuracy": 0.05,
+          "nonanswer_count": 19
+        },
+        "elevation_max+region": {
+          "total": 20,
+          "correct": 1,
+          "accuracy": 0.05,
+          "nonanswer_count": 0
+        },
+        "elevation_mean+region": {
+          "total": 20,
+          "correct": 1,
+          "accuracy": 0.05,
+          "nonanswer_count": 1
+        },
+        "elevation_min+region": {
+          "total": 20,
+          "correct": 3,
+          "accuracy": 0.15,
+          "nonanswer_count": 2
+        },
+        "elevation_range+region": {
+          "total": 20,
+          "correct": 2,
+          "accuracy": 0.1,
+          "nonanswer_count": 1
+        },
+        "elevation_threshold+poi": {
+          "total": 20,
+          "correct": 18,
+          "accuracy": 0.9,
+          "nonanswer_count": 0
+        },
+        "max_slope+area": {
+          "total": 20,
+          "correct": 1,
+          "accuracy": 0.05,
+          "nonanswer_count": 15
+        },
+        "min_slope+area": {
+          "total": 20,
+          "correct": 7,
+          "accuracy": 0.35,
+          "nonanswer_count": 12
+        },
+        "nearest_high_terrain+poi": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "nonanswer_count": 18
+        },
+        "nearest_low_terrain+poi": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "nonanswer_count": 9
+        },
+        "ruggedness+poi": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "nonanswer_count": 8
+        },
+        "slope+compare_route": {
+          "total": 20,
+          "correct": 3,
+          "accuracy": 0.15,
+          "nonanswer_count": 2
+        },
+        "slope+poi": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "nonanswer_count": 20
+        },
+        "slope+route": {
+          "total": 20,
+          "correct": 1,
+          "accuracy": 0.05,
+          "nonanswer_count": 20
+        }
+      }
+    },
+    "raster_vector": {
+      "total": {
+        "total": 140,
+        "correct": 47,
+        "accuracy": 0.3357,
+        "nonanswer_count": 33
+      },
+      "stems": {
+        "elevation_average+name": {
+          "total": 20,
+          "correct": 18,
+          "accuracy": 0.9,
+          "nonanswer_count": 0
+        },
+        "elevation_compare_categories+name": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "nonanswer_count": 8
+        },
+        "elevation_count_threshold+count": {
+          "total": 20,
+          "correct": 14,
+          "accuracy": 0.7,
+          "nonanswer_count": 0
+        },
+        "elevation_lowest_n_poi+name": {
+          "total": 20,
+          "correct": 1,
+          "accuracy": 0.05,
+          "nonanswer_count": 12
+        },
+        "elevation_proximity_zone+name": {
+          "total": 20,
+          "correct": 13,
+          "accuracy": 0.65,
+          "nonanswer_count": 0
+        },
+        "slope_condition+name": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "nonanswer_count": 3
+        },
+        "slope_steepest_n_poi+name": {
+          "total": 20,
+          "correct": 1,
+          "accuracy": 0.05,
+          "nonanswer_count": 10
+        }
+      }
+    },
+    "extended": {
+      "total": {
+        "total": 160,
+        "correct": 17,
+        "accuracy": 0.1062,
+        "nonanswer_count": 44
+      },
+      "stems": {
+        "intersects_area_max+name+max_elevation": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "nonanswer_count": 0
+        },
+        "intersects_area_total+area+avg_slope": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "nonanswer_count": 15
+        },
+        "intersects_length_max+name+slope": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "nonanswer_count": 5
+        },
+        "knn+distance+slope": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "nonanswer_count": 18
+        },
+        "range+count+elevation_condition": {
+          "total": 20,
+          "correct": 14,
+          "accuracy": 0.7,
+          "nonanswer_count": 0
+        },
+        "range+distance+elevation": {
+          "total": 20,
+          "correct": 2,
+          "accuracy": 0.1,
+          "nonanswer_count": 3
+        },
+        "range+loc+elevation_condition": {
+          "total": 20,
+          "correct": 0,
+          "accuracy": 0.0,
+          "nonanswer_count": 3
+        },
+        "range+name+elevation_condition": {
+          "total": 20,
+          "correct": 1,
+          "accuracy": 0.05,
+          "nonanswer_count": 0
+        }
+      }
+    }
+  }
+}
