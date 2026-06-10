@@ -1,0 +1,6 @@
+Qwen raster RAG heuristic evaluation
+Note: evaluated free-form rag_answer text; no SQL execution or parser output was available.
+OVERALL 104/680 acc=0.1529 nonanswer=268
+raster_only 40/380 acc=0.1053 nonanswer=191
+raster_vector 47/140 acc=0.3357 nonanswer=33
+extended 17/160 acc=0.1062 nonanswer=44
