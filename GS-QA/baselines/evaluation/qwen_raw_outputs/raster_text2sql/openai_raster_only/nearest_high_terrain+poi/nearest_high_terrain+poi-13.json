@@ -1,0 +1,59 @@
+{
+  "answer_type": "distance",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "distance",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "distance_m": 11.954063
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "distance_m": 11.954063
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-106.68725 35.778228)',4326) AS pt\n),\nnearby_tiles AS (\n  SELECT d.rast\n  FROM public.dem_us d, origin o\n  WHERE d.rast && ST_Expand(o.pt, 1.0)\n),\nmasked AS (\n\t  SELECT ST_MapAlgebra(\n\t           rast,\n\t           1,\n\t           '32BF'::text,\n\t           'CASE WHEN [rast.val] > 1000 THEN [rast.val] ELSE NULL END'::text,\n\t           NULL::double precision\n\t         ) AS rast\n  FROM nearby_tiles\n),\nqualifying_pixels AS (\n  SELECT (pp).geom AS geom\n  FROM masked\n  CROSS JOIN LATERAL ST_PixelAsCentroids(rast, 1, TRUE) AS pp\n)\nSELECT MIN(ST_Distance(p.geom::geography, o.pt::geography)) AS distance_m\nFROM qualifying_pixels p, origin o;",
+  "id": "nearest_high_terrain+poi-13",
+  "model_output": "```sql\nWITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-106.68725, 35.778228), 4326)::geography AS geom\n),\nhigh_elevation_areas AS (\n  SELECT ST_Union(rast) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, ST_Buffer(poi_geom.geom, 100000, 'quad_segs=8'))\n),\nelevation_raster_clipped AS (\n  SELECT ST_Clip(high_elevation_areas.rast, true, ST_Buffer(poi_geom.geom, 100000, 'quad_segs=8')) AS rast\n  FROM high_elevation_areas, poi_geom\n),\nnearest_high_elevation_point AS (\n  SELECT ST_AsText(ST_ClosestPoint(\n    ST_Transform(ST_Envelope(elevation_raster_clipped.rast), 4326),\n    poi_geom.geom\n  )) AS nearest_point_wkt\n  FROM elevation_raster_clipped, poi_geom\n)\nSELECT ST_Distance(\n  poi_geom.geom,\n  ST_SetSRID(ST_GeomFromText(nearest_point_wkt), 4326)::geography\n) AS distance_meters\nFROM poi_geom, nearest_high_elevation_point;\n```",
+  "predicted_exec": {
+    "error": "missing FROM-clause entry for table \"poi_geom\"\nLINE 7:   WHERE ST_Intersects(rast, ST_Buffer(poi_geom.geom, 100000,...\n                                              ^",
+    "output": []
+  },
+  "predicted_sql": "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-106.68725, 35.778228), 4326)::geography AS geom\n),\nhigh_elevation_areas AS (\n  SELECT ST_Union(rast) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, ST_Buffer(poi_geom.geom, 100000, 'quad_segs=8'))\n),\nelevation_raster_clipped AS (\n  SELECT ST_Clip(high_elevation_areas.rast, true, ST_Buffer(poi_geom.geom, 100000, 'quad_segs=8')) AS rast\n  FROM high_elevation_areas, poi_geom\n),\nnearest_high_elevation_point AS (\n  SELECT ST_AsText(ST_ClosestPoint(\n    ST_Transform(ST_Envelope(elevation_raster_clipped.rast), 4326),\n    poi_geom.geom\n  )) AS nearest_point_wkt\n  FROM elevation_raster_clipped, poi_geom\n)\nSELECT ST_Distance(\n  poi_geom.geom,\n  ST_SetSRID(ST_GeomFromText(nearest_point_wkt), 4326)::geography\n) AS distance_meters\nFROM poi_geom, nearest_high_elevation_point;",
+  "predicted_sql_candidates": [
+    "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-106.68725, 35.778228), 4326)::geography AS geom\n),\nhigh_elevation_areas AS (\n  SELECT ST_Union(rast) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, ST_Buffer(poi_geom.geom, 100000, 'quad_segs=8'))\n),\nelevation_raster_clipped AS (\n  SELECT ST_Clip(high_elevation_areas.rast, true, ST_Buffer(poi_geom.geom, 100000, 'quad_segs=8')) AS rast\n  FROM high_elevation_areas, poi_geom\n),\nnearest_high_elevation_point AS (\n  SELECT ST_AsText(ST_ClosestPoint(\n    ST_Transform(ST_Envelope(elevation_raster_clipped.rast), 4326),\n    poi_geom.geom\n  )) AS nearest_point_wkt\n  FROM elevation_raster_clipped, poi_geom\n)\nSELECT ST_Distance(\n  poi_geom.geom,\n  ST_SetSRID(ST_GeomFromText(nearest_point_wkt), 4326)::geography\n) AS distance_meters\nFROM poi_geom, nearest_high_elevation_point;"
+  ],
+  "query_type": "raster_only",
+  "question": "How far is Jemez State Monument, Jemez Springs, NM from the nearest terrain above 1000 meters?",
+  "source_file": "nearest_high_terrain+poi.jsonl",
+  "source_stem": "nearest_high_terrain+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 60.903,
+    "total_seconds": 60.904
+  },
+  "usage": {
+    "completion_tokens": 285,
+    "prompt_tokens": 1643,
+    "total_tokens": 1928
+  }
+}

@@ -1,0 +1,502 @@
+[
+  {
+    "id": 2700,
+    "content": "```json\n{\n    \"name\": \"SpringHill Suites by Marriott, Milwaukee\",\n    \"address\": \"1901 N 18th St, Milwaukee, WI 53222, USA\",\n    \"distance\": 100\n}\n```",
+    "run_seconds": 12.6
+  },
+  {
+    "id": 2701,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.327
+  },
+  {
+    "id": 2702,
+    "content": "```json\n{\n    \"name\": \"Children's Hospital of Philadelphia\",\n    \"address\": \"3501 Civic Center Blvd, Philadelphia, PA 19104\"\n}\n```",
+    "run_seconds": 8.946
+  },
+  {
+    "id": 2703,
+    "content": "```json\n{\n    \"name\": \"American Folk Art Museum to CUNY School of Professional Studies\",\n    \"distance\": 70\n}\n```",
+    "run_seconds": 7.243
+  },
+  {
+    "id": 2704,
+    "content": "```json\n{\n    \"name\": \"Sloth Encounters\",\n    \"address\": \"Hauppauge, NY\",\n    \"distance\": 10,\n    \"azimuth_angle\": 0\n}\n```",
+    "run_seconds": 9.798
+  },
+  {
+    "id": 2705,
+    "content": "```json\n{\n    \"name\": \"Stanford Museum\"\n}\n```",
+    "run_seconds": 3.62
+  },
+  {
+    "id": 2706,
+    "content": "```json\n{\n    \"name\": \"Acadia National Park\"\n}\n```",
+    "run_seconds": 3.831
+  },
+  {
+    "id": 2707,
+    "content": "```json\n{\n    \"name\": \"Art\u00eds Coffee\"\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 2708,
+    "content": "```json\n{\n    \"name\": \"No caf\u00e9s available\",\n    \"address\": \"No caf\u00e9s available\",\n    \"distance\": 80\n}\n```",
+    "run_seconds": 7.669
+  },
+  {
+    "id": 2709,
+    "content": "```json\n{\n    \"name\": \"Caffe Mediterraneum\",\n    \"address\": \"4758 College Ave, San Francisco, CA 94118, USA\",\n    \"distance\": 20\n}\n```",
+    "run_seconds": 11.076
+  },
+  {
+    "id": 2710,
+    "content": "```json\n{\n    \"name\": \"No museum\",\n    \"address\": \"\",\n    \"distance\": 60\n}\n```",
+    "run_seconds": 6.173
+  },
+  {
+    "id": 2711,
+    "content": "```json\n{\n    \"name\": \"None\"\n}\n```",
+    "run_seconds": 3.191
+  },
+  {
+    "id": 2712,
+    "content": "```json\n{\n    \"name\": \"McDonald's\"\n}\n```",
+    "run_seconds": 3.618
+  },
+  {
+    "id": 2713,
+    "content": "```json\n{\n    \"name\": \"St. Regis San Francisco\",\n    \"address\": \"100 Drumm Street, San Francisco, CA 94109\",\n    \"distance\": 40\n}\n```",
+    "run_seconds": 10.856
+  },
+  {
+    "id": 2714,
+    "content": "```json\n{\n    \"name\": \"Golden Gate Bridge Lookout\",\n    \"address\": \"Golden Gate Bridge Lookout, Sausalito, CA\",\n    \"distance\": 140\n}\n```",
+    "run_seconds": 9.585
+  },
+  {
+    "id": 2715,
+    "content": "```json\n{\n    \"name\": \"No nature reserves available\",\n    \"address\": \"Main Street Art, Girard, PA to Courtyard by Marriott Erie Ambassador Conference Center, Erie, PA\",\n    \"distance\": 60\n}\n```",
+    "run_seconds": 11.289
+  },
+  {
+    "id": 2716,
+    "content": "```json\n{\n    \"name\": \"Jack in the Box\"\n}\n```",
+    "run_seconds": 3.831
+  },
+  {
+    "id": 2717,
+    "content": "```json\n{\n    \"name\": \"Capital Oncology\",\n    \"address\": \"1000 W 1st St, Chehalis, WA 98532\",\n    \"distance\": 30,\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 13.411
+  },
+  {
+    "id": 2718,
+    "content": "```json\n{\n    \"name\": \"Baltimore Museum of Art\",\n    \"distance\": 90\n}\n```",
+    "run_seconds": 5.752
+  },
+  {
+    "id": 2719,
+    "content": "```json\n{\n    \"name\": \"SpringHill Suites Washington, Dc Largo\"\n}\n```",
+    "run_seconds": 5.107
+  },
+  {
+    "id": 2720,
+    "content": "```json\n{\n    \"name\": \"No caf\u00e9s found\",\n    \"address\": \"Edinburg, TX\",\n    \"count\": 0,\n    \"distance\": 160\n}\n```",
+    "run_seconds": 9.586
+  },
+  {
+    "id": 2721,
+    "content": "```json\n{\n    \"name\": \"Smith Plantation\",\n    \"address\": \"Roswell, GA\",\n    \"distance\": 10\n}\n```",
+    "run_seconds": 7.45
+  },
+  {
+    "id": 2722,
+    "content": "```json\n{\n    \"name\": \"Museum of Science and Industry\",\n    \"address\": \"1400 S Lake Shore Dr, Chicago, IL 60605\"\n}\n```",
+    "run_seconds": 9.366
+  },
+  {
+    "id": 2723,
+    "content": "```json\n{\n    \"name\": \"The Saratoga Restaurant\",\n    \"address\": \"Saratoga Springs, NY\",\n    \"distance\": 150\n}\n```",
+    "run_seconds": 8.524
+  },
+  {
+    "id": 2724,
+    "content": "```json\n{\n    \"name\": \"Inn at the Crossings\"\n}\n```",
+    "run_seconds": 4.256
+  },
+  {
+    "id": 2725,
+    "content": "```json\n{\n    \"name\": \"Caf\u00e9 228\"\n}\n```",
+    "run_seconds": 4.469
+  },
+  {
+    "id": 2726,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.329
+  },
+  {
+    "id": 2727,
+    "content": "```json\n{\n    \"name\": \"McDonald's\"\n}\n```",
+    "run_seconds": 3.618
+  },
+  {
+    "id": 2728,
+    "content": "```json\n{\n    \"name\": \"McDonald's\"\n}\n```",
+    "run_seconds": 3.616
+  },
+  {
+    "id": 2729,
+    "content": "```json\n{\n    \"distance\": 80\n}\n```",
+    "run_seconds": 3.404
+  },
+  {
+    "id": 2730,
+    "content": "```json\n{\n    \"name\": \"Turtle Island Park\"\n}\n```",
+    "run_seconds": 3.83
+  },
+  {
+    "id": 2731,
+    "content": "```json\n{\n    \"name\": \"No museums found\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.115
+  },
+  {
+    "id": 2732,
+    "content": "```json\n{\n    \"name\": \"McDonald's\"\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 2733,
+    "content": "```json\n{\n    \"name\": \"Cedars-Sinai Medical Center\"\n}\n```",
+    "run_seconds": 4.682
+  },
+  {
+    "id": 2734,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0,\n    \"distance\": 80,\n    \"length\": 0,\n    \"area\": 0,\n    \"azimuth_angle\": 0\n}\n```",
+    "run_seconds": 11.921
+  },
+  {
+    "id": 2735,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0,\n    \"distance\": 180,\n    \"length\": 0,\n    \"area\": 0,\n    \"azimuth_angle\": 0\n}\n```",
+    "run_seconds": 12.141
+  },
+  {
+    "id": 2736,
+    "content": "```json\n{\n    \"name\": \"Baltic Crossroads Art Gallery\"\n}\n```",
+    "run_seconds": 4.469
+  },
+  {
+    "id": 2737,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.321
+  },
+  {
+    "id": 2738,
+    "content": "```json\n{\n    \"name\": \"National Museum of African American History and Culture\",\n    \"address\": \"950 L'Enfant Plaza SW, Washington, DC 20024\",\n    \"distance\": 35\n}\n```",
+    "run_seconds": 11.715
+  },
+  {
+    "id": 2739,
+    "content": "```json\n{\n    \"name\": \"The Grand Californian Hotel\"\n}\n```",
+    "run_seconds": 4.043
+  },
+  {
+    "id": 2740,
+    "content": "```json\n{\n    \"name\": \"Whataburger\"\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 2741,
+    "content": "```json\n{\n    \"name\": \"Herman Maril Gallery\",\n    \"address\": \"4301 University Blvd W, College Park, MD 20742, USA\",\n    \"distance\": 100\n}\n```",
+    "run_seconds": 11.495
+  },
+  {
+    "id": 2742,
+    "content": "```json\n{\n    \"name\": \"The Metropolitan Museum of Art\"\n}\n```",
+    "run_seconds": 4.043
+  },
+  {
+    "id": 2743,
+    "content": "```json\n{\n    \"name\": \"Acushnet Sawmill\",\n    \"address\": \"100 Sawmill Rd, Acushnet, MA 02743\",\n    \"distance\": 190\n}\n```",
+    "run_seconds": 11.07
+  },
+  {
+    "id": 2744,
+    "content": "```json\n{\n    \"name\": \"Berm Park\",\n    \"address\": \"Canton, NC\",\n    \"distance\": 50\n}\n```",
+    "run_seconds": 7.45
+  },
+  {
+    "id": 2745,
+    "content": "```json\n{\n    \"name\": \"University of Florida Health Shands Hospital\"\n}\n```",
+    "run_seconds": 4.47
+  },
+  {
+    "id": 2746,
+    "content": "```json\n{\n    \"name\": \"Tracy Executive Inn\"\n}\n```",
+    "run_seconds": 3.83
+  },
+  {
+    "id": 2747,
+    "content": "```json\n{\n    \"name\": \"Springfield\",\n    \"address\": \"Springfield, IL\",\n    \"distance\": 150\n}\n```",
+    "run_seconds": 7.452
+  },
+  {
+    "id": 2748,
+    "content": "```json\n{\n    \"name\": \"Sculpture Plaza\"\n}\n```",
+    "run_seconds": 4.043
+  },
+  {
+    "id": 2749,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.321
+  },
+  {
+    "id": 2750,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0,\n    \"distance\": 150,\n    \"length\": 0,\n    \"area\": 0,\n    \"azimuth_angle\": 0\n}\n```",
+    "run_seconds": 12.135
+  },
+  {
+    "id": 2751,
+    "content": "```json\n{\n    \"name\": \"Guggenheim Museum\",\n    \"address\": \"10 East 89th Street, New York, NY 10128\",\n    \"distance\": 40\n}\n```",
+    "run_seconds": 10.857
+  },
+  {
+    "id": 2752,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.327
+  },
+  {
+    "id": 2753,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.32
+  },
+  {
+    "id": 2754,
+    "content": "```json\n{\n    \"name\": \"Troll Bridge\",\n    \"address\": \"Troll Bridge, Portland, OR\",\n    \"distance\": 60\n}\n```",
+    "run_seconds": 8.09
+  },
+  {
+    "id": 2755,
+    "content": "```json\n{\n    \"name\": \"Blue Ocean Discovery Center\"\n}\n```",
+    "run_seconds": 3.83
+  },
+  {
+    "id": 2756,
+    "content": "```json\n{\n    \"name\": \"Gettysburg National Military Park\",\n    \"address\": \"1195 Baltimore St, Gettysburg, PA 17325, USA\"\n}\n```",
+    "run_seconds": 10.217
+  },
+  {
+    "id": 2757,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0,\n    \"distance\": 140\n}\n```",
+    "run_seconds": 7.236
+  },
+  {
+    "id": 2758,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0,\n    \"distance\": 130\n}\n```",
+    "run_seconds": 7.236
+  },
+  {
+    "id": 2759,
+    "content": "```json\n{\n    \"name\": \"No attractions available\",\n    \"address\": \"Fred Savage Park - City of Augusta, Augusta, ME to Bucksport Historical Society Museum, Bucksport, ME\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 11.289
+  },
+  {
+    "id": 2760,
+    "content": "```json\n{\n    \"name\": \"McDonald's\"\n}\n```",
+    "run_seconds": 3.618
+  },
+  {
+    "id": 2761,
+    "content": "```json\n{\n    \"name\": null,\n    \"address\": null,\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.747
+  },
+  {
+    "id": 2762,
+    "content": "```json\n{\n    \"name\": \"McDonald's\"\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 2763,
+    "content": "```json\n{\n    \"name\": \"Cracker Barrel\"\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 2764,
+    "content": "```json\n{\n    \"name\": \"Winnakee Nature Preserve\",\n    \"address\": \"1234 Nature Trail, Hyde Park, NY\",\n    \"distance\": 70\n}\n```",
+    "run_seconds": 9.58
+  },
+  {
+    "id": 2765,
+    "content": "```json\n{\n    \"name\": \"San Antonio Museum of Art\"\n}\n```",
+    "run_seconds": 4.042
+  },
+  {
+    "id": 2766,
+    "content": "```json\n{\n    \"name\": \"McDonald's\"\n}\n```",
+    "run_seconds": 3.618
+  },
+  {
+    "id": 2767,
+    "content": "```json\n{\n    \"name\": \"McDonald's\"\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 2768,
+    "content": "```json\n{\n    \"name\": \"Debbie Doolittle's Petting Zoo\",\n    \"address\": \"12345 Petting Lane, Tacoma, WA\",\n    \"distance\": 70\n}\n```",
+    "run_seconds": 10.438
+  },
+  {
+    "id": 2769,
+    "content": "```json\n{\n    \"name\": \"Caf\u00e9 212\"\n}\n```",
+    "run_seconds": 4.469
+  },
+  {
+    "id": 2770,
+    "content": "```json\n{\n    \"name\": \"Springfield Park\"\n}\n```",
+    "run_seconds": 3.62
+  },
+  {
+    "id": 2771,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.321
+  },
+  {
+    "id": 2772,
+    "content": "```json\n{\n    \"name\": \"John Pennekamp Coral Reef State Park\"\n}\n```",
+    "run_seconds": 4.682
+  },
+  {
+    "id": 2773,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.321
+  },
+  {
+    "id": 2774,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0,\n    \"distance\": 40,\n    \"length\": 0,\n    \"area\": 0,\n    \"azimuth_angle\": 0\n}\n```",
+    "run_seconds": 11.921
+  },
+  {
+    "id": 2775,
+    "content": "```json\n{\n    \"name\": \"Gallery 1264\"\n}\n```",
+    "run_seconds": 4.257
+  },
+  {
+    "id": 2776,
+    "content": "```json\n{\n    \"name\": \"Gettysburg Museum of History\",\n    \"address\": \"119 Carlisle Street, Gettysburg, PA 17325\",\n    \"distance\": 170\n}\n```",
+    "run_seconds": 11.715
+  },
+  {
+    "id": 2777,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0,\n    \"distance\": 0,\n    \"length\": 0,\n    \"area\": 0,\n    \"azimuth_angle\": 0\n}\n```",
+    "run_seconds": 11.708
+  },
+  {
+    "id": 2778,
+    "content": "```json\n[\n    {\"name\": \"Caf\u00e9 1\"},\n    {\"name\": \"Caf\u00e9 2\"},\n    {\"name\": \"Caf\u00e9 3\"}\n]\n```",
+    "run_seconds": 8.727
+  },
+  {
+    "id": 2779,
+    "content": "```json\n{\n    \"name\": \"Caldwell Woods\"\n}\n```",
+    "run_seconds": 3.83
+  },
+  {
+    "id": 2780,
+    "content": "```json\n{\n    \"name\": \"Children's Hospital Colorado at Memorial Hospital\",\n    \"address\": \"1771 N Nevada Ave, Colorado Springs, CO 80903\",\n    \"distance\": 190\n}\n```",
+    "run_seconds": 11.503
+  },
+  {
+    "id": 2781,
+    "content": "```json\n{\n    \"name\": \"Freedom Trail\"\n}\n```",
+    "run_seconds": 3.41
+  },
+  {
+    "id": 2782,
+    "content": "```json\n{\n    \"name\": \"Jurassic Park\",\n    \"address\": \"Staten Island, NY\",\n    \"distance\": 190\n}\n```",
+    "run_seconds": 7.875
+  },
+  {
+    "id": 2783,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.319
+  },
+  {
+    "id": 2784,
+    "content": "```json\n{\n    \"name\": \"No attractions\",\n    \"address\": \"No attractions\",\n    \"distance\": 190\n}\n```",
+    "run_seconds": 7.033
+  },
+  {
+    "id": 2785,
+    "content": "```json\n{\n    \"name\": \"Red Roof Inn Detroit Metro Airport - Taylor\",\n    \"address\": \"11111 South Wayne Road, Taylor, MI 48180\",\n    \"distance\": 0\n}\n```",
+    "run_seconds": 11.282
+  },
+  {
+    "id": 2786,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0,\n    \"distance\": 60\n}\n```",
+    "run_seconds": 7.024
+  },
+  {
+    "id": 2787,
+    "content": "```json\n{\n    \"name\": \"None\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.746
+  },
+  {
+    "id": 2788,
+    "content": "```json\n{\n    \"name\": \"Monrovia Canyon Park to Peace Awareness Labyrinth and Gardens\",\n    \"address\": \"Monrovia Canyon Park, Monrovia, CA to Peace Awareness Labyrinth and Gardens, Los Angeles, CA\",\n    \"distance\": 180\n}\n```",
+    "run_seconds": 13.631
+  },
+  {
+    "id": 2789,
+    "content": "```json\n{\n    \"name\": \"Sound Money Museum\",\n    \"address\": \"China Grove, NC\"\n}\n```",
+    "run_seconds": 5.746
+  },
+  {
+    "id": 2790,
+    "content": "```json\n{\n    \"name\": \"National Firearms Museum\"\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 2791,
+    "content": "```json\n{\n    \"name\": \"Cleveland Museum of Art\"\n}\n```",
+    "run_seconds": 4.043
+  },
+  {
+    "id": 2792,
+    "content": "```json\n{\n    \"name\": \"McDonald's, Wendy's, and Burger King\",\n    \"address\": \"\",\n    \"count\": 3\n}\n```",
+    "run_seconds": 7.662
+  },
+  {
+    "id": 2793,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.32
+  },
+  {
+    "id": 2794,
+    "content": "```json\n{\n    \"name\": \"California Academy of Sciences\",\n    \"address\": \"555 California Street, San Francisco, CA 94104\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 10.224
+  },
+  {
+    "id": 2795,
+    "content": "```json\n{\n    \"name\": \"No attractions available\",\n    \"distance\": 150\n}\n```",
+    "run_seconds": 5.533
+  },
+  {
+    "id": 2796,
+    "content": "```json\n{\n    \"name\": \"Hotel Zelos San Francisco\",\n    \"address\": \"1001 Van Ness Avenue, San Francisco, CA 94109\",\n    \"distance\": 40\n}\n```",
+    "run_seconds": 11.07
+  },
+  {
+    "id": 2797,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.321
+  },
+  {
+    "id": 2798,
+    "content": "```json\n{\n    \"name\": \"New Mexico Museum of Art\",\n    \"address\": \"1213 Waite Rd NW, Santa Fe, NM 87505, USA\"\n}\n```",
+    "run_seconds": 9.791
+  },
+  {
+    "id": 2799,
+    "content": "```json\n{\n    \"name\": \"Main Street Art\",\n    \"address\": \"Girard, PA\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 7.662
+  }
+]

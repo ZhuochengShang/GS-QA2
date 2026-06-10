@@ -1,0 +1,59 @@
+{
+  "answer_type": "aspect",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "aspect",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "aspect_degrees": 171.869904
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "aspect_degrees": 171.869904
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-80.613308 40.357934)',4326) AS pt\n),\npatch AS (\n  SELECT ST_Buffer(pt::geography, 100)::geometry AS g FROM origin\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, p.g)) AS rast\n  FROM public.dem_us d\n  JOIN patch p ON ST_Intersects(d.rast, p.g)\n),\naspect_rast AS (\n  SELECT ST_Aspect(rast, 1, '32BF', 'DEGREES') AS rast\n  FROM clipped_dem\n)\nSELECT ST_Value(a.rast, 1, o.pt) AS aspect_degrees\nFROM aspect_rast a, origin o;",
+  "id": "aspect+poi-6",
+  "model_output": "```sql\nWITH fort_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM pois\n  WHERE poi_name ILIKE 'Fort Steuben'\n    AND addr_city ILIKE 'Steubenville'\n    AND addr_state = 'OH'\n),\naspect_raster AS (\n  SELECT\n    ST_Azimuth(\n      ST_Transform(fg.geom, 4326),\n      ST_ValuePoint(\n        r.rast,\n        ST_Transform(fg.geom, 4326)\n      )\n    ) * 180 / pi() AS aspect_degrees\n  FROM fort_geom fg\n  CROSS JOIN public.dem_us r\n  WHERE ST_Intersects(r.rast, ST_Transform(fg.geom, 4326))\n)\nSELECT aspect_degrees\nFROM aspect_raster;\n```",
+  "predicted_exec": {
+    "error": "function st_valuepoint(raster, geometry) does not exist\nLINE 12:       ST_ValuePoint(\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH fort_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM pois\n  WHERE poi_name ILIKE 'Fort Steuben'\n    AND addr_city ILIKE 'Steubenville'\n    AND addr_state = 'OH'\n),\naspect_raster AS (\n  SELECT\n    ST_Azimuth(\n      ST_Transform(fg.geom, 4326),\n      ST_ValuePoint(\n        r.rast,\n        ST_Transform(fg.geom, 4326)\n      )\n    ) * 180 / pi() AS aspect_degrees\n  FROM fort_geom fg\n  CROSS JOIN public.dem_us r\n  WHERE ST_Intersects(r.rast, ST_Transform(fg.geom, 4326))\n)\nSELECT aspect_degrees\nFROM aspect_raster;",
+  "predicted_sql_candidates": [
+    "WITH fort_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM pois\n  WHERE poi_name ILIKE 'Fort Steuben'\n    AND addr_city ILIKE 'Steubenville'\n    AND addr_state = 'OH'\n),\naspect_raster AS (\n  SELECT\n    ST_Azimuth(\n      ST_Transform(fg.geom, 4326),\n      ST_ValuePoint(\n        r.rast,\n        ST_Transform(fg.geom, 4326)\n      )\n    ) * 180 / pi() AS aspect_degrees\n  FROM fort_geom fg\n  CROSS JOIN public.dem_us r\n  WHERE ST_Intersects(r.rast, ST_Transform(fg.geom, 4326))\n)\nSELECT aspect_degrees\nFROM aspect_raster;"
+  ],
+  "query_type": "raster_only",
+  "question": "In what direction does the terrain face at Fort Steuben, Steubenville, OH, measured in degrees from north?",
+  "source_file": "aspect+poi.jsonl",
+  "source_stem": "aspect+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 37.234,
+    "total_seconds": 37.235
+  },
+  "usage": {
+    "completion_tokens": 170,
+    "prompt_tokens": 1614,
+    "total_tokens": 1784
+  }
+}

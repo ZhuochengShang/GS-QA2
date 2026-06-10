@@ -1,0 +1,115 @@
+{
+  "answer_type": "distance+elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "distance+elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "distance": 388.110483,
+      "elevation": 164.0,
+      "geometry": "POINT (-88.07976 38.72727)",
+      "historic": "district",
+      "id": 251446,
+      "leisure": "park",
+      "osm_id": 354220423,
+      "poi_name": "Elliott Street Historic District"
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "addr_city": null,
+        "addr_housenumber": null,
+        "addr_postcode": null,
+        "addr_state": null,
+        "addr_street": null,
+        "amenity": null,
+        "artwork_type": null,
+        "building": null,
+        "capacity": null,
+        "cuisine": null,
+        "delivery": null,
+        "description": null,
+        "distance": 388.110483,
+        "drive_through": null,
+        "elevation": 164.0,
+        "emergency": null,
+        "fast_food": null,
+        "fee": null,
+        "geometry": "0101000020E61000007BC26DC81A0556C053AEF02E175D4340",
+        "hairdresser": null,
+        "healthcare": null,
+        "historic": "district",
+        "id": 251446,
+        "information": null,
+        "internet_access": null,
+        "leisure": "park",
+        "museum": null,
+        "official_name": null,
+        "opening_hours": null,
+        "operator": null,
+        "osm_id": 354220423,
+        "outdoor_seating": null,
+        "parking": null,
+        "pastry_shop": null,
+        "phone": null,
+        "poi_name": "Elliott Street Historic District",
+        "resort": null,
+        "restaurant": null,
+        "school_type": null,
+        "shop": null,
+        "sport": null,
+        "sports": null,
+        "takeaway": null,
+        "toilets": null,
+        "tourism": null,
+        "website": null,
+        "wheelchair": null,
+        "wholesale": null,
+        "wikidata": null,
+        "zoo": null
+      }
+    ]
+  },
+  "gold_sql": "SELECT\n  p.*,\n  ST_Distance(\n    ST_GeomFromText('POINT (-88.083164 38.729531)',4326)::geography,\n    p.geometry::geography\n  ) AS distance,\n  elev.z AS elevation\nFROM pois p\nJOIN LATERAL (\n  SELECT ST_Value(d.rast, 1, p.geometry::geometry) AS z\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, p.geometry::geometry)\n  LIMIT 1\n) elev ON elev.z IS NOT NULL\nWHERE ST_DWithin(\n        p.geometry::geography,\n        ST_GeomFromText('POINT (-88.083164 38.729531)',4326)::geography,\n        2300\n      )\n  AND leisure = 'park';",
+  "id": "range+distance+elevation-2",
+  "model_output": "```sql\nWITH park_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('[1].geo_wkt'), 4326)::geography AS geom\n),\nuniversity_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('[3].geo_wkt'), 4326)::geography AS geom\n),\nbuffer_geom AS (\n  SELECT ST_Buffer(university_geom.geom::geometry, 2300) AS geom\n  FROM university_geom\n),\nclipped_raster AS (\n  SELECT ST_Clip(public.dem_us.rast, buffer_geom.geom) AS rast\n  FROM public.dem_us, buffer_geom\n  WHERE ST_Intersects(public.dem_us.rast, buffer_geom.geom)\n),\npark_elevation_stats AS (\n  SELECT \n    ST_ValueCount(clipped_raster.rast, true) AS elevation_stats\n  FROM clipped_raster, park_geom\n  WHERE ST_Intersects(clipped_raster.rast, park_geom.geom::geometry)\n)\nSELECT \n  2300 AS distance_meters,\n  (SELECT json_agg(elevation_stats) FROM park_elevation_stats) AS elevation_stats;\n```",
+  "predicted_exec": {
+    "error": "function st_valuecount(raster, boolean) does not exist\nLINE 18:     ST_ValueCount(clipped_raster.rast, true) AS elevation_st...\n             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH park_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('[1].geo_wkt'), 4326)::geography AS geom\n),\nuniversity_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('[3].geo_wkt'), 4326)::geography AS geom\n),\nbuffer_geom AS (\n  SELECT ST_Buffer(university_geom.geom::geometry, 2300) AS geom\n  FROM university_geom\n),\nclipped_raster AS (\n  SELECT ST_Clip(public.dem_us.rast, buffer_geom.geom) AS rast\n  FROM public.dem_us, buffer_geom\n  WHERE ST_Intersects(public.dem_us.rast, buffer_geom.geom)\n),\npark_elevation_stats AS (\n  SELECT \n    ST_ValueCount(clipped_raster.rast, true) AS elevation_stats\n  FROM clipped_raster, park_geom\n  WHERE ST_Intersects(clipped_raster.rast, park_geom.geom::geometry)\n)\nSELECT \n  2300 AS distance_meters,\n  (SELECT json_agg(elevation_stats) FROM park_elevation_stats) AS elevation_stats;",
+  "predicted_sql_candidates": [
+    "WITH park_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('[1].geo_wkt'), 4326)::geography AS geom\n),\nuniversity_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('[3].geo_wkt'), 4326)::geography AS geom\n),\nbuffer_geom AS (\n  SELECT ST_Buffer(university_geom.geom::geometry, 2300) AS geom\n  FROM university_geom\n),\nclipped_raster AS (\n  SELECT ST_Clip(public.dem_us.rast, buffer_geom.geom) AS rast\n  FROM public.dem_us, buffer_geom\n  WHERE ST_Intersects(public.dem_us.rast, buffer_geom.geom)\n),\npark_elevation_stats AS (\n  SELECT \n    ST_ValueCount(clipped_raster.rast, true) AS elevation_stats\n  FROM clipped_raster, park_geom\n  WHERE ST_Intersects(clipped_raster.rast, park_geom.geom::geometry)\n)\nSELECT \n  2300 AS distance_meters,\n  (SELECT json_agg(elevation_stats) FROM park_elevation_stats) AS elevation_stats;"
+  ],
+  "query_type": "extended",
+  "question": "What are the distance and terrain elevation for a park within 2300 meters of Richland County University of Illinois Extension, Olney, IL?",
+  "source_file": "range+distance+elevation.jsonl",
+  "source_stem": "range+distance+elevation",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 52.63,
+    "total_seconds": 52.631
+  },
+  "usage": {
+    "completion_tokens": 246,
+    "prompt_tokens": 1780,
+    "total_tokens": 2026
+  }
+}

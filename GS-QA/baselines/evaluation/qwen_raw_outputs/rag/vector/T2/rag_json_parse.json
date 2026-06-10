@@ -1,0 +1,2102 @@
+[
+  {
+    "id": 2500,
+    "run_seconds": 10.876,
+    "content": "```json\n{\n    \"name\": \"Mountain That Kitchen\",\n    \"address\": \"1000 Main St, Waltham, MA 02453\",\n    \"distance\": 1\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 182,
+      "output_tokens": 47,
+      "total_tokens": 229,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 47,
+        "prompt_tokens": 182,
+        "total_tokens": 229,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2501,
+    "run_seconds": 8.332,
+    "content": "```json\n{\n    \"name\": \"Bloomington\",\n    \"address\": \"Bloomington, IL\",\n    \"distance\": 1560\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 182,
+      "output_tokens": 37,
+      "total_tokens": 219,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 37,
+        "prompt_tokens": 182,
+        "total_tokens": 219,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2502,
+    "run_seconds": 9.448,
+    "content": "```json\n{\n    \"name\": \"AT&SF NO.940\",\n    \"address\": \"Bartlesville, OK\",\n    \"distance\": 150\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 211,
+      "output_tokens": 42,
+      "total_tokens": 253,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 42,
+        "prompt_tokens": 211,
+        "total_tokens": 253,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2503,
+    "run_seconds": 12.506,
+    "content": "```json\n{\n    \"name\": \"Mario & Alberto De La Cruz Art Gallery\",\n    \"address\": \"900 17th St NW, Washington, DC 20006, USA\",\n    \"distance\": 60\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 200,
+      "output_tokens": 56,
+      "total_tokens": 256,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 56,
+        "prompt_tokens": 200,
+        "total_tokens": 256,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2504,
+    "run_seconds": 4.392,
+    "content": "```json\n{\n    \"name\": \"GreenStreets Salads\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 189,
+      "output_tokens": 19,
+      "total_tokens": 208,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 189,
+        "total_tokens": 208,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2505,
+    "run_seconds": 8.557,
+    "content": "```json\n{\n    \"name\": \"Sherwood Forest Faire\",\n    \"address\": \"McDade, TX\",\n    \"distance\": 100\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 192,
+      "output_tokens": 38,
+      "total_tokens": 230,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 38,
+        "prompt_tokens": 192,
+        "total_tokens": 230,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2506,
+    "run_seconds": 10.097,
+    "content": "```json\n{\n    \"name\": \"Burger Place\",\n    \"address\": \"123 Main Street, Watkinsville, GA 30954\",\n    \"distance\": 5\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 184,
+      "output_tokens": 45,
+      "total_tokens": 229,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 45,
+        "prompt_tokens": 184,
+        "total_tokens": 229,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2507,
+    "run_seconds": 3.949,
+    "content": "```json\n{\n    \"name\": \"Wendy's\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 190,
+      "output_tokens": 17,
+      "total_tokens": 207,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 190,
+        "total_tokens": 207,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2508,
+    "run_seconds": 11.645,
+    "content": "```json\n{\n    \"name\": \"MAC 650 Gallery\",\n    \"address\": \"345 Main Street, Middletown, CT 06457\",\n    \"distance\": 140\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 218,
+      "output_tokens": 52,
+      "total_tokens": 270,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 52,
+        "prompt_tokens": 218,
+        "total_tokens": 270,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2509,
+    "run_seconds": 7.9,
+    "content": "```json\n{\n    \"name\": \"Anvil Arts Studio\",\n    \"address\": \"Newland, NC\",\n    \"distance\": 80\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 190,
+      "output_tokens": 35,
+      "total_tokens": 225,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 35,
+        "prompt_tokens": 190,
+        "total_tokens": 225,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2510,
+    "run_seconds": 3.286,
+    "content": "```json\n{\n    \"name\": \"No\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 181,
+      "output_tokens": 14,
+      "total_tokens": 195,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 181,
+        "total_tokens": 195,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2511,
+    "run_seconds": 3.513,
+    "content": "```json\n{\n    \"name\": \"Rutherford\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 15,
+      "total_tokens": 193,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 178,
+        "total_tokens": 193,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2512,
+    "run_seconds": 10.973,
+    "content": "```json\n{\n    \"name\": \"takeout restaurant\",\n    \"address\": \"inside a 100 kilometers radius from Sense Fine Art, Menlo Park, CA\",\n    \"distance\": 100\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 185,
+      "output_tokens": 49,
+      "total_tokens": 234,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 49,
+        "prompt_tokens": 185,
+        "total_tokens": 234,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2513,
+    "run_seconds": 4.169,
+    "content": "```json\n{\n    \"name\": \"The Sidewalk Cafe\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 184,
+      "output_tokens": 18,
+      "total_tokens": 202,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 184,
+        "total_tokens": 202,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2514,
+    "run_seconds": 3.292,
+    "content": "```json\n{\n    \"name\": \"No\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 181,
+      "output_tokens": 14,
+      "total_tokens": 195,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 181,
+        "total_tokens": 195,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2515,
+    "run_seconds": 9.435,
+    "content": "```json\n{\n    \"name\": \"Indian restaurant\",\n    \"address\": \"Not found within 60 kilometers from Point Lookout, PA\",\n    \"distance\": 60\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 179,
+      "output_tokens": 42,
+      "total_tokens": 221,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 42,
+        "prompt_tokens": 179,
+        "total_tokens": 221,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2516,
+    "run_seconds": 8.619,
+    "content": "```json\n{\n    \"name\": \"Curtis Motel\",\n    \"address\": \"Bridgeton, NC\",\n    \"distance\": 80\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 180,
+      "output_tokens": 38,
+      "total_tokens": 218,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 38,
+        "prompt_tokens": 180,
+        "total_tokens": 218,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2517,
+    "run_seconds": 8.736,
+    "content": "```json\n{\n    \"name\": \"emergency hospital\",\n    \"address\": \"Red Wolf Sanctuary, Rising Sun, IN\",\n    \"distance\": 110\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 183,
+      "output_tokens": 38,
+      "total_tokens": 221,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 38,
+        "prompt_tokens": 183,
+        "total_tokens": 221,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2518,
+    "run_seconds": 3.538,
+    "content": "```json\n{\n    \"name\": \"Fort Montgomery\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 181,
+      "output_tokens": 15,
+      "total_tokens": 196,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 181,
+        "total_tokens": 196,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2519,
+    "run_seconds": 11.685,
+    "content": "```json\n{\n    \"name\": null,\n    \"address\": null,\n    \"count\": null,\n    \"distance\": null,\n    \"length\": null,\n    \"area\": null,\n    \"azimuth_angle\": null\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 184,
+      "output_tokens": 51,
+      "total_tokens": 235,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 51,
+        "prompt_tokens": 184,
+        "total_tokens": 235,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2520,
+    "run_seconds": 4.213,
+    "content": "```json\n{\n    \"name\": \"Monterrey Mexican Restaurant\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 18,
+      "total_tokens": 204,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 186,
+        "total_tokens": 204,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2521,
+    "run_seconds": 3.302,
+    "content": "```json\n{\n    \"name\": \"No\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 181,
+      "output_tokens": 14,
+      "total_tokens": 195,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 181,
+        "total_tokens": 195,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2522,
+    "run_seconds": 3.774,
+    "content": "```json\n{\n    \"name\": \"Newport Beach\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 181,
+      "output_tokens": 16,
+      "total_tokens": 197,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 181,
+        "total_tokens": 197,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2523,
+    "run_seconds": 2.683,
+    "content": "```json\n{\"name\": \"No\"}\n```",
+    "usage_metadata": {
+      "input_tokens": 181,
+      "output_tokens": 11,
+      "total_tokens": 192,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 181,
+        "total_tokens": 192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2524,
+    "run_seconds": 9.309,
+    "content": "```json\n{\n    \"name\": \"No emergency hospital found\",\n    \"address\": \"Procter Farm Preserve, Wendell, NC\",\n    \"distance\": 160\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 190,
+      "output_tokens": 41,
+      "total_tokens": 231,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 41,
+        "prompt_tokens": 190,
+        "total_tokens": 231,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2525,
+    "run_seconds": 13.225,
+    "content": "```json\n{\n    \"name\": \"Discover Science Center STEM Lab\",\n    \"address\": \"1000 Johnson Ferry Rd NW, Suite 200, Marietta, GA 30067\",\n    \"distance\": 136\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 185,
+      "output_tokens": 58,
+      "total_tokens": 243,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 58,
+        "prompt_tokens": 185,
+        "total_tokens": 243,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2526,
+    "run_seconds": 6.898,
+    "content": "```json\n{\n    \"name\": \"None\",\n    \"address\": \"None\",\n    \"distance\": 150\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 193,
+      "output_tokens": 30,
+      "total_tokens": 223,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 30,
+        "prompt_tokens": 193,
+        "total_tokens": 223,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2527,
+    "run_seconds": 8.019,
+    "content": "```json\n{\n    \"name\": \"Getting's Garden\",\n    \"address\": \"Sanborn, IA\",\n    \"distance\": 110\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 198,
+      "output_tokens": 35,
+      "total_tokens": 233,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 35,
+        "prompt_tokens": 198,
+        "total_tokens": 233,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2528,
+    "run_seconds": 10.71,
+    "content": "```json\n{\n    \"name\": \"African American Heritage Museum of Southern New Jersey\",\n    \"address\": \"1201 N 5th St, Camden, NJ 08104\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 191,
+      "output_tokens": 47,
+      "total_tokens": 238,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 47,
+        "prompt_tokens": 191,
+        "total_tokens": 238,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2529,
+    "run_seconds": 4.039,
+    "content": "```json\n{\n    \"name\": \"Forbes Mill Museum\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 184,
+      "output_tokens": 17,
+      "total_tokens": 201,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 184,
+        "total_tokens": 201,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2530,
+    "run_seconds": 6.735,
+    "content": "```json\n{\n    \"name\": \"Lewis Avenue Soul Food & Sea Food Restaurant\",\n    \"distance\": 17\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 195,
+      "output_tokens": 29,
+      "total_tokens": 224,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 29,
+        "prompt_tokens": 195,
+        "total_tokens": 224,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2531,
+    "run_seconds": 9.006,
+    "content": "```json\n{\n    \"name\": \"Kettlewell & Edwards\",\n    \"address\": \"Saratoga Springs, NY\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 38,
+      "total_tokens": 224,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 38,
+        "prompt_tokens": 186,
+        "total_tokens": 224,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2532,
+    "run_seconds": 9.936,
+    "content": "```json\n{\n    \"name\": \"San Francisco General Hospital\",\n    \"address\": \"1001 Potrero Ave, San Francisco, CA 94110, USA\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 180,
+      "output_tokens": 44,
+      "total_tokens": 224,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 44,
+        "prompt_tokens": 180,
+        "total_tokens": 224,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2533,
+    "run_seconds": 8.994,
+    "content": "```json\n{\n    \"name\": \"Forest Lake Camp infirmary\",\n    \"address\": \"River Deck, Edgewater, MD\",\n    \"distance\": 69\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 191,
+      "output_tokens": 40,
+      "total_tokens": 231,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 40,
+        "prompt_tokens": 191,
+        "total_tokens": 231,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2534,
+    "run_seconds": 12.284,
+    "content": "```json\n{\n    \"name\": \"Museum of History and Holocaust Education\",\n    \"address\": \"1100 Chastain Rd NW, Kennesaw, GA 30144\",\n    \"distance\": 70\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 55,
+      "total_tokens": 242,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 55,
+        "prompt_tokens": 187,
+        "total_tokens": 242,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2535,
+    "run_seconds": 6.806,
+    "content": "```json\n{\n    \"name\": \"African restaurant\",\n    \"address\": \"\",\n    \"distance\": 150\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 30,
+      "total_tokens": 218,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 30,
+        "prompt_tokens": 188,
+        "total_tokens": 218,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2536,
+    "run_seconds": 2.629,
+    "content": "```json\n{\"name\": \"No\"}\n```",
+    "usage_metadata": {
+      "input_tokens": 184,
+      "output_tokens": 11,
+      "total_tokens": 195,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 184,
+        "total_tokens": 195,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2537,
+    "run_seconds": 3.949,
+    "content": "```json\n{\n    \"name\": \"Oakland Aviation Museum\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 191,
+      "output_tokens": 17,
+      "total_tokens": 208,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 191,
+        "total_tokens": 208,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2538,
+    "run_seconds": 13.166,
+    "content": "```json\n{\n    \"name\": \"Omni Scottsdale Resort & Spa at Montelucia\",\n    \"address\": \"6444 East Camelback Road, Paradise Valley, AZ 85255\",\n    \"distance\": 190\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 59,
+      "total_tokens": 247,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 59,
+        "prompt_tokens": 188,
+        "total_tokens": 247,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2539,
+    "run_seconds": 8.119,
+    "content": "```json\n{\n    \"name\": \"Johnsonburg Swamp Preserve\",\n    \"address\": \"Johnsonburg, NJ\",\n    \"distance\": 100\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 201,
+      "output_tokens": 36,
+      "total_tokens": 237,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 36,
+        "prompt_tokens": 201,
+        "total_tokens": 237,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2540,
+    "run_seconds": 7.898,
+    "content": "```json\n{\n    \"name\": \"Amazing Fun Center\",\n    \"address\": \"Coram, MT\",\n    \"distance\": 120\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 177,
+      "output_tokens": 35,
+      "total_tokens": 212,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 35,
+        "prompt_tokens": 177,
+        "total_tokens": 212,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2541,
+    "run_seconds": 4.168,
+    "content": "```json\n{\n    \"name\": \"Point Loma Seafoods\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 18,
+      "total_tokens": 204,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 186,
+        "total_tokens": 204,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2542,
+    "run_seconds": 10.529,
+    "content": "```json\n{\n    \"name\": \"Euphrat Museum of Art\",\n    \"address\": \"1101 N Main St, Muncie, IN 47304, USA\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 194,
+      "output_tokens": 47,
+      "total_tokens": 241,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 47,
+        "prompt_tokens": 194,
+        "total_tokens": 241,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2543,
+    "run_seconds": 5.702,
+    "content": "```json\n{\n    \"name\": \"Ela Greek Kitchen\",\n    \"distance\": 60\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 195,
+      "output_tokens": 25,
+      "total_tokens": 220,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 195,
+        "total_tokens": 220,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2544,
+    "run_seconds": 8.56,
+    "content": "```json\n{\n    \"name\": \"Chopper's Lawn Equipment\",\n    \"address\": \"Kissimmee, FL\",\n    \"distance\": 90\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 183,
+      "output_tokens": 38,
+      "total_tokens": 221,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 38,
+        "prompt_tokens": 183,
+        "total_tokens": 221,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2545,
+    "run_seconds": 9.234,
+    "content": "```json\n{\n    \"name\": \"Stephens County Hospital\",\n    \"address\": \"Ducks Unlimited National Headquarters, Memphis, TN\",\n    \"distance\": 80\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 196,
+      "output_tokens": 41,
+      "total_tokens": 237,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 41,
+        "prompt_tokens": 196,
+        "total_tokens": 237,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2546,
+    "run_seconds": 3.724,
+    "content": "```json\n{\n    \"name\": \"Golden Krust\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 189,
+      "output_tokens": 16,
+      "total_tokens": 205,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 189,
+        "total_tokens": 205,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2547,
+    "run_seconds": 6.799,
+    "content": "```json\n{\n    \"name\": \"Wagner Museum\",\n    \"address\": \"Wagner Hotel, New York, NY\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 30,
+      "total_tokens": 208,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 30,
+        "prompt_tokens": 178,
+        "total_tokens": 208,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2548,
+    "run_seconds": 11.63,
+    "content": "```json\n{\n    \"name\": \"Jeff Tabor Fine Art Gallery\",\n    \"address\": \"125 Galisteo St, Santa Fe, NM 87501, USA\",\n    \"distance\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 208,
+      "output_tokens": 52,
+      "total_tokens": 260,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 52,
+        "prompt_tokens": 208,
+        "total_tokens": 260,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2549,
+    "run_seconds": 3.95,
+    "content": "```json\n{\n    \"name\": \"Battle of North Point\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 182,
+      "output_tokens": 17,
+      "total_tokens": 199,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 182,
+        "total_tokens": 199,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2550,
+    "run_seconds": 4.384,
+    "content": "```json\n{\n    \"name\": \"Chef Samir Shaltout\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 189,
+      "output_tokens": 19,
+      "total_tokens": 208,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 189,
+        "total_tokens": 208,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2551,
+    "run_seconds": 10.75,
+    "content": "```json\n{\n    \"name\": \"Thai restaurant\",\n    \"address\": \"Lake Plantaganet Southeast Public Access - MN DNR, Bemidji, MN\",\n    \"distance\": 190\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 48,
+      "total_tokens": 236,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 48,
+        "prompt_tokens": 188,
+        "total_tokens": 236,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2552,
+    "run_seconds": 3.366,
+    "content": "```json\n{\n    \"name\": \"Yes\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 14,
+      "total_tokens": 200,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 186,
+        "total_tokens": 200,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2553,
+    "run_seconds": 3.32,
+    "content": "```json\n{\n    \"name\": \"No\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 184,
+      "output_tokens": 14,
+      "total_tokens": 198,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 184,
+        "total_tokens": 198,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2554,
+    "run_seconds": 3.739,
+    "content": "```json\n{\n    \"name\": \"Dunkin'\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 185,
+      "output_tokens": 16,
+      "total_tokens": 201,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 185,
+        "total_tokens": 201,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2555,
+    "run_seconds": 11.649,
+    "content": "```json\n{\n    \"name\": \"Russ Berrie Institute for Professional Sales\",\n    \"address\": \"10000 South Campus Drive, Wayne, NJ 07470\",\n    \"distance\": 60\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 206,
+      "output_tokens": 52,
+      "total_tokens": 258,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 52,
+        "prompt_tokens": 206,
+        "total_tokens": 258,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2556,
+    "run_seconds": 4.625,
+    "content": "```json\n{\n    \"name\": \"Anthony's Italian Coffee & Chocolate House\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 20,
+      "total_tokens": 206,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 186,
+        "total_tokens": 206,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2557,
+    "run_seconds": 3.291,
+    "content": "```json\n{\n    \"name\": \"No\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 181,
+      "output_tokens": 14,
+      "total_tokens": 195,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 181,
+        "total_tokens": 195,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2558,
+    "run_seconds": 11.25,
+    "content": "```json\n{\n    \"name\": \"Rockford Career College\",\n    \"address\": \"1000 East State Street, Rockford, IL 61108\",\n    \"distance\": 170\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 181,
+      "output_tokens": 50,
+      "total_tokens": 231,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 50,
+        "prompt_tokens": 181,
+        "total_tokens": 231,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2559,
+    "run_seconds": 3.97,
+    "content": "```json\n{\n    \"name\": \"Chuck E. Cheese\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 17,
+      "total_tokens": 203,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 186,
+        "total_tokens": 203,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2560,
+    "run_seconds": 12.336,
+    "content": "```json\n{\n    \"name\": null,\n    \"address\": null,\n    \"count\": 0,\n    \"distance\": 180,\n    \"length\": null,\n    \"area\": null,\n    \"azimuth_angle\": null\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 181,
+      "output_tokens": 55,
+      "total_tokens": 236,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 55,
+        "prompt_tokens": 181,
+        "total_tokens": 236,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2561,
+    "run_seconds": 10.867,
+    "content": "```json\n{\n    \"name\": \"Cabell Gallery\",\n    \"address\": \"101 W Main St, Lexington, VA 24450\",\n    \"distance\": 150\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 179,
+      "output_tokens": 47,
+      "total_tokens": 226,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 47,
+        "prompt_tokens": 179,
+        "total_tokens": 226,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2562,
+    "run_seconds": 8.166,
+    "content": "```json\n{\n    \"name\": \"Bastion Studios\",\n    \"address\": \"Erie, PA\",\n    \"distance\": 150\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 36,
+      "total_tokens": 224,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 36,
+        "prompt_tokens": 188,
+        "total_tokens": 224,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2563,
+    "run_seconds": 11.408,
+    "content": "```json\n{\n    \"name\": \"World's Largest Egg\",\n    \"address\": \"100 S 2nd St, Winlock, WA 98596, USA\",\n    \"distance\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 194,
+      "output_tokens": 51,
+      "total_tokens": 245,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 51,
+        "prompt_tokens": 194,
+        "total_tokens": 245,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2564,
+    "run_seconds": 3.325,
+    "content": "```json\n{\n    \"name\": \"No\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 14,
+      "total_tokens": 192,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 178,
+        "total_tokens": 192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2565,
+    "run_seconds": 2.731,
+    "content": "```json\n{\"name\": \"No\"}\n```",
+    "usage_metadata": {
+      "input_tokens": 183,
+      "output_tokens": 11,
+      "total_tokens": 194,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 183,
+        "total_tokens": 194,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2566,
+    "run_seconds": 11.332,
+    "content": "```json\n{\n    \"name\": \"Columbine Steak House & Lounge\",\n    \"address\": \"11100 Lakereale Dr, North Olmsted, OH 44070, USA\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 190,
+      "output_tokens": 50,
+      "total_tokens": 240,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 50,
+        "prompt_tokens": 190,
+        "total_tokens": 240,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2567,
+    "run_seconds": 4.387,
+    "content": "```json\n{\n    \"name\": \"Rutland Historical Society Museum\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 19,
+      "total_tokens": 207,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 188,
+        "total_tokens": 207,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2568,
+    "run_seconds": 6.607,
+    "content": "```json\n{\n    \"name\": \"Dunkin'\",\n    \"address\": \"\",\n    \"distance\": 46\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 191,
+      "output_tokens": 29,
+      "total_tokens": 220,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 29,
+        "prompt_tokens": 191,
+        "total_tokens": 220,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2569,
+    "run_seconds": 8.728,
+    "content": "```json\n{\n    \"name\": \"Niagara Amusement Park & Splash World\",\n    \"address\": \"Grand Island, NY\",\n    \"distance\": 40\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 210,
+      "output_tokens": 39,
+      "total_tokens": 249,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 39,
+        "prompt_tokens": 210,
+        "total_tokens": 249,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2570,
+    "run_seconds": 9.607,
+    "content": "```json\n{\n    \"name\": \"Cincinnati Museum of Natural History\",\n    \"address\": \"1300 Freedom Blvd, Cincinnati, OH 45202, USA\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 182,
+      "output_tokens": 43,
+      "total_tokens": 225,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 43,
+        "prompt_tokens": 182,
+        "total_tokens": 225,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2571,
+    "run_seconds": 10.545,
+    "content": "```json\n{\n    \"name\": \"McDonald's\",\n    \"address\": \"1000 Main Street, Bradenton, FL 34205\",\n    \"distance\": 10\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 183,
+      "output_tokens": 47,
+      "total_tokens": 230,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 47,
+        "prompt_tokens": 183,
+        "total_tokens": 230,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2572,
+    "run_seconds": 7.827,
+    "content": "```json\n{\n    \"name\": \"West End Gallery\",\n    \"address\": \"Corning, NY\",\n    \"distance\": 180\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 180,
+      "output_tokens": 35,
+      "total_tokens": 215,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 35,
+        "prompt_tokens": 180,
+        "total_tokens": 215,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2573,
+    "run_seconds": 10.521,
+    "content": "```json\n{\n    \"name\": \"Thai restaurant\",\n    \"address\": \"Kona Cloud Forest - Guided Walking Tours, Kailua-Kona, HI\",\n    \"distance\": 130\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 192,
+      "output_tokens": 47,
+      "total_tokens": 239,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 47,
+        "prompt_tokens": 192,
+        "total_tokens": 239,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2574,
+    "run_seconds": 11.433,
+    "content": "```json\n{\n    \"name\": null,\n    \"address\": null,\n    \"count\": null,\n    \"distance\": null,\n    \"length\": null,\n    \"area\": null,\n    \"azimuth_angle\": null\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 51,
+      "total_tokens": 239,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 51,
+        "prompt_tokens": 188,
+        "total_tokens": 239,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2575,
+    "run_seconds": 9.06,
+    "content": "```json\n{\n    \"name\": \"South Venice Lemon Bay Preserve - South Entrance\",\n    \"address\": \"Venice, FL\",\n    \"distance\": 130\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 185,
+      "output_tokens": 40,
+      "total_tokens": 225,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 40,
+        "prompt_tokens": 185,
+        "total_tokens": 225,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2576,
+    "run_seconds": 9.037,
+    "content": "```json\n{\n    \"name\": \"Rogers Rock Campground Entrance\",\n    \"address\": \"Hague, NY\",\n    \"distance\": 130\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 183,
+      "output_tokens": 39,
+      "total_tokens": 222,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 39,
+        "prompt_tokens": 183,
+        "total_tokens": 222,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2577,
+    "run_seconds": 12.124,
+    "content": "```json\n{\n    \"name\": null,\n    \"address\": null,\n    \"count\": 0,\n    \"distance\": 160,\n    \"length\": null,\n    \"area\": null,\n    \"azimuth_angle\": null\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 189,
+      "output_tokens": 55,
+      "total_tokens": 244,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 55,
+        "prompt_tokens": 189,
+        "total_tokens": 244,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2578,
+    "run_seconds": 6.856,
+    "content": "```json\n{\n    \"name\": \"None\",\n    \"address\": \"None\",\n    \"distance\": 170\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 199,
+      "output_tokens": 30,
+      "total_tokens": 229,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 30,
+        "prompt_tokens": 199,
+        "total_tokens": 229,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2579,
+    "run_seconds": 11.327,
+    "content": "```json\n{\n    \"name\": null,\n    \"address\": null,\n    \"count\": null,\n    \"distance\": null,\n    \"length\": null,\n    \"area\": null,\n    \"azimuth_angle\": null\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 189,
+      "output_tokens": 51,
+      "total_tokens": 240,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 51,
+        "prompt_tokens": 189,
+        "total_tokens": 240,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2580,
+    "run_seconds": 11.197,
+    "content": "```json\n{\n    \"name\": \"South Philly Cheese Steaks\",\n    \"address\": \"121 N LaSalle St, Chicago, IL 60602\",\n    \"distance\": 19\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 196,
+      "output_tokens": 50,
+      "total_tokens": 246,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 50,
+        "prompt_tokens": 196,
+        "total_tokens": 246,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2581,
+    "run_seconds": 12.454,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0,\n    \"distance\": 30,\n    \"length\": 0,\n    \"area\": 0,\n    \"azimuth_angle\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 201,
+      "output_tokens": 55,
+      "total_tokens": 256,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 55,
+        "prompt_tokens": 201,
+        "total_tokens": 256,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2582,
+    "run_seconds": 11.724,
+    "content": "```json\n{\n    \"name\": \"Radisson Hotel River Falls\",\n    \"address\": \"100 S 3rd Ave, River Falls, WI 54023\",\n    \"distance\": 170\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 208,
+      "output_tokens": 52,
+      "total_tokens": 260,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 52,
+        "prompt_tokens": 208,
+        "total_tokens": 260,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2583,
+    "run_seconds": 12.333,
+    "content": "```json\n{\n    \"name\": null,\n    \"address\": null,\n    \"count\": 0,\n    \"distance\": 190,\n    \"length\": null,\n    \"area\": null,\n    \"azimuth_angle\": null\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 206,
+      "output_tokens": 55,
+      "total_tokens": 261,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 55,
+        "prompt_tokens": 206,
+        "total_tokens": 261,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2584,
+    "run_seconds": 12.418,
+    "content": "```json\n{\n    \"name\": \"City of Farmington Museum\",\n    \"address\": \"1150 W 2000 N, Farmington, UT 84502\",\n    \"distance\": 110\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 55,
+      "total_tokens": 241,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 55,
+        "prompt_tokens": 186,
+        "total_tokens": 241,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2585,
+    "run_seconds": 5.685,
+    "content": "```json\n{\n    \"name\": \"Memphis\",\n    \"address\": \"Memphis, TN\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 184,
+      "output_tokens": 25,
+      "total_tokens": 209,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 184,
+        "total_tokens": 209,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2586,
+    "run_seconds": 3.861,
+    "content": "```json\n{\n    \"name\": \"The Coop\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 183,
+      "output_tokens": 16,
+      "total_tokens": 199,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 183,
+        "total_tokens": 199,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2587,
+    "run_seconds": 11.058,
+    "content": "```json\n{\n    \"name\": \"Blue Ocean Discovery Center\",\n    \"address\": \"199 Ocean Blvd, Hampton, NH 03842, USA\",\n    \"distance\": 120\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 183,
+      "output_tokens": 49,
+      "total_tokens": 232,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 49,
+        "prompt_tokens": 183,
+        "total_tokens": 232,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2588,
+    "run_seconds": 3.742,
+    "content": "```json\n{\n    \"name\": \"Cherry Hospital\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 16,
+      "total_tokens": 203,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 187,
+        "total_tokens": 203,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2589,
+    "run_seconds": 6.19,
+    "content": "```json\n{\n    \"name\": \"None found\",\n    \"address\": \"\",\n    \"distance\": 70\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 183,
+      "output_tokens": 28,
+      "total_tokens": 211,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 28,
+        "prompt_tokens": 183,
+        "total_tokens": 211,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2590,
+    "run_seconds": 5.957,
+    "content": "```json\n{\n    \"name\": \"None\",\n    \"address\": \"\",\n    \"distance\": 20\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 181,
+      "output_tokens": 27,
+      "total_tokens": 208,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 27,
+        "prompt_tokens": 181,
+        "total_tokens": 208,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2591,
+    "run_seconds": 5.576,
+    "content": "```json\n{\n    \"name\": \"emergency hospital\",\n    \"distance\": 170\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 182,
+      "output_tokens": 24,
+      "total_tokens": 206,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 182,
+        "total_tokens": 206,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2592,
+    "run_seconds": 12.13,
+    "content": "```json\n{\n    \"name\": null,\n    \"address\": null,\n    \"count\": null,\n    \"distance\": 160,\n    \"length\": null,\n    \"area\": null,\n    \"azimuth_angle\": null\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 207,
+      "output_tokens": 54,
+      "total_tokens": 261,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 54,
+        "prompt_tokens": 207,
+        "total_tokens": 261,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2593,
+    "run_seconds": 4.359,
+    "content": "```json\n{\n    \"name\": \"Springfield Clinic Wabash\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 185,
+      "output_tokens": 19,
+      "total_tokens": 204,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 185,
+        "total_tokens": 204,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2594,
+    "run_seconds": 11.289,
+    "content": "```json\n{\n    \"name\": \"Waterford Historical Museum and Cultural Center\",\n    \"address\": \"123 Main Street, Waterford, WI, 53094\",\n    \"distance\": 185\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 195,
+      "output_tokens": 52,
+      "total_tokens": 247,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 52,
+        "prompt_tokens": 195,
+        "total_tokens": 247,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2595,
+    "run_seconds": 8.301,
+    "content": "```json\n{\n    \"name\": \"emergency hospital\",\n    \"address\": \"Center of the Universe, Wallace, ID\",\n    \"distance\": 170\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 184,
+      "output_tokens": 38,
+      "total_tokens": 222,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 38,
+        "prompt_tokens": 184,
+        "total_tokens": 222,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2596,
+    "run_seconds": 5.531,
+    "content": "```json\n{\n    \"name\": \"Korean restaurant\",\n    \"distance\": 170\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 25,
+      "total_tokens": 203,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 178,
+        "total_tokens": 203,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2597,
+    "run_seconds": 3.828,
+    "content": "```json\n{\n    \"azimuth_angle\": 90\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 17,
+      "total_tokens": 195,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 178,
+        "total_tokens": 195,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2598,
+    "run_seconds": 9.578,
+    "content": "```json\n{\n    \"name\": \"Mercy Hospital - Main Entrance\",\n    \"address\": \"First Responders Park, Germantown Hills, IL\",\n    \"distance\": 38\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 196,
+      "output_tokens": 44,
+      "total_tokens": 240,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 44,
+        "prompt_tokens": 196,
+        "total_tokens": 240,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2599,
+    "run_seconds": 12.986,
+    "content": "```json\n{\n    \"name\": \"Hoop-Dee-Doo Musical Revue\",\n    \"address\": \"Disney's Polynesian Village Resort, 2800 Convention Center Dr, Lake Buena Vista, FL 34747, USA\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 184,
+      "output_tokens": 60,
+      "total_tokens": 244,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 60,
+        "prompt_tokens": 184,
+        "total_tokens": 244,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  }
+]

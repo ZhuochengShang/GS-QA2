@@ -1,0 +1,59 @@
+{
+  "answer_type": "count, POIs -> Points",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "count, POIs -> Points",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "count": 0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "count": 0
+      }
+    ]
+  },
+  "gold_sql": "WITH candidates AS (\n  SELECT p.id, p.geometry\n  FROM pois p\n  WHERE ST_DWithin(p.geometry::geography, ST_GeomFromText('POINT (-81.221948 35.663044)',4326)::geography, 4800)\n    AND p.leisure = 'stadium'\n),\npoi_elev AS (\n  SELECT c.id, elev.z\n  FROM candidates c\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, c.geometry::geometry) AS z\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, c.geometry::geometry)\n    LIMIT 1\n  ) elev ON elev.z IS NOT NULL\n)\nSELECT COUNT(*) AS count\nFROM poi_elev\nWHERE z <= 460;",
+  "id": "range+count+elevation_condition-19",
+  "model_output": "```sql\nWITH museum_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-81.221948, 35.663044), 4326)::geography AS geom\n),\nstadium_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-82.517286, 37.477755), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT ST_Buffer(stadium_point.geom, 4800) AS geom\n  FROM stadium_point\n),\ndem_clip AS (\n  SELECT ST_Clip(rast, TRUE, buffered_area.geom) AS clipped_rast\n  FROM public.dem_us, buffered_area\n  WHERE ST_Intersects(rast, buffered_area.geom)\n),\nelevation_filter AS (\n  SELECT (ST_DumpAsPolygons(clipped_rast, 1)).* \n  FROM dem_clip\n),\nfiltered_by_elevation AS (\n  SELECT *\n  FROM elevation_filter\n  WHERE val <= 460\n)\nSELECT COUNT(*) AS total_stadia\nFROM filtered_by_elevation, museum_point\nWHERE ST_DWithin(filtered_by_elevation.geom, museum_point.geom, 4800);\n```",
+  "predicted_exec": {
+    "error": "function st_clip(raster, boolean, geography) does not exist\nLINE 12:   SELECT ST_Clip(rast, TRUE, buffered_area.geom) AS clipped_...\n                  ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH museum_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-81.221948, 35.663044), 4326)::geography AS geom\n),\nstadium_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-82.517286, 37.477755), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT ST_Buffer(stadium_point.geom, 4800) AS geom\n  FROM stadium_point\n),\ndem_clip AS (\n  SELECT ST_Clip(rast, TRUE, buffered_area.geom) AS clipped_rast\n  FROM public.dem_us, buffered_area\n  WHERE ST_Intersects(rast, buffered_area.geom)\n),\nelevation_filter AS (\n  SELECT (ST_DumpAsPolygons(clipped_rast, 1)).* \n  FROM dem_clip\n),\nfiltered_by_elevation AS (\n  SELECT *\n  FROM elevation_filter\n  WHERE val <= 460\n)\nSELECT COUNT(*) AS total_stadia\nFROM filtered_by_elevation, museum_point\nWHERE ST_DWithin(filtered_by_elevation.geom, museum_point.geom, 4800);",
+  "predicted_sql_candidates": [
+    "WITH museum_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-81.221948, 35.663044), 4326)::geography AS geom\n),\nstadium_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-82.517286, 37.477755), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT ST_Buffer(stadium_point.geom, 4800) AS geom\n  FROM stadium_point\n),\ndem_clip AS (\n  SELECT ST_Clip(rast, TRUE, buffered_area.geom) AS clipped_rast\n  FROM public.dem_us, buffered_area\n  WHERE ST_Intersects(rast, buffered_area.geom)\n),\nelevation_filter AS (\n  SELECT (ST_DumpAsPolygons(clipped_rast, 1)).* \n  FROM dem_clip\n),\nfiltered_by_elevation AS (\n  SELECT *\n  FROM elevation_filter\n  WHERE val <= 460\n)\nSELECT COUNT(*) AS total_stadia\nFROM filtered_by_elevation, museum_point\nWHERE ST_DWithin(filtered_by_elevation.geom, museum_point.geom, 4800);"
+  ],
+  "query_type": "extended",
+  "question": "What's the total count of stadia within 4800 meters from Catawba County Historical Museum, Newton, NC at or under 460 m elevation?",
+  "source_file": "range+count+elevation_condition.jsonl",
+  "source_stem": "range+count+elevation_condition",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 57.419,
+    "total_seconds": 57.42
+  },
+  "usage": {
+    "completion_tokens": 269,
+    "prompt_tokens": 1791,
+    "total_tokens": 2060
+  }
+}

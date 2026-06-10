@@ -1,0 +1,61 @@
+{
+  "answer_type": "area+slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "area+slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "area": 457235863.729707,
+      "slope": 4.689313
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "area": 457235863.729707,
+        "slope": 4.689313
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_CollectionExtract(ST_MakeValid(ST_GeomFromText('POLYGON ((-89.425369 45.206033, -89.446162 45.206193, -89.456247 45.206299, -89.46659 45.206178, -89.500171 45.206374, -89.549052 45.20648, -89.559201 45.20639, -89.57229 45.206465, -89.5898 45.206299, -89.589809 45.213525, -89.589894 45.235394, -89.589894 45.257254, -89.589913 45.260957, -89.589959 45.270076, -89.589966 45.271744, -89.589985 45.27548, -89.590002 45.279046, -89.589937 45.288059, -89.589937 45.290013, -89.589937 45.293841, -89.576355 45.293886, -89.569283 45.293878, -89.563523 45.293871, -89.548438 45.29375, -89.424772 45.29318, -89.425369 45.206033))',4326)), 3) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\narea_sum AS (\n  SELECT SUM(ST_Area(parks.geometry::geography)) AS area\n  FROM parks\n  WHERE leisure = 'nature_reserve'\n    AND ST_Intersects(parks.geometry::geography, (SELECT g::geography FROM region))\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d, buffered_region r\n  WHERE ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n),\nslope_agg AS (\n  SELECT (ST_SummaryStats(rast, 1, TRUE)).mean AS slope\n  FROM region_slope\n)\nSELECT a.area, s.slope\nFROM area_sum a, slope_agg s;",
+  "id": "intersects_area_total+area+avg_slope-13",
+  "model_output": "```sql\nWITH schley_region AS (\n  SELECT geometry\n  FROM regions\n  WHERE region_name ILIKE 'Schley'\n    AND border_type = 'county'\n    AND addr_state = 'Wisconsin'\n),\nnature_reserves AS (\n  SELECT parks.geometry\n  FROM parks\n  JOIN schley_region\n    ON ST_Intersects(parks.geometry::geometry, schley_region.geometry::geometry)\n  WHERE parks.leisure = 'nature_reserve'\n),\nraster_analysis AS (\n  SELECT\n    SUM(ST_Area(ST_Clip(public.dem_us.rast, true, nature_reserves.geometry::geometry))) AS cumulative_nature_reserve_area,\n    ROUND(AVG(ST_Degree(ST_Slope(public.dem_us.rast, 1))), 2) AS mean_slope_degrees\n  FROM public.dem_us\n  JOIN schley_region\n    ON ST_Intersects(public.dem_us.rast, schley_region.geometry::geometry)\n  LEFT JOIN nature_reserves\n    ON ST_Intersects(public.dem_us.rast, nature_reserves.geometry::geometry)\n)\nSELECT\n  ROUND(cumulative_nature_reserve_area / 1000000, 2) AS cumulative_nature_reserve_area_sq_km,\n  mean_slope_degrees\nFROM raster_analysis;\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 6:     AND addr_state = 'Wisconsin'\n                ^",
+    "output": []
+  },
+  "predicted_sql": "WITH schley_region AS (\n  SELECT geometry\n  FROM regions\n  WHERE region_name ILIKE 'Schley'\n    AND border_type = 'county'\n    AND addr_state = 'Wisconsin'\n),\nnature_reserves AS (\n  SELECT parks.geometry\n  FROM parks\n  JOIN schley_region\n    ON ST_Intersects(parks.geometry::geometry, schley_region.geometry::geometry)\n  WHERE parks.leisure = 'nature_reserve'\n),\nraster_analysis AS (\n  SELECT\n    SUM(ST_Area(ST_Clip(public.dem_us.rast, true, nature_reserves.geometry::geometry))) AS cumulative_nature_reserve_area,\n    ROUND(AVG(ST_Degree(ST_Slope(public.dem_us.rast, 1))), 2) AS mean_slope_degrees\n  FROM public.dem_us\n  JOIN schley_region\n    ON ST_Intersects(public.dem_us.rast, schley_region.geometry::geometry)\n  LEFT JOIN nature_reserves\n    ON ST_Intersects(public.dem_us.rast, nature_reserves.geometry::geometry)\n)\nSELECT\n  ROUND(cumulative_nature_reserve_area / 1000000, 2) AS cumulative_nature_reserve_area_sq_km,\n  mean_slope_degrees\nFROM raster_analysis;",
+  "predicted_sql_candidates": [
+    "WITH schley_region AS (\n  SELECT geometry\n  FROM regions\n  WHERE region_name ILIKE 'Schley'\n    AND border_type = 'county'\n    AND addr_state = 'Wisconsin'\n),\nnature_reserves AS (\n  SELECT parks.geometry\n  FROM parks\n  JOIN schley_region\n    ON ST_Intersects(parks.geometry::geometry, schley_region.geometry::geometry)\n  WHERE parks.leisure = 'nature_reserve'\n),\nraster_analysis AS (\n  SELECT\n    SUM(ST_Area(ST_Clip(public.dem_us.rast, true, nature_reserves.geometry::geometry))) AS cumulative_nature_reserve_area,\n    ROUND(AVG(ST_Degree(ST_Slope(public.dem_us.rast, 1))), 2) AS mean_slope_degrees\n  FROM public.dem_us\n  JOIN schley_region\n    ON ST_Intersects(public.dem_us.rast, schley_region.geometry::geometry)\n  LEFT JOIN nature_reserves\n    ON ST_Intersects(public.dem_us.rast, nature_reserves.geometry::geometry)\n)\nSELECT\n  ROUND(cumulative_nature_reserve_area / 1000000, 2) AS cumulative_nature_reserve_area_sq_km,\n  mean_slope_degrees\nFROM raster_analysis;"
+  ],
+  "query_type": "extended",
+  "question": "What is the cumulative area of all nature reserves in Schley, Wisconsin, and what is the mean slope of Schley, Wisconsin?",
+  "source_file": "intersects_area_total+area+avg_slope.jsonl",
+  "source_stem": "intersects_area_total+area+avg_slope",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 56.716,
+    "total_seconds": 56.717
+  },
+  "usage": {
+    "completion_tokens": 266,
+    "prompt_tokens": 1558,
+    "total_tokens": 1824
+  }
+}

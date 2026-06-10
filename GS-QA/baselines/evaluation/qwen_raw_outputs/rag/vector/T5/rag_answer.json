@@ -1,0 +1,2102 @@
+[
+  {
+    "id": 1000,
+    "run_seconds": 2.948,
+    "content": "The closest fast food restaurant is approximately fifty kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1478,
+      "output_tokens": 12,
+      "total_tokens": 1490,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1478,
+        "total_tokens": 1490,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1001,
+    "run_seconds": 5.451,
+    "content": "Lazy Susan Gallery is located in New York, approximately sixty kilometers away from Kenan House, Wilmington, NC.",
+    "usage_metadata": {
+      "input_tokens": 1978,
+      "output_tokens": 23,
+      "total_tokens": 2001,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 1978,
+        "total_tokens": 2001,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1002,
+    "run_seconds": 1.954,
+    "content": "No relevant information provided.",
+    "usage_metadata": {
+      "input_tokens": 1734,
+      "output_tokens": 6,
+      "total_tokens": 1740,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 1734,
+        "total_tokens": 1740,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1003,
+    "run_seconds": 1.203,
+    "content": "McDonald's",
+    "usage_metadata": {
+      "input_tokens": 1349,
+      "output_tokens": 4,
+      "total_tokens": 1353,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1349,
+        "total_tokens": 1353,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1004,
+    "run_seconds": 2.498,
+    "content": "The closest stadium is about thirty kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1423,
+      "output_tokens": 10,
+      "total_tokens": 1433,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 1423,
+        "total_tokens": 1433,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1005,
+    "run_seconds": 2.944,
+    "content": "Lock Ridge Furnace Museum is approximately thirty kilometers northeast.",
+    "usage_metadata": {
+      "input_tokens": 1514,
+      "output_tokens": 12,
+      "total_tokens": 1526,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1514,
+        "total_tokens": 1526,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1006,
+    "run_seconds": 4.585,
+    "content": "The closest fast food restaurant is Little Caesars, located approximately ninety six kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 2162,
+      "output_tokens": 19,
+      "total_tokens": 2181,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 2162,
+        "total_tokens": 2181,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1007,
+    "run_seconds": 2.568,
+    "content": "None of the nearby locations listed are a gallery.",
+    "usage_metadata": {
+      "input_tokens": 890,
+      "output_tokens": 11,
+      "total_tokens": 901,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 890,
+        "total_tokens": 901,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1008,
+    "run_seconds": 2.63,
+    "content": "None of the listed records mention a golf course.",
+    "usage_metadata": {
+      "input_tokens": 1186,
+      "output_tokens": 11,
+      "total_tokens": 1197,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1186,
+        "total_tokens": 1197,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1009,
+    "run_seconds": 2.36,
+    "content": "None of the listed locations are a zoo.",
+    "usage_metadata": {
+      "input_tokens": 975,
+      "output_tokens": 10,
+      "total_tokens": 985,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 975,
+        "total_tokens": 985,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1010,
+    "run_seconds": 3.087,
+    "content": "There is no relevant information provided to answer the question.",
+    "usage_metadata": {
+      "input_tokens": 1916,
+      "output_tokens": 12,
+      "total_tokens": 1928,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1916,
+        "total_tokens": 1928,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1011,
+    "run_seconds": 3.605,
+    "content": "Hualapai Valley Museum and Cultural Center is approximately thirty kilometers east.",
+    "usage_metadata": {
+      "input_tokens": 837,
+      "output_tokens": 16,
+      "total_tokens": 853,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 837,
+        "total_tokens": 853,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1012,
+    "run_seconds": 1.712,
+    "content": "Wildlife West Nature Park",
+    "usage_metadata": {
+      "input_tokens": 1638,
+      "output_tokens": 6,
+      "total_tokens": 1644,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 1638,
+        "total_tokens": 1644,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1013,
+    "run_seconds": 2.48,
+    "content": "The closest restaurant is thirty kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1800,
+      "output_tokens": 9,
+      "total_tokens": 1809,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 1800,
+        "total_tokens": 1809,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1014,
+    "run_seconds": 4.942,
+    "content": "The closest university to Cannon Beach Hotel, Cannon Beach, OR is the University of Phoenix Jersey City Campus.",
+    "usage_metadata": {
+      "input_tokens": 672,
+      "output_tokens": 22,
+      "total_tokens": 694,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 672,
+        "total_tokens": 694,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1015,
+    "run_seconds": 2.726,
+    "content": "The nearest hotel is approximately thirty meters away.",
+    "usage_metadata": {
+      "input_tokens": 2134,
+      "output_tokens": 10,
+      "total_tokens": 2144,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 2134,
+        "total_tokens": 2144,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1016,
+    "run_seconds": 3.393,
+    "content": "Plumpton Park Zoological Gardens is approximately twenty-five kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 873,
+      "output_tokens": 15,
+      "total_tokens": 888,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 873,
+        "total_tokens": 888,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1017,
+    "run_seconds": 6.139,
+    "content": "The closest golf course is The Foothills Grill, located in Denver, CO. It is approximately fifteen kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 2177,
+      "output_tokens": 25,
+      "total_tokens": 2202,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 2177,
+        "total_tokens": 2202,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1018,
+    "run_seconds": 6.384,
+    "content": "The nearest restaurant is Dunkin'. It is located 13 kilometers away in the direction of 277 degrees.",
+    "usage_metadata": {
+      "input_tokens": 2343,
+      "output_tokens": 26,
+      "total_tokens": 2369,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 26,
+        "prompt_tokens": 2343,
+        "total_tokens": 2369,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1019,
+    "run_seconds": 4.649,
+    "content": "There is no stadium listed in the provided data near Amazing Fun Center, Coram, MT.",
+    "usage_metadata": {
+      "input_tokens": 1515,
+      "output_tokens": 20,
+      "total_tokens": 1535,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 1515,
+        "total_tokens": 1535,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1020,
+    "run_seconds": 3.95,
+    "content": "None of the provided records mention an aquarium or Memory Garden in Baltimore, MD.",
+    "usage_metadata": {
+      "input_tokens": 1299,
+      "output_tokens": 17,
+      "total_tokens": 1316,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 1299,
+        "total_tokens": 1316,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1021,
+    "run_seconds": 2.695,
+    "content": "Heavenly Heart Farm & Mini Petting Zoo",
+    "usage_metadata": {
+      "input_tokens": 1368,
+      "output_tokens": 11,
+      "total_tokens": 1379,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1368,
+        "total_tokens": 1379,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1022,
+    "run_seconds": 2.672,
+    "content": "Crowne Plaza  \nTwenty-seven kilometers  \nSoutheast",
+    "usage_metadata": {
+      "input_tokens": 1278,
+      "output_tokens": 11,
+      "total_tokens": 1289,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1278,
+        "total_tokens": 1289,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1023,
+    "run_seconds": 3.035,
+    "content": "There is no relevant information provided to answer the question.",
+    "usage_metadata": {
+      "input_tokens": 1720,
+      "output_tokens": 12,
+      "total_tokens": 1732,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1720,
+        "total_tokens": 1732,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1024,
+    "run_seconds": 4.278,
+    "content": "Moe's Southwest Grill is the nearest restaurant. It is approximately twenty-two kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 971,
+      "output_tokens": 19,
+      "total_tokens": 990,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 971,
+        "total_tokens": 990,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1025,
+    "run_seconds": 3.025,
+    "content": "There is no theme park listed in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 1093,
+      "output_tokens": 12,
+      "total_tokens": 1105,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1093,
+        "total_tokens": 1105,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1026,
+    "run_seconds": 4.48,
+    "content": "Hickory Grove Riverfront is not near Appalachian Wireless Arena in Pikeville, KY.",
+    "usage_metadata": {
+      "input_tokens": 1610,
+      "output_tokens": 19,
+      "total_tokens": 1629,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 1610,
+        "total_tokens": 1629,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1027,
+    "run_seconds": 1.475,
+    "content": "Weaversville County Park",
+    "usage_metadata": {
+      "input_tokens": 818,
+      "output_tokens": 6,
+      "total_tokens": 824,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 818,
+        "total_tokens": 824,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1028,
+    "run_seconds": 1.885,
+    "content": "Flushing Meadows Scenic Viewpoint",
+    "usage_metadata": {
+      "input_tokens": 780,
+      "output_tokens": 8,
+      "total_tokens": 788,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 780,
+        "total_tokens": 788,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1029,
+    "run_seconds": 1.351,
+    "content": "Ulrich Wildlife Preserve",
+    "usage_metadata": {
+      "input_tokens": 1160,
+      "output_tokens": 5,
+      "total_tokens": 1165,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1160,
+        "total_tokens": 1165,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1030,
+    "run_seconds": 1.291,
+    "content": "Joe's Crab Shack",
+    "usage_metadata": {
+      "input_tokens": 911,
+      "output_tokens": 5,
+      "total_tokens": 916,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 911,
+        "total_tokens": 916,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1031,
+    "run_seconds": 4.953,
+    "content": "None of the provided records refer to a gallery near New Mexico Slaughter House in Albuquerque, NM.",
+    "usage_metadata": {
+      "input_tokens": 1736,
+      "output_tokens": 21,
+      "total_tokens": 1757,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 1736,
+        "total_tokens": 1757,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1032,
+    "run_seconds": 2.681,
+    "content": "None of the listed records are aquariums.",
+    "usage_metadata": {
+      "input_tokens": 1979,
+      "output_tokens": 10,
+      "total_tokens": 1989,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 1979,
+        "total_tokens": 1989,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1033,
+    "run_seconds": 1.698,
+    "content": "Hickory Grove Riverfront",
+    "usage_metadata": {
+      "input_tokens": 1613,
+      "output_tokens": 7,
+      "total_tokens": 1620,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 1613,
+        "total_tokens": 1620,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1034,
+    "run_seconds": 3.11,
+    "content": "There is no relevant information provided to answer the question.",
+    "usage_metadata": {
+      "input_tokens": 2008,
+      "output_tokens": 12,
+      "total_tokens": 2020,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 2008,
+        "total_tokens": 2020,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1035,
+    "run_seconds": 0.969,
+    "content": "Just Salad",
+    "usage_metadata": {
+      "input_tokens": 1297,
+      "output_tokens": 3,
+      "total_tokens": 1300,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1297,
+        "total_tokens": 1300,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1036,
+    "run_seconds": 2.458,
+    "content": "The closest stadium is approximately thirty kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1298,
+      "output_tokens": 10,
+      "total_tokens": 1308,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 1298,
+        "total_tokens": 1308,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1037,
+    "run_seconds": 3.154,
+    "content": "The closest beach resort is approximately thirty kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 2215,
+      "output_tokens": 11,
+      "total_tokens": 2226,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 2215,
+        "total_tokens": 2226,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1038,
+    "run_seconds": 1.675,
+    "content": "University of Florida Field Laboratory",
+    "usage_metadata": {
+      "input_tokens": 837,
+      "output_tokens": 6,
+      "total_tokens": 843,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 837,
+        "total_tokens": 843,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1039,
+    "run_seconds": 7.236,
+    "content": "The Works Bakery Caf\\u00e9 is the nearest caf\u00e9. It is located in Amherst, approximately thirty kilometers away from Rochester.",
+    "usage_metadata": {
+      "input_tokens": 2324,
+      "output_tokens": 30,
+      "total_tokens": 2354,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 30,
+        "prompt_tokens": 2324,
+        "total_tokens": 2354,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1040,
+    "run_seconds": 3.084,
+    "content": "None of the provided records mention a hospital or Troll Bridge.",
+    "usage_metadata": {
+      "input_tokens": 1212,
+      "output_tokens": 13,
+      "total_tokens": 1225,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 1212,
+        "total_tokens": 1225,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1041,
+    "run_seconds": 1.349,
+    "content": "Howard Station Cafe",
+    "usage_metadata": {
+      "input_tokens": 2034,
+      "output_tokens": 4,
+      "total_tokens": 2038,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 2034,
+        "total_tokens": 2038,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1042,
+    "run_seconds": 2.857,
+    "content": "There is no aquarium listed in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 1896,
+      "output_tokens": 11,
+      "total_tokens": 1907,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1896,
+        "total_tokens": 1907,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1043,
+    "run_seconds": 2.923,
+    "content": "Fisher Parrish Gallery is ninety six kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1400,
+      "output_tokens": 12,
+      "total_tokens": 1412,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1400,
+        "total_tokens": 1412,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1044,
+    "run_seconds": 1.015,
+    "content": "Trinity Stadium",
+    "usage_metadata": {
+      "input_tokens": 746,
+      "output_tokens": 4,
+      "total_tokens": 750,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 746,
+        "total_tokens": 750,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1045,
+    "run_seconds": 4.031,
+    "content": "There is no gallery listed near Holiday Inn & Suites Joliet Southwest.",
+    "usage_metadata": {
+      "input_tokens": 1868,
+      "output_tokens": 16,
+      "total_tokens": 1884,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 1868,
+        "total_tokens": 1884,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1046,
+    "run_seconds": 3.11,
+    "content": "Pond Brook Conservation Area - Liberty Park - Summit Metro Parks",
+    "usage_metadata": {
+      "input_tokens": 918,
+      "output_tokens": 13,
+      "total_tokens": 931,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 918,
+        "total_tokens": 931,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1047,
+    "run_seconds": 4.532,
+    "content": "No stadium is listed near Mario & Alberto De La Cruz Art Gallery in Washington, DC.",
+    "usage_metadata": {
+      "input_tokens": 1732,
+      "output_tokens": 19,
+      "total_tokens": 1751,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 1732,
+        "total_tokens": 1751,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1048,
+    "run_seconds": 1.019,
+    "content": "None",
+    "usage_metadata": {
+      "input_tokens": 2106,
+      "output_tokens": 2,
+      "total_tokens": 2108,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 2106,
+        "total_tokens": 2108,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1049,
+    "run_seconds": 3.812,
+    "content": "None of the provided records mention a hospital near Knight Sports Arena, VA.",
+    "usage_metadata": {
+      "input_tokens": 1285,
+      "output_tokens": 16,
+      "total_tokens": 1301,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 1285,
+        "total_tokens": 1301,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1050,
+    "run_seconds": 1.449,
+    "content": "Central Park",
+    "usage_metadata": {
+      "input_tokens": 2212,
+      "output_tokens": 3,
+      "total_tokens": 2215,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2212,
+        "total_tokens": 2215,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1051,
+    "run_seconds": 5.227,
+    "content": "The closest fast food restaurant is approximately eight thousand six hundred meters away in a direction of two hundred eight degrees.",
+    "usage_metadata": {
+      "input_tokens": 1289,
+      "output_tokens": 23,
+      "total_tokens": 1312,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 1289,
+        "total_tokens": 1312,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1052,
+    "run_seconds": 7.36,
+    "content": "There is no McDonald's listed in the provided data that is located in Bridgman, MI. Additionally, no zoo locations are included in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 1323,
+      "output_tokens": 33,
+      "total_tokens": 1356,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 33,
+        "prompt_tokens": 1323,
+        "total_tokens": 1356,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1053,
+    "run_seconds": 4.267,
+    "content": "The nearest stadium relative to New Mexico Highlands University is 130 kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1610,
+      "output_tokens": 18,
+      "total_tokens": 1628,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 1610,
+        "total_tokens": 1628,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1054,
+    "run_seconds": 3.394,
+    "content": "Meadow Croft County Park is approximately forty three kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 875,
+      "output_tokens": 15,
+      "total_tokens": 890,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 875,
+        "total_tokens": 890,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1055,
+    "run_seconds": 2.993,
+    "content": "The nearest hospital is Sibley Memorial Hospital.",
+    "usage_metadata": {
+      "input_tokens": 1642,
+      "output_tokens": 11,
+      "total_tokens": 1653,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1642,
+        "total_tokens": 1653,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1056,
+    "run_seconds": 0.932,
+    "content": "Just Salad",
+    "usage_metadata": {
+      "input_tokens": 1273,
+      "output_tokens": 3,
+      "total_tokens": 1276,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1273,
+        "total_tokens": 1276,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1057,
+    "run_seconds": 2.09,
+    "content": "The Foothills Golf Club",
+    "usage_metadata": {
+      "input_tokens": 2083,
+      "output_tokens": 7,
+      "total_tokens": 2090,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 2083,
+        "total_tokens": 2090,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1058,
+    "run_seconds": 1.29,
+    "content": "None",
+    "usage_metadata": {
+      "input_tokens": 2382,
+      "output_tokens": 2,
+      "total_tokens": 2384,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 2382,
+        "total_tokens": 2384,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1059,
+    "run_seconds": 2.999,
+    "content": "There is no nature reserve listed in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 1599,
+      "output_tokens": 12,
+      "total_tokens": 1611,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1599,
+        "total_tokens": 1611,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1060,
+    "run_seconds": 2.149,
+    "content": "The closest gallery is the Cultural Center.",
+    "usage_metadata": {
+      "input_tokens": 942,
+      "output_tokens": 9,
+      "total_tokens": 951,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 942,
+        "total_tokens": 951,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1061,
+    "run_seconds": 2.959,
+    "content": "The nearest stadium is approximately two hundred meters away.",
+    "usage_metadata": {
+      "input_tokens": 2098,
+      "output_tokens": 11,
+      "total_tokens": 2109,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 2098,
+        "total_tokens": 2109,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1062,
+    "run_seconds": 2.096,
+    "content": "Schaumburg Hospital.",
+    "usage_metadata": {
+      "input_tokens": 2108,
+      "output_tokens": 7,
+      "total_tokens": 2115,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 2108,
+        "total_tokens": 2115,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1063,
+    "run_seconds": 2.764,
+    "content": "Heavenly Heart Farm & Mini Petting Zoo",
+    "usage_metadata": {
+      "input_tokens": 1565,
+      "output_tokens": 11,
+      "total_tokens": 1576,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1565,
+        "total_tokens": 1576,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1064,
+    "run_seconds": 2.798,
+    "content": "There is no theme park listed in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 1007,
+      "output_tokens": 12,
+      "total_tokens": 1019,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1007,
+        "total_tokens": 1019,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1065,
+    "run_seconds": 3.006,
+    "content": "There is no relevant information provided to answer the question.",
+    "usage_metadata": {
+      "input_tokens": 1617,
+      "output_tokens": 12,
+      "total_tokens": 1629,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1617,
+        "total_tokens": 1629,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1066,
+    "run_seconds": 3.297,
+    "content": "The closest available golf course is approximately forty-five kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1856,
+      "output_tokens": 13,
+      "total_tokens": 1869,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 1856,
+        "total_tokens": 1869,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1067,
+    "run_seconds": 1.354,
+    "content": "Old Townhouse Restaurant",
+    "usage_metadata": {
+      "input_tokens": 1178,
+      "output_tokens": 5,
+      "total_tokens": 1183,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1178,
+        "total_tokens": 1183,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1068,
+    "run_seconds": 3.261,
+    "content": "There is no university listed in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 2513,
+      "output_tokens": 11,
+      "total_tokens": 2524,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 2513,
+        "total_tokens": 2524,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1069,
+    "run_seconds": 2.165,
+    "content": "Danville Museum of Fine Arts and History",
+    "usage_metadata": {
+      "input_tokens": 887,
+      "output_tokens": 9,
+      "total_tokens": 896,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 887,
+        "total_tokens": 896,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1070,
+    "run_seconds": 4.076,
+    "content": "Mike's Diner is the closest restaurant. It is approximately forty seven kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 943,
+      "output_tokens": 18,
+      "total_tokens": 961,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 943,
+        "total_tokens": 961,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1071,
+    "run_seconds": 2.834,
+    "content": "The closest hospital is approximately ninety thousand meters away.",
+    "usage_metadata": {
+      "input_tokens": 1750,
+      "output_tokens": 11,
+      "total_tokens": 1761,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1750,
+        "total_tokens": 1761,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1072,
+    "run_seconds": 1.9,
+    "content": "Cromwell Meadows State Wildlife Area",
+    "usage_metadata": {
+      "input_tokens": 772,
+      "output_tokens": 8,
+      "total_tokens": 780,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 772,
+        "total_tokens": 780,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1073,
+    "run_seconds": 0.933,
+    "content": "Just Salad",
+    "usage_metadata": {
+      "input_tokens": 1278,
+      "output_tokens": 3,
+      "total_tokens": 1281,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1278,
+        "total_tokens": 1281,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1074,
+    "run_seconds": 1.296,
+    "content": "George's Greek Cafe",
+    "usage_metadata": {
+      "input_tokens": 915,
+      "output_tokens": 5,
+      "total_tokens": 920,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 915,
+        "total_tokens": 920,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1075,
+    "run_seconds": 9.062,
+    "content": "The closest aquarium to Novant Health & Vascular Institute - Elizabeth (Cardio) in Charlotte, NC is the North Carolina Aquarium at Fort Fisher. It is approximately two hundred and seventy kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1100,
+      "output_tokens": 41,
+      "total_tokens": 1141,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 41,
+        "prompt_tokens": 1100,
+        "total_tokens": 1141,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1076,
+    "run_seconds": 4.528,
+    "content": "The closest golf course is the Bartlesville Country Club, located approximately twenty-five kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 929,
+      "output_tokens": 20,
+      "total_tokens": 949,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 929,
+        "total_tokens": 949,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1077,
+    "run_seconds": 2.801,
+    "content": "The nearest golf course is the Cabell Gallery.",
+    "usage_metadata": {
+      "input_tokens": 1554,
+      "output_tokens": 11,
+      "total_tokens": 1565,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1554,
+        "total_tokens": 1565,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1078,
+    "run_seconds": 0.94,
+    "content": "Subway",
+    "usage_metadata": {
+      "input_tokens": 1164,
+      "output_tokens": 3,
+      "total_tokens": 1167,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1164,
+        "total_tokens": 1167,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1079,
+    "run_seconds": 5.543,
+    "content": "None of the provided records indicate a caf\u00e9 near the Inn at Bay Harbor in Bay Harbor, MI.",
+    "usage_metadata": {
+      "input_tokens": 2708,
+      "output_tokens": 21,
+      "total_tokens": 2729,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 2708,
+        "total_tokens": 2729,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1080,
+    "run_seconds": 4.677,
+    "content": "None of the provided records mention a hotel near Full Circle 9 Gallery in Indianapolis, IN.",
+    "usage_metadata": {
+      "input_tokens": 1265,
+      "output_tokens": 20,
+      "total_tokens": 1285,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 1265,
+        "total_tokens": 1285,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1081,
+    "run_seconds": 4.758,
+    "content": "None of the provided records mention a hospital near SeaQuest in Lynchburg, VA.",
+    "usage_metadata": {
+      "input_tokens": 2329,
+      "output_tokens": 18,
+      "total_tokens": 2347,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 2329,
+        "total_tokens": 2347,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1082,
+    "run_seconds": 1.232,
+    "content": "McDonald's",
+    "usage_metadata": {
+      "input_tokens": 1411,
+      "output_tokens": 4,
+      "total_tokens": 1415,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1411,
+        "total_tokens": 1415,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1083,
+    "run_seconds": 1.477,
+    "content": "Franklin Park Natural Area",
+    "usage_metadata": {
+      "input_tokens": 909,
+      "output_tokens": 6,
+      "total_tokens": 915,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 909,
+        "total_tokens": 915,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1084,
+    "run_seconds": 3.081,
+    "content": "There is no relevant information provided to answer the question.",
+    "usage_metadata": {
+      "input_tokens": 1821,
+      "output_tokens": 12,
+      "total_tokens": 1833,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1821,
+        "total_tokens": 1833,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1085,
+    "run_seconds": 4.363,
+    "content": "Residence Inn by Marriott in Weehawken, NJ is the closest hotel.",
+    "usage_metadata": {
+      "input_tokens": 1757,
+      "output_tokens": 18,
+      "total_tokens": 1775,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 1757,
+        "total_tokens": 1775,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1086,
+    "run_seconds": 1.26,
+    "content": "Akenac Park",
+    "usage_metadata": {
+      "input_tokens": 773,
+      "output_tokens": 5,
+      "total_tokens": 778,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 773,
+        "total_tokens": 778,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1087,
+    "run_seconds": 1.788,
+    "content": "New Jersey Botanical Garden",
+    "usage_metadata": {
+      "input_tokens": 1803,
+      "output_tokens": 6,
+      "total_tokens": 1809,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 1803,
+        "total_tokens": 1809,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1088,
+    "run_seconds": 2.887,
+    "content": "The nearest golf course is approximately thirty kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1876,
+      "output_tokens": 11,
+      "total_tokens": 1887,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1876,
+        "total_tokens": 1887,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1089,
+    "run_seconds": 3.467,
+    "content": "Hilton Garden Inn Midtown Park Avenue  \nDistance: twenty kilometers",
+    "usage_metadata": {
+      "input_tokens": 1650,
+      "output_tokens": 14,
+      "total_tokens": 1664,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 1650,
+        "total_tokens": 1664,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1090,
+    "run_seconds": 1.366,
+    "content": "Bridgman",
+    "usage_metadata": {
+      "input_tokens": 1177,
+      "output_tokens": 5,
+      "total_tokens": 1182,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1177,
+        "total_tokens": 1182,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1091,
+    "run_seconds": 1.241,
+    "content": "Steinhart Aquarium",
+    "usage_metadata": {
+      "input_tokens": 703,
+      "output_tokens": 5,
+      "total_tokens": 708,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 703,
+        "total_tokens": 708,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1092,
+    "run_seconds": 0.964,
+    "content": "None",
+    "usage_metadata": {
+      "input_tokens": 1908,
+      "output_tokens": 2,
+      "total_tokens": 1910,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1908,
+        "total_tokens": 1910,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1093,
+    "run_seconds": 4.755,
+    "content": "Noah's Cafe is the closest restaurant. It is approximately sixteen thousand meters away.",
+    "usage_metadata": {
+      "input_tokens": 2409,
+      "output_tokens": 18,
+      "total_tokens": 2427,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 2409,
+        "total_tokens": 2427,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1094,
+    "run_seconds": 1.908,
+    "content": "Tree House Humane Society Cat Cafe",
+    "usage_metadata": {
+      "input_tokens": 800,
+      "output_tokens": 8,
+      "total_tokens": 808,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 800,
+        "total_tokens": 808,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1095,
+    "run_seconds": 1.281,
+    "content": "Phillips Graduate Institute",
+    "usage_metadata": {
+      "input_tokens": 872,
+      "output_tokens": 5,
+      "total_tokens": 877,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 872,
+        "total_tokens": 877,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1096,
+    "run_seconds": 1.357,
+    "content": "Henry-Duffy Park",
+    "usage_metadata": {
+      "input_tokens": 1135,
+      "output_tokens": 5,
+      "total_tokens": 1140,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1135,
+        "total_tokens": 1140,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1097,
+    "run_seconds": 8.82,
+    "content": "None of the provided records mention a golf course or Xtreme Action Park, Fort Lauderdale, FL. Therefore, it is not possible to determine the closest golf course based on the given information.",
+    "usage_metadata": {
+      "input_tokens": 1723,
+      "output_tokens": 39,
+      "total_tokens": 1762,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 39,
+        "prompt_tokens": 1723,
+        "total_tokens": 1762,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1098,
+    "run_seconds": 2.415,
+    "content": "None of the listed locations are caf\u00e9s.",
+    "usage_metadata": {
+      "input_tokens": 1153,
+      "output_tokens": 10,
+      "total_tokens": 1163,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 1153,
+        "total_tokens": 1163,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1099,
+    "run_seconds": 1.453,
+    "content": "Kentucky Derby Museum",
+    "usage_metadata": {
+      "input_tokens": 1509,
+      "output_tokens": 5,
+      "total_tokens": 1514,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1509,
+        "total_tokens": 1514,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  }
+]

@@ -1,0 +1,502 @@
+[
+  {
+    "id": 1600,
+    "content": "```json\n{\n    \"name\": \"Caf\u00e9 128\"\n}\n```",
+    "run_seconds": 4.469
+  },
+  {
+    "id": 1601,
+    "content": "```json\n{\n    \"name\": \"None\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.746
+  },
+  {
+    "id": 1602,
+    "content": "```json\n{\n    \"name\": \"Holiday Inn Express Hotel & Suites Baltimore - Glen Burnie\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 7.031
+  },
+  {
+    "id": 1603,
+    "content": "```json\n{\n    \"name\": \"Luis y gabi\"\n}\n```",
+    "run_seconds": 4.043
+  },
+  {
+    "id": 1604,
+    "content": "```json\n{\n    \"name\": \"Zoo Knoxville\",\n    \"address\": \"Knoxville, TN\"\n}\n```",
+    "run_seconds": 5.959
+  },
+  {
+    "id": 1605,
+    "content": "```json\n{\n    \"name\": \"Hampton Inn Rutland\"\n}\n```",
+    "run_seconds": 4.042
+  },
+  {
+    "id": 1606,
+    "content": "```json\n{\n    \"name\": \"Hotel Hayden\"\n}\n```",
+    "run_seconds": 3.405
+  },
+  {
+    "id": 1607,
+    "content": "```json\n{\n    \"name\": \"Country Grub\"\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 1608,
+    "content": "```json\n{\n    \"name\": \"McDonald's\"\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 1609,
+    "content": "```json\n{\n    \"name\": \"Coffee Bean Caf\u00e9\",\n    \"address\": \"Children's Wisconsin-Fox Valley Hospital, Neenah, WI\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 9.372
+  },
+  {
+    "id": 1610,
+    "content": "```json\n{\n    \"name\": \"National Museum of Health and Medicine\"\n}\n```",
+    "run_seconds": 4.256
+  },
+  {
+    "id": 1611,
+    "content": "```json\n{\n    \"name\": \"Carmen's on the Green\"\n}\n```",
+    "run_seconds": 4.469
+  },
+  {
+    "id": 1612,
+    "content": "```json\n{\n    \"name\": \"McDonald's\"\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 1613,
+    "content": "```json\n{\n    \"name\": \"Peabody Essex Museum\"\n}\n```",
+    "run_seconds": 4.044
+  },
+  {
+    "id": 1614,
+    "content": "```json\n{\n    \"name\": \"Caffe Mediterraneum\"\n}\n```",
+    "run_seconds": 4.043
+  },
+  {
+    "id": 1615,
+    "content": "```json\n{\n    \"name\": null,\n    \"address\": null,\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.747
+  },
+  {
+    "id": 1616,
+    "content": "```json\n{\n    \"name\": \"The Roping Arena Caf\u00e9\"\n}\n```",
+    "run_seconds": 4.045
+  },
+  {
+    "id": 1617,
+    "content": "```json\n{\n    \"name\": \"Comfort Inn New London\"\n}\n```",
+    "run_seconds": 3.83
+  },
+  {
+    "id": 1618,
+    "content": "```json\n{\n    \"name\": \"Hardee's\"\n}\n```",
+    "run_seconds": 3.618
+  },
+  {
+    "id": 1619,
+    "content": "```json\n{\n    \"name\": \"Tacos El Gordo\",\n    \"address\": \"183 S Capitol Ave, San Jose, CA 95113\"\n}\n```",
+    "run_seconds": 8.941
+  },
+  {
+    "id": 1620,
+    "content": "```json\n{\n    \"name\": \"McDonald's\"\n}\n```",
+    "run_seconds": 3.618
+  },
+  {
+    "id": 1621,
+    "content": "```json\n{\n    \"name\": \"not available due to an error in the data processing\"\n}\n```",
+    "run_seconds": 5.108
+  },
+  {
+    "id": 1622,
+    "content": "```json\n{\n    \"name\": \"Philly Pretzel Factory\"\n}\n```",
+    "run_seconds": 4.043
+  },
+  {
+    "id": 1623,
+    "content": "```json\n{\n    \"name\": \"Subway\"\n}\n```",
+    "run_seconds": 3.405
+  },
+  {
+    "id": 1624,
+    "content": "```json\n{\n    \"name\": \"Gallery O/H\"\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 1625,
+    "content": "```json\n{\n    \"name\": \"Red Lion\"\n}\n```",
+    "run_seconds": 3.405
+  },
+  {
+    "id": 1626,
+    "content": "```json\n{\n    \"name\": \"Pittsfield Cafe\"\n}\n```",
+    "run_seconds": 4.043
+  },
+  {
+    "id": 1627,
+    "content": "```json\n{\n    \"name\": \"Periodic Table\"\n}\n```",
+    "run_seconds": 3.618
+  },
+  {
+    "id": 1628,
+    "content": "```json\n{\n    \"name\": \"Rind\"\n}\n```",
+    "run_seconds": 3.404
+  },
+  {
+    "id": 1629,
+    "content": "```json\n{\n    \"name\": \"National Museum of the United States Army\"\n}\n```",
+    "run_seconds": 4.469
+  },
+  {
+    "id": 1630,
+    "content": "```json\n{\n    \"name\": \"There is no restaurant encountered.\"\n}\n```",
+    "run_seconds": 4.044
+  },
+  {
+    "id": 1631,
+    "content": "```json\n{\n    \"name\": \"Caf\u00e9 101\"\n}\n```",
+    "run_seconds": 4.469
+  },
+  {
+    "id": 1632,
+    "content": "```json\n{\n    \"name\": \"Erie Art Museum\"\n}\n```",
+    "run_seconds": 3.831
+  },
+  {
+    "id": 1633,
+    "content": "```json\n{\n    \"name\": \"The Boathouse Restaurant\"\n}\n```",
+    "run_seconds": 4.043
+  },
+  {
+    "id": 1634,
+    "content": "```json\n{\n    \"name\": \"The Daily Table\",\n    \"address\": \"Mankato, MN\"\n}\n```",
+    "run_seconds": 5.96
+  },
+  {
+    "id": 1635,
+    "content": "```json\n{\n    \"name\": \"McCools\"\n}\n```",
+    "run_seconds": 3.408
+  },
+  {
+    "id": 1636,
+    "content": "```json\n{\n    \"name\": \"Holiday Inn Express\"\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 1637,
+    "content": "```json\n{\n    \"name\": \"McDonald's\",\n    \"address\": \"East Providence, Rhode Island\"\n}\n```",
+    "run_seconds": 5.96
+  },
+  {
+    "id": 1638,
+    "content": "```json\n{\n    \"name\": \"Country Inn & Suites\"\n}\n```",
+    "run_seconds": 3.832
+  },
+  {
+    "id": 1639,
+    "content": "```json\n{\n    \"name\": \"The Rye House\"\n}\n```",
+    "run_seconds": 3.83
+  },
+  {
+    "id": 1640,
+    "content": "```json\n{\n    \"name\": \"McDonald's\"\n}\n```",
+    "run_seconds": 3.618
+  },
+  {
+    "id": 1641,
+    "content": "```json\n{\n    \"name\": \"McDonald's\"\n}\n```",
+    "run_seconds": 3.618
+  },
+  {
+    "id": 1642,
+    "content": "```json\n{\n    \"name\": \"Zoo New England (Franklin Park Zoo)\",\n    \"distance\": 40\n}\n```",
+    "run_seconds": 6.599
+  },
+  {
+    "id": 1643,
+    "content": "```json\n{\n    \"name\": \"closest caf\u00e9\",\n    \"address\": \"Hamtramck, Michigan\"\n}\n```",
+    "run_seconds": 5.747
+  },
+  {
+    "id": 1644,
+    "content": "```json\n{\n    \"name\": \"There is no caf\u00e9 along the path.\"\n}\n```",
+    "run_seconds": 4.472
+  },
+  {
+    "id": 1645,
+    "content": "```json\n{\n    \"name\": \"McDonald's\"\n}\n```",
+    "run_seconds": 3.618
+  },
+  {
+    "id": 1646,
+    "content": "```json\n{\n    \"name\": \"Canteen\"\n}\n```",
+    "run_seconds": 3.618
+  },
+  {
+    "id": 1647,
+    "content": "```json\n{\n    \"name\": \"Anaheim Art Walk Gallery\"\n}\n```",
+    "run_seconds": 4.043
+  },
+  {
+    "id": 1648,
+    "content": "```json\n{\n    \"name\": \"Ventura Art Museum\"\n}\n```",
+    "run_seconds": 3.831
+  },
+  {
+    "id": 1649,
+    "content": "```json\n{\n    \"name\": \"McDonald's\",\n    \"address\": \"Richmond, California\",\n    \"distance\": 30,\n    \"azimuth_angle\": 180\n}\n```",
+    "run_seconds": 9.799
+  },
+  {
+    "id": 1650,
+    "content": "```json\n{\n    \"name\": \"McDonald's\"\n}\n```",
+    "run_seconds": 3.618
+  },
+  {
+    "id": 1651,
+    "content": "```json\n{\n    \"name\": \"The Cupcake\"\n}\n```",
+    "run_seconds": 3.625
+  },
+  {
+    "id": 1652,
+    "content": "```json\n{\n    \"name\": \"Museum of Science and Industry\"\n}\n```",
+    "run_seconds": 4.256
+  },
+  {
+    "id": 1653,
+    "content": "```json\n{\n    \"name\": \"Comfort Inn & Suites\"\n}\n```",
+    "run_seconds": 3.83
+  },
+  {
+    "id": 1654,
+    "content": "```json\n{\n    \"name\": \"Amherst Starbucks\",\n    \"address\": \"155 South Pleasant Street, Amherst, MA 01002\"\n}\n```",
+    "run_seconds": 8.941
+  },
+  {
+    "id": 1655,
+    "content": "```json\n{\n    \"name\": \"McDonald's\"\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 1656,
+    "content": "```json\n{\n    \"name\": \"McDonald's\",\n    \"address\": \"Beloit, Wisconsin\"\n}\n```",
+    "run_seconds": 5.96
+  },
+  {
+    "id": 1657,
+    "content": "```json\n{\n    \"name\": \"La Colombe Coffee\"\n}\n```",
+    "run_seconds": 4.044
+  },
+  {
+    "id": 1658,
+    "content": "```json\n{\n    \"name\": \"The Public House\",\n    \"address\": \"\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 6.385
+  },
+  {
+    "id": 1659,
+    "content": "```json\n{\n    \"name\": \"McDonald's\"\n}\n```",
+    "run_seconds": 3.618
+  },
+  {
+    "id": 1660,
+    "content": "```json\n{\n    \"name\": \"The Slanted Door\",\n    \"address\": \"San Francisco\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 7.246
+  },
+  {
+    "id": 1661,
+    "content": "```json\n{\n    \"name\": null,\n    \"address\": null,\n    \"count\": null,\n    \"distance\": null,\n    \"length\": null,\n    \"area\": null,\n    \"azimuth_angle\": null\n}\n```",
+    "run_seconds": 11.071
+  },
+  {
+    "id": 1662,
+    "content": "```json\n{\n    \"name\": \"Loretta Howard Gallery\",\n    \"address\": \"Santa Fe, New Mexico\",\n    \"distance\": 20\n}\n```",
+    "run_seconds": 8.096
+  },
+  {
+    "id": 1663,
+    "content": "```json\n{\n    \"name\": \"Arts by the Bay Gallery\"\n}\n```",
+    "run_seconds": 4.256
+  },
+  {
+    "id": 1664,
+    "content": "```json\n{\n    \"name\": \"Los Poblanos\"\n}\n```",
+    "run_seconds": 4.043
+  },
+  {
+    "id": 1665,
+    "content": "```json\n{\n    \"name\": \"Sausalito Art Festival Gallery\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 5.965
+  },
+  {
+    "id": 1666,
+    "content": "```json\n{\n    \"name\": \"The Saint Augustine Distillery & Restaurant\",\n    \"address\": \"Saint Augustine, FL\"\n}\n```",
+    "run_seconds": 6.605
+  },
+  {
+    "id": 1667,
+    "content": "```json\n{\n    \"name\": \"Starbucks\"\n}\n```",
+    "run_seconds": 3.405
+  },
+  {
+    "id": 1668,
+    "content": "```json\n{\n    \"name\": \"McDonald's\"\n}\n```",
+    "run_seconds": 3.618
+  },
+  {
+    "id": 1669,
+    "content": "```json\n{\n    \"name\": \"Jakes Rock Overlook and Mountain Bike Trail\",\n    \"address\": \"Tidioute, PA\"\n}\n```",
+    "run_seconds": 7.236
+  },
+  {
+    "id": 1670,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.321
+  },
+  {
+    "id": 1671,
+    "content": "```json\n{\n    \"name\": \"Starbucks\"\n}\n```",
+    "run_seconds": 3.404
+  },
+  {
+    "id": 1672,
+    "content": "```json\n{\n    \"name\": null,\n    \"address\": null,\n    \"count\": null,\n    \"distance\": null,\n    \"length\": null,\n    \"area\": null,\n    \"azimuth_angle\": null\n}\n```",
+    "run_seconds": 11.07
+  },
+  {
+    "id": 1673,
+    "content": "```json\n{\n    \"name\": \"Buffalo Wild Wings\"\n}\n```",
+    "run_seconds": 3.83
+  },
+  {
+    "id": 1674,
+    "content": "```json\n{\n    \"name\": \"McDonald's\"\n}\n```",
+    "run_seconds": 3.618
+  },
+  {
+    "id": 1675,
+    "content": "```json\n{\n    \"name\": \"Comfort Inn & Suites\",\n    \"address\": \"\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 6.604
+  },
+  {
+    "id": 1676,
+    "content": "```json\n{\n    \"name\": \"The Country Kitchen\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 5.321
+  },
+  {
+    "id": 1677,
+    "content": "```json\n{\n    \"name\": \"Atlanta Botanical Garden\"\n}\n```",
+    "run_seconds": 3.83
+  },
+  {
+    "id": 1678,
+    "content": "```json\n{\n    \"name\": \"Florida Atlantic University\"\n}\n```",
+    "run_seconds": 3.618
+  },
+  {
+    "id": 1679,
+    "content": "```json\n{\n    \"name\": \"The Apple Pan\",\n    \"address\": \"6505 Sunset Blvd, Los Angeles, CA 90028\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 10.224
+  },
+  {
+    "id": 1680,
+    "content": "```json\n{\n    \"name\": \"The Dead Rabbit\"\n}\n```",
+    "run_seconds": 3.618
+  },
+  {
+    "id": 1681,
+    "content": "```json\n{\n    \"name\": \"The Art Institute of Chicago\",\n    \"address\": \"111 S Michigan Ave, Chicago, IL 60603\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 10.44
+  },
+  {
+    "id": 1682,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0,\n    \"distance\": 0,\n    \"length\": 0,\n    \"area\": 0,\n    \"azimuth_angle\": 0\n}\n```",
+    "run_seconds": 11.71
+  },
+  {
+    "id": 1683,
+    "content": "```json\n{\n    \"name\": \"Maryland Maritime Museum\",\n    \"address\": \"Havre de Grace, MD\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 8.309
+  },
+  {
+    "id": 1684,
+    "content": "```json\n{\n    \"name\": \"Field Museum\",\n    \"address\": \"Chicago, IL\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 7.031
+  },
+  {
+    "id": 1685,
+    "content": "```json\n{\n    \"name\": \"McDonald's\"\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 1686,
+    "content": "```json\n{\n    \"name\": \"Herman Maril Gallery\"\n}\n```",
+    "run_seconds": 4.044
+  },
+  {
+    "id": 1687,
+    "content": "```json\n{\n    \"name\": \"Museum of the American Indian\"\n}\n```",
+    "run_seconds": 4.256
+  },
+  {
+    "id": 1688,
+    "content": "```json\n{\n    \"name\": \"Caf\u00e9 212\"\n}\n```",
+    "run_seconds": 4.469
+  },
+  {
+    "id": 1689,
+    "content": "```json\n{\n    \"name\": \"Holiday Inn Express & Suites\"\n}\n```",
+    "run_seconds": 4.044
+  },
+  {
+    "id": 1690,
+    "content": "```json\n{\n    \"name\": \"Chick-fil-A\"\n}\n```",
+    "run_seconds": 4.043
+  },
+  {
+    "id": 1691,
+    "content": "```json\n{\n    \"name\": \"Kentucky River\"\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 1692,
+    "content": "```json\n{\n    \"name\": \"Caf\u00e9 at the Carousel\",\n    \"address\": \"Erie, PA\"\n}\n```",
+    "run_seconds": 6.386
+  },
+  {
+    "id": 1693,
+    "content": "```json\n{\n    \"name\": \"Caf\u00e9\",\n    \"distance\": 1500,\n    \"azimuth_angle\": 315\n}\n```",
+    "run_seconds": 8.09
+  },
+  {
+    "id": 1694,
+    "content": "```json\n{\n    \"name\": \"The Iron Bridge Restaurant\",\n    \"address\": \"100 S 5th St, Easton, PA 18042\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 10.864
+  },
+  {
+    "id": 1695,
+    "content": "```json\n{\n    \"name\": \"McDonald's\"\n}\n```",
+    "run_seconds": 3.618
+  },
+  {
+    "id": 1696,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.321
+  },
+  {
+    "id": 1697,
+    "content": "```json\n{\n    \"name\": \"Selinsgrove Caf\u00e9\"\n}\n```",
+    "run_seconds": 4.044
+  },
+  {
+    "id": 1698,
+    "content": "```json\n{\n    \"name\": \"Montclair Art Museum\"\n}\n```",
+    "run_seconds": 3.83
+  },
+  {
+    "id": 1699,
+    "content": "```json\n{\n    \"name\": \"Days Inn by Wyndham Goldsboro\"\n}\n```",
+    "run_seconds": 4.896
+  }
+]

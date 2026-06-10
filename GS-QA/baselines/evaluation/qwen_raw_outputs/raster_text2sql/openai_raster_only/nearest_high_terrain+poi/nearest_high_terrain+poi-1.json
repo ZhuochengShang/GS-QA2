@@ -1,0 +1,59 @@
+{
+  "answer_type": "distance",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "distance",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "distance_m": 22976.690449
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "distance_m": 22976.690449
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-122.376642 45.350384)',4326) AS pt\n),\nnearby_tiles AS (\n  SELECT d.rast\n  FROM public.dem_us d, origin o\n  WHERE d.rast && ST_Expand(o.pt, 1.0)\n),\nmasked AS (\n\t  SELECT ST_MapAlgebra(\n\t           rast,\n\t           1,\n\t           '32BF'::text,\n\t           'CASE WHEN [rast.val] > 1100 THEN [rast.val] ELSE NULL END'::text,\n\t           NULL::double precision\n\t         ) AS rast\n  FROM nearby_tiles\n),\nqualifying_pixels AS (\n  SELECT (pp).geom AS geom\n  FROM masked\n  CROSS JOIN LATERAL ST_PixelAsCentroids(rast, 1, TRUE) AS pp\n)\nSELECT MIN(ST_Distance(p.geom::geography, o.pt::geography)) AS distance_m\nFROM qualifying_pixels p, origin o;",
+  "id": "nearest_high_terrain+poi-1",
+  "model_output": "```sql\nWITH park_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-122.376642, 45.350384), 4326)::geography AS geom\n),\nelevated_raster AS (\n  SELECT rast\n  FROM public.dem_us\n  WHERE ST_Intersects(\n    rast,\n    ST_Transform(ST_SetSRID(ST_MakePoint(-122.376642, 45.350384), 4326), 4326)\n  )\n),\nelevated_cells AS (\n  SELECT\n    (ST_PixelAsCentroids(rast, 1)).*\n  FROM elevated_raster\n  WHERE ST_Value(rast, 1, (ST_PixelAsCentroids(rast, 1)).geom) > 1100\n),\nnearest_cell AS (\n  SELECT\n    MIN(ST_Distance(p.geom::geometry, c.geom::geometry)) AS min_distance\n  FROM park_point p, elevated_cells c\n)\nSELECT min_distance AS distance_meters FROM nearest_cell;\n```",
+  "predicted_exec": {
+    "error": "set-returning functions are not allowed in WHERE\nLINE 16:   WHERE ST_Value(rast, 1, (ST_PixelAsCentroids(rast, 1)).geo...\n                                    ^",
+    "output": []
+  },
+  "predicted_sql": "WITH park_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-122.376642, 45.350384), 4326)::geography AS geom\n),\nelevated_raster AS (\n  SELECT rast\n  FROM public.dem_us\n  WHERE ST_Intersects(\n    rast,\n    ST_Transform(ST_SetSRID(ST_MakePoint(-122.376642, 45.350384), 4326), 4326)\n  )\n),\nelevated_cells AS (\n  SELECT\n    (ST_PixelAsCentroids(rast, 1)).*\n  FROM elevated_raster\n  WHERE ST_Value(rast, 1, (ST_PixelAsCentroids(rast, 1)).geom) > 1100\n),\nnearest_cell AS (\n  SELECT\n    MIN(ST_Distance(p.geom::geometry, c.geom::geometry)) AS min_distance\n  FROM park_point p, elevated_cells c\n)\nSELECT min_distance AS distance_meters FROM nearest_cell;",
+  "predicted_sql_candidates": [
+    "WITH park_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-122.376642, 45.350384), 4326)::geography AS geom\n),\nelevated_raster AS (\n  SELECT rast\n  FROM public.dem_us\n  WHERE ST_Intersects(\n    rast,\n    ST_Transform(ST_SetSRID(ST_MakePoint(-122.376642, 45.350384), 4326), 4326)\n  )\n),\nelevated_cells AS (\n  SELECT\n    (ST_PixelAsCentroids(rast, 1)).*\n  FROM elevated_raster\n  WHERE ST_Value(rast, 1, (ST_PixelAsCentroids(rast, 1)).geom) > 1100\n),\nnearest_cell AS (\n  SELECT\n    MIN(ST_Distance(p.geom::geometry, c.geom::geometry)) AS min_distance\n  FROM park_point p, elevated_cells c\n)\nSELECT min_distance AS distance_meters FROM nearest_cell;"
+  ],
+  "query_type": "raster_only",
+  "question": "From Bonnie Lure State Park, OR, what is the distance to the nearest cell of land above 1100 meters?",
+  "source_file": "nearest_high_terrain+poi.jsonl",
+  "source_stem": "nearest_high_terrain+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 52.827,
+    "total_seconds": 52.828
+  },
+  "usage": {
+    "completion_tokens": 245,
+    "prompt_tokens": 1630,
+    "total_tokens": 1875
+  }
+}

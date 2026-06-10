@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 33.825878
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 33.825878
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-112.139401 40.244294, -112.139487 40.24701, -112.139533 40.261604, -112.139501 40.276301, -112.139545 40.283646, -112.120393 40.283499, -112.115629 40.283537, -112.101259 40.283573, -112.092154 40.283547, -112.092458 40.278337, -112.08223 40.27822, -112.072682 40.278076, -112.072723 40.279843, -112.069416 40.279735, -112.069338 40.279688, -112.069064 40.279953, -112.069264 40.280039, -112.072729 40.280117, -112.072787 40.283525, -112.063039 40.283531, -112.063023 40.276236, -112.053429 40.276226, -112.043885 40.276201, -112.043874 40.268903, -112.043887 40.261548, -112.043881 40.254217, -112.043926 40.246924, -112.034178 40.246951, -112.02443 40.246974, -112.01527 40.246869, -112.005716 40.246863, -112.005707 40.239563, -112.005723 40.232251, -112.01525 40.232255, -112.02466 40.232204, -112.024905 40.224917, -112.024854 40.21761, -112.043989 40.217573, -112.053358 40.217565, -112.063025 40.217773, -112.063007 40.210443, -112.062996 40.203135, -112.072649 40.203072, -112.082164 40.203112, -112.08206 40.217763, -112.091708 40.21765, -112.101066 40.217589, -112.110602 40.217691, -112.120247 40.217777, -112.129627 40.217801, -112.139026 40.21775, -112.139053 40.232307, -112.139253 40.239596, -112.139401 40.244294))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).max AS slope\nFROM region_slope;",
+  "id": "max_slope+area-16",
+  "model_output": "```sql\nWITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Fairfield' AND border_type ILIKE 'city'\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM region_geom), TRUE),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM region_geom))\n)\nSELECT\n  MAX(ST_Value(slope_rast, 1)) AS max_slope_degrees\nFROM slope_raster;\n```",
+  "predicted_exec": {
+    "error": "function st_value(raster, integer) does not exist\nLINE 17:   MAX(ST_Value(slope_rast, 1)) AS max_slope_degrees\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Fairfield' AND border_type ILIKE 'city'\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM region_geom), TRUE),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM region_geom))\n)\nSELECT\n  MAX(ST_Value(slope_rast, 1)) AS max_slope_degrees\nFROM slope_raster;",
+  "predicted_sql_candidates": [
+    "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Fairfield' AND border_type ILIKE 'city'\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM region_geom), TRUE),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM region_geom))\n)\nSELECT\n  MAX(ST_Value(slope_rast, 1)) AS max_slope_degrees\nFROM slope_raster;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the greatest slope across Fairfield, Utah?",
+  "source_file": "max_slope+area.jsonl",
+  "source_stem": "max_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 28.927,
+    "total_seconds": 28.928
+  },
+  "usage": {
+    "completion_tokens": 135,
+    "prompt_tokens": 1514,
+    "total_tokens": 1649
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope_degrees": 1.497317
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope_degrees": 1.497317
+      }
+    ]
+  },
+  "gold_sql": "WITH route AS (\n  SELECT ST_GeomFromText('LINESTRING (-105.152624 39.957711, -105.152194 39.957807)', 4326)::geometry AS geom\n),\ndem_clip AS (\n  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast\n  FROM public.dem_us d, route r\n  WHERE ST_Intersects(d.rast, r.geom)\n),\nsegments AS (\n  SELECT (ST_DumpSegments(r.geom)).geom AS seg\n  FROM route r\n),\nendpoints AS (\n  SELECT\n    ST_StartPoint(seg) AS p1,\n    ST_EndPoint(seg)   AS p2,\n    ST_Length(seg::geography) AS seg_len_m\n  FROM segments\n),\nelev AS (\n  SELECT\n    e.seg_len_m,\n    ST_Value(dc.rast, 1, e.p1) AS z1,\n    ST_Value(dc.rast, 1, e.p2) AS z2\n  FROM endpoints e, dem_clip dc\n),\nslopes AS (\n  SELECT\n    seg_len_m,\n    CASE WHEN seg_len_m > 0 THEN ABS(z2 - z1) / seg_len_m ELSE NULL END AS grade\n  FROM elev\n  WHERE z1 IS NOT NULL AND z2 IS NOT NULL\n),\navg_grade AS (\n  SELECT\n    SUM(grade * seg_len_m) / NULLIF(SUM(seg_len_m), 0) AS g\n  FROM slopes\n  WHERE grade IS NOT NULL\n)\nSELECT DEGREES(ATAN(g)) AS slope_degrees\nFROM avg_grade;",
+  "id": "slope+route-12",
+  "model_output": "```sql\nWITH trail_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-105.152624 39.957711, -105.152194 39.957807)', 4326)::geometry AS geom\n),\nraster_subset AS (\n  SELECT\n    ST_Clip(r.rast, t.geom, true) AS clipped_rast\n  FROM\n    public.dem_us r,\n    trail_geom t\n  WHERE\n    ST_Intersects(r.rast, t.geom)\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM\n    raster_subset\n)\nSELECT\n  ROUND(AVG(value), 2) AS avg_slope_degrees\nFROM\n  slope_rast,\n  LATERAL ST_DumpAsPolygons(slope_rast) AS dump(geom, value);\n```",
+  "predicted_exec": {
+    "error": "relation \"slope_rast\" does not exist\nLINE 22:   slope_rast,\n           ^",
+    "output": []
+  },
+  "predicted_sql": "WITH trail_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-105.152624 39.957711, -105.152194 39.957807)', 4326)::geometry AS geom\n),\nraster_subset AS (\n  SELECT\n    ST_Clip(r.rast, t.geom, true) AS clipped_rast\n  FROM\n    public.dem_us r,\n    trail_geom t\n  WHERE\n    ST_Intersects(r.rast, t.geom)\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM\n    raster_subset\n)\nSELECT\n  ROUND(AVG(value), 2) AS avg_slope_degrees\nFROM\n  slope_rast,\n  LATERAL ST_DumpAsPolygons(slope_rast) AS dump(geom, value);",
+  "predicted_sql_candidates": [
+    "WITH trail_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-105.152624 39.957711, -105.152194 39.957807)', 4326)::geometry AS geom\n),\nraster_subset AS (\n  SELECT\n    ST_Clip(r.rast, t.geom, true) AS clipped_rast\n  FROM\n    public.dem_us r,\n    trail_geom t\n  WHERE\n    ST_Intersects(r.rast, t.geom)\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM\n    raster_subset\n)\nSELECT\n  ROUND(AVG(value), 2) AS avg_slope_degrees\nFROM\n  slope_rast,\n  LATERAL ST_DumpAsPolygons(slope_rast) AS dump(geom, value);"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the average slope along the route Coal Creek Trail?",
+  "source_file": "slope+route.jsonl",
+  "source_stem": "slope+route",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 48.77,
+    "total_seconds": 48.771
+  },
+  "usage": {
+    "completion_tokens": 216,
+    "prompt_tokens": 1557,
+    "total_tokens": 1773
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 0.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 0.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-72.212988 44.807775, -72.209297 44.81301, -72.204811 44.81921, -72.204496 44.819651, -72.204435 44.819652, -72.200122 44.815559, -72.199332 44.816735, -72.197264 44.815479, -72.196797 44.816194, -72.19282 44.815074, -72.192481 44.815357, -72.191518 44.815156, -72.191159 44.815352, -72.186729 44.814506, -72.189367 44.811481, -72.192588 44.809052, -72.188461 44.807882, -72.187937 44.807022, -72.192611 44.806754, -72.197643 44.804751, -72.197369 44.803556, -72.197321 44.803187, -72.197335 44.80276, -72.197313 44.802347, -72.197295 44.802243, -72.200708 44.803699, -72.201499 44.802378, -72.203817 44.803202, -72.207822 44.802355, -72.208112 44.802675, -72.206355 44.805719, -72.210928 44.807145, -72.212988 44.807775))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).min AS slope\nFROM region_slope;",
+  "id": "min_slope+area-4",
+  "model_output": "```sql\nWITH orleans_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Orleans' AND border_type ILIKE 'city'\n),\norleans_dem AS (\n  SELECT\n    ST_Clip(rast, (SELECT geom FROM orleans_geom), TRUE) AS clipped_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM orleans_geom))\n),\norleans_slope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF', TRUE) AS slope_rast\n  FROM orleans_dem\n)\nSELECT\n  MIN(value) AS flattest_slope\nFROM (\n  SELECT\n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM orleans_slope_raster\n) AS slope_values;\n```",
+  "predicted_exec": {
+    "error": "function st_slope(raster, integer, unknown, boolean) does not exist\nLINE 14:     ST_Slope(clipped_rast, 1, '32BF', TRUE) AS slope_rast\n             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH orleans_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Orleans' AND border_type ILIKE 'city'\n),\norleans_dem AS (\n  SELECT\n    ST_Clip(rast, (SELECT geom FROM orleans_geom), TRUE) AS clipped_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM orleans_geom))\n),\norleans_slope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF', TRUE) AS slope_rast\n  FROM orleans_dem\n)\nSELECT\n  MIN(value) AS flattest_slope\nFROM (\n  SELECT\n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM orleans_slope_raster\n) AS slope_values;",
+  "predicted_sql_candidates": [
+    "WITH orleans_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Orleans' AND border_type ILIKE 'city'\n),\norleans_dem AS (\n  SELECT\n    ST_Clip(rast, (SELECT geom FROM orleans_geom), TRUE) AS clipped_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM orleans_geom))\n),\norleans_slope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF', TRUE) AS slope_rast\n  FROM orleans_dem\n)\nSELECT\n  MIN(value) AS flattest_slope\nFROM (\n  SELECT\n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM orleans_slope_raster\n) AS slope_values;"
+  ],
+  "query_type": "raster_only",
+  "question": "How flat is the flattest part of Orleans, Vermont?",
+  "source_file": "min_slope+area.jsonl",
+  "source_stem": "min_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 39.057,
+    "total_seconds": 39.058
+  },
+  "usage": {
+    "completion_tokens": 180,
+    "prompt_tokens": 1515,
+    "total_tokens": 1695
+  }
+}

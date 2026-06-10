@@ -1,0 +1,59 @@
+{
+  "answer_type": "count, POIs -> Points",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "count, POIs -> Points",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "count": 0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "count": 0
+      }
+    ]
+  },
+  "gold_sql": "WITH candidates AS (\n  SELECT p.id, p.geometry\n  FROM pois p\n  WHERE ST_DWithin(p.geometry::geography, ST_GeomFromText('POINT (-79.348409 41.636215)',4326)::geography, 1700)\n    AND p.amenity = 'university'\n),\npoi_elev AS (\n  SELECT c.id, elev.z\n  FROM candidates c\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, c.geometry::geometry) AS z\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, c.geometry::geometry)\n    LIMIT 1\n  ) elev ON elev.z IS NOT NULL\n)\nSELECT COUNT(*) AS count\nFROM poi_elev\nWHERE z <= 100;",
+  "id": "range+count+elevation_condition-14",
+  "model_output": "```sql\nWITH jakes_rock AS (\n  SELECT ST_Buffer(ST_GeomFromText('POINT (-79.348409 41.636215)'), 1700) AS geom\n),\nuniversities AS (\n  SELECT id\n  FROM pois\n  WHERE amenity = 'university'\n    AND ST_DWithin(\n      ST_Transform(geometry::geometry, 3857),\n      ST_Transform(jakes_rock.geom, 3857),\n      0\n    )\n    AND ST_Value(\n      (\n        SELECT rast\n        FROM public.dem_us\n        WHERE ST_Intersects(ST_Clip(rast, jakes_rock.geom), jakes_rock.geom)\n      ),\n      ST_Transform(pois.geometry::geometry, 3857)\n    ) <= 100\n  FROM jakes_rock\n)\nSELECT COUNT(*) AS university_count\nFROM universities;\n```",
+  "predicted_exec": {
+    "error": "syntax error at or near \"FROM\"\nLINE 21:   FROM jakes_rock\n           ^",
+    "output": []
+  },
+  "predicted_sql": "WITH jakes_rock AS (\n  SELECT ST_Buffer(ST_GeomFromText('POINT (-79.348409 41.636215)'), 1700) AS geom\n),\nuniversities AS (\n  SELECT id\n  FROM pois\n  WHERE amenity = 'university'\n    AND ST_DWithin(\n      ST_Transform(geometry::geometry, 3857),\n      ST_Transform(jakes_rock.geom, 3857),\n      0\n    )\n    AND ST_Value(\n      (\n        SELECT rast\n        FROM public.dem_us\n        WHERE ST_Intersects(ST_Clip(rast, jakes_rock.geom), jakes_rock.geom)\n      ),\n      ST_Transform(pois.geometry::geometry, 3857)\n    ) <= 100\n  FROM jakes_rock\n)\nSELECT COUNT(*) AS university_count\nFROM universities;",
+  "predicted_sql_candidates": [
+    "WITH jakes_rock AS (\n  SELECT ST_Buffer(ST_GeomFromText('POINT (-79.348409 41.636215)'), 1700) AS geom\n),\nuniversities AS (\n  SELECT id\n  FROM pois\n  WHERE amenity = 'university'\n    AND ST_DWithin(\n      ST_Transform(geometry::geometry, 3857),\n      ST_Transform(jakes_rock.geom, 3857),\n      0\n    )\n    AND ST_Value(\n      (\n        SELECT rast\n        FROM public.dem_us\n        WHERE ST_Intersects(ST_Clip(rast, jakes_rock.geom), jakes_rock.geom)\n      ),\n      ST_Transform(pois.geometry::geometry, 3857)\n    ) <= 100\n  FROM jakes_rock\n)\nSELECT COUNT(*) AS university_count\nFROM universities;"
+  ],
+  "query_type": "extended",
+  "question": "What is the number of universities located within 1700 meters from Jakes Rock Overlook and Mountain Bike Trail, Tidioute, PA with altitude at most 100 m?",
+  "source_file": "range+count+elevation_condition.jsonl",
+  "source_stem": "range+count+elevation_condition",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 43.915,
+    "total_seconds": 43.916
+  },
+  "usage": {
+    "completion_tokens": 205,
+    "prompt_tokens": 1821,
+    "total_tokens": 2026
+  }
+}

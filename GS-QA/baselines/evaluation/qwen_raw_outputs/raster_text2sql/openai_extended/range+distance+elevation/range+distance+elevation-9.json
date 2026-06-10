@@ -1,0 +1,119 @@
+{
+  "answer_type": "distance+elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "distance+elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "addr_city": "Wausau",
+      "addr_housenumber": "201",
+      "addr_postcode": "54401",
+      "addr_state": "WI",
+      "addr_street": "North 17th Avenue",
+      "distance": 682.424468,
+      "elevation": 382.0,
+      "geometry": "POINT (-89.65519 44.964543)",
+      "id": 21182,
+      "osm_id": 3421701636,
+      "poi_name": "The Plaza Hotel & Suites",
+      "tourism": "hotel"
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "addr_city": "Wausau",
+        "addr_housenumber": "201",
+        "addr_postcode": "54401",
+        "addr_state": "WI",
+        "addr_street": "North 17th Avenue",
+        "amenity": null,
+        "artwork_type": null,
+        "building": null,
+        "capacity": null,
+        "cuisine": null,
+        "delivery": null,
+        "description": null,
+        "distance": 682.424468,
+        "drive_through": null,
+        "elevation": 382.0,
+        "emergency": null,
+        "fast_food": null,
+        "fee": null,
+        "geometry": "0101000020E61000000FEB32A1EE6956C0F94A2025767B4640",
+        "hairdresser": null,
+        "healthcare": null,
+        "historic": null,
+        "id": 21182,
+        "information": null,
+        "internet_access": null,
+        "leisure": null,
+        "museum": null,
+        "official_name": null,
+        "opening_hours": null,
+        "operator": null,
+        "osm_id": 3421701636,
+        "outdoor_seating": null,
+        "parking": null,
+        "pastry_shop": null,
+        "phone": null,
+        "poi_name": "The Plaza Hotel & Suites",
+        "resort": null,
+        "restaurant": null,
+        "school_type": null,
+        "shop": null,
+        "sport": null,
+        "sports": null,
+        "takeaway": null,
+        "toilets": null,
+        "tourism": "hotel",
+        "website": null,
+        "wheelchair": null,
+        "wholesale": null,
+        "wikidata": null,
+        "zoo": null
+      }
+    ]
+  },
+  "gold_sql": "SELECT\n  p.*,\n  ST_Distance(\n    ST_GeomFromText('POINT (-89.663831 44.964816)',4326)::geography,\n    p.geometry::geography\n  ) AS distance,\n  elev.z AS elevation\nFROM pois p\nJOIN LATERAL (\n  SELECT ST_Value(d.rast, 1, p.geometry::geometry) AS z\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, p.geometry::geometry)\n  LIMIT 1\n) elev ON elev.z IS NOT NULL\nWHERE ST_DWithin(\n        p.geometry::geography,\n        ST_GeomFromText('POINT (-89.663831 44.964816)',4326)::geography,\n        2000\n      )\n  AND tourism = 'hotel';",
+  "id": "range+distance+elevation-9",
+  "model_output": "```sql\nWITH target_poi AS (\n  SELECT \n    ST_SetSRID(ST_GeomFromText('POINT (-89.663831 44.964816)'), 4326)::geography AS geom\n),\nhotel_poi AS (\n  SELECT \n    ST_SetSRID(ST_GeomFromText('POINT (-96.727069 43.551072)'), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT \n    ST_Buffer(target_poi.geom, 2000) AS geom\n  FROM \n    target_poi\n),\nclipped_dem AS (\n  SELECT \n    ST_Clip(rast, 1, buffered_area.geom, true) AS rast\n  FROM \n    public.dem_us, buffered_area\n  WHERE \n    ST_Intersects(rast, buffered_area.geom)\n),\nelevation_stats AS (\n  SELECT \n    ST_ValueCount(rast, true) AS stats\n  FROM \n    clipped_dem\n),\nelevation_summary AS (\n  SELECT \n    (stats).sum / (stats).count AS avg_elevation\n  FROM \n    elevation_stats\n)\nSELECT \n  ST_Distance(target_poi.geom, hotel_poi.geom) AS distance_meters,\n  avg_elevation\nFROM \n  target_poi, hotel_poi, elevation_summary;\n```",
+  "predicted_exec": {
+    "error": "function st_clip(raster, integer, geography, boolean) does not exist\nLINE 17:     ST_Clip(rast, 1, buffered_area.geom, true) AS rast\n             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH target_poi AS (\n  SELECT \n    ST_SetSRID(ST_GeomFromText('POINT (-89.663831 44.964816)'), 4326)::geography AS geom\n),\nhotel_poi AS (\n  SELECT \n    ST_SetSRID(ST_GeomFromText('POINT (-96.727069 43.551072)'), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT \n    ST_Buffer(target_poi.geom, 2000) AS geom\n  FROM \n    target_poi\n),\nclipped_dem AS (\n  SELECT \n    ST_Clip(rast, 1, buffered_area.geom, true) AS rast\n  FROM \n    public.dem_us, buffered_area\n  WHERE \n    ST_Intersects(rast, buffered_area.geom)\n),\nelevation_stats AS (\n  SELECT \n    ST_ValueCount(rast, true) AS stats\n  FROM \n    clipped_dem\n),\nelevation_summary AS (\n  SELECT \n    (stats).sum / (stats).count AS avg_elevation\n  FROM \n    elevation_stats\n)\nSELECT \n  ST_Distance(target_poi.geom, hotel_poi.geom) AS distance_meters,\n  avg_elevation\nFROM \n  target_poi, hotel_poi, elevation_summary;",
+  "predicted_sql_candidates": [
+    "WITH target_poi AS (\n  SELECT \n    ST_SetSRID(ST_GeomFromText('POINT (-89.663831 44.964816)'), 4326)::geography AS geom\n),\nhotel_poi AS (\n  SELECT \n    ST_SetSRID(ST_GeomFromText('POINT (-96.727069 43.551072)'), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT \n    ST_Buffer(target_poi.geom, 2000) AS geom\n  FROM \n    target_poi\n),\nclipped_dem AS (\n  SELECT \n    ST_Clip(rast, 1, buffered_area.geom, true) AS rast\n  FROM \n    public.dem_us, buffered_area\n  WHERE \n    ST_Intersects(rast, buffered_area.geom)\n),\nelevation_stats AS (\n  SELECT \n    ST_ValueCount(rast, true) AS stats\n  FROM \n    clipped_dem\n),\nelevation_summary AS (\n  SELECT \n    (stats).sum / (stats).count AS avg_elevation\n  FROM \n    elevation_stats\n)\nSELECT \n  ST_Distance(target_poi.geom, hotel_poi.geom) AS distance_meters,\n  avg_elevation\nFROM \n  target_poi, hotel_poi, elevation_summary;"
+  ],
+  "query_type": "extended",
+  "question": "What are the distance and terrain elevation for a hotel within 2 kilometers of Medical College of Wisconsin-Central Wisconsin, Wausau, WI?",
+  "source_file": "range+distance+elevation.jsonl",
+  "source_stem": "range+distance+elevation",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 64.473,
+    "total_seconds": 64.474
+  },
+  "usage": {
+    "completion_tokens": 302,
+    "prompt_tokens": 1769,
+    "total_tokens": 2071
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "answer_type": "row/s",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "row/s",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "rowset_f1",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "addr_city": "Mantorville",
+      "addr_housenumber": "502",
+      "addr_postcode": "55955",
+      "addr_state": "MN",
+      "addr_street": "North Main Street",
+      "elevation": 343.0,
+      "geometry": "POINT (-92.755053 44.066853)",
+      "id": 4370,
+      "osm_id": 3605735150,
+      "phone": "+1 507 635 2331",
+      "poi_name": "Hubbell House",
+      "pt": "0101000020E61000005F2FA8CA523057C0875341A08E084640",
+      "tourism": "hotel",
+      "website": "https://www.hubbellhouserestaurant.com/"
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "addr_city": "Mantorville",
+        "addr_housenumber": "502",
+        "addr_postcode": "55955",
+        "addr_state": "MN",
+        "addr_street": "North Main Street",
+        "amenity": null,
+        "artwork_type": null,
+        "building": null,
+        "capacity": null,
+        "cuisine": null,
+        "delivery": null,
+        "description": null,
+        "drive_through": null,
+        "elevation": 343.0,
+        "emergency": null,
+        "fast_food": null,
+        "fee": null,
+        "geometry": "0101000020E61000005F2FA8CA523057C0875341A08E084640",
+        "hairdresser": null,
+        "healthcare": null,
+        "historic": null,
+        "id": 4370,
+        "information": null,
+        "internet_access": null,
+        "leisure": null,
+        "museum": null,
+        "official_name": null,
+        "opening_hours": null,
+        "operator": null,
+        "osm_id": 3605735150,
+        "outdoor_seating": null,
+        "parking": null,
+        "pastry_shop": null,
+        "phone": "+1 507 635 2331",
+        "poi_name": "Hubbell House",
+        "pt": "0101000020E61000005F2FA8CA523057C0875341A08E084640",
+        "resort": null,
+        "restaurant": null,
+        "school_type": null,
+        "shop": null,
+        "sport": null,
+        "sports": null,
+        "takeaway": null,
+        "toilets": null,
+        "tourism": "hotel",
+        "website": "https://www.hubbellhouserestaurant.com/",
+        "wheelchair": null,
+        "wholesale": null,
+        "wikidata": null,
+        "zoo": null
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-93.045386 43.873826, -93.045368 43.87799, -93.045493 43.935698, -93.045732 43.979284, -93.045775 44.066435, -93.045718 44.102052, -93.04581 44.160647, -93.046048 44.196737, -93.041239 44.196764, -92.966447 44.196942, -92.92015 44.196901, -92.812629 44.196805, -92.791535 44.196596, -92.688721 44.195573, -92.684795 44.195545, -92.683661 44.195536, -92.681202 44.195519, -92.680881 44.195516, -92.679007 44.195503, -92.678732 44.195501, -92.678666 44.186738, -92.678665 44.186522, -92.678667 44.186217, -92.67868 44.184178, -92.67868 44.184071, -92.678679 44.18398, -92.678646 44.179693, -92.678643 44.179412, -92.67864 44.179021, -92.678641 44.178916, -92.678641 44.178812, -92.678659 44.175417, -92.678665 44.174222, -92.678689 44.169594, -92.67869 44.169453, -92.678694 44.169008, -92.6787 44.168308, -92.67871 44.167121, -92.678651 44.164753, -92.678575 44.159799, -92.678529 44.15626, -92.678464 44.149404, -92.678451 44.147727, -92.678394 44.142864, -92.678366 44.13987, -92.678344 44.136805, -92.678297 44.132189, -92.678294 44.129923, -92.67817 44.129919, -92.67818 44.127975, -92.678165 44.125832, -92.678158 44.123448, -92.67817 44.122348, -92.678181 44.120229, -92.6782 44.116167, -92.678204 44.113638, -92.678221 44.110748, -92.678211 44.108359, -92.67817 44.104359, -92.678157 44.100752, -92.67815 44.099231, -92.678145 44.099003, -92.678171 44.097208, -92.678173 44.094858, -92.678186 44.093021, -92.678185 44.090807, -92.678191 44.088174, -92.678202 44.085423, -92.678328 44.085427, -92.67831 44.083058, -92.67831 44.082977, -92.678313 44.079415, -92.678304 44.07807, -92.678296 44.07693, -92.678116 44.064075, -92.678099 44.057932, -92.678107 44.057052, -92.678124 44.05631, -92.678138 44.054774, -92.678122 44.053418, -92.678117 44.053002, -92.678112 44.052573, -92.678103 44.051842, -92.67814 44.050034, -92.678145 44.047622, -92.678155 44.045551, -92.678164 44.043617, -92.678145 44.041606, -92.678054 44.032563, -92.678049 44.028118, -92.678037 44.026698, -92.678026 44.025442, -92.678006 44.023172, -92.678022 44.020851, -92.678033 44.01903, -92.678023 44.017084, -92.678029 44.014524, -92.678063 44.013055, -92.678092 44.01043, -92.678097 44.006532, -92.678059 44.004097, -92.678015 44.001932, -92.677991 43.999791, -92.678005 43.997063, -92.677996 43.994748, -92.677996 43.99144, -92.678002 43.989072, -92.677986 43.986741, -92.677992 43.985838, -92.678098 43.98584, -92.678132 43.984631, -92.678168 43.982218, -92.678038 43.982216, -92.678054 43.980227, -92.678145 43.967916, -92.678161 43.964047, -92.678153 43.960672, -92.678145 43.958884, -92.678156 43.956596, -92.67816 43.95416, -92.678188 43.949802, -92.678198 43.942798, -92.678197 43.938918, -92.678214 43.935212, -92.678225 43.929959, -92.678277 43.9244, -92.678461 43.92213, -92.678456 43.921319, -92.678454 43.921084, -92.678454 43.921021, -92.678428 43.917224, -92.678346 43.911048, -92.678289 43.906729, -92.678288 43.906401, -92.678275 43.900973, -92.678265 43.896957, -92.678321 43.89202, -92.678321 43.891983, -92.678275 43.88472, -92.678301 43.877666, -92.678269 43.875463, -92.678264 43.875137, -92.678246 43.870256, -92.678283 43.865948, -92.678284 43.865762, -92.678316 43.862017, -92.678319 43.86166, -92.678338 43.859427, -92.678323 43.855738, -92.678327 43.852071, -92.678339 43.848601, -92.686423 43.848582, -92.689389 43.848598, -92.690461 43.848599, -92.697911 43.84861, -92.698316 43.848612, -92.705798 43.848622, -92.709659 43.848626, -92.718422 43.848622, -92.719338 43.848624, -92.723696 43.84863, -92.725885 43.848636, -92.729774 43.848636, -92.731324 43.848645, -92.73268 43.848639, -92.734288 43.848639, -92.735783 43.848639, -92.73939 43.848663, -92.742566 43.84865, -92.744951 43.848644, -92.745006 43.848644, -92.745877 43.848643, -92.749546 43.848641, -92.749844 43.848641, -92.74994 43.848642, -92.752548 43.84865, -92.758575 43.848681, -92.764776 43.848683, -92.769996 43.848692, -92.774977 43.848698, -92.77865 43.848704, -92.789122 43.848702, -92.793019 43.848703, -92.793398 43.848709, -92.794299 43.84871, -92.795619 43.848702, -92.799649 43.848706, -92.806012 43.84871, -92.80929 43.848698, -92.810126 43.848702, -92.811285 43.848705, -92.812564 43.848709, -92.8188 43.848731, -92.81924 43.84873, -92.82533 43.848744, -92.829368 43.848763, -92.832969 43.848752, -92.834131 43.84876, -92.843885 43.848728, -92.849448 43.848742, -92.858575 43.848759, -92.859581 43.848761, -92.859853 43.848761, -92.860139 43.848763, -92.860623 43.848765, -92.860817 43.848766, -92.861885 43.848768, -92.86661 43.848773, -92.869433 43.848788, -92.86952 43.848788, -92.877646 43.84879, -92.879273 43.848791, -92.882722 43.848766, -92.885194 43.848776, -92.889608 43.848765, -92.890481 43.848755, -92.899154 43.848609, -92.902155 43.848604, -92.908949 43.848595, -92.909504 43.848589, -92.909898 43.848589, -92.911472 43.848589, -92.912688 43.84859, -92.916863 43.848596, -92.917348 43.848596, -92.919943 43.848595, -92.921849 43.848597, -92.926025 43.848598, -92.929975 43.848594, -92.930978 43.848588, -92.93193 43.848582, -92.934984 43.848571, -92.941223 43.84855, -92.943209 43.848546, -92.943739 43.84854, -92.94507 43.848544, -92.950203 43.848524, -92.954889 43.848518, -92.956847 43.848509, -92.963851 43.848504, -92.965653 43.848498, -92.966688 43.848495, -92.96924 43.848494, -92.969763 43.848492, -92.96995 43.84849, -92.974785 43.848479, -92.98005 43.848487, -92.988926 43.848435, -93.010315 43.848437, -93.01436 43.848434, -93.015284 43.848436, -93.016925 43.848438, -93.023488 43.848454, -93.027389 43.848458, -93.027539 43.848458, -93.030188 43.848466, -93.03264 43.848464, -93.034554 43.848466, -93.034986 43.848466, -93.035109 43.848466, -93.036304 43.848465, -93.037015 43.848465, -93.037151 43.848465, -93.037382 43.848465, -93.037563 43.848465, -93.037755 43.848465, -93.040084 43.848468, -93.044679 43.848471, -93.045564 43.848476, -93.045568 43.849378, -93.045574 43.849598, -93.045572 43.849769, -93.045578 43.850027, -93.045577 43.851358, -93.045562 43.859342, -93.045409 43.870274, -93.045386 43.873826))', 4326) AS g\n),\ncandidates AS (\n  SELECT p.*, ST_PointOnSurface(p.geometry::geometry) AS pt\n  FROM pois p\n  JOIN region r ON ST_Intersects(p.geometry::geometry, r.g)\n  WHERE p.\"tourism\" = 'hotel'\n),\npoi_elev AS (\n  SELECT c.*, elev.z AS elevation\n  FROM candidates c\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, c.pt) AS z\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, c.pt)\n    LIMIT 1\n  ) elev ON elev.z IS NOT NULL\n)\nSELECT *\nFROM poi_elev\nORDER BY elevation ASC\nLIMIT 10;",
+  "id": "elevation_lowest_n_poi+name-0",
+  "model_output": "```sql\nWITH hotels_in_dodge_county AS (\n  SELECT \n    p.poi_name,\n    p.geometry\n  FROM \n    pois p\n  JOIN \n    regions r \n    ON ST_Intersects(p.geometry::geometry, r.geometry::geometry)\n  WHERE \n    p.tourism = 'hotel' \n    AND r.region_name = 'Dodge County' \n    AND r.addr_state = 'Minnesota'\n),\nelevation_analysis AS (\n  SELECT \n    h.poi_name,\n    h.geometry,\n    (ST_ValueCount(\n      ST_Clip(\n        r.rast, \n        h.geometry::geometry\n      ), \n      true\n    )).val AS elevation\n  FROM \n    hotels_in_dodge_county h\n  JOIN \n    public.dem_us r \n    ON ST_Intersects(r.rast, h.geometry::geometry)\n)\nSELECT \n  poi_name\nFROM \n  elevation_analysis\nORDER BY \n  elevation ASC\nLIMIT 10;\n```",
+  "predicted_exec": {
+    "error": "column r.addr_state does not exist\nLINE 13:     AND r.addr_state = 'Minnesota'\n                 ^\nHINT:  Perhaps you meant to reference the column \"p.addr_state\".",
+    "output": []
+  },
+  "predicted_sql": "WITH hotels_in_dodge_county AS (\n  SELECT \n    p.poi_name,\n    p.geometry\n  FROM \n    pois p\n  JOIN \n    regions r \n    ON ST_Intersects(p.geometry::geometry, r.geometry::geometry)\n  WHERE \n    p.tourism = 'hotel' \n    AND r.region_name = 'Dodge County' \n    AND r.addr_state = 'Minnesota'\n),\nelevation_analysis AS (\n  SELECT \n    h.poi_name,\n    h.geometry,\n    (ST_ValueCount(\n      ST_Clip(\n        r.rast, \n        h.geometry::geometry\n      ), \n      true\n    )).val AS elevation\n  FROM \n    hotels_in_dodge_county h\n  JOIN \n    public.dem_us r \n    ON ST_Intersects(r.rast, h.geometry::geometry)\n)\nSELECT \n  poi_name\nFROM \n  elevation_analysis\nORDER BY \n  elevation ASC\nLIMIT 10;",
+  "predicted_sql_candidates": [
+    "WITH hotels_in_dodge_county AS (\n  SELECT \n    p.poi_name,\n    p.geometry\n  FROM \n    pois p\n  JOIN \n    regions r \n    ON ST_Intersects(p.geometry::geometry, r.geometry::geometry)\n  WHERE \n    p.tourism = 'hotel' \n    AND r.region_name = 'Dodge County' \n    AND r.addr_state = 'Minnesota'\n),\nelevation_analysis AS (\n  SELECT \n    h.poi_name,\n    h.geometry,\n    (ST_ValueCount(\n      ST_Clip(\n        r.rast, \n        h.geometry::geometry\n      ), \n      true\n    )).val AS elevation\n  FROM \n    hotels_in_dodge_county h\n  JOIN \n    public.dem_us r \n    ON ST_Intersects(r.rast, h.geometry::geometry)\n)\nSELECT \n  poi_name\nFROM \n  elevation_analysis\nORDER BY \n  elevation ASC\nLIMIT 10;"
+  ],
+  "query_type": "raster_vector",
+  "question": "List the 10 hotels at the lowest elevation in Dodge County, Minnesota.",
+  "source_file": "elevation_lowest_n_poi+name.jsonl",
+  "source_stem": "elevation_lowest_n_poi+name",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 43.505,
+    "total_seconds": 43.506
+  },
+  "usage": {
+    "completion_tokens": 204,
+    "prompt_tokens": 1652,
+    "total_tokens": 1856
+  }
+}

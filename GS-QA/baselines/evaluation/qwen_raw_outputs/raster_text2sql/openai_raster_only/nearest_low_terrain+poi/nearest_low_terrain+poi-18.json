@@ -1,0 +1,59 @@
+{
+  "answer_type": "distance",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "distance",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "distance_m": 9.818122
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "distance_m": 9.818122
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-73.988988 40.755324)',4326) AS pt\n),\nnearby_tiles AS (\n  SELECT d.rast\n  FROM public.dem_us d, origin o\n  WHERE d.rast && ST_Expand(o.pt, 1.0)\n),\nmasked AS (\n\t  SELECT ST_MapAlgebra(\n\t           rast,\n\t           1,\n\t           '32BF'::text,\n\t           'CASE WHEN [rast.val] < 440 THEN [rast.val] ELSE NULL END'::text,\n\t           NULL::double precision\n\t         ) AS rast\n  FROM nearby_tiles\n),\nqualifying_pixels AS (\n  SELECT (pp).geom AS geom\n  FROM masked\n  CROSS JOIN LATERAL ST_PixelAsCentroids(rast, 1, TRUE) AS pp\n)\nSELECT MIN(ST_Distance(p.geom::geography, o.pt::geography)) AS distance_m\nFROM qualifying_pixels p, origin o;",
+  "id": "nearest_low_terrain+poi-18",
+  "model_output": "```sql\nWITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-73.988988, 40.755324), 4326)::geography AS geom\n),\ndem_clipped AS (\n  SELECT ST_Clip(rast, 1, ST_Buffer(p.geom::geometry, 10000, 'join=round')) AS rast\n  FROM public.dem_us, poi_geom p\n  WHERE ST_Intersects(rast, p.geom::geometry)\n),\nterrain_below_440 AS (\n  SELECT (ST_DumpAsPolygons(ST_Reclass(\n    ST_Slope(ST_Union(rast)), \n    1, '0-1000:1', '8BUI', 1\n  ))).geom AS geom\n  FROM dem_clipped\n  WHERE ST_Value(rast, 1) < 440\n)\nSELECT MIN(ST_Distance(p.geom, t.geom)) AS distance_meters\nFROM poi_geom p, terrain_below_440 t;\n```",
+  "predicted_exec": {
+    "error": "function st_value(raster, integer) does not exist\nLINE 15:   WHERE ST_Value(rast, 1) < 440\n                 ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-73.988988, 40.755324), 4326)::geography AS geom\n),\ndem_clipped AS (\n  SELECT ST_Clip(rast, 1, ST_Buffer(p.geom::geometry, 10000, 'join=round')) AS rast\n  FROM public.dem_us, poi_geom p\n  WHERE ST_Intersects(rast, p.geom::geometry)\n),\nterrain_below_440 AS (\n  SELECT (ST_DumpAsPolygons(ST_Reclass(\n    ST_Slope(ST_Union(rast)), \n    1, '0-1000:1', '8BUI', 1\n  ))).geom AS geom\n  FROM dem_clipped\n  WHERE ST_Value(rast, 1) < 440\n)\nSELECT MIN(ST_Distance(p.geom, t.geom)) AS distance_meters\nFROM poi_geom p, terrain_below_440 t;",
+  "predicted_sql_candidates": [
+    "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-73.988988, 40.755324), 4326)::geography AS geom\n),\ndem_clipped AS (\n  SELECT ST_Clip(rast, 1, ST_Buffer(p.geom::geometry, 10000, 'join=round')) AS rast\n  FROM public.dem_us, poi_geom p\n  WHERE ST_Intersects(rast, p.geom::geometry)\n),\nterrain_below_440 AS (\n  SELECT (ST_DumpAsPolygons(ST_Reclass(\n    ST_Slope(ST_Union(rast)), \n    1, '0-1000:1', '8BUI', 1\n  ))).geom AS geom\n  FROM dem_clipped\n  WHERE ST_Value(rast, 1) < 440\n)\nSELECT MIN(ST_Distance(p.geom, t.geom)) AS distance_meters\nFROM poi_geom p, terrain_below_440 t;"
+  ],
+  "query_type": "raster_only",
+  "question": "How far is CUNY Graduate School of Journalism, New York, NY from the nearest terrain below 440 meters?",
+  "source_file": "nearest_low_terrain+poi.jsonl",
+  "source_stem": "nearest_low_terrain+poi",
+  "timing": {
+    "execution_seconds": 0.002,
+    "generation_seconds": 49.34,
+    "total_seconds": 49.342
+  },
+  "usage": {
+    "completion_tokens": 231,
+    "prompt_tokens": 1651,
+    "total_tokens": 1882
+  }
+}

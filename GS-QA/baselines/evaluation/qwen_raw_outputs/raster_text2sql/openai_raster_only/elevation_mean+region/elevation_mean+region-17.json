@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 485.50621
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 485.50621
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-79.252885 42.260997, -79.266863 42.260943, -79.272732 42.260943, -79.295742 42.260823, -79.295357 42.238501, -79.295289 42.22016, -79.295241 42.214872, -79.295254 42.211218, -79.295215 42.209457, -79.295225 42.208292, -79.295166 42.203892, -79.295216 42.200201, -79.295209 42.19622, -79.295175 42.194226, -79.295178 42.189985, -79.295202 42.187582, -79.295179 42.186093, -79.295207 42.182568, -79.295178 42.172988, -79.271106 42.173052, -79.249768 42.173234, -79.178893 42.173529, -79.178813 42.235516, -79.178858 42.240633, -79.178782 42.260784, -79.179717 42.260812, -79.181771 42.260816, -79.187506 42.260796, -79.190195 42.260849, -79.193218 42.260852, -79.196284 42.260878, -79.198129 42.260867, -79.199797 42.260902, -79.202424 42.260907, -79.205501 42.260885, -79.207009 42.260911, -79.21017 42.260907, -79.21328 42.26094, -79.221102 42.260947, -79.225042 42.260881, -79.226338 42.260936, -79.227715 42.260954, -79.228524 42.260947, -79.229441 42.260966, -79.247504 42.261003, -79.252885 42.260997))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).mean AS elevation\nFROM clipped;",
+  "id": "elevation_mean+region-17",
+  "model_output": "```sql\nWITH gerry_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Gerry' AND addr_state ILIKE 'New York'\n)\nSELECT\n  ST_ValueCount(rast, 1, (SELECT geom FROM gerry_geom)) AS elevation_stats\nFROM\n  public.dem_us\nWHERE\n  ST_Intersects(rast, (SELECT geom FROM gerry_geom));\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 4:   WHERE region_name ILIKE 'Gerry' AND addr_state ILIKE 'New ...\n                                              ^",
+    "output": []
+  },
+  "predicted_sql": "WITH gerry_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Gerry' AND addr_state ILIKE 'New York'\n)\nSELECT\n  ST_ValueCount(rast, 1, (SELECT geom FROM gerry_geom)) AS elevation_stats\nFROM\n  public.dem_us\nWHERE\n  ST_Intersects(rast, (SELECT geom FROM gerry_geom));",
+  "predicted_sql_candidates": [
+    "WITH gerry_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Gerry' AND addr_state ILIKE 'New York'\n)\nSELECT\n  ST_ValueCount(rast, 1, (SELECT geom FROM gerry_geom)) AS elevation_stats\nFROM\n  public.dem_us\nWHERE\n  ST_Intersects(rast, (SELECT geom FROM gerry_geom));"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the typical elevation across Gerry, New York?",
+  "source_file": "elevation_mean+region.jsonl",
+  "source_stem": "elevation_mean+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 19.615,
+    "total_seconds": 19.616
+  },
+  "usage": {
+    "completion_tokens": 92,
+    "prompt_tokens": 1516,
+    "total_tokens": 1608
+  }
+}

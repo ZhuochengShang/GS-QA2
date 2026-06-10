@@ -1,0 +1,63 @@
+{
+  "answer_type": "elevation difference",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation difference",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation_difference_m": 1877.0,
+      "poi1_elevation_m": 1921.0,
+      "poi2_elevation_m": 44.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation_difference_m": 1877.0,
+        "poi1_elevation_m": 1921.0,
+        "poi2_elevation_m": 44.0
+      }
+    ]
+  },
+  "gold_sql": "WITH p1 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-106.68725 35.778228)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-106.68725 35.778228)',4326))\n  LIMIT 1\n),\np2 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-73.98719 40.741598)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-73.98719 40.741598)',4326))\n  LIMIT 1\n)\nSELECT\n  ABS(p1.elev - p2.elev) AS elevation_difference_m,\n  p1.elev AS poi1_elevation_m,\n  p2.elev AS poi2_elevation_m\nFROM p1, p2;",
+  "id": "elevation_diff+two_pois-19",
+  "model_output": "```sql\nWITH jemez_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-106.68725, 35.778228), 4326)::geography AS geom\n),\nnyc_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-73.98719, 40.741598), 4326)::geography AS geom\n),\njemez_elevation AS (\n  SELECT \n    ST_Value(r.rast, ST_Transform(j.geom, 4326)) AS elevation\n  FROM \n    public.dem_us r,\n    jemez_point j\n  WHERE \n    ST_Intersects(r.rast, ST_Transform(j.geom, 4326))\n),\nnyc_elevation AS (\n  SELECT \n    ST_Value(r.rast, ST_Transform(n.geom, 4326)) AS elevation\n  FROM \n    public.dem_us r,\n    nyc_point n\n  WHERE \n    ST_Intersects(r.rast, ST_Transform(n.geom, 4326))\n)\nSELECT \n  ABS(j.elevation - n.elevation) AS elevation_difference_meters\nFROM \n  jemez_elevation j,\n  nyc_elevation n;\n```",
+  "predicted_exec": {
+    "error": "function st_transform(geography, integer) does not exist\nLINE 9:     ST_Value(r.rast, ST_Transform(j.geom, 4326)) AS elevatio...\n                             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH jemez_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-106.68725, 35.778228), 4326)::geography AS geom\n),\nnyc_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-73.98719, 40.741598), 4326)::geography AS geom\n),\njemez_elevation AS (\n  SELECT \n    ST_Value(r.rast, ST_Transform(j.geom, 4326)) AS elevation\n  FROM \n    public.dem_us r,\n    jemez_point j\n  WHERE \n    ST_Intersects(r.rast, ST_Transform(j.geom, 4326))\n),\nnyc_elevation AS (\n  SELECT \n    ST_Value(r.rast, ST_Transform(n.geom, 4326)) AS elevation\n  FROM \n    public.dem_us r,\n    nyc_point n\n  WHERE \n    ST_Intersects(r.rast, ST_Transform(n.geom, 4326))\n)\nSELECT \n  ABS(j.elevation - n.elevation) AS elevation_difference_meters\nFROM \n  jemez_elevation j,\n  nyc_elevation n;",
+  "predicted_sql_candidates": [
+    "WITH jemez_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-106.68725, 35.778228), 4326)::geography AS geom\n),\nnyc_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-73.98719, 40.741598), 4326)::geography AS geom\n),\njemez_elevation AS (\n  SELECT \n    ST_Value(r.rast, ST_Transform(j.geom, 4326)) AS elevation\n  FROM \n    public.dem_us r,\n    jemez_point j\n  WHERE \n    ST_Intersects(r.rast, ST_Transform(j.geom, 4326))\n),\nnyc_elevation AS (\n  SELECT \n    ST_Value(r.rast, ST_Transform(n.geom, 4326)) AS elevation\n  FROM \n    public.dem_us r,\n    nyc_point n\n  WHERE \n    ST_Intersects(r.rast, ST_Transform(n.geom, 4326))\n)\nSELECT \n  ABS(j.elevation - n.elevation) AS elevation_difference_meters\nFROM \n  jemez_elevation j,\n  nyc_elevation n;"
+  ],
+  "query_type": "raster_only",
+  "question": "By how many meters do the elevations of Jemez State Monument, Jemez Springs, NM and Eleven Madison Park, New York, NY differ?",
+  "source_file": "elevation_diff+two_pois.jsonl",
+  "source_stem": "elevation_diff+two_pois",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 60.375,
+    "total_seconds": 60.376
+  },
+  "usage": {
+    "completion_tokens": 283,
+    "prompt_tokens": 1754,
+    "total_tokens": 2037
+  }
+}

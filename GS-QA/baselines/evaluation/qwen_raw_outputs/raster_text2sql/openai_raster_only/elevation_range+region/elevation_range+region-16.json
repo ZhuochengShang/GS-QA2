@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 45.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 45.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-93.288637 43.56428, -93.288645 43.571318, -93.288652 43.576362, -93.28944 43.576339, -93.289632 43.576463, -93.289923 43.576641, -93.290172 43.576786, -93.290462 43.57695, -93.29072 43.577085, -93.290943 43.577197, -93.291637 43.577548, -93.291968 43.577546, -93.294013 43.578566, -93.293267 43.579358, -93.288653 43.577027, -93.288666 43.585847, -93.278847 43.585894, -93.279011 43.578796, -93.273954 43.578872, -93.274001 43.576971, -93.276692 43.576934, -93.276723 43.575105, -93.277872 43.575082, -93.277885 43.574335, -93.277102 43.574564, -93.27664 43.574648, -93.275831 43.57469, -93.275504 43.574803, -93.275366 43.575003, -93.273809 43.575068, -93.269358 43.575248, -93.268976 43.575258, -93.268998 43.573704, -93.26625 43.573665, -93.266245 43.571764, -93.269013 43.571789, -93.269102 43.564565, -93.27144 43.564531, -93.271361 43.563608, -93.270485 43.561089, -93.272258 43.561085, -93.276181 43.564462, -93.288637 43.56428))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n),\nstats AS (\n  SELECT ST_SummaryStats(ST_Union(rast)) AS s\n  FROM clipped\n)\nSELECT (s).max - (s).min AS elevation\nFROM stats;",
+  "id": "elevation_range+region-16",
+  "model_output": "```sql\nWITH glenville_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Glenville'\n    AND addr_state ILIKE 'Minnesota'\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM glenville_geom), TRUE) AS clipped_raster\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM glenville_geom))\n)\nSELECT MAX((ST_ValueCount(clipped_raster)).maxval) - MIN((ST_ValueCount(clipped_raster)).minval) AS vertical_range\nFROM clipped_dem;\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 5:     AND addr_state ILIKE 'Minnesota'\n                ^",
+    "output": []
+  },
+  "predicted_sql": "WITH glenville_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Glenville'\n    AND addr_state ILIKE 'Minnesota'\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM glenville_geom), TRUE) AS clipped_raster\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM glenville_geom))\n)\nSELECT MAX((ST_ValueCount(clipped_raster)).maxval) - MIN((ST_ValueCount(clipped_raster)).minval) AS vertical_range\nFROM clipped_dem;",
+  "predicted_sql_candidates": [
+    "WITH glenville_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Glenville'\n    AND addr_state ILIKE 'Minnesota'\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM glenville_geom), TRUE) AS clipped_raster\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM glenville_geom))\n)\nSELECT MAX((ST_ValueCount(clipped_raster)).maxval) - MIN((ST_ValueCount(clipped_raster)).minval) AS vertical_range\nFROM clipped_dem;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the vertical range across Glenville, Minnesota?",
+  "source_file": "elevation_range+region.jsonl",
+  "source_stem": "elevation_range+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 28.776,
+    "total_seconds": 28.777
+  },
+  "usage": {
+    "completion_tokens": 135,
+    "prompt_tokens": 1515,
+    "total_tokens": 1650
+  }
+}

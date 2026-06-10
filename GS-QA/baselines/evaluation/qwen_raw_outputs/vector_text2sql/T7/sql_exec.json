@@ -1,0 +1,1070 @@
+[
+  {
+    "id": 800,
+    "records": [
+      {
+        "output": [],
+        "error": "function pg_catalog.extract(unknown, text) does not exist\nLINE 2: SELECT EXTRACT(YEAR FROM MIN(p.wikidata)) AS established_yea...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.002
+  },
+  {
+    "id": 801,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"p1.geometry\" must appear in the GROUP BY clause or be used in an aggregate function\nLINE 8: ORDER BY p1.geometry <-> (SELECT geometry FROM pois WHERE po...\n                 ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 802,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT MIN(poi_name) AS theme_park_name, MIN(wikipedia) AS w...\n                                                     ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 803,
+    "records": [
+      {
+        "output": [
+          {
+            "first_opened": "Q30265216"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.061
+  },
+  {
+    "id": 804,
+    "records": [
+      {
+        "output": [],
+        "error": "column poi.wikipedia does not exist\nLINE 2: SELECT MIN(poi.wikipedia) AS wikipedia_opening_date\n                   ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 805,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.046
+  },
+  {
+    "id": 806,
+    "records": [
+      {
+        "output": [],
+        "error": "function pg_catalog.extract(unknown, double precision) does not exist\nLINE 2: SELECT EXTRACT(YEAR FROM MIN(p1.geometry::geography <-> p2.g...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 807,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"pois.geometry\" must appear in the GROUP BY clause or be used in an aggregate function\nLINE 10: ORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE ...\n                  ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 808,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikipedia, wikidata\n                         ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 809,
+    "records": [
+      {
+        "output": [
+          {
+            "park_name": "Golden Gate National Recreation Area"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 345.288
+  },
+  {
+    "id": 810,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.037
+  },
+  {
+    "id": 811,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikipedia, wikidata\n                         ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 812,
+    "records": [
+      {
+        "output": [],
+        "error": "column r.wikipedia does not exist\nLINE 2: SELECT DISTINCT ON (r.poi_name) r.poi_name, r.wikipedia\n                                                    ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 813,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.143
+  },
+  {
+    "id": 814,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT MIN(poi_name) AS theme_park_name, MIN(wikipedia) AS w...\n                                                     ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 815,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"p1.geometry\" must appear in the GROUP BY clause or be used in an aggregate function\nLINE 17: ORDER BY p1.geometry <-> \n                  ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 816,
+    "records": [
+      {
+        "output": [],
+        "error": "column p1.wikipedia does not exist\nLINE 2: SELECT MIN(p1.wikipedia) AS wikipedia_page\n                   ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 817,
+    "records": [
+      {
+        "output": [],
+        "error": "column poi.wikipedia does not exist\nLINE 2: SELECT MIN(poi.wikipedia) AS first_opened\n                   ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 818,
+    "records": [
+      {
+        "output": [],
+        "error": "column poi.wikipedia does not exist\nLINE 2: SELECT MIN(poi.wikipedia) AS wikipedia_opening_date\n                   ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 819,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.244
+  },
+  {
+    "id": 820,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"p1.geometry\" must appear in the GROUP BY clause or be used in an aggregate function\nLINE 8: ORDER BY p1.geometry <-> (SELECT p2.geometry FROM parks p2 W...\n                 ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 821,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"p1.geometry\" must appear in the GROUP BY clause or be used in an aggregate function\nLINE 8: ORDER BY p1.geometry <-> (SELECT geometry FROM pois WHERE po...\n                 ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 822,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.355
+  },
+  {
+    "id": 823,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"pois.geometry\" must appear in the GROUP BY clause or be used in an aggregate function\nLINE 8: ORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE ...\n                 ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 824,
+    "records": [
+      {
+        "output": [],
+        "error": "column poi.wikipedia does not exist\nLINE 2: SELECT MIN(poi.wikipedia) AS wikipedia_opening_date\n                   ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 825,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.05
+  },
+  {
+    "id": 826,
+    "records": [
+      {
+        "output": [],
+        "error": "column p1.wikipedia does not exist\nLINE 2: SELECT MIN(p1.wikipedia) AS opening_info\n                   ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 827,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.159
+  },
+  {
+    "id": 828,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_within(geography, geography) does not exist\nLINE 4: WHERE ST_Within(\n              ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 829,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikipedia, wikidata\n                         ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 830,
+    "records": [
+      {
+        "output": [
+          {
+            "id": 5071927
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 8.811
+  },
+  {
+    "id": 831,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"pois.geometry\" must appear in the GROUP BY clause or be used in an aggregate function\nLINE 10: ORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE ...\n                  ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 832,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"r\"\nLINE 2: ...sity_name, MIN(ST_Distance(p.geometry::geography, r.geometry...\n                                                             ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 833,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"poi_name\" does not exist\nLINE 2: SELECT MIN(poi_name) AS nature_reserve_name\n                   ^\nHINT:  Perhaps you meant to reference the column \"parks.park_name\" or the column \"parks.old_name\"."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 834,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "School of Medicine"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.067
+  },
+  {
+    "id": 835,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikipedia, wikidata\n                         ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 836,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Sagamore Hotel and Resort"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.054
+  },
+  {
+    "id": 837,
+    "records": [
+      {
+        "output": [],
+        "error": "column z.opening_date does not exist\nLINE 2: SELECT t.poi_name, MIN(z.opening_date) AS opening_date\n                               ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 838,
+    "records": [
+      {
+        "output": [],
+        "error": "SELECT DISTINCT ON expressions must match initial ORDER BY expressions\nLINE 2: SELECT DISTINCT ON (p.poi_name) p.poi_name\n                            ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 839,
+    "records": [
+      {
+        "output": [],
+        "error": "function pg_catalog.extract(unknown, double precision) does not exist\nLINE 2: SELECT EXTRACT(YEAR FROM MIN(p1.geometry::geography <-> p2.g...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 840,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"pois.geometry\" must appear in the GROUP BY clause or be used in an aggregate function\nLINE 5: ORDER BY pois.geometry <-> (\n                 ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 841,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"p1.geometry\" must appear in the GROUP BY clause or be used in an aggregate function\nLINE 6: ORDER BY p1.geometry <-> (SELECT geometry FROM pois WHERE po...\n                 ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 842,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"p.geometry\" must appear in the GROUP BY clause or be used in an aggregate function\nLINE 8: ORDER BY p.geometry::geography <-> (\n                 ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 843,
+    "records": [
+      {
+        "output": [],
+        "error": "column t1.wikipedia does not exist\nLINE 2: SELECT t1.tourism, t1.wikidata, t1.wikipedia\n                                        ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 844,
+    "records": [
+      {
+        "output": [],
+        "error": "column p.wikipedia does not exist\nLINE 2: SELECT p.poi_name, p.wikipedia\n                           ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 845,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_within(geography, geography) does not exist\nLINE 4: WHERE ST_Within(\n              ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 846,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "International Residential College"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.046
+  },
+  {
+    "id": 847,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Metropolitan State University of Denver"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.051
+  },
+  {
+    "id": 848,
+    "records": [
+      {
+        "output": [],
+        "error": "column p.poi_name does not exist\nLINE 2: SELECT p.poi_name, MIN(ST_Distance(p.geometry::geography, h....\n               ^\nHINT:  Perhaps you meant to reference the column \"h.poi_name\"."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 849,
+    "records": [
+      {
+        "output": [],
+        "error": "column p1.wikipedia does not exist\nLINE 2: SELECT EXTRACT(YEAR FROM MIN(p1.wikipedia)) AS built_year\n                                     ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 850,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Gannon University"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.048
+  },
+  {
+    "id": 851,
+    "records": [
+      {
+        "output": [],
+        "error": "argument of JOIN/ON must be type boolean, not type double precision\nLINE 4: JOIN pois p2 ON p1.geometry <-> p2.geometry\n                        ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 852,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "American College of Traditional Chinese Medicine"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.052
+  },
+  {
+    "id": 853,
+    "records": [
+      {
+        "output": [],
+        "error": "column t.wikipedia does not exist\nLINE 2: SELECT t.poi_name, t.wikipedia\n                           ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 854,
+    "records": [
+      {
+        "output": [],
+        "error": "column p1.wikipedia does not exist\nLINE 2: SELECT EXTRACT(YEAR FROM MIN(p1.wikipedia))\n                                     ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 855,
+    "records": [
+      {
+        "output": [],
+        "error": "column poi.wikipedia does not exist\nLINE 2: SELECT MIN(poi.wikipedia) AS first_opened\n                   ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 856,
+    "records": [
+      {
+        "output": [],
+        "error": "column r.wikipedia does not exist\nLINE 2: SELECT DISTINCT ON (r.id) r.poi_name, r.wikipedia\n                                              ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 857,
+    "records": [
+      {
+        "output": [],
+        "error": "column reference \"poi_name\" is ambiguous\nLINE 2: SELECT MIN(poi_name) AS stadium_name, MIN(ST_Distance(p.geom...\n                   ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 858,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.036
+  },
+  {
+    "id": 859,
+    "records": [
+      {
+        "output": [],
+        "error": "column p1.wikipedia does not exist\nLINE 2: SELECT EXTRACT(YEAR FROM MIN(p1.wikipedia)) AS established_y...\n                                     ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 860,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.027
+  },
+  {
+    "id": 861,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.059
+  },
+  {
+    "id": 862,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikipedia, wikidata\n                         ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 863,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikipedia, wikidata\n                         ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 864,
+    "records": [
+      {
+        "output": [
+          {
+            "?column?": "Motto not available in the database"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 865,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "College of Saint Joseph"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.03
+  },
+  {
+    "id": 866,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"p.geometry\" must appear in the GROUP BY clause or be used in an aggregate function\nLINE 7: ORDER BY p.geometry <-> r.geometry\n                 ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 867,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"pois.geometry\" must appear in the GROUP BY clause or be used in an aggregate function\nLINE 10: ORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE ...\n                  ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 868,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.088
+  },
+  {
+    "id": 869,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"p1.geometry\" must appear in the GROUP BY clause or be used in an aggregate function\nLINE 8: ORDER BY p1.geometry <-> (SELECT geometry FROM pois WHERE po...\n                 ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 870,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.085
+  },
+  {
+    "id": 871,
+    "records": [
+      {
+        "output": [],
+        "error": "column poi.wikipedia does not exist\nLINE 2: SELECT MIN(poi.wikipedia) AS wikipedia_opening_date\n                   ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 872,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "The American Club"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.053
+  },
+  {
+    "id": 873,
+    "records": [
+      {
+        "output": [],
+        "error": "column p1.wikipedia does not exist\nLINE 2: SELECT EXTRACT(YEAR FROM MIN(p1.wikipedia))\n                                     ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 874,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.05
+  },
+  {
+    "id": 875,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.056
+  },
+  {
+    "id": 876,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Missouri State University"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.055
+  },
+  {
+    "id": 877,
+    "records": [
+      {
+        "output": [],
+        "error": "for SELECT DISTINCT, ORDER BY expressions must appear in select list\nLINE 9: ORDER BY p.geometry <-> (SELECT geometry FROM pois WHERE poi...\n                 ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 878,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.049
+  },
+  {
+    "id": 879,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT MIN(poi_name) AS theme_park_name, MIN(wikipedia) AS w...\n                                                     ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 880,
+    "records": [
+      {
+        "output": [],
+        "error": "column r1.wikipedia does not exist\nLINE 4: JOIN pois r2 ON r1.wikidata = r2.wikidata AND r1.wikipedia <...\n                                                      ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 881,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "UCSF Dental School"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.03
+  },
+  {
+    "id": 882,
+    "records": [
+      {
+        "output": [],
+        "error": "for SELECT DISTINCT, ORDER BY expressions must appear in select list\nLINE 6: ORDER BY p.geometry <-> (\n                 ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 883,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"p1.geometry\" must appear in the GROUP BY clause or be used in an aggregate function\nLINE 8: ORDER BY p1.geometry::geography <-> (\n                 ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 884,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 4.919
+  },
+  {
+    "id": 885,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"p1.geometry\" must appear in the GROUP BY clause or be used in an aggregate function\nLINE 8: ORDER BY p1.geometry <-> (SELECT geometry FROM pois WHERE po...\n                 ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 886,
+    "records": [
+      {
+        "output": [],
+        "error": "column p.wikipedia does not exist\nLINE 2: SELECT p.poi_name, p.wikipedia\n                           ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 887,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikipedia, wikidata\n                         ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 888,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"pois.geometry\" must appear in the GROUP BY clause or be used in an aggregate function\nLINE 10: ORDER BY pois.geometry <-> (SELECT geometry FROM regions WHE...\n                  ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 889,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"r\"\nLINE 2: ...sity_name, MIN(ST_Distance(p.geometry::geography, r.geometry...\n                                                             ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 890,
+    "records": [
+      {
+        "output": [],
+        "error": "column p1.wikipedia does not exist\nLINE 2: SELECT MIN(p1.wikipedia) AS opening_info\n                   ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 891,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"pois.geometry\" must appear in the GROUP BY clause or be used in an aggregate function\nLINE 10: ORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE ...\n                  ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 892,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Salus University"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.06
+  },
+  {
+    "id": 893,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"t1.tourism\" must appear in the GROUP BY clause or be used in an aggregate function\nLINE 2: SELECT t1.tourism, MIN(ST_Distance(t1.geometry::geography, t...\n               ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 894,
+    "records": [
+      {
+        "output": [],
+        "error": "column pois.wikipedia does not exist\nLINE 2: SELECT EXTRACT(YEAR FROM MIN(pois.wikipedia)) AS built_year\n                                     ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 895,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"poi_name_established\" does not exist\nLINE 2: SELECT EXTRACT(YEAR FROM MIN(poi_name_established))\n                                     ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 896,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"p1.geometry\" must appear in the GROUP BY clause or be used in an aggregate function\nLINE 8: ORDER BY p1.geometry <-> (SELECT geometry FROM pois WHERE po...\n                 ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 897,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"pois.geometry\" must appear in the GROUP BY clause or be used in an aggregate function\nLINE 5: ORDER BY geometry <-> (SELECT geometry FROM pois WHERE poi_n...\n                 ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 898,
+    "records": [
+      {
+        "output": [],
+        "error": "column t1.wikipedia does not exist\nLINE 2: SELECT t1.tourism, t1.wikidata, t1.wikipedia\n                                        ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 899,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"pois.geometry\" must appear in the GROUP BY clause or be used in an aggregate function\nLINE 8: ORDER BY pois.geometry <-> \n                 ^"
+      }
+    ],
+    "run_seconds": 0.001
+  }
+]

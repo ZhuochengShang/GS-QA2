@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 89.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 89.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-96.246165 42.0141, -96.24254 42.014016, -96.240311 42.013957, -96.240321 42.013876, -96.240405 42.013788, -96.240486 42.013663, -96.240553 42.013561, -96.240642 42.013394, -96.24075 42.013117, -96.240963 42.012489, -96.241127 42.012037, -96.241388 42.011381, -96.24162 42.010844, -96.241725 42.010638, -96.241878 42.01025, -96.24204 42.009836, -96.242352 42.008929, -96.24252 42.008478, -96.242686 42.008102, -96.243158 42.007137, -96.243234 42.006985, -96.24334 42.006746, -96.243384 42.006609, -96.243396 42.006572, -96.243471 42.006228, -96.243621 42.005536, -96.243628 42.005504, -96.243718 42.005041, -96.243767 42.004684, -96.243791 42.004403, -96.243801 42.004288, -96.243813 42.003891, -96.243805 42.003605, -96.243804 42.003531, -96.243754 42.002848, -96.243689 42.002273, -96.243627 42.001879, -96.243556 42.001524, -96.243492 42.001314, -96.243397 42.001071, -96.243188 42.000629, -96.243129 42.000531, -96.242988 42.000341, -96.242751 42.000004, -96.242718 41.999973, -96.242209 41.99936, -96.241973 41.999089, -96.241721 41.998825, -96.241278 41.998396, -96.240968 41.998119, -96.240674 41.997881, -96.240435 41.997705, -96.240177 41.997543, -96.239593 41.997221, -96.239287 41.997044, -96.239036 41.996876, -96.238757 41.996663, -96.238558 41.996398, -96.237891 41.995942, -96.237145 41.995525, -96.236838 41.995382, -96.236946 41.995247, -96.237046 41.995327, -96.237092 41.995369, -96.23718 41.995421, -96.23725 41.995448, -96.237366 41.995486, -96.237521 41.995554, -96.237796 41.995717, -96.238104 41.995917, -96.238481 41.996135, -96.238994 41.996418, -96.239725 41.996935, -96.240081 41.997174, -96.240227 41.997306, -96.240481 41.997485, -96.240678 41.997605, -96.240897 41.997748, -96.240936 41.997757, -96.241023 41.997681, -96.241088 41.997646, -96.241158 41.997628, -96.241214 41.99763, -96.241287 41.997675, -96.241435 41.997797, -96.241751 41.998077, -96.24206 41.99837, -96.242514 41.99879, -96.242741 41.999026, -96.242971 41.999287, -96.243198 41.999595, -96.243473 42.000004, -96.243566 42.00015, -96.243635 42.000233, -96.243709 42.000264, -96.243803 42.000274, -96.246772 42.000231, -96.246596 41.997024, -96.247372 41.997045, -96.247553 41.997202, -96.247687 41.997468, -96.247803 41.997665, -96.248007 41.99784, -96.24825 41.998031, -96.248481 41.99824, -96.248745 41.998448, -96.249081 41.998673, -96.249447 41.99894, -96.249671 41.999122, -96.249771 41.999247, -96.24976 41.999569, -96.249768 41.999999, -96.249767 42.000093, -96.250455 42.000105, -96.251599 42.000168, -96.251741 42.000301, -96.25185 42.000416, -96.25189 42.000357, -96.251936 42.000321, -96.251997 42.000287, -96.252578 42.00006, -96.252863 41.99994, -96.253154 41.999841, -96.253416 41.99977, -96.253609 41.999728, -96.253746 41.999704, -96.254023 41.999662, -96.254314 41.999629, -96.254626 41.999611, -96.25557 41.999606, -96.25624 41.999606, -96.258302 41.999611, -96.259903 41.99962, -96.259825 41.999852, -96.259758 42.000026, -96.259703 42.000946, -96.257882 42.000828, -96.257987 42.003763, -96.260008 42.003724, -96.259984 42.006569, -96.258385 42.006589, -96.258333 42.010619, -96.261121 42.010616, -96.261204 42.014377, -96.255765 42.014256, -96.252922 42.014241, -96.251449 42.014187, -96.246165 42.0141))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n),\nstats AS (\n  SELECT ST_SummaryStats(ST_Union(rast)) AS s\n  FROM clipped\n)\nSELECT (s).max - (s).min AS elevation\nFROM stats;",
+  "id": "elevation_range+region-0",
+  "model_output": "```sql\nWITH decatur_region AS (\n  SELECT geometry\n  FROM regions\n  WHERE region_name ILIKE 'Decatur' AND border_type = 'city'\n),\nclipped_dem AS (\n  SELECT\n    ST_Clip(r.rast, 1, d.geometry::geometry, TRUE) AS clipped_raster\n  FROM\n    public.dem_us r\n  JOIN\n    decatur_region d\n  ON\n    ST_Intersects(r.rast, d.geometry::geometry)\n)\nSELECT\n  MAX(ST_Value(clipped_raster, 1)) - MIN(ST_Value(clipped_raster, 1)) AS elevation_range\nFROM\n  clipped_dem;\n```",
+  "predicted_exec": {
+    "error": "function st_value(raster, integer) does not exist\nLINE 17:   MAX(ST_Value(clipped_raster, 1)) - MIN(ST_Value(clipped_ra...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH decatur_region AS (\n  SELECT geometry\n  FROM regions\n  WHERE region_name ILIKE 'Decatur' AND border_type = 'city'\n),\nclipped_dem AS (\n  SELECT\n    ST_Clip(r.rast, 1, d.geometry::geometry, TRUE) AS clipped_raster\n  FROM\n    public.dem_us r\n  JOIN\n    decatur_region d\n  ON\n    ST_Intersects(r.rast, d.geometry::geometry)\n)\nSELECT\n  MAX(ST_Value(clipped_raster, 1)) - MIN(ST_Value(clipped_raster, 1)) AS elevation_range\nFROM\n  clipped_dem;",
+  "predicted_sql_candidates": [
+    "WITH decatur_region AS (\n  SELECT geometry\n  FROM regions\n  WHERE region_name ILIKE 'Decatur' AND border_type = 'city'\n),\nclipped_dem AS (\n  SELECT\n    ST_Clip(r.rast, 1, d.geometry::geometry, TRUE) AS clipped_raster\n  FROM\n    public.dem_us r\n  JOIN\n    decatur_region d\n  ON\n    ST_Intersects(r.rast, d.geometry::geometry)\n)\nSELECT\n  MAX(ST_Value(clipped_raster, 1)) - MIN(ST_Value(clipped_raster, 1)) AS elevation_range\nFROM\n  clipped_dem;"
+  ],
+  "query_type": "raster_only",
+  "question": "In Decatur, Nebraska, what is max minus min elevation?",
+  "source_file": "elevation_range+region.jsonl",
+  "source_stem": "elevation_range+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 29.84,
+    "total_seconds": 29.841
+  },
+  "usage": {
+    "completion_tokens": 140,
+    "prompt_tokens": 1518,
+    "total_tokens": 1658
+  }
+}

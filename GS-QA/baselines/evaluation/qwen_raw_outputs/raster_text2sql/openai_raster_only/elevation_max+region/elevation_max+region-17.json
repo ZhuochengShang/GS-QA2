@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 376.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 376.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-80.500881 40.974173, -80.500572 40.974183, -80.49925 40.974224, -80.499307 40.97482, -80.499071 40.974827, -80.49911 40.975299, -80.498207 40.97534, -80.498295 40.976108, -80.498388 40.976927, -80.498409 40.977116, -80.498609 40.978869, -80.498709 40.979744, -80.499473 40.97973, -80.499571 40.980568, -80.499709 40.981753, -80.498949 40.981808, -80.499096 40.98265, -80.499185 40.983157, -80.499576 40.98705, -80.497506 40.987117, -80.493006 40.987305, -80.492656 40.987315, -80.489721 40.987398, -80.487084 40.987476, -80.48616 40.987503, -80.484576 40.987548, -80.483563 40.987578, -80.483407 40.987583, -80.483348 40.98708, -80.483201 40.986551, -80.483168 40.985878, -80.48315 40.985659, -80.482964 40.983464, -80.482916 40.982904, -80.482793 40.982195, -80.482583 40.979954, -80.480905 40.979965, -80.479145 40.98, -80.478555 40.980015, -80.477082 40.980051, -80.476355 40.98007, -80.476263 40.980072, -80.475173 40.980099, -80.473508 40.98014, -80.472039 40.980177, -80.471955 40.97837, -80.471942 40.978091, -80.471917 40.977676, -80.471882 40.977095, -80.471807 40.975854, -80.471799 40.975745, -80.471643 40.973559, -80.471645 40.973413, -80.471649 40.97303, -80.474614 40.973002, -80.475118 40.972998, -80.476764 40.972982, -80.47672 40.972477, -80.476684 40.972075, -80.476581 40.969881, -80.47656 40.96952, -80.476461 40.967853, -80.481478 40.967602, -80.481482 40.967292, -80.483591 40.967212, -80.483607 40.9672, -80.483926 40.967176, -80.484443 40.967172, -80.484193 40.963215, -80.485464 40.963169, -80.489373 40.962983, -80.489434 40.964198, -80.493482 40.964061, -80.495799 40.963982, -80.497486 40.963925, -80.497737 40.967608, -80.497886 40.969784, -80.49801 40.971078, -80.498039 40.971538, -80.498111 40.972688, -80.498103 40.972847, -80.50042 40.972751, -80.500777 40.972736, -80.500881 40.974173))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).max AS elevation\nFROM clipped;",
+  "id": "elevation_max+region-17",
+  "model_output": "```sql\nWITH bessemer_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Bessemer'\n    AND border_type ILIKE 'city'\n    AND addr_state ILIKE 'Pennsylvania'\n    AND addr_county ILIKE 'Lawrence'\n)\nSELECT MAX(rast_val) AS highest_elevation\nFROM (\n  SELECT (ST_SummaryStats(ST_Clip(r.rast, 1, b.geom, TRUE))).max AS rast_val\n  FROM public.dem_us r, bessemer_geom b\n  WHERE ST_Intersects(r.rast, b.geom)\n) subquery;\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 6:     AND addr_state ILIKE 'Pennsylvania'\n                ^",
+    "output": []
+  },
+  "predicted_sql": "WITH bessemer_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Bessemer'\n    AND border_type ILIKE 'city'\n    AND addr_state ILIKE 'Pennsylvania'\n    AND addr_county ILIKE 'Lawrence'\n)\nSELECT MAX(rast_val) AS highest_elevation\nFROM (\n  SELECT (ST_SummaryStats(ST_Clip(r.rast, 1, b.geom, TRUE))).max AS rast_val\n  FROM public.dem_us r, bessemer_geom b\n  WHERE ST_Intersects(r.rast, b.geom)\n) subquery;",
+  "predicted_sql_candidates": [
+    "WITH bessemer_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Bessemer'\n    AND border_type ILIKE 'city'\n    AND addr_state ILIKE 'Pennsylvania'\n    AND addr_county ILIKE 'Lawrence'\n)\nSELECT MAX(rast_val) AS highest_elevation\nFROM (\n  SELECT (ST_SummaryStats(ST_Clip(r.rast, 1, b.geom, TRUE))).max AS rast_val\n  FROM public.dem_us r, bessemer_geom b\n  WHERE ST_Intersects(r.rast, b.geom)\n) subquery;"
+  ],
+  "query_type": "raster_only",
+  "question": "How high is the highest point in Bessemer, Lawrence County, Pennsylvania?",
+  "source_file": "elevation_max+region.jsonl",
+  "source_stem": "elevation_max+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 29.554,
+    "total_seconds": 29.555
+  },
+  "usage": {
+    "completion_tokens": 138,
+    "prompt_tokens": 1521,
+    "total_tokens": 1659
+  }
+}

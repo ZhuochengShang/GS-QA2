@@ -1,0 +1,59 @@
+{
+  "answer_type": "count, POIs -> Points",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "count, POIs -> Points",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "count": 0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "count": 0
+      }
+    ]
+  },
+  "gold_sql": "WITH candidates AS (\n  SELECT p.id, p.geometry\n  FROM pois p\n  WHERE ST_DWithin(p.geometry::geography, ST_GeomFromText('POINT (-85.709116 38.345825)',4326)::geography, 2100)\n    AND p.leisure = 'park'\n),\npoi_elev AS (\n  SELECT c.id, elev.z\n  FROM candidates c\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, c.geometry::geometry) AS z\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, c.geometry::geometry)\n    LIMIT 1\n  ) elev ON elev.z IS NOT NULL\n)\nSELECT COUNT(*) AS count\nFROM poi_elev\nWHERE z <= 120;",
+  "id": "range+count+elevation_condition-3",
+  "model_output": "```sql\nWITH hotel_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM pois\n  WHERE poi_name ILIKE 'Hilton Garden Inn Jeffersonville Louisville North'\n    AND addr_city = 'Jeffersonville'\n    AND addr_state = 'IN'\n),\nbuffered_area AS (\n  SELECT ST_Buffer(geom, 2100) AS geom\n  FROM hotel_geom\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, true, (SELECT geom FROM buffered_area)) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM buffered_area))\n),\nparks_within_buffer AS (\n  SELECT p.id\n  FROM parks p\n  WHERE ST_DWithin(p.geometry::geometry, (SELECT geom FROM hotel_geom), 2100)\n    AND ST_Intersects(p.geometry::geometry, (SELECT geom FROM buffered_area))\n    AND ST_ValueClipped((SELECT rast FROM clipped_dem), p.geometry::geometry, true) <= 120\n)\nSELECT COUNT(*) AS park_count\nFROM parks_within_buffer;\n```",
+  "predicted_exec": {
+    "error": "function st_clip(raster, boolean, geometry) does not exist\nLINE 13:   SELECT ST_Clip(rast, true, (SELECT geom FROM buffered_area...\n                  ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH hotel_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM pois\n  WHERE poi_name ILIKE 'Hilton Garden Inn Jeffersonville Louisville North'\n    AND addr_city = 'Jeffersonville'\n    AND addr_state = 'IN'\n),\nbuffered_area AS (\n  SELECT ST_Buffer(geom, 2100) AS geom\n  FROM hotel_geom\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, true, (SELECT geom FROM buffered_area)) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM buffered_area))\n),\nparks_within_buffer AS (\n  SELECT p.id\n  FROM parks p\n  WHERE ST_DWithin(p.geometry::geometry, (SELECT geom FROM hotel_geom), 2100)\n    AND ST_Intersects(p.geometry::geometry, (SELECT geom FROM buffered_area))\n    AND ST_ValueClipped((SELECT rast FROM clipped_dem), p.geometry::geometry, true) <= 120\n)\nSELECT COUNT(*) AS park_count\nFROM parks_within_buffer;",
+  "predicted_sql_candidates": [
+    "WITH hotel_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM pois\n  WHERE poi_name ILIKE 'Hilton Garden Inn Jeffersonville Louisville North'\n    AND addr_city = 'Jeffersonville'\n    AND addr_state = 'IN'\n),\nbuffered_area AS (\n  SELECT ST_Buffer(geom, 2100) AS geom\n  FROM hotel_geom\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, true, (SELECT geom FROM buffered_area)) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM buffered_area))\n),\nparks_within_buffer AS (\n  SELECT p.id\n  FROM parks p\n  WHERE ST_DWithin(p.geometry::geometry, (SELECT geom FROM hotel_geom), 2100)\n    AND ST_Intersects(p.geometry::geometry, (SELECT geom FROM buffered_area))\n    AND ST_ValueClipped((SELECT rast FROM clipped_dem), p.geometry::geometry, true) <= 120\n)\nSELECT COUNT(*) AS park_count\nFROM parks_within_buffer;"
+  ],
+  "query_type": "extended",
+  "question": "Could you tell me how many parks are present within 2100 meters of Hilton Garden Inn Jeffersonville Louisville North, Jeffersonville, IN with elevation no greater than 120 m?",
+  "source_file": "range+count+elevation_condition.jsonl",
+  "source_stem": "range+count+elevation_condition",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 48.927,
+    "total_seconds": 48.928
+  },
+  "usage": {
+    "completion_tokens": 229,
+    "prompt_tokens": 1795,
+    "total_tokens": 2024
+  }
+}

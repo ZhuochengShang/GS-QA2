@@ -1,0 +1,2206 @@
+[
+  {
+    "id": 1700,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 60.61248229263211
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.09
+  },
+  {
+    "id": 1701,
+    "records": [
+      {
+        "output": [
+          {
+            "bearing_degrees": 156.44948226164362
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.154
+  },
+  {
+    "id": 1702,
+    "records": [
+      {
+        "output": [
+          {
+            "bearing_degrees": 287.8561819503696
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.075
+  },
+  {
+    "id": 1703,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.02
+  },
+  {
+    "id": 1704,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.04
+  },
+  {
+    "id": 1705,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.263
+  },
+  {
+    "id": 1706,
+    "records": [
+      {
+        "output": [
+          {
+            "degrees": 61.25717353234382
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.117
+  },
+  {
+    "id": 1707,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.019
+  },
+  {
+    "id": 1708,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.07
+  },
+  {
+    "id": 1709,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.033
+  },
+  {
+    "id": 1710,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.055
+  },
+  {
+    "id": 1711,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 118.44787973805484,
+            "poi_name": "Welcome to Texas Sign"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.058
+  },
+  {
+    "id": 1712,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.038
+  },
+  {
+    "id": 1713,
+    "records": [
+      {
+        "output": [],
+        "error": "column p2.geometry does not exist\nLINE 2: SELECT degrees(ST_Azimuth(p1.geometry, p2.geometry)) AS bear...\n                                               ^\nHINT:  Perhaps you meant to reference the column \"p1.geometry\"."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1714,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.096
+  },
+  {
+    "id": 1715,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 42.168
+  },
+  {
+    "id": 1716,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.039
+  },
+  {
+    "id": 1717,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 197.54017956144546
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.057
+  },
+  {
+    "id": 1718,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.045
+  },
+  {
+    "id": 1719,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 146.4004526000655
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.041
+  },
+  {
+    "id": 1720,
+    "records": [
+      {
+        "output": [
+          {
+            "bearing_degrees": 306.12513480714415
+          },
+          {
+            "bearing_degrees": 101.0479270682648
+          },
+          {
+            "bearing_degrees": 312.5688635819931
+          },
+          {
+            "bearing_degrees": 105.6830550896746
+          },
+          {
+            "bearing_degrees": 105.71874605951025
+          },
+          {
+            "bearing_degrees": 105.21927820387174
+          },
+          {
+            "bearing_degrees": 105.26214686060977
+          },
+          {
+            "bearing_degrees": 106.72861409056668
+          },
+          {
+            "bearing_degrees": 116.41217576939242
+          },
+          {
+            "bearing_degrees": 106.72031190635809
+          },
+          {
+            "bearing_degrees": 102.23884855808761
+          },
+          {
+            "bearing_degrees": 108.81226825811822
+          },
+          {
+            "bearing_degrees": 109.13462510787896
+          },
+          {
+            "bearing_degrees": 90.00991620649494
+          },
+          {
+            "bearing_degrees": 110.85623881993345
+          },
+          {
+            "bearing_degrees": 102.79420801841495
+          },
+          {
+            "bearing_degrees": 110.38184897723814
+          },
+          {
+            "bearing_degrees": 308.35538258682504
+          },
+          {
+            "bearing_degrees": 102.7944667008227
+          },
+          {
+            "bearing_degrees": 98.59288214916006
+          },
+          {
+            "bearing_degrees": 107.11212205271
+          },
+          {
+            "bearing_degrees": 104.5038472658511
+          },
+          {
+            "bearing_degrees": 104.39573804341835
+          },
+          {
+            "bearing_degrees": 104.47264726012943
+          },
+          {
+            "bearing_degrees": 103.88234193693417
+          },
+          {
+            "bearing_degrees": 109.4801923334256
+          },
+          {
+            "bearing_degrees": 100.04054476804394
+          },
+          {
+            "bearing_degrees": 44.15217027609972
+          },
+          {
+            "bearing_degrees": 111.66150379110077
+          },
+          {
+            "bearing_degrees": 112.8549298245658
+          },
+          {
+            "bearing_degrees": 106.58859244468785
+          },
+          {
+            "bearing_degrees": 116.48106202858912
+          },
+          {
+            "bearing_degrees": 111.57922358408445
+          },
+          {
+            "bearing_degrees": 111.66884880822788
+          },
+          {
+            "bearing_degrees": 312.7967159943557
+          },
+          {
+            "bearing_degrees": 116.82737487911935
+          },
+          {
+            "bearing_degrees": 99.21682912363909
+          },
+          {
+            "bearing_degrees": 106.02123214652951
+          },
+          {
+            "bearing_degrees": 106.79146825028782
+          },
+          {
+            "bearing_degrees": 106.82416180745761
+          },
+          {
+            "bearing_degrees": 106.82941198914638
+          },
+          {
+            "bearing_degrees": 106.48919839939957
+          },
+          {
+            "bearing_degrees": 112.510802874977
+          },
+          {
+            "bearing_degrees": 310.095346544775
+          },
+          {
+            "bearing_degrees": 101.97780291304439
+          },
+          {
+            "bearing_degrees": 115.25753309930597
+          },
+          {
+            "bearing_degrees": 107.32125724583052
+          },
+          {
+            "bearing_degrees": 77.81482424013727
+          },
+          {
+            "bearing_degrees": 106.68706148201345
+          },
+          {
+            "bearing_degrees": 101.72759922828143
+          },
+          {
+            "bearing_degrees": 116.35207486116316
+          },
+          {
+            "bearing_degrees": 115.85186398174454
+          },
+          {
+            "bearing_degrees": 115.80855783814962
+          },
+          {
+            "bearing_degrees": 111.23826052415386
+          },
+          {
+            "bearing_degrees": 105.96978803231936
+          },
+          {
+            "bearing_degrees": 105.88547298127354
+          },
+          {
+            "bearing_degrees": 105.91227851031202
+          },
+          {
+            "bearing_degrees": 99.12207962445105
+          },
+          {
+            "bearing_degrees": 105.80773729735907
+          },
+          {
+            "bearing_degrees": 29.76424023195227
+          },
+          {
+            "bearing_degrees": 86.6573895613813
+          },
+          {
+            "bearing_degrees": 111.81083335721289
+          },
+          {
+            "bearing_degrees": 106.14294289993836
+          },
+          {
+            "bearing_degrees": 276.8811982380561
+          },
+          {
+            "bearing_degrees": 105.80737703711215
+          },
+          {
+            "bearing_degrees": 326.0571110099503
+          },
+          {
+            "bearing_degrees": 106.57254463423443
+          },
+          {
+            "bearing_degrees": 312.76526227221103
+          },
+          {
+            "bearing_degrees": 106.4362635074562
+          },
+          {
+            "bearing_degrees": 102.3160728640946
+          },
+          {
+            "bearing_degrees": 104.96404803854671
+          },
+          {
+            "bearing_degrees": 109.63256241386865
+          },
+          {
+            "bearing_degrees": 107.96933801460766
+          },
+          {
+            "bearing_degrees": 103.26381440158106
+          },
+          {
+            "bearing_degrees": 101.77870215593552
+          },
+          {
+            "bearing_degrees": 317.4003174686495
+          },
+          {
+            "bearing_degrees": 116.20845380303437
+          },
+          {
+            "bearing_degrees": 115.7505926403045
+          },
+          {
+            "bearing_degrees": 112.5740475130131
+          },
+          {
+            "bearing_degrees": 117.22905781480783
+          },
+          {
+            "bearing_degrees": 134.06974963061745
+          },
+          {
+            "bearing_degrees": 106.77108091969703
+          },
+          {
+            "bearing_degrees": 104.3450688061985
+          },
+          {
+            "bearing_degrees": 105.97720654686167
+          },
+          {
+            "bearing_degrees": 317.29633553969893
+          },
+          {
+            "bearing_degrees": 112.40132348952164
+          },
+          {
+            "bearing_degrees": 101.47923205869016
+          },
+          {
+            "bearing_degrees": 109.5700410494385
+          },
+          {
+            "bearing_degrees": 111.6405089035264
+          },
+          {
+            "bearing_degrees": 113.77664530447545
+          },
+          {
+            "bearing_degrees": 101.12950369623469
+          },
+          {
+            "bearing_degrees": 103.2091833150526
+          },
+          {
+            "bearing_degrees": 106.36204216941712
+          },
+          {
+            "bearing_degrees": 108.98467859505426
+          },
+          {
+            "bearing_degrees": 111.4589434434496
+          },
+          {
+            "bearing_degrees": 97.59672967599423
+          },
+          {
+            "bearing_degrees": 317.6976778698916
+          },
+          {
+            "bearing_degrees": 104.81585124668837
+          },
+          {
+            "bearing_degrees": 100.0646993012116
+          },
+          {
+            "bearing_degrees": 314.9486274459388
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.067
+  },
+  {
+    "id": 1721,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.041
+  },
+  {
+    "id": 1722,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.083
+  },
+  {
+    "id": 1723,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 203.0647861468646,
+            "distance_meters": 3321.57000646,
+            "attraction_name": "Dr Hubbard Office"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.054
+  },
+  {
+    "id": 1724,
+    "records": [
+      {
+        "output": [
+          {
+            "heading_degrees": 331.2199260494887
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.039
+  },
+  {
+    "id": 1725,
+    "records": [
+      {
+        "output": [],
+        "error": "more than one row returned by a subquery used as an expression"
+      }
+    ],
+    "run_seconds": 0.776
+  },
+  {
+    "id": 1726,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 241.69384149343773
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 216.675
+  },
+  {
+    "id": 1727,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.014
+  },
+  {
+    "id": 1728,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 216.32357796619505
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.109
+  },
+  {
+    "id": 1729,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 147.46295037077343
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.056
+  },
+  {
+    "id": 1730,
+    "records": [
+      {
+        "output": [
+          {
+            "bearing_degrees": 312.08506390993347
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 123.409
+  },
+  {
+    "id": 1731,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.068
+  },
+  {
+    "id": 1732,
+    "records": [
+      {
+        "output": [
+          {
+            "heading_degrees": 269.06364246842554
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.154
+  },
+  {
+    "id": 1733,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 278.6672057349287
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.104
+  },
+  {
+    "id": 1734,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.197
+  },
+  {
+    "id": 1735,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.197
+  },
+  {
+    "id": 1736,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.035
+  },
+  {
+    "id": 1737,
+    "records": [
+      {
+        "output": [
+          {
+            "bearing_degrees": 331.67123566192134
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.094
+  },
+  {
+    "id": 1738,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 319.16936195778624
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.091
+  },
+  {
+    "id": 1739,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.087
+  },
+  {
+    "id": 1740,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 206.87959846562646
+          },
+          {
+            "direction_degrees": 6.085712437979418
+          },
+          {
+            "direction_degrees": 335.94261462985884
+          },
+          {
+            "direction_degrees": 336.00159150345917
+          },
+          {
+            "direction_degrees": 336.03356546652105
+          },
+          {
+            "direction_degrees": 336.0611402612103
+          },
+          {
+            "direction_degrees": 202.6404126817242
+          },
+          {
+            "direction_degrees": 355.4325232300483
+          },
+          {
+            "direction_degrees": 355.4492109335358
+          },
+          {
+            "direction_degrees": 204.289934853036
+          },
+          {
+            "direction_degrees": 14.280361467810401
+          },
+          {
+            "direction_degrees": 270.3788200715185
+          },
+          {
+            "direction_degrees": 327.7422316383689
+          },
+          {
+            "direction_degrees": 91.08171593302099
+          },
+          {
+            "direction_degrees": 328.0510613489193
+          },
+          {
+            "direction_degrees": 327.8194312177353
+          },
+          {
+            "direction_degrees": 327.84960078248406
+          },
+          {
+            "direction_degrees": 327.85869062914554
+          },
+          {
+            "direction_degrees": 327.66700195234375
+          },
+          {
+            "direction_degrees": 327.73676496425753
+          },
+          {
+            "direction_degrees": 327.58163053070086
+          },
+          {
+            "direction_degrees": 327.531703263369
+          },
+          {
+            "direction_degrees": 329.7457110730979
+          },
+          {
+            "direction_degrees": 336.2210185365636
+          },
+          {
+            "direction_degrees": 335.1254862944909
+          },
+          {
+            "direction_degrees": 335.19710987288846
+          },
+          {
+            "direction_degrees": 323.0546955919899
+          },
+          {
+            "direction_degrees": 323.94295181112807
+          },
+          {
+            "direction_degrees": 322.90827987726124
+          },
+          {
+            "direction_degrees": 15.134119391214217
+          },
+          {
+            "direction_degrees": 240.75671709494713
+          },
+          {
+            "direction_degrees": 297.2217928278454
+          },
+          {
+            "direction_degrees": 202.1834036399459
+          },
+          {
+            "direction_degrees": 222.62287509881943
+          },
+          {
+            "direction_degrees": 203.26012191663244
+          },
+          {
+            "direction_degrees": 228.51835113760586
+          },
+          {
+            "direction_degrees": 331.84854783761045
+          },
+          {
+            "direction_degrees": 86.36383923795904
+          },
+          {
+            "direction_degrees": 260.6225537940181
+          },
+          {
+            "direction_degrees": 221.62270763753958
+          },
+          {
+            "direction_degrees": 221.72575153075815
+          },
+          {
+            "direction_degrees": 240.46615303438998
+          },
+          {
+            "direction_degrees": 292.62475350128
+          },
+          {
+            "direction_degrees": 313.97756779689513
+          },
+          {
+            "direction_degrees": 313.1861900467867
+          },
+          {
+            "direction_degrees": 305.6306664292062
+          },
+          {
+            "direction_degrees": 217.8356634423044
+          },
+          {
+            "direction_degrees": 212.3291469133945
+          },
+          {
+            "direction_degrees": 208.37658547411124
+          },
+          {
+            "direction_degrees": 306.0424871808536
+          },
+          {
+            "direction_degrees": 224.67809831547277
+          },
+          {
+            "direction_degrees": 174.949111371936
+          },
+          {
+            "direction_degrees": 174.6395205711018
+          },
+          {
+            "direction_degrees": 174.36460102694775
+          },
+          {
+            "direction_degrees": 205.67817589165927
+          },
+          {
+            "direction_degrees": 204.4422178797148
+          },
+          {
+            "direction_degrees": 211.23651751469666
+          },
+          {
+            "direction_degrees": 206.1748216024761
+          },
+          {
+            "direction_degrees": 206.22619392733418
+          },
+          {
+            "direction_degrees": 215.59689953979412
+          },
+          {
+            "direction_degrees": 41.03591302324455
+          },
+          {
+            "direction_degrees": 335.07441949788983
+          },
+          {
+            "direction_degrees": 46.225708252401496
+          },
+          {
+            "direction_degrees": 212.3530180957564
+          },
+          {
+            "direction_degrees": 309.42009170501365
+          },
+          {
+            "direction_degrees": 17.85902357457118
+          },
+          {
+            "direction_degrees": 17.89065995968212
+          },
+          {
+            "direction_degrees": 8.128535184815092
+          },
+          {
+            "direction_degrees": 18.065151595458982
+          },
+          {
+            "direction_degrees": 19.135298917539686
+          },
+          {
+            "direction_degrees": 27.848029476700592
+          },
+          {
+            "direction_degrees": 218.58798121003298
+          },
+          {
+            "direction_degrees": 224.1842667608039
+          },
+          {
+            "direction_degrees": 244.6288018157444
+          },
+          {
+            "direction_degrees": 195.55681154449005
+          },
+          {
+            "direction_degrees": 195.77107791492824
+          },
+          {
+            "direction_degrees": 331.550639601814
+          },
+          {
+            "direction_degrees": 333.3288364449488
+          },
+          {
+            "direction_degrees": 336.5003747336024
+          },
+          {
+            "direction_degrees": 334.95731307170735
+          },
+          {
+            "direction_degrees": 355.6678438071888
+          },
+          {
+            "direction_degrees": 355.78639101545974
+          },
+          {
+            "direction_degrees": 355.7274192614856
+          },
+          {
+            "direction_degrees": 355.6189902924469
+          },
+          {
+            "direction_degrees": 331.66004273516984
+          },
+          {
+            "direction_degrees": 332.6792050517353
+          },
+          {
+            "direction_degrees": 334.73160154150906
+          },
+          {
+            "direction_degrees": 9.81622533022854
+          },
+          {
+            "direction_degrees": 9.912573553841499
+          },
+          {
+            "direction_degrees": 1.3203734862930732
+          },
+          {
+            "direction_degrees": 1.4933176472413028
+          },
+          {
+            "direction_degrees": 354.9125773729521
+          },
+          {
+            "direction_degrees": 355.0819747413439
+          },
+          {
+            "direction_degrees": 354.8387638331916
+          },
+          {
+            "direction_degrees": 354.8853240092112
+          },
+          {
+            "direction_degrees": 343.06852404586334
+          },
+          {
+            "direction_degrees": 340.970216967554
+          },
+          {
+            "direction_degrees": 340.84656304586366
+          },
+          {
+            "direction_degrees": 329.8501290494014
+          },
+          {
+            "direction_degrees": 330.3176886594834
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.075
+  },
+  {
+    "id": 1741,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.055
+  },
+  {
+    "id": 1742,
+    "records": [
+      {
+        "output": [
+          {
+            "heading_degrees": 154.14098464190064
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.102
+  },
+  {
+    "id": 1743,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.017
+  },
+  {
+    "id": 1744,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.036
+  },
+  {
+    "id": 1745,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 186.70220132234138
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.079
+  },
+  {
+    "id": 1746,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.036
+  },
+  {
+    "id": 1747,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 174.35951177531135
+          },
+          {
+            "direction_degrees": 172.48960752286033
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.046
+  },
+  {
+    "id": 1748,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.037
+  },
+  {
+    "id": 1749,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.014
+  },
+  {
+    "id": 1750,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 1.121
+  },
+  {
+    "id": 1751,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 44.106
+  },
+  {
+    "id": 1752,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 22.46515701661858
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.004
+  },
+  {
+    "id": 1753,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 299.365373543918
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.043
+  },
+  {
+    "id": 1754,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.037
+  },
+  {
+    "id": 1755,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 12:   WHERE amenity = 'cafe' AND ST_DWithin(p1.geometry::geograp...\n                                                 ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1756,
+    "records": [
+      {
+        "output": [],
+        "error": "syntax error at or near \"FROM\"\nLINE 14:   FROM pois \n           ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1757,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 0.0075346008346920635
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.078
+  },
+  {
+    "id": 1758,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.056
+  },
+  {
+    "id": 1759,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 61.6414321641166
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.043
+  },
+  {
+    "id": 1760,
+    "records": [
+      {
+        "output": [],
+        "error": "syntax error at or near \"AS\"\nLINE 5: )) AS bearing_degrees;\n           ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1761,
+    "records": [
+      {
+        "output": [
+          {
+            "road_name": "North Kings Parade Boulevard",
+            "highway": "residential"
+          },
+          {
+            "road_name": "Ayrsley Town Boulevard",
+            "highway": "residential"
+          },
+          {
+            "road_name": "Ayrsley Town Boulevard",
+            "highway": "residential"
+          },
+          {
+            "road_name": "Ayrsley Town Boulevard",
+            "highway": "residential"
+          },
+          {
+            "road_name": "Ayrsley Town Boulevard",
+            "highway": "residential"
+          },
+          {
+            "road_name": "Silver Crescent Drive",
+            "highway": "residential"
+          },
+          {
+            "highway": "residential"
+          },
+          {
+            "road_name": "Ayrsley Town Boulevard",
+            "highway": "residential"
+          },
+          {
+            "road_name": "North Kings Parade Boulevard",
+            "highway": "residential"
+          },
+          {
+            "road_name": "South Tryon Street",
+            "highway": "primary"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 16.51
+  },
+  {
+    "id": 1762,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.047
+  },
+  {
+    "id": 1763,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.095
+  },
+  {
+    "id": 1764,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 320.36694956395695
+          },
+          {
+            "direction_degrees": 358.23964380480163
+          },
+          {
+            "direction_degrees": 64.66660453525321
+          },
+          {
+            "direction_degrees": 203.57775002410085
+          },
+          {
+            "direction_degrees": 324.78729450156203
+          },
+          {
+            "direction_degrees": 305.9262789404335
+          },
+          {
+            "direction_degrees": 47.632094466381574
+          },
+          {
+            "direction_degrees": 322.1736610790193
+          },
+          {
+            "direction_degrees": 356.57690837502264
+          },
+          {
+            "direction_degrees": 38.73206672471246
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.265
+  },
+  {
+    "id": 1765,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.033
+  },
+  {
+    "id": 1766,
+    "records": [
+      {
+        "output": [
+          {
+            "road_name": "West Belmont Avenue",
+            "highway": "secondary",
+            "bearing_degrees": 77.05849668509612
+          },
+          {
+            "road_name": "North Wilton Avenue",
+            "highway": "residential",
+            "bearing_degrees": 358.34172785287217
+          },
+          {
+            "bearing_degrees": 115.3449049803827
+          },
+          {
+            "highway": "service",
+            "bearing_degrees": 153.1408107841089
+          },
+          {
+            "highway": "service",
+            "bearing_degrees": 108.70187850070245
+          },
+          {
+            "highway": "service",
+            "bearing_degrees": 335.0722649031949
+          },
+          {
+            "highway": "service",
+            "bearing_degrees": 99.71973786254617
+          },
+          {
+            "highway": "service",
+            "bearing_degrees": 19.737968929690535
+          },
+          {
+            "highway": "service",
+            "bearing_degrees": 32.173989040086546
+          },
+          {
+            "road_name": "West Fletcher Avenue",
+            "highway": "residential",
+            "bearing_degrees": 140.0872288016606
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 128.942
+  },
+  {
+    "id": 1767,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.181
+  },
+  {
+    "id": 1768,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.096
+  },
+  {
+    "id": 1769,
+    "records": [
+      {
+        "output": [
+          {
+            "bearing_degrees": 90.0246708811012
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.073
+  },
+  {
+    "id": 1770,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.057
+  },
+  {
+    "id": 1771,
+    "records": [
+      {
+        "output": [],
+        "error": "column r.addr_state does not exist\nLINE 8:   AND r.addr_state ILIKE '%NY%'\n              ^\nHINT:  Perhaps you meant to reference the column \"p.addr_state\" or the column \"s.addr_state\"."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1772,
+    "records": [
+      {
+        "output": [],
+        "error": "column r.addr_state does not exist\nLINE 8:   AND r.addr_state ILIKE '%GA%';\n              ^\nHINT:  Perhaps you meant to reference the column \"p.addr_state\"."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1773,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.027
+  },
+  {
+    "id": 1774,
+    "records": [
+      {
+        "output": [
+          {
+            "bearing_degrees": 15.37884434478865
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.1
+  },
+  {
+    "id": 1775,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.14
+  },
+  {
+    "id": 1776,
+    "records": [
+      {
+        "output": [
+          {
+            "bearing_degrees": 289.16026323072026
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.078
+  },
+  {
+    "id": 1777,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.047
+  },
+  {
+    "id": 1778,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 143.80402930129935
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.101
+  },
+  {
+    "id": 1779,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.094
+  },
+  {
+    "id": 1780,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.062
+  },
+  {
+    "id": 1781,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.048
+  },
+  {
+    "id": 1782,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.074
+  },
+  {
+    "id": 1783,
+    "records": [
+      {
+        "output": [
+          {
+            "bearing": 29.543467880869308
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 35.784
+  },
+  {
+    "id": 1784,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.166
+  },
+  {
+    "id": 1785,
+    "records": [
+      {
+        "output": [
+          {
+            "bearing_degrees": 47.390133514759924
+          },
+          {
+            "bearing_degrees": 55.19780389743643
+          },
+          {
+            "bearing_degrees": 49.8540427469285
+          },
+          {
+            "bearing_degrees": 53.75152778791187
+          },
+          {
+            "bearing_degrees": 187.0733325074676
+          },
+          {
+            "bearing_degrees": 187.05200267607526
+          },
+          {
+            "bearing_degrees": 187.93822311816643
+          },
+          {
+            "bearing_degrees": 188.24911308643507
+          },
+          {
+            "bearing_degrees": 188.2066341890347
+          },
+          {
+            "bearing_degrees": 189.53758143972146
+          },
+          {
+            "bearing_degrees": 203.2011946822616
+          },
+          {
+            "bearing_degrees": 45.58891305997945
+          },
+          {
+            "bearing_degrees": 236.70283477868404
+          },
+          {
+            "bearing_degrees": 241.53676243833036
+          },
+          {
+            "bearing_degrees": 242.59457079961376
+          },
+          {
+            "bearing_degrees": 240.98806908997855
+          },
+          {
+            "bearing_degrees": 31.11987263815966
+          },
+          {
+            "bearing_degrees": 214.42751033075425
+          },
+          {
+            "bearing_degrees": 105.11432860145875
+          },
+          {
+            "bearing_degrees": 245.17216734777915
+          },
+          {
+            "bearing_degrees": 244.9955883841259
+          },
+          {
+            "bearing_degrees": 245.02489824626286
+          },
+          {
+            "bearing_degrees": 244.995620014725
+          },
+          {
+            "bearing_degrees": 245.55502870735518
+          },
+          {
+            "bearing_degrees": 245.08615082544418
+          },
+          {
+            "bearing_degrees": 245.08174950700564
+          },
+          {
+            "bearing_degrees": 245.07939062852157
+          },
+          {
+            "bearing_degrees": 244.263979970537
+          },
+          {
+            "bearing_degrees": 244.2714421676376
+          },
+          {
+            "bearing_degrees": 245.5613477854232
+          },
+          {
+            "bearing_degrees": 244.98814779975973
+          },
+          {
+            "bearing_degrees": 245.21342273326326
+          },
+          {
+            "bearing_degrees": 245.27314817155707
+          },
+          {
+            "bearing_degrees": 245.21347195949397
+          },
+          {
+            "bearing_degrees": 245.06343160296433
+          },
+          {
+            "bearing_degrees": 245.32839287337305
+          },
+          {
+            "bearing_degrees": 233.81100050587924
+          },
+          {
+            "bearing_degrees": 187.6808264554329
+          },
+          {
+            "bearing_degrees": 48.03219063325173
+          },
+          {
+            "bearing_degrees": 47.98460514166768
+          },
+          {
+            "bearing_degrees": 48.00036084417846
+          },
+          {
+            "bearing_degrees": 48.0340714542197
+          },
+          {
+            "bearing_degrees": 48.03969220649264
+          },
+          {
+            "bearing_degrees": 48.103926390632985
+          },
+          {
+            "bearing_degrees": 48.14284727293532
+          },
+          {
+            "bearing_degrees": 48.185787106210654
+          },
+          {
+            "bearing_degrees": 48.19506337115256
+          },
+          {
+            "bearing_degrees": 48.21363019516711
+          },
+          {
+            "bearing_degrees": 48.072628366439844
+          },
+          {
+            "bearing_degrees": 50.13806606940783
+          },
+          {
+            "bearing_degrees": 245.4301592647403
+          },
+          {
+            "bearing_degrees": 68.50323622997075
+          },
+          {
+            "bearing_degrees": 149.45066764870697
+          },
+          {
+            "bearing_degrees": 123.76813082380914
+          },
+          {
+            "bearing_degrees": 57.134111786035234
+          },
+          {
+            "bearing_degrees": 44.625820145940736
+          },
+          {
+            "bearing_degrees": 212.5897868853893
+          },
+          {
+            "bearing_degrees": 90.93617104997561
+          },
+          {
+            "bearing_degrees": 245.75227944830607
+          },
+          {
+            "bearing_degrees": 191.6200878700094
+          },
+          {
+            "bearing_degrees": 263.3445687893486
+          },
+          {
+            "bearing_degrees": 261.34282549632553
+          },
+          {
+            "bearing_degrees": 197.62380512223066
+          },
+          {
+            "bearing_degrees": 38.01591878071006
+          },
+          {
+            "bearing_degrees": 38.012569502283
+          },
+          {
+            "bearing_degrees": 238.54074827600235
+          },
+          {
+            "bearing_degrees": 241.34355134526683
+          },
+          {
+            "bearing_degrees": 265.51588137677294
+          },
+          {
+            "bearing_degrees": 199.17485786935728
+          },
+          {
+            "bearing_degrees": 199.0917176075015
+          },
+          {
+            "bearing_degrees": 93.28399781044544
+          },
+          {
+            "bearing_degrees": 188.4092086923644
+          },
+          {
+            "bearing_degrees": 190.39800589888165
+          },
+          {
+            "bearing_degrees": 243.89358241029888
+          },
+          {
+            "bearing_degrees": 76.96205112889598
+          },
+          {
+            "bearing_degrees": 50.52252288592456
+          },
+          {
+            "bearing_degrees": 1.8814164371663658
+          },
+          {
+            "bearing_degrees": 1.4015008382966552
+          },
+          {
+            "bearing_degrees": 22.441416998971064
+          },
+          {
+            "bearing_degrees": 15.889772393541795
+          },
+          {
+            "bearing_degrees": 78.51462480667115
+          },
+          {
+            "bearing_degrees": 218.2251840621178
+          },
+          {
+            "bearing_degrees": 218.10911426463917
+          },
+          {
+            "bearing_degrees": 93.74109887440524
+          },
+          {
+            "bearing_degrees": 231.8264519194367
+          },
+          {
+            "bearing_degrees": 233.4097918044433
+          },
+          {
+            "bearing_degrees": 233.53815002195253
+          },
+          {
+            "bearing_degrees": 58.26190817795809
+          },
+          {
+            "bearing_degrees": 57.4790978519195
+          },
+          {
+            "bearing_degrees": 87.20450032100248
+          },
+          {
+            "bearing_degrees": 84.23899927350551
+          },
+          {
+            "bearing_degrees": 188.7947359266374
+          },
+          {
+            "bearing_degrees": 143.47692749489485
+          },
+          {
+            "bearing_degrees": 141.9911456568972
+          },
+          {
+            "bearing_degrees": 142.16860819609195
+          },
+          {
+            "bearing_degrees": 145.16887158397734
+          },
+          {
+            "bearing_degrees": 113.60340604551926
+          },
+          {
+            "bearing_degrees": 144.32515288425276
+          },
+          {
+            "bearing_degrees": 90.8924030718583
+          },
+          {
+            "bearing_degrees": 245.54062008020708
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.16
+  },
+  {
+    "id": 1786,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 349.2071812196142
+          },
+          {
+            "direction_degrees": 160.75340596842037
+          },
+          {
+            "direction_degrees": 192.27601555018944
+          },
+          {
+            "direction_degrees": 162.07119764868253
+          },
+          {
+            "direction_degrees": 174.2707842835002
+          },
+          {
+            "direction_degrees": 159.96432843293226
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.042
+  },
+  {
+    "id": 1787,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 316.726510400537
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.074
+  },
+  {
+    "id": 1788,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 56.918016107889834
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.114
+  },
+  {
+    "id": 1789,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 47.34228529512167
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.05
+  },
+  {
+    "id": 1790,
+    "records": [
+      {
+        "output": [],
+        "error": "syntax error at end of input\nLINE 13: \n         ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1791,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.034
+  },
+  {
+    "id": 1792,
+    "records": [
+      {
+        "output": [],
+        "error": "syntax error at or near \"AS\"\nLINE 5: )) AS direction_degrees;\n           ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1793,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.033
+  },
+  {
+    "id": 1794,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 5.827699087293122,
+            "poi_name": "Deurty Boys Gallery"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.099
+  },
+  {
+    "id": 1795,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.053
+  },
+  {
+    "id": 1796,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.015
+  },
+  {
+    "id": 1797,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.032
+  },
+  {
+    "id": 1798,
+    "records": [
+      {
+        "output": [],
+        "error": "invalid reference to FROM-clause entry for table \"p1\"\nLINE 13:     ORDER BY p1.geometry <-> pois.geometry\n                      ^\nDETAIL:  There is an entry for table \"p1\", but it cannot be referenced from this part of the query.\nHINT:  To reference that table, you must mark this subquery with LATERAL."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1799,
+    "records": [
+      {
+        "output": [
+          {
+            "direction_degrees": 355.91261061255744
+          },
+          {
+            "direction_degrees": 36.712355796689145
+          },
+          {
+            "direction_degrees": 355.5790690276
+          },
+          {
+            "direction_degrees": 355.5501856686089
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.062
+  }
+]

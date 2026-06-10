@@ -1,0 +1,124 @@
+{
+  "answer_type": "row/s",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "row/s",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "rowset_f1",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "addr_city": "Deer Park",
+      "addr_housenumber": "1101",
+      "addr_postcode": "77536",
+      "addr_state": "TX",
+      "addr_street": "East Boulevard",
+      "amenity": "hospital",
+      "emergency": "yes",
+      "geometry": "POINT (-95.101262 29.70239)",
+      "healthcare": "Emergency Room",
+      "id": 35153,
+      "operator": "CH First Emergency Room",
+      "osm_id": 7986050032,
+      "phone": "+1-281-343-3134",
+      "poi_name": "CH First Emergency Room",
+      "pt": "0101000020E6100000EB73B5157BC657C0198CB6CFCFB33D40",
+      "slope_degrees": 5.560837,
+      "website": "https://www.ch1er.com"
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "addr_city": "Deer Park",
+        "addr_housenumber": "1101",
+        "addr_postcode": "77536",
+        "addr_state": "TX",
+        "addr_street": "East Boulevard",
+        "amenity": "hospital",
+        "artwork_type": null,
+        "building": null,
+        "capacity": null,
+        "cuisine": null,
+        "delivery": null,
+        "description": null,
+        "drive_through": null,
+        "emergency": "yes",
+        "fast_food": null,
+        "fee": null,
+        "geometry": "0101000020E6100000EB73B5157BC657C0198CB6CFCFB33D40",
+        "hairdresser": null,
+        "healthcare": "Emergency Room",
+        "historic": null,
+        "id": 35153,
+        "information": null,
+        "internet_access": null,
+        "leisure": null,
+        "museum": null,
+        "official_name": null,
+        "opening_hours": null,
+        "operator": "CH First Emergency Room",
+        "osm_id": 7986050032,
+        "outdoor_seating": null,
+        "parking": null,
+        "pastry_shop": null,
+        "phone": "+1-281-343-3134",
+        "poi_name": "CH First Emergency Room",
+        "pt": "0101000020E6100000EB73B5157BC657C0198CB6CFCFB33D40",
+        "resort": null,
+        "restaurant": null,
+        "school_type": null,
+        "shop": null,
+        "slope_degrees": 5.560837,
+        "sport": null,
+        "sports": null,
+        "takeaway": null,
+        "toilets": null,
+        "tourism": null,
+        "website": "https://www.ch1er.com",
+        "wheelchair": null,
+        "wholesale": null,
+        "wikidata": null,
+        "zoo": null
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-95.14012 29.7287, -95.140164 29.727769, -95.140205 29.720618, -95.140167 29.720012, -95.140034 29.714515, -95.139979 29.712221, -95.139994 29.711922, -95.14002 29.711682, -95.14002 29.711501, -95.144063 29.711579, -95.143835 29.702237, -95.143758 29.700148, -95.143622 29.694647, -95.142905 29.694651, -95.142883 29.694385, -95.142921 29.694361, -95.142881 29.690704, -95.142855 29.690509, -95.142858 29.689707, -95.142797 29.689308, -95.14268 29.681829, -95.142648 29.681648, -95.142584 29.678098, -95.144274 29.678083, -95.144264 29.677841, -95.143509 29.677392, -95.143069 29.677126, -95.137561 29.673904, -95.137133 29.673566, -95.136896 29.673305, -95.136621 29.67294, -95.136433 29.672595, -95.133056 29.664776, -95.12277 29.665, -95.122773 29.665145, -95.119917 29.66519, -95.119305 29.665199, -95.116832 29.665238, -95.116826 29.664906, -95.116807 29.663971, -95.116778 29.663971, -95.116326 29.663978, -95.113398 29.664014, -95.113064 29.664018, -95.112703 29.664023, -95.112269 29.664035, -95.111285 29.664062, -95.111101 29.664064, -95.105859 29.664145, -95.100795 29.664233, -95.097842 29.664299, -95.095312 29.664345, -95.093236 29.664213, -95.092717 29.664221, -95.08706 29.664309, -95.087194 29.669091, -95.087289 29.670264, -95.087375 29.671007, -95.087453 29.671388, -95.087764 29.672409, -95.087867 29.673385, -95.088148 29.68489, -95.088103 29.685074, -95.088384 29.695213, -95.088356 29.695414, -95.088469 29.700343, -95.088503 29.700606, -95.088534 29.702516, -95.089976 29.70382, -95.092699 29.704722, -95.092096 29.706288, -95.091736 29.70739, -95.090841 29.709672, -95.090261 29.711092, -95.0896 29.712796, -95.089521 29.713257, -95.089481 29.713659, -95.089501 29.715958, -95.08956 29.720328, -95.089556 29.722193, -95.089584 29.723953, -95.089602 29.725246, -95.089641 29.727739, -95.089648 29.729202, -95.089674 29.72982, -95.089687 29.730237, -95.089751 29.732106, -95.089775 29.733212, -95.089808 29.736768, -95.089815 29.739276, -95.089818 29.740603, -95.08982 29.741215, -95.089829 29.742838, -95.089982 29.745664, -95.091165 29.744861, -95.092394 29.744015, -95.09337 29.743421, -95.094217 29.742736, -95.096504 29.74017, -95.097068 29.739581, -95.097831 29.738909, -95.098685 29.738247, -95.101581 29.736142, -95.103291 29.735119, -95.105106 29.734282, -95.106983 29.733485, -95.108246 29.733113, -95.109045 29.733, -95.109797 29.732945, -95.110755 29.732712, -95.111972 29.73231, -95.112888 29.731924, -95.113397 29.73165, -95.114556 29.730865, -95.114695 29.730783, -95.115634 29.730126, -95.116411 29.729545, -95.117353 29.728902, -95.118996 29.727974, -95.11987 29.727437, -95.120576 29.72721, -95.121389 29.726843, -95.122373 29.726534, -95.122972 29.726291, -95.124352 29.725957, -95.124849 29.725863, -95.126653 29.725788, -95.127703 29.725728, -95.128905 29.725726, -95.130154 29.725851, -95.131487 29.726103, -95.132693 29.726361, -95.133467 29.726591, -95.133789 29.726672, -95.134839 29.727042, -95.136235 29.727586, -95.137229 29.728145, -95.138023 29.728433, -95.138487 29.728564, -95.138991 29.728624, -95.139602 29.728576, -95.14012 29.7287))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope_raster AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\ncandidates AS (\n  SELECT p.*, ST_PointOnSurface(p.geometry::geometry) AS pt\n  FROM pois p\n  JOIN buffered_region r ON ST_Intersects(p.geometry::geometry, r.g)\n  WHERE p.\"amenity\" = 'hospital'\n),\npoi_slope AS (\n  SELECT c.*, slope.s AS slope_degrees\n  FROM candidates c\n  JOIN LATERAL (\n    SELECT ST_Value(sr.rast, 1, c.pt) AS s\n    FROM slope_raster sr\n    WHERE ST_Intersects(sr.rast, c.pt)\n    LIMIT 1\n  ) slope ON slope.s IS NOT NULL\n)\nSELECT *\nFROM poi_slope\nORDER BY slope_degrees DESC\nLIMIT 3;",
+  "id": "slope_steepest_n_poi+name-14",
+  "model_output": "```sql\nWITH hospitals_in_deer_park AS (\n  SELECT \n    id,\n    poi_name,\n    ST_SetSRID(ST_GeomFromText('POINT (-95.101262 29.70239)'), 4326)::geometry AS geom\n  FROM pois\n  WHERE poi_name = 'CH First Emergency Room'\n    AND addr_city = 'Deer Park'\n    AND addr_state = 'TX'\n    AND amenity = 'hospital'\n)\nSELECT \n  h.poi_name,\n  MAX(ST_Slope(r.rast, 1, '32BF')) AS max_slope\nFROM hospitals_in_deer_park h\nJOIN public.dem_us r\n  ON ST_Intersects(r.rast, h.geom)\nWHERE ST_Distance(h.geom::geography, r.rast::geography) < 1000 -- limit to nearby raster tiles\nGROUP BY h.poi_name\nORDER BY max_slope DESC\nLIMIT 3;\n```",
+  "predicted_exec": {
+    "error": "function max(raster) does not exist\nLINE 14:   MAX(ST_Slope(r.rast, 1, '32BF')) AS max_slope\n           ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH hospitals_in_deer_park AS (\n  SELECT \n    id,\n    poi_name,\n    ST_SetSRID(ST_GeomFromText('POINT (-95.101262 29.70239)'), 4326)::geometry AS geom\n  FROM pois\n  WHERE poi_name = 'CH First Emergency Room'\n    AND addr_city = 'Deer Park'\n    AND addr_state = 'TX'\n    AND amenity = 'hospital'\n)\nSELECT \n  h.poi_name,\n  MAX(ST_Slope(r.rast, 1, '32BF')) AS max_slope\nFROM hospitals_in_deer_park h\nJOIN public.dem_us r\n  ON ST_Intersects(r.rast, h.geom)\nWHERE ST_Distance(h.geom::geography, r.rast::geography) < 1000 -- limit to nearby raster tiles\nGROUP BY h.poi_name\nORDER BY max_slope DESC\nLIMIT 3;",
+  "predicted_sql_candidates": [
+    "WITH hospitals_in_deer_park AS (\n  SELECT \n    id,\n    poi_name,\n    ST_SetSRID(ST_GeomFromText('POINT (-95.101262 29.70239)'), 4326)::geometry AS geom\n  FROM pois\n  WHERE poi_name = 'CH First Emergency Room'\n    AND addr_city = 'Deer Park'\n    AND addr_state = 'TX'\n    AND amenity = 'hospital'\n)\nSELECT \n  h.poi_name,\n  MAX(ST_Slope(r.rast, 1, '32BF')) AS max_slope\nFROM hospitals_in_deer_park h\nJOIN public.dem_us r\n  ON ST_Intersects(r.rast, h.geom)\nWHERE ST_Distance(h.geom::geography, r.rast::geography) < 1000 -- limit to nearby raster tiles\nGROUP BY h.poi_name\nORDER BY max_slope DESC\nLIMIT 3;"
+  ],
+  "query_type": "raster_vector",
+  "question": "List the 3 steepest-terrain hospitals in Deer Park, Texas.",
+  "source_file": "slope_steepest_n_poi+name.jsonl",
+  "source_stem": "slope_steepest_n_poi+name",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 45.01,
+    "total_seconds": 45.011
+  },
+  "usage": {
+    "completion_tokens": 211,
+    "prompt_tokens": 1660,
+    "total_tokens": 1871
+  }
+}

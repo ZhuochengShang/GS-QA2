@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 339.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 339.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-96.089263 41.937832, -96.088788 41.937812, -96.086894 41.937758, -96.083552 41.937651, -96.080464 41.937574, -96.078081 41.937502, -96.074499 41.937413, -96.07469 41.922823, -96.079304 41.922937, -96.082348 41.923029, -96.087345 41.923199, -96.089248 41.923253, -96.089239 41.92402, -96.089241 41.926549, -96.089235 41.928984, -96.089241 41.929956, -96.090016 41.929958, -96.090014 41.931849, -96.090324 41.931852, -96.090348 41.932449, -96.089252 41.9324, -96.089268 41.937624, -96.089263 41.937832))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).max AS elevation\nFROM clipped;",
+  "id": "elevation_max+region-11",
+  "model_output": "```sql\nWITH blencoe_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Blencoe' AND border_type = 'city'\n)\nSELECT MAX(rast_val) AS highest_elevation\nFROM (\n  SELECT ST_Value(rast, 1, pt.geom) AS rast_val\n  FROM public.dem_us r\n  CROSS JOIN blencoe_geom pt\n  WHERE ST_Intersects(r.rast, pt.geom)\n) sub;\n```",
+  "predicted_exec": {
+    "error": "Attempting to get the value of a pixel with a non-point geometry",
+    "output": []
+  },
+  "predicted_sql": "WITH blencoe_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Blencoe' AND border_type = 'city'\n)\nSELECT MAX(rast_val) AS highest_elevation\nFROM (\n  SELECT ST_Value(rast, 1, pt.geom) AS rast_val\n  FROM public.dem_us r\n  CROSS JOIN blencoe_geom pt\n  WHERE ST_Intersects(r.rast, pt.geom)\n) sub;",
+  "predicted_sql_candidates": [
+    "WITH blencoe_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Blencoe' AND border_type = 'city'\n)\nSELECT MAX(rast_val) AS highest_elevation\nFROM (\n  SELECT ST_Value(rast, 1, pt.geom) AS rast_val\n  FROM public.dem_us r\n  CROSS JOIN blencoe_geom pt\n  WHERE ST_Intersects(r.rast, pt.geom)\n) sub;"
+  ],
+  "query_type": "raster_only",
+  "question": "How high is the highest point in Blencoe, Iowa?",
+  "source_file": "elevation_max+region.jsonl",
+  "source_stem": "elevation_max+region",
+  "timing": {
+    "execution_seconds": 0.042,
+    "generation_seconds": 22.741,
+    "total_seconds": 22.783
+  },
+  "usage": {
+    "completion_tokens": 106,
+    "prompt_tokens": 1517,
+    "total_tokens": 1623
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "answer_type": "name",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "name",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "max_abs_numeric_delta": 2153.0,
+    "mean_abs_numeric_delta": 2153.0,
+    "numeric_deltas": [
+      -2153.0,
+      2153.0
+    ],
+    "predicted_row_count": 1,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "exact_match": true,
+      "gold_field": "higher_poi",
+      "gold_value": "Turner Carroll Gallery, Santa Fe, NM",
+      "metric_family": "primary_text",
+      "predicted_field": "higher_elevation",
+      "predicted_value": "Turner Carroll Gallery, Santa Fe, NM"
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "higher_poi": "Turner Carroll Gallery, Santa Fe, NM",
+      "poi1_elevation_m": 2176.0,
+      "poi2_elevation_m": 23.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "higher_poi": "Turner Carroll Gallery, Santa Fe, NM",
+        "poi1_elevation_m": 2176.0,
+        "poi2_elevation_m": 23.0
+      }
+    ]
+  },
+  "gold_sql": "WITH p1 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-105.923142 35.678585)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-105.923142 35.678585)',4326))\n  LIMIT 1\n),\np2 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-74.007033 40.745807)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-74.007033 40.745807)',4326))\n  LIMIT 1\n)\nSELECT\n  CASE\n    WHEN p1.elev > p2.elev THEN 'Turner Carroll Gallery, Santa Fe, NM'\n    WHEN p2.elev > p1.elev THEN 'David Zwirner, New York, NY'\n    ELSE 'equal'\n  END AS higher_poi,\n  p1.elev AS poi1_elevation_m,\n  p2.elev AS poi2_elevation_m\nFROM p1, p2;",
+  "id": "elevation_compare+two_pois-7",
+  "model_output": "```sql\nWITH pois_elevation AS (\n  SELECT \n    poi.poi_name,\n    ST_Value(\n      r.rast, \n      ST_Transform(ST_SetSRID(ST_GeomFromText(poi.geo_wkt), 4326), 4326)::geometry\n    ) AS elevation\n  FROM (\n    VALUES\n      ('Turner Carroll Gallery', 'POINT (-105.923142 35.678585)'),\n      ('David Zwirner', 'POINT (-74.007033 40.745807)')\n  ) AS poi(poi_name, geo_wkt),\n  public.dem_us r\n  WHERE ST_Intersects(\n    r.rast, \n    ST_Transform(ST_SetSRID(ST_GeomFromText(poi.geo_wkt), 4326), 4326)::geometry\n  )\n)\nSELECT \n  CASE\n    WHEN elevation1 > elevation2 THEN 'Turner Carroll Gallery, Santa Fe, NM'\n    WHEN elevation2 > elevation1 THEN 'David Zwirner, New York, NY'\n    ELSE 'Equal elevation'\n  END AS higher_elevation,\n  elevation1 AS elevation_turner_carroll,\n  elevation2 AS elevation_david_zwirner\nFROM (\n  SELECT elevation FROM pois_elevation WHERE poi_name = 'Turner Carroll Gallery'\n) AS t(elevation1),\n(\n  SELECT elevation FROM pois_elevation WHERE poi_name = 'David Zwirner'\n) AS d(elevation2);\n```",
+  "predicted_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation_david_zwirner": 23.0,
+        "elevation_turner_carroll": 2176.0,
+        "higher_elevation": "Turner Carroll Gallery, Santa Fe, NM"
+      }
+    ]
+  },
+  "predicted_sql": "WITH pois_elevation AS (\n  SELECT \n    poi.poi_name,\n    ST_Value(\n      r.rast, \n      ST_Transform(ST_SetSRID(ST_GeomFromText(poi.geo_wkt), 4326), 4326)::geometry\n    ) AS elevation\n  FROM (\n    VALUES\n      ('Turner Carroll Gallery', 'POINT (-105.923142 35.678585)'),\n      ('David Zwirner', 'POINT (-74.007033 40.745807)')\n  ) AS poi(poi_name, geo_wkt),\n  public.dem_us r\n  WHERE ST_Intersects(\n    r.rast, \n    ST_Transform(ST_SetSRID(ST_GeomFromText(poi.geo_wkt), 4326), 4326)::geometry\n  )\n)\nSELECT \n  CASE\n    WHEN elevation1 > elevation2 THEN 'Turner Carroll Gallery, Santa Fe, NM'\n    WHEN elevation2 > elevation1 THEN 'David Zwirner, New York, NY'\n    ELSE 'Equal elevation'\n  END AS higher_elevation,\n  elevation1 AS elevation_turner_carroll,\n  elevation2 AS elevation_david_zwirner\nFROM (\n  SELECT elevation FROM pois_elevation WHERE poi_name = 'Turner Carroll Gallery'\n) AS t(elevation1),\n(\n  SELECT elevation FROM pois_elevation WHERE poi_name = 'David Zwirner'\n) AS d(elevation2);",
+  "predicted_sql_candidates": [
+    "WITH pois_elevation AS (\n  SELECT \n    poi.poi_name,\n    ST_Value(\n      r.rast, \n      ST_Transform(ST_SetSRID(ST_GeomFromText(poi.geo_wkt), 4326), 4326)::geometry\n    ) AS elevation\n  FROM (\n    VALUES\n      ('Turner Carroll Gallery', 'POINT (-105.923142 35.678585)'),\n      ('David Zwirner', 'POINT (-74.007033 40.745807)')\n  ) AS poi(poi_name, geo_wkt),\n  public.dem_us r\n  WHERE ST_Intersects(\n    r.rast, \n    ST_Transform(ST_SetSRID(ST_GeomFromText(poi.geo_wkt), 4326), 4326)::geometry\n  )\n)\nSELECT \n  CASE\n    WHEN elevation1 > elevation2 THEN 'Turner Carroll Gallery, Santa Fe, NM'\n    WHEN elevation2 > elevation1 THEN 'David Zwirner, New York, NY'\n    ELSE 'Equal elevation'\n  END AS higher_elevation,\n  elevation1 AS elevation_turner_carroll,\n  elevation2 AS elevation_david_zwirner\nFROM (\n  SELECT elevation FROM pois_elevation WHERE poi_name = 'Turner Carroll Gallery'\n) AS t(elevation1),\n(\n  SELECT elevation FROM pois_elevation WHERE poi_name = 'David Zwirner'\n) AS d(elevation2);"
+  ],
+  "query_type": "raster_only",
+  "question": "Which of Turner Carroll Gallery, Santa Fe, NM and David Zwirner, New York, NY stands at the higher elevation?",
+  "source_file": "elevation_compare+two_pois.jsonl",
+  "source_stem": "elevation_compare+two_pois",
+  "timing": {
+    "execution_seconds": 0.699,
+    "generation_seconds": 70.984,
+    "total_seconds": 71.683
+  },
+  "usage": {
+    "completion_tokens": 332,
+    "prompt_tokens": 1732,
+    "total_tokens": 2064
+  }
+}

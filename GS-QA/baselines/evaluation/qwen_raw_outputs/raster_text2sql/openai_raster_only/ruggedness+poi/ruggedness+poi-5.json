@@ -1,0 +1,59 @@
+{
+  "answer_type": "ruggedness_index",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "ruggedness_index",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "tri_value": 3.375
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "tri_value": 3.375
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-82.203894 35.80555)',4326) AS pt\n),\npatch AS (\n  SELECT ST_Buffer(pt::geography, 100)::geometry AS g FROM origin\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, p.g)) AS rast\n  FROM public.dem_us d\n  JOIN patch p ON ST_Intersects(d.rast, p.g)\n),\ntri_rast AS (\n  SELECT ST_TRI(rast, 1) AS rast\n  FROM clipped_dem\n)\nSELECT ST_Value(t.rast, 1, o.pt) AS tri_value\nFROM tri_rast t, origin o;",
+  "id": "ruggedness+poi-5",
+  "model_output": "```sql\nWITH park_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-82.203894, 35.80555), 4326)::geography AS geom\n),\nruggedness_raster AS (\n  SELECT \n    ST_MapAlgebra(\n      a.rast,\n      1,\n      'ruggedness(double[][] sample, int width, int height, double pixelSize) returns double[][]',\n      'ruggedness(double[][] sample, int width, int height, double pixelSize) {\n        double[][] result = new double[width][height];\n        for (int i = 0; i < width; i++) {\n          for (int j = 0; j < height; j++) {\n            if (i == 0 || i == width - 1 || j == 0 || j == height - 1) {\n              result[i][j] = 0;\n              continue;\n            }\n            double maxElev = -Double.MAX_VALUE;\n            double minElev = Double.MAX_VALUE;\n            for (int di = -1; di <= 1; di++) {\n              for (int dj = -1; dj <= 1; dj++) {\n                if (di == 0 && dj == 0) continue;\n                double elev = sample[i + di][j + dj];\n                maxElev = Math.max(maxElev, elev);\n                minElev = Math.min(minElev, elev);\n              }\n            }\n            result[i][j] = maxElev - minElev;\n          }\n        }\n        return result;\n      }',\n      '32BF',\n      'last'\n    ) AS ruggedness_rast\n  FROM public.dem_us a, park_point p\n  WHERE ST_Intersects(a.rast::geometry, p.geom)\n),\nclipped_ruggedness AS (\n  SELECT \n    ST_Clip(ruggedness_rast, p.geom::geometry, true) AS clipped_rast\n  FROM ruggedness_raster, park_point p\n)\nSELECT \n  ST_Stats(clipped_rast, 1, true).mean AS ruggedness_index\nFROM clipped_ruggedness;\n```",
+  "predicted_exec": {
+    "error": "syntax error at or near \".\"\nLINE 45:   ST_Stats(clipped_rast, 1, true).mean AS ruggedness_index\n                                          ^",
+    "output": []
+  },
+  "predicted_sql": "WITH park_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-82.203894, 35.80555), 4326)::geography AS geom\n),\nruggedness_raster AS (\n  SELECT \n    ST_MapAlgebra(\n      a.rast,\n      1,\n      'ruggedness(double[][] sample, int width, int height, double pixelSize) returns double[][]',\n      'ruggedness(double[][] sample, int width, int height, double pixelSize) {\n        double[][] result = new double[width][height];\n        for (int i = 0; i < width; i++) {\n          for (int j = 0; j < height; j++) {\n            if (i == 0 || i == width - 1 || j == 0 || j == height - 1) {\n              result[i][j] = 0;\n              continue;\n            }\n            double maxElev = -Double.MAX_VALUE;\n            double minElev = Double.MAX_VALUE;\n            for (int di = -1; di <= 1; di++) {\n              for (int dj = -1; dj <= 1; dj++) {\n                if (di == 0 && dj == 0) continue;\n                double elev = sample[i + di][j + dj];\n                maxElev = Math.max(maxElev, elev);\n                minElev = Math.min(minElev, elev);\n              }\n            }\n            result[i][j] = maxElev - minElev;\n          }\n        }\n        return result;\n      }',\n      '32BF',\n      'last'\n    ) AS ruggedness_rast\n  FROM public.dem_us a, park_point p\n  WHERE ST_Intersects(a.rast::geometry, p.geom)\n),\nclipped_ruggedness AS (\n  SELECT \n    ST_Clip(ruggedness_rast, p.geom::geometry, true) AS clipped_rast\n  FROM ruggedness_raster, park_point p\n)\nSELECT \n  ST_Stats(clipped_rast, 1, true).mean AS ruggedness_index\nFROM clipped_ruggedness;",
+  "predicted_sql_candidates": [
+    "WITH park_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-82.203894, 35.80555), 4326)::geography AS geom\n),\nruggedness_raster AS (\n  SELECT \n    ST_MapAlgebra(\n      a.rast,\n      1,\n      'ruggedness(double[][] sample, int width, int height, double pixelSize) returns double[][]',\n      'ruggedness(double[][] sample, int width, int height, double pixelSize) {\n        double[][] result = new double[width][height];\n        for (int i = 0; i < width; i++) {\n          for (int j = 0; j < height; j++) {\n            if (i == 0 || i == width - 1 || j == 0 || j == height - 1) {\n              result[i][j] = 0;\n              continue;\n            }\n            double maxElev = -Double.MAX_VALUE;\n            double minElev = Double.MAX_VALUE;\n            for (int di = -1; di <= 1; di++) {\n              for (int dj = -1; dj <= 1; dj++) {\n                if (di == 0 && dj == 0) continue;\n                double elev = sample[i + di][j + dj];\n                maxElev = Math.max(maxElev, elev);\n                minElev = Math.min(minElev, elev);\n              }\n            }\n            result[i][j] = maxElev - minElev;\n          }\n        }\n        return result;\n      }',\n      '32BF',\n      'last'\n    ) AS ruggedness_rast\n  FROM public.dem_us a, park_point p\n  WHERE ST_Intersects(a.rast::geometry, p.geom)\n),\nclipped_ruggedness AS (\n  SELECT \n    ST_Clip(ruggedness_rast, p.geom::geometry, true) AS clipped_rast\n  FROM ruggedness_raster, park_point p\n)\nSELECT \n  ST_Stats(clipped_rast, 1, true).mean AS ruggedness_index\nFROM clipped_ruggedness;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the terrain ruggedness index at Carolina Hemlocks Recreation Area, Burnsville, NC?",
+  "source_file": "ruggedness+poi.jsonl",
+  "source_stem": "ruggedness+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 104.036,
+    "total_seconds": 104.037
+  },
+  "usage": {
+    "completion_tokens": 464,
+    "prompt_tokens": 1616,
+    "total_tokens": 2080
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 25.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 25.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-95.855855 34.713137, -95.855885 34.716706, -95.851577 34.716709, -95.844422 34.716747, -95.844462 34.713249, -95.842629 34.713245, -95.842666 34.709766, -95.843469 34.709763, -95.844356 34.709759, -95.845214 34.709759, -95.845428 34.709759, -95.84712 34.70976, -95.84712 34.709599, -95.847074 34.705867, -95.855803 34.705778, -95.8558 34.706803, -95.855799 34.707591, -95.855807 34.708714, -95.855855 34.713137))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n),\nstats AS (\n  SELECT ST_SummaryStats(ST_Union(rast)) AS s\n  FROM clipped\n)\nSELECT (s).max - (s).min AS elevation\nFROM stats;",
+  "id": "elevation_range+region-19",
+  "model_output": "```sql\nWITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Pittsburg' AND border_type ILIKE 'city'\n)\nSELECT\n  MAX(elev) - MIN(elev) AS vertical_range\nFROM (\n  SELECT\n    (ST_ValueCount(r.rast, r.geom)).*\n  FROM (\n    SELECT\n      ST_Clip(public.dem_us.rast, 1, geom, TRUE) AS rast\n    FROM\n      region_geom,\n      public.dem_us\n    WHERE\n      ST_Intersects(public.dem_us.rast::geometry, geom)\n  ) AS r,\n  region_geom\n) AS elev_counts;\n```",
+  "predicted_exec": {
+    "error": "column r.geom does not exist\nLINE 10:     (ST_ValueCount(r.rast, r.geom)).*\n                                    ^",
+    "output": []
+  },
+  "predicted_sql": "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Pittsburg' AND border_type ILIKE 'city'\n)\nSELECT\n  MAX(elev) - MIN(elev) AS vertical_range\nFROM (\n  SELECT\n    (ST_ValueCount(r.rast, r.geom)).*\n  FROM (\n    SELECT\n      ST_Clip(public.dem_us.rast, 1, geom, TRUE) AS rast\n    FROM\n      region_geom,\n      public.dem_us\n    WHERE\n      ST_Intersects(public.dem_us.rast::geometry, geom)\n  ) AS r,\n  region_geom\n) AS elev_counts;",
+  "predicted_sql_candidates": [
+    "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Pittsburg' AND border_type ILIKE 'city'\n)\nSELECT\n  MAX(elev) - MIN(elev) AS vertical_range\nFROM (\n  SELECT\n    (ST_ValueCount(r.rast, r.geom)).*\n  FROM (\n    SELECT\n      ST_Clip(public.dem_us.rast, 1, geom, TRUE) AS rast\n    FROM\n      region_geom,\n      public.dem_us\n    WHERE\n      ST_Intersects(public.dem_us.rast::geometry, geom)\n  ) AS r,\n  region_geom\n) AS elev_counts;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the vertical range across Pittsburg, Oklahoma?",
+  "source_file": "elevation_range+region.jsonl",
+  "source_stem": "elevation_range+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 31.76,
+    "total_seconds": 31.761
+  },
+  "usage": {
+    "completion_tokens": 149,
+    "prompt_tokens": 1515,
+    "total_tokens": 1664
+  }
+}

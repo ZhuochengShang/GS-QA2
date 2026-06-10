@@ -1,0 +1,63 @@
+{
+  "answer_type": "name",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "name",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer_name": "Greenwood Cemetery Road",
+      "slope_deg_3": 4.322848,
+      "slope_deg_4": 1.979817
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer_name": "Greenwood Cemetery Road",
+        "slope_deg_3": 4.322848,
+        "slope_deg_4": 1.979817
+      }
+    ]
+  },
+  "gold_sql": "WITH route3 AS (\n  SELECT ST_GeomFromText('LINESTRING (-123.80285 46.136951, -123.804232 46.136958, -123.804399 46.136945, -123.805487 46.13694, -123.805503 46.13694, -123.806616 46.136954, -123.80672 46.136967, -123.806836 46.136988, -123.806941 46.13701, -123.807045 46.137042, -123.807134 46.137073, -123.807208 46.137111, -123.807256 46.137152, -123.807292 46.137207, -123.807319 46.13728, -123.80734 46.137367, -123.807372 46.137441, -123.807394 46.137497, -123.807427 46.137534)', 4326)::geometry AS geom\n),\nroute4 AS (\n  SELECT ST_GeomFromText('LINESTRING (-106.000822 45.61557, -106.001316 45.615596, -106.001434 45.6156, -106.001728 45.615588, -106.00219 45.615456, -106.002691 45.61551, -106.003086 45.615571, -106.003524 45.615637, -106.004178 45.615746, -106.004586 45.615818, -106.005165 45.615938, -106.005783 45.616091, -106.006117 45.616146, -106.006407 45.616169, -106.006847 45.616151, -106.007222 45.616127, -106.007691 45.616207, -106.008217 45.616424, -106.008953 45.616746, -106.009186 45.616902)', 4326)::geometry AS geom\n),\ndem_clip3 AS (\n  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast\n  FROM public.dem_us d, route3 r\n  WHERE ST_Intersects(d.rast, r.geom)\n),\ndem_clip4 AS (\n  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast\n  FROM public.dem_us d, route4 r\n  WHERE ST_Intersects(d.rast, r.geom)\n),\nsegments AS (\n  SELECT 1 AS route_id, (ST_DumpSegments(r.geom)).geom AS seg FROM route3 r\n  UNION ALL\n  SELECT 2 AS route_id, (ST_DumpSegments(r.geom)).geom AS seg FROM route4 r\n),\nendpoints AS (\n  SELECT\n    route_id,\n    ST_StartPoint(seg)         AS p1,\n    ST_EndPoint(seg)           AS p2,\n    ST_Length(seg::geography)  AS seg_len_m\n  FROM segments\n),\nelev AS (\n  SELECT\n    e.route_id,\n    e.seg_len_m,\n    CASE WHEN e.route_id = 1 THEN ST_Value(dc3.rast, 1, e.p1)\n         ELSE ST_Value(dc4.rast, 1, e.p1) END AS z1,\n    CASE WHEN e.route_id = 1 THEN ST_Value(dc3.rast, 1, e.p2)\n         ELSE ST_Value(dc4.rast, 1, e.p2) END AS z2\n  FROM endpoints e, dem_clip3 dc3, dem_clip4 dc4\n),\ngrades AS (\n  SELECT\n    route_id,\n    seg_len_m,\n    CASE WHEN seg_len_m > 0 THEN ABS(z2 - z1) / seg_len_m END AS grade\n  FROM elev\n  WHERE z1 IS NOT NULL AND z2 IS NOT NULL\n),\navg_grade AS (\n  SELECT\n    route_id,\n    SUM(grade * seg_len_m) / NULLIF(SUM(seg_len_m), 0) AS g\n  FROM grades\n  WHERE grade IS NOT NULL\n  GROUP BY route_id\n)\nSELECT\n  CASE WHEN a1.g >= a2.g THEN 'Greenwood Cemetery Road' ELSE 'Barrel Springs Road' END AS answer_name,\n  DEGREES(ATAN(a1.g)) AS slope_deg_3,\n  DEGREES(ATAN(a2.g)) AS slope_deg_4\nFROM avg_grade a1\nJOIN avg_grade a2\n  ON a1.route_id = 1 AND a2.route_id = 2\nWHERE a1.g IS NOT NULL AND a2.g IS NOT NULL;",
+  "id": "slope+compare_route-0",
+  "model_output": "```sql\nWITH greenwood_cemetery_road AS (\n  SELECT geometry\n  FROM roads\n  WHERE road_name ILIKE 'Greenwood Cemetery Road'\n),\nbarrel_springs_road AS (\n  SELECT geometry\n  FROM roads\n  WHERE road_name ILIKE 'Barrel Springs Road'\n),\ngreenwood_slope AS (\n  SELECT\n    ST_Avg(ST_Slope(rast, 1)) AS avg_slope\n  FROM\n    public.dem_us,\n    greenwood_cemetery_road\n  WHERE\n    ST_Intersects(rast, geometry::geometry)\n    AND ST_Clip(rast, true, geometry::geometry, true) IS NOT NULL\n),\nbarrel_springs_slope AS (\n  SELECT\n    ST_Avg(ST_Slope(rast, 1)) AS avg_slope\n  FROM\n    public.dem_us,\n    barrel_springs_road\n  WHERE\n    ST_Intersects(rast, geometry::geometry)\n    AND ST_Clip(rast, true, geometry::geometry, true) IS NOT NULL\n)\nSELECT\n  CASE\n    WHEN g.avg_slope > b.avg_slope THEN 'Greenwood Cemetery Road'\n    WHEN b.avg_slope > g.avg_slope THEN 'Barrel Springs Road'\n    ELSE 'Equal'\n  END AS higher_slope_road,\n  g.avg_slope AS greenwood_avg_slope,\n  b.avg_slope AS barrel_springs_avg_slope\nFROM\n  greenwood_slope g,\n  barrel_springs_slope b;\n```",
+  "predicted_exec": {
+    "error": "function st_avg(raster) does not exist\nLINE 13:     ST_Avg(ST_Slope(rast, 1)) AS avg_slope\n             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH greenwood_cemetery_road AS (\n  SELECT geometry\n  FROM roads\n  WHERE road_name ILIKE 'Greenwood Cemetery Road'\n),\nbarrel_springs_road AS (\n  SELECT geometry\n  FROM roads\n  WHERE road_name ILIKE 'Barrel Springs Road'\n),\ngreenwood_slope AS (\n  SELECT\n    ST_Avg(ST_Slope(rast, 1)) AS avg_slope\n  FROM\n    public.dem_us,\n    greenwood_cemetery_road\n  WHERE\n    ST_Intersects(rast, geometry::geometry)\n    AND ST_Clip(rast, true, geometry::geometry, true) IS NOT NULL\n),\nbarrel_springs_slope AS (\n  SELECT\n    ST_Avg(ST_Slope(rast, 1)) AS avg_slope\n  FROM\n    public.dem_us,\n    barrel_springs_road\n  WHERE\n    ST_Intersects(rast, geometry::geometry)\n    AND ST_Clip(rast, true, geometry::geometry, true) IS NOT NULL\n)\nSELECT\n  CASE\n    WHEN g.avg_slope > b.avg_slope THEN 'Greenwood Cemetery Road'\n    WHEN b.avg_slope > g.avg_slope THEN 'Barrel Springs Road'\n    ELSE 'Equal'\n  END AS higher_slope_road,\n  g.avg_slope AS greenwood_avg_slope,\n  b.avg_slope AS barrel_springs_avg_slope\nFROM\n  greenwood_slope g,\n  barrel_springs_slope b;",
+  "predicted_sql_candidates": [
+    "WITH greenwood_cemetery_road AS (\n  SELECT geometry\n  FROM roads\n  WHERE road_name ILIKE 'Greenwood Cemetery Road'\n),\nbarrel_springs_road AS (\n  SELECT geometry\n  FROM roads\n  WHERE road_name ILIKE 'Barrel Springs Road'\n),\ngreenwood_slope AS (\n  SELECT\n    ST_Avg(ST_Slope(rast, 1)) AS avg_slope\n  FROM\n    public.dem_us,\n    greenwood_cemetery_road\n  WHERE\n    ST_Intersects(rast, geometry::geometry)\n    AND ST_Clip(rast, true, geometry::geometry, true) IS NOT NULL\n),\nbarrel_springs_slope AS (\n  SELECT\n    ST_Avg(ST_Slope(rast, 1)) AS avg_slope\n  FROM\n    public.dem_us,\n    barrel_springs_road\n  WHERE\n    ST_Intersects(rast, geometry::geometry)\n    AND ST_Clip(rast, true, geometry::geometry, true) IS NOT NULL\n)\nSELECT\n  CASE\n    WHEN g.avg_slope > b.avg_slope THEN 'Greenwood Cemetery Road'\n    WHEN b.avg_slope > g.avg_slope THEN 'Barrel Springs Road'\n    ELSE 'Equal'\n  END AS higher_slope_road,\n  g.avg_slope AS greenwood_avg_slope,\n  b.avg_slope AS barrel_springs_avg_slope\nFROM\n  greenwood_slope g,\n  barrel_springs_slope b;"
+  ],
+  "query_type": "raster_only",
+  "question": "Does Greenwood Cemetery Road have a higher average slope than Barrel Springs Road?",
+  "source_file": "slope+compare_route.jsonl",
+  "source_stem": "slope+compare_route",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 67.046,
+    "total_seconds": 67.047
+  },
+  "usage": {
+    "completion_tokens": 310,
+    "prompt_tokens": 1568,
+    "total_tokens": 1878
+  }
+}

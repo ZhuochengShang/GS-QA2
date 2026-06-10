@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 374.993597
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 374.993597
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-82.45315 40.638291, -82.33846 40.638456, -82.338257 40.622613, -82.336744 40.554736, -82.359377 40.552312, -82.374664 40.550743, -82.451842 40.550518, -82.45315 40.638291))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).mean AS elevation\nFROM clipped;",
+  "id": "elevation_mean+region-10",
+  "model_output": "```sql\nWITH clipped_dem AS (\n  SELECT \n    ST_Clip(\n      r.rast, \n      1, \n      ST_GeomFromText('POLYGON ((-82.45315 40.638291, -82.33846 40.638456, -82.338257 40.622613, -82.336744 40.554736, -82.359377 40.552312, -82.374664 40.550743, -82.451842 40.550518, -82.45315 40.638291))', 4326)::geometry,\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast, \n    ST_GeomFromText('POLYGON ((-82.45315 40.638291, -82.33846 40.638456, -82.338257 40.622613, -82.336744 40.554736, -82.359377 40.552312, -82.374664 40.550743, -82.451842 40.550518, -82.45315 40.638291))', 4326)\n  )\n)\nSELECT \n  ROUND(AVG(ST_Value(clipped_rast, 1))::numeric, 2) AS typical_elevation\nFROM clipped_dem;\n```",
+  "predicted_exec": {
+    "error": "function st_value(raster, integer) does not exist\nLINE 16:   ROUND(AVG(ST_Value(clipped_rast, 1))::numeric, 2) AS typic...\n                     ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH clipped_dem AS (\n  SELECT \n    ST_Clip(\n      r.rast, \n      1, \n      ST_GeomFromText('POLYGON ((-82.45315 40.638291, -82.33846 40.638456, -82.338257 40.622613, -82.336744 40.554736, -82.359377 40.552312, -82.374664 40.550743, -82.451842 40.550518, -82.45315 40.638291))', 4326)::geometry,\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast, \n    ST_GeomFromText('POLYGON ((-82.45315 40.638291, -82.33846 40.638456, -82.338257 40.622613, -82.336744 40.554736, -82.359377 40.552312, -82.374664 40.550743, -82.451842 40.550518, -82.45315 40.638291))', 4326)\n  )\n)\nSELECT \n  ROUND(AVG(ST_Value(clipped_rast, 1))::numeric, 2) AS typical_elevation\nFROM clipped_dem;",
+  "predicted_sql_candidates": [
+    "WITH clipped_dem AS (\n  SELECT \n    ST_Clip(\n      r.rast, \n      1, \n      ST_GeomFromText('POLYGON ((-82.45315 40.638291, -82.33846 40.638456, -82.338257 40.622613, -82.336744 40.554736, -82.359377 40.552312, -82.374664 40.550743, -82.451842 40.550518, -82.45315 40.638291))', 4326)::geometry,\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast, \n    ST_GeomFromText('POLYGON ((-82.45315 40.638291, -82.33846 40.638456, -82.338257 40.622613, -82.336744 40.554736, -82.359377 40.552312, -82.374664 40.550743, -82.451842 40.550518, -82.45315 40.638291))', 4326)\n  )\n)\nSELECT \n  ROUND(AVG(ST_Value(clipped_rast, 1))::numeric, 2) AS typical_elevation\nFROM clipped_dem;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the typical elevation across Worthington Township, Richland County, Ohio?",
+  "source_file": "elevation_mean+region.jsonl",
+  "source_stem": "elevation_mean+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 98.291,
+    "total_seconds": 98.292
+  },
+  "usage": {
+    "completion_tokens": 461,
+    "prompt_tokens": 1675,
+    "total_tokens": 2136
+  }
+}

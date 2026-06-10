@@ -1,0 +1,70 @@
+{
+  "answer_type": "count, POIs -> Points",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "count, POIs -> Points",
+    "exact_match": true,
+    "gold_row_count": 1,
+    "max_abs_numeric_delta": 0.0,
+    "mean_abs_numeric_delta": 0.0,
+    "numeric_deltas": [
+      0.0
+    ],
+    "predicted_row_count": 1,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "absolute_error": 0.0,
+      "gold_field": "count",
+      "gold_value": 0.0,
+      "metric_family": "primary_numeric",
+      "predicted_field": "count",
+      "predicted_value": 0.0,
+      "relative_error": 0.0,
+      "within_tolerance": true
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "count": 0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "count": 0
+      }
+    ]
+  },
+  "gold_sql": "WITH candidates AS (\n  SELECT p.id, p.geometry\n  FROM pois p\n  WHERE ST_DWithin(p.geometry::geography, ST_GeomFromText('POINT (-87.836683 42.719106)',4326)::geography, 3700)\n    AND p.amenity = 'fast_food'\n),\npoi_elev AS (\n  SELECT c.id, elev.z\n  FROM candidates c\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, c.geometry::geometry) AS z\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, c.geometry::geometry)\n    LIMIT 1\n  ) elev ON elev.z IS NOT NULL\n)\nSELECT COUNT(*) AS count\nFROM poi_elev\nWHERE z <= 20;",
+  "id": "range+count+elevation_condition-9",
+  "model_output": "```sql\nWITH target_poi AS (\n  SELECT \n    ST_SetSRID(ST_GeomFromText('POINT (-87.836683 42.719106)'), 4326)::geography AS geom\n),\nbuffer_area AS (\n  SELECT \n    ST_Buffer(geom, 3700) AS geom\n  FROM target_poi\n),\nfast_food_restaurants AS (\n  SELECT \n    id\n  FROM pois\n  WHERE \n    amenity = 'fast_food' AND\n    ST_DWithin(\n      geometry::geometry, \n      (SELECT geom::geometry FROM buffer_area), \n      0\n    )\n),\nelevation_check AS (\n  SELECT \n    COUNT(*) AS count\n  FROM fast_food_restaurants ffr\n  JOIN pois p ON p.id = ffr.id\n  WHERE \n    ST_Value(\n      (SELECT rast FROM public.dem_us WHERE ST_Intersects(rast, p.geometry::geometry)),\n      p.geometry::geometry\n    ) < 20\n)\nSELECT count FROM elevation_check;\n```",
+  "predicted_exec": {
+    "error": "",
+    "output": [
+      {
+        "count": 0
+      }
+    ]
+  },
+  "predicted_sql": "WITH target_poi AS (\n  SELECT \n    ST_SetSRID(ST_GeomFromText('POINT (-87.836683 42.719106)'), 4326)::geography AS geom\n),\nbuffer_area AS (\n  SELECT \n    ST_Buffer(geom, 3700) AS geom\n  FROM target_poi\n),\nfast_food_restaurants AS (\n  SELECT \n    id\n  FROM pois\n  WHERE \n    amenity = 'fast_food' AND\n    ST_DWithin(\n      geometry::geometry, \n      (SELECT geom::geometry FROM buffer_area), \n      0\n    )\n),\nelevation_check AS (\n  SELECT \n    COUNT(*) AS count\n  FROM fast_food_restaurants ffr\n  JOIN pois p ON p.id = ffr.id\n  WHERE \n    ST_Value(\n      (SELECT rast FROM public.dem_us WHERE ST_Intersects(rast, p.geometry::geometry)),\n      p.geometry::geometry\n    ) < 20\n)\nSELECT count FROM elevation_check;",
+  "predicted_sql_candidates": [
+    "WITH target_poi AS (\n  SELECT \n    ST_SetSRID(ST_GeomFromText('POINT (-87.836683 42.719106)'), 4326)::geography AS geom\n),\nbuffer_area AS (\n  SELECT \n    ST_Buffer(geom, 3700) AS geom\n  FROM target_poi\n),\nfast_food_restaurants AS (\n  SELECT \n    id\n  FROM pois\n  WHERE \n    amenity = 'fast_food' AND\n    ST_DWithin(\n      geometry::geometry, \n      (SELECT geom::geometry FROM buffer_area), \n      0\n    )\n),\nelevation_check AS (\n  SELECT \n    COUNT(*) AS count\n  FROM fast_food_restaurants ffr\n  JOIN pois p ON p.id = ffr.id\n  WHERE \n    ST_Value(\n      (SELECT rast FROM public.dem_us WHERE ST_Intersects(rast, p.geometry::geometry)),\n      p.geometry::geometry\n    ) < 20\n)\nSELECT count FROM elevation_check;"
+  ],
+  "query_type": "extended",
+  "question": "Within 3700 meters from Papa Murphy's, Racine, WI, how many fast food restaurants can I find with elevations under 20 m?",
+  "source_file": "range+count+elevation_condition.jsonl",
+  "source_stem": "range+count+elevation_condition",
+  "timing": {
+    "execution_seconds": 0.04,
+    "generation_seconds": 49.403,
+    "total_seconds": 49.443
+  },
+  "usage": {
+    "completion_tokens": 231,
+    "prompt_tokens": 1805,
+    "total_tokens": 2036
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "answer_type": "ruggedness_index",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "ruggedness_index",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "tri_value": 2.25
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "tri_value": 2.25
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-74.002416 40.754471)',4326) AS pt\n),\npatch AS (\n  SELECT ST_Buffer(pt::geography, 100)::geometry AS g FROM origin\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, p.g)) AS rast\n  FROM public.dem_us d\n  JOIN patch p ON ST_Intersects(d.rast, p.g)\n),\ntri_rast AS (\n  SELECT ST_TRI(rast, 1) AS rast\n  FROM clipped_dem\n)\nSELECT ST_Value(t.rast, 1, o.pt) AS tri_value\nFROM tri_rast t, origin o;",
+  "id": "ruggedness+poi-14",
+  "model_output": "```sql\nWITH equinox_geom AS (\n  SELECT geometry\n  FROM pois\n  WHERE poi_name ILIKE 'Equinox'\n    AND addr_city = 'New York'\n    AND addr_state = 'NY'\n),\nruggedness_area AS (\n  SELECT ST_Envelope(geometry) AS geom\n  FROM equinox_geom\n),\nclipped_dem AS (\n  SELECT ST_Clip(\n      rast,\n      true,\n      (SELECT geom FROM ruggedness_area)\n    ) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(\n      rast,\n      (SELECT geom FROM ruggedness_area)\n    )\n),\nruggedness_index AS (\n  SELECT ST_Ruggedness(rast, 1) AS ruggedness\n  FROM clipped_dem\n)\nSELECT ruggedness\nFROM ruggedness_index;\n```",
+  "predicted_exec": {
+    "error": "function st_envelope(geography) does not exist\nLINE 9:   SELECT ST_Envelope(geometry) AS geom\n                 ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH equinox_geom AS (\n  SELECT geometry\n  FROM pois\n  WHERE poi_name ILIKE 'Equinox'\n    AND addr_city = 'New York'\n    AND addr_state = 'NY'\n),\nruggedness_area AS (\n  SELECT ST_Envelope(geometry) AS geom\n  FROM equinox_geom\n),\nclipped_dem AS (\n  SELECT ST_Clip(\n      rast,\n      true,\n      (SELECT geom FROM ruggedness_area)\n    ) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(\n      rast,\n      (SELECT geom FROM ruggedness_area)\n    )\n),\nruggedness_index AS (\n  SELECT ST_Ruggedness(rast, 1) AS ruggedness\n  FROM clipped_dem\n)\nSELECT ruggedness\nFROM ruggedness_index;",
+  "predicted_sql_candidates": [
+    "WITH equinox_geom AS (\n  SELECT geometry\n  FROM pois\n  WHERE poi_name ILIKE 'Equinox'\n    AND addr_city = 'New York'\n    AND addr_state = 'NY'\n),\nruggedness_area AS (\n  SELECT ST_Envelope(geometry) AS geom\n  FROM equinox_geom\n),\nclipped_dem AS (\n  SELECT ST_Clip(\n      rast,\n      true,\n      (SELECT geom FROM ruggedness_area)\n    ) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(\n      rast,\n      (SELECT geom FROM ruggedness_area)\n    )\n),\nruggedness_index AS (\n  SELECT ST_Ruggedness(rast, 1) AS ruggedness\n  FROM clipped_dem\n)\nSELECT ruggedness\nFROM ruggedness_index;"
+  ],
+  "query_type": "raster_only",
+  "question": "How rugged is the terrain around Equinox, New York, NY?",
+  "source_file": "ruggedness+poi.jsonl",
+  "source_stem": "ruggedness+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 40.446,
+    "total_seconds": 40.447
+  },
+  "usage": {
+    "completion_tokens": 169,
+    "prompt_tokens": 1603,
+    "total_tokens": 1772
+  }
+}

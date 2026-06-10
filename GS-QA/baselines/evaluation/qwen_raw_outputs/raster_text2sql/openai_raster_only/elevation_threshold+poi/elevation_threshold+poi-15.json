@@ -1,0 +1,66 @@
+{
+  "answer_type": "yes-no",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "yes-no",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 1,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "exact_match": true,
+      "gold_field": "answer",
+      "gold_value": "yes",
+      "metric_family": "primary_text",
+      "predicted_field": "answer",
+      "predicted_value": "yes"
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer": "yes",
+      "elevation_m": 1982.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer": "yes",
+        "elevation_m": 1982.0
+      }
+    ]
+  },
+  "gold_sql": "SELECT\n  CASE\n    WHEN ST_Value(d.rast, 1, ST_GeomFromText('POINT (-105.221648 35.597175)',4326)) > 200\n    THEN 'yes' ELSE 'no'\n  END AS answer,\n  ST_Value(d.rast, 1, ST_GeomFromText('POINT (-105.221648 35.597175)',4326)) AS elevation_m\nFROM public.dem_us d\nWHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-105.221648 35.597175)',4326))\nLIMIT 1;",
+  "id": "elevation_threshold+poi-15",
+  "model_output": "```sql\nWITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-105.221648, 35.597175), 4326)::geography AS geom\n),\nraster_value AS (\n  SELECT \n    (ST_Value(r.rast, p.geom::geometry, true)) AS elevation\n  FROM \n    public.dem_us r,\n    poi_geom p\n  WHERE \n    ST_Intersects(r.rast, p.geom::geometry)\n)\nSELECT \n  CASE \n    WHEN elevation > 200 THEN 'yes'\n    ELSE 'no'\n  END AS answer\nFROM \n  raster_value;\n```",
+  "predicted_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer": "yes"
+      }
+    ]
+  },
+  "predicted_sql": "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-105.221648, 35.597175), 4326)::geography AS geom\n),\nraster_value AS (\n  SELECT \n    (ST_Value(r.rast, p.geom::geometry, true)) AS elevation\n  FROM \n    public.dem_us r,\n    poi_geom p\n  WHERE \n    ST_Intersects(r.rast, p.geom::geometry)\n)\nSELECT \n  CASE \n    WHEN elevation > 200 THEN 'yes'\n    ELSE 'no'\n  END AS answer\nFROM \n  raster_value;",
+  "predicted_sql_candidates": [
+    "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-105.221648, 35.597175), 4326)::geography AS geom\n),\nraster_value AS (\n  SELECT \n    (ST_Value(r.rast, p.geom::geometry, true)) AS elevation\n  FROM \n    public.dem_us r,\n    poi_geom p\n  WHERE \n    ST_Intersects(r.rast, p.geom::geometry)\n)\nSELECT \n  CASE \n    WHEN elevation > 200 THEN 'yes'\n    ELSE 'no'\n  END AS answer\nFROM \n  raster_value;"
+  ],
+  "query_type": "raster_only",
+  "question": "Does New Mexico Highlands University, Las Vegas, NM sit higher than 200 meters above sea level?",
+  "source_file": "elevation_threshold+poi.jsonl",
+  "source_stem": "elevation_threshold+poi",
+  "timing": {
+    "execution_seconds": 0.035,
+    "generation_seconds": 31.16,
+    "total_seconds": 31.195
+  },
+  "usage": {
+    "completion_tokens": 146,
+    "prompt_tokens": 1643,
+    "total_tokens": 1789
+  }
+}

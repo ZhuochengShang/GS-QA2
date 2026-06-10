@@ -1,0 +1,1151 @@
+[
+  {
+    "id": 1300,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.041
+  },
+  {
+    "id": 1301,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikidata, wikipedia, ST_Distance(p.geometry...\n                                   ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1302,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.042
+  },
+  {
+    "id": 1303,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Abrazo Surprise Hospital",
+            "distance_meters": 28219.52106454
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.071
+  },
+  {
+    "id": 1304,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "MassGeneral for Children at North Shore Medical Center"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.028
+  },
+  {
+    "id": 1305,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Wahoo BBQ",
+            "distance_meters": 11780.65819245
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.077
+  },
+  {
+    "id": 1306,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.037
+  },
+  {
+    "id": 1307,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 11.853
+  },
+  {
+    "id": 1308,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.086
+  },
+  {
+    "id": 1309,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.022
+  },
+  {
+    "id": 1310,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "MassGeneral for Children at North Shore Medical Center"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.049
+  },
+  {
+    "id": 1311,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.065
+  },
+  {
+    "id": 1312,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Jenkins County Hospital"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.033
+  },
+  {
+    "id": 1313,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.018
+  },
+  {
+    "id": 1314,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Guthrie Transportation Museum"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.085
+  },
+  {
+    "id": 1315,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Orlando Health Dr. P. Phillips Hospital"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.065
+  },
+  {
+    "id": 1316,
+    "records": [
+      {
+        "output": [],
+        "error": "column reference \"poi_name\" is ambiguous\nLINE 2: SELECT poi_name, ST_Distance(p1.geometry::geography, p2.geom...\n               ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1317,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikidata, wikipedia, ST_Distance(p.geometry...\n                                   ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1318,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.774
+  },
+  {
+    "id": 1319,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.069
+  },
+  {
+    "id": 1320,
+    "records": [
+      {
+        "output": [],
+        "error": "column reference \"wikidata\" is ambiguous\nLINE 2: SELECT poi_name, wikidata, wikipedia, ST_Distance(p.geometry...\n                         ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1321,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikidata, wikipedia, addr_state, addr_city\n                                   ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1322,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.015
+  },
+  {
+    "id": 1323,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.07
+  },
+  {
+    "id": 1324,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"p\"\nLINE 2: SELECT poi_name, ST_Azimuth(p.geometry::geography, (SELECT g...\n                                    ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1325,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Easton Hospital"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.057
+  },
+  {
+    "id": 1326,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Children's Wisconsin-Fox Valley Hospital"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.049
+  },
+  {
+    "id": 1327,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikidata, wikipedia, addr_state, addr_city\n                                   ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1328,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.027
+  },
+  {
+    "id": 1329,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Irwin Army Community Hospital",
+            "addr_city": "Fort Riley"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.054
+  },
+  {
+    "id": 1330,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.021
+  },
+  {
+    "id": 1331,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"p\"\nLINE 2: SELECT poi_name, ST_Distance(p.geometry::geography, (SELECT ...\n                                     ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1332,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.163
+  },
+  {
+    "id": 1333,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "CopperTop",
+            "distance_meters": 2506.11129064
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.092
+  },
+  {
+    "id": 1334,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.037
+  },
+  {
+    "id": 1335,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 2.606
+  },
+  {
+    "id": 1336,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Methodist Children's Hospital",
+            "addr_city": "San Antonio"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.062
+  },
+  {
+    "id": 1337,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"p\"\nLINE 2: SELECT poi_name, ST_Distance(p.geometry::geography, (SELECT ...\n                                     ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1338,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.073
+  },
+  {
+    "id": 1339,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Mexitaly",
+            "addr_city": "York",
+            "amenity": "restaurant",
+            "cuisine": "fusion"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.028
+  },
+  {
+    "id": 1340,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Cafe Brussels",
+            "distance_meters": 180373.04617002
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.083
+  },
+  {
+    "id": 1341,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.395
+  },
+  {
+    "id": 1342,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikidata, wikipedia, addr_state, addr_city\n                                   ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1343,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.082
+  },
+  {
+    "id": 1344,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.059
+  },
+  {
+    "id": 1345,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.083
+  },
+  {
+    "id": 1346,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.115
+  },
+  {
+    "id": 1347,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikidata, wikipedia, addr_state, addr_city\n                                   ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1348,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.109
+  },
+  {
+    "id": 1349,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Mayo Clinic Emergency Room"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.062
+  },
+  {
+    "id": 1350,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.013
+  },
+  {
+    "id": 1351,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 11.366
+  },
+  {
+    "id": 1352,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Taichi Pot Shabu Shabu",
+            "distance_meters": 3176053.83273847
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.053
+  },
+  {
+    "id": 1353,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"p\"\nLINE 2: SELECT poi_name, ST_Distance(p.geometry::geography, (SELECT ...\n                                     ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1354,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.045
+  },
+  {
+    "id": 1355,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"p\"\nLINE 2: SELECT poi_name, ST_Distance(p.geometry::geography, (SELECT ...\n                                     ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1356,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.044
+  },
+  {
+    "id": 1357,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"p\"\nLINE 2: SELECT poi_name, ST_Distance(p.geometry::geography, (SELECT ...\n                                     ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1358,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 10.929
+  },
+  {
+    "id": 1359,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.087
+  },
+  {
+    "id": 1360,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Cafe Waterfront"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.06
+  },
+  {
+    "id": 1361,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 23.863
+  },
+  {
+    "id": 1362,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_union(geography) does not exist\nLINE 7:                  (SELECT ST_Centroid(ST_Union(pr.geometry)) \n                                             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1363,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Showmars",
+            "amenity": "restaurant",
+            "cuisine": "fusion"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.032
+  },
+  {
+    "id": 1364,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"p\"\nLINE 2: SELECT poi_name, ST_Distance(p.geometry::geography, (SELECT ...\n                                     ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1365,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.088
+  },
+  {
+    "id": 1366,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Eisenhower Army Medical Center",
+            "bearing_radians": 0.877847873297769
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 6.83
+  },
+  {
+    "id": 1367,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Domino's",
+            "distance": 3119.40789844
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.108
+  },
+  {
+    "id": 1368,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikipedia, ST_Distance(p.geometry::geograph...\n                         ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1369,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.085
+  },
+  {
+    "id": 1370,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Sanford Aberdeen Medical Center",
+            "addr_city": "Aberdeen"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.048
+  },
+  {
+    "id": 1371,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "NuVegan Cafe",
+            "addr_state": "VA",
+            "addr_city": "Richmond City",
+            "amenity": "restaurant",
+            "takeaway": "yes"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.06
+  },
+  {
+    "id": 1372,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.029
+  },
+  {
+    "id": 1373,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikidata, wikipedia, addr_state, addr_city\n                                   ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1374,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.069
+  },
+  {
+    "id": 1375,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.016
+  },
+  {
+    "id": 1376,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "McClure Archives and University Museum",
+            "distance_meters": 297365.91380568
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.048
+  },
+  {
+    "id": 1377,
+    "records": [
+      {
+        "output": [],
+        "error": "column reference \"poi_name\" is ambiguous\nLINE 2: SELECT poi_name, ST_Distance(p1.geometry::geography, p2.geom...\n               ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1378,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.077
+  },
+  {
+    "id": 1379,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Sparrow Clinton Hospital"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.061
+  },
+  {
+    "id": 1380,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 2.411
+  },
+  {
+    "id": 1381,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Buckland Museum of Witchcraft and Magick",
+            "distance_meters": 5456.09862914
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.048
+  },
+  {
+    "id": 1382,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "New York Burger Co",
+            "amenity": "fast_food",
+            "addr_state": "NY",
+            "addr_city": "New York"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.061
+  },
+  {
+    "id": 1383,
+    "records": [
+      {
+        "output": [],
+        "error": "more than one row returned by a subquery used as an expression"
+      }
+    ],
+    "run_seconds": 0.128
+  },
+  {
+    "id": 1384,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.052
+  },
+  {
+    "id": 1385,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.038
+  },
+  {
+    "id": 1386,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.04
+  },
+  {
+    "id": 1387,
+    "records": [
+      {
+        "output": [],
+        "error": "column reference \"poi_name\" is ambiguous\nLINE 2: SELECT poi_name, ST_Azimuth(p.geometry::geography, m.geometr...\n               ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1388,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.036
+  },
+  {
+    "id": 1389,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "CityBird Tenders",
+            "addr_state": "IL",
+            "addr_city": "Chicago",
+            "amenity": "restaurant",
+            "cuisine": "chicken"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.079
+  },
+  {
+    "id": 1390,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikidata, wikipedia, addr_state, addr_city\n                                   ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1391,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.056
+  },
+  {
+    "id": 1392,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.088
+  },
+  {
+    "id": 1393,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 8.77
+  },
+  {
+    "id": 1394,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Ellsworth County Medical Center",
+            "addr_city": "Ellsworth"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.052
+  },
+  {
+    "id": 1395,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Falafel House"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.08
+  },
+  {
+    "id": 1396,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikidata, wikipedia, ST_Distance(p.geometry...\n                                   ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1397,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"p\"\nLINE 2: SELECT poi_name, ST_Distance(p.geometry::geography, (SELECT ...\n                                     ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1398,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Ellett Memorial Hospital"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.027
+  },
+  {
+    "id": 1399,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.115
+  }
+]

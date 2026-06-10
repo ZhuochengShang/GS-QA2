@@ -1,0 +1,59 @@
+{
+  "answer_type": "aspect",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "aspect",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "aspect_degrees": 135.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "aspect_degrees": 135.0
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-74.547655 40.363996)',4326) AS pt\n),\npatch AS (\n  SELECT ST_Buffer(pt::geography, 100)::geometry AS g FROM origin\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, p.g)) AS rast\n  FROM public.dem_us d\n  JOIN patch p ON ST_Intersects(d.rast, p.g)\n),\naspect_rast AS (\n  SELECT ST_Aspect(rast, 1, '32BF', 'DEGREES') AS rast\n  FROM clipped_dem\n)\nSELECT ST_Value(a.rast, 1, o.pt) AS aspect_degrees\nFROM aspect_rast a, origin o;",
+  "id": "aspect+poi-19",
+  "model_output": "```sql\nWITH park_geom AS (\n  SELECT geometry\n  FROM parks\n  WHERE poi_name ILIKE 'Sondek Park'\n    AND addr_city ILIKE 'Monmouth Junction'\n    AND addr_state ILIKE 'NJ'\n)\n, clipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geometry FROM park_geom)::geometry, true) AS clipped_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geometry FROM park_geom)::geometry)\n)\n, slope_raster AS (\n  SELECT ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM clipped_dem\n)\n, aspect_raster AS (\n  SELECT ST_Aspect(clipped_rast, 1, '32BF') AS aspect_rast\n  FROM clipped_dem\n)\n, stats AS (\n  SELECT\n    ST_Stats(aspect_rast, 1, true) AS aspect_stats\n  FROM aspect_raster\n)\nSELECT\n  aspect_stats.mean AS mean_aspect_degrees\nFROM stats;\n```",
+  "predicted_exec": {
+    "error": "column \"poi_name\" does not exist\nLINE 4:   WHERE poi_name ILIKE 'Sondek Park'\n                ^\nHINT:  Perhaps you meant to reference the column \"parks.park_name\" or the column \"parks.old_name\".",
+    "output": []
+  },
+  "predicted_sql": "WITH park_geom AS (\n  SELECT geometry\n  FROM parks\n  WHERE poi_name ILIKE 'Sondek Park'\n    AND addr_city ILIKE 'Monmouth Junction'\n    AND addr_state ILIKE 'NJ'\n)\n, clipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geometry FROM park_geom)::geometry, true) AS clipped_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geometry FROM park_geom)::geometry)\n)\n, slope_raster AS (\n  SELECT ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM clipped_dem\n)\n, aspect_raster AS (\n  SELECT ST_Aspect(clipped_rast, 1, '32BF') AS aspect_rast\n  FROM clipped_dem\n)\n, stats AS (\n  SELECT\n    ST_Stats(aspect_rast, 1, true) AS aspect_stats\n  FROM aspect_raster\n)\nSELECT\n  aspect_stats.mean AS mean_aspect_degrees\nFROM stats;",
+  "predicted_sql_candidates": [
+    "WITH park_geom AS (\n  SELECT geometry\n  FROM parks\n  WHERE poi_name ILIKE 'Sondek Park'\n    AND addr_city ILIKE 'Monmouth Junction'\n    AND addr_state ILIKE 'NJ'\n)\n, clipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geometry FROM park_geom)::geometry, true) AS clipped_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geometry FROM park_geom)::geometry)\n)\n, slope_raster AS (\n  SELECT ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM clipped_dem\n)\n, aspect_raster AS (\n  SELECT ST_Aspect(clipped_rast, 1, '32BF') AS aspect_rast\n  FROM clipped_dem\n)\n, stats AS (\n  SELECT\n    ST_Stats(aspect_rast, 1, true) AS aspect_stats\n  FROM aspect_raster\n)\nSELECT\n  aspect_stats.mean AS mean_aspect_degrees\nFROM stats;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the aspect of the slope at Sondek Park, Monmouth Junction, NJ?",
+  "source_file": "aspect+poi.jsonl",
+  "source_stem": "aspect+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 48.371,
+    "total_seconds": 48.372
+  },
+  "usage": {
+    "completion_tokens": 222,
+    "prompt_tokens": 1611,
+    "total_tokens": 1833
+  }
+}

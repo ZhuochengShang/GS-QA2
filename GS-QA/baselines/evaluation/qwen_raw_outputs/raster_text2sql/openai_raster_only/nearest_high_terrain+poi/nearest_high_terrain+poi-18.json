@@ -1,0 +1,59 @@
+{
+  "answer_type": "distance",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "distance",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "distance_m": 104719.504217
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "distance_m": 104719.504217
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-74.38466 41.004704)',4326) AS pt\n),\nnearby_tiles AS (\n  SELECT d.rast\n  FROM public.dem_us d, origin o\n  WHERE d.rast && ST_Expand(o.pt, 1.0)\n),\nmasked AS (\n\t  SELECT ST_MapAlgebra(\n\t           rast,\n\t           1,\n\t           '32BF'::text,\n\t           'CASE WHEN [rast.val] > 1100 THEN [rast.val] ELSE NULL END'::text,\n\t           NULL::double precision\n\t         ) AS rast\n  FROM nearby_tiles\n),\nqualifying_pixels AS (\n  SELECT (pp).geom AS geom\n  FROM masked\n  CROSS JOIN LATERAL ST_PixelAsCentroids(rast, 1, TRUE) AS pp\n)\nSELECT MIN(ST_Distance(p.geom::geography, o.pt::geography)) AS distance_m\nFROM qualifying_pixels p, origin o;",
+  "id": "nearest_high_terrain+poi-18",
+  "model_output": "```sql\nWITH park_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-74.38466 41.004704)'), 4326)::geography AS geom\n),\nraster_analysis AS (\n  SELECT\n    ST_Distance(\n      park_geom.geom,\n      ST_Envelope(ST_Clip(r.rast, true, ST_Buffer(park_geom.geom::geometry, 10000))),\n      true\n    ) AS distance_to_higher_elevation\n  FROM\n    park_geom,\n    public.dem_us r\n  WHERE\n    ST_Intersects(r.rast, park_geom.geom::geometry)\n    AND ST_Value(r.rast, 1, ST_Centroid(ST_Envelope(r.rast))) > 1100\n  ORDER BY\n    distance_to_higher_elevation\n  LIMIT 1\n)\nSELECT distance_to_higher_elevation FROM raster_analysis;\n```",
+  "predicted_exec": {
+    "error": "function st_clip(raster, boolean, geometry) does not exist\nLINE 8:       ST_Envelope(ST_Clip(r.rast, true, ST_Buffer(park_geom....\n                          ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH park_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-74.38466 41.004704)'), 4326)::geography AS geom\n),\nraster_analysis AS (\n  SELECT\n    ST_Distance(\n      park_geom.geom,\n      ST_Envelope(ST_Clip(r.rast, true, ST_Buffer(park_geom.geom::geometry, 10000))),\n      true\n    ) AS distance_to_higher_elevation\n  FROM\n    park_geom,\n    public.dem_us r\n  WHERE\n    ST_Intersects(r.rast, park_geom.geom::geometry)\n    AND ST_Value(r.rast, 1, ST_Centroid(ST_Envelope(r.rast))) > 1100\n  ORDER BY\n    distance_to_higher_elevation\n  LIMIT 1\n)\nSELECT distance_to_higher_elevation FROM raster_analysis;",
+  "predicted_sql_candidates": [
+    "WITH park_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-74.38466 41.004704)'), 4326)::geography AS geom\n),\nraster_analysis AS (\n  SELECT\n    ST_Distance(\n      park_geom.geom,\n      ST_Envelope(ST_Clip(r.rast, true, ST_Buffer(park_geom.geom::geometry, 10000))),\n      true\n    ) AS distance_to_higher_elevation\n  FROM\n    park_geom,\n    public.dem_us r\n  WHERE\n    ST_Intersects(r.rast, park_geom.geom::geometry)\n    AND ST_Value(r.rast, 1, ST_Centroid(ST_Envelope(r.rast))) > 1100\n  ORDER BY\n    distance_to_higher_elevation\n  LIMIT 1\n)\nSELECT distance_to_higher_elevation FROM raster_analysis;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the distance to the nearest elevation higher than 1100 meters from Silas Condict County Park, Kinnelon, NJ?",
+  "source_file": "nearest_high_terrain+poi.jsonl",
+  "source_stem": "nearest_high_terrain+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 46.342,
+    "total_seconds": 46.343
+  },
+  "usage": {
+    "completion_tokens": 205,
+    "prompt_tokens": 1645,
+    "total_tokens": 1850
+  }
+}

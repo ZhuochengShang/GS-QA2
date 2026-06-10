@@ -1,0 +1,502 @@
+[
+  {
+    "id": 1800,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%New York Institute of Technology%' LIMIT 1)::geography,\n  170000\n)\nAND tourism = 'zoo';\n```",
+    "run_seconds": 15.156
+  },
+  {
+    "id": 1801,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Franklin Pierce University%' AND addr_city ILIKE '%Lebanon%' LIMIT 1)::geography,\n  190000\n)\nAND tourism = 'gallery';\n```",
+    "run_seconds": 17.634
+  },
+  {
+    "id": 1802,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM regions WHERE region_name ILIKE '%Procter Farm Preserve%' LIMIT 1)::geography,\n  80000\n)\nAND tourism = 'aquarium';\n```",
+    "run_seconds": 15.109
+  },
+  {
+    "id": 1803,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%House of Air%' AND addr_city ILIKE '%San Francisco%' AND addr_state ILIKE '%CA%' LIMIT 1)::geography,\n  50000\n)\nAND amenity = 'museum';\n```",
+    "run_seconds": 18.929
+  },
+  {
+    "id": 1804,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'cafe'\n  AND ST_DWithin(\n    geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%School of Cosmetology%' AND addr_city ILIKE '%Somerset%' AND addr_state ILIKE '%KY%' LIMIT 1)::geography,\n    60000\n  );\n```",
+    "run_seconds": 19.478
+  },
+  {
+    "id": 1805,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Neversink Pit%' AND addr_city ILIKE '%Fackler%' AND addr_state ILIKE '%AL%' LIMIT 1)::geography,\n  100000\n)\nAND tourism = 'attraction';\n```",
+    "run_seconds": 19.186
+  },
+  {
+    "id": 1806,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_DWithin(parks.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Holiday Inn & Suites Joliet Southwest%' LIMIT 1)::geography, 110000)\n  AND leisure = 'nature_reserve';\n```",
+    "run_seconds": 15.204
+  },
+  {
+    "id": 1807,
+    "content": "```sql\nSELECT COUNT(*) AS garden_count\nFROM parks\nWHERE ST_DWithin(\n  parks.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Santa Barbara Museum of Natural History Sea Center%' AND addr_city ILIKE '%Santa Barbara%' LIMIT 1)::geography,\n  40000\n)\nAND leisure = 'garden';\n```",
+    "run_seconds": 18.406
+  },
+  {
+    "id": 1808,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_DWithin(\n  parks.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Sarasota Art Museum%' AND addr_city ILIKE '%Sarasota%' AND addr_state ILIKE '%FL%' LIMIT 1)::geography,\n  190000\n)\nAND leisure = 'nature_reserve';\n```",
+    "run_seconds": 18.487
+  },
+  {
+    "id": 1809,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'zoo'\n  AND ST_DWithin(\n    pois.geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Whitney Avenue Community Garden%' AND addr_city ILIKE '%Lexington%' AND addr_state ILIKE '%KY%')::geography,\n    150000\n  );\n```",
+    "run_seconds": 18.837
+  },
+  {
+    "id": 1810,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE tourism = 'zoo'\n  AND ST_DWithin(\n    pois.geometry::geography,\n    (SELECT geometry FROM parks WHERE park_name ILIKE '%West End Park%' LIMIT 1)::geography,\n    120000\n  );\n```",
+    "run_seconds": 14.581
+  },
+  {
+    "id": 1811,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois p\nWHERE p.tourism = 'hotel'\n  AND p.poi_name ILIKE '%beach resort%'\n  AND ST_DWithin(\n    p.geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Hoop-Dee-Doo Musical Revue%' AND addr_state = 'FL' LIMIT 1)::geography,\n    180000\n  );\n```",
+    "run_seconds": 20.918
+  },
+  {
+    "id": 1812,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_DWithin(\n  parks.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%In the Game - Hollywood Park%' LIMIT 1)::geography,\n  110000\n)\nAND leisure = 'garden';\n```",
+    "run_seconds": 14.809
+  },
+  {
+    "id": 1813,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'restaurant'\n  AND ST_DWithin(\n    pois.geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Smokestack Pottery%' AND addr_city ILIKE '%Fort Collins%' AND addr_state ILIKE '%CO%' LIMIT 1)::geography,\n    120000\n  );\n```",
+    "run_seconds": 18.515
+  },
+  {
+    "id": 1814,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Minnesota Military Museum%' AND addr_city ILIKE '%Little Falls%')::geography,\n  120000\n)\nAND amenity = 'hotel';\n```",
+    "run_seconds": 15.682
+  },
+  {
+    "id": 1815,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_DWithin(parks.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Go Ape Treetop Adventure Course%' AND addr_city ILIKE '%Strongsville%' AND addr_state ILIKE '%OH%' LIMIT 1)::geography, 150000);\n```",
+    "run_seconds": 16.548
+  },
+  {
+    "id": 1816,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Residence Inn%' AND addr_city ILIKE '%Los Angeles%' AND addr_state ILIKE '%CA%' LIMIT 1)::geography,\n  170000\n)\nAND amenity = 'hospital';\n```",
+    "run_seconds": 17.912
+  },
+  {
+    "id": 1817,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'university'\n  AND ST_DWithin(\n    pois.geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Wellington Reservation%' LIMIT 1)::geography,\n    90000\n  );\n```",
+    "run_seconds": 14.611
+  },
+  {
+    "id": 1818,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Montana Grizzly Encounter%' AND addr_city ILIKE '%Bozeman%' AND addr_state ILIKE '%MT%' LIMIT 1)::geography,\n  120000\n)\nAND amenity = 'hotel';\n```",
+    "run_seconds": 18.817
+  },
+  {
+    "id": 1819,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois p\nWHERE p.tourism = 'hotel'\n  AND p.poi_name ILIKE '%beach resort%'\n  AND ST_DWithin(\n    p.geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Santa Barbara Museum of Natural History Sea Center%' AND addr_city ILIKE '%Santa Barbara%' AND addr_state ILIKE '%CA%')::geography,\n    150000\n  );\n```",
+    "run_seconds": 23.208
+  },
+  {
+    "id": 1820,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Big Springs Park - Historic Cherokee Trail of Tears%' AND addr_city ILIKE '%Princeton%' AND addr_state ILIKE '%KY%')::geography,\n  170000\n) AND tourism = 'viewpoint';\n```",
+    "run_seconds": 19.52
+  },
+  {
+    "id": 1821,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_DWithin(\n  parks.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Watercrest Senior Living%' AND addr_city ILIKE '%Myrtle Beach%' AND addr_state ILIKE '%SC%' LIMIT 1)::geography,\n  60000\n)\nAND leisure = 'golf_course';\n```",
+    "run_seconds": 18.148
+  },
+  {
+    "id": 1822,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_DWithin(\n  parks.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Copicut Woods Parking%' LIMIT 1)::geography,\n  100000\n)\nAND leisure = 'stadium';\n```",
+    "run_seconds": 14.519
+  },
+  {
+    "id": 1823,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Aquarium Outfitters%' AND addr_city ILIKE '%Wake Forest%' AND addr_state ILIKE '%NC%' LIMIT 1)::geography,\n  140000\n)\nAND tourism = 'viewpoint';\n```",
+    "run_seconds": 18.596
+  },
+  {
+    "id": 1824,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'university'\n  AND ST_DWithin(\n    pois.geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Queen Street Gallery%' AND addr_city ILIKE '%Martinsburg%' AND addr_state ILIKE '%WV%' LIMIT 1)::geography,\n    70000\n  );\n```",
+    "run_seconds": 19.319
+  },
+  {
+    "id": 1825,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n    pois.geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%University of North Georgia (Oconee Campus)%' AND addr_city ILIKE '%Watkinsville%' LIMIT 1)::geography,\n    80000\n)\nAND amenity = 'hotel';\n```",
+    "run_seconds": 18.144
+  },
+  {
+    "id": 1826,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_DWithin(\n  parks.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%House of Air%' AND addr_city ILIKE '%San Francisco%' LIMIT 1)::geography,\n  30000\n);\n```",
+    "run_seconds": 14.793
+  },
+  {
+    "id": 1827,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Kenan House%' AND addr_city ILIKE '%Wilmington%' AND addr_state ILIKE '%NC%' LIMIT 1)::geography,\n  180000\n)\nAND tourism = 'aquarium';\n```",
+    "run_seconds": 17.949
+  },
+  {
+    "id": 1828,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Haven Senior Horizons of Phoenix%' LIMIT 1)::geography,\n  120000\n)\nAND tourism = 'attraction';\n```",
+    "run_seconds": 15.055
+  },
+  {
+    "id": 1829,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Omni Scottsdale Resort & Spa at Montelucia%' LIMIT 1)::geography,\n  100000\n)\nAND amenity = 'university';\n```",
+    "run_seconds": 16.291
+  },
+  {
+    "id": 1830,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'restaurant'\n  AND ST_DWithin(\n    geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%northwest nazarene university%' AND addr_city ILIKE '%idaho falls%' AND addr_state ILIKE '%id%' LIMIT 1)::geography,\n    160000\n  );\n```",
+    "run_seconds": 18.893
+  },
+  {
+    "id": 1831,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%70 Park Avenue Hotel%' LIMIT 1)::geography,\n  20000\n)\nAND tourism = 'viewpoint';\n```",
+    "run_seconds": 14.471
+  },
+  {
+    "id": 1832,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Bunker Hill%' AND addr_state ILIKE '%IL%' LIMIT 1)::geography,\n  140000\n)\nAND amenity = 'restaurant';\n```",
+    "run_seconds": 15.803
+  },
+  {
+    "id": 1833,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'hospital'\n  AND ST_DWithin(\n    pois.geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Whitney Avenue Community Garden%' AND addr_city ILIKE '%Lexington%' AND addr_state ILIKE '%KY%')::geography,\n    170000\n  );\n```",
+    "run_seconds": 18.477
+  },
+  {
+    "id": 1834,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_DWithin(\n  parks.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Red Wolf Sanctuary%' AND addr_city ILIKE '%Rising Sun%' AND addr_state ILIKE '%IN%' LIMIT 1)::geography,\n  90000\n)\n```",
+    "run_seconds": 16.299
+  },
+  {
+    "id": 1835,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'hotel'\n  AND ST_DWithin(\n    geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Taylor''s Aquarium%' AND addr_city ILIKE '%Dunn%' AND addr_state ILIKE '%NC%' LIMIT 1)::geography,\n    80000\n  );\n```",
+    "run_seconds": 18.017
+  },
+  {
+    "id": 1836,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'restaurant'\n  AND ST_DWithin(\n    geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Magness Arena%' LIMIT 1)::geography,\n    170000\n  );\n```",
+    "run_seconds": 14.509
+  },
+  {
+    "id": 1837,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'hospital'\n  AND ST_DWithin(\n    pois.geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Yellow River Game Ranch%' AND addr_city ILIKE '%Lilburn%' AND addr_state ILIKE '%GA%' LIMIT 1)::geography,\n    90000\n  );\n```",
+    "run_seconds": 18.914
+  },
+  {
+    "id": 1838,
+    "content": "```sql\nSELECT COUNT(*) \nFROM parks \nWHERE ST_DWithin(\n  parks.geometry::geography, \n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Kettlewell & Edwards%' LIMIT 1)::geography, \n  80000\n) \nAND leisure = 'garden';\n```",
+    "run_seconds": 14.921
+  },
+  {
+    "id": 1839,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'fast_food'\n  AND ST_DWithin(\n        pois.geometry::geography,\n        (SELECT geometry FROM regions WHERE region_name ILIKE '%Wernick Farm Reserve%' LIMIT 1)::geography,\n        130000\n      );\n```",
+    "run_seconds": 15.209
+  },
+  {
+    "id": 1840,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Basin Cove Overlook%' AND addr_city ILIKE '%Laurel Springs%' AND addr_state ILIKE '%NC%' LIMIT 1)::geography,\n  170000\n)\nAND tourism = 'zoo';\n```",
+    "run_seconds": 18.93
+  },
+  {
+    "id": 1841,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Ritter Park Rose Garden%' AND addr_city ILIKE '%Huntington%' LIMIT 1)::geography,\n  110000\n)\nAND amenity = 'university';\n```",
+    "run_seconds": 16.977
+  },
+  {
+    "id": 1842,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_DWithin(\n  parks.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Kenan House%' AND addr_city ILIKE '%Wilmington%' AND addr_state ILIKE '%NC%' LIMIT 1)::geography,\n  130000\n)\nAND park_name IS NOT NULL;\n```",
+    "run_seconds": 18.032
+  },
+  {
+    "id": 1843,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'cafe'\n  AND ST_DWithin(\n        pois.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Wenatchee Valley Museum and Cultural Center%' LIMIT 1)::geography,\n        140000\n      );\n```",
+    "run_seconds": 16.351
+  },
+  {
+    "id": 1844,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_DWithin(\n  parks.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Broadbent Arena%' AND addr_city ILIKE '%Louisville%' AND addr_state ILIKE '%KY%' LIMIT 1)::geography,\n  180000\n) AND leisure = 'nature_reserve';\n```",
+    "run_seconds": 18.942
+  },
+  {
+    "id": 1845,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Hickory Grove Riverfront%' AND addr_city ILIKE '%Cary%' LIMIT 1)::geography,\n  130000\n) AND tourism = 'viewpoint';\n```",
+    "run_seconds": 17.616
+  },
+  {
+    "id": 1846,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Glenhill Farmhouse%' AND addr_city ILIKE '%Erie%' AND addr_state ILIKE '%PA%' LIMIT 1)::geography,\n  170000\n)\nAND amenity = 'gallery';\n```",
+    "run_seconds": 19.254
+  },
+  {
+    "id": 1847,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(pois.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Scienceworks%' AND addr_city ILIKE '%Ashland%' AND addr_state ILIKE '%OR%' LIMIT 1)::geography, 20000);\n```",
+    "run_seconds": 15.804
+  },
+  {
+    "id": 1848,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n        pois.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Meadow Museum%' AND addr_city ILIKE '%Benson%' AND addr_state ILIKE '%NC%' LIMIT 1)::geography,\n        50000\n      )\n  AND amenity = 'gallery';\n```",
+    "run_seconds": 19.216
+  },
+  {
+    "id": 1849,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE tourism = 'zoo'\n  AND ST_DWithin(\n        pois.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%River Deck%' AND addr_city ILIKE '%Edgewater%' AND addr_state ILIKE '%MD%' LIMIT 1)::geography,\n        80000\n      );\n```",
+    "run_seconds": 18.751
+  },
+  {
+    "id": 1850,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Bidwell House Museum%' AND addr_city ILIKE '%Monterey%' AND addr_state ILIKE '%MA%')::geography,\n  190000\n) AND tourism = 'attraction';\n```",
+    "run_seconds": 18.736
+  },
+  {
+    "id": 1851,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n    pois.geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Lincoln Park Zoo%' AND addr_city ILIKE '%Manitowoc%' AND addr_state ILIKE '%WI%')::geography,\n    30000\n)\nAND tourism = 'attraction';\n```",
+    "run_seconds": 18.751
+  },
+  {
+    "id": 1852,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_DWithin(\n  parks.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Harbor Hotel%' AND addr_city ILIKE '%Clayton%' LIMIT 1)::geography,\n  160000\n);\n```",
+    "run_seconds": 15.498
+  },
+  {
+    "id": 1853,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_DWithin(\n  parks.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Dawson Cole Fine Art%' AND addr_city ILIKE '%Laguna Beach%' AND addr_state ILIKE '%CA%' LIMIT 1)::geography,\n  160000\n);\n```",
+    "run_seconds": 18.275
+  },
+  {
+    "id": 1854,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_DWithin(\n  parks.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Maple Lawn Manor%' LIMIT 1)::geography,\n  10000\n)\nAND leisure = 'stadium';\n```",
+    "run_seconds": 14.811
+  },
+  {
+    "id": 1855,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'fast_food'\n  AND ST_DWithin(\n    geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%University of North Georgia (Oconee Campus)%' AND addr_city ILIKE '%Watkinsville%' AND addr_state ILIKE '%GA%' LIMIT 1)::geography,\n    80000\n  );\n```",
+    "run_seconds": 20.696
+  },
+  {
+    "id": 1856,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Super Cichlids Inc%' AND addr_city ILIKE '%Dover%' AND addr_state ILIKE '%DE%' LIMIT 1)::geography,\n  60000\n)\nAND amenity = 'hospital';\n```",
+    "run_seconds": 18.579
+  },
+  {
+    "id": 1857,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Cox Science Center and Aquarium%' LIMIT 1)::geography,\n  120000\n)\nAND amenity = 'museum';\n```",
+    "run_seconds": 15.539
+  },
+  {
+    "id": 1858,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_DWithin(\n  parks.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Gary Lapelusa Landscaping LLC%' AND addr_city ILIKE '%Bayonne%' AND addr_state ILIKE '%NJ%')::geography,\n  190000\n) AND leisure = 'nature_reserve';\n```",
+    "run_seconds": 19.238
+  },
+  {
+    "id": 1859,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_DWithin(\n  parks.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%sugarplum zoo%' AND addr_city ILIKE '%temecula%' LIMIT 1)::geography,\n  120000\n)\nAND leisure = 'garden';\n```",
+    "run_seconds": 17.618
+  },
+  {
+    "id": 1860,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%3 Palms Zoo & Education Center%' AND addr_city ILIKE '%Townsend%' AND addr_state ILIKE '%DE%' LIMIT 1)::geography,\n  60000\n)\nAND tourism = 'aquarium';\n```",
+    "run_seconds": 19.618
+  },
+  {
+    "id": 1861,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_DWithin(\n  parks.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Eastern Museum of MotorSports Racing%' AND addr_city ILIKE '%York Springs%' AND addr_state ILIKE '%PA%' LIMIT 1)::geography,\n  170000\n)\n```",
+    "run_seconds": 17.923
+  },
+  {
+    "id": 1862,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(pois.geometry::geography, \n                 (SELECT geometry FROM parks WHERE park_name ILIKE '%Thomson Park%' LIMIT 1)::geography, \n                 120000)\n  AND amenity = 'university';\n```",
+    "run_seconds": 15.436
+  },
+  {
+    "id": 1863,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_DWithin(\n  parks.geometry::geography,\n  (SELECT geometry FROM parks WHERE park_name ILIKE '%Gator Country Wildlife Adventure Park%' LIMIT 1)::geography,\n  170000\n)\nAND park_name != 'Gator Country Wildlife Adventure Park';\n```",
+    "run_seconds": 16.56
+  },
+  {
+    "id": 1864,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n        pois.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Dells Mill and Museum%' AND addr_city ILIKE '%Augusta%' AND addr_state ILIKE '%WI%' LIMIT 1)::geography,\n        60000\n      )\n  AND amenity = 'fast_food';\n```",
+    "run_seconds": 19.273
+  },
+  {
+    "id": 1865,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Harbor Oaks Hospital%' AND addr_city ILIKE '%New Baltimore%' AND addr_state ILIKE '%MI%')::geography,\n  60000\n)\nAND amenity = 'museum';\n```",
+    "run_seconds": 18.401
+  },
+  {
+    "id": 1866,
+    "content": "```sql\nSELECT COUNT(*) AS attraction_count\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Residence Inn%' AND addr_city ILIKE '%Los Angeles%' AND addr_state ILIKE '%CA%' LIMIT 1)::geography,\n  190000\n)\nAND tourism = 'attraction';\n```",
+    "run_seconds": 19.209
+  },
+  {
+    "id": 1867,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'cafe'\n  AND ST_DWithin(\n    pois.geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Sand Dunes Frontier%' AND addr_city ILIKE '%Florence%' AND addr_state ILIKE '%OR%' LIMIT 1)::geography,\n    150000\n  );\n```",
+    "run_seconds": 19.579
+  },
+  {
+    "id": 1868,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'stadium'\n  AND ST_DWithin(\n    geometry::geography,\n    (\n      SELECT ST_Centroid(geometry::geography)\n      FROM parks\n      WHERE park_name ILIKE '%Oxbow Park%'\n    ),\n    30000\n  )\n  OR ST_DWithin(\n    geometry::geography,\n    (\n      SELECT ST_Centroid(geometry::geography)\n      FROM pois\n      WHERE poi_name ILIKE '%Zollman Zoo%' AND addr_city ILIKE '%Byron%'\n    ),\n    30000\n  );\n```",
+    "run_seconds": 30.872
+  },
+  {
+    "id": 1869,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Island Adventures%' AND addr_city ILIKE '%Islamorada%' AND addr_state ILIKE '%FL%' LIMIT 1)::geography,\n  170000\n)\nAND amenity = 'gallery';\n```",
+    "run_seconds": 18.768
+  },
+  {
+    "id": 1870,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_DWithin(parks.geometry::geography, \n                 (SELECT geometry FROM regions WHERE region_name ILIKE '%MERGE%' LIMIT 1)::geography, \n                 40000);\n```",
+    "run_seconds": 12.674
+  },
+  {
+    "id": 1871,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_DWithin(\n  parks.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Mays Chapel Medical Care Center%' AND addr_city ILIKE '%Lutherville%' LIMIT 1)::geography,\n  100000\n)\nAND leisure = 'nature_reserve';\n```",
+    "run_seconds": 17.569
+  },
+  {
+    "id": 1872,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_DWithin(\n  parks.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Aquarium Outfitters Carolina%' LIMIT 1)::geography,\n  190000\n)\nAND leisure = 'golf_course';\n```",
+    "run_seconds": 15.388
+  },
+  {
+    "id": 1873,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'fast_food'\n  AND ST_DWithin(\n    geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Sense Fine Art%' LIMIT 1)::geography,\n    60000\n  );\n```",
+    "run_seconds": 14.617
+  },
+  {
+    "id": 1874,
+    "content": "```sql\nSELECT COUNT(*) \nFROM parks \nWHERE ST_DWithin(\n  parks.geometry::geography, \n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Hoop-Dee-Doo Musical Revue%' AND addr_state ILIKE '%FL%' LIMIT 1)::geography, \n  130000\n) \nAND leisure = 'garden';\n```",
+    "run_seconds": 18.818
+  },
+  {
+    "id": 1875,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'university'\n  AND ST_DWithin(\n    pois.geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Olmsted Medical Center%' AND addr_city ILIKE '%Stewartville%' AND addr_state ILIKE '%MN%')::geography,\n    140000\n  );\n```",
+    "run_seconds": 19.498
+  },
+  {
+    "id": 1876,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'hotel'\n  AND ST_DWithin(\n    pois.geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Dyken Pond Environmental Education Center%' AND addr_city ILIKE '%Cropseyville%' AND addr_state ILIKE '%NY%' LIMIT 1)::geography,\n    60000\n  );\n```",
+    "run_seconds": 20.014
+  },
+  {
+    "id": 1877,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_DWithin(\n  parks.geometry::geography,\n  (SELECT geometry FROM parks WHERE park_name ILIKE '%James Hite Park%' LIMIT 1)::geography,\n  70000\n)\nAND park_name IS NOT NULL;\n```",
+    "run_seconds": 14.521
+  },
+  {
+    "id": 1878,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_DWithin(parks.geometry::geography, \n                 (SELECT geometry FROM pois WHERE poi_name ILIKE '%Carson Park Stadium%' AND addr_city ILIKE '%Eau Claire%' AND addr_state ILIKE '%WI%')::geography, \n                 60000);\n```",
+    "run_seconds": 15.939
+  },
+  {
+    "id": 1879,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'cafe'\n  AND ST_DWithin(\n    pois.geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Fresno Chaffee Zoo%' LIMIT 1)::geography,\n    150000\n  );\n```",
+    "run_seconds": 15.563
+  },
+  {
+    "id": 1880,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'cafe'\n  AND ST_DWithin(\n    pois.geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Top of the Rock%' AND addr_city ILIKE '%New York%' LIMIT 1)::geography,\n    70000\n  );\n```",
+    "run_seconds": 16.645
+  },
+  {
+    "id": 1881,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_DWithin(parks.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%New York Institute of Technology%' LIMIT 1)::geography, 150000);\n```",
+    "run_seconds": 12.512
+  },
+  {
+    "id": 1882,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Last House on Mulholland%' AND addr_city ILIKE '%Los Angeles%' LIMIT 1)::geography,\n  30000\n)\nAND amenity = 'museum';\n```",
+    "run_seconds": 16.666
+  },
+  {
+    "id": 1883,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Hashimoto Contemporary%' LIMIT 1)::geography,\n  20000\n)\nAND amenity = 'hotel';\n```",
+    "run_seconds": 13.815
+  },
+  {
+    "id": 1884,
+    "content": "```sql\nSELECT COUNT(*) AS garden_count\nFROM parks\nWHERE ST_DWithin(\n  parks.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Oak Grove Football Stadium%' AND addr_city ILIKE '%Bessemer%' LIMIT 1)::geography,\n  160000\n)\nAND leisure = 'garden';\n```",
+    "run_seconds": 17.053
+  },
+  {
+    "id": 1885,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Hobbit Cabin%' AND addr_city ILIKE '%Talkeetna%' AND addr_state ILIKE '%AK%' LIMIT 1)::geography,\n  90000\n)\nAND amenity = 'university';\n```",
+    "run_seconds": 18.545
+  },
+  {
+    "id": 1886,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_DWithin(\n  parks.geometry::geography,\n  (SELECT geometry FROM parks WHERE park_name ILIKE '%Leon and Ethel Yeiser Rose Garden%' LIMIT 1)::geography,\n  160000\n)\nAND park_name != 'Leon and Ethel Yeiser Rose Garden';\n```",
+    "run_seconds": 16.611
+  },
+  {
+    "id": 1887,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Simon Breitbard%' LIMIT 1)::geography,\n  110000\n)\nAND amenity = 'hospital';\n```",
+    "run_seconds": 14.241
+  },
+  {
+    "id": 1888,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'hospital'\n  AND ST_DWithin(\n    geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Ole Haugsrud Stadium%' AND addr_city ILIKE '%Superior%' AND addr_state ILIKE '%WI%' LIMIT 1)::geography,\n    40000\n  );\n```",
+    "run_seconds": 18.644
+  },
+  {
+    "id": 1889,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Ole Haugsrud Stadium%' LIMIT 1)::geography,\n  140000\n)\nAND tourism = 'zoo';\n```",
+    "run_seconds": 14.967
+  },
+  {
+    "id": 1890,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'gallery'\n  AND ST_DWithin(\n    pois.geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Hickory Grove Riverfront%' AND addr_city ILIKE '%Cary%' LIMIT 1)::geography,\n    150000\n  );\n```",
+    "run_seconds": 17.416
+  },
+  {
+    "id": 1891,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%West Chester Griswolds%' LIMIT 1)::geography,\n  110000\n)\nAND amenity = 'museum';\n```",
+    "run_seconds": 15.662
+  },
+  {
+    "id": 1892,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(pois.geometry::geography, \n                 (SELECT geometry FROM parks WHERE park_name ILIKE '%Scipio Multi-Use Recreational Area%' LIMIT 1)::geography, \n                 180000)\n  AND amenity = 'museum';\n```",
+    "run_seconds": 16.775
+  },
+  {
+    "id": 1893,
+    "content": "```sql\nSELECT COUNT(*) \nFROM parks \nWHERE ST_DWithin(\n    parks.geometry::geography, \n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Action Behavior Centers - ABA therapy for Autism%' AND addr_city ILIKE '%Hutto%' AND addr_state ILIKE '%TX%' LIMIT 1)::geography, \n    100000\n) \nAND leisure = 'garden';\n```",
+    "run_seconds": 20.799
+  },
+  {
+    "id": 1894,
+    "content": "```sql\nSELECT COUNT(*)\nFROM parks\nWHERE ST_DWithin(\n  parks.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Our Lady of the Rivers Shrine%' AND addr_city ILIKE '%Portage Des Sioux%' LIMIT 1)::geography,\n  190000\n)\nAND leisure = 'golf_course';\n```",
+    "run_seconds": 18.253
+  },
+  {
+    "id": 1895,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM regions WHERE region_name ILIKE '%Sky Oaks Reserve%' LIMIT 1)::geography,\n  150000\n)\nAND amenity = 'hospital';\n```",
+    "run_seconds": 14.851
+  },
+  {
+    "id": 1896,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Dells Mill and Museum%' AND addr_city ILIKE '%Augusta%' AND addr_state ILIKE '%WI%' LIMIT 1)::geography,\n  170000\n) AND tourism = 'viewpoint';\n```",
+    "run_seconds": 18.702
+  },
+  {
+    "id": 1897,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n    pois.geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Last House%' AND addr_city ILIKE '%Los Angeles%' AND addr_state ILIKE '%CA%' LIMIT 1)::geography,\n    70000\n)\nAND amenity = 'hotel';\n```",
+    "run_seconds": 17.836
+  },
+  {
+    "id": 1898,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE ST_DWithin(\n  pois.geometry::geography,\n  (SELECT geometry FROM pois WHERE poi_name ILIKE '%Latvian Cultural Garden%' AND addr_city ILIKE '%Cleveland%' AND addr_state ILIKE '%OH%' LIMIT 1)::geography,\n  50000\n)\nAND amenity = 'hotel';\n```",
+    "run_seconds": 18.262
+  },
+  {
+    "id": 1899,
+    "content": "```sql\nSELECT COUNT(*)\nFROM pois\nWHERE amenity = 'fast_food'\n  AND ST_DWithin(\n    geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Fresno Chaffee Zoo%' LIMIT 1)::geography,\n    20000\n  );\n```",
+    "run_seconds": 15.521
+  }
+]

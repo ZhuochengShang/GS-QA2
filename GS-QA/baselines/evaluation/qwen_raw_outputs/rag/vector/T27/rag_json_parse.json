@@ -1,0 +1,2102 @@
+[
+  {
+    "id": 200,
+    "run_seconds": 4.708,
+    "content": "```json\n{\n    \"area\": 51000000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 171,
+      "output_tokens": 21,
+      "total_tokens": 192,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 171,
+        "total_tokens": 192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 201,
+    "run_seconds": 1.487,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 6,
+      "total_tokens": 193,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 187,
+        "total_tokens": 193,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 202,
+    "run_seconds": 1.488,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 179,
+      "output_tokens": 6,
+      "total_tokens": 185,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 179,
+        "total_tokens": 185,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 203,
+    "run_seconds": 8.513,
+    "content": "```json\n{\n    \"name\": \"parks in Port Richey\",\n    \"address\": \"Port Richey, Florida\",\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 193,
+      "output_tokens": 39,
+      "total_tokens": 232,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 39,
+        "prompt_tokens": 193,
+        "total_tokens": 232,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 204,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"area\": 30000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 185,
+      "output_tokens": 18,
+      "total_tokens": 203,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 185,
+        "total_tokens": 203,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 205,
+    "run_seconds": 4.041,
+    "content": "```json\n{\n    \"area\": 20000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 171,
+      "output_tokens": 18,
+      "total_tokens": 189,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 171,
+        "total_tokens": 189,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 206,
+    "run_seconds": 1.439,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 185,
+      "output_tokens": 6,
+      "total_tokens": 191,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 185,
+        "total_tokens": 191,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 207,
+    "run_seconds": 4.253,
+    "content": "```json\n{\n    \"area\": 100000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 19,
+      "total_tokens": 206,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 187,
+        "total_tokens": 206,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 208,
+    "run_seconds": 5.317,
+    "content": "```json\n{\n    \"name\": \"commons in the United States\",\n    \"area\": null\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 24,
+      "total_tokens": 210,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 186,
+        "total_tokens": 210,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 209,
+    "run_seconds": 1.486,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 199,
+      "output_tokens": 6,
+      "total_tokens": 205,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 199,
+        "total_tokens": 205,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 210,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"area\": 32000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 190,
+      "output_tokens": 18,
+      "total_tokens": 208,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 190,
+        "total_tokens": 208,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 211,
+    "run_seconds": 4.465,
+    "content": "```json\n{\n    \"area\": 8810000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 176,
+      "output_tokens": 20,
+      "total_tokens": 196,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 176,
+        "total_tokens": 196,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 212,
+    "run_seconds": 3.828,
+    "content": "```json\n{\n    \"area\": 3000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 184,
+      "output_tokens": 17,
+      "total_tokens": 201,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 184,
+        "total_tokens": 201,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 213,
+    "run_seconds": 3.188,
+    "content": "```json\n{\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 174,
+      "output_tokens": 14,
+      "total_tokens": 188,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 174,
+        "total_tokens": 188,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 214,
+    "run_seconds": 3.189,
+    "content": "```json\n{\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 191,
+      "output_tokens": 14,
+      "total_tokens": 205,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 191,
+        "total_tokens": 205,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 215,
+    "run_seconds": 4.679,
+    "content": "```json\n{\n    \"name\": \"parks\",\n    \"area\": null\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 194,
+      "output_tokens": 21,
+      "total_tokens": 215,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 194,
+        "total_tokens": 215,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 216,
+    "run_seconds": 1.699,
+    "content": "```json\n{\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 204,
+      "output_tokens": 7,
+      "total_tokens": 211,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 204,
+        "total_tokens": 211,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 217,
+    "run_seconds": 3.401,
+    "content": "```json\n{\n    \"area\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 15,
+      "total_tokens": 203,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 188,
+        "total_tokens": 203,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 218,
+    "run_seconds": 1.485,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 199,
+      "output_tokens": 6,
+      "total_tokens": 205,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 199,
+        "total_tokens": 205,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 219,
+    "run_seconds": 8.083,
+    "content": "```json\n{\n    \"name\": \"all bays\",\n    \"address\": \"Virginia Beach, Virginia\",\n    \"area\": 35000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 190,
+      "output_tokens": 37,
+      "total_tokens": 227,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 37,
+        "prompt_tokens": 190,
+        "total_tokens": 227,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 220,
+    "run_seconds": 1.487,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 192,
+      "output_tokens": 6,
+      "total_tokens": 198,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 192,
+        "total_tokens": 198,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 221,
+    "run_seconds": 1.487,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 6,
+      "total_tokens": 192,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 186,
+        "total_tokens": 192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 222,
+    "run_seconds": 4.039,
+    "content": "```json\n{\n    \"area\": 60000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 18,
+      "total_tokens": 188,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 170,
+        "total_tokens": 188,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 223,
+    "run_seconds": 1.487,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 6,
+      "total_tokens": 193,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 187,
+        "total_tokens": 193,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 224,
+    "run_seconds": 1.487,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 179,
+      "output_tokens": 6,
+      "total_tokens": 185,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 179,
+        "total_tokens": 185,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 225,
+    "run_seconds": 4.038,
+    "content": "```json\n{\n    \"area\": 50000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 169,
+      "output_tokens": 18,
+      "total_tokens": 187,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 169,
+        "total_tokens": 187,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 226,
+    "run_seconds": 7.657,
+    "content": "```json\n{\n    \"name\": \"golf courses\",\n    \"address\": \"Volusia County, Florida\",\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 196,
+      "output_tokens": 35,
+      "total_tokens": 231,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 35,
+        "prompt_tokens": 196,
+        "total_tokens": 231,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 227,
+    "run_seconds": 1.486,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 6,
+      "total_tokens": 193,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 187,
+        "total_tokens": 193,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 228,
+    "run_seconds": 4.041,
+    "content": "```json\n{\n    \"area\": 30000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 184,
+      "output_tokens": 18,
+      "total_tokens": 202,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 184,
+        "total_tokens": 202,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 229,
+    "run_seconds": 3.189,
+    "content": "```json\n{\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 181,
+      "output_tokens": 14,
+      "total_tokens": 195,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 181,
+        "total_tokens": 195,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 230,
+    "run_seconds": 3.144,
+    "content": "```json\n{\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 14,
+      "total_tokens": 187,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 173,
+        "total_tokens": 187,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 231,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"area\": 30000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 181,
+      "output_tokens": 18,
+      "total_tokens": 199,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 181,
+        "total_tokens": 199,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 232,
+    "run_seconds": 4.252,
+    "content": "```json\n{\n    \"area\": 100000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 185,
+      "output_tokens": 19,
+      "total_tokens": 204,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 185,
+        "total_tokens": 204,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 233,
+    "run_seconds": 3.189,
+    "content": "```json\n{\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 14,
+      "total_tokens": 187,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 173,
+        "total_tokens": 187,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 234,
+    "run_seconds": 1.486,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 6,
+      "total_tokens": 192,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 186,
+        "total_tokens": 192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 235,
+    "run_seconds": 1.485,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 6,
+      "total_tokens": 194,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 188,
+        "total_tokens": 194,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 236,
+    "run_seconds": 4.041,
+    "content": "```json\n{\n    \"area\": 30000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 190,
+      "output_tokens": 18,
+      "total_tokens": 208,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 190,
+        "total_tokens": 208,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 237,
+    "run_seconds": 3.189,
+    "content": "```json\n{\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 171,
+      "output_tokens": 14,
+      "total_tokens": 185,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 171,
+        "total_tokens": 185,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 238,
+    "run_seconds": 3.188,
+    "content": "```json\n{\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 14,
+      "total_tokens": 187,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 173,
+        "total_tokens": 187,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 239,
+    "run_seconds": 3.189,
+    "content": "```json\n{\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 14,
+      "total_tokens": 187,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 173,
+        "total_tokens": 187,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 240,
+    "run_seconds": 1.442,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 6,
+      "total_tokens": 194,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 188,
+        "total_tokens": 194,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 241,
+    "run_seconds": 1.486,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 183,
+      "output_tokens": 6,
+      "total_tokens": 189,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 183,
+        "total_tokens": 189,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 242,
+    "run_seconds": 5.743,
+    "content": "```json\n{\n    \"name\": \"Greene County Reservoirs\",\n    \"count\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 182,
+      "output_tokens": 26,
+      "total_tokens": 208,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 26,
+        "prompt_tokens": 182,
+        "total_tokens": 208,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 243,
+    "run_seconds": 4.892,
+    "content": "```json\n{\n    \"name\": \"gardens\",\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 183,
+      "output_tokens": 22,
+      "total_tokens": 205,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 183,
+        "total_tokens": 205,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 244,
+    "run_seconds": 7.444,
+    "content": "```json\n{\n    \"name\": \"golf courses\",\n    \"address\": \"Dukes County, Massachusetts\",\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 194,
+      "output_tokens": 34,
+      "total_tokens": 228,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 34,
+        "prompt_tokens": 194,
+        "total_tokens": 228,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 245,
+    "run_seconds": 3.188,
+    "content": "```json\n{\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 172,
+      "output_tokens": 14,
+      "total_tokens": 186,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 172,
+        "total_tokens": 186,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 246,
+    "run_seconds": 3.188,
+    "content": "```json\n{\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 174,
+      "output_tokens": 14,
+      "total_tokens": 188,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 174,
+        "total_tokens": 188,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 247,
+    "run_seconds": 3.401,
+    "content": "```json\n{\n    \"area\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 15,
+      "total_tokens": 201,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 186,
+        "total_tokens": 201,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 248,
+    "run_seconds": 7.444,
+    "content": "```json\n{\n    \"name\": \"lakes\",\n    \"address\": \"Mathias Township, Michigan\",\n    \"area\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 34,
+      "total_tokens": 221,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 34,
+        "prompt_tokens": 187,
+        "total_tokens": 221,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 249,
+    "run_seconds": 1.486,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 183,
+      "output_tokens": 6,
+      "total_tokens": 189,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 183,
+        "total_tokens": 189,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 250,
+    "run_seconds": 1.486,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 6,
+      "total_tokens": 192,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 186,
+        "total_tokens": 192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 251,
+    "run_seconds": 3.615,
+    "content": "```json\n{\n    \"area\": 120\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 192,
+      "output_tokens": 16,
+      "total_tokens": 208,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 192,
+        "total_tokens": 208,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 252,
+    "run_seconds": 4.252,
+    "content": "```json\n{\n    \"area\": 120000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 19,
+      "total_tokens": 206,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 187,
+        "total_tokens": 206,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 253,
+    "run_seconds": 4.252,
+    "content": "```json\n{\n    \"area\": 200000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 19,
+      "total_tokens": 206,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 187,
+        "total_tokens": 206,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 254,
+    "run_seconds": 5.955,
+    "content": "```json\n{\n    \"name\": \"gardens\",\n    \"area\": 100000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 27,
+      "total_tokens": 213,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 27,
+        "prompt_tokens": 186,
+        "total_tokens": 213,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 255,
+    "run_seconds": 4.253,
+    "content": "```json\n{\n    \"area\": 140000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 19,
+      "total_tokens": 205,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 186,
+        "total_tokens": 205,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 256,
+    "run_seconds": 3.187,
+    "content": "```json\n{\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 14,
+      "total_tokens": 187,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 173,
+        "total_tokens": 187,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 257,
+    "run_seconds": 3.615,
+    "content": "```json\n{\n    \"area\": 100\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 16,
+      "total_tokens": 204,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 188,
+        "total_tokens": 204,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 258,
+    "run_seconds": 3.614,
+    "content": "```json\n{\n    \"area\": 150\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 16,
+      "total_tokens": 203,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 187,
+        "total_tokens": 203,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 259,
+    "run_seconds": 3.187,
+    "content": "```json\n{\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 168,
+      "output_tokens": 14,
+      "total_tokens": 182,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 168,
+        "total_tokens": 182,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 260,
+    "run_seconds": 3.615,
+    "content": "```json\n{\n    \"area\": 140\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 191,
+      "output_tokens": 16,
+      "total_tokens": 207,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 191,
+        "total_tokens": 207,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 261,
+    "run_seconds": 1.486,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 190,
+      "output_tokens": 6,
+      "total_tokens": 196,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 190,
+        "total_tokens": 196,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 262,
+    "run_seconds": 4.678,
+    "content": "```json\n{\n    \"area\": 20650000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 178,
+      "output_tokens": 21,
+      "total_tokens": 199,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 178,
+        "total_tokens": 199,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 263,
+    "run_seconds": 7.232,
+    "content": "```json\n{\n    \"name\": \"reservoirs\",\n    \"address\": \"Carver, Massachusetts\",\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 192,
+      "output_tokens": 33,
+      "total_tokens": 225,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 33,
+        "prompt_tokens": 192,
+        "total_tokens": 225,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 264,
+    "run_seconds": 3.614,
+    "content": "```json\n{\n    \"area\": 640\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 195,
+      "output_tokens": 16,
+      "total_tokens": 211,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 195,
+        "total_tokens": 211,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 265,
+    "run_seconds": 4.04,
+    "content": "```json\n{\n    \"area\": 70000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 191,
+      "output_tokens": 18,
+      "total_tokens": 209,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 191,
+        "total_tokens": 209,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 266,
+    "run_seconds": 1.486,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 181,
+      "output_tokens": 6,
+      "total_tokens": 187,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 181,
+        "total_tokens": 187,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 267,
+    "run_seconds": 3.188,
+    "content": "```json\n{\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 171,
+      "output_tokens": 14,
+      "total_tokens": 185,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 171,
+        "total_tokens": 185,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 268,
+    "run_seconds": 3.187,
+    "content": "```json\n{\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 168,
+      "output_tokens": 14,
+      "total_tokens": 182,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 168,
+        "total_tokens": 182,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 269,
+    "run_seconds": 4.89,
+    "content": "```json\n{\n    \"name\": \"gardens\",\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 181,
+      "output_tokens": 22,
+      "total_tokens": 203,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 181,
+        "total_tokens": 203,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 270,
+    "run_seconds": 7.658,
+    "content": "```json\n{\n    \"name\": \"lakes\",\n    \"address\": \"Santa Rosa, New Mexico\",\n    \"area\": 120\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 193,
+      "output_tokens": 35,
+      "total_tokens": 228,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 35,
+        "prompt_tokens": 193,
+        "total_tokens": 228,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 271,
+    "run_seconds": 3.187,
+    "content": "```json\n{\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 14,
+      "total_tokens": 184,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 170,
+        "total_tokens": 184,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 272,
+    "run_seconds": 4.679,
+    "content": "```json\n{\n    \"area\": 88000000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 176,
+      "output_tokens": 21,
+      "total_tokens": 197,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 176,
+        "total_tokens": 197,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 273,
+    "run_seconds": 4.038,
+    "content": "```json\n{\n    \"area\": 70000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 174,
+      "output_tokens": 18,
+      "total_tokens": 192,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 174,
+        "total_tokens": 192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 274,
+    "run_seconds": 7.657,
+    "content": "```json\n{\n    \"name\": \"reservoirs\",\n    \"address\": \"Eaton, New York\",\n    \"area\": 70\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 35,
+      "total_tokens": 221,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 35,
+        "prompt_tokens": 186,
+        "total_tokens": 221,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 275,
+    "run_seconds": 3.188,
+    "content": "```json\n{\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 14,
+      "total_tokens": 184,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 170,
+        "total_tokens": 184,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 276,
+    "run_seconds": 1.486,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 189,
+      "output_tokens": 6,
+      "total_tokens": 195,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 189,
+        "total_tokens": 195,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 277,
+    "run_seconds": 3.188,
+    "content": "```json\n{\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 171,
+      "output_tokens": 14,
+      "total_tokens": 185,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 171,
+        "total_tokens": 185,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 278,
+    "run_seconds": 1.487,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 191,
+      "output_tokens": 6,
+      "total_tokens": 197,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 191,
+        "total_tokens": 197,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 279,
+    "run_seconds": 5.316,
+    "content": "```json\n{\n    \"name\": \"gardens in Mississippi\",\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 24,
+      "total_tokens": 212,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 188,
+        "total_tokens": 212,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 280,
+    "run_seconds": 7.869,
+    "content": "```json\n{\n    \"name\": \"reservoirs\",\n    \"address\": \"Hart County, Georgia\",\n    \"area\": 150\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 190,
+      "output_tokens": 36,
+      "total_tokens": 226,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 36,
+        "prompt_tokens": 190,
+        "total_tokens": 226,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 281,
+    "run_seconds": 1.486,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 189,
+      "output_tokens": 6,
+      "total_tokens": 195,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 189,
+        "total_tokens": 195,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 282,
+    "run_seconds": 3.614,
+    "content": "```json\n{\n    \"area\": 120\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 16,
+      "total_tokens": 203,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 187,
+        "total_tokens": 203,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 283,
+    "run_seconds": 3.615,
+    "content": "```json\n{\n    \"area\": 120\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 189,
+      "output_tokens": 16,
+      "total_tokens": 205,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 189,
+        "total_tokens": 205,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 284,
+    "run_seconds": 1.44,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 177,
+      "output_tokens": 6,
+      "total_tokens": 183,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 177,
+        "total_tokens": 183,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 285,
+    "run_seconds": 3.187,
+    "content": "```json\n{\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 14,
+      "total_tokens": 184,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 170,
+        "total_tokens": 184,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 286,
+    "run_seconds": 7.444,
+    "content": "```json\n{\n    \"name\": \"golf courses\",\n    \"address\": \"Cedar Falls, Iowa\",\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 34,
+      "total_tokens": 204,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 34,
+        "prompt_tokens": 170,
+        "total_tokens": 204,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 287,
+    "run_seconds": 3.141,
+    "content": "```json\n{\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 170,
+      "output_tokens": 14,
+      "total_tokens": 184,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 170,
+        "total_tokens": 184,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 288,
+    "run_seconds": 1.486,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 181,
+      "output_tokens": 6,
+      "total_tokens": 187,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 181,
+        "total_tokens": 187,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 289,
+    "run_seconds": 3.614,
+    "content": "```json\n{\n    \"area\": 120\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 190,
+      "output_tokens": 16,
+      "total_tokens": 206,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 190,
+        "total_tokens": 206,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 290,
+    "run_seconds": 4.252,
+    "content": "```json\n{\n    \"area\": 100000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 19,
+      "total_tokens": 207,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 188,
+        "total_tokens": 207,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 291,
+    "run_seconds": 3.4,
+    "content": "```json\n{\n    \"area\": 51\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 174,
+      "output_tokens": 15,
+      "total_tokens": 189,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 174,
+        "total_tokens": 189,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 292,
+    "run_seconds": 3.187,
+    "content": "```json\n{\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 171,
+      "output_tokens": 14,
+      "total_tokens": 185,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 171,
+        "total_tokens": 185,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 293,
+    "run_seconds": 1.485,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 185,
+      "output_tokens": 6,
+      "total_tokens": 191,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 185,
+        "total_tokens": 191,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 294,
+    "run_seconds": 1.485,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 203,
+      "output_tokens": 6,
+      "total_tokens": 209,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 203,
+        "total_tokens": 209,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 295,
+    "run_seconds": 1.485,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 196,
+      "output_tokens": 6,
+      "total_tokens": 202,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 196,
+        "total_tokens": 202,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 296,
+    "run_seconds": 3.401,
+    "content": "```json\n{\n    \"area\": 40\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 15,
+      "total_tokens": 203,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 188,
+        "total_tokens": 203,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 297,
+    "run_seconds": 3.187,
+    "content": "```json\n{\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 173,
+      "output_tokens": 14,
+      "total_tokens": 187,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 173,
+        "total_tokens": 187,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 298,
+    "run_seconds": 3.188,
+    "content": "```json\n{\n    \"area\": 0\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 167,
+      "output_tokens": 14,
+      "total_tokens": 181,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 167,
+        "total_tokens": 181,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 299,
+    "run_seconds": 4.252,
+    "content": "```json\n{\n    \"area\": 200000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 19,
+      "total_tokens": 206,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 187,
+        "total_tokens": 206,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  }
+]

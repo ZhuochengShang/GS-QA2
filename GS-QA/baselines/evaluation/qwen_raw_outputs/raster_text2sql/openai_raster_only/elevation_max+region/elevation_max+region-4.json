@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 325.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 325.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-85.189732 42.420649, -85.279669 42.419969, -85.279916 42.419967, -85.29958 42.419801, -85.307808 42.419733, -85.308012 42.463589, -85.30791 42.50005, -85.30798 42.50005, -85.308104 42.507867, -85.190633 42.508339, -85.189732 42.420649))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).max AS elevation\nFROM clipped;",
+  "id": "elevation_max+region-4",
+  "model_output": "```sql\nWITH johnstown_area AS (\n  SELECT ST_GeomFromText('POLYGON ((-85.189732 42.420649, -85.279669 42.419969, -85.279916 42.419967, -85.29958 42.419801, -85.307808 42.419733, -85.308012 42.463589, -85.30791 42.50005, -85.30798 42.50005, -85.308104 42.507867, -85.190633 42.508339, -85.189732 42.420649))', 4326)::geometry AS geom\n)\nSELECT MAX(rast_val) AS highest_elevation\nFROM (\n  SELECT ST_Value(rast, 1, (ST_DumpAsPolygons(ST_Clip(rast, 1, geom, TRUE))).geom) AS rast_val\n  FROM public.dem_us, johnstown_area\n  WHERE ST_Intersects(rast, geom)\n) subquery;\n```",
+  "predicted_exec": {
+    "error": "Attempting to get the value of a pixel with a non-point geometry",
+    "output": []
+  },
+  "predicted_sql": "WITH johnstown_area AS (\n  SELECT ST_GeomFromText('POLYGON ((-85.189732 42.420649, -85.279669 42.419969, -85.279916 42.419967, -85.29958 42.419801, -85.307808 42.419733, -85.308012 42.463589, -85.30791 42.50005, -85.30798 42.50005, -85.308104 42.507867, -85.190633 42.508339, -85.189732 42.420649))', 4326)::geometry AS geom\n)\nSELECT MAX(rast_val) AS highest_elevation\nFROM (\n  SELECT ST_Value(rast, 1, (ST_DumpAsPolygons(ST_Clip(rast, 1, geom, TRUE))).geom) AS rast_val\n  FROM public.dem_us, johnstown_area\n  WHERE ST_Intersects(rast, geom)\n) subquery;",
+  "predicted_sql_candidates": [
+    "WITH johnstown_area AS (\n  SELECT ST_GeomFromText('POLYGON ((-85.189732 42.420649, -85.279669 42.419969, -85.279916 42.419967, -85.29958 42.419801, -85.307808 42.419733, -85.308012 42.463589, -85.30791 42.50005, -85.30798 42.50005, -85.308104 42.507867, -85.190633 42.508339, -85.189732 42.420649))', 4326)::geometry AS geom\n)\nSELECT MAX(rast_val) AS highest_elevation\nFROM (\n  SELECT ST_Value(rast, 1, (ST_DumpAsPolygons(ST_Clip(rast, 1, geom, TRUE))).geom) AS rast_val\n  FROM public.dem_us, johnstown_area\n  WHERE ST_Intersects(rast, geom)\n) subquery;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the highest elevation in Johnstown Township, Michigan?",
+  "source_file": "elevation_max+region.jsonl",
+  "source_stem": "elevation_max+region",
+  "timing": {
+    "execution_seconds": 0.038,
+    "generation_seconds": 71.814,
+    "total_seconds": 71.852
+  },
+  "usage": {
+    "completion_tokens": 336,
+    "prompt_tokens": 1731,
+    "total_tokens": 2067
+  }
+}

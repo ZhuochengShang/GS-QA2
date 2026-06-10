@@ -1,0 +1,59 @@
+{
+  "answer_type": "percent",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "percent",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer_percent": 0.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer_percent": 0.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('MULTIPOLYGON (((-90.042966 30.459636, -90.040712 30.459628, -90.040713 30.457834, -90.042259 30.457885, -90.042267 30.458735, -90.042983 30.458744, -90.042966 30.459636)), ((-90.048891 30.467185, -90.047728 30.467206, -90.04772 30.467253, -90.04664 30.467231, -90.045793 30.467222, -90.045143 30.467209, -90.045019 30.468267, -90.044832 30.469261, -90.044945 30.470232, -90.045005 30.471195, -90.044656 30.472157, -90.044694 30.473103, -90.044995 30.474104, -90.045073 30.47889, -90.045009 30.478963, -90.04496 30.47905, -90.044901 30.47922, -90.044906 30.480069, -90.044931 30.48188, -90.044913 30.482958, -90.045161 30.483016, -90.045697 30.483095, -90.045771 30.483103, -90.045748 30.484277, -90.044972 30.484277, -90.045022 30.485894, -90.045026 30.487546, -90.045042 30.487652, -90.045081 30.487699, -90.045117 30.491684, -90.045042 30.493237, -90.042319 30.493275, -90.040796 30.493288, -90.039672 30.493307, -90.039532 30.493305, -90.039533 30.494603, -90.039146 30.494603, -90.039112 30.495798, -90.037564 30.495848, -90.037512 30.493284, -90.034629 30.493302, -90.032968 30.493323, -90.032973 30.494771, -90.030622 30.494805, -90.030584 30.493354, -90.028621 30.493361, -90.024954 30.493381, -90.023313 30.493382, -90.023329 30.496867, -90.019658 30.496797, -90.015502 30.496787, -90.0147 30.496779, -90.014688 30.495989, -90.014718 30.494447, -90.01468 30.491854, -90.014972 30.488316, -90.015076 30.486437, -90.015002 30.484602, -90.014616 30.482287, -90.01432 30.48213, -90.014032 30.481247, -90.01364 30.479935, -90.014776 30.479664, -90.014928 30.474083, -90.015126 30.467474, -90.015166 30.464024, -90.012778 30.46254, -90.012714 30.460116, -90.012708 30.45907, -90.012748 30.457322, -90.012066 30.45733, -90.012016 30.452976, -90.015314 30.453032, -90.015208 30.456112, -90.018074 30.456, -90.018092 30.458558, -90.01741 30.458527, -90.017454 30.459553, -90.017624 30.459573, -90.028272 30.459896, -90.035437 30.459934, -90.038319 30.45994, -90.040712 30.459918, -90.041712 30.459934, -90.041687 30.460621, -90.040713 30.460612, -90.040719 30.461994, -90.040714 30.462409, -90.040716 30.462668, -90.048775 30.463186, -90.048834 30.465389, -90.048891 30.467185)), ((-90.040715 30.466716, -90.040706 30.467196, -90.042561 30.467252, -90.042556 30.466724, -90.040715 30.466716)))',4326) AS geom\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.geom) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.geom)\n),\nhist AS (\n  SELECT\n    (vc).value::double precision AS val,\n    (vc).count::double precision AS cnt\n  FROM clipped c\n  CROSS JOIN LATERAL ST_ValueCount(c.rast, 1, TRUE) AS vc\n)\nSELECT\n  (\n    COALESCE(SUM(CASE WHEN val >= 260 THEN cnt ELSE 0 END), 0)\n    / NULLIF(SUM(cnt), 0)\n  ) * 100.0 AS answer_percent\nFROM hist;",
+  "id": "elevation+coverage-16",
+  "model_output": "```sql\nWITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Abita Springs'\n    AND border_type ILIKE 'city'\n    AND addr_state ILIKE 'Louisiana'\n),\nclipped_dem AS (\n  SELECT\n    ST_Clip(rast, (SELECT geom FROM region_geom), true) AS clipped_raster\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM region_geom))\n),\nelevation_stats AS (\n  SELECT\n    SUM(ST_Count(clipped_raster, true)) AS total_pixels,\n    SUM(ST_Count(ST_Reclass(clipped_raster, 1, '0-259:0,260-:1', '8BUI'), true)) AS above_260_pixels\n  FROM clipped_dem\n)\nSELECT\n  ROUND((above_260_pixels::numeric / total_pixels::numeric) * 100, 2) AS percent_area_above_260m\nFROM elevation_stats;\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 6:     AND addr_state ILIKE 'Louisiana'\n                ^",
+    "output": []
+  },
+  "predicted_sql": "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Abita Springs'\n    AND border_type ILIKE 'city'\n    AND addr_state ILIKE 'Louisiana'\n),\nclipped_dem AS (\n  SELECT\n    ST_Clip(rast, (SELECT geom FROM region_geom), true) AS clipped_raster\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM region_geom))\n),\nelevation_stats AS (\n  SELECT\n    SUM(ST_Count(clipped_raster, true)) AS total_pixels,\n    SUM(ST_Count(ST_Reclass(clipped_raster, 1, '0-259:0,260-:1', '8BUI'), true)) AS above_260_pixels\n  FROM clipped_dem\n)\nSELECT\n  ROUND((above_260_pixels::numeric / total_pixels::numeric) * 100, 2) AS percent_area_above_260m\nFROM elevation_stats;",
+  "predicted_sql_candidates": [
+    "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Abita Springs'\n    AND border_type ILIKE 'city'\n    AND addr_state ILIKE 'Louisiana'\n),\nclipped_dem AS (\n  SELECT\n    ST_Clip(rast, (SELECT geom FROM region_geom), true) AS clipped_raster\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM region_geom))\n),\nelevation_stats AS (\n  SELECT\n    SUM(ST_Count(clipped_raster, true)) AS total_pixels,\n    SUM(ST_Count(ST_Reclass(clipped_raster, 1, '0-259:0,260-:1', '8BUI'), true)) AS above_260_pixels\n  FROM clipped_dem\n)\nSELECT\n  ROUND((above_260_pixels::numeric / total_pixels::numeric) * 100, 2) AS percent_area_above_260m\nFROM elevation_stats;"
+  ],
+  "query_type": "raster_only",
+  "question": "Within Abita Springs, Louisiana, what share of the area has elevation at or above 260 meters?",
+  "source_file": "elevation+coverage.jsonl",
+  "source_stem": "elevation+coverage",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 47.551,
+    "total_seconds": 47.552
+  },
+  "usage": {
+    "completion_tokens": 223,
+    "prompt_tokens": 1545,
+    "total_tokens": 1768
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "answer_type": "name",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "name",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer_name": "Fawcett Creek Road",
+      "slope_deg_3": 1.497317,
+      "slope_deg_4": 8.470011
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer_name": "Fawcett Creek Road",
+        "slope_deg_3": 1.497317,
+        "slope_deg_4": 8.470011
+      }
+    ]
+  },
+  "gold_sql": "WITH route3 AS (\n  SELECT ST_GeomFromText('LINESTRING (-105.152624 39.957711, -105.152194 39.957807)', 4326)::geometry AS geom\n),\nroute4 AS (\n  SELECT ST_GeomFromText('LINESTRING (-123.706667 45.3814, -123.706375 45.380943, -123.705142 45.380714, -123.702579 45.379937, -123.702028 45.379572, -123.701898 45.379343, -123.701801 45.378886, -123.701346 45.37836, -123.701314 45.377994, -123.701508 45.37772, -123.702254 45.3774, -123.702579 45.376782, -123.704395 45.376485, -123.705109 45.376965, -123.707282 45.37733, -123.707801 45.377353, -123.708093 45.377262, -123.708126 45.377079, -123.708028 45.376987, -123.708028 45.376576, -123.708288 45.376278, -123.708288 45.376027, -123.708093 45.375844, -123.706859 45.375821, -123.70566 45.375799, -123.705109 45.375593, -123.704622 45.375301, -123.704217 45.374829, -123.703845 45.37451, -123.702515 45.374545, -123.701639 45.374281, -123.700828 45.374144, -123.700666 45.373984, -123.700796 45.373892)', 4326)::geometry AS geom\n),\ndem_clip3 AS (\n  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast\n  FROM public.dem_us d, route3 r\n  WHERE ST_Intersects(d.rast, r.geom)\n),\ndem_clip4 AS (\n  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast\n  FROM public.dem_us d, route4 r\n  WHERE ST_Intersects(d.rast, r.geom)\n),\nsegments AS (\n  SELECT 1 AS route_id, (ST_DumpSegments(r.geom)).geom AS seg FROM route3 r\n  UNION ALL\n  SELECT 2 AS route_id, (ST_DumpSegments(r.geom)).geom AS seg FROM route4 r\n),\nendpoints AS (\n  SELECT\n    route_id,\n    ST_StartPoint(seg)         AS p1,\n    ST_EndPoint(seg)           AS p2,\n    ST_Length(seg::geography)  AS seg_len_m\n  FROM segments\n),\nelev AS (\n  SELECT\n    e.route_id,\n    e.seg_len_m,\n    CASE WHEN e.route_id = 1 THEN ST_Value(dc3.rast, 1, e.p1)\n         ELSE ST_Value(dc4.rast, 1, e.p1) END AS z1,\n    CASE WHEN e.route_id = 1 THEN ST_Value(dc3.rast, 1, e.p2)\n         ELSE ST_Value(dc4.rast, 1, e.p2) END AS z2\n  FROM endpoints e, dem_clip3 dc3, dem_clip4 dc4\n),\ngrades AS (\n  SELECT\n    route_id,\n    seg_len_m,\n    CASE WHEN seg_len_m > 0 THEN ABS(z2 - z1) / seg_len_m END AS grade\n  FROM elev\n  WHERE z1 IS NOT NULL AND z2 IS NOT NULL\n),\navg_grade AS (\n  SELECT\n    route_id,\n    SUM(grade * seg_len_m) / NULLIF(SUM(seg_len_m), 0) AS g\n  FROM grades\n  WHERE grade IS NOT NULL\n  GROUP BY route_id\n)\nSELECT\n  CASE WHEN a1.g >= a2.g THEN 'Coal Creek Trail' ELSE 'Fawcett Creek Road' END AS answer_name,\n  DEGREES(ATAN(a1.g)) AS slope_deg_3,\n  DEGREES(ATAN(a2.g)) AS slope_deg_4\nFROM avg_grade a1\nJOIN avg_grade a2\n  ON a1.route_id = 1 AND a2.route_id = 2\nWHERE a1.g IS NOT NULL AND a2.g IS NOT NULL;",
+  "id": "slope+compare_route-2",
+  "model_output": "```sql\nWITH coal_creek_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-105.152624 39.957711, -105.152194 39.957807)', 4326)::geometry AS geom\n),\nfawcett_creek_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM roads\n  WHERE road_name ILIKE 'Fawcett Creek Road'\n  LIMIT 1\n),\ncoal_creek_slope AS (\n  SELECT\n    ST_Area(ST_Transform(geom, 32613)) AS line_length_m,\n    ST_Avg(ST_Slope(rast, 1, '32BF')) AS avg_slope_deg\n  FROM public.dem_us\n  CROSS JOIN coal_creek_geom\n  WHERE ST_Intersects(rast, geom)\n),\nfawcett_creek_slope AS (\n  SELECT\n    ST_Area(ST_Transform(geom, 32613)) AS line_length_m,\n    ST_Avg(ST_Slope(rast, 1, '32BF')) AS avg_slope_deg\n  FROM public.dem_us\n  CROSS JOIN fawcett_creek_geom\n  WHERE ST_Intersects(rast, geom)\n)\nSELECT\n  'Coal Creek Trail' AS route_name,\n  avg_slope_deg\nFROM coal_creek_slope\nUNION ALL\nSELECT\n  'Fawcett Creek Road' AS route_name,\n  avg_slope_deg\nFROM fawcett_creek_slope\nORDER BY avg_slope_deg DESC\nLIMIT 1;\n```",
+  "predicted_exec": {
+    "error": "function st_avg(raster) does not exist\nLINE 13:     ST_Avg(ST_Slope(rast, 1, '32BF')) AS avg_slope_deg\n             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH coal_creek_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-105.152624 39.957711, -105.152194 39.957807)', 4326)::geometry AS geom\n),\nfawcett_creek_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM roads\n  WHERE road_name ILIKE 'Fawcett Creek Road'\n  LIMIT 1\n),\ncoal_creek_slope AS (\n  SELECT\n    ST_Area(ST_Transform(geom, 32613)) AS line_length_m,\n    ST_Avg(ST_Slope(rast, 1, '32BF')) AS avg_slope_deg\n  FROM public.dem_us\n  CROSS JOIN coal_creek_geom\n  WHERE ST_Intersects(rast, geom)\n),\nfawcett_creek_slope AS (\n  SELECT\n    ST_Area(ST_Transform(geom, 32613)) AS line_length_m,\n    ST_Avg(ST_Slope(rast, 1, '32BF')) AS avg_slope_deg\n  FROM public.dem_us\n  CROSS JOIN fawcett_creek_geom\n  WHERE ST_Intersects(rast, geom)\n)\nSELECT\n  'Coal Creek Trail' AS route_name,\n  avg_slope_deg\nFROM coal_creek_slope\nUNION ALL\nSELECT\n  'Fawcett Creek Road' AS route_name,\n  avg_slope_deg\nFROM fawcett_creek_slope\nORDER BY avg_slope_deg DESC\nLIMIT 1;",
+  "predicted_sql_candidates": [
+    "WITH coal_creek_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-105.152624 39.957711, -105.152194 39.957807)', 4326)::geometry AS geom\n),\nfawcett_creek_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM roads\n  WHERE road_name ILIKE 'Fawcett Creek Road'\n  LIMIT 1\n),\ncoal_creek_slope AS (\n  SELECT\n    ST_Area(ST_Transform(geom, 32613)) AS line_length_m,\n    ST_Avg(ST_Slope(rast, 1, '32BF')) AS avg_slope_deg\n  FROM public.dem_us\n  CROSS JOIN coal_creek_geom\n  WHERE ST_Intersects(rast, geom)\n),\nfawcett_creek_slope AS (\n  SELECT\n    ST_Area(ST_Transform(geom, 32613)) AS line_length_m,\n    ST_Avg(ST_Slope(rast, 1, '32BF')) AS avg_slope_deg\n  FROM public.dem_us\n  CROSS JOIN fawcett_creek_geom\n  WHERE ST_Intersects(rast, geom)\n)\nSELECT\n  'Coal Creek Trail' AS route_name,\n  avg_slope_deg\nFROM coal_creek_slope\nUNION ALL\nSELECT\n  'Fawcett Creek Road' AS route_name,\n  avg_slope_deg\nFROM fawcett_creek_slope\nORDER BY avg_slope_deg DESC\nLIMIT 1;"
+  ],
+  "query_type": "raster_only",
+  "question": "Which route has the greater slope on average, Coal Creek Trail or Fawcett Creek Road?",
+  "source_file": "slope+compare_route.jsonl",
+  "source_stem": "slope+compare_route",
+  "timing": {
+    "execution_seconds": 0.002,
+    "generation_seconds": 79.381,
+    "total_seconds": 79.383
+  },
+  "usage": {
+    "completion_tokens": 352,
+    "prompt_tokens": 1607,
+    "total_tokens": 1959
+  }
+}

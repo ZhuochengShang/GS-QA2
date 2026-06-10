@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 3.442258
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 3.442258
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-97.885648 41.076877, -97.885623 41.075496, -97.885622 41.075464, -97.895177 41.075501, -97.895179 41.075623, -97.89522 41.078095, -97.895223 41.078269, -97.895296 41.08272, -97.892685 41.082737, -97.892686 41.083311, -97.891214 41.083315, -97.889943 41.083319, -97.889928 41.083363, -97.889895 41.083398, -97.889855 41.083431, -97.889792 41.083455, -97.889733 41.083461, -97.885697 41.083465, -97.885668 41.079505, -97.885648 41.076877))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).mean AS slope\nFROM region_slope;",
+  "id": "avg_slope+area-10",
+  "model_output": "```sql\nWITH hordville_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Hordville'\n    AND border_type ILIKE 'city'\n    AND addr_state ILIKE 'Nebraska'\n)\n, slope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM hordville_geom), true),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM hordville_geom))\n)\nSELECT\n  ROUND(AVG(value), 2) AS avg_slope_degrees\nFROM (\n  SELECT\n    (ST_SummaryStats(slope_rast, true)).*\n  FROM slope_raster\n) AS stats;\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 6:     AND addr_state ILIKE 'Nebraska'\n                ^",
+    "output": []
+  },
+  "predicted_sql": "WITH hordville_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Hordville'\n    AND border_type ILIKE 'city'\n    AND addr_state ILIKE 'Nebraska'\n)\n, slope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM hordville_geom), true),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM hordville_geom))\n)\nSELECT\n  ROUND(AVG(value), 2) AS avg_slope_degrees\nFROM (\n  SELECT\n    (ST_SummaryStats(slope_rast, true)).*\n  FROM slope_raster\n) AS stats;",
+  "predicted_sql_candidates": [
+    "WITH hordville_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Hordville'\n    AND border_type ILIKE 'city'\n    AND addr_state ILIKE 'Nebraska'\n)\n, slope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM hordville_geom), true),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM hordville_geom))\n)\nSELECT\n  ROUND(AVG(value), 2) AS avg_slope_degrees\nFROM (\n  SELECT\n    (ST_SummaryStats(slope_rast, true)).*\n  FROM slope_raster\n) AS stats;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the avg slope value within Hordville, Nebraska?",
+  "source_file": "avg_slope+area.jsonl",
+  "source_stem": "avg_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 37.949,
+    "total_seconds": 37.95
+  },
+  "usage": {
+    "completion_tokens": 176,
+    "prompt_tokens": 1516,
+    "total_tokens": 1692
+  }
+}

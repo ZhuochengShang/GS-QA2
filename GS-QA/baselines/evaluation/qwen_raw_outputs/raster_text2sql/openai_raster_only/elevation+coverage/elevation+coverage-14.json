@@ -1,0 +1,59 @@
+{
+  "answer_type": "percent",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "percent",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer_percent": 0.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer_percent": 0.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-90.314104 38.579882, -90.314387 38.5799, -90.314527 38.579921, -90.315089 38.58029, -90.315552 38.580251, -90.316105 38.580354, -90.316336 38.580267, -90.316337 38.580268, -90.316454 38.58043, -90.316838 38.580531, -90.31802 38.580366, -90.318388 38.580331, -90.31829 38.580943, -90.318126 38.581942, -90.31489 38.581603, -90.314104 38.579882))',4326) AS geom\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.geom) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.geom)\n),\nhist AS (\n  SELECT\n    (vc).value::double precision AS val,\n    (vc).count::double precision AS cnt\n  FROM clipped c\n  CROSS JOIN LATERAL ST_ValueCount(c.rast, 1, TRUE) AS vc\n)\nSELECT\n  (\n    COALESCE(SUM(CASE WHEN val >= 320 THEN cnt ELSE 0 END), 0)\n    / NULLIF(SUM(cnt), 0)\n  ) * 100.0 AS answer_percent\nFROM hist;",
+  "id": "elevation+coverage-14",
+  "model_output": "```sql\nWITH mackenzie_area AS (\n  SELECT ST_GeomFromText('POLYGON ((-90.314104 38.579882, -90.314387 38.5799, -90.314527 38.579921, -90.315089 38.58029, -90.315552 38.580251, -90.316105 38.580354, -90.316336 38.580267, -90.316337 38.580268, -90.316454 38.58043, -90.316838 38.580531, -90.31802 38.580366, -90.318388 38.580331, -90.31829 38.580943, -90.318126 38.581942, -90.31489 38.581603, -90.314104 38.579882))', 4326)::geometry AS geom\n),\ndem_clip AS (\n  SELECT\n    ST_Clip(rast, 1, mackenzie_area.geom, true) AS clipped_rast\n  FROM\n    public.dem_us,\n    mackenzie_area\n  WHERE\n    ST_Intersects(rast, mackenzie_area.geom)\n),\nelevation_stats AS (\n  SELECT\n    (ST_SummaryStats(ST_Reclass(clipped_rast, '1 320-65535:1 0-319:0', '8BUI', NULL, 1))).sum AS area_above_320,\n    (ST_SummaryStats(clipped_rast)).sum AS total_area\n  FROM\n    dem_clip\n)\nSELECT\n  ROUND((area_above_320 / total_area) * 100, 2) AS percent_area_above_320\nFROM\n  elevation_stats;\n```",
+  "predicted_exec": {
+    "error": "invalid input syntax for type integer: \"1 320-65535:1 0-319:0\"\nLINE 15:     (ST_SummaryStats(ST_Reclass(clipped_rast, '1 320-65535:1...\n                                                       ^",
+    "output": []
+  },
+  "predicted_sql": "WITH mackenzie_area AS (\n  SELECT ST_GeomFromText('POLYGON ((-90.314104 38.579882, -90.314387 38.5799, -90.314527 38.579921, -90.315089 38.58029, -90.315552 38.580251, -90.316105 38.580354, -90.316336 38.580267, -90.316337 38.580268, -90.316454 38.58043, -90.316838 38.580531, -90.31802 38.580366, -90.318388 38.580331, -90.31829 38.580943, -90.318126 38.581942, -90.31489 38.581603, -90.314104 38.579882))', 4326)::geometry AS geom\n),\ndem_clip AS (\n  SELECT\n    ST_Clip(rast, 1, mackenzie_area.geom, true) AS clipped_rast\n  FROM\n    public.dem_us,\n    mackenzie_area\n  WHERE\n    ST_Intersects(rast, mackenzie_area.geom)\n),\nelevation_stats AS (\n  SELECT\n    (ST_SummaryStats(ST_Reclass(clipped_rast, '1 320-65535:1 0-319:0', '8BUI', NULL, 1))).sum AS area_above_320,\n    (ST_SummaryStats(clipped_rast)).sum AS total_area\n  FROM\n    dem_clip\n)\nSELECT\n  ROUND((area_above_320 / total_area) * 100, 2) AS percent_area_above_320\nFROM\n  elevation_stats;",
+  "predicted_sql_candidates": [
+    "WITH mackenzie_area AS (\n  SELECT ST_GeomFromText('POLYGON ((-90.314104 38.579882, -90.314387 38.5799, -90.314527 38.579921, -90.315089 38.58029, -90.315552 38.580251, -90.316105 38.580354, -90.316336 38.580267, -90.316337 38.580268, -90.316454 38.58043, -90.316838 38.580531, -90.31802 38.580366, -90.318388 38.580331, -90.31829 38.580943, -90.318126 38.581942, -90.31489 38.581603, -90.314104 38.579882))', 4326)::geometry AS geom\n),\ndem_clip AS (\n  SELECT\n    ST_Clip(rast, 1, mackenzie_area.geom, true) AS clipped_rast\n  FROM\n    public.dem_us,\n    mackenzie_area\n  WHERE\n    ST_Intersects(rast, mackenzie_area.geom)\n),\nelevation_stats AS (\n  SELECT\n    (ST_SummaryStats(ST_Reclass(clipped_rast, '1 320-65535:1 0-319:0', '8BUI', NULL, 1))).sum AS area_above_320,\n    (ST_SummaryStats(clipped_rast)).sum AS total_area\n  FROM\n    dem_clip\n)\nSELECT\n  ROUND((area_above_320 / total_area) * 100, 2) AS percent_area_above_320\nFROM\n  elevation_stats;"
+  ],
+  "query_type": "raster_only",
+  "question": "Within Mackenzie, Missouri, what share of the area has elevation at or above 320 meters?",
+  "source_file": "elevation+coverage.jsonl",
+  "source_stem": "elevation+coverage",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 118.767,
+    "total_seconds": 118.768
+  },
+  "usage": {
+    "completion_tokens": 556,
+    "prompt_tokens": 1861,
+    "total_tokens": 2417
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 38.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 38.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-80.827959 33.373351, -80.827677 33.371711, -80.827793 33.370365, -80.828248 33.368925, -80.829829 33.366431, -80.830684 33.366054, -80.831325 33.365772, -80.83265 33.365281, -80.833303 33.365049, -80.834012 33.364799, -80.834195 33.364791, -80.83436 33.364776, -80.834858 33.364736, -80.835025 33.364723, -80.835297 33.364691, -80.836113 33.364598, -80.836386 33.364568, -80.837904 33.364829, -80.837939 33.364836, -80.839761 33.365455, -80.841158 33.366152, -80.842061 33.366782, -80.842648 33.367193, -80.843226 33.367783, -80.843817 33.36853, -80.843977 33.368733, -80.844566 33.369684, -80.844781 33.370726, -80.844776 33.37115, -80.844766 33.372105, -80.844675 33.372816, -80.844615 33.373289, -80.844295 33.374287, -80.84414 33.374893, -80.844075 33.375148, -80.843885 33.37556, -80.843435 33.376239, -80.843422 33.376252, -80.842762 33.37694, -80.8417 33.377788, -80.841543 33.377889, -80.840844 33.378342, -80.840204 33.378704, -80.840195 33.378711, -80.839495 33.378887, -80.838123 33.379215, -80.83806 33.379219, -80.837328 33.379282, -80.837257 33.379292, -80.837043 33.379325, -80.836973 33.379337, -80.836651 33.379331, -80.835754 33.379316, -80.835688 33.379308, -80.835369 33.379272, -80.834696 33.379191, -80.834218 33.379078, -80.833741 33.378966, -80.832478 33.378472, -80.831072 33.377592, -80.830868 33.377464, -80.830185 33.376837, -80.829365 33.37605, -80.828802 33.374997, -80.827959 33.373351))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n),\nstats AS (\n  SELECT ST_SummaryStats(ST_Union(rast)) AS s\n  FROM clipped\n)\nSELECT (s).max - (s).min AS elevation\nFROM stats;",
+  "id": "elevation_range+region-9",
+  "model_output": "```sql\nWITH rowesville_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Rowesville' AND addr_state ILIKE 'South Carolina'\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM rowesville_geom), true) AS clipped_raster\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM rowesville_geom))\n)\nSELECT \n  MAX((ST_Value(clipped_raster, 1))::numeric) - MIN((ST_Value(clipped_raster, 1))::numeric) AS elevation_diff\nFROM clipped_dem;\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 4:   WHERE region_name ILIKE 'Rowesville' AND addr_state ILIKE ...\n                                                   ^",
+    "output": []
+  },
+  "predicted_sql": "WITH rowesville_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Rowesville' AND addr_state ILIKE 'South Carolina'\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM rowesville_geom), true) AS clipped_raster\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM rowesville_geom))\n)\nSELECT \n  MAX((ST_Value(clipped_raster, 1))::numeric) - MIN((ST_Value(clipped_raster, 1))::numeric) AS elevation_diff\nFROM clipped_dem;",
+  "predicted_sql_candidates": [
+    "WITH rowesville_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Rowesville' AND addr_state ILIKE 'South Carolina'\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM rowesville_geom), true) AS clipped_raster\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM rowesville_geom))\n)\nSELECT \n  MAX((ST_Value(clipped_raster, 1))::numeric) - MIN((ST_Value(clipped_raster, 1))::numeric) AS elevation_diff\nFROM clipped_dem;"
+  ],
+  "query_type": "raster_only",
+  "question": "In Rowesville, South Carolina, what is max minus min elevation?",
+  "source_file": "elevation_range+region.jsonl",
+  "source_stem": "elevation_range+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 30.051,
+    "total_seconds": 30.052
+  },
+  "usage": {
+    "completion_tokens": 141,
+    "prompt_tokens": 1520,
+    "total_tokens": 1661
+  }
+}

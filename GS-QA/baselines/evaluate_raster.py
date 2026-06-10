@@ -60,13 +60,9 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
-from pyproj import Geod
-
 # ---------------------------------------------------------------------------
 # Metric routing table  (source_stem substring → metric config)
 # ---------------------------------------------------------------------------
-
-GEOD = Geod(ellps="WGS84")
 
 # Each entry: (metric_type, tolerance_value, tolerance_unit)
 # Checked in order — first match wins.
@@ -338,8 +334,12 @@ def _point_from_wkt(value: Any) -> tuple[float, float] | None:
 def _haversine_m(point_a: tuple[float, float], point_b: tuple[float, float]) -> float:
     lon1, lat1 = point_a
     lon2, lat2 = point_b
-    _, _, distance = GEOD.inv(lon1, lat1, lon2, lat2)
-    return abs(distance)
+    radius = 6371008.8
+    phi1, phi2 = math.radians(lat1), math.radians(lat2)
+    dphi = math.radians(lat2 - lat1)
+    dlambda = math.radians(lon2 - lon1)
+    a = math.sin(dphi / 2) ** 2 + math.cos(phi1) * math.cos(phi2) * math.sin(dlambda / 2) ** 2
+    return 2 * radius * math.atan2(math.sqrt(a), math.sqrt(1 - a))
 
 
 def _component_result(

@@ -1,0 +1,59 @@
+{
+  "answer_type": "count, POIs -> Points",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "count, POIs -> Points",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "count": 3
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "count": 3
+      }
+    ]
+  },
+  "gold_sql": "WITH candidates AS (\n  SELECT p.id, p.geometry\n  FROM pois p\n  WHERE ST_DWithin(p.geometry::geography, ST_GeomFromText('POINT (-70.641498 42.613715)',4326)::geography, 4400)\n    AND p.tourism = 'museum'\n),\npoi_elev AS (\n  SELECT c.id, elev.z\n  FROM candidates c\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, c.geometry::geometry) AS z\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, c.geometry::geometry)\n    LIMIT 1\n  ) elev ON elev.z IS NOT NULL\n)\nSELECT COUNT(*) AS count\nFROM poi_elev\nWHERE z <= 340;",
+  "id": "range+count+elevation_condition-17",
+  "model_output": "```sql\nWITH golf_club AS (\n  SELECT \n    ST_SetSRID(ST_GeomFromText('POINT (-70.641498 42.613715)'), 4326)::geography AS geom\n),\nmuseum_buffer AS (\n  SELECT \n    ST_Buffer(golf_club.geom, 4400) AS buffer_geom\n  FROM golf_club\n),\nmuseum_candidates AS (\n  SELECT \n    pois.id\n  FROM pois\n  JOIN museum_buffer ON ST_DWithin(pois.geometry::geometry, museum_buffer.buffer_geom::geometry, 0)\n  WHERE pois.tourism = 'museum'\n),\ndem_clip AS (\n  SELECT \n    (ST_Union(rast)).geom AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, museum_buffer.buffer_geom::geometry)\n  CROSS JOIN museum_buffer\n),\nelevation_filter AS (\n  SELECT \n    museum_candidates.id\n  FROM museum_candidates\n  JOIN dem_clip ON ST_Contains(dem_clip.rast, museum_candidates.geometry::geometry)\n  WHERE ST_Value(dem_clip.rast, museum_candidates.geometry::geometry) <= 340\n)\nSELECT COUNT(*) AS museum_count\nFROM elevation_filter;\n```",
+  "predicted_exec": {
+    "error": "syntax error at or near \"CROSS\"\nLINE 22:   CROSS JOIN museum_buffer\n           ^",
+    "output": []
+  },
+  "predicted_sql": "WITH golf_club AS (\n  SELECT \n    ST_SetSRID(ST_GeomFromText('POINT (-70.641498 42.613715)'), 4326)::geography AS geom\n),\nmuseum_buffer AS (\n  SELECT \n    ST_Buffer(golf_club.geom, 4400) AS buffer_geom\n  FROM golf_club\n),\nmuseum_candidates AS (\n  SELECT \n    pois.id\n  FROM pois\n  JOIN museum_buffer ON ST_DWithin(pois.geometry::geometry, museum_buffer.buffer_geom::geometry, 0)\n  WHERE pois.tourism = 'museum'\n),\ndem_clip AS (\n  SELECT \n    (ST_Union(rast)).geom AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, museum_buffer.buffer_geom::geometry)\n  CROSS JOIN museum_buffer\n),\nelevation_filter AS (\n  SELECT \n    museum_candidates.id\n  FROM museum_candidates\n  JOIN dem_clip ON ST_Contains(dem_clip.rast, museum_candidates.geometry::geometry)\n  WHERE ST_Value(dem_clip.rast, museum_candidates.geometry::geometry) <= 340\n)\nSELECT COUNT(*) AS museum_count\nFROM elevation_filter;",
+  "predicted_sql_candidates": [
+    "WITH golf_club AS (\n  SELECT \n    ST_SetSRID(ST_GeomFromText('POINT (-70.641498 42.613715)'), 4326)::geography AS geom\n),\nmuseum_buffer AS (\n  SELECT \n    ST_Buffer(golf_club.geom, 4400) AS buffer_geom\n  FROM golf_club\n),\nmuseum_candidates AS (\n  SELECT \n    pois.id\n  FROM pois\n  JOIN museum_buffer ON ST_DWithin(pois.geometry::geometry, museum_buffer.buffer_geom::geometry, 0)\n  WHERE pois.tourism = 'museum'\n),\ndem_clip AS (\n  SELECT \n    (ST_Union(rast)).geom AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, museum_buffer.buffer_geom::geometry)\n  CROSS JOIN museum_buffer\n),\nelevation_filter AS (\n  SELECT \n    museum_candidates.id\n  FROM museum_candidates\n  JOIN dem_clip ON ST_Contains(dem_clip.rast, museum_candidates.geometry::geometry)\n  WHERE ST_Value(dem_clip.rast, museum_candidates.geometry::geometry) <= 340\n)\nSELECT COUNT(*) AS museum_count\nFROM elevation_filter;"
+  ],
+  "query_type": "extended",
+  "question": "What is the number of museums located within 4400 meters from Bass Rocks Golf Club, Gloucester, MA with altitude at most 340 m?",
+  "source_file": "range+count+elevation_condition.jsonl",
+  "source_stem": "range+count+elevation_condition",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 57.02,
+    "total_seconds": 57.021
+  },
+  "usage": {
+    "completion_tokens": 267,
+    "prompt_tokens": 1790,
+    "total_tokens": 2057
+  }
+}

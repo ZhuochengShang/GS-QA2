@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 227.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 227.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-85.442614 43.468138, -85.442675 43.381294, -85.50231 43.38105, -85.562586 43.381185, -85.562406 43.468089, -85.522149 43.46773, -85.48225 43.467983, -85.482035 43.467984, -85.442614 43.468138))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).min AS elevation\nFROM clipped;",
+  "id": "elevation_min+region-18",
+  "model_output": "```sql\nWITH reynolds_township_geom AS (\n  SELECT ST_GeomFromText('POLYGON ((-85.442614 43.468138, -85.442675 43.381294, -85.50231 43.38105, -85.562586 43.381185, -85.562406 43.468089, -85.522149 43.46773, -85.48225 43.467983, -85.482035 43.467984, -85.442614 43.468138))', 4326)::geometry AS geom\n)\nSELECT \n  ST_ValueCount(rast, true) AS elevation_stats\nFROM \n  public.dem_us\nJOIN \n  reynolds_township_geom\nON \n  ST_Intersects(rast, geom);\n```",
+  "predicted_exec": {
+    "error": "function st_valuecount(raster, boolean) does not exist\nLINE 5:   ST_ValueCount(rast, true) AS elevation_stats\n          ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH reynolds_township_geom AS (\n  SELECT ST_GeomFromText('POLYGON ((-85.442614 43.468138, -85.442675 43.381294, -85.50231 43.38105, -85.562586 43.381185, -85.562406 43.468089, -85.522149 43.46773, -85.48225 43.467983, -85.482035 43.467984, -85.442614 43.468138))', 4326)::geometry AS geom\n)\nSELECT \n  ST_ValueCount(rast, true) AS elevation_stats\nFROM \n  public.dem_us\nJOIN \n  reynolds_township_geom\nON \n  ST_Intersects(rast, geom);",
+  "predicted_sql_candidates": [
+    "WITH reynolds_township_geom AS (\n  SELECT ST_GeomFromText('POLYGON ((-85.442614 43.468138, -85.442675 43.381294, -85.50231 43.38105, -85.562586 43.381185, -85.562406 43.468089, -85.522149 43.46773, -85.48225 43.467983, -85.482035 43.467984, -85.442614 43.468138))', 4326)::geometry AS geom\n)\nSELECT \n  ST_ValueCount(rast, true) AS elevation_stats\nFROM \n  public.dem_us\nJOIN \n  reynolds_township_geom\nON \n  ST_Intersects(rast, geom);"
+  ],
+  "query_type": "raster_only",
+  "question": "What floor elevation does Reynolds Township, Michigan have?",
+  "source_file": "elevation_min+region.jsonl",
+  "source_stem": "elevation_min+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 57.519,
+    "total_seconds": 57.52
+  },
+  "usage": {
+    "completion_tokens": 269,
+    "prompt_tokens": 1688,
+    "total_tokens": 1957
+  }
+}

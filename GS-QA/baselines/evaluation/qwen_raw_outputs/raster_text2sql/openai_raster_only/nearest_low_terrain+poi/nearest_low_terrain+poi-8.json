@@ -1,0 +1,59 @@
+{
+  "answer_type": "distance",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "distance",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "distance_m": 7965.228635
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "distance_m": 7965.228635
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-117.055952 32.996822)',4326) AS pt\n),\nnearby_tiles AS (\n  SELECT d.rast\n  FROM public.dem_us d, origin o\n  WHERE d.rast && ST_Expand(o.pt, 1.0)\n),\nmasked AS (\n\t  SELECT ST_MapAlgebra(\n\t           rast,\n\t           1,\n\t           '32BF'::text,\n\t           'CASE WHEN [rast.val] < 80 THEN [rast.val] ELSE NULL END'::text,\n\t           NULL::double precision\n\t         ) AS rast\n  FROM nearby_tiles\n),\nqualifying_pixels AS (\n  SELECT (pp).geom AS geom\n  FROM masked\n  CROSS JOIN LATERAL ST_PixelAsCentroids(rast, 1, TRUE) AS pp\n)\nSELECT MIN(ST_Distance(p.geom::geography, o.pt::geography)) AS distance_m\nFROM qualifying_pixels p, origin o;",
+  "id": "nearest_low_terrain+poi-8",
+  "model_output": "```sql\nWITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-117.055952, 32.996822), 4326)::geography AS geom\n),\nlow_elevation_area AS (\n  SELECT ST_Union(rast) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, ST_Transform(p.geom::geometry, 4326))\n),\nclipped_low_elevation AS (\n  SELECT ST_Clip(low_elevation_area.rast, true, ST_Transform(p.geom::geometry, 4326)) AS rast\n  FROM low_elevation_area, poi_geom p\n),\nnearest_point AS (\n  SELECT ST_ClosestPoint(clipped_low_elevation.rast, ST_Transform(p.geom::geometry, 4326)) AS nearest_point\n  FROM clipped_low_elevation, poi_geom p\n)\nSELECT ST_Distance(p.geom, (SELECT nearest_point FROM nearest_point)) AS distance_meters\nFROM poi_geom p;\n```",
+  "predicted_exec": {
+    "error": "missing FROM-clause entry for table \"p\"\nLINE 7:   WHERE ST_Intersects(rast, ST_Transform(p.geom::geometry, 4...\n                                                 ^",
+    "output": []
+  },
+  "predicted_sql": "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-117.055952, 32.996822), 4326)::geography AS geom\n),\nlow_elevation_area AS (\n  SELECT ST_Union(rast) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, ST_Transform(p.geom::geometry, 4326))\n),\nclipped_low_elevation AS (\n  SELECT ST_Clip(low_elevation_area.rast, true, ST_Transform(p.geom::geometry, 4326)) AS rast\n  FROM low_elevation_area, poi_geom p\n),\nnearest_point AS (\n  SELECT ST_ClosestPoint(clipped_low_elevation.rast, ST_Transform(p.geom::geometry, 4326)) AS nearest_point\n  FROM clipped_low_elevation, poi_geom p\n)\nSELECT ST_Distance(p.geom, (SELECT nearest_point FROM nearest_point)) AS distance_meters\nFROM poi_geom p;",
+  "predicted_sql_candidates": [
+    "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-117.055952, 32.996822), 4326)::geography AS geom\n),\nlow_elevation_area AS (\n  SELECT ST_Union(rast) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, ST_Transform(p.geom::geometry, 4326))\n),\nclipped_low_elevation AS (\n  SELECT ST_Clip(low_elevation_area.rast, true, ST_Transform(p.geom::geometry, 4326)) AS rast\n  FROM low_elevation_area, poi_geom p\n),\nnearest_point AS (\n  SELECT ST_ClosestPoint(clipped_low_elevation.rast, ST_Transform(p.geom::geometry, 4326)) AS nearest_point\n  FROM clipped_low_elevation, poi_geom p\n)\nSELECT ST_Distance(p.geom, (SELECT nearest_point FROM nearest_point)) AS distance_meters\nFROM poi_geom p;"
+  ],
+  "query_type": "raster_only",
+  "question": "How far is Palomar Medical Center Poway, Poway, CA from the nearest terrain below 80 meters?",
+  "source_file": "nearest_low_terrain+poi.jsonl",
+  "source_stem": "nearest_low_terrain+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 49.819,
+    "total_seconds": 49.82
+  },
+  "usage": {
+    "completion_tokens": 227,
+    "prompt_tokens": 1648,
+    "total_tokens": 1875
+  }
+}

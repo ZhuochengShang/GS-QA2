@@ -1,0 +1,1101 @@
+[
+  {
+    "id": 1200,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Ship Wreck"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.125
+  },
+  {
+    "id": 1201,
+    "records": [
+      {
+        "output": [
+          {
+            "park_name": "Black Bear Wilderness Area"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 5.695
+  },
+  {
+    "id": 1202,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.108
+  },
+  {
+    "id": 1203,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.188
+  },
+  {
+    "id": 1204,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Holiday Inn Express Crestwood"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.053
+  },
+  {
+    "id": 1205,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.029
+  },
+  {
+    "id": 1206,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Cook Out"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.111
+  },
+  {
+    "id": 1207,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"p\"\nLINE 2: SELECT poi_name, ST_Distance(p.geometry::geography, (SELECT ...\n                                     ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1208,
+    "records": [
+      {
+        "output": [],
+        "error": "column reference \"poi_name\" is ambiguous\nLINE 2: SELECT poi_name, ST_Distance(p1.geometry::geography, p2.geom...\n               ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1209,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.73
+  },
+  {
+    "id": 1210,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.126
+  },
+  {
+    "id": 1211,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 2.47
+  },
+  {
+    "id": 1212,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.136
+  },
+  {
+    "id": 1213,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.098
+  },
+  {
+    "id": 1214,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.045
+  },
+  {
+    "id": 1215,
+    "records": [
+      {
+        "output": [],
+        "error": "argument of AND must be type boolean, not type double precision\nLINE 7:    AND parks.geometry <-> (SELECT geometry FROM parks WHERE ...\n               ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1216,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.228
+  },
+  {
+    "id": 1217,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.041
+  },
+  {
+    "id": 1218,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Oskaloosa Care Center"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.084
+  },
+  {
+    "id": 1219,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Tupelo Buffalo Park"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.151
+  },
+  {
+    "id": 1220,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.174
+  },
+  {
+    "id": 1221,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "AC Hotel Denver Downtown",
+            "geometry": "0101000020E6100000C2F869DC9B3F5AC03BF4273B47DF4340"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.114
+  },
+  {
+    "id": 1222,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_touches(geography, geography) does not exist\nLINE 4: WHERE ST_Touches(parks.geometry::geography, ST_Buffer((SELEC...\n              ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1223,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_within(geography, geography) does not exist\nLINE 5:   AND ST_Within(\n              ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1224,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.042
+  },
+  {
+    "id": 1225,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Idaho Aquarium"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.063
+  },
+  {
+    "id": 1226,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Houghton University"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.123
+  },
+  {
+    "id": 1227,
+    "records": [
+      {
+        "output": [],
+        "error": "argument of AND must be type boolean, not type double precision\nLINE 6:    AND parks.geometry::geography <-> (SELECT geometry FROM p...\n               ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1228,
+    "records": [
+      {
+        "output": [],
+        "error": "syntax error at or near \"s\"\nLINE 8: ...ometry FROM pois WHERE poi_name ILIKE '%Cal, Sr.\\'s Yard%' L...\n                                                             ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1229,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 1.632
+  },
+  {
+    "id": 1230,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Press Coffee"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.127
+  },
+  {
+    "id": 1231,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Centroid(geography) unhandled geography type\nCONTEXT:  parallel worker"
+      }
+    ],
+    "run_seconds": 2.378
+  },
+  {
+    "id": 1232,
+    "records": [
+      {
+        "output": [],
+        "error": "syntax error at or near \"WHERE\"\nLINE 8:   WHERE degrees(ST_Azimuth(ST_Transform(ST_MakePoint(-85.304...\n          ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1233,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Dolphins Plus Bayside"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.06
+  },
+  {
+    "id": 1234,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.093
+  },
+  {
+    "id": 1235,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "The View Lounge",
+            "addr_city": "San Francisco",
+            "addr_state": "CA",
+            "distance_meters": 1029.25564529
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.451
+  },
+  {
+    "id": 1236,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.104
+  },
+  {
+    "id": 1237,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Taylor Arena"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.085
+  },
+  {
+    "id": 1238,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_touches(geography, geography) does not exist\nLINE 5:   AND ST_Touches(p.geometry::geography, (SELECT geometry FRO...\n              ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1239,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.016
+  },
+  {
+    "id": 1240,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.055
+  },
+  {
+    "id": 1241,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Ops"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.137
+  },
+  {
+    "id": 1242,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.093
+  },
+  {
+    "id": 1243,
+    "records": [
+      {
+        "output": [],
+        "error": "argument of AND must be type boolean, not type double precision\nLINE 8: ORDER BY p.geometry <-> (SELECT geometry FROM pois WHERE poi...\n                 ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1244,
+    "records": [
+      {
+        "output": [],
+        "error": "argument of AND must be type boolean, not type double precision\nLINE 9: AND pois.geometry <-> (SELECT geometry FROM pois WHERE poi_n...\n            ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1245,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.04
+  },
+  {
+    "id": 1246,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.036
+  },
+  {
+    "id": 1247,
+    "records": [
+      {
+        "output": [],
+        "error": "argument of AND must be type boolean, not type double precision\nLINE 6:    AND (SELECT geometry FROM pois WHERE poi_name ILIKE '%Kel...\n               ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1248,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"region_name\" does not exist\nLINE 5: ...RE poi_name ILIKE '%Parker Manatee Aquarium%' AND region_nam...\n                                                             ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1249,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Golden Bowl"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.107
+  },
+  {
+    "id": 1250,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikidata, wikipedia\n                                   ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1251,
+    "records": [
+      {
+        "output": [],
+        "error": "argument of AND must be type boolean, not type double precision\nLINE 9: AND pois.geometry <-> (SELECT geometry FROM pois WHERE poi_n...\n            ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1252,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.01
+  },
+  {
+    "id": 1253,
+    "records": [
+      {
+        "output": [],
+        "error": "argument of AND must be type boolean, not type double precision\nLINE 9:   AND pois.geometry <-> (SELECT geometry FROM pois WHERE poi...\n              ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1254,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Centroid(geography) unhandled geography type\nCONTEXT:  parallel worker"
+      }
+    ],
+    "run_seconds": 0.972
+  },
+  {
+    "id": 1255,
+    "records": [
+      {
+        "output": [],
+        "error": "column p.wikipedia does not exist\nLINE 2: SELECT p.poi_name, p.wikidata, p.wikipedia\n                                       ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1256,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 4: WHERE wikipedia IS NOT NULL\n              ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1257,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.992
+  },
+  {
+    "id": 1258,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Oskaloosa Care Center"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.017
+  },
+  {
+    "id": 1259,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Hopedale Medical Complex"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.108
+  },
+  {
+    "id": 1260,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.124
+  },
+  {
+    "id": 1261,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_touches(geography, geography) does not exist\nLINE 5:   AND ST_Touches(geometry, (SELECT geometry FROM pois WHERE ...\n              ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1262,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.031
+  },
+  {
+    "id": 1263,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_touches(geography, geography) does not exist\nLINE 5:   AND ST_Touches(geometry, ST_MakePoint(-119.2927, 46.3833):...\n              ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1264,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 3.579
+  },
+  {
+    "id": 1265,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.387
+  },
+  {
+    "id": 1266,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikidata, wikipedia\n                                   ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1267,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.01
+  },
+  {
+    "id": 1268,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_within(geography, geography) does not exist\nLINE 5:   AND ST_Within(\n              ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1269,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 3.604
+  },
+  {
+    "id": 1270,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.101
+  },
+  {
+    "id": 1271,
+    "records": [
+      {
+        "output": [],
+        "error": "argument of AND must be type boolean, not type double precision\nLINE 7:    AND pois.geometry <-> (SELECT geometry FROM pois WHERE po...\n               ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1272,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "MSU Poultry Research & Teaching Center",
+            "distance_meters": 96330.20407788
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.127
+  },
+  {
+    "id": 1273,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.064
+  },
+  {
+    "id": 1274,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "99 Chinese Express"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.122
+  },
+  {
+    "id": 1275,
+    "records": [
+      {
+        "output": [],
+        "error": "argument of AND must be type boolean, not type double precision\nLINE 7:    AND parks.geometry <-> (SELECT geometry FROM pois WHERE p...\n               ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1276,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.139
+  },
+  {
+    "id": 1277,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.079
+  },
+  {
+    "id": 1278,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.049
+  },
+  {
+    "id": 1279,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"parks\"\nLINE 5: ORDER BY ST_Azimuth(ST_Centroid(parks.geometry), pois.geomet...\n                                        ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1280,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Centroid(geography) unhandled geography type\nCONTEXT:  parallel worker"
+      }
+    ],
+    "run_seconds": 4.236
+  },
+  {
+    "id": 1281,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Wayland University"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.012
+  },
+  {
+    "id": 1282,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.133
+  },
+  {
+    "id": 1283,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 98.656
+  },
+  {
+    "id": 1284,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.044
+  },
+  {
+    "id": 1285,
+    "records": [
+      {
+        "output": [],
+        "error": "argument of AND must be type boolean, not type double precision\nLINE 7:    AND ST_Distance((SELECT geometry FROM pois WHERE poi_name...\n               ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1286,
+    "records": [
+      {
+        "output": [],
+        "error": "argument of AND must be type boolean, not type double precision\nLINE 8:   AND parks.geometry <-> (SELECT geometry FROM parks WHERE p...\n              ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1287,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Parker Vista",
+            "distance_meters": 3684.83213949
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.048
+  },
+  {
+    "id": 1288,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Franklin Pierce University",
+            "distance_meters": 42727.51981646
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.093
+  },
+  {
+    "id": 1289,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.074
+  },
+  {
+    "id": 1290,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Tribby Caf\u00e9;Overlook Gallery"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.159
+  },
+  {
+    "id": 1291,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_within(geography, geography) does not exist\nLINE 5:   AND ST_Within(\n              ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1292,
+    "records": [
+      {
+        "output": [],
+        "error": "argument of AND must be type boolean, not type double precision\nLINE 6:    AND p.geometry <-> ST_Centroid((SELECT geometry FROM park...\n               ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1293,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.127
+  },
+  {
+    "id": 1294,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.028
+  },
+  {
+    "id": 1295,
+    "records": [
+      {
+        "output": [],
+        "error": "argument of AND must be type boolean, not type double precision\nLINE 9: AND pois.geometry <-> (SELECT geometry FROM pois WHERE poi_n...\n            ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1296,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_y(geography) does not exist\nLINE 5:   AND ST_Y(ST_Centroid(geometry::geography)) > (\n              ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1297,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs\nCONTEXT:  parallel worker"
+      }
+    ],
+    "run_seconds": 18.955
+  },
+  {
+    "id": 1298,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.018
+  },
+  {
+    "id": 1299,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.19
+  }
+]

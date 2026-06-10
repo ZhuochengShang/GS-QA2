@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 0.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 0.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-77.143618 43.039934, -77.143587 43.039866, -77.143407 43.039152, -77.143262 43.038062, -77.143178 43.037796, -77.142549 43.036596, -77.141878 43.035452, -77.141809 43.035225, -77.141767 43.034767, -77.141757 43.033977, -77.141673 43.032006, -77.141471 43.028295, -77.147125 43.028266, -77.149964 43.028222, -77.153573 43.028235, -77.153575 43.026315, -77.156501 43.026263, -77.161185 43.026248, -77.162442 43.026298, -77.163951 43.026394, -77.164512 43.026443, -77.165582 43.025129, -77.172601 43.030338, -77.172337 43.031046, -77.171985 43.031997, -77.171904 43.032118, -77.171793 43.032214, -77.17166 43.032278, -77.171502 43.032316, -77.171296 43.03233, -77.170094 43.032331, -77.170558 43.039107, -77.171011 43.03984, -77.171025 43.039863, -77.143618 43.039934))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).min AS slope\nFROM region_slope;",
+  "id": "min_slope+area-6",
+  "model_output": "```sql\nWITH port_gibson_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Port Gibson' AND border_type = 'city'\n),\nflattest_slope AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(\n        r.rast,\n        (SELECT geom FROM port_gibson_geom),\n        TRUE\n      ),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM\n    public.dem_us r\n  WHERE\n    ST_Intersects(\n      r.rast,\n      (SELECT geom FROM port_gibson_geom)\n    )\n),\nmin_slope_value AS (\n  SELECT\n    MIN(ST_Value(slope_rast, 1)) AS min_slope\n  FROM\n    flattest_slope\n)\nSELECT\n  min_slope AS flattest_slope_degrees\nFROM\n  min_slope_value;\n```",
+  "predicted_exec": {
+    "error": "function st_value(raster, integer) does not exist\nLINE 27:     MIN(ST_Value(slope_rast, 1)) AS min_slope\n                 ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH port_gibson_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Port Gibson' AND border_type = 'city'\n),\nflattest_slope AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(\n        r.rast,\n        (SELECT geom FROM port_gibson_geom),\n        TRUE\n      ),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM\n    public.dem_us r\n  WHERE\n    ST_Intersects(\n      r.rast,\n      (SELECT geom FROM port_gibson_geom)\n    )\n),\nmin_slope_value AS (\n  SELECT\n    MIN(ST_Value(slope_rast, 1)) AS min_slope\n  FROM\n    flattest_slope\n)\nSELECT\n  min_slope AS flattest_slope_degrees\nFROM\n  min_slope_value;",
+  "predicted_sql_candidates": [
+    "WITH port_gibson_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Port Gibson' AND border_type = 'city'\n),\nflattest_slope AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(\n        r.rast,\n        (SELECT geom FROM port_gibson_geom),\n        TRUE\n      ),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM\n    public.dem_us r\n  WHERE\n    ST_Intersects(\n      r.rast,\n      (SELECT geom FROM port_gibson_geom)\n    )\n),\nmin_slope_value AS (\n  SELECT\n    MIN(ST_Value(slope_rast, 1)) AS min_slope\n  FROM\n    flattest_slope\n)\nSELECT\n  min_slope AS flattest_slope_degrees\nFROM\n  min_slope_value;"
+  ],
+  "query_type": "raster_only",
+  "question": "How flat is the flattest part of Port Gibson, New York?",
+  "source_file": "min_slope+area.jsonl",
+  "source_stem": "min_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 41.193,
+    "total_seconds": 41.194
+  },
+  "usage": {
+    "completion_tokens": 189,
+    "prompt_tokens": 1517,
+    "total_tokens": 1706
+  }
+}

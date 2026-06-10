@@ -1,0 +1,502 @@
+[
+  {
+    "id": 200,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_park_area\nFROM parks p\nWHERE ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Ohio%' LIMIT 1));\n```",
+    "run_seconds": 11.306
+  },
+  {
+    "id": 201,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_area\nFROM parks p\nWHERE ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Washington County%' AND border_type = 'county' LIMIT 1))\n  AND leisure = 'garden';\n```",
+    "run_seconds": 14.501
+  },
+  {
+    "id": 202,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_area\nFROM parks p\nJOIN regions r ON ST_Intersects(p.geometry::geography, r.geometry::geography)\nWHERE r.region_name ILIKE '%Virginia%' AND p.leisure = 'golf_course';\n```",
+    "run_seconds": 13.442
+  },
+  {
+    "id": 203,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_surface_area\nFROM parks p\nWHERE ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Port Richey%' AND region_name ILIKE '%Florida%' LIMIT 1));\n```",
+    "run_seconds": 13.653
+  },
+  {
+    "id": 204,
+    "content": "```sql\nSELECT SUM(ST_Area(lake.geometry::geography)) AS total_area\nFROM lakes lake\nWHERE lake.water = 'reservoir'\n  AND ST_Intersects(lake.geometry::geography, (SELECT regions.geometry::geography FROM regions WHERE regions.region_name ILIKE '%Aberdeen%' LIMIT 1));\n```",
+    "run_seconds": 14.931
+  },
+  {
+    "id": 205,
+    "content": "```sql\nSELECT SUM(ST_Area(ST_Envelope(geometry)::geography)) AS total_reservoir_area\nFROM lakes\nWHERE water = 'reservoir'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Missouri%' LIMIT 1));\n```",
+    "run_seconds": 13.441
+  },
+  {
+    "id": 206,
+    "content": "```sql\nSELECT SUM(ST_Area(lakes.geometry::geography)) AS total_reservoir_area\nFROM lakes\nWHERE water = 'reservoir'\n  AND ST_Intersects(lakes.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Connecticut%' LIMIT 1));\n```",
+    "run_seconds": 13.648
+  },
+  {
+    "id": 207,
+    "content": "```sql\nSELECT SUM(ST_Area(lakes.geometry::geography)) AS total_surface_area\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%New York%' AND border_type = 'state' LIMIT 1));\n```",
+    "run_seconds": 13.234
+  },
+  {
+    "id": 208,
+    "content": "```sql\nSELECT SUM(ST_Area(parks.geometry::geography)) AS total_area\nFROM parks\nWHERE parks.leisure = 'common'\n  AND ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%United States%' LIMIT 1));\n```",
+    "run_seconds": 12.807
+  },
+  {
+    "id": 209,
+    "content": "```sql\nSELECT SUM(ST_Area(lakes.geometry::geography)) AS total_area\nFROM lakes\nWHERE lake_name ILIKE '%reservoir%' \n  AND ST_Intersects(lakes.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Lincoln County%' LIMIT 1));\n```",
+    "run_seconds": 14.083
+  },
+  {
+    "id": 210,
+    "content": "```sql\nSELECT SUM(ST_Area(l.geometry::geography)) AS total_area\nFROM lakes l\nWHERE ST_Intersects(l.geometry::geography, (SELECT r.geometry::geography FROM regions r WHERE r.region_name ILIKE '%Grand Traverse%' AND r.border_type = 'county' LIMIT 1));\n```",
+    "run_seconds": 14.285
+  },
+  {
+    "id": 211,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_golf_course_area\nFROM parks p\nJOIN regions r ON ST_Intersects(p.geometry::geography, r.geometry::geography)\nWHERE r.region_name ILIKE '%Pennsylvania%' AND p.leisure = 'golf_course';\n```",
+    "run_seconds": 14.282
+  },
+  {
+    "id": 212,
+    "content": "```sql\nSELECT SUM(ST_Area(ST_Union(p.geometry::geography))) AS total_park_area\nFROM parks p\nJOIN regions r ON ST_Intersects(p.geometry, r.geometry::geography)\nWHERE r.region_name ILIKE '%New York City%';\n```",
+    "run_seconds": 12.364
+  },
+  {
+    "id": 213,
+    "content": "```sql\nSELECT SUM(ST_Area(lakes.geometry::geography)) AS total_reservoir_area\nFROM lakes\nWHERE water = 'reservoir'\n  AND ST_Intersects(\n    lakes.geometry::geography,\n    (SELECT geometry FROM regions WHERE region_name ILIKE '%Noxubee County%' AND border_type = 'county' LIMIT 1)\n  );\n```",
+    "run_seconds": 16.628
+  },
+  {
+    "id": 214,
+    "content": "```sql\nSELECT SUM(ST_Area(geometry::geography)) AS total_area\nFROM parks\nWHERE leisure = 'sports_centre'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%United States%' LIMIT 1));\n```",
+    "run_seconds": 11.958
+  },
+  {
+    "id": 215,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_park_area\nFROM parks p\nWHERE ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Tobyhanna Township%' LIMIT 1));\n```",
+    "run_seconds": 12.375
+  },
+  {
+    "id": 216,
+    "content": "```sql\nSELECT SUM(ST_Area(lakes.geometry::geography)) AS total_lake_area\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Steuben County%' LIMIT 1));\n```",
+    "run_seconds": 12.17
+  },
+  {
+    "id": 217,
+    "content": "```sql\nSELECT SUM(ST_Area(lakes.geometry::geography)) AS total_lake_area\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT regions.geometry::geography FROM regions WHERE regions.region_name ILIKE '%Bear Creek%' AND regions.addr_state ILIKE '%Michigan%' LIMIT 1));\n```",
+    "run_seconds": 14.922
+  },
+  {
+    "id": 218,
+    "content": "```sql\nSELECT SUM(ST_Area(l.geometry::geography)) AS total_lake_area\nFROM lakes l\nWHERE ST_Intersects(l.geometry::geography, \n                    (SELECT r.geometry::geography \n                     FROM regions r \n                     WHERE r.region_name ILIKE '%Grant Township%' \n                       AND r.border_type = 'township'\n                       AND ST_Intersects(r.geometry::geography, \n                                         (SELECT r2.geometry::geography \n                                          FROM regions r2 \n                                          WHERE r2.region_name ILIKE '%Keweenaw County%' \n                                            AND r2.border_type = 'county'\n                                            AND ST_Intersects(r2.geometry::geography, \n                                                              (SELECT r3.geometry::geography \n                                                               FROM regions r3 \n                                                               WHERE r3.region_name ILIKE '%Michigan%' \n                                                                 AND r3.border_type = 'state' \n                                                               LIMIT 1)\n                                            )\n                                          LIMIT 1)\n                     )\n                     LIMIT 1\n                    );\n```",
+    "run_seconds": 42.853
+  },
+  {
+    "id": 219,
+    "content": "```sql\nSELECT SUM(ST_Area(geometry::geography)) AS total_surface_area\nFROM lakes\nWHERE water = 'bay'\n  AND ST_Intersects(geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Virginia Beach%' LIMIT 1));\n```",
+    "run_seconds": 11.726
+  },
+  {
+    "id": 220,
+    "content": "```sql\nSELECT SUM(ST_Area(lake.geometry::geography)) AS total_reservoir_area\nFROM lakes lake\nWHERE lake.water = 'reservoir'\n  AND ST_Intersects(lake.geometry::geography, (SELECT regions.geometry::geography FROM regions WHERE regions.region_name ILIKE '%United States%' LIMIT 1));\n```",
+    "run_seconds": 15.135
+  },
+  {
+    "id": 221,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_area\nFROM parks p\nWHERE ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Berkshire County%' LIMIT 1))\nAND leisure = 'garden';\n```",
+    "run_seconds": 13.215
+  },
+  {
+    "id": 222,
+    "content": "```sql\nSELECT SUM(ST_Area(parks.geometry::geography)) AS total_area\nFROM parks\nWHERE leisure = 'common'\n  AND ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Virginia%' LIMIT 1));\n```",
+    "run_seconds": 12.147
+  },
+  {
+    "id": 223,
+    "content": "```sql\nSELECT SUM(ST_Area(lakes.geometry::geography)) AS total_area\nFROM lakes\nWHERE water = 'harbour' AND ST_Intersects(lakes.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%United States%' LIMIT 1));\n```",
+    "run_seconds": 12.366
+  },
+  {
+    "id": 224,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_area\nFROM parks p\nWHERE p.leisure = 'nature_reserve'\n  AND ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Ohio%' LIMIT 1));\n```",
+    "run_seconds": 13.213
+  },
+  {
+    "id": 225,
+    "content": "```sql\nSELECT SUM(ST_Area(parks.geometry::geography)) AS total_area\nFROM parks\nWHERE parks.leisure = 'golf_course'\n  AND ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Mississippi%' LIMIT 1));\n```",
+    "run_seconds": 13.213
+  },
+  {
+    "id": 226,
+    "content": "```sql\nSELECT SUM(ST_Area(parks.geometry::geography)) AS total_golf_course_area\nFROM parks\nWHERE parks.leisure = 'golf_course'\n  AND ST_Intersects(parks.geometry, (SELECT regions.geometry FROM regions WHERE regions.region_name ILIKE '%Volusia%' AND regions.border_type = 'county' LIMIT 1));\n```",
+    "run_seconds": 16.196
+  },
+  {
+    "id": 227,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_area\nFROM parks p\nWHERE ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Tuxedo%' LIMIT 1));\n```",
+    "run_seconds": 11.51
+  },
+  {
+    "id": 228,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_area\nFROM parks p\nWHERE p.leisure = 'nature_reserve'\n  AND ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Virginia%' LIMIT 1));\n```",
+    "run_seconds": 13.214
+  },
+  {
+    "id": 229,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_park_area\nFROM parks p\nWHERE ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Mississippi%' LIMIT 1));\n```",
+    "run_seconds": 11.723
+  },
+  {
+    "id": 230,
+    "content": "```sql\nSELECT SUM(ST_Area(geometry::geography)) AS total_lake_area\nFROM lakes\nWHERE ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Mamakating%' LIMIT 1));\n```",
+    "run_seconds": 11.509
+  },
+  {
+    "id": 231,
+    "content": "```sql\nSELECT SUM(ST_Area(lakes.geometry::geography)) AS total_area\nFROM lakes\nWHERE water = 'reservoir'\n  AND ST_Intersects(lakes.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Kentucky%' LIMIT 1));\n```",
+    "run_seconds": 13.211
+  },
+  {
+    "id": 232,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_area\nFROM parks p\nWHERE ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%New York City%' LIMIT 1))\n  AND leisure = 'recreation_ground';\n```",
+    "run_seconds": 13.423
+  },
+  {
+    "id": 233,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_area\nFROM parks p\nWHERE ST_Intersects(p.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Cowen%' LIMIT 1))\n  AND leisure = 'nature_reserve';\n```",
+    "run_seconds": 12.363
+  },
+  {
+    "id": 234,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_area\nFROM parks p\nWHERE ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Dukes County%' LIMIT 1))\n  AND leisure = 'garden';\n```",
+    "run_seconds": 13.217
+  },
+  {
+    "id": 235,
+    "content": "```sql\nSELECT SUM(ST_Area(parks.geometry::geography)) AS total_area\nFROM parks\nWHERE ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Benton County%' AND region_name ILIKE '%Oregon%' LIMIT 1))\n  AND leisure = 'nature_reserve';\n```",
+    "run_seconds": 14.496
+  },
+  {
+    "id": 236,
+    "content": "```sql\nSELECT SUM(ST_Area(lakes.geometry::geography)) AS total_area\nFROM lakes\nWHERE water = 'reservoir'\n  AND ST_Intersects(lakes.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Summit County%' LIMIT 1));\n```",
+    "run_seconds": 13.43
+  },
+  {
+    "id": 237,
+    "content": "```sql\nSELECT ST_Area(ST_Union(parks.geometry)::geography) AS total_area\nFROM parks\nJOIN regions ON ST_Intersects(parks.geometry, regions.geometry)\nWHERE regions.region_name ILIKE '%Burke County%' AND parks.leisure = 'garden';\n```",
+    "run_seconds": 12.792
+  },
+  {
+    "id": 238,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_area\nFROM parks p\nWHERE ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Tobyhanna Township%' LIMIT 1))\n  AND leisure = 'golf_course';\n```",
+    "run_seconds": 13.853
+  },
+  {
+    "id": 239,
+    "content": "```sql\nSELECT SUM(ST_Area(parks.geometry::geography)) AS total_area\nFROM parks\nWHERE ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Berkshire County%' LIMIT 1))\n  AND leisure = 'nature_reserve';\n```",
+    "run_seconds": 13.003
+  },
+  {
+    "id": 240,
+    "content": "```sql\nSELECT ST_Area(ST_Union(lakes.geometry::geography)) AS total_area_sqm\nFROM lakes\nJOIN regions ON ST_Intersects(lakes.geometry::geography, regions.geometry::geography)\nWHERE regions.region_name ILIKE '%Freeman Township%' AND regions.addr_state ILIKE '%Michigan%';\n```",
+    "run_seconds": 14.709
+  },
+  {
+    "id": 241,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_footprint\nFROM parks p\nJOIN regions r ON ST_Intersects(p.geometry::geography, r.geometry::geography)\nWHERE r.region_name ILIKE '%Connecticut%' AND p.leisure = 'recreation_ground';\n```",
+    "run_seconds": 13.852
+  },
+  {
+    "id": 242,
+    "content": "```sql\nSELECT SUM(ST_Area(ST_Envelope(lakes.geometry)::geography)) AS total_reservoir_area\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Greene County%' AND addr_state ILIKE '%Georgia%' LIMIT 1))\n  AND water = 'reservoir';\n```",
+    "run_seconds": 16.835
+  },
+  {
+    "id": 243,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_surface_area\nFROM parks p\nWHERE p.leisure = 'garden'\n  AND ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%boston%' LIMIT 1));\n```",
+    "run_seconds": 13.638
+  },
+  {
+    "id": 244,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_area\nFROM parks p\nWHERE ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Dukes%' AND region_name ILIKE '%Massachusetts%' LIMIT 1))\n  AND leisure = 'golf_course';\n```",
+    "run_seconds": 15.129
+  },
+  {
+    "id": 245,
+    "content": "```sql\nSELECT SUM(ST_Area(parks.geometry::geography)) AS total_area\nFROM parks\nWHERE parks.leisure = 'nature_reserve'\n  AND ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Greensboro%' LIMIT 1));\n```",
+    "run_seconds": 13.216
+  },
+  {
+    "id": 246,
+    "content": "```sql\nSELECT SUM(ST_Area(parks.geometry::geography)) AS total_area\nFROM parks\nWHERE ST_Intersects(parks.geometry, (SELECT regions.geometry FROM regions WHERE regions.region_name ILIKE '%Waukesha%' AND regions.border_type = 'county' LIMIT 1))\n  AND parks.leisure = 'nature_reserve';\n```",
+    "run_seconds": 15.561
+  },
+  {
+    "id": 247,
+    "content": "```sql\nSELECT SUM(ST_Area(lakes.geometry::geography)) AS total_lake_area\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Curry County%' AND region_name ILIKE '%Oregon%' LIMIT 1)::geography);\n```",
+    "run_seconds": 14.498
+  },
+  {
+    "id": 248,
+    "content": "```sql\nSELECT SUM(ST_Area(lakes.geometry::geography)) AS total_lake_area\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Mathias Township%' AND region_name ILIKE '%Michigan%' LIMIT 1));\n```",
+    "run_seconds": 13.85
+  },
+  {
+    "id": 249,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_area\nFROM parks p\nWHERE p.leisure = 'sports_centre'\n  AND ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Virginia%' LIMIT 1));\n```",
+    "run_seconds": 13.424
+  },
+  {
+    "id": 250,
+    "content": "```sql\nSELECT ST_Area(ST_Union(p.geometry::geography)) AS total_area\nFROM parks p\nJOIN regions r ON ST_Intersects(p.geometry, r.geometry::geography)\nWHERE r.region_name ILIKE '%Berkshire County%' AND r.border_type = 'county';\n```",
+    "run_seconds": 13.426
+  },
+  {
+    "id": 251,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_area\nFROM parks p\nWHERE ST_Intersects(p.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Lewis County%' LIMIT 1));\n```",
+    "run_seconds": 10.655
+  },
+  {
+    "id": 252,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_area\nFROM parks p\nWHERE p.leisure = 'recreation_ground'\n  AND ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%boston%' LIMIT 1));\n```",
+    "run_seconds": 13.638
+  },
+  {
+    "id": 253,
+    "content": "```sql\nSELECT ST_Area(ST_Union(parks.geometry::geography)) AS total_area_sqm\nFROM parks\nWHERE parks.leisure ILIKE '%garden%'\n  AND ST_Intersects(parks.geometry, (SELECT regions.geometry FROM regions WHERE regions.region_name ILIKE '%united states%' AND regions.border_type = 'country' LIMIT 1));\n```",
+    "run_seconds": 16.407
+  },
+  {
+    "id": 254,
+    "content": "```sql\nSELECT SUM(ST_Area(ST_Union(geometry::geography))) AS total_area\nFROM parks\nWHERE leisure = 'garden'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%New York City%' LIMIT 1));\n```",
+    "run_seconds": 13.211
+  },
+  {
+    "id": 255,
+    "content": "```sql\nSELECT SUM(ST_Area(parks.geometry::geography)) AS total_area\nFROM parks\nWHERE parks.leisure = 'nature_reserve'\n  AND ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%San Diego%' LIMIT 1));\n```",
+    "run_seconds": 12.997
+  },
+  {
+    "id": 256,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_area\nFROM parks p\nWHERE p.leisure = 'golf_course'\n  AND ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Tuxedo%' LIMIT 1));\n```",
+    "run_seconds": 13.851
+  },
+  {
+    "id": 257,
+    "content": "```sql\nSELECT SUM(ST_Area(ST_Union(parks.geometry::geography))) AS total_area_sqm\nFROM parks\nWHERE parks.leisure = 'golf_course'\n  AND ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Berkshire County%' LIMIT 1));\n```",
+    "run_seconds": 14.71
+  },
+  {
+    "id": 258,
+    "content": "```sql\nSELECT SUM(ST_Area(lake.geometry::geography)) AS total_reservoir_area\nFROM lakes lake\nWHERE lake.water = 'reservoir'\n  AND ST_Intersects(lake.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%boston%' LIMIT 1));\n```",
+    "run_seconds": 14.063
+  },
+  {
+    "id": 259,
+    "content": "```sql\nSELECT SUM(ST_Area(parks.geometry::geography)) AS total_area\nFROM parks\nWHERE parks.leisure = 'nature_reserve'\n  AND ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%boston%' LIMIT 1));\n```",
+    "run_seconds": 12.996
+  },
+  {
+    "id": 260,
+    "content": "```sql\nSELECT SUM(ST_Area(lakes.geometry::geography)) AS total_lake_area\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Geneva%' LIMIT 1));\n```",
+    "run_seconds": 11.933
+  },
+  {
+    "id": 261,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_area\nFROM parks p\nWHERE ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Burke County%' LIMIT 1));\n```",
+    "run_seconds": 11.504
+  },
+  {
+    "id": 262,
+    "content": "```sql\nSELECT SUM(ST_Area(l.geometry::geography)) AS total_lake_footprint\nFROM lakes l\nWHERE ST_Intersects(l.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Galway%' LIMIT 1))\n  AND ST_Intersects(l.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%New York%' LIMIT 1));\n```",
+    "run_seconds": 18.112
+  },
+  {
+    "id": 263,
+    "content": "```sql\nSELECT SUM(ST_Area(lakes.geometry::geography)) AS total_reservoir_area\nFROM lakes\nWHERE ST_Intersects(lakes.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Carver%' AND border_type = 'city' LIMIT 1))\n  AND water = 'reservoir';\n```",
+    "run_seconds": 14.487
+  },
+  {
+    "id": 264,
+    "content": "```sql\nSELECT SUM(ST_Area(lakes.geometry::geography)) AS total_area\nFROM lakes\nWHERE water = 'reservoir'\n  AND ST_Intersects(lakes.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%El Paso%' AND border_type = 'county' LIMIT 1));\n```",
+    "run_seconds": 14.704
+  },
+  {
+    "id": 265,
+    "content": "```sql\nSELECT SUM(ST_Area(ST_Buffer(l.geometry, 0)::geography)) AS total_area_sqm\nFROM lakes l\nWHERE ST_Intersects(l.geometry::geography, (SELECT geometry::geography FROM regions WHERE region_name ILIKE '%Mayes County%' AND region_name ILIKE '%Oklahoma%' LIMIT 1))\n  AND l.water = 'reservoir';\n```",
+    "run_seconds": 17.685
+  },
+  {
+    "id": 266,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_area\nFROM parks p\nWHERE ST_Intersects(p.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%boston%' LIMIT 1));\n```",
+    "run_seconds": 10.652
+  },
+  {
+    "id": 267,
+    "content": "```sql\nSELECT SUM(ST_Area(ST_Union(lakes.geometry::geography))) AS total_lake_area\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Farmerville%' AND addr_state ILIKE '%Louisiana%' LIMIT 1));\n```",
+    "run_seconds": 14.489
+  },
+  {
+    "id": 268,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_park_area\nFROM parks p\nWHERE ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Hammond%' LIMIT 1));\n```",
+    "run_seconds": 11.718
+  },
+  {
+    "id": 269,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_footprint\nFROM parks p\nWHERE ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Connecticut%' LIMIT 1))\n  AND leisure = 'garden';\n```",
+    "run_seconds": 13.21
+  },
+  {
+    "id": 270,
+    "content": "```sql\nSELECT SUM(ST_Area(ST_Intersection(lakes.geometry::geography, regions.geometry::geography))) AS total_lake_area\nFROM lakes\nJOIN regions ON ST_Intersects(lakes.geometry::geography, regions.geometry::geography)\nWHERE regions.region_name ILIKE '%Santa Rosa%' AND regions.addr_state ILIKE '%New Mexico%';\n```",
+    "run_seconds": 16.193
+  },
+  {
+    "id": 271,
+    "content": "```sql\nSELECT SUM(ST_Area(parks.geometry::geography)) AS total_area\nFROM parks\nWHERE ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Kent County%' LIMIT 1))\n  AND leisure = 'nature_reserve';\n```",
+    "run_seconds": 12.57
+  },
+  {
+    "id": 272,
+    "content": "```sql\nSELECT SUM(ST_Area(ST_Union(parks.geometry::geography))) AS total_area_square_meters\nFROM parks\nWHERE leisure = 'golf_course'\n  AND ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%United States%' LIMIT 1));\n```",
+    "run_seconds": 14.062
+  },
+  {
+    "id": 273,
+    "content": "```sql\nSELECT SUM(ST_Area(parks.geometry::geography)) AS total_area\nFROM parks\nWHERE parks.leisure = 'nature_reserve'\n  AND ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%United States%' LIMIT 1));\n```",
+    "run_seconds": 12.997
+  },
+  {
+    "id": 274,
+    "content": "```sql\nSELECT SUM(ST_Area(lakes.geometry::geography)) AS total_area\nFROM lakes\nWHERE water = 'reservoir'\n  AND ST_Intersects(lakes.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Eaton%' LIMIT 1));\n```",
+    "run_seconds": 13.21
+  },
+  {
+    "id": 275,
+    "content": "```sql\nSELECT SUM(ST_Area(parks.geometry::geography)) AS total_area\nFROM parks\nWHERE ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Marshall County%' AND region_name ILIKE '%Mississippi%' LIMIT 1))\n  AND leisure = 'nature_reserve';\n```",
+    "run_seconds": 14.702
+  },
+  {
+    "id": 276,
+    "content": "```sql\nSELECT SUM(ST_Area(parks.geometry::geography)) AS total_area\nFROM parks\nWHERE ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Lewis County%' LIMIT 1))\n  AND leisure = 'nature_reserve';\n```",
+    "run_seconds": 12.571
+  },
+  {
+    "id": 277,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_area\nFROM parks p\nWHERE ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Lewis County%' LIMIT 1))\nAND leisure = 'garden';\n```",
+    "run_seconds": 12.784
+  },
+  {
+    "id": 278,
+    "content": "```sql\nSELECT SUM(ST_Area(lakes.geometry::geography)) AS total_lake_area\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Chesapeake%' LIMIT 1));\n```",
+    "run_seconds": 12.144
+  },
+  {
+    "id": 279,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_area\nFROM parks p\nWHERE p.leisure = 'garden'\n  AND ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Mississippi%' LIMIT 1));\n```",
+    "run_seconds": 13.421
+  },
+  {
+    "id": 280,
+    "content": "```sql\nSELECT SUM(ST_Area(lake.geometry::geography)) AS total_area\nFROM lakes AS lake\nWHERE lake.water = 'reservoir'\n  AND ST_Intersects(lake.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Hart County%' LIMIT 1));\n```",
+    "run_seconds": 14.062
+  },
+  {
+    "id": 281,
+    "content": "```sql\nSELECT SUM(ST_Area(ST_Envelope(geometry)::geography)) AS total_reservoir_area\nFROM lakes\nWHERE water = 'reservoir'\n  AND ST_Intersects(geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Pennsylvania%' LIMIT 1));\n```",
+    "run_seconds": 13.422
+  },
+  {
+    "id": 282,
+    "content": "```sql\nSELECT SUM(ST_Area(lakes.geometry::geography)) AS total_lake_area\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Lincoln County%' AND region_name ILIKE '%Oregon%' LIMIT 1)::geography);\n```",
+    "run_seconds": 14.488
+  },
+  {
+    "id": 283,
+    "content": "```sql\nSELECT SUM(ST_Area(lakes.geometry::geography)) AS total_lake_area\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Highlands County%' AND addr_state ILIKE '%Florida%' LIMIT 1));\n```",
+    "run_seconds": 13.849
+  },
+  {
+    "id": 284,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_area\nFROM parks p\nWHERE ST_Intersects(p.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Seattle%' LIMIT 1));\n```",
+    "run_seconds": 10.439
+  },
+  {
+    "id": 285,
+    "content": "```sql\nSELECT SUM(ST_Area(parks.geometry::geography)) AS total_area\nFROM parks\nWHERE parks.leisure = 'nature_reserve'\n  AND ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Cedar Falls%' LIMIT 1));\n```",
+    "run_seconds": 13.211
+  },
+  {
+    "id": 286,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_area\nFROM parks p\nWHERE ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Cedar Falls%' LIMIT 1))\n  AND leisure = 'golf_course';\n```",
+    "run_seconds": 13.423
+  },
+  {
+    "id": 287,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_area\nFROM parks p\nWHERE ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Kent County%' LIMIT 1))\n  AND leisure = 'golf_course';\n```",
+    "run_seconds": 13.212
+  },
+  {
+    "id": 288,
+    "content": "```sql\nSELECT SUM(ST_Area(parks.geometry::geography)) AS total_area\nFROM parks\nWHERE ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Asheville%' LIMIT 1))\n  AND leisure = 'nature_reserve';\n```",
+    "run_seconds": 12.785
+  },
+  {
+    "id": 289,
+    "content": "```sql\nSELECT ST_Area(ST_Union(parks.geometry)::geography) AS total_area_sqm\nFROM parks\nWHERE ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Livingston County%' AND border_type = 'county' LIMIT 1)::geography)\n  AND leisure = 'golf_course';\n```",
+    "run_seconds": 16.618
+  },
+  {
+    "id": 290,
+    "content": "```sql\nSELECT SUM(ST_Area(parks.geometry::geography)) AS total_area\nFROM parks\nWHERE parks.leisure = 'nature_reserve'\n  AND ST_Intersects(parks.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%New York%' AND border_type = 'state' LIMIT 1));\n```",
+    "run_seconds": 15.127
+  },
+  {
+    "id": 291,
+    "content": "```sql\nSELECT SUM(ST_Area(parks.geometry::geography)) AS total_area\nFROM parks\nWHERE ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Dukes County%' LIMIT 1))\n  AND leisure = 'recreation_ground';\n```",
+    "run_seconds": 12.999
+  },
+  {
+    "id": 292,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_area\nFROM parks p\nWHERE ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Burke County%' LIMIT 1))\n  AND leisure = 'golf_course';\n```",
+    "run_seconds": 13.425
+  },
+  {
+    "id": 293,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_area\nFROM parks p\nJOIN regions r ON ST_Intersects(p.geometry, r.geometry)\nWHERE r.region_name ILIKE '%United States%' AND r.border_type = 'country';\n```",
+    "run_seconds": 11.932
+  },
+  {
+    "id": 294,
+    "content": "```sql\nSELECT SUM(ST_Area(ST_Buffer(ST_Centroid(p.geometry), 1))) AS total_area\nFROM parks p\nWHERE ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Cedar Falls%' LIMIT 1)::geography)\n  AND leisure = 'garden';\n```",
+    "run_seconds": 15.128
+  },
+  {
+    "id": 295,
+    "content": "```sql\nSELECT SUM(ST_Area(lake.geometry::geography)) AS total_area\nFROM lakes\nWHERE lake.water = 'reservoir'\n  AND ST_Intersects(lake.geometry::geography, (SELECT regions.geometry::geography FROM regions WHERE regions.region_name ILIKE '%Belchertown%' LIMIT 1));\n```",
+    "run_seconds": 14.915
+  },
+  {
+    "id": 296,
+    "content": "```sql\nSELECT SUM(ST_Area(p.geometry::geography)) AS total_park_area\nFROM parks p\nWHERE ST_Intersects(p.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Cowen%' LIMIT 1));\n```",
+    "run_seconds": 11.719
+  },
+  {
+    "id": 297,
+    "content": "```sql\nSELECT SUM(ST_Area(lakes.geometry::geography)) AS total_reservoir_area\nFROM lakes\nWHERE water = 'reservoir'\n  AND ST_Intersects(lakes.geometry::geography, (SELECT geometry FROM regions WHERE region_name ILIKE '%Grand Coulee%' LIMIT 1));\n```",
+    "run_seconds": 13.849
+  },
+  {
+    "id": 298,
+    "content": "```sql\nSELECT SUM(ST_Area(parks.geometry::geography)) AS total_area\nFROM parks\nWHERE parks.leisure = 'nature_reserve'\n  AND ST_Intersects(parks.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Pennsylvania%' LIMIT 1));\n```",
+    "run_seconds": 12.996
+  },
+  {
+    "id": 299,
+    "content": "```sql\nSELECT SUM(ST_Area(lakes.geometry::geography)) AS total_lake_area\nFROM lakes\nWHERE ST_Intersects(lakes.geometry::geography, (SELECT regions.geometry::geography FROM regions WHERE regions.region_name ILIKE '%United States%' LIMIT 1));\n```",
+    "run_seconds": 12.997
+  }
+]

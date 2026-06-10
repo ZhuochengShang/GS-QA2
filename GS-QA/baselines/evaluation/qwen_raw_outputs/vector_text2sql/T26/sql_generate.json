@@ -1,0 +1,502 @@
+[
+  {
+    "id": 600,
+    "content": "```sql\nSELECT ST_Distance(p.geometry::geography, g.geometry::geography) AS distance_meters\nFROM parks p\nJOIN (\n    SELECT geometry\n    FROM pois\n    WHERE poi_name ILIKE '%Golden Gate Bridge Lookout%' AND addr_city ILIKE '%Sausalito%'\n    LIMIT 1\n) g ON ST_DWithin(p.geometry::geography, g.geometry::geography, 10000)\nWHERE p.leisure = 'golf_course'\nORDER BY p.geometry <-> g.geometry\nLIMIT 1;\n```",
+    "run_seconds": 26.552
+  },
+  {
+    "id": 601,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1,\n     (SELECT geometry FROM pois WHERE amenity = 'stadium' ORDER BY p1.geometry <-> geometry LIMIT 1) AS p2\nWHERE p1.poi_name ILIKE '%School of Cosmetology%' AND p1.addr_city ILIKE '%Somerset%' AND p1.addr_state ILIKE '%KY%';\n```",
+    "run_seconds": 21.289
+  },
+  {
+    "id": 602,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1,\n     (SELECT geometry FROM pois WHERE poi_name ILIKE '%Rockford Career College%' LIMIT 1) AS src,\n     (SELECT geometry FROM pois WHERE amenity = 'museum' AND ST_DWithin(pois.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Rockford Career College%' LIMIT 1)::geography, 100000) ORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Rockford Career College%' LIMIT 1) LIMIT 1) p2\nWHERE p1.poi_name ILIKE '%Rockford Career College%';\n```",
+    "run_seconds": 34.229
+  },
+  {
+    "id": 603,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1\nCROSS JOIN pois p2\nWHERE p1.poi_name ILIKE '%Basin Cove Overlook%'\n  AND p2.amenity = 'hospital'\n  AND p1.addr_city ILIKE '%Laurel Springs%'\n  AND p1.addr_state ILIKE '%NC%'\nORDER BY p1.geometry <-> p2.geometry\nLIMIT 1;\n```",
+    "run_seconds": 22.235
+  },
+  {
+    "id": 604,
+    "content": "```sql\nSELECT MIN(ST_Distance(p.geometry::geography, r.geometry::geography)) AS distance_meters\nFROM pois p,\n     (SELECT geometry FROM pois WHERE poi_name ILIKE '%Southern National Motorsport Park%' LIMIT 1) AS r;\n```",
+    "run_seconds": 12.184
+  },
+  {
+    "id": 605,
+    "content": "```sql\nSELECT ST_Distance(p.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Cabell Gallery%' AND addr_city ILIKE '%Lexington%' AND addr_state ILIKE '%VA%' LIMIT 1)::geography) AS distance_meters\nFROM parks p\nWHERE ST_Intersects(p.geometry, (SELECT geometry FROM regions WHERE region_name ILIKE '%Lexington%' LIMIT 1))\nORDER BY p.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Cabell Gallery%' AND addr_city ILIKE '%Lexington%' AND addr_state ILIKE '%VA%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 28.646
+  },
+  {
+    "id": 606,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1,\n     parks p2\nWHERE p1.poi_name ILIKE '%Wenatchee Valley Museum and Cultural Center%'\n  AND p2.leisure = 'garden'\nORDER BY p1.geometry <-> p2.geometry\nLIMIT 1;\n```",
+    "run_seconds": 17.528
+  },
+  {
+    "id": 607,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1,\n     (SELECT geometry FROM pois WHERE amenity = 'stadium' ORDER BY p1.geometry <-> geometry LIMIT 1) AS p2\nWHERE p1.poi_name ILIKE '%Taylor%Aquarium%' AND p1.addr_city ILIKE '%Dunn%' AND p1.addr_state ILIKE '%NC%';\n```",
+    "run_seconds": 20.947
+  },
+  {
+    "id": 608,
+    "content": "```sql\nSELECT MIN(ST_Distance(pois.geometry::geography, gallery.geometry::geography)) AS distance_meters\nFROM pois AS pois\nCROSS JOIN (SELECT geometry FROM pois WHERE poi_name ILIKE '%Hendry Regional Convenient Care Center%' LIMIT 1) AS gallery\nWHERE pois.tourism = 'gallery'\n  AND ST_DWithin(pois.geometry::geography, gallery.geometry::geography, 100000);\n```",
+    "run_seconds": 20.953
+  },
+  {
+    "id": 609,
+    "content": "```sql\nSELECT MIN(ST_Distance(p1.geometry::geography, p2.geometry::geography)) AS distance_meters\nFROM pois p1\nJOIN pois p2 ON ST_DWithin(p1.geometry::geography, p2.geometry::geography, 10000)\nWHERE p1.poi_name ILIKE '%Kenan House%'\n  AND p2.amenity = 'gallery'\n  AND p2.addr_city ILIKE '%Wilmington%'\n  AND p2.addr_state ILIKE '%NC%';\n```",
+    "run_seconds": 23.514
+  },
+  {
+    "id": 610,
+    "content": "```sql\nSELECT MIN(ST_Distance(p.geometry::geography, w.geometry::geography)) AS distance_meters\nFROM pois p\nJOIN regions r ON ST_Intersects(p.geometry::geography, r.geometry::geography)\nJOIN (SELECT geometry FROM regions WHERE region_name ILIKE '%I-20 Wildlife Preserve%' LIMIT 1) w ON ST_Intersects(p.geometry::geography, w.geometry::geography)\nWHERE p.tourism = 'zoo'\n  AND r.region_name ILIKE '%Midland%'\n  AND r.region_name ILIKE '%TX%';\n```",
+    "run_seconds": 27.056
+  },
+  {
+    "id": 611,
+    "content": "```sql\nSELECT ST_Distance(p.geometry::geography, s.geometry::geography) AS distance_meters\nFROM pois p\nJOIN (\n  SELECT geometry\n  FROM pois\n  WHERE poi_name ILIKE '%Buck Creek Trout Farm%'\n    AND addr_city ILIKE '%Marion%'\n    AND addr_state ILIKE '%NC%'\n  LIMIT 1\n) AS p_loc ON TRUE\nJOIN (\n  SELECT geometry\n  FROM pois\n  WHERE leisure = 'stadium'\n  ORDER BY p_loc.geometry <-> geometry\n  LIMIT 1\n) AS s ON TRUE;\n```",
+    "run_seconds": 27.987
+  },
+  {
+    "id": 612,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1,\n     (SELECT * FROM pois WHERE poi_name ILIKE '%Roundup Beer Garden & Food Park%' AND addr_city ILIKE '%Boerne%' AND addr_state ILIKE '%TX%') AS p2\nORDER BY p1.geometry <-> p2.geometry\nLIMIT 1;\n```",
+    "run_seconds": 20.401
+  },
+  {
+    "id": 613,
+    "content": "```sql\nSELECT ST_Distance(p.geometry::geography, n.geometry::geography) AS distance_meters\nFROM pois p\nJOIN parks n ON ST_DWithin(p.geometry::geography, n.geometry::geography, 10000)\nWHERE p.poi_name ILIKE '%Ghostprint Gallery%'\n  AND p.addr_city ILIKE '%Richmond%'\n  AND p.addr_state ILIKE '%VA%'\n  AND n.leisure ILIKE '%nature_reserve%'\nORDER BY p.geometry <-> n.geometry\nLIMIT 1;\n```",
+    "run_seconds": 25.345
+  },
+  {
+    "id": 614,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1\nCROSS JOIN pois p2\nWHERE p1.poi_name ILIKE '%DoubleTree by Hilton Hotel, Bedford, MA%'\n  AND p2.tourism = 'zoo'\nORDER BY p1.geometry <-> p2.geometry\nLIMIT 1;\n```",
+    "run_seconds": 19.534
+  },
+  {
+    "id": 615,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1,\n     parks p2\nWHERE p1.poi_name ILIKE '%Shop One%'\n  AND p2.leisure = 'garden'\nORDER BY p1.geometry <-> p2.geometry\nLIMIT 1;\n```",
+    "run_seconds": 17.403
+  },
+  {
+    "id": 616,
+    "content": "```sql\nSELECT MIN(ST_Distance(p1.geometry::geography, p2.geometry::geography)) AS distance_meters\nFROM pois p1\nJOIN pois p2 ON ST_DWithin(p1.geometry::geography, p2.geometry::geography, 10000)\nWHERE p1.poi_name ILIKE '%Chopper''s Lawn Equipment%' \n  AND p1.addr_city ILIKE '%Kissimmee%' \n  AND p1.addr_state ILIKE '%FL%'\n  AND p2.tourism = 'gallery';\n```",
+    "run_seconds": 27.304
+  },
+  {
+    "id": 617,
+    "content": "```sql\nSELECT ST_Distance(p.geometry::geography, r.geometry::geography) AS distance_meters\nFROM pois p\nCROSS JOIN (\n    SELECT geometry FROM regions WHERE region_name ILIKE '%Missisquoi National Wildlife Refuge%' LIMIT 1\n) r\nWHERE p.poi_name ILIKE '%restaurant%'\n  AND p.amenity = 'restaurant'\nORDER BY p.geometry <-> r.geometry\nLIMIT 1;\n```",
+    "run_seconds": 20.577
+  },
+  {
+    "id": 618,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1\nCROSS JOIN pois p2\nWHERE p1.poi_name ILIKE '%Adventure Park%' AND p1.addr_city ILIKE '%Scottsdale%' AND p1.addr_state ILIKE '%AZ%'\n  AND p2.amenity = 'stadium'\nORDER BY p1.geometry <-> p2.geometry\nLIMIT 1;\n```",
+    "run_seconds": 22.266
+  },
+  {
+    "id": 619,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1,\n     (SELECT geometry FROM pois WHERE poi_name ILIKE '%Lightner Museum%' AND addr_city ILIKE '%Saint Augustine%' AND addr_state ILIKE '%FL%' LIMIT 1) AS ref_point,\n     (SELECT geometry FROM pois WHERE amenity = 'hospital' AND ST_DWithin(p1.geometry::geography, p1.geometry::geography, 100000) ORDER BY p1.geometry <-> ref_point.geometry LIMIT 1) AS p2;\n```",
+    "run_seconds": 29.511
+  },
+  {
+    "id": 620,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM parks p1,\n     (SELECT geometry\n      FROM parks\n      WHERE leisure ILIKE 'nature_reserve'\n      ORDER BY parks.geometry <-> (SELECT geometry FROM parks WHERE park_name ILIKE '%Rock Fence Park%' LIMIT 1)\n      LIMIT 1) p2\nWHERE p1.park_name ILIKE '%Rock Fence Park%';\n```",
+    "run_seconds": 21.651
+  },
+  {
+    "id": 621,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1\nCROSS JOIN pois p2\nWHERE p1.poi_name ILIKE '%Stratton Fire Tower%'\n  AND p2.poi_name ILIKE '%museum%'\nORDER BY p1.geometry <-> p2.geometry\nLIMIT 1;\n```",
+    "run_seconds": 17.727
+  },
+  {
+    "id": 622,
+    "content": "```sql\nSELECT ST_Distance(p.geometry::geography, c.geometry::geography) AS distance_meters\nFROM pois p\nJOIN (\n    SELECT geometry\n    FROM pois\n    WHERE poi_name ILIKE '%Sand Dunes Frontier%' LIMIT 1\n) AS c ON ST_DWithin(p.geometry::geography, c.geometry::geography, 10000)\nWHERE p.amenity = 'cafe'\nORDER BY p.geometry <-> c.geometry\nLIMIT 1;\n```",
+    "run_seconds": 22.72
+  },
+  {
+    "id": 623,
+    "content": "```sql\nSELECT pois.poi_name, ST_Distance(pois.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%CUNY School of Professional Studies%' LIMIT 1)::geography) AS distance_meters\nFROM pois\nWHERE pois.amenity = 'fast_food'\nORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%CUNY School of Professional Studies%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 21.203
+  },
+  {
+    "id": 624,
+    "content": "```sql\nSELECT pois.poi_name, ST_Distance(pois.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Asbury Barn Recreation Center%' LIMIT 1)::geography) AS distance_meters\nFROM pois\nWHERE pois.amenity = 'cafe'\nORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Asbury Barn Recreation Center%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 19.899
+  },
+  {
+    "id": 625,
+    "content": "```sql\nSELECT ST_Distance(p.geometry::geography, s.geometry::geography) AS distance_meters\nFROM pois p\nJOIN pois s ON ST_DWithin(p.geometry::geography, s.geometry::geography, 10000)\nWHERE p.poi_name ILIKE '%El Paso Children''s Hospital%'\n  AND s.amenity = 'stadium'\nORDER BY p.geometry::geography <-> s.geometry::geography\nLIMIT 1;\n```",
+    "run_seconds": 21.453
+  },
+  {
+    "id": 626,
+    "content": "```sql\nSELECT MIN(ST_Distance(p.geometry::geography, r.geometry::geography)) AS distance_meters\nFROM pois p\nJOIN regions r ON ST_Intersects(p.geometry::geography, r.geometry::geography)\nWHERE p.amenity = 'gallery'\n  AND r.region_name ILIKE '%Pinellas Park%' AND r.border_type = 'city';\n```",
+    "run_seconds": 17.059
+  },
+  {
+    "id": 627,
+    "content": "```sql\nSELECT MIN(ST_Distance(p1.geometry::geography, p2.geometry::geography)) AS distance_meters\nFROM pois p1\nJOIN pois p2\n  ON ST_DWithin(p1.geometry::geography, p2.geometry::geography, 10000)\nWHERE p1.poi_name ILIKE '%Holiday Inn & Suites Joliet Southwest%'\n  AND p2.tourism = 'attraction';\n```",
+    "run_seconds": 20.534
+  },
+  {
+    "id": 628,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1,\n     (SELECT geometry FROM pois \n      WHERE poi_name ILIKE '%Anvil Arts Studio%' \n        AND addr_city ILIKE '%Newland%' \n        AND addr_state ILIKE '%NC%' \n      LIMIT 1) AS anvil,\n     (SELECT geometry FROM pois \n      WHERE amenity = 'restaurant' \n      ORDER BY anvil.geometry <-> pois.geometry \n      LIMIT 1) AS p2;\n```",
+    "run_seconds": 25.785
+  },
+  {
+    "id": 629,
+    "content": "```sql\nSELECT ST_Distance(p.geometry::geography, r.geometry::geography) AS distance_meters\nFROM pois p\nJOIN parks r ON ST_DWithin(p.geometry::geography, r.geometry::geography, 100000)\nWHERE p.poi_name ILIKE '%Cogswell University of Silicon Valley%'\n  AND r.leisure = 'nature_reserve'\nORDER BY p.geometry <-> r.geometry\nLIMIT 1;\n```",
+    "run_seconds": 20.578
+  },
+  {
+    "id": 630,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1\nJOIN pois p2\n  ON p1.id <> p2.id\nWHERE p1.poi_name ILIKE '%Sonny''s Place%'\n  AND p2.amenity = 'university'\nORDER BY p1.geometry <-> p2.geometry\nLIMIT 1;\n```",
+    "run_seconds": 19.061
+  },
+  {
+    "id": 631,
+    "content": "```sql\nSELECT ST_Distance(p.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Last House on Mulholland%' LIMIT 1)::geography)\nFROM pois p\nWHERE p.tourism = 'aquarium'\nORDER BY p.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Last House on Mulholland%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 18.592
+  },
+  {
+    "id": 632,
+    "content": "```sql\nSELECT poi_name, ST_Distance(p.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%SeaQuest%' LIMIT 1)::geography) AS distance_meters\nFROM pois p\nWHERE amenity = 'cafe'\n  AND ST_DWithin(p.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%SeaQuest%' LIMIT 1)::geography, 10000)\nORDER BY p.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%SeaQuest%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 26.813
+  },
+  {
+    "id": 633,
+    "content": "```sql\nSELECT ST_Distance(p.geometry::geography, r.geometry::geography) AS distance_meters\nFROM pois p\nJOIN (\n    SELECT geometry\n    FROM regions\n    WHERE region_name ILIKE '%Point Lookout%' AND border_type = 'city'\n    LIMIT 1\n) r ON ST_Intersects(p.geometry::geography, r.geometry::geography)\nWHERE p.amenity = 'fast_food'\nORDER BY p.geometry::geography <-> r.geometry::geography\nLIMIT 1;\n```",
+    "run_seconds": 24.252
+  },
+  {
+    "id": 634,
+    "content": "```sql\nSELECT MIN(ST_Distance(p1.geometry::geography, p2.geometry::geography)) AS distance_meters\nFROM pois p1\nJOIN pois p2 ON ST_DWithin(p1.geometry::geography, p2.geometry::geography, 10000)\nWHERE p1.poi_name ILIKE '%Easton Hospital%'\n  AND p2.tourism = 'attraction'\n  AND p2.poi_name != p1.poi_name;\n```",
+    "run_seconds": 22.436
+  },
+  {
+    "id": 635,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1\nCROSS JOIN pois p2\nWHERE p1.poi_name ILIKE '%Watercrest Senior Living%' \n  AND p2.amenity = 'university'\nORDER BY p1.geometry <-> p2.geometry\nLIMIT 1;\n```",
+    "run_seconds": 18.185
+  },
+  {
+    "id": 636,
+    "content": "```sql\nSELECT MIN(ST_Distance(pois.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Ole Haugsrud Stadium%' LIMIT 1)::geography)) AS distance_meters\nFROM pois\nWHERE tourism = 'hotel' AND pois.poi_name ILIKE '%beach resort%'\n```",
+    "run_seconds": 14.543
+  },
+  {
+    "id": 637,
+    "content": "```sql\nSELECT ST_Distance(p.geometry::geography, r.geometry::geography) AS distance_meters\nFROM pois p\nJOIN pois r ON TRUE\nWHERE p.poi_name ILIKE '%Glenhill Farmhouse%'\n  AND r.tourism = 'hotel'\n  AND r.leisure = 'recreation_ground'\nORDER BY p.geometry <-> r.geometry\nLIMIT 1;\n```",
+    "run_seconds": 17.704
+  },
+  {
+    "id": 638,
+    "content": "```sql\nSELECT ST_Distance(p.geometry::geography, m.geometry::geography) AS distance_meters\nFROM pois p\nJOIN pois m ON TRUE\nWHERE p.poi_name ILIKE '%SpringHill Suites Atlanta Airport Gateway%'\n  AND m.poi_name ILIKE '%museum%'\nORDER BY p.geometry <-> m.geometry\nLIMIT 1;\n```",
+    "run_seconds": 15.994
+  },
+  {
+    "id": 639,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1,\n     (SELECT p.geometry\n      FROM parks p\n      WHERE p.leisure = 'nature_reserve'\n      ORDER BY p.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Cox Science Center and Aquarium%' LIMIT 1)\n      LIMIT 1) p2\nWHERE p1.poi_name ILIKE '%Cox Science Center and Aquarium%'\n  AND p1.addr_city ILIKE '%West Palm Beach%'\n  AND p1.addr_state ILIKE '%FL%';\n```",
+    "run_seconds": 28.044
+  },
+  {
+    "id": 640,
+    "content": "```sql\nSELECT ST_Distance(p.geometry::geography, park.geometry::geography) AS distance_meters\nFROM pois p\nJOIN parks park ON ST_DWithin(p.geometry::geography, park.geometry::geography, 10000)\nWHERE p.poi_name ILIKE '%Denison Biological Reserve%' OR p.poi_name ILIKE '%Polly Anderson Field Station%'\n  AND p.addr_city ILIKE '%Granville%' AND p.addr_state ILIKE '%OH%'\nORDER BY p.geometry <-> park.geometry\nLIMIT 1;\n```",
+    "run_seconds": 25.041
+  },
+  {
+    "id": 641,
+    "content": "```sql\nSELECT poi_name, ST_Distance(p.geometry::geography, r.geometry::geography) AS distance_meters\nFROM pois p\nJOIN (\n    SELECT geometry FROM regions WHERE region_name ILIKE '%Maryvale Baseball Park%' LIMIT 1\n) r ON ST_Intersects(p.geometry::geography, r.geometry::geography)\nWHERE amenity = 'restaurant'\nORDER BY p.geometry <-> r.geometry\nLIMIT 1;\n```",
+    "run_seconds": 20.042
+  },
+  {
+    "id": 642,
+    "content": "```sql\nSELECT ST_Distance(pois.geometry::geography, parks.geometry::geography) AS distance_meters\nFROM pois\nJOIN parks ON ST_DWithin(pois.geometry::geography, parks.geometry::geography, 10000)\nWHERE pois.poi_name ILIKE '%William & Mary Institute for Integrative Conservation%'\n  AND pois.addr_city ILIKE '%Williamsburg%'\n  AND pois.addr_state ILIKE '%VA%'\nORDER BY pois.geometry::geography <-> parks.geometry::geography\nLIMIT 1;\n```",
+    "run_seconds": 24.313
+  },
+  {
+    "id": 643,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1,\n     (SELECT geometry FROM parks WHERE park_name ILIKE '%garden%' LIMIT 1) p2\nWHERE p1.poi_name ILIKE '%Sea Life Aquarium Kansas City%' AND p1.addr_city ILIKE '%Kansas City%';\n```",
+    "run_seconds": 17.754
+  },
+  {
+    "id": 644,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1\nCROSS JOIN pois p2\nWHERE p1.poi_name ILIKE '%Cyrus Dallin Art Museum%'\n  AND p2.amenity = 'university'\nORDER BY p1.geometry <-> p2.geometry\nLIMIT 1;\n```",
+    "run_seconds": 17.993
+  },
+  {
+    "id": 645,
+    "content": "```sql\nSELECT t.poi_name, ST_Distance(t.geometry::geography, p.geometry::geography) AS distance_meters\nFROM pois t\nCROSS JOIN (\n    SELECT geometry\n    FROM parks\n    WHERE park_name ILIKE '%Wildlife West Nature Park%'\n) p\nWHERE t.tourism = 'attraction'\n  AND ST_DWithin(t.geometry::geography, p.geometry::geography, 100000) -- 100 km buffer for performance\nORDER BY t.geometry <-> p.geometry\nLIMIT 1;\n```",
+    "run_seconds": 26.05
+  },
+  {
+    "id": 646,
+    "content": "```sql\nSELECT pois.poi_name, ST_Distance(pois.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%MAC 650 Gallery%' AND addr_city ILIKE '%Middletown%' AND addr_state ILIKE '%CT%' LIMIT 1)::geography) AS distance_meters\nFROM pois\nWHERE pois.amenity = 'cafe'\nORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%MAC 650 Gallery%' AND addr_city ILIKE '%Middletown%' AND addr_state ILIKE '%CT%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 28.642
+  },
+  {
+    "id": 647,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1\nCROSS JOIN pois p2\nWHERE p1.poi_name ILIKE '%Elyria Arts Council%'\n  AND p2.poi_name ILIKE '%aquarium%'\nORDER BY p1.geometry <-> p2.geometry\nLIMIT 1;\n```",
+    "run_seconds": 17.552
+  },
+  {
+    "id": 648,
+    "content": "```sql\nSELECT pois.poi_name, ST_Distance(pois.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Memory Garden%' AND addr_city ILIKE '%Baltimore%' AND addr_state ILIKE '%MD%')::geography) AS distance_meters\nFROM pois\nWHERE pois.amenity = 'fast_food'\n  AND ST_DWithin(pois.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Memory Garden%' AND addr_city ILIKE '%Baltimore%' AND addr_state ILIKE '%MD%')::geography, 10000)\nORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Memory Garden%' AND addr_city ILIKE '%Baltimore%' AND addr_state ILIKE '%MD%')\nLIMIT 1;\n```",
+    "run_seconds": 36.877
+  },
+  {
+    "id": 649,
+    "content": "```sql\nSELECT MIN(ST_Distance(p1.geometry::geography, p2.geometry::geography)) AS proximity_distance\nFROM pois p1\nJOIN pois p2 ON ST_DWithin(p1.geometry::geography, p2.geometry::geography, 10000)\nWHERE p1.poi_name ILIKE '%Cockrell Butterfly Center%'\n  AND p2.poi_name ILIKE '%gallery%'\n  AND p1.addr_city ILIKE '%Houston%'\n  AND p1.addr_state ILIKE '%TX%';\n```",
+    "run_seconds": 24.079
+  },
+  {
+    "id": 650,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1,\n     (SELECT geometry FROM pois WHERE poi_name ILIKE '%gallery%' AND tourism = 'gallery' LIMIT 1) p2\nWHERE p1.poi_name ILIKE '%City of Farmington Museum%' AND p1.addr_city ILIKE '%Farmington%' AND p1.addr_state ILIKE '%UT%'\n```",
+    "run_seconds": 20.794
+  },
+  {
+    "id": 651,
+    "content": "```sql\nSELECT MIN(ST_Distance(p.geometry::geography, r.geometry::geography)) AS distance_meters\nFROM pois p\nJOIN regions r ON ST_Intersects(p.geometry::geography, r.geometry::geography)\nWHERE p.tourism = 'aquarium'\n  AND r.region_name ILIKE '%Greenville Cypress Preserve%'\n  AND r.region_name ILIKE '%Greenville, MS%';\n```",
+    "run_seconds": 19.09
+  },
+  {
+    "id": 652,
+    "content": "```sql\nSELECT ST_Distance(p.geometry::geography, r.geometry::geography) AS distance_meters\nFROM pois p\nJOIN parks r ON ST_DWithin(p.geometry::geography, r.geometry::geography, 100000)\nWHERE p.poi_name ILIKE '%Gem Mountain Gemstone Mine%'\n  AND p.addr_city ILIKE '%Spruce Pine%'\n  AND p.addr_state ILIKE '%NC%'\n  AND r.leisure ILIKE '%nature_reserve%'\nORDER BY p.geometry::geography <-> r.geometry::geography\nLIMIT 1;\n```",
+    "run_seconds": 26.332
+  },
+  {
+    "id": 653,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1\nCROSS JOIN pois p2\nWHERE p1.poi_name ILIKE '%John Natsoulas Gallery%'\n  AND p2.tourism = 'attraction'\n  AND p1.id != p2.id\nORDER BY p1.geometry <-> p2.geometry\nLIMIT 1;\n```",
+    "run_seconds": 19.811
+  },
+  {
+    "id": 654,
+    "content": "```sql\nSELECT ST_Distance(p.geometry::geography, g.geometry::geography) AS distance_meters\nFROM pois p\nJOIN parks g ON ST_DWithin(p.geometry::geography, g.geometry::geography, 10000)\nWHERE p.poi_name ILIKE '%LEGOLAND Discovery Center Dallas/Fort Worth%'\n  AND g.leisure = 'garden'\nORDER BY p.geometry::geography <-> g.geometry::geography\nLIMIT 1;\n```",
+    "run_seconds": 21.757
+  },
+  {
+    "id": 655,
+    "content": "```sql\nSELECT MIN(ST_Distance(p1.geometry::geography, p2.geometry::geography)) AS proximity_distance\nFROM pois p1\nJOIN pois p2 ON ST_DWithin(p1.geometry::geography, p2.geometry::geography, 10000)\nWHERE p1.poi_name ILIKE '%Sea Life Aquarium%' \n  AND p2.amenity = 'hotel' \n  AND p2.tourism = 'hotel' \n  AND p1.addr_city ILIKE '%San Antonio%' \n  AND p1.addr_state ILIKE '%TX%';\n```",
+    "run_seconds": 26.792
+  },
+  {
+    "id": 656,
+    "content": "```sql\nSELECT ST_Distance(p.geometry::geography, r.geometry::geography) AS distance_meters\nFROM pois p\nJOIN regions r ON ST_Intersects(p.geometry::geography, r.geometry::geography)\nWHERE p.poi_name ILIKE '%Mari Sandoz High Plains Heritage Center%'\n  AND r.region_name ILIKE '%Chadron%'\n  AND p.amenity = 'stadium'\nORDER BY p.geometry::geography <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Mari Sandoz High Plains Heritage Center%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 26.442
+  },
+  {
+    "id": 657,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1,\n     (SELECT geometry\n      FROM pois\n      WHERE poi_name ILIKE '%Luthy Botanical Garden%'\n        AND addr_city ILIKE '%Peoria%'\n        AND addr_state ILIKE '%IL%') AS p1_subquery,\n     (SELECT geometry\n      FROM pois\n      WHERE amenity = 'golf_course'\n      ORDER BY p1.geometry <-> geometry\n      LIMIT 1) AS p2\nWHERE p1.poi_name ILIKE '%Luthy Botanical Garden%'\n  AND p1.addr_city ILIKE '%Peoria%'\n  AND p1.addr_state ILIKE '%IL%';\n```",
+    "run_seconds": 33.913
+  },
+  {
+    "id": 658,
+    "content": "```sql\nSELECT MIN(ST_Distance(p1.geometry::geography, p2.geometry::geography)) AS distance_meters\nFROM pois p1\nJOIN pois p2\n  ON p1.id <> p2.id\nWHERE p1.poi_name ILIKE '%Aquatic Zoo Tropical Fish%'\n  AND p2.tourism = 'theme_park'\n  AND p2.addr_city ILIKE '%Thousand Oaks%'\n  AND p2.addr_state ILIKE '%CA%';\n```",
+    "run_seconds": 21.753
+  },
+  {
+    "id": 659,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1,\n     (SELECT geometry FROM pois WHERE poi_name ILIKE '%zoo%' AND tourism = 'zoo' LIMIT 1) AS p2\nWHERE p1.poi_name ILIKE '%CHI Memorial Hospital%' AND p1.addr_city ILIKE '%Fort Oglethorpe%' AND p1.addr_state ILIKE '%GA%';\n```",
+    "run_seconds": 21.967
+  },
+  {
+    "id": 660,
+    "content": "```sql\nSELECT \n    ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM \n    (SELECT geometry FROM parks WHERE park_name ILIKE '%Oxbow Park%' LIMIT 1) AS p1,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Zollman Zoo%' AND addr_city ILIKE '%Byron%' LIMIT 1) AS p2\nORDER BY \n    p1.geometry <-> p2.geometry\nLIMIT 1;\n```",
+    "run_seconds": 23.034
+  },
+  {
+    "id": 661,
+    "content": "```sql\nSELECT MIN(ST_Distance(p1.geometry::geography, p2.geometry::geography)) AS distance_meters\nFROM pois p1\nJOIN pois p2\n  ON p1.id <> p2.id\nWHERE p1.poi_name ILIKE '%Legoland Discovery Center Chicago%'\n  AND p2.tourism = 'attraction'\n  AND p2.addr_city ILIKE '%Schaumburg%'\n  AND p2.addr_state ILIKE '%IL%';\n```",
+    "run_seconds": 21.757
+  },
+  {
+    "id": 662,
+    "content": "```sql\nSELECT \n    ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM \n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Lake County Discovery Museum%' AND addr_city ILIKE '%Libertyville%' LIMIT 1) AS p1,\n    (SELECT geometry FROM pois WHERE amenity = 'hotel' ORDER BY p1.geometry <-> pois.geometry LIMIT 1) AS p2;\n```",
+    "run_seconds": 20.688
+  },
+  {
+    "id": 663,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM (\n    SELECT geometry\n    FROM pois\n    WHERE poi_name ILIKE '%niagara amusement park & splash world%' AND addr_city ILIKE '%grand island%' AND addr_state ILIKE '%ny%'\n    LIMIT 1\n) AS p1,\n(\n    SELECT geometry\n    FROM pois\n    WHERE amenity = 'museum'\n    ORDER BY p1.geometry <-> geometry\n    LIMIT 1\n) AS p2;\n```",
+    "run_seconds": 25.173
+  },
+  {
+    "id": 664,
+    "content": "```sql\nSELECT MIN(ST_Distance(p1.geometry::geography, p2.geometry::geography)) AS distance_meters\nFROM pois p1\nCROSS JOIN pois p2\nWHERE p1.poi_name ILIKE '%Blue Ocean Discovery Center%'\n  AND p1.addr_city ILIKE '%Hampton%'\n  AND p1.addr_state ILIKE '%NH%'\n  AND p2.tourism ILIKE '%attraction%'\n  AND p1.id != p2.id;\n```",
+    "run_seconds": 21.547
+  },
+  {
+    "id": 665,
+    "content": "```sql\nSELECT ST_Distance(p.geometry::geography, n.geometry::geography) AS distance_meters\nFROM pois p\nJOIN parks n ON ST_DWithin(p.geometry::geography, n.geometry::geography, 100000)\nWHERE p.poi_name ILIKE '%DoubleTree by Hilton Hotel%'\n  AND p.addr_city ILIKE '%Bedford%'\n  AND p.addr_state ILIKE '%MA%'\n  AND n.leisure ILIKE '%nature_reserve%'\nORDER BY p.geometry::geography <-> n.geometry::geography\nLIMIT 1;\n```",
+    "run_seconds": 25.802
+  },
+  {
+    "id": 666,
+    "content": "```sql\nSELECT ST_Distance(p.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Crave Golf Club%' AND addr_city ILIKE '%Pigeon Forge%' AND addr_state ILIKE '%TN%' LIMIT 1)::geography) AS distance_meters\nFROM parks p\nORDER BY p.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Crave Golf Club%' AND addr_city ILIKE '%Pigeon Forge%' AND addr_state ILIKE '%TN%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 24.525
+  },
+  {
+    "id": 667,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1\nCROSS JOIN pois p2\nWHERE p1.poi_name ILIKE '%Red Wolf Sanctuary%' AND p1.addr_city ILIKE '%Rising Sun%' AND p1.addr_state ILIKE '%IN%'\n  AND p2.amenity = 'fast_food'\nORDER BY p1.geometry <-> p2.geometry\nLIMIT 1;\n```",
+    "run_seconds": 21.326
+  },
+  {
+    "id": 668,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1,\n     (SELECT geometry FROM pois WHERE poi_name ILIKE '%Leon and Ethel Yeiser Rose Garden%' LIMIT 1) AS p2\nWHERE p1.amenity = 'university'\n  AND ST_DWithin(p1.geometry::geography, p2.geometry::geography, 100000)\nORDER BY p1.geometry <-> p2.geometry\nLIMIT 1;\n```",
+    "run_seconds": 24.316
+  },
+  {
+    "id": 669,
+    "content": "```sql\nSELECT ST_Distance(pois.geometry::geography, (SELECT pois.geometry FROM pois WHERE poi_name ILIKE '%Carson Park Stadium%' LIMIT 1)::geography) AS distance_meters\nFROM pois\nWHERE amenity = 'university'\nORDER BY pois.geometry <-> (SELECT pois.geometry FROM pois WHERE poi_name ILIKE '%Carson Park Stadium%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 18.552
+  },
+  {
+    "id": 670,
+    "content": "```sql\nSELECT MIN(ST_Distance(p1.geometry::geography, p2.geometry::geography)) AS distance_meters\nFROM pois p1\nCROSS JOIN pois p2\nWHERE p1.poi_name ILIKE '%Stratton Fire Tower%'\n  AND p2.tourism = 'attraction'\n  AND p1.poi_name <> p2.poi_name;\n```",
+    "run_seconds": 17.061
+  },
+  {
+    "id": 671,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1\nCROSS JOIN LATERAL (\n    SELECT geometry\n    FROM pois\n    WHERE tourism ILIKE 'zoo'\n    ORDER BY pois.geometry <-> p1.geometry\n    LIMIT 1\n) p2\nWHERE p1.poi_name ILIKE '%Cox Science Center and Aquarium%'\n  AND p1.addr_city ILIKE 'West Palm Beach'\n  AND p1.addr_state ILIKE 'FL';\n```",
+    "run_seconds": 24.736
+  },
+  {
+    "id": 672,
+    "content": "```sql\nSELECT MIN(ST_Distance(p1.geometry::geography, p2.geometry::geography)) AS distance_meters\nFROM pois p1\nJOIN pois p2\n  ON p1.id <> p2.id\nWHERE p1.poi_name ILIKE '%Barry Gallery%'\n  AND p1.addr_city ILIKE '%Arlington%'\n  AND p1.addr_state ILIKE '%VA%'\n  AND p2.tourism = 'zoo';\n```",
+    "run_seconds": 20.898
+  },
+  {
+    "id": 673,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS proximity_distance\nFROM parks p1\nCROSS JOIN parks p2\nWHERE p1.park_name ILIKE '%West End Park%'\n  AND p2.park_name ILIKE '%Queensbury%'\n```",
+    "run_seconds": 14.288
+  },
+  {
+    "id": 674,
+    "content": "```sql\nSELECT ST_Distance(p.geometry::geography, h.geometry::geography) AS distance_meters\nFROM pois p\nJOIN pois h ON TRUE\nWHERE p.poi_name ILIKE '%Cannon Beach Hotel%' \n  AND h.amenity = 'hospital'\nORDER BY p.geometry <-> h.geometry\nLIMIT 1;\n```",
+    "run_seconds": 15.142
+  },
+  {
+    "id": 675,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1\nCROSS JOIN pois p2\nWHERE p1.poi_name ILIKE '%Brown''s Farm Barn%'\n  AND p2.tourism ILIKE 'gallery'\n  AND p1.id != p2.id\nORDER BY p1.geometry <-> p2.geometry\nLIMIT 1;\n```",
+    "run_seconds": 19.408
+  },
+  {
+    "id": 676,
+    "content": "```sql\nSELECT ST_Distance(p.geometry::geography, h.geometry::geography) AS distance_meters\nFROM pois p\nCROSS JOIN (\n    SELECT geometry FROM pois WHERE poi_name ILIKE '%Horrigan Hall%' LIMIT 1\n) h\nWHERE p.leisure = 'golf_course'\nORDER BY p.geometry <-> h.geometry\nLIMIT 1;\n```",
+    "run_seconds": 17.06
+  },
+  {
+    "id": 677,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1,\n     (SELECT geometry FROM pois WHERE amenity = 'stadium' AND addr_city ILIKE '%san francisco%' LIMIT 1) p2\nWHERE p1.poi_name ILIKE '%view lounge%' AND p1.addr_city ILIKE '%san francisco%';\n```",
+    "run_seconds": 18.982
+  },
+  {
+    "id": 678,
+    "content": "```sql\nSELECT \n    ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM \n    pois p1,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%UIS Greenhouse%' AND addr_city ILIKE '%Springfield%' AND addr_state ILIKE '%IL%' LIMIT 1) AS p2\nWHERE \n    p1.poi_name ILIKE '%zoo%' \n    AND p1.addr_state ILIKE '%IL%' \nORDER BY \n    p1.geometry <-> p2.geometry\nLIMIT 1;\n```",
+    "run_seconds": 25.826
+  },
+  {
+    "id": 679,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1\nCROSS JOIN pois p2\nWHERE p1.poi_name ILIKE '%Cox Science Center and Aquarium%'\n  AND p2.amenity = 'hospital'\nORDER BY p1.geometry <-> p2.geometry\nLIMIT 1;\n```",
+    "run_seconds": 17.059
+  },
+  {
+    "id": 680,
+    "content": "```sql\nSELECT \n    ST_Distance(p.geometry::geography, f.geometry::geography) AS distance_meters\nFROM \n    (SELECT geometry FROM pois WHERE amenity = 'fast_food' LIMIT 1) AS f,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Oak Grove Football Stadium%' AND addr_city ILIKE '%Bessemer%' AND addr_state ILIKE '%AL%' LIMIT 1) AS p;\n```",
+    "run_seconds": 20.045
+  },
+  {
+    "id": 681,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1,\n     (SELECT geometry FROM pois WHERE poi_name ILIKE '%Glenwood Caverns Adventure Park%' LIMIT 1) AS p2\nWHERE p1.amenity = 'viewpoint'\n  AND p1.addr_city ILIKE '%Glenwood Springs%'\n  AND p1.addr_state ILIKE '%CO%'\nORDER BY p1.geometry <-> p2.geometry\nLIMIT 1;\n```",
+    "run_seconds": 23.911
+  },
+  {
+    "id": 682,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1, pois p2\nWHERE p1.poi_name ILIKE '%Lockheed A-12 Blackbird%'\n  AND p2.tourism = 'viewpoint'\nORDER BY p1.geometry <-> p2.geometry\nLIMIT 1;\n```",
+    "run_seconds": 17.288
+  },
+  {
+    "id": 683,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1\nCROSS JOIN LATERAL (\n    SELECT geometry\n    FROM parks\n    WHERE leisure = 'golf_course'\n    ORDER BY p1.geometry <-> p2.geometry\n    LIMIT 1\n) p2\nWHERE p1.poi_name ILIKE '%AC Hotel%' AND p1.addr_city ILIKE '%Atlanta%' AND p1.addr_state ILIKE '%GA%';\n```",
+    "run_seconds": 23.489
+  },
+  {
+    "id": 684,
+    "content": "```sql\nSELECT ST_Distance(p.geometry::geography, v.geometry::geography) AS distance_meters\nFROM pois p\nJOIN pois v ON TRUE\nWHERE p.poi_name ILIKE '%Shavers Creek Environmental Center%'\n  AND p.addr_city ILIKE '%Petersburg%'\n  AND p.addr_state ILIKE '%PA%'\n  AND v.tourism ILIKE '%viewpoint%'\nORDER BY p.geometry <-> v.geometry\nLIMIT 1;\n```",
+    "run_seconds": 20.493
+  },
+  {
+    "id": 685,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1\nJOIN pois p2\n  ON p1.id <> p2.id\nWHERE p1.poi_name ILIKE '%Sonny''s Place%'\n  AND p2.tourism = 'zoo'\n  AND p2.addr_city ILIKE '%Somers%'\nORDER BY p1.geometry <-> p2.geometry\nLIMIT 1;\n```",
+    "run_seconds": 21.556
+  },
+  {
+    "id": 686,
+    "content": "```sql\nSELECT MIN(ST_Distance(p.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Curtis Motel%' AND addr_city ILIKE '%Bridgeton%' AND addr_state ILIKE '%NC%' LIMIT 1)::geography)) AS distance_meters\nFROM pois p\nWHERE p.tourism = 'aquarium';\n```",
+    "run_seconds": 16.866
+  },
+  {
+    "id": 687,
+    "content": "```sql\nSELECT ST_Distance(p.geometry::geography, g.geometry::geography) AS distance_meters\nFROM pois p\nJOIN parks g ON ST_DWithin(p.geometry::geography, g.geometry::geography, 100000)\nWHERE p.poi_name ILIKE '%Chicago Portage National Historic Site%'\n  AND g.leisure = 'garden'\nORDER BY p.geometry::geography <-> g.geometry::geography\nLIMIT 1;\n```",
+    "run_seconds": 21.345
+  },
+  {
+    "id": 688,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1,\n     (SELECT geometry FROM pois \n      WHERE poi_name ILIKE '%hotel%' \n        AND addr_city ILIKE '%lorain%' \n        AND addr_state ILIKE '%oh%' \n      ORDER BY p1.geometry <-> (SELECT geometry FROM pois \n                                WHERE poi_name ILIKE '%Akron Children''s Hospital NICU at Mercy Lorain%') \n      LIMIT 1) p2\nWHERE p1.poi_name ILIKE '%Akron Children''s Hospital NICU at Mercy Lorain%';\n```",
+    "run_seconds": 29.255
+  },
+  {
+    "id": 689,
+    "content": "```sql\nSELECT pois.poi_name, ST_Distance(pois.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Inn at Bay Harbor%' LIMIT 1)::geography) AS distance_meters\nFROM pois\nWHERE pois.amenity = 'fast_food'\nORDER BY pois.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Inn at Bay Harbor%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 19.641
+  },
+  {
+    "id": 690,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1,\n     parks p2\nWHERE p1.poi_name ILIKE '%El Paso Children''s Hospital%'\n  AND p2.leisure ILIKE 'garden'\n  AND ST_DWithin(p1.geometry::geography, p2.geometry::geography, 10000)\nORDER BY p1.geometry <-> p2.geometry\nLIMIT 1;\n```",
+    "run_seconds": 22.622
+  },
+  {
+    "id": 691,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1\nCROSS JOIN LATERAL (\n    SELECT geometry\n    FROM pois\n    WHERE amenity = 'cafe'\n    ORDER BY p1.geometry <-> geometry\n    LIMIT 1\n) p2\nWHERE p1.poi_name ILIKE '%Gem Mountain Gemstone Mine%'\n  AND p1.addr_city ILIKE '%Spruce Pine%'\n  AND p1.addr_state ILIKE '%NC%';\n```",
+    "run_seconds": 24.543
+  },
+  {
+    "id": 692,
+    "content": "```sql\nSELECT ST_Distance(p.geometry::geography, h.geometry::geography) AS distance_meters\nFROM pois h\nJOIN parks p ON ST_DWithin(p.geometry::geography, h.geometry::geography, 10000)\nWHERE h.poi_name ILIKE '%DoubleTree by Hilton Hotel%' AND h.addr_city ILIKE '%Bedford%' AND h.addr_state ILIKE '%MA%'\n  AND p.leisure ILIKE '%garden%'\nORDER BY p.geometry <-> h.geometry\nLIMIT 1;\n```",
+    "run_seconds": 23.903
+  },
+  {
+    "id": 693,
+    "content": "```sql\nSELECT MIN(ST_Distance(p1.geometry::geography, p2.geometry::geography)) AS distance_meters\nFROM pois p1\nJOIN pois p2\n  ON p1.id <> p2.id\nWHERE p1.poi_name ILIKE '%Meadow Museum%' AND p1.addr_city ILIKE '%Benson%' AND p1.addr_state ILIKE '%NC%'\n  AND p2.tourism = 'theme_park';\n```",
+    "run_seconds": 20.703
+  },
+  {
+    "id": 694,
+    "content": "```sql\nSELECT ST_Distance(p.geometry::geography, r.geometry::geography) AS distance_meters\nFROM pois p\nJOIN regions r ON ST_Intersects(p.geometry::geography, r.geometry::geography)\nWHERE p.poi_name ILIKE '%stadium%'\n  AND r.region_name ILIKE '%hague%' AND r.border_type = 'city'\n  AND p.tourism = 'stadium'\nORDER BY p.geometry::geography <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%rogers rock campground entrance%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 26.253
+  },
+  {
+    "id": 695,
+    "content": "```sql\nSELECT poi_name, ST_Distance(p.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Memory Garden%' AND addr_city ILIKE '%Mequon%' AND addr_state ILIKE '%WI%' LIMIT 1)::geography) AS distance_meters\nFROM pois p\nWHERE p.amenity = 'cafe'\nORDER BY p.geometry <-> (SELECT geometry FROM pois WHERE poi_name ILIKE '%Memory Garden%' AND addr_city ILIKE '%Mequon%' AND addr_state ILIKE '%WI%' LIMIT 1)\nLIMIT 1;\n```",
+    "run_seconds": 25.839
+  },
+  {
+    "id": 696,
+    "content": "```sql\nSELECT ST_Distance(p.geometry::geography, h.geometry::geography) AS distance_meters\nFROM pois p\nJOIN pois h ON TRUE\nWHERE p.poi_name ILIKE '%Hickory Grove Riverfront%'\n  AND h.amenity = 'hospital'\nORDER BY p.geometry <-> h.geometry\nLIMIT 1;\n```",
+    "run_seconds": 15.367
+  },
+  {
+    "id": 697,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1\nCROSS JOIN pois p2\nWHERE p1.poi_name ILIKE '%Cabell Gallery%' \n  AND p2.amenity = 'stadium'\nORDER BY p1.geometry <-> p2.geometry\nLIMIT 1;\n```",
+    "run_seconds": 16.869
+  },
+  {
+    "id": 698,
+    "content": "```sql\nSELECT ST_Distance(p.geometry::geography, po.geometry::geography) AS distance_meters\nFROM parks p\nJOIN (\n    SELECT geometry\n    FROM pois\n    WHERE poi_name ILIKE '%Chopper''s Lawn Equipment%' AND addr_city ILIKE '%Kissimmee%' AND addr_state ILIKE '%FL%'\n    LIMIT 1\n) po ON ST_DWithin(p.geometry::geography, po.geometry::geography, 10000)\nORDER BY p.geometry <-> po.geometry\nLIMIT 1;\n```",
+    "run_seconds": 24.758
+  },
+  {
+    "id": 699,
+    "content": "```sql\nSELECT ST_Distance(p1.geometry::geography, p2.geometry::geography) AS distance_meters\nFROM pois p1,\n     (SELECT geometry FROM parks WHERE leisure = 'nature_reserve' ORDER BY p1.geometry <-> geometry LIMIT 1) p2\nWHERE p1.poi_name ILIKE '%Lucille Ball Childhood Home%' AND p1.addr_city ILIKE '%Jamestown%';\n```",
+    "run_seconds": 18.78
+  }
+]

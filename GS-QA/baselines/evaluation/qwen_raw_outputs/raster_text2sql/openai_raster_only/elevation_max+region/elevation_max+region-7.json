@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 199.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 199.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-76.212409 43.046957, -76.212714 43.051088, -76.212897 43.053271, -76.212955 43.053297, -76.216155 43.05317, -76.216139 43.052799, -76.217532 43.05276, -76.217504 43.052349, -76.218633 43.052311, -76.218652 43.052727, -76.220997 43.052657, -76.221024 43.053015, -76.221125 43.054383, -76.222804 43.054428, -76.222756 43.053909, -76.225582 43.053977, -76.22569 43.05543, -76.22789 43.055492, -76.229755 43.055608, -76.230719 43.055697, -76.230845 43.057194, -76.23092 43.058089, -76.229605 43.058169, -76.230419 43.067678, -76.230735 43.067663, -76.23151 43.068567, -76.227851 43.067467, -76.219846 43.064985, -76.219284 43.064833, -76.219013 43.064793, -76.218697 43.064773, -76.206272 43.064348, -76.205943 43.064054, -76.200734 43.063846, -76.200855 43.063692, -76.200378 43.063674, -76.19744 43.059513, -76.197562 43.059507, -76.199583 43.060032, -76.199629 43.059941, -76.200068 43.060056, -76.19964 43.054683, -76.199078 43.054668, -76.197647 43.052648, -76.197337 43.05217, -76.196262 43.050676, -76.195621 43.049696, -76.195598 43.049386, -76.195553 43.049299, -76.195502 43.04848, -76.19537 43.046255, -76.195087 43.042422, -76.195303 43.042391, -76.195487 43.042344, -76.195724 43.042243, -76.19593 43.042129, -76.196187 43.042054, -76.199079 43.041905, -76.198936 43.042356, -76.19886 43.042672, -76.198828 43.042994, -76.199107 43.047301, -76.200609 43.047188, -76.203226 43.046989, -76.2038 43.046996, -76.204317 43.047053, -76.20553 43.047199, -76.206039 43.047234, -76.206536 43.047233, -76.207732 43.047179, -76.208016 43.051037, -76.208895 43.050998, -76.209744 43.050668, -76.210274 43.050705, -76.210468 43.050462, -76.211168 43.050433, -76.211154 43.050294, -76.211358 43.050285, -76.211118 43.047021, -76.212409 43.046957))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).max AS elevation\nFROM clipped;",
+  "id": "elevation_max+region-7",
+  "model_output": "```sql\nWITH solvay_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Solvay' AND addr_state ILIKE 'New York'\n)\nSELECT MAX((ST_Value(r.rast, s.geom)).val) AS highest_elevation\nFROM solvay_geom s\nJOIN public.dem_us r\nON ST_Intersects(r.rast, s.geom);\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 4:   WHERE region_name ILIKE 'Solvay' AND addr_state ILIKE 'New...\n                                               ^",
+    "output": []
+  },
+  "predicted_sql": "WITH solvay_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Solvay' AND addr_state ILIKE 'New York'\n)\nSELECT MAX((ST_Value(r.rast, s.geom)).val) AS highest_elevation\nFROM solvay_geom s\nJOIN public.dem_us r\nON ST_Intersects(r.rast, s.geom);",
+  "predicted_sql_candidates": [
+    "WITH solvay_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Solvay' AND addr_state ILIKE 'New York'\n)\nSELECT MAX((ST_Value(r.rast, s.geom)).val) AS highest_elevation\nFROM solvay_geom s\nJOIN public.dem_us r\nON ST_Intersects(r.rast, s.geom);"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the highest elevation in Solvay, New York?",
+  "source_file": "elevation_max+region.jsonl",
+  "source_stem": "elevation_max+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 19.091,
+    "total_seconds": 19.092
+  },
+  "usage": {
+    "completion_tokens": 89,
+    "prompt_tokens": 1518,
+    "total_tokens": 1607
+  }
+}

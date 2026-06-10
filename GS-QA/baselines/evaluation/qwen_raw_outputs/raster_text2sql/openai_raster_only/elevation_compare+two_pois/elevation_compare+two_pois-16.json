@@ -1,0 +1,63 @@
+{
+  "answer_type": "name",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "name",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "higher_poi": "Ojito Wilderness Study Area, San Luis, NM",
+      "poi1_elevation_m": 346.0,
+      "poi2_elevation_m": 1759.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "higher_poi": "Ojito Wilderness Study Area, San Luis, NM",
+        "poi1_elevation_m": 346.0,
+        "poi2_elevation_m": 1759.0
+      }
+    ]
+  },
+  "gold_sql": "WITH p1 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-93.358596 37.287518)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-93.358596 37.287518)',4326))\n  LIMIT 1\n),\np2 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-106.960317 35.59114)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-106.960317 35.59114)',4326))\n  LIMIT 1\n)\nSELECT\n  CASE\n    WHEN p1.elev > p2.elev THEN 'Fantastic Caverns, Springfield, MO'\n    WHEN p2.elev > p1.elev THEN 'Ojito Wilderness Study Area, San Luis, NM'\n    ELSE 'equal'\n  END AS higher_poi,\n  p1.elev AS poi1_elevation_m,\n  p2.elev AS poi2_elevation_m\nFROM p1, p2;",
+  "id": "elevation_compare+two_pois-16",
+  "model_output": "```sql\nWITH fcaverns_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-93.358596, 37.287518), 4326)::geography AS geom\n),\nojito_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-106.960317, 35.59114), 4326)::geography AS geom\n),\nfcaverns_elev AS (\n  SELECT ST_Value(rast, ST_Transform(fc.geom, 4326)) AS elevation\n  FROM public.dem_us, fcaverns_geom fc\n  WHERE ST_Intersects(rast, ST_Transform(fc.geom, 4326))\n),\nojito_elev AS (\n  SELECT ST_Value(rast, ST_Transform(oj.geom, 4326)) AS elevation\n  FROM public.dem_us, ojito_geom oj\n  WHERE ST_Intersects(rast, ST_Transform(oj.geom, 4326))\n)\nSELECT \n  'Fantastic Caverns, Springfield, MO' AS name,\n  fc.elevation\nFROM fcaverns_elev fc\nUNION ALL\nSELECT \n  'Ojito Wilderness Study Area, San Luis, NM' AS name,\n  oj.elevation\nFROM ojito_elev oj\nORDER BY elevation DESC\nLIMIT 1;\n```",
+  "predicted_exec": {
+    "error": "function st_transform(geography, integer) does not exist\nLINE 8:   SELECT ST_Value(rast, ST_Transform(fc.geom, 4326)) AS elev...\n                                ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH fcaverns_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-93.358596, 37.287518), 4326)::geography AS geom\n),\nojito_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-106.960317, 35.59114), 4326)::geography AS geom\n),\nfcaverns_elev AS (\n  SELECT ST_Value(rast, ST_Transform(fc.geom, 4326)) AS elevation\n  FROM public.dem_us, fcaverns_geom fc\n  WHERE ST_Intersects(rast, ST_Transform(fc.geom, 4326))\n),\nojito_elev AS (\n  SELECT ST_Value(rast, ST_Transform(oj.geom, 4326)) AS elevation\n  FROM public.dem_us, ojito_geom oj\n  WHERE ST_Intersects(rast, ST_Transform(oj.geom, 4326))\n)\nSELECT \n  'Fantastic Caverns, Springfield, MO' AS name,\n  fc.elevation\nFROM fcaverns_elev fc\nUNION ALL\nSELECT \n  'Ojito Wilderness Study Area, San Luis, NM' AS name,\n  oj.elevation\nFROM ojito_elev oj\nORDER BY elevation DESC\nLIMIT 1;",
+  "predicted_sql_candidates": [
+    "WITH fcaverns_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-93.358596, 37.287518), 4326)::geography AS geom\n),\nojito_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-106.960317, 35.59114), 4326)::geography AS geom\n),\nfcaverns_elev AS (\n  SELECT ST_Value(rast, ST_Transform(fc.geom, 4326)) AS elevation\n  FROM public.dem_us, fcaverns_geom fc\n  WHERE ST_Intersects(rast, ST_Transform(fc.geom, 4326))\n),\nojito_elev AS (\n  SELECT ST_Value(rast, ST_Transform(oj.geom, 4326)) AS elevation\n  FROM public.dem_us, ojito_geom oj\n  WHERE ST_Intersects(rast, ST_Transform(oj.geom, 4326))\n)\nSELECT \n  'Fantastic Caverns, Springfield, MO' AS name,\n  fc.elevation\nFROM fcaverns_elev fc\nUNION ALL\nSELECT \n  'Ojito Wilderness Study Area, San Luis, NM' AS name,\n  oj.elevation\nFROM ojito_elev oj\nORDER BY elevation DESC\nLIMIT 1;"
+  ],
+  "query_type": "raster_only",
+  "question": "Which has a higher elevation, Fantastic Caverns, Springfield, MO or Ojito Wilderness Study Area, San Luis, NM?",
+  "source_file": "elevation_compare+two_pois.jsonl",
+  "source_stem": "elevation_compare+two_pois",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 65.931,
+    "total_seconds": 65.932
+  },
+  "usage": {
+    "completion_tokens": 309,
+    "prompt_tokens": 1737,
+    "total_tokens": 2046
+  }
+}

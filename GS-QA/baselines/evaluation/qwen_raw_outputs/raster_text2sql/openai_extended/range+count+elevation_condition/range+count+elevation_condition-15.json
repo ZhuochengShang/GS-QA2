@@ -1,0 +1,70 @@
+{
+  "answer_type": "count, POIs -> Points",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "count, POIs -> Points",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "max_abs_numeric_delta": 0.0,
+    "mean_abs_numeric_delta": 0.0,
+    "numeric_deltas": [
+      0.0
+    ],
+    "predicted_row_count": 1,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "absolute_error": 0.0,
+      "gold_field": "count",
+      "gold_value": 0.0,
+      "metric_family": "primary_numeric",
+      "predicted_field": "garden_count",
+      "predicted_value": 0.0,
+      "relative_error": 0.0,
+      "within_tolerance": true
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "count": 0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "count": 0
+      }
+    ]
+  },
+  "gold_sql": "WITH candidates AS (\n  SELECT p.id, p.geometry\n  FROM pois p\n  WHERE ST_DWithin(p.geometry::geography, ST_GeomFromText('POINT (-74.585063 39.978436)',4326)::geography, 700)\n    AND p.leisure = 'garden'\n),\npoi_elev AS (\n  SELECT c.id, elev.z\n  FROM candidates c\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, c.geometry::geometry) AS z\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, c.geometry::geometry)\n    LIMIT 1\n  ) elev ON elev.z IS NOT NULL\n)\nSELECT COUNT(*) AS count\nFROM poi_elev\nWHERE z <= 40;",
+  "id": "range+count+elevation_condition-15",
+  "model_output": "```sql\nWITH medical_building_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-74.585063, 39.978436), 4326)::geography AS geom\n),\nbuffer_geom AS (\n  SELECT ST_Buffer(geom, 700) AS geom\n  FROM medical_building_geom\n),\ngardens_in_buffer AS (\n  SELECT p.geometry\n  FROM pois p\n  JOIN buffer_geom b ON ST_Intersects(p.geometry::geometry, b.geom::geometry)\n  WHERE p.leisure = 'garden'\n),\nelevation_analysis AS (\n  SELECT COUNT(*) AS garden_count\n  FROM gardens_in_buffer g\n  JOIN LATERAL (\n    SELECT (ST_SummaryStats(ST_Clip(r.rast, 1, g.geometry::geometry, TRUE))).sum / NULLIF((ST_SummaryStats(ST_Clip(r.rast, 1, g.geometry::geometry, TRUE))).count, 0) AS avg_elevation\n    FROM public.dem_us r\n    WHERE ST_Intersects(r.rast, g.geometry::geometry)\n  ) stats ON TRUE\n  WHERE avg_elevation <= 40\n)\nSELECT garden_count\nFROM elevation_analysis;\n```",
+  "predicted_exec": {
+    "error": "",
+    "output": [
+      {
+        "garden_count": 0
+      }
+    ]
+  },
+  "predicted_sql": "WITH medical_building_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-74.585063, 39.978436), 4326)::geography AS geom\n),\nbuffer_geom AS (\n  SELECT ST_Buffer(geom, 700) AS geom\n  FROM medical_building_geom\n),\ngardens_in_buffer AS (\n  SELECT p.geometry\n  FROM pois p\n  JOIN buffer_geom b ON ST_Intersects(p.geometry::geometry, b.geom::geometry)\n  WHERE p.leisure = 'garden'\n),\nelevation_analysis AS (\n  SELECT COUNT(*) AS garden_count\n  FROM gardens_in_buffer g\n  JOIN LATERAL (\n    SELECT (ST_SummaryStats(ST_Clip(r.rast, 1, g.geometry::geometry, TRUE))).sum / NULLIF((ST_SummaryStats(ST_Clip(r.rast, 1, g.geometry::geometry, TRUE))).count, 0) AS avg_elevation\n    FROM public.dem_us r\n    WHERE ST_Intersects(r.rast, g.geometry::geometry)\n  ) stats ON TRUE\n  WHERE avg_elevation <= 40\n)\nSELECT garden_count\nFROM elevation_analysis;",
+  "predicted_sql_candidates": [
+    "WITH medical_building_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-74.585063, 39.978436), 4326)::geography AS geom\n),\nbuffer_geom AS (\n  SELECT ST_Buffer(geom, 700) AS geom\n  FROM medical_building_geom\n),\ngardens_in_buffer AS (\n  SELECT p.geometry\n  FROM pois p\n  JOIN buffer_geom b ON ST_Intersects(p.geometry::geometry, b.geom::geometry)\n  WHERE p.leisure = 'garden'\n),\nelevation_analysis AS (\n  SELECT COUNT(*) AS garden_count\n  FROM gardens_in_buffer g\n  JOIN LATERAL (\n    SELECT (ST_SummaryStats(ST_Clip(r.rast, 1, g.geometry::geometry, TRUE))).sum / NULLIF((ST_SummaryStats(ST_Clip(r.rast, 1, g.geometry::geometry, TRUE))).count, 0) AS avg_elevation\n    FROM public.dem_us r\n    WHERE ST_Intersects(r.rast, g.geometry::geometry)\n  ) stats ON TRUE\n  WHERE avg_elevation <= 40\n)\nSELECT garden_count\nFROM elevation_analysis;"
+  ],
+  "query_type": "extended",
+  "question": "In the vicinity of Medical Office Building - Browns Mills, Browns Mills, NJ, within 700 meters, how many gardens are there at or below 40 m elevation?",
+  "source_file": "range+count+elevation_condition.jsonl",
+  "source_stem": "range+count+elevation_condition",
+  "timing": {
+    "execution_seconds": 0.035,
+    "generation_seconds": 55.959,
+    "total_seconds": 55.994
+  },
+  "usage": {
+    "completion_tokens": 262,
+    "prompt_tokens": 1800,
+    "total_tokens": 2062
+  }
+}

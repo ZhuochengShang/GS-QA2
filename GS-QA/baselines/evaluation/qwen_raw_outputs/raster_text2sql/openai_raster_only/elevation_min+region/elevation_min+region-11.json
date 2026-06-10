@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 481.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 481.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-97.392412 40.495447, -97.392429 40.496434, -97.392371 40.497168, -97.392353 40.497938, -97.39306 40.497932, -97.393047 40.49846, -97.393029 40.499015, -97.392703 40.49901, -97.392605 40.499009, -97.392559 40.499387, -97.39252 40.4994, -97.392275 40.499398, -97.392284 40.50002, -97.392283 40.500387, -97.392456 40.502708, -97.392404 40.502707, -97.390983 40.502715, -97.389595 40.50273, -97.38961 40.504103, -97.388244 40.504117, -97.388237 40.504455, -97.387612 40.50446, -97.387616 40.505533, -97.38676 40.505533, -97.38676 40.505333, -97.386748 40.504802, -97.386872 40.504813, -97.386848 40.504131, -97.386331 40.504136, -97.386352 40.504748, -97.385087 40.504768, -97.384244 40.504778, -97.384311 40.504093, -97.384355 40.503939, -97.384279 40.503379, -97.383285 40.503358, -97.383201 40.502762, -97.38314 40.501773, -97.383196 40.500891, -97.383745 40.500883, -97.383873 40.500883, -97.383867 40.500801, -97.383759 40.500004, -97.383772 40.499561, -97.384341 40.499399, -97.384336 40.499201, -97.386941 40.499254, -97.38696 40.4984, -97.386987 40.497434, -97.387601 40.497401, -97.387595 40.496388, -97.387594 40.49601, -97.387592 40.495639, -97.387592 40.495598, -97.387586 40.495442, -97.387592 40.494436, -97.387597 40.494068, -97.388233 40.494052, -97.388224 40.494556, -97.389012 40.494553, -97.388993 40.495451, -97.39025 40.495451, -97.391529 40.495448, -97.391752 40.495448, -97.392412 40.495447))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).min AS elevation\nFROM clipped;",
+  "id": "elevation_min+region-11",
+  "model_output": "```sql\nWITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Milligan' AND border_type = 'city'\n)\nSELECT\n  ST_Value(rast, 1, (SELECT geom FROM region_geom), true) AS floor_elevation\nFROM\n  public.dem_us\nWHERE\n  ST_Intersects(rast, (SELECT geom FROM region_geom));\n```",
+  "predicted_exec": {
+    "error": "",
+    "output": []
+  },
+  "predicted_sql": "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Milligan' AND border_type = 'city'\n)\nSELECT\n  ST_Value(rast, 1, (SELECT geom FROM region_geom), true) AS floor_elevation\nFROM\n  public.dem_us\nWHERE\n  ST_Intersects(rast, (SELECT geom FROM region_geom));",
+  "predicted_sql_candidates": [
+    "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Milligan' AND border_type = 'city'\n)\nSELECT\n  ST_Value(rast, 1, (SELECT geom FROM region_geom), true) AS floor_elevation\nFROM\n  public.dem_us\nWHERE\n  ST_Intersects(rast, (SELECT geom FROM region_geom));"
+  ],
+  "query_type": "raster_only",
+  "question": "What floor elevation does Milligan, Nebraska have?",
+  "source_file": "elevation_min+region.jsonl",
+  "source_stem": "elevation_min+region",
+  "timing": {
+    "execution_seconds": 0.674,
+    "generation_seconds": 18.974,
+    "total_seconds": 19.648
+  },
+  "usage": {
+    "completion_tokens": 89,
+    "prompt_tokens": 1515,
+    "total_tokens": 1604
+  }
+}

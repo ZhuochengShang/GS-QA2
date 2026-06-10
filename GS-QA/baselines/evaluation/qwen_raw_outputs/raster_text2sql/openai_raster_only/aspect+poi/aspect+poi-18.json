@@ -1,0 +1,59 @@
+{
+  "answer_type": "aspect",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "aspect",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "aspect_degrees": 117.645973
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "aspect_degrees": 117.645973
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-87.802535 41.805303)',4326) AS pt\n),\npatch AS (\n  SELECT ST_Buffer(pt::geography, 100)::geometry AS g FROM origin\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, p.g)) AS rast\n  FROM public.dem_us d\n  JOIN patch p ON ST_Intersects(d.rast, p.g)\n),\naspect_rast AS (\n  SELECT ST_Aspect(rast, 1, '32BF', 'DEGREES') AS rast\n  FROM clipped_dem\n)\nSELECT ST_Value(a.rast, 1, o.pt) AS aspect_degrees\nFROM aspect_rast a, origin o;",
+  "id": "aspect+poi-18",
+  "model_output": "```sql\nWITH site_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-87.802535, 41.805303), 4326)::geography AS geom\n),\nraster_clip AS (\n  SELECT \n    ST_Union(rast) AS rast\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(\n      rast,\n      ST_Transform(ST_SetSRID(ST_MakePoint(-87.802535, 41.805303), 4326), 4326)\n    )\n),\naspect_raster AS (\n  SELECT \n    ST_Aspect(raster_clip.rast, 1) AS aspect_rast\n  FROM \n    raster_clip\n),\naspect_value AS (\n  SELECT \n    ST_Value(aspect_raster.aspect_rast, ST_Transform(site_geom.geom, 4326)) AS aspect_deg\n  FROM \n    aspect_value, site_geom\n)\nSELECT \n  degrees,\n  CASE\n    WHEN degrees BETWEEN 22.5 AND 67.5 THEN 'NE'\n    WHEN degrees BETWEEN 67.5 AND 112.5 THEN 'E'\n    WHEN degrees BETWEEN 112.5 AND 157.5 THEN 'SE'\n    WHEN degrees BETWEEN 157.5 AND 202.5 THEN 'S'\n    WHEN degrees BETWEEN 202.5 AND 247.5 THEN 'SW'\n    WHEN degrees BETWEEN 247.5 AND 292.5 THEN 'W'\n    WHEN degrees BETWEEN 292.5 AND 337.5 THEN 'NW'\n    ELSE 'N'\n  END AS bearing\nFROM (\n  SELECT \n    aspect_deg AS degrees\n  FROM \n    aspect_value\n) sub;\n```",
+  "predicted_exec": {
+    "error": "relation \"aspect_value\" does not exist\nLINE 25:     aspect_value, site_geom\n             ^\nDETAIL:  There is a WITH item named \"aspect_value\", but it cannot be referenced from this part of the query.\nHINT:  Use WITH RECURSIVE, or re-order the WITH items to remove forward references.",
+    "output": []
+  },
+  "predicted_sql": "WITH site_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-87.802535, 41.805303), 4326)::geography AS geom\n),\nraster_clip AS (\n  SELECT \n    ST_Union(rast) AS rast\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(\n      rast,\n      ST_Transform(ST_SetSRID(ST_MakePoint(-87.802535, 41.805303), 4326), 4326)\n    )\n),\naspect_raster AS (\n  SELECT \n    ST_Aspect(raster_clip.rast, 1) AS aspect_rast\n  FROM \n    raster_clip\n),\naspect_value AS (\n  SELECT \n    ST_Value(aspect_raster.aspect_rast, ST_Transform(site_geom.geom, 4326)) AS aspect_deg\n  FROM \n    aspect_value, site_geom\n)\nSELECT \n  degrees,\n  CASE\n    WHEN degrees BETWEEN 22.5 AND 67.5 THEN 'NE'\n    WHEN degrees BETWEEN 67.5 AND 112.5 THEN 'E'\n    WHEN degrees BETWEEN 112.5 AND 157.5 THEN 'SE'\n    WHEN degrees BETWEEN 157.5 AND 202.5 THEN 'S'\n    WHEN degrees BETWEEN 202.5 AND 247.5 THEN 'SW'\n    WHEN degrees BETWEEN 247.5 AND 292.5 THEN 'W'\n    WHEN degrees BETWEEN 292.5 AND 337.5 THEN 'NW'\n    ELSE 'N'\n  END AS bearing\nFROM (\n  SELECT \n    aspect_deg AS degrees\n  FROM \n    aspect_value\n) sub;",
+  "predicted_sql_candidates": [
+    "WITH site_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-87.802535, 41.805303), 4326)::geography AS geom\n),\nraster_clip AS (\n  SELECT \n    ST_Union(rast) AS rast\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(\n      rast,\n      ST_Transform(ST_SetSRID(ST_MakePoint(-87.802535, 41.805303), 4326), 4326)\n    )\n),\naspect_raster AS (\n  SELECT \n    ST_Aspect(raster_clip.rast, 1) AS aspect_rast\n  FROM \n    raster_clip\n),\naspect_value AS (\n  SELECT \n    ST_Value(aspect_raster.aspect_rast, ST_Transform(site_geom.geom, 4326)) AS aspect_deg\n  FROM \n    aspect_value, site_geom\n)\nSELECT \n  degrees,\n  CASE\n    WHEN degrees BETWEEN 22.5 AND 67.5 THEN 'NE'\n    WHEN degrees BETWEEN 67.5 AND 112.5 THEN 'E'\n    WHEN degrees BETWEEN 112.5 AND 157.5 THEN 'SE'\n    WHEN degrees BETWEEN 157.5 AND 202.5 THEN 'S'\n    WHEN degrees BETWEEN 202.5 AND 247.5 THEN 'SW'\n    WHEN degrees BETWEEN 247.5 AND 292.5 THEN 'W'\n    WHEN degrees BETWEEN 292.5 AND 337.5 THEN 'NW'\n    ELSE 'N'\n  END AS bearing\nFROM (\n  SELECT \n    aspect_deg AS degrees\n  FROM \n    aspect_value\n) sub;"
+  ],
+  "query_type": "raster_only",
+  "question": "What compass bearing does the hillside at Chicago Portage National Historic Site, Lyons, IL face?",
+  "source_file": "aspect+poi.jsonl",
+  "source_stem": "aspect+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 89.535,
+    "total_seconds": 89.536
+  },
+  "usage": {
+    "completion_tokens": 406,
+    "prompt_tokens": 1614,
+    "total_tokens": 2020
+  }
+}

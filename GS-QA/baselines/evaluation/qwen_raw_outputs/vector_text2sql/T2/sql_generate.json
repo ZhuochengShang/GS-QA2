@@ -1,0 +1,502 @@
+[
+  {
+    "id": 2500,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'restaurant'\n  AND cuisine = 'fusion'\n  AND ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Rose Art Museum%' AND addr_city ILIKE '%Waltham%' LIMIT 1)::geography,\n        190000\n      );\n```",
+    "run_seconds": 17.94
+  },
+  {
+    "id": 2501,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Sea Life Aquarium%' AND addr_city ILIKE '%San Antonio%' LIMIT 1)::geography,\n        160000\n      );\n```",
+    "run_seconds": 18.729
+  },
+  {
+    "id": 2502,
+    "content": "```sql\nSELECT p.poi_name, p.addr_state, p.addr_city, p.wikidata, p.wikipedia\nFROM pois p\nWHERE p.tourism = 'museum'\n  AND ST_DWithin(\n    p.geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%AT&SF NO.940%' AND addr_city ILIKE '%Bartlesville%' AND addr_state ILIKE '%OK%' LIMIT 1)::geography,\n    150000\n  );\n```",
+    "run_seconds": 24.121
+  },
+  {
+    "id": 2503,
+    "content": "```sql\nSELECT poi_name, addr_state, addr_city, amenity, cuisine\nFROM pois\nWHERE amenity = 'restaurant'\n  AND cuisine = 'sushi'\n  AND ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Mario & Alberto De La Cruz Art Gallery%' AND addr_city ILIKE '%Washington%' LIMIT 1)::geography,\n        60000\n      );\n```",
+    "run_seconds": 21.208
+  },
+  {
+    "id": 2504,
+    "content": "```sql\nSELECT poi_name, wikidata, wikipedia, addr_state, addr_city, amenity, cuisine, takeaway\nFROM pois\nWHERE ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM regions WHERE region_name ILIKE '%White Cliff Fen And Forest State Natural Area%' LIMIT 1)::geography,\n        70000\n      )\n  AND amenity = 'restaurant'\n  AND takeaway = true;\n```",
+    "run_seconds": 20.857
+  },
+  {
+    "id": 2505,
+    "content": "```sql\nSELECT p.poi_name, p.addr_state, p.addr_city, p.wikidata, p.wikipedia\nFROM pois p\nWHERE p.tourism = 'museum'\n  AND ST_DWithin(\n    p.geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Sherwood Forest Faire%' AND addr_city ILIKE '%McDade%' AND addr_state ILIKE '%TX%' LIMIT 1)::geography,\n    100000\n  );\n```",
+    "run_seconds": 23.565
+  },
+  {
+    "id": 2506,
+    "content": "```sql\nSELECT poi_name, amenity, addr_state, addr_city\nFROM pois\nWHERE ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%University of North Georgia (Oconee Campus)%' LIMIT 1)::geography,\n        10000\n      )\n  AND amenity = 'fast_food'\n  AND addr_city ILIKE '%Watkinsville%'\n  AND addr_state = 'GA';\n```",
+    "run_seconds": 22.023
+  },
+  {
+    "id": 2507,
+    "content": "```sql\nSELECT poi_name, amenity, addr_state, addr_city\nFROM pois\nWHERE amenity = 'restaurant'\n  AND ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Treetop Zoofari%' LIMIT 1)::geography,\n        170000\n      )\n  AND addr_city ILIKE '%Moseley%'\n  AND addr_state ILIKE '%VA%';\n```",
+    "run_seconds": 21.318
+  },
+  {
+    "id": 2508,
+    "content": "```sql\nSELECT poi_name, addr_state, addr_city, amenity, cuisine\nFROM pois\nWHERE cuisine ILIKE '%falafel%'\n  AND amenity = 'restaurant'\n  AND ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%MAC 650 Gallery%' AND addr_city ILIKE '%Middletown%' AND addr_state ILIKE '%CT%' LIMIT 1),\n        140000\n      );\n```",
+    "run_seconds": 22.707
+  },
+  {
+    "id": 2509,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Anvil Arts Studio%' AND addr_city ILIKE '%Newland%' LIMIT 1)::geography,\n        80000\n      );\n```",
+    "run_seconds": 19.158
+  },
+  {
+    "id": 2510,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%New York Institute of Technology%' LIMIT 1)::geography,\n        60000\n      );\n```",
+    "run_seconds": 17.291
+  },
+  {
+    "id": 2511,
+    "content": "```sql\nSELECT poi_name, addr_state, addr_city, takeaway\nFROM pois\nWHERE takeaway IS TRUE\n  AND ST_DWithin(\n    geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Illinois Central Depot%' AND addr_city ILIKE '%Bethany%' LIMIT 1)::geography,\n    70000\n  );\n```",
+    "run_seconds": 17.93
+  },
+  {
+    "id": 2512,
+    "content": "```sql\nSELECT poi_name, addr_state, addr_city, amenity, takeaway\nFROM pois\nWHERE ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Sense Fine Art%' LIMIT 1)::geography,\n        100000\n      )\n  AND amenity = 'restaurant'\n  AND takeaway IS TRUE;\n```",
+    "run_seconds": 18.177
+  },
+  {
+    "id": 2513,
+    "content": "```sql\nSELECT DISTINCT ON (pois.poi_name)\n    pois.poi_name,\n    pois.amenity,\n    pois.cuisine,\n    pois.addr_state,\n    pois.addr_city\nFROM pois\nWHERE pois.amenity = 'restaurant'\n  AND pois.cuisine = 'american'\n  AND pois.id NOT IN (\n      SELECT pois.id\n      FROM pois\n      JOIN parks ON ST_DWithin(pois.geometry::geography, parks.geometry::geography, 90000)\n      UNION\n      SELECT pois.id\n      FROM pois\n      JOIN lakes ON ST_DWithin(pois.geometry::geography, lakes.geometry::geography, 90000)\n      UNION\n      SELECT pois.id\n      FROM pois\n      JOIN roads ON ST_DWithin(pois.geometry::geography, roads.geometry::geography, 90000)\n  )\n  AND ST_DWithin(\n      pois.geometry::geography,\n      (SELECT geometry FROM pois WHERE poi_name ILIKE '%Dudley House%' AND addr_city ILIKE '%Ventura%' AND addr_state ILIKE '%CA%' LIMIT 1),\n      90000\n  )\nORDER BY pois.poi_name, pois.geometry <-> (\n    SELECT geometry FROM pois WHERE poi_name ILIKE '%Dudley House%' AND addr_city ILIKE '%Ventura%' AND addr_state ILIKE '%CA%' LIMIT 1\n) ASC;\n```",
+    "run_seconds": 64.214
+  },
+  {
+    "id": 2514,
+    "content": "```sql\nSELECT poi_name, wikidata, wikipedia, addr_state, addr_city\nFROM pois\nWHERE amenity = 'restaurant'\n  AND ST_DWithin(\n    geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Bresnan Arena%' AND addr_city ILIKE '%Mankato%' AND addr_state ILIKE '%MN%' LIMIT 1)::geography,\n    120000\n  )\n  AND cuisine = 'fusion';\n```",
+    "run_seconds": 22.918
+  },
+  {
+    "id": 2515,
+    "content": "```sql\nSELECT poi_name, amenity, addr_state, addr_city\nFROM pois\nWHERE amenity = 'restaurant'\n  AND ST_DWithin(\n    geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Point Lookout%' LIMIT 1)::geography,\n    60000\n  )\n  AND (SELECT addr_state FROM pois WHERE poi_name ILIKE '%Point Lookout%' LIMIT 1) = 'PA';\n```",
+    "run_seconds": 21.591
+  },
+  {
+    "id": 2516,
+    "content": "```sql\nSELECT poi_name, addr_state, addr_city, amenity, takeaway\nFROM pois\nWHERE ST_DWithin(\n    geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Curtis Motel%' AND addr_city ILIKE '%Bridgeton%' AND addr_state ILIKE '%NC%' LIMIT 1)::geography,\n    80000\n)\nAND amenity = 'restaurant'\nAND takeaway IS TRUE;\n```",
+    "run_seconds": 21.495
+  },
+  {
+    "id": 2517,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Red Wolf Sanctuary%' AND addr_city ILIKE '%Rising Sun%' AND addr_state ILIKE '%IN%' LIMIT 1)::geography,\n        110000\n      );\n```",
+    "run_seconds": 20.798
+  },
+  {
+    "id": 2518,
+    "content": "```sql\nSELECT poi_name, wikidata, wikipedia, addr_state, addr_city\nFROM pois\nWHERE ST_DWithin(\n    geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Mount Washington Boat Terminal%' AND addr_city ILIKE '%Wolfeboro%' LIMIT 1)::geography,\n    160000\n)\n  AND amenity = 'museum'\n  AND tourism IS NULL;\n```",
+    "run_seconds": 20.426
+  },
+  {
+    "id": 2519,
+    "content": "```sql\nSELECT poi_name, wikidata, wikipedia, addr_state, addr_city\nFROM pois\nWHERE amenity = 'restaurant'\n  AND cuisine = 'sandwich'\n  AND ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Denver Hospice%' LIMIT 1)::geography,\n        80000\n      );\n```",
+    "run_seconds": 18.232
+  },
+  {
+    "id": 2520,
+    "content": "```sql\nSELECT poi_name, amenity, takeaway\nFROM pois\nWHERE takeaway IS NOT NULL\n  AND amenity = 'restaurant'\n  AND ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Montefiore Medical Center - Wakefield Campus%' LIMIT 1)::geography,\n        190000\n      );\n```",
+    "run_seconds": 17.985
+  },
+  {
+    "id": 2521,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'hospital'\n  AND emergency = 'yes'\n  AND ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Rio Grande Gorge Visitor Center%' AND addr_city ILIKE '%Pilar%' AND addr_state ILIKE '%NM%' LIMIT 1),\n        70000\n      );\n```",
+    "run_seconds": 18.976
+  },
+  {
+    "id": 2522,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%MSU Extension Service%' AND addr_city ILIKE '%Brandon%' LIMIT 1)::geography,\n        60000\n      );\n```",
+    "run_seconds": 18.654
+  },
+  {
+    "id": 2523,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Eddy Lookout Tower%' AND addr_city ILIKE '%Sanderson%' AND addr_state ILIKE '%FL%' LIMIT 1)::geography,\n        110000\n      );\n```",
+    "run_seconds": 20.953
+  },
+  {
+    "id": 2524,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Procter Farm Preserve%' LIMIT 1)::geography,\n        160000\n      );\n```",
+    "run_seconds": 17.04
+  },
+  {
+    "id": 2525,
+    "content": "```sql\nSELECT p.poi_name, p.wikidata, p.wikipedia\nFROM pois p\nWHERE p.poi_name ILIKE '%science museum%'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Centennial High School Football Stadium%' AND addr_city ILIKE '%Roswell%' AND addr_state ILIKE '%GA%')::geography,\n        140000\n      );\n```",
+    "run_seconds": 20.859
+  },
+  {
+    "id": 2526,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Luthy Botanical Garden%' AND addr_city ILIKE '%Peoria%' LIMIT 1)::geography,\n        150000\n      );\n```",
+    "run_seconds": 19.638
+  },
+  {
+    "id": 2527,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Getting% Garden%' AND addr_city ILIKE '%Sanborn%' LIMIT 1)::geography,\n        110000\n      );\n```",
+    "run_seconds": 18.953
+  },
+  {
+    "id": 2528,
+    "content": "```sql\nSELECT p.poi_name, p.addr_state, p.addr_city\nFROM pois p\nWHERE p.poi_name ILIKE '%history museum%'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT pois.geometry FROM pois WHERE poi_name ILIKE '%Nokomis Naturescape Garden%' LIMIT 1)::geography,\n        100000\n      );\n```",
+    "run_seconds": 18.402
+  },
+  {
+    "id": 2529,
+    "content": "```sql\nSELECT p.poi_name, p.wikidata, p.wikipedia, p.addr_state, p.addr_city\nFROM pois p\nWHERE p.amenity = 'museum'\n  AND ST_DWithin(\n    p.geometry::geography,\n    (SELECT ST_Centroid(r.geometry) FROM regions r WHERE r.region_name ILIKE '%Porte des Morts Park%' LIMIT 1)::geography,\n    160000\n  )\n  AND p.addr_city ILIKE '%Ellison Bay%'\n  AND p.addr_state ILIKE '%WI%';\n```",
+    "run_seconds": 25.787
+  },
+  {
+    "id": 2530,
+    "content": "```sql\nSELECT poi_name, addr_state, addr_city, amenity, takeaway\nFROM pois\nWHERE amenity = 'restaurant'\n  AND takeaway = true\n  AND ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Outdoor Biological Research Facility%' AND addr_city ILIKE '%Vestal%' AND addr_state ILIKE '%NY%' LIMIT 1),\n        170000\n      );\n```",
+    "run_seconds": 21.163
+  },
+  {
+    "id": 2531,
+    "content": "```sql\nSELECT poi_name, amenity, addr_state, addr_city\nFROM pois\nWHERE amenity = 'restaurant'\n  AND ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Kettlewell & Edwards%' LIMIT 1)::geography,\n        30000\n      );\n```",
+    "run_seconds": 16.572
+  },
+  {
+    "id": 2532,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%House of Air%' AND addr_city ILIKE '%San Francisco%' AND addr_state ILIKE '%CA%' LIMIT 1)::geography,\n        80000\n      );\n```",
+    "run_seconds": 20.748
+  },
+  {
+    "id": 2533,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%River Deck%' AND addr_city ILIKE '%Edgewater%' AND addr_state ILIKE '%MD%' LIMIT 1)::geography,\n        170000\n      );\n```",
+    "run_seconds": 20.634
+  },
+  {
+    "id": 2534,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Museum of History and Holocaust Education%' AND addr_city ILIKE '%Kennesaw%' LIMIT 1)::geography,\n        70000\n      );\n```",
+    "run_seconds": 20.117
+  },
+  {
+    "id": 2535,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'restaurant'\n  AND p.cuisine = 'african'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Denison Biological Reserve / Polly Anderson Field Station%' LIMIT 1)::geography,\n        150000\n      );\n```",
+    "run_seconds": 18.711
+  },
+  {
+    "id": 2536,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Miami Beach Urban Studios%' LIMIT 1)::geography,\n        50000\n      );\n```",
+    "run_seconds": 16.833
+  },
+  {
+    "id": 2537,
+    "content": "```sql\nSELECT p.poi_name, p.addr_state, p.addr_city\nFROM pois p\nWHERE p.tourism = 'museum'\n  AND ST_DWithin(\n    p.geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Barons Bus Arena%' AND addr_city ILIKE '%Parma%' AND addr_state ILIKE '%OH%' LIMIT 1)::geography,\n    120000\n  );\n```",
+    "run_seconds": 20.895
+  },
+  {
+    "id": 2538,
+    "content": "```sql\nSELECT poi_name, addr_state, addr_city, amenity, emergency\nFROM pois\nWHERE emergency = 'yes'\n  AND amenity = 'hospital'\n  AND ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Omni Scottsdale Resort & Spa at Montelucia%' LIMIT 1)::geography,\n        190000\n      );\n```",
+    "run_seconds": 19.871
+  },
+  {
+    "id": 2539,
+    "content": "```sql\nSELECT poi_name, wikidata, wikipedia, addr_state, addr_city\nFROM pois\nWHERE amenity = 'museum'\n  AND ST_DWithin(\n    geometry::geography,\n    (SELECT geometry FROM regions WHERE region_name ILIKE '%Johnsonburg%' LIMIT 1)::geography,\n    100000\n  );\n```",
+    "run_seconds": 16.407
+  },
+  {
+    "id": 2540,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'hospital'\n  AND emergency = 'yes'\n  AND ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Amazing Fun Center%' AND addr_city ILIKE '%Coram%' AND addr_state ILIKE '%MT%' LIMIT 1)::geography,\n        120000\n      );\n```",
+    "run_seconds": 19.176
+  },
+  {
+    "id": 2541,
+    "content": "```sql\nSELECT p.poi_name, p.amenity, p.restaurant\nFROM pois p\nWHERE p.amenity = 'restaurant'\n  AND p.restaurant = 'fish'\n  AND ST_DWithin(\n    p.geometry::geography,\n    (SELECT ST_Centroid(r.geometry) FROM regions r WHERE r.region_name ILIKE '%Annville%' LIMIT 1)::geography,\n    40000\n  )\n  AND ST_DWithin(\n    p.geometry::geography,\n    (SELECT geometry FROM parks WHERE park_name ILIKE '%Leon and Ethel Yeiser Rose Garden%' LIMIT 1)::geography,\n    40000\n  );\n```",
+    "run_seconds": 30.265
+  },
+  {
+    "id": 2542,
+    "content": "```sql\nSELECT p.poi_name, p.wikidata, p.wikipedia, p.addr_state, p.addr_city\nFROM pois p\nWHERE p.amenity = 'museum'\n  AND p.tourism != 'museum' -- exclude tourism tagged museums if not actual museums\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Red Wolf Sanctuary%' AND addr_city ILIKE '%Rising Sun%' AND addr_state ILIKE '%IN%' LIMIT 1)::geography,\n        190000\n      );\n```",
+    "run_seconds": 26.638
+  },
+  {
+    "id": 2543,
+    "content": "```sql\nSELECT poi_name, amenity, addr_state, addr_city\nFROM pois\nWHERE amenity = 'restaurant'\n  AND cuisine = 'greek'\n  AND ST_DWithin(\n        geometry::geography,\n        (SELECT ST_Centroid(geometry) FROM parks WHERE park_name ILIKE '%River Edge Bird Sanctuary and Nature Trail%')::geography,\n        150000\n      );\n```",
+    "run_seconds": 19.179
+  },
+  {
+    "id": 2544,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Chopper''s Lawn Equipment%' AND addr_city ILIKE '%Kissimmee%' AND addr_state ILIKE '%FL%' LIMIT 1)::geography,\n        90000\n      );\n```",
+    "run_seconds": 21.334
+  },
+  {
+    "id": 2545,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Ducks Unlimited National Headquarters%' AND addr_city ILIKE '%Memphis%' LIMIT 1)::geography,\n        80000\n      );\n```",
+    "run_seconds": 19.045
+  },
+  {
+    "id": 2546,
+    "content": "```sql\nSELECT poi_name, amenity, takeaway\nFROM pois\nWHERE amenity = 'restaurant'\n  AND takeaway = true\n  AND ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Plaza at the Shops by HTA%' AND addr_city ILIKE '%Hoonah%' AND addr_state ILIKE '%AK%' LIMIT 1)::geography,\n        170000\n      );\n```",
+    "run_seconds": 22.03
+  },
+  {
+    "id": 2547,
+    "content": "```sql\nSELECT p.poi_name, p.wikidata, p.wikipedia, p.addr_state, p.addr_city\nFROM pois p\nWHERE p.poi_name ILIKE '%museum%'\n  AND ST_DWithin(\n    p.geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Wagner Hotel%' AND addr_city ILIKE '%New York%' LIMIT 1)::geography,\n    180000\n  );\n```",
+    "run_seconds": 21.754
+  },
+  {
+    "id": 2548,
+    "content": "```sql\nSELECT p.poi_name, p.addr_state, p.addr_city, p.amenity, p.restaurant\nFROM pois p\nWHERE p.amenity = 'restaurant'\n  AND p.cuisine = 'chinese'\n  AND ST_DWithin(\n    p.geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Jeff Tabor Fine Art Gallery%' AND addr_city ILIKE '%Santa Fe%' AND addr_state ILIKE '%NM%' LIMIT 1)::geography,\n    20000\n  );\n```",
+    "run_seconds": 25.81
+  },
+  {
+    "id": 2549,
+    "content": "```sql\nSELECT DISTINCT pois.poi_name, pois.wikidata, pois.wikipedia, pois.addr_state, pois.addr_city\nFROM pois\nWHERE pois.tourism = 'museum'\n  AND ST_DWithin(\n    pois.geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Go Fish%' AND addr_city ILIKE '%Rosedale%' LIMIT 1)::geography,\n    140000\n  );\n```",
+    "run_seconds": 21.686
+  },
+  {
+    "id": 2550,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'restaurant'\n  AND p.cuisine = 'mediterranean'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT ST_Centroid(r.geometry)::geography\n         FROM parks r\n         WHERE r.park_name ILIKE '%First Responders Park%'),\n        80000\n      );\n```",
+    "run_seconds": 20.095
+  },
+  {
+    "id": 2551,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'restaurant'\n  AND p.cuisine = 'thai'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM lakes WHERE lake_name ILIKE '%Plantaganet Southeast Public Access%' AND addr_city ILIKE '%Bemidji%' LIMIT 1)::geography,\n        190000\n      );\n```",
+    "run_seconds": 21.543
+  },
+  {
+    "id": 2552,
+    "content": "```sql\nSELECT poi_name, amenity, addr_state, addr_city\nFROM pois\nWHERE amenity = 'restaurant'\n  AND cuisine = 'greek'\n  AND ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Fairfield Inn & Suites by Marriott%' AND addr_city ILIKE '%Belton%' LIMIT 1)::geography,\n        90000\n      );\n```",
+    "run_seconds": 21.385
+  },
+  {
+    "id": 2553,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM parks WHERE park_name ILIKE '%Indian Run Falls Park - Observation Deck B%' LIMIT 1)::geography,\n        170000\n      );\n```",
+    "run_seconds": 18.896
+  },
+  {
+    "id": 2554,
+    "content": "```sql\nSELECT poi_name, amenity, addr_state, addr_city\nFROM pois\nWHERE ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Gabriel Manor Assisted Living Center%' AND addr_city ILIKE '%Clayton%' LIMIT 1)::geography,\n        120000\n      )\n  AND amenity = 'cafe'\n  AND addr_city ILIKE '%Clayton%'\n  AND addr_state ILIKE '%NC%';\n```",
+    "run_seconds": 24.995
+  },
+  {
+    "id": 2555,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'restaurant'\n  AND cuisine = 'seafood'\n  AND ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Russ Berrie Institute for Professional Sales%' AND addr_city ILIKE '%Wayne%' AND addr_state ILIKE '%NJ%')::geography,\n        60000\n      );\n```",
+    "run_seconds": 20.71
+  },
+  {
+    "id": 2556,
+    "content": "```sql\nSELECT poi_name, amenity, addr_state, addr_city\nFROM pois\nWHERE amenity = 'restaurant'\n  AND ST_DWithin(\n    geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Neversink Pit%' AND addr_city ILIKE '%Fackler%' AND addr_state ILIKE '%AL%' LIMIT 1)::geography,\n    110000\n  );\n```",
+    "run_seconds": 21.234
+  },
+  {
+    "id": 2557,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Voorhees College%' AND addr_city ILIKE '%Denmark%' AND addr_state ILIKE '%SC%' LIMIT 1)::geography,\n        150000\n      );\n```",
+    "run_seconds": 22.136
+  },
+  {
+    "id": 2558,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Rockford Career College%' AND addr_city ILIKE '%Rockford%' AND addr_state ILIKE '%IL%')::geography,\n        170000\n      );\n```",
+    "run_seconds": 21.5
+  },
+  {
+    "id": 2559,
+    "content": "```sql\nSELECT DISTINCT ON (p.poi_name) p.poi_name, p.addr_state, p.addr_city\nFROM pois p\nWHERE p.amenity = 'restaurant'\n  AND p.cuisine = 'american'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%In the Game - Hollywood Park%' LIMIT 1)::geography,\n        70000\n      )\nORDER BY p.poi_name, ST_Distance(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%In the Game - Hollywood Park%' LIMIT 1)::geography\n      ) ASC;\n```",
+    "run_seconds": 32.408
+  },
+  {
+    "id": 2560,
+    "content": "```sql\nSELECT poi_name, wikidata, wikipedia, addr_state, addr_city, amenity, cuisine, restaurant\nFROM pois\nWHERE amenity = 'restaurant'\n  AND cuisine = 'belgian'\n  AND ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Taswira%' LIMIT 1)::geography,\n        180000\n      );\n```",
+    "run_seconds": 21.143
+  },
+  {
+    "id": 2561,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(p.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Cabell Gallery%' AND addr_city ILIKE '%Lexington%' AND addr_state ILIKE '%VA%' LIMIT 1)::geography, 150000);\n```",
+    "run_seconds": 20.407
+  },
+  {
+    "id": 2562,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Bastion Studios%' AND addr_city ILIKE '%Erie%' AND addr_state ILIKE '%PA%')::geography,\n        150000\n      );\n```",
+    "run_seconds": 21.687
+  },
+  {
+    "id": 2563,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(p.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%World''s Largest Egg%' AND addr_city ILIKE '%Winlock%' LIMIT 1)::geography, 50000);\n```",
+    "run_seconds": 18.893
+  },
+  {
+    "id": 2564,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT ST_Centroid(r.geometry)::geography\n         FROM regions r\n         WHERE r.region_name ILIKE '%Wernick Farm Reserve%'\n           AND r.region_name ILIKE '%Dartmouth%'\n           AND r.border_type = 'suburb'\n         LIMIT 1),\n        90000\n      );\n```",
+    "run_seconds": 25.912
+  },
+  {
+    "id": 2565,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'restaurant'\n  AND cuisine = 'korean'\n  AND ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM parks WHERE park_name ILIKE '%Bayou Safari Wildlife Park%' LIMIT 1)::geography,\n        60000\n      );\n```",
+    "run_seconds": 16.99
+  },
+  {
+    "id": 2566,
+    "content": "```sql\nSELECT poi_name, addr_state, addr_city, amenity, cuisine\nFROM pois\nWHERE ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%North Olmsted Recreation Center%' LIMIT 1)::geography,\n        180000\n      )\n  AND amenity = 'restaurant'\n  AND cuisine = 'steak_house';\n```",
+    "run_seconds": 20.253
+  },
+  {
+    "id": 2567,
+    "content": "```sql\nSELECT p.poi_name, p.addr_state, p.addr_city\nFROM pois p\nWHERE p.amenity = 'museum'\n  AND ST_DWithin(\n    p.geometry::geography,\n    (SELECT ST_Centroid(r.geometry)::geography\n     FROM regions r\n     WHERE r.region_name ILIKE '%Missisquoi National Wildlife Refuge%' LIMIT 1),\n    180000\n  );\n```",
+    "run_seconds": 21.296
+  },
+  {
+    "id": 2568,
+    "content": "```sql\nSELECT poi_name, wikidata, wikipedia, addr_state, addr_city, takeaway\nFROM pois\nWHERE takeaway IS TRUE\n  AND ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM parks WHERE park_name ILIKE '%West End Park%' LIMIT 1)::geography,\n        140000\n      );\n```",
+    "run_seconds": 16.44
+  },
+  {
+    "id": 2569,
+    "content": "```sql\nSELECT p.poi_name, ST_Distance(p.geometry::geography, r.geometry::geography) AS distance_meters\nFROM pois p\nJOIN regions r ON ST_Intersects(p.geometry, r.geometry)\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(p.geometry::geography, \n                 (SELECT ST_Centroid(ST_Union(r1.geometry))::geography \n                  FROM regions r1\n                  WHERE r1.region_name ILIKE '%Niagara Amusement Park & Splash World%' \n                    AND r1.region_name ILIKE '%Grand Island%' \n                    AND r1.region_name ILIKE '%NY%'), \n                 40000);\n```",
+    "run_seconds": 32.813
+  },
+  {
+    "id": 2570,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.poi_name ILIKE '%museum%'\n  AND p.tourism = 'museum'\n  AND p.addr_state = 'IL'\n  AND p.addr_city = 'Algonquin'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM parks WHERE park_name ILIKE '%Spella Park%' LIMIT 1)::geography,\n        170000\n      );\n```",
+    "run_seconds": 21.946
+  },
+  {
+    "id": 2571,
+    "content": "```sql\nSELECT poi_name, addr_state, addr_city, amenity, cuisine\nFROM pois\nWHERE ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Parker Manatee Aquarium%' LIMIT 1)::geography,\n        120000\n      )\n  AND amenity = 'restaurant'\n  AND cuisine = 'burger';\n```",
+    "run_seconds": 18.322
+  },
+  {
+    "id": 2572,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%West End Gallery%' AND addr_city ILIKE '%Corning%' LIMIT 1)::geography,\n        180000\n      );\n```",
+    "run_seconds": 18.747
+  },
+  {
+    "id": 2573,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.poi_name ILIKE '%thai%'\n  AND p.amenity = 'restaurant'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Kona Cloud Forest - Guided Walking Tours%' LIMIT 1)::geography,\n        130000\n      );\n```",
+    "run_seconds": 18.551
+  },
+  {
+    "id": 2574,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Adventure Park%' AND addr_city ILIKE '%Scottsdale%' AND addr_state ILIKE '%AZ%' LIMIT 1)::geography,\n        120000\n      );\n```",
+    "run_seconds": 20.243
+  },
+  {
+    "id": 2575,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'hospital'\n  AND emergency = 'yes'\n  AND ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%South Venice Lemon Bay Preserve - South Entrance%' LIMIT 1)::geography,\n        130000\n      );\n```",
+    "run_seconds": 16.62
+  },
+  {
+    "id": 2576,
+    "content": "```sql\nSELECT poi_name, addr_state, addr_city, emergency\nFROM pois\nWHERE emergency IS NOT NULL\n  AND ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Rogers Rock Campground Entrance%' LIMIT 1)::geography,\n        130000\n      )\n  AND addr_city ILIKE '%Hague%'\n  AND addr_state ILIKE '%NY%';\n```",
+    "run_seconds": 20.666
+  },
+  {
+    "id": 2577,
+    "content": "```sql\nSELECT poi_name, addr_state, addr_city\nFROM pois\nWHERE amenity = 'hospital'\n  AND emergency = 'yes'\n  AND ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Illinois Central Depot%' AND addr_city ILIKE '%Bethany%' LIMIT 1)::geography,\n        160000\n      );\n```",
+    "run_seconds": 18.962
+  },
+  {
+    "id": 2578,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.tourism = 'museum'\n  AND p.wikidata IS NOT NULL\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%TECHealth | ER Staffing, EMR & ER Partnerships%' AND addr_city ILIKE '%Chandler%' AND addr_state ILIKE '%AZ%' LIMIT 1)::geography,\n        170000\n      );\n```",
+    "run_seconds": 23.224
+  },
+  {
+    "id": 2579,
+    "content": "```sql\nSELECT poi_name, addr_state, addr_city, amenity, cuisine\nFROM pois\nWHERE cuisine = 'korean'\n  AND ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Raynay Alpaca Farm%' LIMIT 1)::geography,\n        130000\n      );\n```",
+    "run_seconds": 17.259
+  },
+  {
+    "id": 2580,
+    "content": "```sql\nSELECT poi_name, addr_state, addr_city, amenity, cuisine\nFROM pois\nWHERE ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Money Museum%' AND addr_city ILIKE '%Chicago%' AND addr_state ILIKE '%IL%' LIMIT 1)::geography,\n        20000\n      )\n  AND amenity = 'restaurant'\n  AND cuisine = 'sandwich';\n```",
+    "run_seconds": 21.095
+  },
+  {
+    "id": 2581,
+    "content": "```sql\nSELECT poi_name, addr_state, addr_city, amenity, cuisine\nFROM pois\nWHERE cuisine = 'hawaiian'\n  AND ST_DWithin(\n    geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Pacific University%' AND addr_city ILIKE '%Portland%' AND addr_state ILIKE '%OR%' LIMIT 1)::geography,\n    30000\n  );\n```",
+    "run_seconds": 19.647
+  },
+  {
+    "id": 2582,
+    "content": "```sql\nSELECT poi_name, addr_state, addr_city, amenity, cuisine\nFROM pois\nWHERE cuisine = 'indian'\n  AND ST_DWithin(\n    geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Radisson Hotel River Falls%' LIMIT 1)::geography,\n    170000\n  );\n```",
+    "run_seconds": 16.831
+  },
+  {
+    "id": 2583,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'restaurant'\n  AND p.cuisine = 'seafood'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT ST_Centroid(r.geometry)::geography\n         FROM parks r\n         WHERE r.park_name ILIKE '%Rollins Avenue Park%'),\n        190000\n      )\n  AND ST_Intersects(\n        p.geometry::geography,\n        (SELECT geometry::geography\n         FROM regions\n         WHERE region_name ILIKE '%Capitol Heights%' AND border_type = 'city'\n         LIMIT 1)\n      );\n```",
+    "run_seconds": 29.832
+  },
+  {
+    "id": 2584,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'restaurant'\n  AND p.takeaway = 'yes'\n  AND ST_DWithin(p.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%City of Farmington Museum%' AND addr_city ILIKE '%Farmington%')::geography, 110000);\n```",
+    "run_seconds": 17.471
+  },
+  {
+    "id": 2585,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'hospital'\n  AND emergency = 'yes'\n  AND ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%University of Tennessee Health Science Center%' AND addr_city ILIKE '%Memphis%' LIMIT 1)::geography,\n        120000\n      );\n```",
+    "run_seconds": 18.11
+  },
+  {
+    "id": 2586,
+    "content": "```sql\nSELECT poi_name, addr_state, addr_city, amenity, takeaway\nFROM pois\nWHERE ST_DWithin(\n    geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Costello Stadium%' AND addr_city ILIKE '%Palmyra%' AND addr_state ILIKE '%VA%' LIMIT 1)::geography,\n    40000\n)\nAND amenity = 'restaurant'\nAND takeaway IS TRUE;\n```",
+    "run_seconds": 20.669
+  },
+  {
+    "id": 2587,
+    "content": "```sql\nSELECT poi_name, addr_state, addr_city, amenity, cuisine\nFROM pois\nWHERE cuisine = 'korean'\n  AND ST_DWithin(\n    geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Blue Ocean Discovery Center%' AND addr_city ILIKE '%Hampton%' AND addr_state ILIKE '%NH%' LIMIT 1)::geography,\n    120000\n  );\n```",
+    "run_seconds": 20.24
+  },
+  {
+    "id": 2588,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Raynay Alpaca Farm%' LIMIT 1)::geography,\n        120000\n      );\n```",
+    "run_seconds": 17.684
+  },
+  {
+    "id": 2589,
+    "content": "```sql\nSELECT poi_name, addr_state, addr_city, amenity, cuisine\nFROM pois\nWHERE ST_DWithin(\n    geometry::geography,\n    (SELECT geometry FROM pois WHERE poi_name ILIKE '%Captain Mike''s Fun Park%' LIMIT 1)::geography,\n    70000\n)\nAND amenity = 'restaurant'\nAND cuisine = 'thai'\nAND addr_city ILIKE '%Bridgman%'\nAND addr_state ILIKE '%MI%';\n```",
+    "run_seconds": 22.159
+  },
+  {
+    "id": 2590,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Centennial High School Football Stadium%' LIMIT 1)::geography,\n        20000\n      );\n```",
+    "run_seconds": 17.26
+  },
+  {
+    "id": 2591,
+    "content": "```sql\nSELECT poi_name, wikidata, wikipedia, addr_state, addr_city\nFROM pois\nWHERE amenity = 'hospital'\n  AND emergency = 'yes'\n  AND ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM regions WHERE region_name ILIKE '%Bittersweet Falls%' LIMIT 1)::geography,\n        170000\n      );\n```",
+    "run_seconds": 18.113
+  },
+  {
+    "id": 2592,
+    "content": "```sql\nSELECT poi_name, addr_state, addr_city, amenity, cuisine\nFROM pois\nWHERE ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Dells Mill and Museum%' AND addr_city ILIKE '%Augusta%' AND addr_state ILIKE '%WI%' LIMIT 1)::geography,\n        160000\n      )\n  AND amenity = 'restaurant'\n  AND cuisine = 'seafood';\n```",
+    "run_seconds": 22.16
+  },
+  {
+    "id": 2593,
+    "content": "```sql\nSELECT poi_name\nFROM pois\nWHERE amenity = 'hospital'\n  AND emergency = 'yes'\n  AND ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Sonny''s Place%' AND addr_city ILIKE '%Somers%' LIMIT 1)::geography,\n        130000\n      );\n```",
+    "run_seconds": 17.897
+  },
+  {
+    "id": 2594,
+    "content": "```sql\nSELECT p.poi_name, p.wikidata, p.wikipedia, p.addr_state, p.addr_city\nFROM pois p\nWHERE p.poi_name ILIKE '%museum%'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT ST_Centroid(geometry)::geography FROM pois WHERE poi_name ILIKE '%Memory Garden%' AND addr_city ILIKE '%Mequon%' AND addr_state ILIKE '%WI%' LIMIT 1),\n        190000\n      );\n```",
+    "run_seconds": 23.013
+  },
+  {
+    "id": 2595,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(\n        p.geometry::geography,\n        ST_Centroid((SELECT geometry FROM regions WHERE region_name ILIKE '%Center of the Universe%' LIMIT 1))::geography,\n        170000\n      );\n```",
+    "run_seconds": 18.115
+  },
+  {
+    "id": 2596,
+    "content": "```sql\nSELECT poi_name, amenity, addr_state, addr_city\nFROM pois\nWHERE amenity = 'restaurant'\n  AND cuisine = 'korean'\n  AND ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM regions WHERE region_name ILIKE '%merges%' LIMIT 1)::geography,\n        170000\n      )\n  OR ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM regions WHERE region_name ILIKE '%iowa city%' LIMIT 1)::geography,\n        170000\n      );\n```",
+    "run_seconds": 27.274
+  },
+  {
+    "id": 2597,
+    "content": "```sql\nSELECT poi_name, amenity, addr_state, addr_city\nFROM pois\nWHERE ST_DWithin(\n        geometry::geography,\n        (SELECT geometry FROM pois WHERE poi_name ILIKE '%Horrigan Hall%' LIMIT 1)::geography,\n        20000\n      )\n  AND amenity = 'restaurant'\n  AND cuisine = 'seafood'\n  AND addr_city ILIKE '%Louisville%'\n  AND addr_state ILIKE '%KY%';\n```",
+    "run_seconds": 21.948
+  },
+  {
+    "id": 2598,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(\n        p.geometry::geography,\n        (SELECT geometry FROM parks WHERE park_name ILIKE '%First Responders Park%' LIMIT 1)::geography,\n        130000\n      )\n```",
+    "run_seconds": 17.048
+  },
+  {
+    "id": 2599,
+    "content": "```sql\nSELECT p.poi_name\nFROM pois p\nWHERE p.amenity = 'hospital'\n  AND p.emergency = 'yes'\n  AND ST_DWithin(p.geometry::geography, (SELECT geometry FROM pois WHERE poi_name ILIKE '%Hoop-Dee-Doo Musical Revue%' LIMIT 1)::geography, 10000);\n```",
+    "run_seconds": 16.832
+  }
+]

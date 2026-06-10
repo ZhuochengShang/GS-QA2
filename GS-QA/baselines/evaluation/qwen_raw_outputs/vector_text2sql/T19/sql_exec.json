@@ -1,0 +1,1116 @@
+[
+  {
+    "id": 1100,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"p\"\nLINE 2: SELECT poi_name, ST_Azimuth(ST_Centroid(p.geometry::geograph...\n                                                ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1101,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.027
+  },
+  {
+    "id": 1102,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.083
+  },
+  {
+    "id": 1103,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.015
+  },
+  {
+    "id": 1104,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.018
+  },
+  {
+    "id": 1105,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.051
+  },
+  {
+    "id": 1106,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.042
+  },
+  {
+    "id": 1107,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.034
+  },
+  {
+    "id": 1108,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.042
+  },
+  {
+    "id": 1109,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.143
+  },
+  {
+    "id": 1110,
+    "records": [
+      {
+        "output": [],
+        "error": "column reference \"poi_name\" is ambiguous\nLINE 2: SELECT poi_name, ST_Distance(p1.geometry::geography, p2.geom...\n               ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1111,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.041
+  },
+  {
+    "id": 1112,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.194
+  },
+  {
+    "id": 1113,
+    "records": [
+      {
+        "output": [],
+        "error": "column reference \"poi_name\" is ambiguous\nLINE 2: SELECT poi_name, ST_Azimuth(ST_Centroid(p.geometry::geograph...\n               ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1114,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Frank Sinatra's Birthplace",
+            "distance_meters": 4347.11411517,
+            "bearing_degrees": 319.3463060633778
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.063
+  },
+  {
+    "id": 1115,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Tracy Holiday Light Show",
+            "tourism": "attraction",
+            "addr_state": "CA",
+            "addr_city": "Tracy"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.024
+  },
+  {
+    "id": 1116,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "San Salvador Restaurant"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.128
+  },
+  {
+    "id": 1117,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Centroid(geography) unhandled geography type\nCONTEXT:  parallel worker"
+      }
+    ],
+    "run_seconds": 0.629
+  },
+  {
+    "id": 1118,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Rock N Rolls",
+            "distance_meters": 34842.63997263
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.084
+  },
+  {
+    "id": 1119,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Arts by the Bay Gallery",
+            "distance_meters": 41869.00693947
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.147
+  },
+  {
+    "id": 1120,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.013
+  },
+  {
+    "id": 1121,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.042
+  },
+  {
+    "id": 1122,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.039
+  },
+  {
+    "id": 1123,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"p\"\nLINE 2: SELECT poi_name, ST_Distance(p.geometry::geography, (SELECT ...\n                                     ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1124,
+    "records": [
+      {
+        "output": [],
+        "error": "column reference \"poi_name\" is ambiguous\nLINE 2: SELECT poi_name, ST_Distance(p.geometry::geography, r.geomet...\n               ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1125,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"p\"\nLINE 2: ...CT t.poi_name, ST_Distance(t.geometry::geography, p.geometry...\n                                                             ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1126,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1127,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.043
+  },
+  {
+    "id": 1128,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.052
+  },
+  {
+    "id": 1129,
+    "records": [
+      {
+        "output": [],
+        "error": "column reference \"poi_name\" is ambiguous\nLINE 2: SELECT poi_name, ST_Azimuth(ST_Centroid(p.geometry::geograph...\n               ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1130,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.071
+  },
+  {
+    "id": 1131,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Doubletree Tampa Rocky Point Waterfront",
+            "bearing_radians": 1.5626801959696277
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.202
+  },
+  {
+    "id": 1132,
+    "records": [
+      {
+        "output": [],
+        "error": "column reference \"poi_name\" is ambiguous\nLINE 3:     poi_name, \n            ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1133,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.142
+  },
+  {
+    "id": 1134,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.067
+  },
+  {
+    "id": 1135,
+    "records": [
+      {
+        "output": [],
+        "error": "argument of AND must be type boolean, not type double precision\nLINE 7:    AND pois.geometry <-> (SELECT geometry FROM pois WHERE po...\n               ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1136,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Golf Kings",
+            "distance_meters": 64805.95984664
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.035
+  },
+  {
+    "id": 1137,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.055
+  },
+  {
+    "id": 1138,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Centroid(geography) unhandled geography type"
+      }
+    ],
+    "run_seconds": 3.33
+  },
+  {
+    "id": 1139,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.384
+  },
+  {
+    "id": 1140,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Heavenly Heart Farm & Mini Petting Zoo",
+            "distance_meters": 185654.46408828
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.039
+  },
+  {
+    "id": 1141,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.038
+  },
+  {
+    "id": 1142,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.027
+  },
+  {
+    "id": 1143,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.122
+  },
+  {
+    "id": 1144,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Jimmy John's",
+            "distance_meters": 296.64281517
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.089
+  },
+  {
+    "id": 1145,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Haleiwa Art Gallery",
+            "distance_meters": 3655199.46657328
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.068
+  },
+  {
+    "id": 1146,
+    "records": [
+      {
+        "output": [],
+        "error": "column reference \"poi_name\" is ambiguous\nLINE 2: SELECT poi_name, ST_Azimuth(ST_Centroid(p.geometry::geograph...\n               ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1147,
+    "records": [
+      {
+        "output": [],
+        "error": "argument of AND must be type boolean, not type double precision\nLINE 8:          AND p.geometry <-> r.geometry\n                     ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1148,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.043
+  },
+  {
+    "id": 1149,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Eugenia's Restaurant"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.281
+  },
+  {
+    "id": 1150,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_touches(geography, geography) does not exist\nLINE 5:   AND ST_Touches(geometry, ST_Buffer(ST_MakePoint(-89.9845, ...\n              ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1151,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.018
+  },
+  {
+    "id": 1152,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.02
+  },
+  {
+    "id": 1153,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.031
+  },
+  {
+    "id": 1154,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.056
+  },
+  {
+    "id": 1155,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.002
+  },
+  {
+    "id": 1156,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.091
+  },
+  {
+    "id": 1157,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.049
+  },
+  {
+    "id": 1158,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.042
+  },
+  {
+    "id": 1159,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.016
+  },
+  {
+    "id": 1160,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.027
+  },
+  {
+    "id": 1161,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.073
+  },
+  {
+    "id": 1162,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.032
+  },
+  {
+    "id": 1163,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.027
+  },
+  {
+    "id": 1164,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.033
+  },
+  {
+    "id": 1165,
+    "records": [
+      {
+        "output": [],
+        "error": "column r.poi_name does not exist\nLINE 3:        r.poi_name AS stadium_name\n               ^\nHINT:  Perhaps you meant to reference the column \"p.poi_name\"."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1166,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.05
+  },
+  {
+    "id": 1167,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.52
+  },
+  {
+    "id": 1168,
+    "records": [
+      {
+        "output": [],
+        "error": "column t1.wikipedia does not exist\nLINE 2: SELECT t1.poi_name, t1.wikidata, t1.wikipedia\n                                         ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1169,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.066
+  },
+  {
+    "id": 1170,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Blue Ridge Health - Lake Lure",
+            "distance_meters": 65334.80619323
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.053
+  },
+  {
+    "id": 1171,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.045
+  },
+  {
+    "id": 1172,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.142
+  },
+  {
+    "id": 1173,
+    "records": [
+      {
+        "output": [],
+        "error": "column reference \"poi_name\" is ambiguous\nLINE 2: SELECT poi_name, ST_Azimuth(ST_Centroid(p1.geometry::geograp...\n               ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1174,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Rainbow Valley Family Farms",
+            "distance_meters": 521584.44433062
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.134
+  },
+  {
+    "id": 1175,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.012
+  },
+  {
+    "id": 1176,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.214
+  },
+  {
+    "id": 1177,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "The Huntting's Pumpkin Patch and Haunted Forest",
+            "distance_meters": 30653.60921001
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.07
+  },
+  {
+    "id": 1178,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.042
+  },
+  {
+    "id": 1179,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Starbucks",
+            "amenity": "cafe",
+            "distance_meters": 0.0
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 2.15
+  },
+  {
+    "id": 1180,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Wok & Roll",
+            "amenity": "fast_food",
+            "distance_meters": 4582.78804535
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.069
+  },
+  {
+    "id": 1181,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_within(geography, geography) does not exist\nLINE 10:   AND ST_Within(\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1182,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"p\"\nLINE 2: SELECT poi_name, ST_Distance(p.geometry::geography, (SELECT ...\n                                     ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1183,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.109
+  },
+  {
+    "id": 1184,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Canyon Hills Center",
+            "distance_meters": 456288.72276658
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.048
+  },
+  {
+    "id": 1185,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 14.749
+  },
+  {
+    "id": 1186,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Gallery on Fourth",
+            "geometry": "0101000020E6100000A471A8DF85CD52C0A93F0CBE7A584440",
+            "distance_meters": 2678.66072786
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.04
+  },
+  {
+    "id": 1187,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "River Hospital",
+            "distance_meters": 647169.5183595
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.018
+  },
+  {
+    "id": 1188,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Azimuth(geography, geography) is only valid for point inputs"
+      }
+    ],
+    "run_seconds": 0.351
+  },
+  {
+    "id": 1189,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_within(geography, geography) does not exist\nLINE 5:   AND ST_Within(ST_MakePoint(-96.7949, 33.0198)::geography, ...\n              ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1190,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "St Nicholas Hotel",
+            "distance_meters": 316.80671717
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.056
+  },
+  {
+    "id": 1191,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Blue Earth County Heritage Center Museum",
+            "bearing_radians": 1.028578872539401
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.092
+  },
+  {
+    "id": 1192,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_y(geography) does not exist\nLINE 12:   AND ST_Y(geometry) <\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1193,
+    "records": [
+      {
+        "output": [],
+        "error": "ST_Centroid(geography) unhandled geography type"
+      }
+    ],
+    "run_seconds": 0.346
+  },
+  {
+    "id": 1194,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.045
+  },
+  {
+    "id": 1195,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.035
+  },
+  {
+    "id": 1196,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.013
+  },
+  {
+    "id": 1197,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.074
+  },
+  {
+    "id": 1198,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.041
+  },
+  {
+    "id": 1199,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Mercy Hospital - Mercy Hospital Orchard Park Division",
+            "distance_meters": 53504.01103333
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.022
+  }
+]

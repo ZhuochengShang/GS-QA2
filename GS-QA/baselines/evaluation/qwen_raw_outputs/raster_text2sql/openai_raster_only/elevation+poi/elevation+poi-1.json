@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation - point based",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation - point based",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 185.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 185.0
+      }
+    ]
+  },
+  "gold_sql": "SELECT ST_Value(rast, 1, ST_GeomFromText('POINT (-78.753874 42.86388)',4326)) AS elevation\nFROM public.dem_us\nWHERE ST_Intersects(rast, ST_GeomFromText('POINT (-78.753874 42.86388)',4326))\nLIMIT 1;",
+  "id": "elevation+poi-1",
+  "model_output": "```sql\nWITH poi_geom AS (\n  SELECT \n    ST_SetSRID(ST_MakePoint(-78.753874, 42.86388), 4326)::geography AS geom\n)\nSELECT \n  ST_Value(r.rast, ST_Transform(p.geom, 4326)) AS elevation\nFROM \n  poi_geom p,\n  public.dem_us r\nWHERE \n  ST_Intersects(r.rast, ST_Transform(p.geom, 4326));\n```",
+  "predicted_exec": {
+    "error": "function st_transform(geography, integer) does not exist\nLINE 6:   ST_Value(r.rast, ST_Transform(p.geom, 4326)) AS elevation\n                           ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH poi_geom AS (\n  SELECT \n    ST_SetSRID(ST_MakePoint(-78.753874, 42.86388), 4326)::geography AS geom\n)\nSELECT \n  ST_Value(r.rast, ST_Transform(p.geom, 4326)) AS elevation\nFROM \n  poi_geom p,\n  public.dem_us r\nWHERE \n  ST_Intersects(r.rast, ST_Transform(p.geom, 4326));",
+  "predicted_sql_candidates": [
+    "WITH poi_geom AS (\n  SELECT \n    ST_SetSRID(ST_MakePoint(-78.753874, 42.86388), 4326)::geography AS geom\n)\nSELECT \n  ST_Value(r.rast, ST_Transform(p.geom, 4326)) AS elevation\nFROM \n  poi_geom p,\n  public.dem_us r\nWHERE \n  ST_Intersects(r.rast, ST_Transform(p.geom, 4326));"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the elevation where Olive Branch, West Seneca, NY is located?",
+  "source_file": "elevation+poi.jsonl",
+  "source_stem": "elevation+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 24.695,
+    "total_seconds": 24.696
+  },
+  "usage": {
+    "completion_tokens": 115,
+    "prompt_tokens": 1617,
+    "total_tokens": 1732
+  }
+}

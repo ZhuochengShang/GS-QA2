@@ -1,0 +1,119 @@
+{
+  "answer_type": "row/s",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "row/s",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "rowset_f1",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "addr_city": "Albuquerque",
+      "addr_state": "NM",
+      "buf": "0103000020E61000000100000021000000D3CDA1BD35A95AC0D4A1D5E1FE8B41400112F6EF3EA95AC00C33BE31468B41409F6654DF5DA95AC04C300301948A4140ED14675A91A95AC0EFBE3A28EF89414087950366D7A95AC02ACC6CFC5D8941404D48C3502DAA5AC07995E310E6884140764D8DCD8FAA5AC043E174008C8841407FAF0A14FBAA5AC079E4584053884140347FC6056BAB5AC057A245FE3D8841401B0C9056DBAB5AC01B5B170B4D884140414F97B647AC5AC0B87FD4D27F88414066CAABFCABAC5AC05B195A62D488414021F8044F04AD5AC02055797A47894140F7F708494DAD5AC094B3CCAFD48941406FFDA11C84AD5AC0BDE90F96768A41407A62DCADA6AD5AC0674D55F5268B414091D7BCA7B3AD5AC0D8D61207DF8B41406E5C7E89AAAD5AC04605B3B8978C4140ED5DB0AB8BAD5AC0565B1EF1498D4140210CFC3C58AD5AC0E20A93D6EE8D41409DE1A93612AD5AC0BB3E1B12808E4140E14E5249BCAC5AC087C3070EF88E41402B4573C259AC5AC05A20042D528F4140ACA9EC6BEEAB5AC087EDA0F78A8F41405767A4667EAB5AC0C1CE8E3EA08F41408F10C5010EAB5AC030563430918F4140E1762D90A1AA5AC0CCDDC6605E8F4140799FBA3D3DAA5AC0760595C4098F41406B1C17E6E4A95AC05788BB9C968E414061FDAAEE9BA95AC0EEDB0457098E4140DFFC262565A95AC0A3FD3362678D41400CD1F5A342A95AC018CA6DF8B68C4140D3CDA1BD35A95AC0D4A1D5E1FE8B4140",
+      "geometry": "POINT (-106.678998 35.093235)",
+      "id": 19050,
+      "max_elev": 1567.0,
+      "osm_id": 1788029735,
+      "poi_name": "ABQ BioPark (Aquarium)",
+      "pt": "0101000020E6100000F46272B474AB5AC0442C071FEF8B4140",
+      "tourism": "aquarium",
+      "wikidata": "Q4712807"
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "addr_city": "Albuquerque",
+        "addr_housenumber": null,
+        "addr_postcode": null,
+        "addr_state": "NM",
+        "addr_street": null,
+        "amenity": null,
+        "artwork_type": null,
+        "buf": "0103000020E61000000100000021000000D3CDA1BD35A95AC0D4A1D5E1FE8B41400112F6EF3EA95AC00C33BE31468B41409F6654DF5DA95AC04C300301948A4140ED14675A91A95AC0EFBE3A28EF89414087950366D7A95AC02ACC6CFC5D8941404D48C3502DAA5AC07995E310E6884140764D8DCD8FAA5AC043E174008C8841407FAF0A14FBAA5AC079E4584053884140347FC6056BAB5AC057A245FE3D8841401B0C9056DBAB5AC01B5B170B4D884140414F97B647AC5AC0B87FD4D27F88414066CAABFCABAC5AC05B195A62D488414021F8044F04AD5AC02055797A47894140F7F708494DAD5AC094B3CCAFD48941406FFDA11C84AD5AC0BDE90F96768A41407A62DCADA6AD5AC0674D55F5268B414091D7BCA7B3AD5AC0D8D61207DF8B41406E5C7E89AAAD5AC04605B3B8978C4140ED5DB0AB8BAD5AC0565B1EF1498D4140210CFC3C58AD5AC0E20A93D6EE8D41409DE1A93612AD5AC0BB3E1B12808E4140E14E5249BCAC5AC087C3070EF88E41402B4573C259AC5AC05A20042D528F4140ACA9EC6BEEAB5AC087EDA0F78A8F41405767A4667EAB5AC0C1CE8E3EA08F41408F10C5010EAB5AC030563430918F4140E1762D90A1AA5AC0CCDDC6605E8F4140799FBA3D3DAA5AC0760595C4098F41406B1C17E6E4A95AC05788BB9C968E414061FDAAEE9BA95AC0EEDB0457098E4140DFFC262565A95AC0A3FD3362678D41400CD1F5A342A95AC018CA6DF8B68C4140D3CDA1BD35A95AC0D4A1D5E1FE8B4140",
+        "building": null,
+        "capacity": null,
+        "cuisine": null,
+        "delivery": null,
+        "description": null,
+        "drive_through": null,
+        "emergency": null,
+        "fast_food": null,
+        "fee": null,
+        "geometry": "0101000020E6100000F46272B474AB5AC0442C071FEF8B4140",
+        "hairdresser": null,
+        "healthcare": null,
+        "historic": null,
+        "id": 19050,
+        "information": null,
+        "internet_access": null,
+        "leisure": null,
+        "max_elev": 1567.0,
+        "museum": null,
+        "official_name": null,
+        "opening_hours": null,
+        "operator": null,
+        "osm_id": 1788029735,
+        "outdoor_seating": null,
+        "parking": null,
+        "pastry_shop": null,
+        "phone": null,
+        "poi_name": "ABQ BioPark (Aquarium)",
+        "pt": "0101000020E6100000F46272B474AB5AC0442C071FEF8B4140",
+        "resort": null,
+        "restaurant": null,
+        "school_type": null,
+        "shop": null,
+        "sport": null,
+        "sports": null,
+        "takeaway": null,
+        "toilets": null,
+        "tourism": "aquarium",
+        "website": null,
+        "wheelchair": null,
+        "wholesale": null,
+        "wikidata": "Q4712807",
+        "zoo": null
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_UnaryUnion(\n           ST_CollectionExtract(\n             ST_MakeValid(ST_GeomFromText('POLYGON ((-107.04014 35.218622, -107.045633 35.218633, -107.076196 35.218692, -107.080141 35.218658, -107.093652 35.218986, -107.110536 35.218826, -107.126291 35.218673, -107.157823 35.219276, -107.162325 35.219234, -107.162882 35.219226, -107.197191 35.219419, -107.174969 35.174969, -107.160508 35.145923, -107.13868 35.102377, -107.110053 35.044674, -107.087752 34.999966, -107.068612 34.961439, -107.027308 34.877714, -107.024341 34.869725, -106.992556 34.869826, -106.886464 34.86967, -106.749925 34.870005, -106.722758 34.870068, -106.721183 34.870071, -106.720232 34.870074, -106.720097 34.871311, -106.716395 34.877859, -106.7123 34.879402, -106.706904 34.880059, -106.70489 34.88088, -106.701064 34.886449, -106.69871 34.893326, -106.696662 34.896761, -106.694393 34.89903, -106.690146 34.901755, -106.685842 34.90643, -106.680504 34.906425, -106.675431 34.906448, -106.498985 34.904238, -106.463927 34.903888, -106.430004 34.903398, -106.423588 34.901301, -106.418847 34.892943, -106.411146 34.889586, -106.411192 34.870227, -106.356911 34.87022, -106.332817 34.871197, -106.144569 34.872036, -106.145287 34.954674, -106.237274 34.956795, -106.238655 35.040787, -106.238701 35.054863, -106.244822 35.214614, -106.285122 35.215827, -106.30433 35.216431, -106.319745 35.216796, -106.36124 35.217402, -106.368527 35.217414, -106.374968 35.217352, -106.3821 35.217265, -106.408281 35.217285, -106.426743 35.217378, -106.427378 35.217376, -106.428012 35.217374, -106.445114 35.217389, -106.450804 35.217548, -106.453345 35.217603, -106.460409 35.217788, -106.47518 35.2179, -106.482402 35.217998, -106.493382 35.218018, -106.498164 35.218046, -106.50383 35.217837, -106.515258 35.217633, -106.564616 35.217734, -106.595572 35.217835, -106.605817 35.217895, -106.606128 35.217511, -106.607055 35.217403, -106.609884 35.215434, -106.61023 35.215217, -106.610468 35.215099, -106.610506 35.215044, -106.61074 35.214897, -106.611408 35.214634, -106.61167 35.214489, -106.612457 35.214058, -106.61272 35.213915, -106.613247 35.213739, -106.613341 35.213648, -106.613378 35.213614, -106.615162 35.212735, -106.61518 35.21274, -106.615835 35.212947, -106.615702 35.212534, -106.616124 35.212444, -106.617757 35.211912, -106.618601 35.211765, -106.618905 35.211479, -106.619013 35.211318, -106.619266 35.210973, -106.619379 35.210829, -106.61942 35.210781, -106.619534 35.210696, -106.620523 35.210185, -106.620797 35.209938, -106.620827 35.209906, -106.621241 35.209726, -106.62132 35.209583, -106.621413 35.209322, -106.622059 35.209144, -106.622573 35.208978, -106.622739 35.20892, -106.622787 35.208891, -106.623081 35.208844, -106.630441 35.206488, -106.630759 35.206378, -106.632356 35.205904, -106.635357 35.205074, -106.638213 35.203968, -106.639762 35.20298, -106.640633 35.201913, -106.643399 35.197712, -106.643694 35.197979, -106.643746 35.198026, -106.643863 35.198131, -106.64391 35.198178, -106.643919 35.198248, -106.644252 35.198601, -106.644604 35.198977, -106.644764 35.199348, -106.645115 35.200091, -106.645178 35.200382, -106.645351 35.201262, -106.645477 35.201582, -106.645555 35.201717, -106.645085 35.20195, -106.645009 35.203154, -106.645146 35.204331, -106.645026 35.205105, -106.644793 35.2061, -106.644566 35.206286, -106.644117 35.206576, -106.643512 35.206858, -106.64257 35.207194, -106.646691 35.208836, -106.647542 35.20933, -106.651294 35.210667, -106.65094 35.210878, -106.650487 35.211226, -106.650016 35.211675, -106.649725 35.212116, -106.648756 35.214434, -106.657281 35.217566, -106.657847 35.218047, -106.66055 35.21803, -106.660722 35.217874, -106.660796 35.214399, -106.657608 35.213197, -106.658051 35.212275, -106.658936 35.212143, -106.659272 35.211557, -106.66004 35.211821, -106.660389 35.211957, -106.660991 35.212374, -106.661652 35.212876, -106.662219 35.213644, -106.662415 35.214021, -106.662657 35.214887, -106.662692 35.215533, -106.662489 35.216434, -106.662045 35.217977, -106.666098 35.217853, -106.675606 35.2178, -106.680757 35.217835, -106.686283 35.217872, -106.721667 35.217858, -106.862299 35.217273, -106.880869 35.217136, -106.933771 35.217182, -106.941652 35.217121, -107.034547 35.218612, -107.04014 35.218622))', 4326)),\n             3\n           )\n         ) AS g\n),\ncandidates AS (\n  SELECT\n    p.*,\n    ST_PointOnSurface(p.geometry::geometry) AS pt,\n    ST_Buffer(ST_PointOnSurface(p.geometry::geometry)::geography, 3200)::geometry AS buf\n  FROM pois p\n  JOIN region r\n    ON ST_Intersects(p.geometry::geometry, r.g)\n  WHERE p.\"tourism\" = 'aquarium'\n),\npoi_nearby AS (\n  SELECT c.*,\n         nearby.max_elev\n  FROM candidates c\n  JOIN LATERAL (\n    SELECT MAX((s.stats).max) AS max_elev\n    FROM (\n      SELECT ST_SummaryStats(\n               ST_Clip(\n                 d.rast,\n                 ST_Intersection(\n                   c.buf,\n                   r.g\n                 )\n               )\n             ) AS stats\n      FROM public.dem_us d\n      JOIN region r ON ST_Intersects(d.rast, r.g)\n      WHERE ST_Intersects(d.rast, c.buf)\n    ) s\n  ) nearby ON nearby.max_elev IS NOT NULL\n)\nSELECT DISTINCT ON (id) *\nFROM poi_nearby\nWHERE max_elev >= 1100;",
+  "id": "elevation_proximity_zone+name-11",
+  "model_output": "```sql\nWITH pois_in_county AS (\n  SELECT id, poi_name, geometry\n  FROM pois\n  WHERE addr_city ILIKE '%Albuquerque%'\n    AND addr_state = 'NM'\n    AND poi_name ILIKE '%aquarium%'\n),\ndem_clip AS (\n  SELECT\n    ST_Clip(\n      rast,\n      ST_Transform(geometry::geometry, 4326),\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us, pois_in_county\n  WHERE ST_Intersects(\n    ST_Transform(rast::geometry, 4326),\n    ST_Transform(geometry::geometry, 4326)\n  )\n),\nelevation_stats AS (\n  SELECT\n    (ST_SummaryStats(clipped_rast, TRUE)).*\n  FROM dem_clip\n)\nSELECT\n  pois_in_county.poi_name,\n  e.mean AS average_elevation,\n  e.count AS pixel_count,\n  e.sum AS total_elevation\nFROM pois_in_county, elevation_stats e\nWHERE e.mean >= 1100\n  AND ST_DistanceSphere(pois_in_county.geometry, ST_GeomFromText('POINT (-106.678998 35.093235)', 4326)) <= 3200;\n```",
+  "predicted_exec": {
+    "error": "function st_distancesphere(geography, geometry) does not exist\nLINE 33:   AND ST_DistanceSphere(pois_in_county.geometry, ST_GeomFrom...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH pois_in_county AS (\n  SELECT id, poi_name, geometry\n  FROM pois\n  WHERE addr_city ILIKE '%Albuquerque%'\n    AND addr_state = 'NM'\n    AND poi_name ILIKE '%aquarium%'\n),\ndem_clip AS (\n  SELECT\n    ST_Clip(\n      rast,\n      ST_Transform(geometry::geometry, 4326),\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us, pois_in_county\n  WHERE ST_Intersects(\n    ST_Transform(rast::geometry, 4326),\n    ST_Transform(geometry::geometry, 4326)\n  )\n),\nelevation_stats AS (\n  SELECT\n    (ST_SummaryStats(clipped_rast, TRUE)).*\n  FROM dem_clip\n)\nSELECT\n  pois_in_county.poi_name,\n  e.mean AS average_elevation,\n  e.count AS pixel_count,\n  e.sum AS total_elevation\nFROM pois_in_county, elevation_stats e\nWHERE e.mean >= 1100\n  AND ST_DistanceSphere(pois_in_county.geometry, ST_GeomFromText('POINT (-106.678998 35.093235)', 4326)) <= 3200;",
+  "predicted_sql_candidates": [
+    "WITH pois_in_county AS (\n  SELECT id, poi_name, geometry\n  FROM pois\n  WHERE addr_city ILIKE '%Albuquerque%'\n    AND addr_state = 'NM'\n    AND poi_name ILIKE '%aquarium%'\n),\ndem_clip AS (\n  SELECT\n    ST_Clip(\n      rast,\n      ST_Transform(geometry::geometry, 4326),\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us, pois_in_county\n  WHERE ST_Intersects(\n    ST_Transform(rast::geometry, 4326),\n    ST_Transform(geometry::geometry, 4326)\n  )\n),\nelevation_stats AS (\n  SELECT\n    (ST_SummaryStats(clipped_rast, TRUE)).*\n  FROM dem_clip\n)\nSELECT\n  pois_in_county.poi_name,\n  e.mean AS average_elevation,\n  e.count AS pixel_count,\n  e.sum AS total_elevation\nFROM pois_in_county, elevation_stats e\nWHERE e.mean >= 1100\n  AND ST_DistanceSphere(pois_in_county.geometry, ST_GeomFromText('POINT (-106.678998 35.093235)', 4326)) <= 3200;"
+  ],
+  "query_type": "raster_vector",
+  "question": "Find aquaria in Bernalillo County, New Mexico within 3200 m of terrain at or above 1100 m elevation.",
+  "source_file": "elevation_proximity_zone+name.jsonl",
+  "source_stem": "elevation_proximity_zone+name",
+  "timing": {
+    "execution_seconds": 0.002,
+    "generation_seconds": 60.045,
+    "total_seconds": 60.047
+  },
+  "usage": {
+    "completion_tokens": 282,
+    "prompt_tokens": 1696,
+    "total_tokens": 1978
+  }
+}

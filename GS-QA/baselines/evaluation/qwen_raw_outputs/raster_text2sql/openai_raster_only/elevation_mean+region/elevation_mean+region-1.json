@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 503.214073
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 503.214073
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-72.871136 42.484041, -72.87516 42.507261, -72.87032 42.52515, -72.875462 42.525898, -72.876658 42.531734, -72.87685 42.541198, -72.975409 42.556037, -72.979036 42.541618, -72.968583 42.540012, -72.979282 42.497856, -72.896902 42.48328, -72.892814 42.482556, -72.882245 42.480686, -72.871136 42.484041))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).mean AS elevation\nFROM clipped;",
+  "id": "elevation_mean+region-1",
+  "model_output": "```sql\nWITH plainfield_geom AS (\n  SELECT ST_GeomFromText('POLYGON ((-72.871136 42.484041, -72.87516 42.507261, -72.87032 42.52515, -72.875462 42.525898, -72.876658 42.531734, -72.87685 42.541198, -72.975409 42.556037, -72.979036 42.541618, -72.968583 42.540012, -72.979282 42.497856, -72.896902 42.48328, -72.892814 42.482556, -72.882245 42.480686, -72.871136 42.484041))', 4326)::geometry AS geom\n)\nSELECT\n  ST_Stats(\n    ST_Clip(\n      r.rast,\n      1,\n      p.geom,\n      TRUE\n    ),\n    1,\n    TRUE\n  ).mean AS avg_elevation\nFROM\n  plainfield_geom p,\n  public.dem_us r\nWHERE\n  ST_Intersects(r.rast::geometry, p.geom);\n```",
+  "predicted_exec": {
+    "error": "syntax error at or near \".\"\nLINE 14:   ).mean AS avg_elevation\n            ^",
+    "output": []
+  },
+  "predicted_sql": "WITH plainfield_geom AS (\n  SELECT ST_GeomFromText('POLYGON ((-72.871136 42.484041, -72.87516 42.507261, -72.87032 42.52515, -72.875462 42.525898, -72.876658 42.531734, -72.87685 42.541198, -72.975409 42.556037, -72.979036 42.541618, -72.968583 42.540012, -72.979282 42.497856, -72.896902 42.48328, -72.892814 42.482556, -72.882245 42.480686, -72.871136 42.484041))', 4326)::geometry AS geom\n)\nSELECT\n  ST_Stats(\n    ST_Clip(\n      r.rast,\n      1,\n      p.geom,\n      TRUE\n    ),\n    1,\n    TRUE\n  ).mean AS avg_elevation\nFROM\n  plainfield_geom p,\n  public.dem_us r\nWHERE\n  ST_Intersects(r.rast::geometry, p.geom);",
+  "predicted_sql_candidates": [
+    "WITH plainfield_geom AS (\n  SELECT ST_GeomFromText('POLYGON ((-72.871136 42.484041, -72.87516 42.507261, -72.87032 42.52515, -72.875462 42.525898, -72.876658 42.531734, -72.87685 42.541198, -72.975409 42.556037, -72.979036 42.541618, -72.968583 42.540012, -72.979282 42.497856, -72.896902 42.48328, -72.892814 42.482556, -72.882245 42.480686, -72.871136 42.484041))', 4326)::geometry AS geom\n)\nSELECT\n  ST_Stats(\n    ST_Clip(\n      r.rast,\n      1,\n      p.geom,\n      TRUE\n    ),\n    1,\n    TRUE\n  ).mean AS avg_elevation\nFROM\n  plainfield_geom p,\n  public.dem_us r\nWHERE\n  ST_Intersects(r.rast::geometry, p.geom);"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the avg elevation value within Plainfield, Massachusetts?",
+  "source_file": "elevation_mean+region.jsonl",
+  "source_stem": "elevation_mean+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 85.132,
+    "total_seconds": 85.133
+  },
+  "usage": {
+    "completion_tokens": 399,
+    "prompt_tokens": 1794,
+    "total_tokens": 2193
+  }
+}

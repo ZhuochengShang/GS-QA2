@@ -1,0 +1,59 @@
+{
+  "answer_type": "distance",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "distance",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "distance_m": 22589.053716
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "distance_m": 22589.053716
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-118.255517 34.046847)',4326) AS pt\n),\nnearby_tiles AS (\n  SELECT d.rast\n  FROM public.dem_us d, origin o\n  WHERE d.rast && ST_Expand(o.pt, 1.0)\n),\nmasked AS (\n\t  SELECT ST_MapAlgebra(\n\t           rast,\n\t           1,\n\t           '32BF'::text,\n\t           'CASE WHEN [rast.val] > 1200 THEN [rast.val] ELSE NULL END'::text,\n\t           NULL::double precision\n\t         ) AS rast\n  FROM nearby_tiles\n),\nqualifying_pixels AS (\n  SELECT (pp).geom AS geom\n  FROM masked\n  CROSS JOIN LATERAL ST_PixelAsCentroids(rast, 1, TRUE) AS pp\n)\nSELECT MIN(ST_Distance(p.geom::geography, o.pt::geography)) AS distance_m\nFROM qualifying_pixels p, origin o;",
+  "id": "nearest_high_terrain+poi-19",
+  "model_output": "```sql\nWITH hotel_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-118.255517 34.046847)'), 4326)::geography AS geom\n),\nelevation_raster AS (\n  SELECT rast\n  FROM public.dem_us\n  WHERE ST_Intersects(\n    ST_Transform(rast, 4326)::geography,\n    (SELECT geom FROM hotel_geom)\n  )\n),\nhigh_points AS (\n  SELECT\n    (ST_DumpAsPolygons(ST_Clip(rast, true, ST_Buffer(ST_Transform(geom, 4326), 100000), 1))).geom AS geom\n  FROM elevation_raster, hotel_geom\n  WHERE ST_Value(rast, (ST_DumpAsPolygons(ST_Clip(rast, true, ST_Buffer(ST_Transform(geom, 4326), 100000), 1))).geom, 1) > 1200\n),\nclosest_point AS (\n  SELECT\n    ST_ClosestPoint(high_points.geom, (SELECT geom FROM hotel_geom)) AS geom\n  FROM high_points\n  ORDER BY ST_Distance(high_points.geom, (SELECT geom FROM hotel_geom))\n  LIMIT 1\n)\nSELECT\n  ST_Distance(\n    (SELECT geom FROM hotel_geom),\n    (SELECT geom FROM closest_point)\n  ) AS distance_meters;\n```",
+  "predicted_exec": {
+    "error": "cannot cast type raster to geography\nLINE 8:     ST_Transform(rast, 4326)::geography,\n                                    ^",
+    "output": []
+  },
+  "predicted_sql": "WITH hotel_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-118.255517 34.046847)'), 4326)::geography AS geom\n),\nelevation_raster AS (\n  SELECT rast\n  FROM public.dem_us\n  WHERE ST_Intersects(\n    ST_Transform(rast, 4326)::geography,\n    (SELECT geom FROM hotel_geom)\n  )\n),\nhigh_points AS (\n  SELECT\n    (ST_DumpAsPolygons(ST_Clip(rast, true, ST_Buffer(ST_Transform(geom, 4326), 100000), 1))).geom AS geom\n  FROM elevation_raster, hotel_geom\n  WHERE ST_Value(rast, (ST_DumpAsPolygons(ST_Clip(rast, true, ST_Buffer(ST_Transform(geom, 4326), 100000), 1))).geom, 1) > 1200\n),\nclosest_point AS (\n  SELECT\n    ST_ClosestPoint(high_points.geom, (SELECT geom FROM hotel_geom)) AS geom\n  FROM high_points\n  ORDER BY ST_Distance(high_points.geom, (SELECT geom FROM hotel_geom))\n  LIMIT 1\n)\nSELECT\n  ST_Distance(\n    (SELECT geom FROM hotel_geom),\n    (SELECT geom FROM closest_point)\n  ) AS distance_meters;",
+  "predicted_sql_candidates": [
+    "WITH hotel_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-118.255517 34.046847)'), 4326)::geography AS geom\n),\nelevation_raster AS (\n  SELECT rast\n  FROM public.dem_us\n  WHERE ST_Intersects(\n    ST_Transform(rast, 4326)::geography,\n    (SELECT geom FROM hotel_geom)\n  )\n),\nhigh_points AS (\n  SELECT\n    (ST_DumpAsPolygons(ST_Clip(rast, true, ST_Buffer(ST_Transform(geom, 4326), 100000), 1))).geom AS geom\n  FROM elevation_raster, hotel_geom\n  WHERE ST_Value(rast, (ST_DumpAsPolygons(ST_Clip(rast, true, ST_Buffer(ST_Transform(geom, 4326), 100000), 1))).geom, 1) > 1200\n),\nclosest_point AS (\n  SELECT\n    ST_ClosestPoint(high_points.geom, (SELECT geom FROM hotel_geom)) AS geom\n  FROM high_points\n  ORDER BY ST_Distance(high_points.geom, (SELECT geom FROM hotel_geom))\n  LIMIT 1\n)\nSELECT\n  ST_Distance(\n    (SELECT geom FROM hotel_geom),\n    (SELECT geom FROM closest_point)\n  ) AS distance_meters;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the distance from Hotel Per La, Autograph Collection, Los Angeles, CA to the closest point higher than 1200 meters in elevation?",
+  "source_file": "nearest_high_terrain+poi.jsonl",
+  "source_stem": "nearest_high_terrain+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 70.764,
+    "total_seconds": 70.765
+  },
+  "usage": {
+    "completion_tokens": 314,
+    "prompt_tokens": 1647,
+    "total_tokens": 1961
+  }
+}

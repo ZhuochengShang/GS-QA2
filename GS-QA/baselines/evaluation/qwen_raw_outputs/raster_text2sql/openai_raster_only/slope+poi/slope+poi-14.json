@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope_degrees": 8.070539
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope_degrees": 8.070539
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-77.063126 38.932122)',4326) AS pt\n),\npatch AS (\n  SELECT ST_Buffer(pt::geography, 100)::geometry AS g FROM origin\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, p.g)) AS rast\n  FROM public.dem_us d\n  JOIN patch p ON ST_Intersects(d.rast, p.g)\n),\nslope_rast AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n)\nSELECT ST_Value(s.rast, 1, o.pt) AS slope_degrees\nFROM slope_rast s, origin o;",
+  "id": "slope+poi-14",
+  "model_output": "```sql\nWITH twin_oaks_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM pois\n  WHERE id = 6698\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(\n      ST_Clip(\n        r.rast, \n        true, \n        twin_oaks.geom\n      ), \n      1, \n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us r, twin_oaks_geom twin_oaks\n  WHERE ST_Intersects(r.rast, twin_oaks.geom)\n)\nSELECT \n  ST_Stats(slope_rast).mean AS avg_slope_degrees\nFROM slope_raster s;\n```",
+  "predicted_exec": {
+    "error": "syntax error at or near \".\"\nLINE 21:   ST_Stats(slope_rast).mean AS avg_slope_degrees\n                               ^",
+    "output": []
+  },
+  "predicted_sql": "WITH twin_oaks_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM pois\n  WHERE id = 6698\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(\n      ST_Clip(\n        r.rast, \n        true, \n        twin_oaks.geom\n      ), \n      1, \n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us r, twin_oaks_geom twin_oaks\n  WHERE ST_Intersects(r.rast, twin_oaks.geom)\n)\nSELECT \n  ST_Stats(slope_rast).mean AS avg_slope_degrees\nFROM slope_raster s;",
+  "predicted_sql_candidates": [
+    "WITH twin_oaks_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM pois\n  WHERE id = 6698\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(\n      ST_Clip(\n        r.rast, \n        true, \n        twin_oaks.geom\n      ), \n      1, \n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us r, twin_oaks_geom twin_oaks\n  WHERE ST_Intersects(r.rast, twin_oaks.geom)\n)\nSELECT \n  ST_Stats(slope_rast).mean AS avg_slope_degrees\nFROM slope_raster s;"
+  ],
+  "query_type": "raster_only",
+  "question": "How sharply does the terrain incline at Twin Oaks, Washington, DC?",
+  "source_file": "slope+poi.jsonl",
+  "source_stem": "slope+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 31.591,
+    "total_seconds": 31.592
+  },
+  "usage": {
+    "completion_tokens": 145,
+    "prompt_tokens": 1601,
+    "total_tokens": 1746
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "answer_type": "name",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "name",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer_name": "North 97th Court",
+      "slope_deg_3": 0.0,
+      "slope_deg_4": 5.013438
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer_name": "North 97th Court",
+        "slope_deg_3": 0.0,
+        "slope_deg_4": 5.013438
+      }
+    ]
+  },
+  "gold_sql": "WITH route3 AS (\n  SELECT ST_GeomFromText('POLYGON ((-111.988837 40.785743, -111.989129 40.78838, -111.989296 40.78837, -111.989004 40.785732, -111.988837 40.785743))', 4326)::geometry AS geom\n),\nroute4 AS (\n  SELECT ST_GeomFromText('LINESTRING (-96.065062 41.271102, -96.065093 41.271175, -96.06512 41.271218, -96.065145 41.271349, -96.06515 41.271565, -96.065172 41.271675, -96.065212 41.271787, -96.065332 41.272044, -96.065339 41.272153, -96.065347 41.272283, -96.065303 41.272513, -96.065296 41.272637, -96.065354 41.273152, -96.065368 41.273168)', 4326)::geometry AS geom\n),\ndem_clip3 AS (\n  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast\n  FROM public.dem_us d, route3 r\n  WHERE ST_Intersects(d.rast, r.geom)\n),\ndem_clip4 AS (\n  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast\n  FROM public.dem_us d, route4 r\n  WHERE ST_Intersects(d.rast, r.geom)\n),\nsegments AS (\n  SELECT 1 AS route_id, (ST_DumpSegments(r.geom)).geom AS seg FROM route3 r\n  UNION ALL\n  SELECT 2 AS route_id, (ST_DumpSegments(r.geom)).geom AS seg FROM route4 r\n),\nendpoints AS (\n  SELECT\n    route_id,\n    ST_StartPoint(seg)         AS p1,\n    ST_EndPoint(seg)           AS p2,\n    ST_Length(seg::geography)  AS seg_len_m\n  FROM segments\n),\nelev AS (\n  SELECT\n    e.route_id,\n    e.seg_len_m,\n    CASE WHEN e.route_id = 1 THEN ST_Value(dc3.rast, 1, e.p1)\n         ELSE ST_Value(dc4.rast, 1, e.p1) END AS z1,\n    CASE WHEN e.route_id = 1 THEN ST_Value(dc3.rast, 1, e.p2)\n         ELSE ST_Value(dc4.rast, 1, e.p2) END AS z2\n  FROM endpoints e, dem_clip3 dc3, dem_clip4 dc4\n),\ngrades AS (\n  SELECT\n    route_id,\n    seg_len_m,\n    CASE WHEN seg_len_m > 0 THEN ABS(z2 - z1) / seg_len_m END AS grade\n  FROM elev\n  WHERE z1 IS NOT NULL AND z2 IS NOT NULL\n),\navg_grade AS (\n  SELECT\n    route_id,\n    SUM(grade * seg_len_m) / NULLIF(SUM(seg_len_m), 0) AS g\n  FROM grades\n  WHERE grade IS NOT NULL\n  GROUP BY route_id\n)\nSELECT\n  CASE WHEN a1.g >= a2.g THEN 'West Tunnel' ELSE 'North 97th Court' END AS answer_name,\n  DEGREES(ATAN(a1.g)) AS slope_deg_3,\n  DEGREES(ATAN(a2.g)) AS slope_deg_4\nFROM avg_grade a1\nJOIN avg_grade a2\n  ON a1.route_id = 1 AND a2.route_id = 2\nWHERE a1.g IS NOT NULL AND a2.g IS NOT NULL;",
+  "id": "slope+compare_route-11",
+  "model_output": "```sql\nWITH west_tunnel_geom AS (\n  SELECT ST_GeomFromText('POLYGON ((-111.988837 40.785743, -111.989129 40.78838, -111.989296 40.78837, -111.989004 40.785732, -111.988837 40.785743))')::geometry AS geom\n),\nnorth_97th_court_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-96.065062 41.271102, -96.065093 41.271175, -96.06512 41.271218, -96.065145 41.271349, -96.06515 41.271565, -96.065172 41.271675, -96.065212 41.271787, -96.065332 41.272044, -96.065339 41.272153, -96.065347 41.272283, -96.065303 41.272513, -96.065296 41.272637, -96.065354 41.273152, -96.065368 41.273168)')::geometry AS geom\n),\nwest_tunnel_slope AS (\n  SELECT \n    'West Tunnel'::text AS route_name,\n    ST_Avg(ST_Slope(ST_Clip(r.rast, true, wt.geom), 1)) AS avg_slope\n  FROM \n    public.dem_us r,\n    west_tunnel_geom wt\n  WHERE \n    ST_Intersects(r.rast::geometry, wt.geom)\n),\nnorth_97th_court_slope AS (\n  SELECT \n    'North 97th Court'::text AS route_name,\n    ST_Avg(ST_Slope(ST_Clip(r.rast, true, n.geom), 1)) AS avg_slope\n  FROM \n    public.dem_us r,\n    north_97th_court_geom n\n  WHERE \n    ST_Intersects(r.rast::geometry, n.geom)\n)\nSELECT \n  CASE \n    WHEN w.avg_slope > n.avg_slope THEN w.route_name\n    WHEN n.avg_slope > w.avg_slope THEN n.route_name\n    ELSE 'Equal'\n  END AS steeper_route,\n  w.avg_slope AS west_tunnel_avg_slope,\n  n.avg_slope AS north_97th_court_avg_slope\nFROM \n  west_tunnel_slope w,\n  north_97th_court_slope n;\n```",
+  "predicted_exec": {
+    "error": "function st_clip(raster, boolean, geometry) does not exist\nLINE 10:     ST_Avg(ST_Slope(ST_Clip(r.rast, true, wt.geom), 1)) AS a...\n                             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH west_tunnel_geom AS (\n  SELECT ST_GeomFromText('POLYGON ((-111.988837 40.785743, -111.989129 40.78838, -111.989296 40.78837, -111.989004 40.785732, -111.988837 40.785743))')::geometry AS geom\n),\nnorth_97th_court_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-96.065062 41.271102, -96.065093 41.271175, -96.06512 41.271218, -96.065145 41.271349, -96.06515 41.271565, -96.065172 41.271675, -96.065212 41.271787, -96.065332 41.272044, -96.065339 41.272153, -96.065347 41.272283, -96.065303 41.272513, -96.065296 41.272637, -96.065354 41.273152, -96.065368 41.273168)')::geometry AS geom\n),\nwest_tunnel_slope AS (\n  SELECT \n    'West Tunnel'::text AS route_name,\n    ST_Avg(ST_Slope(ST_Clip(r.rast, true, wt.geom), 1)) AS avg_slope\n  FROM \n    public.dem_us r,\n    west_tunnel_geom wt\n  WHERE \n    ST_Intersects(r.rast::geometry, wt.geom)\n),\nnorth_97th_court_slope AS (\n  SELECT \n    'North 97th Court'::text AS route_name,\n    ST_Avg(ST_Slope(ST_Clip(r.rast, true, n.geom), 1)) AS avg_slope\n  FROM \n    public.dem_us r,\n    north_97th_court_geom n\n  WHERE \n    ST_Intersects(r.rast::geometry, n.geom)\n)\nSELECT \n  CASE \n    WHEN w.avg_slope > n.avg_slope THEN w.route_name\n    WHEN n.avg_slope > w.avg_slope THEN n.route_name\n    ELSE 'Equal'\n  END AS steeper_route,\n  w.avg_slope AS west_tunnel_avg_slope,\n  n.avg_slope AS north_97th_court_avg_slope\nFROM \n  west_tunnel_slope w,\n  north_97th_court_slope n;",
+  "predicted_sql_candidates": [
+    "WITH west_tunnel_geom AS (\n  SELECT ST_GeomFromText('POLYGON ((-111.988837 40.785743, -111.989129 40.78838, -111.989296 40.78837, -111.989004 40.785732, -111.988837 40.785743))')::geometry AS geom\n),\nnorth_97th_court_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-96.065062 41.271102, -96.065093 41.271175, -96.06512 41.271218, -96.065145 41.271349, -96.06515 41.271565, -96.065172 41.271675, -96.065212 41.271787, -96.065332 41.272044, -96.065339 41.272153, -96.065347 41.272283, -96.065303 41.272513, -96.065296 41.272637, -96.065354 41.273152, -96.065368 41.273168)')::geometry AS geom\n),\nwest_tunnel_slope AS (\n  SELECT \n    'West Tunnel'::text AS route_name,\n    ST_Avg(ST_Slope(ST_Clip(r.rast, true, wt.geom), 1)) AS avg_slope\n  FROM \n    public.dem_us r,\n    west_tunnel_geom wt\n  WHERE \n    ST_Intersects(r.rast::geometry, wt.geom)\n),\nnorth_97th_court_slope AS (\n  SELECT \n    'North 97th Court'::text AS route_name,\n    ST_Avg(ST_Slope(ST_Clip(r.rast, true, n.geom), 1)) AS avg_slope\n  FROM \n    public.dem_us r,\n    north_97th_court_geom n\n  WHERE \n    ST_Intersects(r.rast::geometry, n.geom)\n)\nSELECT \n  CASE \n    WHEN w.avg_slope > n.avg_slope THEN w.route_name\n    WHEN n.avg_slope > w.avg_slope THEN n.route_name\n    ELSE 'Equal'\n  END AS steeper_route,\n  w.avg_slope AS west_tunnel_avg_slope,\n  n.avg_slope AS north_97th_court_avg_slope\nFROM \n  west_tunnel_slope w,\n  north_97th_court_slope n;"
+  ],
+  "query_type": "raster_only",
+  "question": "Which route has the greater slope on average, West Tunnel or North 97th Court?",
+  "source_file": "slope+compare_route.jsonl",
+  "source_stem": "slope+compare_route",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 156.291,
+    "total_seconds": 156.292
+  },
+  "usage": {
+    "completion_tokens": 717,
+    "prompt_tokens": 1950,
+    "total_tokens": 2667
+  }
+}

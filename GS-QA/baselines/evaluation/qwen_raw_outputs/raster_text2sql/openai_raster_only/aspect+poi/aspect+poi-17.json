@@ -1,0 +1,59 @@
+{
+  "answer_type": "aspect",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "aspect",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "aspect_degrees": 282.528809
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "aspect_degrees": 282.528809
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-87.654322 40.146491)',4326) AS pt\n),\npatch AS (\n  SELECT ST_Buffer(pt::geography, 100)::geometry AS g FROM origin\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, p.g)) AS rast\n  FROM public.dem_us d\n  JOIN patch p ON ST_Intersects(d.rast, p.g)\n),\naspect_rast AS (\n  SELECT ST_Aspect(rast, 1, '32BF', 'DEGREES') AS rast\n  FROM clipped_dem\n)\nSELECT ST_Value(a.rast, 1, o.pt) AS aspect_degrees\nFROM aspect_rast a, origin o;",
+  "id": "aspect+poi-17",
+  "model_output": "```sql\nWITH park_geom AS (\n  SELECT geometry\n  FROM parks\n  WHERE id = 251066\n),\ndem_clip AS (\n  SELECT ST_Clip(\n      r.rast,\n      1,\n      park_geom.geometry::geometry,\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us r,\n       park_geom\n  WHERE ST_Intersects(r.rast, park_geom.geometry::geometry)\n),\naspect_rast AS (\n  SELECT ST_Aspect(clipped_rast, 1) AS aspect_rast\n  FROM dem_clip\n),\naspect_avg AS (\n  SELECT degrees(ST_StatsSingleBand(aspect_rast, 1, TRUE).mean) AS mean_aspect_degrees\n  FROM aspect_rast\n)\nSELECT \n  CASE\n    WHEN mean_aspect_degrees BETWEEN 22.5 AND 67.5 THEN 'Northeast'\n    WHEN mean_aspect_degrees BETWEEN 67.5 AND 112.5 THEN 'East'\n    WHEN mean_aspect_degrees BETWEEN 112.5 AND 157.5 THEN 'Southeast'\n    WHEN mean_aspect_degrees BETWEEN 157.5 AND 202.5 THEN 'South'\n    WHEN mean_aspect_degrees BETWEEN 202.5 AND 247.5 THEN 'Southwest'\n    WHEN mean_aspect_degrees BETWEEN 247.5 AND 292.5 THEN 'West'\n    WHEN mean_aspect_degrees BETWEEN 292.5 AND 337.5 THEN 'Northwest'\n    ELSE 'North'\n  END AS compass_bearing\nFROM aspect_avg;\n```",
+  "predicted_exec": {
+    "error": "syntax error at or near \".\"\nLINE 22: ...T degrees(ST_StatsSingleBand(aspect_rast, 1, TRUE).mean) AS ...\n                                                              ^",
+    "output": []
+  },
+  "predicted_sql": "WITH park_geom AS (\n  SELECT geometry\n  FROM parks\n  WHERE id = 251066\n),\ndem_clip AS (\n  SELECT ST_Clip(\n      r.rast,\n      1,\n      park_geom.geometry::geometry,\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us r,\n       park_geom\n  WHERE ST_Intersects(r.rast, park_geom.geometry::geometry)\n),\naspect_rast AS (\n  SELECT ST_Aspect(clipped_rast, 1) AS aspect_rast\n  FROM dem_clip\n),\naspect_avg AS (\n  SELECT degrees(ST_StatsSingleBand(aspect_rast, 1, TRUE).mean) AS mean_aspect_degrees\n  FROM aspect_rast\n)\nSELECT \n  CASE\n    WHEN mean_aspect_degrees BETWEEN 22.5 AND 67.5 THEN 'Northeast'\n    WHEN mean_aspect_degrees BETWEEN 67.5 AND 112.5 THEN 'East'\n    WHEN mean_aspect_degrees BETWEEN 112.5 AND 157.5 THEN 'Southeast'\n    WHEN mean_aspect_degrees BETWEEN 157.5 AND 202.5 THEN 'South'\n    WHEN mean_aspect_degrees BETWEEN 202.5 AND 247.5 THEN 'Southwest'\n    WHEN mean_aspect_degrees BETWEEN 247.5 AND 292.5 THEN 'West'\n    WHEN mean_aspect_degrees BETWEEN 292.5 AND 337.5 THEN 'Northwest'\n    ELSE 'North'\n  END AS compass_bearing\nFROM aspect_avg;",
+  "predicted_sql_candidates": [
+    "WITH park_geom AS (\n  SELECT geometry\n  FROM parks\n  WHERE id = 251066\n),\ndem_clip AS (\n  SELECT ST_Clip(\n      r.rast,\n      1,\n      park_geom.geometry::geometry,\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us r,\n       park_geom\n  WHERE ST_Intersects(r.rast, park_geom.geometry::geometry)\n),\naspect_rast AS (\n  SELECT ST_Aspect(clipped_rast, 1) AS aspect_rast\n  FROM dem_clip\n),\naspect_avg AS (\n  SELECT degrees(ST_StatsSingleBand(aspect_rast, 1, TRUE).mean) AS mean_aspect_degrees\n  FROM aspect_rast\n)\nSELECT \n  CASE\n    WHEN mean_aspect_degrees BETWEEN 22.5 AND 67.5 THEN 'Northeast'\n    WHEN mean_aspect_degrees BETWEEN 67.5 AND 112.5 THEN 'East'\n    WHEN mean_aspect_degrees BETWEEN 112.5 AND 157.5 THEN 'Southeast'\n    WHEN mean_aspect_degrees BETWEEN 157.5 AND 202.5 THEN 'South'\n    WHEN mean_aspect_degrees BETWEEN 202.5 AND 247.5 THEN 'Southwest'\n    WHEN mean_aspect_degrees BETWEEN 247.5 AND 292.5 THEN 'West'\n    WHEN mean_aspect_degrees BETWEEN 292.5 AND 337.5 THEN 'Northwest'\n    ELSE 'North'\n  END AS compass_bearing\nFROM aspect_avg;"
+  ],
+  "query_type": "raster_only",
+  "question": "What compass bearing does the hillside at Harrison Park and Golf Course, Danville, IL face?",
+  "source_file": "aspect+poi.jsonl",
+  "source_stem": "aspect+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 75.626,
+    "total_seconds": 75.627
+  },
+  "usage": {
+    "completion_tokens": 351,
+    "prompt_tokens": 1615,
+    "total_tokens": 1966
+  }
+}

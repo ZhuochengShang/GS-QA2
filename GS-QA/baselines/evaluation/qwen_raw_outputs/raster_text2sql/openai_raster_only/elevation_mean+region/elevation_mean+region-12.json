@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 93.426521
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 93.426521
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-75.780919 39.819425, -75.783436 39.819161, -75.783496 39.819155, -75.783561 39.819148, -75.783633 39.81914, -75.784802 39.819017, -75.786246 39.818865, -75.787034 39.819931, -75.788203 39.821513, -75.788336 39.821693, -75.78872 39.822211, -75.788711 39.822514, -75.788684 39.823462, -75.788527 39.828902, -75.788459 39.828923, -75.787972 39.829071, -75.787327 39.829274, -75.786044 39.829671, -75.786022 39.829678, -75.785328 39.82978, -75.7852 39.829801, -75.784718 39.829869, -75.782725 39.830163, -75.782243 39.830246, -75.781806 39.830298, -75.781764 39.830304, -75.777907 39.83056, -75.777194 39.830607, -75.776204 39.830673, -75.776114 39.829656, -75.776144 39.829493, -75.776199 39.829214, -75.776208 39.829165, -75.775981 39.826719, -75.77571 39.825093, -75.775563 39.823462, -75.775545 39.823244, -75.775531 39.823071, -75.775314 39.820621, -75.775261 39.82002, -75.780919 39.819425))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).mean AS elevation\nFROM clipped;",
+  "id": "elevation_mean+region-12",
+  "model_output": "```sql\nWITH avondale_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Avondale' AND addr_state ILIKE 'Pennsylvania'\n)\nSELECT\n  ST_ValueCount(\n    ST_Clip(\n      r.rast,\n      a.geom,\n      TRUE\n    )\n  ) AS elevation_stats\nFROM\n  avondale_geom a,\n  public.dem_us r\nWHERE\n  ST_Intersects(r.rast, a.geom);\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 4:   WHERE region_name ILIKE 'Avondale' AND addr_state ILIKE 'P...\n                                                 ^",
+    "output": []
+  },
+  "predicted_sql": "WITH avondale_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Avondale' AND addr_state ILIKE 'Pennsylvania'\n)\nSELECT\n  ST_ValueCount(\n    ST_Clip(\n      r.rast,\n      a.geom,\n      TRUE\n    )\n  ) AS elevation_stats\nFROM\n  avondale_geom a,\n  public.dem_us r\nWHERE\n  ST_Intersects(r.rast, a.geom);",
+  "predicted_sql_candidates": [
+    "WITH avondale_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Avondale' AND addr_state ILIKE 'Pennsylvania'\n)\nSELECT\n  ST_ValueCount(\n    ST_Clip(\n      r.rast,\n      a.geom,\n      TRUE\n    )\n  ) AS elevation_stats\nFROM\n  avondale_geom a,\n  public.dem_us r\nWHERE\n  ST_Intersects(r.rast, a.geom);"
+  ],
+  "query_type": "raster_only",
+  "question": "How high is Avondale, Pennsylvania on average?",
+  "source_file": "elevation_mean+region.jsonl",
+  "source_stem": "elevation_mean+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 22.586,
+    "total_seconds": 22.587
+  },
+  "usage": {
+    "completion_tokens": 106,
+    "prompt_tokens": 1515,
+    "total_tokens": 1621
+  }
+}

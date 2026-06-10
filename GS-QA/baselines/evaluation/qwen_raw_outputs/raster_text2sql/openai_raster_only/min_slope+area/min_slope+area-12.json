@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 0.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 0.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-90.80186 45.50076, -90.80194 45.50084, -90.80211 45.5009, -90.802965 45.500925, -90.80509 45.50099, -90.806411 45.501047, -90.80647 45.50105, -90.807559 45.501108, -90.807089 45.499968, -90.807076 45.49942, -90.807032 45.497384, -90.810332 45.49753, -90.812111 45.49761, -90.812333 45.49762, -90.813002 45.49765, -90.813225 45.49766, -90.815856 45.497776, -90.817299 45.497841, -90.817274 45.501514, -90.819273 45.501586, -90.822469 45.501701, -90.822495 45.501702, -90.827614 45.501865, -90.82756 45.503955, -90.827525 45.505284, -90.827525 45.50529, -90.827527 45.505311, -90.827528 45.505318, -90.827483 45.507061, -90.827432 45.509052, -90.824193 45.508985, -90.82245 45.50895, -90.82244 45.50954, -90.82244 45.509614, -90.82245 45.51093, -90.822485 45.511606, -90.82249 45.5117, -90.82249 45.51206, -90.82251 45.51227, -90.82251 45.512299, -90.82251 45.512386, -90.82251 45.512416, -90.822414 45.512413, -90.822348 45.512411, -90.822308 45.51241, -90.822129 45.512404, -90.822034 45.512401, -90.820804 45.512362, -90.820037 45.512337, -90.819769 45.512328, -90.817089 45.512244, -90.81617 45.512215, -90.814047 45.512148, -90.812118 45.512087, -90.812051 45.512085, -90.812028 45.512084, -90.810012 45.51202, -90.806978 45.511924, -90.803895 45.511826, -90.803542 45.511815, -90.801856 45.511762, -90.80183 45.51127, -90.801832 45.511178, -90.80184 45.51085, -90.80184 45.51036, -90.80185 45.50998, -90.80183 45.50945, -90.80183 45.509428, -90.80183 45.5091, -90.80182 45.50897, -90.801815 45.508845, -90.801807 45.508672, -90.801786 45.508153, -90.801779 45.507981, -90.801779 45.507955, -90.801782 45.50788, -90.801783 45.507855, -90.801798 45.506435, -90.801844 45.502179, -90.80186 45.50076))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).min AS slope\nFROM region_slope;",
+  "id": "min_slope+area-12",
+  "model_output": "```sql\nWITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Ingram'\n    AND border_type = 'city'\n    AND addr_state = 'Wisconsin'\n  LIMIT 1\n)\nSELECT MIN(slope) AS min_slope\nFROM (\n  SELECT (ST_Slope(r.rast, 1, '32BF')) AS slope_rast\n  FROM public.dem_us r\n  JOIN region_geom g\n    ON ST_Intersects(r.rast, g.geom)\n) AS slope_rast,\nLATERAL ST_DumpAsPolygons(slope_rast) AS (\n  path,\n  geom,\n  slope\n)\nWHERE slope IS NOT NULL;\n```",
+  "predicted_exec": {
+    "error": "syntax error at or near \",\"\nLINE 17:   path,\n               ^",
+    "output": []
+  },
+  "predicted_sql": "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Ingram'\n    AND border_type = 'city'\n    AND addr_state = 'Wisconsin'\n  LIMIT 1\n)\nSELECT MIN(slope) AS min_slope\nFROM (\n  SELECT (ST_Slope(r.rast, 1, '32BF')) AS slope_rast\n  FROM public.dem_us r\n  JOIN region_geom g\n    ON ST_Intersects(r.rast, g.geom)\n) AS slope_rast,\nLATERAL ST_DumpAsPolygons(slope_rast) AS (\n  path,\n  geom,\n  slope\n)\nWHERE slope IS NOT NULL;",
+  "predicted_sql_candidates": [
+    "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Ingram'\n    AND border_type = 'city'\n    AND addr_state = 'Wisconsin'\n  LIMIT 1\n)\nSELECT MIN(slope) AS min_slope\nFROM (\n  SELECT (ST_Slope(r.rast, 1, '32BF')) AS slope_rast\n  FROM public.dem_us r\n  JOIN region_geom g\n    ON ST_Intersects(r.rast, g.geom)\n) AS slope_rast,\nLATERAL ST_DumpAsPolygons(slope_rast) AS (\n  path,\n  geom,\n  slope\n)\nWHERE slope IS NOT NULL;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the minimum slope in Ingram, Wisconsin?",
+  "source_file": "min_slope+area.jsonl",
+  "source_stem": "min_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 32.647,
+    "total_seconds": 32.648
+  },
+  "usage": {
+    "completion_tokens": 153,
+    "prompt_tokens": 1514,
+    "total_tokens": 1667
+  }
+}

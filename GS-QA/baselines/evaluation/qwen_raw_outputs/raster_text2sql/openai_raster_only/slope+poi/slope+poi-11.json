@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope_degrees": 3.483866
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope_degrees": 3.483866
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-81.221948 35.663044)',4326) AS pt\n),\npatch AS (\n  SELECT ST_Buffer(pt::geography, 100)::geometry AS g FROM origin\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, p.g)) AS rast\n  FROM public.dem_us d\n  JOIN patch p ON ST_Intersects(d.rast, p.g)\n),\nslope_rast AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n)\nSELECT ST_Value(s.rast, 1, o.pt) AS slope_degrees\nFROM slope_rast s, origin o;",
+  "id": "slope+poi-11",
+  "model_output": "```sql\nWITH museum_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-81.221948, 35.663044), 4326)::geography AS geom\n),\nraster_clip AS (\n  SELECT \n    ST_Clip(\n      r.rast, \n      1, \n      ST_Buffer(ST_Transform(m.geom, 4326)::geometry, 100), \n      TRUE\n    ) AS clipped_rast\n  FROM \n    public.dem_us r,\n    museum_point m\n  WHERE \n    ST_Intersects(\n      r.rast, \n      ST_Transform(ST_Buffer(m.geom, 100), 4326)::geometry\n    )\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(clipped_rast, 1, '32BF', TRUE) AS slope_rast\n  FROM \n    raster_clip\n)\nSELECT \n  ROUND(ST_Statistics(slope_rast, 1).mean::numeric, 2) AS average_slope_degrees\nFROM \n  slope_raster s;\n```",
+  "predicted_exec": {
+    "error": "syntax error at or near \".\"\nLINE 28:   ROUND(ST_Statistics(slope_rast, 1).mean::numeric, 2) AS av...\n                                             ^",
+    "output": []
+  },
+  "predicted_sql": "WITH museum_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-81.221948, 35.663044), 4326)::geography AS geom\n),\nraster_clip AS (\n  SELECT \n    ST_Clip(\n      r.rast, \n      1, \n      ST_Buffer(ST_Transform(m.geom, 4326)::geometry, 100), \n      TRUE\n    ) AS clipped_rast\n  FROM \n    public.dem_us r,\n    museum_point m\n  WHERE \n    ST_Intersects(\n      r.rast, \n      ST_Transform(ST_Buffer(m.geom, 100), 4326)::geometry\n    )\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(clipped_rast, 1, '32BF', TRUE) AS slope_rast\n  FROM \n    raster_clip\n)\nSELECT \n  ROUND(ST_Statistics(slope_rast, 1).mean::numeric, 2) AS average_slope_degrees\nFROM \n  slope_raster s;",
+  "predicted_sql_candidates": [
+    "WITH museum_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-81.221948, 35.663044), 4326)::geography AS geom\n),\nraster_clip AS (\n  SELECT \n    ST_Clip(\n      r.rast, \n      1, \n      ST_Buffer(ST_Transform(m.geom, 4326)::geometry, 100), \n      TRUE\n    ) AS clipped_rast\n  FROM \n    public.dem_us r,\n    museum_point m\n  WHERE \n    ST_Intersects(\n      r.rast, \n      ST_Transform(ST_Buffer(m.geom, 100), 4326)::geometry\n    )\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(clipped_rast, 1, '32BF', TRUE) AS slope_rast\n  FROM \n    raster_clip\n)\nSELECT \n  ROUND(ST_Statistics(slope_rast, 1).mean::numeric, 2) AS average_slope_degrees\nFROM \n  slope_raster s;"
+  ],
+  "query_type": "raster_only",
+  "question": "How steep is the terrain at Catawba County Historical Museum, Newton, NC?",
+  "source_file": "slope+poi.jsonl",
+  "source_stem": "slope+poi",
+  "timing": {
+    "execution_seconds": 0.0,
+    "generation_seconds": 54.573,
+    "total_seconds": 54.573
+  },
+  "usage": {
+    "completion_tokens": 241,
+    "prompt_tokens": 1610,
+    "total_tokens": 1851
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 858.745087
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 858.745087
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-100.946058 34.312765, -100.946556 34.312761, -101.006426 34.312576, -101.041453 34.312403, -101.107752 34.312259, -101.288655 34.312286, -101.471619 34.312362, -101.471887 34.470131, -101.471378 34.609304, -101.471326 34.625071, -101.471476 34.748322, -101.424281 34.748576, -101.28159 34.748312, -101.090752 34.748382, -100.944877 34.748296, -100.945199 34.593179, -100.945556 34.453138, -100.946058 34.312765))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).mean AS elevation\nFROM clipped;",
+  "id": "elevation_mean+region-5",
+  "model_output": "```sql\nWITH briscoe_county_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Briscoe County' AND border_type = 'county'\n),\nclipped_dem AS (\n  SELECT\n    ST_Clip(rast, (SELECT geom FROM briscoe_county_geom), true) AS clipped_raster\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM briscoe_county_geom))\n)\nSELECT\n  ROUND(AVG(ST_Value(clipped_raster, 1))::numeric, 2) AS avg_elevation\nFROM clipped_dem;\n```",
+  "predicted_exec": {
+    "error": "function st_value(raster, integer) does not exist\nLINE 13:   ROUND(AVG(ST_Value(clipped_raster, 1))::numeric, 2) AS avg...\n                     ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH briscoe_county_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Briscoe County' AND border_type = 'county'\n),\nclipped_dem AS (\n  SELECT\n    ST_Clip(rast, (SELECT geom FROM briscoe_county_geom), true) AS clipped_raster\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM briscoe_county_geom))\n)\nSELECT\n  ROUND(AVG(ST_Value(clipped_raster, 1))::numeric, 2) AS avg_elevation\nFROM clipped_dem;",
+  "predicted_sql_candidates": [
+    "WITH briscoe_county_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Briscoe County' AND border_type = 'county'\n),\nclipped_dem AS (\n  SELECT\n    ST_Clip(rast, (SELECT geom FROM briscoe_county_geom), true) AS clipped_raster\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM briscoe_county_geom))\n)\nSELECT\n  ROUND(AVG(ST_Value(clipped_raster, 1))::numeric, 2) AS avg_elevation\nFROM clipped_dem;"
+  ],
+  "query_type": "raster_only",
+  "question": "How high is Briscoe County, Texas on average?",
+  "source_file": "elevation_mean+region.jsonl",
+  "source_stem": "elevation_mean+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 29.203,
+    "total_seconds": 29.204
+  },
+  "usage": {
+    "completion_tokens": 137,
+    "prompt_tokens": 1516,
+    "total_tokens": 1653
+  }
+}

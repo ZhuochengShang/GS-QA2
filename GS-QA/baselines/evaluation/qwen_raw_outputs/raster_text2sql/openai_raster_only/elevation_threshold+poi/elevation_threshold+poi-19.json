@@ -1,0 +1,61 @@
+{
+  "answer_type": "yes-no",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "yes-no",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer": "no",
+      "elevation_m": 20.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer": "no",
+        "elevation_m": 20.0
+      }
+    ]
+  },
+  "gold_sql": "SELECT\n  CASE\n    WHEN ST_Value(d.rast, 1, ST_GeomFromText('POINT (-73.944251 40.728028)',4326)) > 260\n    THEN 'yes' ELSE 'no'\n  END AS answer,\n  ST_Value(d.rast, 1, ST_GeomFromText('POINT (-73.944251 40.728028)',4326)) AS elevation_m\nFROM public.dem_us d\nWHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-73.944251 40.728028)',4326))\nLIMIT 1;",
+  "id": "elevation_threshold+poi-19",
+  "model_output": "```sql\nWITH hotel_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-73.944251 40.728028)'), 4326)::geography AS geom\n)\nSELECT \n  CASE \n    WHEN MAX(elevation) > 260 THEN 'yes'\n    ELSE 'no'\n  END AS answer\nFROM (\n  SELECT \n    (ST_Value(r.rast, 1, ST_Transform(h.geom, 4326))) AS elevation\n  FROM \n    hotel_geom h,\n    public.dem_us r\n  WHERE \n    ST_Intersects(r.rast, ST_Transform(h.geom, 4326))\n) subquery;\n```",
+  "predicted_exec": {
+    "error": "function st_transform(geography, integer) does not exist\nLINE 11:     (ST_Value(r.rast, 1, ST_Transform(h.geom, 4326))) AS ele...\n                                  ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH hotel_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-73.944251 40.728028)'), 4326)::geography AS geom\n)\nSELECT \n  CASE \n    WHEN MAX(elevation) > 260 THEN 'yes'\n    ELSE 'no'\n  END AS answer\nFROM (\n  SELECT \n    (ST_Value(r.rast, 1, ST_Transform(h.geom, 4326))) AS elevation\n  FROM \n    hotel_geom h,\n    public.dem_us r\n  WHERE \n    ST_Intersects(r.rast, ST_Transform(h.geom, 4326))\n) subquery;",
+  "predicted_sql_candidates": [
+    "WITH hotel_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-73.944251 40.728028)'), 4326)::geography AS geom\n)\nSELECT \n  CASE \n    WHEN MAX(elevation) > 260 THEN 'yes'\n    ELSE 'no'\n  END AS answer\nFROM (\n  SELECT \n    (ST_Value(r.rast, 1, ST_Transform(h.geom, 4326))) AS elevation\n  FROM \n    hotel_geom h,\n    public.dem_us r\n  WHERE \n    ST_Intersects(r.rast, ST_Transform(h.geom, 4326))\n) subquery;"
+  ],
+  "query_type": "raster_only",
+  "question": "Is The Henry Norman Hotel, Brooklyn, NY more than 260 meters in elevation?",
+  "source_file": "elevation_threshold+poi.jsonl",
+  "source_stem": "elevation_threshold+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 34.139,
+    "total_seconds": 34.14
+  },
+  "usage": {
+    "completion_tokens": 160,
+    "prompt_tokens": 1626,
+    "total_tokens": 1786
+  }
+}

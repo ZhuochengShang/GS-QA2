@@ -1,0 +1,59 @@
+{
+  "answer_type": "aspect",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "aspect",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "aspect_degrees": 164.744888
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "aspect_degrees": 164.744888
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-119.695763 34.419304)',4326) AS pt\n),\npatch AS (\n  SELECT ST_Buffer(pt::geography, 100)::geometry AS g FROM origin\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, p.g)) AS rast\n  FROM public.dem_us d\n  JOIN patch p ON ST_Intersects(d.rast, p.g)\n),\naspect_rast AS (\n  SELECT ST_Aspect(rast, 1, '32BF', 'DEGREES') AS rast\n  FROM clipped_dem\n)\nSELECT ST_Value(a.rast, 1, o.pt) AS aspect_degrees\nFROM aspect_rast a, origin o;",
+  "id": "aspect+poi-14",
+  "model_output": "```sql\nWITH geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-119.695763, 34.419304), 4326)::geography AS point_geom\n),\nraster_clip AS (\n  SELECT\n    ST_Clip(\n      r.rast,\n      ST_Transform(ST_SetSRID(ST_MakePoint(-119.695763, 34.419304), 4326), 4326)::geometry,\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast,\n    ST_Transform(ST_SetSRID(ST_MakePoint(-119.695763, 34.419304), 4326), 4326)::geometry\n  )\n),\naspect_raster AS (\n  SELECT\n    ST_Aspect(clipped_rast, 1) AS aspect_rast\n  FROM raster_clip\n),\naspect_value AS (\n  SELECT\n    ST_Value(aspect_rast, ST_Transform(ST_SetSRID(ST_MakePoint(-119.695763, 34.419304), 4326), 4326)::geometry) AS aspect_deg\n  FROM aspect_raster\n)\nSELECT\n  CASE\n    WHEN aspect_deg IS NULL THEN 'No data available'\n    ELSE aspect_deg::text\n  END AS terrain_aspect_degrees;\n```",
+  "predicted_exec": {
+    "error": "column \"aspect_deg\" does not exist\nLINE 29:     WHEN aspect_deg IS NULL THEN 'No data available'\n                  ^",
+    "output": []
+  },
+  "predicted_sql": "WITH geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-119.695763, 34.419304), 4326)::geography AS point_geom\n),\nraster_clip AS (\n  SELECT\n    ST_Clip(\n      r.rast,\n      ST_Transform(ST_SetSRID(ST_MakePoint(-119.695763, 34.419304), 4326), 4326)::geometry,\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast,\n    ST_Transform(ST_SetSRID(ST_MakePoint(-119.695763, 34.419304), 4326), 4326)::geometry\n  )\n),\naspect_raster AS (\n  SELECT\n    ST_Aspect(clipped_rast, 1) AS aspect_rast\n  FROM raster_clip\n),\naspect_value AS (\n  SELECT\n    ST_Value(aspect_rast, ST_Transform(ST_SetSRID(ST_MakePoint(-119.695763, 34.419304), 4326), 4326)::geometry) AS aspect_deg\n  FROM aspect_raster\n)\nSELECT\n  CASE\n    WHEN aspect_deg IS NULL THEN 'No data available'\n    ELSE aspect_deg::text\n  END AS terrain_aspect_degrees;",
+  "predicted_sql_candidates": [
+    "WITH geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-119.695763, 34.419304), 4326)::geography AS point_geom\n),\nraster_clip AS (\n  SELECT\n    ST_Clip(\n      r.rast,\n      ST_Transform(ST_SetSRID(ST_MakePoint(-119.695763, 34.419304), 4326), 4326)::geometry,\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast,\n    ST_Transform(ST_SetSRID(ST_MakePoint(-119.695763, 34.419304), 4326), 4326)::geometry\n  )\n),\naspect_raster AS (\n  SELECT\n    ST_Aspect(clipped_rast, 1) AS aspect_rast\n  FROM raster_clip\n),\naspect_value AS (\n  SELECT\n    ST_Value(aspect_rast, ST_Transform(ST_SetSRID(ST_MakePoint(-119.695763, 34.419304), 4326), 4326)::geometry) AS aspect_deg\n  FROM aspect_raster\n)\nSELECT\n  CASE\n    WHEN aspect_deg IS NULL THEN 'No data available'\n    ELSE aspect_deg::text\n  END AS terrain_aspect_degrees;"
+  ],
+  "query_type": "raster_only",
+  "question": "In what direction does the terrain face at Antioch University - Santa Barbara, Santa Barbara, CA, measured in degrees from north?",
+  "source_file": "aspect+poi.jsonl",
+  "source_stem": "aspect+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 74.559,
+    "total_seconds": 74.56
+  },
+  "usage": {
+    "completion_tokens": 340,
+    "prompt_tokens": 1635,
+    "total_tokens": 1975
+  }
+}

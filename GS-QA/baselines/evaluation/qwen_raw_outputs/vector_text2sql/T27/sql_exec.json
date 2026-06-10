@@ -1,0 +1,1242 @@
+[
+  {
+    "id": 200,
+    "records": [
+      {
+        "output": [
+          {
+            "total_park_area": 119135974.84608884
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 95.457
+  },
+  {
+    "id": 201,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 3.888
+  },
+  {
+    "id": 202,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 299151935.01076967
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 64.522
+  },
+  {
+    "id": 203,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.135
+  },
+  {
+    "id": 204,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 205,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_envelope(geography) does not exist\nLINE 2: SELECT SUM(ST_Area(ST_Envelope(geometry)::geography)) AS tot...\n                           ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 206,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 207,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 208,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 1779977.6790523678
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.393
+  },
+  {
+    "id": 209,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 210,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 211,
+    "records": [
+      {
+        "output": [
+          {
+            "total_golf_course_area": 297687144.8457451
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 39.065
+  },
+  {
+    "id": 212,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_union(geography) does not exist\nLINE 2: SELECT SUM(ST_Area(ST_Union(p.geometry::geography))) AS tota...\n                           ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 213,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 214,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 1035481.7059740571
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.337
+  },
+  {
+    "id": 215,
+    "records": [
+      {
+        "output": [
+          {
+            "total_park_area": 866978466.5313387
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 125.033
+  },
+  {
+    "id": 216,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 217,
+    "records": [
+      {
+        "output": [],
+        "error": "column regions.addr_state does not exist\nLINE 4: ...HERE regions.region_name ILIKE '%Bear Creek%' AND regions.ad...\n                                                             ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 218,
+    "records": [
+      {
+        "output": [],
+        "error": "syntax error at or near \";\"\nLINE 24:                     );\n                              ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 219,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 220,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 221,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 203882.56176036724
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 3.448
+  },
+  {
+    "id": 222,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.175
+  },
+  {
+    "id": 223,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 224,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 4.698
+  },
+  {
+    "id": 225,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 211233.98669860512
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 1.713
+  },
+  {
+    "id": 226,
+    "records": [
+      {
+        "output": [
+          {
+            "total_golf_course_area": 26435365.24019999
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 1.578
+  },
+  {
+    "id": 227,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 76063191.94252527
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 135.235
+  },
+  {
+    "id": 228,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 18036467607.11251
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 6.319
+  },
+  {
+    "id": 229,
+    "records": [
+      {
+        "output": [
+          {
+            "total_park_area": 9572161527.400784
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 324.456
+  },
+  {
+    "id": 230,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 231,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 232,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.144
+  },
+  {
+    "id": 233,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 1436131.3954402339
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 2.422
+  },
+  {
+    "id": 234,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 3701.9365310368885
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 5.297
+  },
+  {
+    "id": 235,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.142
+  },
+  {
+    "id": 236,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 237,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_union(geography) does not exist\nLINE 2: SELECT ST_Area(ST_Union(parks.geometry)::geography) AS total...\n                       ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 238,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 1706.6987021118402
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 1.169
+  },
+  {
+    "id": 239,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 2572083138.673627
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 5.897
+  },
+  {
+    "id": 240,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_union(geography) does not exist\nLINE 2: SELECT ST_Area(ST_Union(lakes.geometry::geography)) AS total...\n                       ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 241,
+    "records": [
+      {
+        "output": [
+          {
+            "total_footprint": 39918.62884834409
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 23.401
+  },
+  {
+    "id": 242,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_envelope(geography) does not exist\nLINE 2: SELECT SUM(ST_Area(ST_Envelope(lakes.geometry)::geography)) ...\n                           ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 243,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 1.645
+  },
+  {
+    "id": 244,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.138
+  },
+  {
+    "id": 245,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 220919.3455720544
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 3.237
+  },
+  {
+    "id": 246,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 123677784.76879962
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 7.39
+  },
+  {
+    "id": 247,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 248,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 249,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.164
+  },
+  {
+    "id": 250,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_union(geography) does not exist\nLINE 2: SELECT ST_Area(ST_Union(p.geometry::geography)) AS total_are...\n                       ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 251,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 118907317.77257746
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 138.753
+  },
+  {
+    "id": 252,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.194
+  },
+  {
+    "id": 253,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_union(geography) does not exist\nLINE 2: SELECT ST_Area(ST_Union(parks.geometry::geography)) AS total...\n                       ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 254,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_union(geography) does not exist\nLINE 2: SELECT SUM(ST_Area(ST_Union(geometry::geography))) AS total_...\n                           ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 255,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 2.946
+  },
+  {
+    "id": 256,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.756
+  },
+  {
+    "id": 257,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_union(geography) does not exist\nLINE 2: SELECT SUM(ST_Area(ST_Union(parks.geometry::geography))) AS ...\n                           ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 258,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 259,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 2.553
+  },
+  {
+    "id": 260,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 261,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 41803500.67235426
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 166.447
+  },
+  {
+    "id": 262,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 263,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 264,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 265,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 266,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 2991550.8277938114
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 165.536
+  },
+  {
+    "id": 267,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_union(geography) does not exist\nLINE 2: SELECT SUM(ST_Area(ST_Union(lakes.geometry::geography))) AS ...\n                           ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 268,
+    "records": [
+      {
+        "output": [
+          {
+            "total_park_area": 3921467.618741487
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 153.032
+  },
+  {
+    "id": 269,
+    "records": [
+      {
+        "output": [
+          {
+            "total_footprint": 44409.82882961027
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 2.804
+  },
+  {
+    "id": 270,
+    "records": [
+      {
+        "output": [],
+        "error": "column regions.addr_state does not exist\nLINE 5: ...HERE regions.region_name ILIKE '%Santa Rosa%' AND regions.ad...\n                                                             ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 271,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 67306867.9062444
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 9.219
+  },
+  {
+    "id": 272,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_union(geography) does not exist\nLINE 2: SELECT SUM(ST_Area(ST_Union(parks.geometry::geography))) AS ...\n                           ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 273,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 1287034784455.3308
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 8.182
+  },
+  {
+    "id": 274,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 275,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.142
+  },
+  {
+    "id": 276,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 9262219002.090485
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 4.731
+  },
+  {
+    "id": 277,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 2.261
+  },
+  {
+    "id": 278,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 279,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 5.124
+  },
+  {
+    "id": 280,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 281,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_envelope(geography) does not exist\nLINE 2: SELECT SUM(ST_Area(ST_Envelope(geometry)::geography)) AS tot...\n                           ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 282,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 283,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 284,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 42831601.68582989
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 128.538
+  },
+  {
+    "id": 285,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 6022446.420280782
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 4.524
+  },
+  {
+    "id": 286,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 840168.6784158489
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 1.078
+  },
+  {
+    "id": 287,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 26570416.289734054
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 2.326
+  },
+  {
+    "id": 288,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 32096.980627006735
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 7.548
+  },
+  {
+    "id": 289,
+    "records": [
+      {
+        "output": [],
+        "error": "function st_union(geography) does not exist\nLINE 2: SELECT ST_Area(ST_Union(parks.geometry)::geography) AS total...\n                       ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 290,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 18665506091.650726
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 10.656
+  },
+  {
+    "id": 291,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 22269372.043146174
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.261
+  },
+  {
+    "id": 292,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 877052.4508791056
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 1.424
+  },
+  {
+    "id": 293,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.138
+  },
+  {
+    "id": 294,
+    "records": [
+      {
+        "output": [
+          {
+            "total_area": 9.371383432036964
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 2.901
+  },
+  {
+    "id": 295,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"lake\"\nLINE 2: SELECT SUM(ST_Area(lake.geometry::geography)) AS total_area\n                           ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 296,
+    "records": [
+      {
+        "output": [
+          {
+            "total_park_area": 1442826.8377001006
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 97.183
+  },
+  {
+    "id": 297,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 298,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 3.916
+  },
+  {
+    "id": 299,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.001
+  }
+]

@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope_degrees": 2.200142
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope_degrees": 2.200142
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-73.944251 40.728028)',4326) AS pt\n),\npatch AS (\n  SELECT ST_Buffer(pt::geography, 100)::geometry AS g FROM origin\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, p.g)) AS rast\n  FROM public.dem_us d\n  JOIN patch p ON ST_Intersects(d.rast, p.g)\n),\nslope_rast AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n)\nSELECT ST_Value(s.rast, 1, o.pt) AS slope_degrees\nFROM slope_rast s, origin o;",
+  "id": "slope+poi-13",
+  "model_output": "```sql\nWITH hotel_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-73.944251, 40.728028), 4326)::geography AS geom\n),\ndem_clip AS (\n  SELECT \n    ST_Clip(rast, ST_Buffer(ST_Transform(h.geom::geometry, 4326)::geography, 100)::geometry, true) AS clipped_rast\n  FROM \n    public.dem_us r,\n    hotel_geom h\n  WHERE \n    ST_Intersects(r.rast, ST_Transform(h.geom::geometry, r.rast::POSTGIS_RASTER).srid)\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM \n    dem_clip\n),\nslope_value AS (\n  SELECT \n    ST_Value(slope_rast, 1, ST_Centroid(ST_Transform(h.geom::geometry, 4326)::geometry)) AS slope_deg\n  FROM \n    slope_raster, hotel_geom h\n)\nSELECT \n  slope_deg AS slope_degrees\nFROM \n  slope_value;\n```",
+  "predicted_exec": {
+    "error": "syntax error at or near \".\"\nLINE 11: ...ST_Transform(h.geom::geometry, r.rast::POSTGIS_RASTER).srid)\n                                                                  ^",
+    "output": []
+  },
+  "predicted_sql": "WITH hotel_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-73.944251, 40.728028), 4326)::geography AS geom\n),\ndem_clip AS (\n  SELECT \n    ST_Clip(rast, ST_Buffer(ST_Transform(h.geom::geometry, 4326)::geography, 100)::geometry, true) AS clipped_rast\n  FROM \n    public.dem_us r,\n    hotel_geom h\n  WHERE \n    ST_Intersects(r.rast, ST_Transform(h.geom::geometry, r.rast::POSTGIS_RASTER).srid)\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM \n    dem_clip\n),\nslope_value AS (\n  SELECT \n    ST_Value(slope_rast, 1, ST_Centroid(ST_Transform(h.geom::geometry, 4326)::geometry)) AS slope_deg\n  FROM \n    slope_raster, hotel_geom h\n)\nSELECT \n  slope_deg AS slope_degrees\nFROM \n  slope_value;",
+  "predicted_sql_candidates": [
+    "WITH hotel_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-73.944251, 40.728028), 4326)::geography AS geom\n),\ndem_clip AS (\n  SELECT \n    ST_Clip(rast, ST_Buffer(ST_Transform(h.geom::geometry, 4326)::geography, 100)::geometry, true) AS clipped_rast\n  FROM \n    public.dem_us r,\n    hotel_geom h\n  WHERE \n    ST_Intersects(r.rast, ST_Transform(h.geom::geometry, r.rast::POSTGIS_RASTER).srid)\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM \n    dem_clip\n),\nslope_value AS (\n  SELECT \n    ST_Value(slope_rast, 1, ST_Centroid(ST_Transform(h.geom::geometry, 4326)::geometry)) AS slope_deg\n  FROM \n    slope_raster, hotel_geom h\n)\nSELECT \n  slope_deg AS slope_degrees\nFROM \n  slope_value;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the gradient of the terrain at The Henry Norman Hotel, Brooklyn, NY?",
+  "source_file": "slope+poi.jsonl",
+  "source_stem": "slope+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 57.499,
+    "total_seconds": 57.5
+  },
+  "usage": {
+    "completion_tokens": 257,
+    "prompt_tokens": 1605,
+    "total_tokens": 1862
+  }
+}

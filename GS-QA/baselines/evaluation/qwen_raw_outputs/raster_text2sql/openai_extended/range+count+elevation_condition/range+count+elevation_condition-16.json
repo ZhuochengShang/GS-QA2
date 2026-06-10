@@ -1,0 +1,59 @@
+{
+  "answer_type": "count, POIs -> Points",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "count, POIs -> Points",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "count": 0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "count": 0
+      }
+    ]
+  },
+  "gold_sql": "WITH candidates AS (\n  SELECT p.id, p.geometry\n  FROM pois p\n  WHERE ST_DWithin(p.geometry::geography, ST_GeomFromText('POINT (-74.327266 39.910289)',4326)::geography, 4500)\n    AND p.amenity = 'restaurant'\n),\npoi_elev AS (\n  SELECT c.id, elev.z\n  FROM candidates c\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, c.geometry::geometry) AS z\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, c.geometry::geometry)\n    LIMIT 1\n  ) elev ON elev.z IS NOT NULL\n)\nSELECT COUNT(*) AS count\nFROM poi_elev\nWHERE z <= 320;",
+  "id": "range+count+elevation_condition-16",
+  "model_output": "```sql\nWITH refuge_point AS (\n  SELECT \n    ST_SetSRID(ST_MakePoint(-74.327266, 39.910289), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT \n    ST_Buffer(geom, 4500) AS geom\n  FROM refuge_point\n),\nelevation_clip AS (\n  SELECT \n    ST_Clip(rast, 1, (SELECT geom FROM buffered_area), TRUE) AS clipped_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM buffered_area))\n),\nelevation_condition AS (\n  SELECT \n    (ST_SummaryStats(clipped_rast, TRUE)).*\n  FROM elevation_clip\n),\nvalid_restaurants AS (\n  SELECT \n    p.id\n  FROM pois p\n  WHERE \n    p.amenity = 'restaurant' AND\n    ST_DWithin(p.geometry::geography, (SELECT geom FROM buffered_area), 0) AND\n    ST_Value(\n      (SELECT clipped_rast FROM elevation_clip),\n      p.geometry::geometry,\n      TRUE\n    ) <= 320\n)\nSELECT COUNT(*) AS restaurant_count\nFROM valid_restaurants;\n```",
+  "predicted_exec": {
+    "error": "function st_clip(raster, integer, geography, boolean) does not exist\nLINE 12:     ST_Clip(rast, 1, (SELECT geom FROM buffered_area), TRUE)...\n             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH refuge_point AS (\n  SELECT \n    ST_SetSRID(ST_MakePoint(-74.327266, 39.910289), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT \n    ST_Buffer(geom, 4500) AS geom\n  FROM refuge_point\n),\nelevation_clip AS (\n  SELECT \n    ST_Clip(rast, 1, (SELECT geom FROM buffered_area), TRUE) AS clipped_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM buffered_area))\n),\nelevation_condition AS (\n  SELECT \n    (ST_SummaryStats(clipped_rast, TRUE)).*\n  FROM elevation_clip\n),\nvalid_restaurants AS (\n  SELECT \n    p.id\n  FROM pois p\n  WHERE \n    p.amenity = 'restaurant' AND\n    ST_DWithin(p.geometry::geography, (SELECT geom FROM buffered_area), 0) AND\n    ST_Value(\n      (SELECT clipped_rast FROM elevation_clip),\n      p.geometry::geometry,\n      TRUE\n    ) <= 320\n)\nSELECT COUNT(*) AS restaurant_count\nFROM valid_restaurants;",
+  "predicted_sql_candidates": [
+    "WITH refuge_point AS (\n  SELECT \n    ST_SetSRID(ST_MakePoint(-74.327266, 39.910289), 4326)::geography AS geom\n),\nbuffered_area AS (\n  SELECT \n    ST_Buffer(geom, 4500) AS geom\n  FROM refuge_point\n),\nelevation_clip AS (\n  SELECT \n    ST_Clip(rast, 1, (SELECT geom FROM buffered_area), TRUE) AS clipped_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM buffered_area))\n),\nelevation_condition AS (\n  SELECT \n    (ST_SummaryStats(clipped_rast, TRUE)).*\n  FROM elevation_clip\n),\nvalid_restaurants AS (\n  SELECT \n    p.id\n  FROM pois p\n  WHERE \n    p.amenity = 'restaurant' AND\n    ST_DWithin(p.geometry::geography, (SELECT geom FROM buffered_area), 0) AND\n    ST_Value(\n      (SELECT clipped_rast FROM elevation_clip),\n      p.geometry::geometry,\n      TRUE\n    ) <= 320\n)\nSELECT COUNT(*) AS restaurant_count\nFROM valid_restaurants;"
+  ],
+  "query_type": "extended",
+  "question": "What's the count of restaurants within 4500 meters from the location Popcorn Park Animal Refuge, Forked River, NJ at no more than 320 m elevation?",
+  "source_file": "range+count+elevation_condition.jsonl",
+  "source_stem": "range+count+elevation_condition",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 56.71,
+    "total_seconds": 56.711
+  },
+  "usage": {
+    "completion_tokens": 265,
+    "prompt_tokens": 1799,
+    "total_tokens": 2064
+  }
+}

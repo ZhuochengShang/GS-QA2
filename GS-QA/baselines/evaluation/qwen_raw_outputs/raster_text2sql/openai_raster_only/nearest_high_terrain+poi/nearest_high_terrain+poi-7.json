@@ -1,0 +1,59 @@
+{
+  "answer_type": "distance",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "distance",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "distance_m": 15.623887
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "distance_m": 15.623887
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-79.405425 38.70907)',4326) AS pt\n),\nnearby_tiles AS (\n  SELECT d.rast\n  FROM public.dem_us d, origin o\n  WHERE d.rast && ST_Expand(o.pt, 1.0)\n),\nmasked AS (\n\t  SELECT ST_MapAlgebra(\n\t           rast,\n\t           1,\n\t           '32BF'::text,\n\t           'CASE WHEN [rast.val] > 1000 THEN [rast.val] ELSE NULL END'::text,\n\t           NULL::double precision\n\t         ) AS rast\n  FROM nearby_tiles\n),\nqualifying_pixels AS (\n  SELECT (pp).geom AS geom\n  FROM masked\n  CROSS JOIN LATERAL ST_PixelAsCentroids(rast, 1, TRUE) AS pp\n)\nSELECT MIN(ST_Distance(p.geom::geography, o.pt::geography)) AS distance_m\nFROM qualifying_pixels p, origin o;",
+  "id": "nearest_high_terrain+poi-7",
+  "model_output": "```sql\nWITH uni_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-79.405425 38.70907)'), 4326)::geography AS geom\n),\nelev_rast AS (\n  SELECT rast\n  FROM public.dem_us\n  WHERE ST_Intersects(\n    rast,\n    ST_Transform(ST_SetSRID(ST_GeomFromText('POINT (-79.405425 38.70907)'), 4326), 4326)\n  )\n),\nfiltered_cells AS (\n  SELECT\n    (ST_DumpAsPolygons(ST_Clip(rast, true, ST_Buffer(ST_Transform(uni_geom.geom, 4326), 10000, 'quad_segs=8')))).geom AS cell_geom,\n    (ST_DumpAsPolygons(ST_Clip(rast, true, ST_Buffer(ST_Transform(uni_geom.geom, 4326), 10000, 'quad_segs=8')))).val AS elevation\n  FROM elev_rast, uni_geom\n),\nabove_1000 AS (\n  SELECT cell_geom\n  FROM filtered_cells\n  WHERE elevation > 1000\n),\nnearest_cell AS (\n  SELECT ST_Distance(uni_geom.geom, cell_geom) AS distance_meters\n  FROM uni_geom, above_1000\n  ORDER BY distance_meters\n  LIMIT 1\n)\nSELECT distance_meters AS distance_to_nearest_cell_above_1000m\nFROM nearest_cell;\n```",
+  "predicted_exec": {
+    "error": "function st_transform(geography, integer) does not exist\nLINE 14: ... (ST_DumpAsPolygons(ST_Clip(rast, true, ST_Buffer(ST_Transfo...\n                                                              ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH uni_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-79.405425 38.70907)'), 4326)::geography AS geom\n),\nelev_rast AS (\n  SELECT rast\n  FROM public.dem_us\n  WHERE ST_Intersects(\n    rast,\n    ST_Transform(ST_SetSRID(ST_GeomFromText('POINT (-79.405425 38.70907)'), 4326), 4326)\n  )\n),\nfiltered_cells AS (\n  SELECT\n    (ST_DumpAsPolygons(ST_Clip(rast, true, ST_Buffer(ST_Transform(uni_geom.geom, 4326), 10000, 'quad_segs=8')))).geom AS cell_geom,\n    (ST_DumpAsPolygons(ST_Clip(rast, true, ST_Buffer(ST_Transform(uni_geom.geom, 4326), 10000, 'quad_segs=8')))).val AS elevation\n  FROM elev_rast, uni_geom\n),\nabove_1000 AS (\n  SELECT cell_geom\n  FROM filtered_cells\n  WHERE elevation > 1000\n),\nnearest_cell AS (\n  SELECT ST_Distance(uni_geom.geom, cell_geom) AS distance_meters\n  FROM uni_geom, above_1000\n  ORDER BY distance_meters\n  LIMIT 1\n)\nSELECT distance_meters AS distance_to_nearest_cell_above_1000m\nFROM nearest_cell;",
+  "predicted_sql_candidates": [
+    "WITH uni_geom AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-79.405425 38.70907)'), 4326)::geography AS geom\n),\nelev_rast AS (\n  SELECT rast\n  FROM public.dem_us\n  WHERE ST_Intersects(\n    rast,\n    ST_Transform(ST_SetSRID(ST_GeomFromText('POINT (-79.405425 38.70907)'), 4326), 4326)\n  )\n),\nfiltered_cells AS (\n  SELECT\n    (ST_DumpAsPolygons(ST_Clip(rast, true, ST_Buffer(ST_Transform(uni_geom.geom, 4326), 10000, 'quad_segs=8')))).geom AS cell_geom,\n    (ST_DumpAsPolygons(ST_Clip(rast, true, ST_Buffer(ST_Transform(uni_geom.geom, 4326), 10000, 'quad_segs=8')))).val AS elevation\n  FROM elev_rast, uni_geom\n),\nabove_1000 AS (\n  SELECT cell_geom\n  FROM filtered_cells\n  WHERE elevation > 1000\n),\nnearest_cell AS (\n  SELECT ST_Distance(uni_geom.geom, cell_geom) AS distance_meters\n  FROM uni_geom, above_1000\n  ORDER BY distance_meters\n  LIMIT 1\n)\nSELECT distance_meters AS distance_to_nearest_cell_above_1000m\nFROM nearest_cell;"
+  ],
+  "query_type": "raster_only",
+  "question": "From Future Generations Univerisity, Franklin, WV, what is the distance to the nearest cell of land above 1000 meters?",
+  "source_file": "nearest_high_terrain+poi.jsonl",
+  "source_stem": "nearest_high_terrain+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 78.475,
+    "total_seconds": 78.476
+  },
+  "usage": {
+    "completion_tokens": 353,
+    "prompt_tokens": 1655,
+    "total_tokens": 2008
+  }
+}

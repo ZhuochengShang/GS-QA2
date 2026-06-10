@@ -1,0 +1,59 @@
+{
+  "answer_type": "distance",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "distance",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "distance_m": 32911.444039
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "distance_m": 32911.444039
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-122.276585 37.773754)',4326) AS pt\n),\nnearby_tiles AS (\n  SELECT d.rast\n  FROM public.dem_us d, origin o\n  WHERE d.rast && ST_Expand(o.pt, 1.0)\n),\nmasked AS (\n\t  SELECT ST_MapAlgebra(\n\t           rast,\n\t           1,\n\t           '32BF'::text,\n\t           'CASE WHEN [rast.val] > 1000 THEN [rast.val] ELSE NULL END'::text,\n\t           NULL::double precision\n\t         ) AS rast\n  FROM nearby_tiles\n),\nqualifying_pixels AS (\n  SELECT (pp).geom AS geom\n  FROM masked\n  CROSS JOIN LATERAL ST_PixelAsCentroids(rast, 1, TRUE) AS pp\n)\nSELECT MIN(ST_Distance(p.geom::geography, o.pt::geography)) AS distance_m\nFROM qualifying_pixels p, origin o;",
+  "id": "nearest_high_terrain+poi-5",
+  "model_output": "```sql\nWITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-122.276585, 37.773754), 4326)::geography AS geom\n),\ndem_clipped AS (\n  SELECT\n    (ST_Clip(rast, 1, ST_Buffer(p.geom::geometry, 10000, 'quad_segs=8'))).geom AS clipped_geom\n  FROM\n    public.dem_us,\n    poi_geom p\n  WHERE\n    ST_Intersects(rast, p.geom::geometry)\n),\nterrain_above_1000 AS (\n  SELECT\n    ST_DumpAsPolygons(clipped_geom, 1) AS (geom geometry, value double precision)\n  FROM\n    dem_clipped\n  WHERE\n    value > 1000\n),\nnearest_point AS (\n  SELECT\n    ST_ClosestPoint(t.geom, p.geom::geometry) AS nearest_point_geom\n  FROM\n    terrain_above_1000 t,\n    poi_geom p\n  ORDER BY\n    ST_Distance(t.geom, p.geom::geometry)\n  LIMIT 1\n)\nSELECT\n  ST_Distance(p.geom::geometry, np.nearest_point_geom) AS distance_meters\nFROM\n  poi_geom p,\n  nearest_point np;\n```",
+  "predicted_exec": {
+    "error": "syntax error at or near \"(\"\nLINE 15:     ST_DumpAsPolygons(clipped_geom, 1) AS (geom geometry, va...\n                                                   ^",
+    "output": []
+  },
+  "predicted_sql": "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-122.276585, 37.773754), 4326)::geography AS geom\n),\ndem_clipped AS (\n  SELECT\n    (ST_Clip(rast, 1, ST_Buffer(p.geom::geometry, 10000, 'quad_segs=8'))).geom AS clipped_geom\n  FROM\n    public.dem_us,\n    poi_geom p\n  WHERE\n    ST_Intersects(rast, p.geom::geometry)\n),\nterrain_above_1000 AS (\n  SELECT\n    ST_DumpAsPolygons(clipped_geom, 1) AS (geom geometry, value double precision)\n  FROM\n    dem_clipped\n  WHERE\n    value > 1000\n),\nnearest_point AS (\n  SELECT\n    ST_ClosestPoint(t.geom, p.geom::geometry) AS nearest_point_geom\n  FROM\n    terrain_above_1000 t,\n    poi_geom p\n  ORDER BY\n    ST_Distance(t.geom, p.geom::geometry)\n  LIMIT 1\n)\nSELECT\n  ST_Distance(p.geom::geometry, np.nearest_point_geom) AS distance_meters\nFROM\n  poi_geom p,\n  nearest_point np;",
+  "predicted_sql_candidates": [
+    "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-122.276585, 37.773754), 4326)::geography AS geom\n),\ndem_clipped AS (\n  SELECT\n    (ST_Clip(rast, 1, ST_Buffer(p.geom::geometry, 10000, 'quad_segs=8'))).geom AS clipped_geom\n  FROM\n    public.dem_us,\n    poi_geom p\n  WHERE\n    ST_Intersects(rast, p.geom::geometry)\n),\nterrain_above_1000 AS (\n  SELECT\n    ST_DumpAsPolygons(clipped_geom, 1) AS (geom geometry, value double precision)\n  FROM\n    dem_clipped\n  WHERE\n    value > 1000\n),\nnearest_point AS (\n  SELECT\n    ST_ClosestPoint(t.geom, p.geom::geometry) AS nearest_point_geom\n  FROM\n    terrain_above_1000 t,\n    poi_geom p\n  ORDER BY\n    ST_Distance(t.geom, p.geom::geometry)\n  LIMIT 1\n)\nSELECT\n  ST_Distance(p.geom::geometry, np.nearest_point_geom) AS distance_meters\nFROM\n  poi_geom p,\n  nearest_point np;"
+  ],
+  "query_type": "raster_only",
+  "question": "How far would you travel from Pacific Pinball Museum, Alameda, CA before reaching terrain higher than 1000 meters?",
+  "source_file": "nearest_high_terrain+poi.jsonl",
+  "source_stem": "nearest_high_terrain+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 62.435,
+    "total_seconds": 62.436
+  },
+  "usage": {
+    "completion_tokens": 286,
+    "prompt_tokens": 1636,
+    "total_tokens": 1922
+  }
+}

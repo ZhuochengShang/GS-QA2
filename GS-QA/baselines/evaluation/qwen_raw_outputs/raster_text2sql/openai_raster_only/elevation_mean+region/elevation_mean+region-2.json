@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 340.48717
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 340.48717
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-94.295841 42.289353, -94.290841 42.289375, -94.290784 42.285921, -94.285977 42.285758, -94.285962 42.282129, -94.2848 42.282086, -94.283475 42.282043, -94.282209 42.282011, -94.28102 42.281998, -94.27675 42.282062, -94.276671 42.275721, -94.271368 42.275108, -94.271361 42.275191, -94.269284 42.275237, -94.269303 42.276657, -94.262278 42.276678, -94.262278 42.274138, -94.269329 42.274895, -94.269317 42.273096, -94.271968 42.273062, -94.271964 42.271314, -94.281077 42.27126, -94.281117 42.268241, -94.28604 42.268257, -94.286011 42.271303, -94.300849 42.271404, -94.30087 42.275281, -94.305603 42.275188, -94.305631 42.282421, -94.301529 42.282488, -94.300707 42.282494, -94.300695 42.286054, -94.295774 42.285962, -94.295841 42.289353))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).mean AS elevation\nFROM clipped;",
+  "id": "elevation_mean+region-2",
+  "model_output": "```sql\nWITH gowrie_geometry AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Gowrie' AND border_type ILIKE 'city'\n)\nSELECT\n  ST_ValueCount(\n    ST_Clip(\n      r.rast,\n      g.geom,\n      TRUE\n    ),\n    TRUE\n  ) AS elevation_stats\nFROM\n  gowrie_geometry g,\n  public.dem_us r\nWHERE\n  ST_Intersects(r.rast, g.geom);\n```",
+  "predicted_exec": {
+    "error": "function st_valuecount(raster, boolean) does not exist\nLINE 7:   ST_ValueCount(\n          ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH gowrie_geometry AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Gowrie' AND border_type ILIKE 'city'\n)\nSELECT\n  ST_ValueCount(\n    ST_Clip(\n      r.rast,\n      g.geom,\n      TRUE\n    ),\n    TRUE\n  ) AS elevation_stats\nFROM\n  gowrie_geometry g,\n  public.dem_us r\nWHERE\n  ST_Intersects(r.rast, g.geom);",
+  "predicted_sql_candidates": [
+    "WITH gowrie_geometry AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Gowrie' AND border_type ILIKE 'city'\n)\nSELECT\n  ST_ValueCount(\n    ST_Clip(\n      r.rast,\n      g.geom,\n      TRUE\n    ),\n    TRUE\n  ) AS elevation_stats\nFROM\n  gowrie_geometry g,\n  public.dem_us r\nWHERE\n  ST_Intersects(r.rast, g.geom);"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the average elevation in Gowrie, Iowa?",
+  "source_file": "elevation_mean+region.jsonl",
+  "source_stem": "elevation_mean+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 23.019,
+    "total_seconds": 23.02
+  },
+  "usage": {
+    "completion_tokens": 108,
+    "prompt_tokens": 1515,
+    "total_tokens": 1623
+  }
+}

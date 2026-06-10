@@ -1,0 +1,63 @@
+{
+  "answer_type": "name+distance+slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "name+distance+slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "dist_m": 95.784167,
+      "road_name": "Appian Way",
+      "slope_deg": 4.113507
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "dist_m": 95.784167,
+        "road_name": "Appian Way",
+        "slope_deg": 4.113507
+      }
+    ]
+  },
+  "gold_sql": "WITH ref AS (\n  SELECT ST_GeomFromText('POINT (-71.122317 42.376159)', 4326)::geometry AS g\n),\nnearest AS (\n  SELECT r.road_name,\n         r.geometry::geometry AS geom,\n         ST_Distance(r.geometry::geography, ST_GeomFromText('POINT (-71.122317 42.376159)', 4326)::geography) AS dist_m\n  FROM roads r, ref\n  WHERE r.highway = 'residential'\n    AND r.road_name IS NOT NULL\n    AND ST_Dimension(r.geometry::geometry) = 1\n    AND ST_NPoints(r.geometry::geometry) BETWEEN 2 AND 50\n    AND r.geometry::geometry && ST_MakeEnvelope(-126, 24, -66, 50, 4326)\n    AND ST_DWithin(r.geometry::geography, ST_GeomFromText('POINT (-71.122317 42.376159)', 4326)::geography, 100000)\n  ORDER BY r.geometry::geometry <-> ref.g\n  LIMIT 1\n),\nsegments AS (\n  SELECT (ST_DumpSegments(n.geom)).geom AS seg FROM nearest n\n),\nendpoints AS (\n  SELECT ST_StartPoint(seg) AS p1,\n         ST_EndPoint(seg)   AS p2,\n         ST_Length(seg::geography) AS seg_len_m\n  FROM segments\n),\nelev AS (\n  SELECT e.seg_len_m,\n         z1.v AS z1,\n         z2.v AS z2\n  FROM endpoints e\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, e.p1) AS v\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, e.p1)\n    LIMIT 1\n  ) z1 ON z1.v IS NOT NULL\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, e.p2) AS v\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, e.p2)\n    LIMIT 1\n  ) z2 ON z2.v IS NOT NULL\n),\nslopes AS (\n  SELECT seg_len_m,\n         CASE WHEN seg_len_m > 0 THEN ABS(z2 - z1) / seg_len_m ELSE NULL END AS grade\n  FROM elev\n  WHERE z1 IS NOT NULL AND z2 IS NOT NULL\n)\nSELECT n.road_name,\n       n.dist_m,\n       DEGREES(ATAN(SUM(grade * seg_len_m) / NULLIF(SUM(seg_len_m), 0))) AS slope_deg\nFROM nearest n\nCROSS JOIN slopes\nWHERE grade IS NOT NULL\nGROUP BY n.road_name, n.dist_m;",
+  "id": "knn+distance+slope-17",
+  "model_output": "```sql\nWITH radcliffe_point AS (\n  SELECT \n    ST_SetSRID(ST_MakePoint(-71.122317, 42.376159), 4326)::geography AS geom\n),\nresidential_roads AS (\n  SELECT \n    id, \n    geometry AS geom\n  FROM \n    roads\n  WHERE \n    highway = 'residential'\n),\nclosest_road AS (\n  SELECT \n    r.id,\n    r.geom,\n    ST_Distance(r.geom::geometry, radcliffe_point.geom::geometry) AS distance_meters\n  FROM \n    residential_roads r,\n    radcliffe_point\n  ORDER BY \n    distance_meters\n  LIMIT 1\n),\nroad_raster_intersection AS (\n  SELECT \n    ST_Intersection(\n      public.dem_us.rast, \n      closest_road.geom::geometry\n    ) AS clipped_rast\n  FROM \n    public.dem_us,\n    closest_road\n  WHERE \n    ST_Intersects(public.dem_us.rast, closest_road.geom::geometry)\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM \n    road_raster_intersection\n),\naverage_slope AS (\n  SELECT \n    (ST_SummaryStats(slope_rast, TRUE)).mean AS avg_slope_degrees\n  FROM \n    slope_raster\n)\nSELECT \n  'Radcliffe Institute for Advanced Studies'::text AS feature_name,\n  closest_road.distance_meters AS distance_to_road_meters,\n  average_slope.avg_slope_degrees AS average_slope_degrees\nFROM \n  closest_road,\n  average_slope;\n```",
+  "predicted_exec": {
+    "error": "function st_slope(geomval, integer, unknown) does not exist\nLINE 40:     ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH radcliffe_point AS (\n  SELECT \n    ST_SetSRID(ST_MakePoint(-71.122317, 42.376159), 4326)::geography AS geom\n),\nresidential_roads AS (\n  SELECT \n    id, \n    geometry AS geom\n  FROM \n    roads\n  WHERE \n    highway = 'residential'\n),\nclosest_road AS (\n  SELECT \n    r.id,\n    r.geom,\n    ST_Distance(r.geom::geometry, radcliffe_point.geom::geometry) AS distance_meters\n  FROM \n    residential_roads r,\n    radcliffe_point\n  ORDER BY \n    distance_meters\n  LIMIT 1\n),\nroad_raster_intersection AS (\n  SELECT \n    ST_Intersection(\n      public.dem_us.rast, \n      closest_road.geom::geometry\n    ) AS clipped_rast\n  FROM \n    public.dem_us,\n    closest_road\n  WHERE \n    ST_Intersects(public.dem_us.rast, closest_road.geom::geometry)\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM \n    road_raster_intersection\n),\naverage_slope AS (\n  SELECT \n    (ST_SummaryStats(slope_rast, TRUE)).mean AS avg_slope_degrees\n  FROM \n    slope_raster\n)\nSELECT \n  'Radcliffe Institute for Advanced Studies'::text AS feature_name,\n  closest_road.distance_meters AS distance_to_road_meters,\n  average_slope.avg_slope_degrees AS average_slope_degrees\nFROM \n  closest_road,\n  average_slope;",
+  "predicted_sql_candidates": [
+    "WITH radcliffe_point AS (\n  SELECT \n    ST_SetSRID(ST_MakePoint(-71.122317, 42.376159), 4326)::geography AS geom\n),\nresidential_roads AS (\n  SELECT \n    id, \n    geometry AS geom\n  FROM \n    roads\n  WHERE \n    highway = 'residential'\n),\nclosest_road AS (\n  SELECT \n    r.id,\n    r.geom,\n    ST_Distance(r.geom::geometry, radcliffe_point.geom::geometry) AS distance_meters\n  FROM \n    residential_roads r,\n    radcliffe_point\n  ORDER BY \n    distance_meters\n  LIMIT 1\n),\nroad_raster_intersection AS (\n  SELECT \n    ST_Intersection(\n      public.dem_us.rast, \n      closest_road.geom::geometry\n    ) AS clipped_rast\n  FROM \n    public.dem_us,\n    closest_road\n  WHERE \n    ST_Intersects(public.dem_us.rast, closest_road.geom::geometry)\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM \n    road_raster_intersection\n),\naverage_slope AS (\n  SELECT \n    (ST_SummaryStats(slope_rast, TRUE)).mean AS avg_slope_degrees\n  FROM \n    slope_raster\n)\nSELECT \n  'Radcliffe Institute for Advanced Studies'::text AS feature_name,\n  closest_road.distance_meters AS distance_to_road_meters,\n  average_slope.avg_slope_degrees AS average_slope_degrees\nFROM \n  closest_road,\n  average_slope;"
+  ],
+  "query_type": "extended",
+  "question": "How far is the closest residential road from the point Radcliffe Institute for Advanced Studies, MA, and how steep is it on average?",
+  "source_file": "knn+distance+slope.jsonl",
+  "source_stem": "knn+distance+slope",
+  "timing": {
+    "execution_seconds": 0.003,
+    "generation_seconds": 77.843,
+    "total_seconds": 77.846
+  },
+  "usage": {
+    "completion_tokens": 365,
+    "prompt_tokens": 1649,
+    "total_tokens": 2014
+  }
+}

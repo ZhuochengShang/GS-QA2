@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope_degrees": 5.091868
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope_degrees": 5.091868
+      }
+    ]
+  },
+  "gold_sql": "WITH route AS (\n  SELECT ST_GeomFromText('LINESTRING (-117.769801 44.550957, -117.769609 44.551277, -117.769481 44.551323, -117.769353 44.551369, -117.768682 44.551186, -117.768427 44.550454, -117.768332 44.549287, -117.767693 44.548052, -117.767502 44.547321, -117.767406 44.547252, -117.767406 44.546978, -117.767215 44.546566, -117.767247 44.545994, -117.767599 44.545423, -117.767696 44.5446, -117.767568 44.544348, -117.766865 44.543799, -117.766641 44.543753, -117.765842 44.543227, -117.765715 44.542953, -117.765587 44.541695, -117.76562 44.54094, -117.765908 44.540392, -117.765844 44.539889, -117.764918 44.538768, -117.764311 44.537716, -117.764088 44.537533, -117.763673 44.536755, -117.763705 44.536069)', 4326)::geometry AS geom\n),\ndem_clip AS (\n  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast\n  FROM public.dem_us d, route r\n  WHERE ST_Intersects(d.rast, r.geom)\n),\nsegments AS (\n  SELECT (ST_DumpSegments(r.geom)).geom AS seg\n  FROM route r\n),\nendpoints AS (\n  SELECT\n    ST_StartPoint(seg) AS p1,\n    ST_EndPoint(seg)   AS p2,\n    ST_Length(seg::geography) AS seg_len_m\n  FROM segments\n),\nelev AS (\n  SELECT\n    e.seg_len_m,\n    ST_Value(dc.rast, 1, e.p1) AS z1,\n    ST_Value(dc.rast, 1, e.p2) AS z2\n  FROM endpoints e, dem_clip dc\n),\nslopes AS (\n  SELECT\n    seg_len_m,\n    CASE WHEN seg_len_m > 0 THEN ABS(z2 - z1) / seg_len_m ELSE NULL END AS grade\n  FROM elev\n  WHERE z1 IS NOT NULL AND z2 IS NOT NULL\n),\navg_grade AS (\n  SELECT\n    SUM(grade * seg_len_m) / NULLIF(SUM(seg_len_m), 0) AS g\n  FROM slopes\n  WHERE grade IS NOT NULL\n)\nSELECT DEGREES(ATAN(g)) AS slope_degrees\nFROM avg_grade;",
+  "id": "slope+route-13",
+  "model_output": "```sql\nWITH road_geom AS (\n  SELECT geometry\n  FROM roads\n  WHERE road_name ILIKE 'National Forest Development Road 11'\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(\n        rast,\n        (SELECT geometry::geometry FROM road_geom),\n        TRUE\n      ),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(\n    rast,\n    (SELECT geometry::geometry FROM road_geom)\n  )\n)\nSELECT\n  ROUND(AVG(value), 2) AS avg_slope_degrees\nFROM (\n  SELECT\n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM slope_raster\n) AS dump;\n```",
+  "predicted_exec": {
+    "error": "column \"value\" does not exist\nLINE 24:   ROUND(AVG(value), 2) AS avg_slope_degrees\n                     ^\nHINT:  Perhaps you meant to reference the column \"dump.val\".",
+    "output": []
+  },
+  "predicted_sql": "WITH road_geom AS (\n  SELECT geometry\n  FROM roads\n  WHERE road_name ILIKE 'National Forest Development Road 11'\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(\n        rast,\n        (SELECT geometry::geometry FROM road_geom),\n        TRUE\n      ),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(\n    rast,\n    (SELECT geometry::geometry FROM road_geom)\n  )\n)\nSELECT\n  ROUND(AVG(value), 2) AS avg_slope_degrees\nFROM (\n  SELECT\n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM slope_raster\n) AS dump;",
+  "predicted_sql_candidates": [
+    "WITH road_geom AS (\n  SELECT geometry\n  FROM roads\n  WHERE road_name ILIKE 'National Forest Development Road 11'\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(\n        rast,\n        (SELECT geometry::geometry FROM road_geom),\n        TRUE\n      ),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(\n    rast,\n    (SELECT geometry::geometry FROM road_geom)\n  )\n)\nSELECT\n  ROUND(AVG(value), 2) AS avg_slope_degrees\nFROM (\n  SELECT\n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM slope_raster\n) AS dump;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the average slope along National Forest Development Road 11?",
+  "source_file": "slope+route.jsonl",
+  "source_stem": "slope+route",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 37.03,
+    "total_seconds": 37.031
+  },
+  "usage": {
+    "completion_tokens": 164,
+    "prompt_tokens": 1531,
+    "total_tokens": 1695
+  }
+}

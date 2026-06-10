@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope_degrees": 14.772383
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope_degrees": 14.772383
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-82.760985 36.173714)',4326) AS pt\n),\npatch AS (\n  SELECT ST_Buffer(pt::geography, 100)::geometry AS g FROM origin\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, p.g)) AS rast\n  FROM public.dem_us d\n  JOIN patch p ON ST_Intersects(d.rast, p.g)\n),\nslope_rast AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n)\nSELECT ST_Value(s.rast, 1, o.pt) AS slope_degrees\nFROM slope_rast s, origin o;",
+  "id": "slope+poi-3",
+  "model_output": "```sql\nWITH point_geom AS (\n  SELECT \n    ST_SetSRID(ST_MakePoint(-82.760985, 36.173714), 4326)::geography AS geom\n),\nraster_slope AS (\n  SELECT \n    ST_Slope(\n      ST_Clip(\n        rast, \n        true, \n        ST_Transform(ST_SetSRID(ST_MakePoint(-82.760985, 36.173714), 4326), 3857)\n      ), \n      1, \n      'DEGREES'\n    ) AS slope_rast\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(\n      rast, \n      ST_Transform(ST_SetSRID(ST_MakePoint(-82.760985, 36.173714), 4326), 3857)\n    )\n)\nSELECT \n  ST_Value(slope_rast, 1, ST_Transform(geom, 3857)) AS slope_degrees\nFROM \n  raster_slope, point_geom;\n```",
+  "predicted_exec": {
+    "error": "function st_clip(raster, boolean, geometry) does not exist\nLINE 8:       ST_Clip(\n              ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH point_geom AS (\n  SELECT \n    ST_SetSRID(ST_MakePoint(-82.760985, 36.173714), 4326)::geography AS geom\n),\nraster_slope AS (\n  SELECT \n    ST_Slope(\n      ST_Clip(\n        rast, \n        true, \n        ST_Transform(ST_SetSRID(ST_MakePoint(-82.760985, 36.173714), 4326), 3857)\n      ), \n      1, \n      'DEGREES'\n    ) AS slope_rast\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(\n      rast, \n      ST_Transform(ST_SetSRID(ST_MakePoint(-82.760985, 36.173714), 4326), 3857)\n    )\n)\nSELECT \n  ST_Value(slope_rast, 1, ST_Transform(geom, 3857)) AS slope_degrees\nFROM \n  raster_slope, point_geom;",
+  "predicted_sql_candidates": [
+    "WITH point_geom AS (\n  SELECT \n    ST_SetSRID(ST_MakePoint(-82.760985, 36.173714), 4326)::geography AS geom\n),\nraster_slope AS (\n  SELECT \n    ST_Slope(\n      ST_Clip(\n        rast, \n        true, \n        ST_Transform(ST_SetSRID(ST_MakePoint(-82.760985, 36.173714), 4326), 3857)\n      ), \n      1, \n      'DEGREES'\n    ) AS slope_rast\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(\n      rast, \n      ST_Transform(ST_SetSRID(ST_MakePoint(-82.760985, 36.173714), 4326), 3857)\n    )\n)\nSELECT \n  ST_Value(slope_rast, 1, ST_Transform(geom, 3857)) AS slope_degrees\nFROM \n  raster_slope, point_geom;"
+  ],
+  "query_type": "raster_only",
+  "question": "How sharply does the terrain incline at Tusculum University Historical District, Greeneville, TN?",
+  "source_file": "slope+poi.jsonl",
+  "source_stem": "slope+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 58.379,
+    "total_seconds": 58.38
+  },
+  "usage": {
+    "completion_tokens": 260,
+    "prompt_tokens": 1618,
+    "total_tokens": 1878
+  }
+}

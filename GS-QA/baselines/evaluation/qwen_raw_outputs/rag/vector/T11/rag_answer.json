@@ -1,0 +1,2102 @@
+[
+  {
+    "id": 100,
+    "run_seconds": 1.231,
+    "content": "Delaware County",
+    "usage_metadata": {
+      "input_tokens": 1362,
+      "output_tokens": 4,
+      "total_tokens": 1366,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1362,
+        "total_tokens": 1366,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 101,
+    "run_seconds": 4.115,
+    "content": "The largest golf course in Cedar Falls, Iowa is not listed in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 1055,
+      "output_tokens": 18,
+      "total_tokens": 1073,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 1055,
+        "total_tokens": 1073,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 102,
+    "run_seconds": 3.206,
+    "content": "There is no widely recognized lake in Santa Rosa, New Mexico.",
+    "usage_metadata": {
+      "input_tokens": 913,
+      "output_tokens": 14,
+      "total_tokens": 927,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 913,
+        "total_tokens": 927,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 103,
+    "run_seconds": 3.858,
+    "content": "The largest park in Livingston County, Michigan is not listed in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 912,
+      "output_tokens": 17,
+      "total_tokens": 929,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 912,
+        "total_tokens": 929,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 104,
+    "run_seconds": 2.536,
+    "content": "The question cannot be answered with the provided data.",
+    "usage_metadata": {
+      "input_tokens": 816,
+      "output_tokens": 11,
+      "total_tokens": 827,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 816,
+        "total_tokens": 827,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 105,
+    "run_seconds": 3.472,
+    "content": "There is no sports center listed in Virginia in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 1785,
+      "output_tokens": 14,
+      "total_tokens": 1799,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 1785,
+        "total_tokens": 1799,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 106,
+    "run_seconds": 1.767,
+    "content": "Pinckney State Recreation Area",
+    "usage_metadata": {
+      "input_tokens": 1067,
+      "output_tokens": 7,
+      "total_tokens": 1074,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 1067,
+        "total_tokens": 1074,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 107,
+    "run_seconds": 1.522,
+    "content": "Franklin Park Natural Area",
+    "usage_metadata": {
+      "input_tokens": 929,
+      "output_tokens": 6,
+      "total_tokens": 935,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 929,
+        "total_tokens": 935,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 108,
+    "run_seconds": 3.617,
+    "content": "The largest reservoir by size in Summit County, Colorado is Dillon Reservoir.",
+    "usage_metadata": {
+      "input_tokens": 824,
+      "output_tokens": 16,
+      "total_tokens": 840,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 824,
+        "total_tokens": 840,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 109,
+    "run_seconds": 3.015,
+    "content": "There is no relevant information provided to answer the question.",
+    "usage_metadata": {
+      "input_tokens": 1705,
+      "output_tokens": 12,
+      "total_tokens": 1717,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1705,
+        "total_tokens": 1717,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 110,
+    "run_seconds": 4.658,
+    "content": "The largest golf course in the United States is the \"Pebble Beach Golf Links.\"",
+    "usage_metadata": {
+      "input_tokens": 2150,
+      "output_tokens": 19,
+      "total_tokens": 2169,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 2150,
+        "total_tokens": 2169,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 111,
+    "run_seconds": 1.275,
+    "content": "New York Harbor",
+    "usage_metadata": {
+      "input_tokens": 1537,
+      "output_tokens": 4,
+      "total_tokens": 1541,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1537,
+        "total_tokens": 1541,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 112,
+    "run_seconds": 1.511,
+    "content": "Yosemite National Park",
+    "usage_metadata": {
+      "input_tokens": 1660,
+      "output_tokens": 5,
+      "total_tokens": 1665,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1660,
+        "total_tokens": 1665,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 113,
+    "run_seconds": 2.103,
+    "content": "Tuxedo Park Golf Club",
+    "usage_metadata": {
+      "input_tokens": 2145,
+      "output_tokens": 7,
+      "total_tokens": 2152,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 2145,
+        "total_tokens": 2152,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 114,
+    "run_seconds": 3.252,
+    "content": "There is no known golf course in Burke County, North Carolina.",
+    "usage_metadata": {
+      "input_tokens": 1128,
+      "output_tokens": 14,
+      "total_tokens": 1142,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 1128,
+        "total_tokens": 1142,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 115,
+    "run_seconds": 1.946,
+    "content": "Hickory Grove Riverfront",
+    "usage_metadata": {
+      "input_tokens": 1608,
+      "output_tokens": 7,
+      "total_tokens": 1615,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 1608,
+        "total_tokens": 1615,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 116,
+    "run_seconds": 0.819,
+    "content": "Lake George",
+    "usage_metadata": {
+      "input_tokens": 817,
+      "output_tokens": 3,
+      "total_tokens": 820,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 817,
+        "total_tokens": 820,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 117,
+    "run_seconds": 1.505,
+    "content": "Quabbin Reservoir",
+    "usage_metadata": {
+      "input_tokens": 1001,
+      "output_tokens": 6,
+      "total_tokens": 1007,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 1001,
+        "total_tokens": 1007,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 118,
+    "run_seconds": 4.588,
+    "content": "The largest known golf course in Hawthorn Woods, Illinois is not listed in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 1321,
+      "output_tokens": 20,
+      "total_tokens": 1341,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 1321,
+        "total_tokens": 1341,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 119,
+    "run_seconds": 0.806,
+    "content": "None",
+    "usage_metadata": {
+      "input_tokens": 863,
+      "output_tokens": 2,
+      "total_tokens": 865,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 863,
+        "total_tokens": 865,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 120,
+    "run_seconds": 3.7,
+    "content": "The largest lake people talk about in Geneva, New York is Lake Geneva.",
+    "usage_metadata": {
+      "input_tokens": 1116,
+      "output_tokens": 16,
+      "total_tokens": 1132,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 1116,
+        "total_tokens": 1132,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 121,
+    "run_seconds": 1.502,
+    "content": "Beaver Run Reservoir",
+    "usage_metadata": {
+      "input_tokens": 887,
+      "output_tokens": 6,
+      "total_tokens": 893,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 887,
+        "total_tokens": 893,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 122,
+    "run_seconds": 2.317,
+    "content": "Wachusett Reservoir",
+    "usage_metadata": {
+      "input_tokens": 2187,
+      "output_tokens": 7,
+      "total_tokens": 2194,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 2187,
+        "total_tokens": 2194,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 123,
+    "run_seconds": 1.487,
+    "content": "Oaks Crossing Natural Area",
+    "usage_metadata": {
+      "input_tokens": 831,
+      "output_tokens": 6,
+      "total_tokens": 837,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 831,
+        "total_tokens": 837,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 124,
+    "run_seconds": 3.691,
+    "content": "The largest-scale nature reserve in Seattle is not listed in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 1139,
+      "output_tokens": 16,
+      "total_tokens": 1155,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 1139,
+        "total_tokens": 1155,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 125,
+    "run_seconds": 1.063,
+    "content": "Lake Roosevelt",
+    "usage_metadata": {
+      "input_tokens": 906,
+      "output_tokens": 3,
+      "total_tokens": 909,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 906,
+        "total_tokens": 909,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 126,
+    "run_seconds": 2.777,
+    "content": "The biggest garden in Pennsylvania is Longwood Gardens.",
+    "usage_metadata": {
+      "input_tokens": 1637,
+      "output_tokens": 11,
+      "total_tokens": 1648,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1637,
+        "total_tokens": 1648,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 127,
+    "run_seconds": 1.67,
+    "content": "Yosemite National Park",
+    "usage_metadata": {
+      "input_tokens": 2100,
+      "output_tokens": 5,
+      "total_tokens": 2105,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 2100,
+        "total_tokens": 2105,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 128,
+    "run_seconds": 0.919,
+    "content": "None",
+    "usage_metadata": {
+      "input_tokens": 1838,
+      "output_tokens": 2,
+      "total_tokens": 1840,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1838,
+        "total_tokens": 1840,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 129,
+    "run_seconds": 4.036,
+    "content": "There is no nature reserve in Wheelock, Vermont listed in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 1139,
+      "output_tokens": 17,
+      "total_tokens": 1156,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 1139,
+        "total_tokens": 1156,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 130,
+    "run_seconds": 4.903,
+    "content": "The largest reservoir currently in El Paso County, Colorado is the Colorado Springs Utilities\u2019 Pueblo Reservoir.",
+    "usage_metadata": {
+      "input_tokens": 825,
+      "output_tokens": 22,
+      "total_tokens": 847,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 825,
+        "total_tokens": 847,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 131,
+    "run_seconds": 0.786,
+    "content": "Bear Lake",
+    "usage_metadata": {
+      "input_tokens": 798,
+      "output_tokens": 3,
+      "total_tokens": 801,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 798,
+        "total_tokens": 801,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 132,
+    "run_seconds": 0.855,
+    "content": "Jackson County",
+    "usage_metadata": {
+      "input_tokens": 851,
+      "output_tokens": 3,
+      "total_tokens": 854,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 851,
+        "total_tokens": 854,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 133,
+    "run_seconds": 1.585,
+    "content": "Sage Valley Golf Club",
+    "usage_metadata": {
+      "input_tokens": 1157,
+      "output_tokens": 6,
+      "total_tokens": 1163,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 1157,
+        "total_tokens": 1163,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 134,
+    "run_seconds": 1.878,
+    "content": "Chestnut Ridge Natural Area Preserve",
+    "usage_metadata": {
+      "input_tokens": 2076,
+      "output_tokens": 8,
+      "total_tokens": 2084,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 2076,
+        "total_tokens": 2084,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 135,
+    "run_seconds": 3.973,
+    "content": "The largest known reservoir in McLennan County, Texas is Lake Waco.",
+    "usage_metadata": {
+      "input_tokens": 1364,
+      "output_tokens": 17,
+      "total_tokens": 1381,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 1364,
+        "total_tokens": 1381,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 136,
+    "run_seconds": 4.329,
+    "content": "The largest garden people talk about in Berkshire County, Massachusetts is the Berkshire Botanical Garden.",
+    "usage_metadata": {
+      "input_tokens": 1106,
+      "output_tokens": 19,
+      "total_tokens": 1125,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 1106,
+        "total_tokens": 1125,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 137,
+    "run_seconds": 1.729,
+    "content": "Kenney Askew County Park",
+    "usage_metadata": {
+      "input_tokens": 891,
+      "output_tokens": 7,
+      "total_tokens": 898,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 891,
+        "total_tokens": 898,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 138,
+    "run_seconds": 2.923,
+    "content": "There are no golf courses listed in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 1452,
+      "output_tokens": 12,
+      "total_tokens": 1464,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1452,
+        "total_tokens": 1464,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 139,
+    "run_seconds": 5.103,
+    "content": "None of the provided records pertain to Mississippi or identify a nature reserve as the largest in the state.",
+    "usage_metadata": {
+      "input_tokens": 1881,
+      "output_tokens": 22,
+      "total_tokens": 1903,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 1881,
+        "total_tokens": 1903,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 140,
+    "run_seconds": 0.864,
+    "content": "Lake June",
+    "usage_metadata": {
+      "input_tokens": 952,
+      "output_tokens": 3,
+      "total_tokens": 955,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 952,
+        "total_tokens": 955,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 141,
+    "run_seconds": 1.294,
+    "content": "Chesapeake Bay",
+    "usage_metadata": {
+      "input_tokens": 960,
+      "output_tokens": 5,
+      "total_tokens": 965,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 960,
+        "total_tokens": 965,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 142,
+    "run_seconds": 7.635,
+    "content": "The question is about a golf course in Ohio, but the provided data does not include any golf courses. Therefore, the answer cannot be determined from the given information.",
+    "usage_metadata": {
+      "input_tokens": 826,
+      "output_tokens": 34,
+      "total_tokens": 860,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 34,
+        "prompt_tokens": 826,
+        "total_tokens": 860,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 143,
+    "run_seconds": 1.035,
+    "content": "Grand Traverse County",
+    "usage_metadata": {
+      "input_tokens": 997,
+      "output_tokens": 4,
+      "total_tokens": 1001,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 997,
+        "total_tokens": 1001,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 144,
+    "run_seconds": 3.94,
+    "content": "The largest lake in Mamakating, New York is Lake Mohawk.",
+    "usage_metadata": {
+      "input_tokens": 1963,
+      "output_tokens": 16,
+      "total_tokens": 1979,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 1963,
+        "total_tokens": 1979,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 145,
+    "run_seconds": 4.258,
+    "content": "There is no lake named or recorded as being in Chisago City, Minnesota.",
+    "usage_metadata": {
+      "input_tokens": 909,
+      "output_tokens": 18,
+      "total_tokens": 927,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 909,
+        "total_tokens": 927,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 146,
+    "run_seconds": 1.048,
+    "content": "Middlesex County",
+    "usage_metadata": {
+      "input_tokens": 827,
+      "output_tokens": 4,
+      "total_tokens": 831,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 827,
+        "total_tokens": 831,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 147,
+    "run_seconds": 1.472,
+    "content": "Chesapeake Bay",
+    "usage_metadata": {
+      "input_tokens": 1457,
+      "output_tokens": 5,
+      "total_tokens": 1462,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1457,
+        "total_tokens": 1462,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 148,
+    "run_seconds": 2.09,
+    "content": "Shady Glade - Trail Head",
+    "usage_metadata": {
+      "input_tokens": 1505,
+      "output_tokens": 8,
+      "total_tokens": 1513,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 1505,
+        "total_tokens": 1513,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 149,
+    "run_seconds": 4.866,
+    "content": "The largest recreation ground people talk about in Dukes County, Massachusetts is the Fort Fisher State Recreation Area.",
+    "usage_metadata": {
+      "input_tokens": 775,
+      "output_tokens": 22,
+      "total_tokens": 797,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 775,
+        "total_tokens": 797,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 150,
+    "run_seconds": 0.839,
+    "content": "Lake Charles",
+    "usage_metadata": {
+      "input_tokens": 879,
+      "output_tokens": 3,
+      "total_tokens": 882,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 879,
+        "total_tokens": 882,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 151,
+    "run_seconds": 2.775,
+    "content": "There is no garden associated with Mississippi in the provided records.",
+    "usage_metadata": {
+      "input_tokens": 1637,
+      "output_tokens": 13,
+      "total_tokens": 1650,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 1637,
+        "total_tokens": 1650,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 152,
+    "run_seconds": 1.723,
+    "content": "Cockaponset State Forest",
+    "usage_metadata": {
+      "input_tokens": 1172,
+      "output_tokens": 7,
+      "total_tokens": 1179,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 1172,
+        "total_tokens": 1179,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 153,
+    "run_seconds": 3.373,
+    "content": "The largest reservoir in Lincoln County, Oklahoma is Lake Hefner.",
+    "usage_metadata": {
+      "input_tokens": 823,
+      "output_tokens": 15,
+      "total_tokens": 838,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 823,
+        "total_tokens": 838,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 154,
+    "run_seconds": 2.514,
+    "content": "Robert B. Gordon Natural Area for Environmental Studies",
+    "usage_metadata": {
+      "input_tokens": 1451,
+      "output_tokens": 10,
+      "total_tokens": 1461,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 1451,
+        "total_tokens": 1461,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 155,
+    "run_seconds": 2.346,
+    "content": "Galway does not have any lakes.",
+    "usage_metadata": {
+      "input_tokens": 1007,
+      "output_tokens": 9,
+      "total_tokens": 1016,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 1007,
+        "total_tokens": 1016,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 156,
+    "run_seconds": 4.906,
+    "content": "Shady Glade - Trail Head is located in Tyngsborough, Massachusetts. It covers seventy acres.",
+    "usage_metadata": {
+      "input_tokens": 1642,
+      "output_tokens": 23,
+      "total_tokens": 1665,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 1642,
+        "total_tokens": 1665,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 157,
+    "run_seconds": 1.258,
+    "content": "Muskegon Lake",
+    "usage_metadata": {
+      "input_tokens": 829,
+      "output_tokens": 5,
+      "total_tokens": 834,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 829,
+        "total_tokens": 834,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 158,
+    "run_seconds": 2.826,
+    "content": "The biggest common in the United States is Boston Common.",
+    "usage_metadata": {
+      "input_tokens": 1120,
+      "output_tokens": 12,
+      "total_tokens": 1132,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1120,
+        "total_tokens": 1132,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 159,
+    "run_seconds": 4.292,
+    "content": "The number-one largest reservoir in Aberdeen, Washington is the Chehalis River Reservoir.",
+    "usage_metadata": {
+      "input_tokens": 937,
+      "output_tokens": 19,
+      "total_tokens": 956,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 937,
+        "total_tokens": 956,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 160,
+    "run_seconds": 2.789,
+    "content": "There is no garden mentioned in the provided records.",
+    "usage_metadata": {
+      "input_tokens": 1655,
+      "output_tokens": 11,
+      "total_tokens": 1666,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1655,
+        "total_tokens": 1666,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 161,
+    "run_seconds": 1.033,
+    "content": "Oahe",
+    "usage_metadata": {
+      "input_tokens": 849,
+      "output_tokens": 4,
+      "total_tokens": 853,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 849,
+        "total_tokens": 853,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 162,
+    "run_seconds": 3.429,
+    "content": "The largest golf course in Pennsylvania is the Hershey Country Club.",
+    "usage_metadata": {
+      "input_tokens": 1684,
+      "output_tokens": 14,
+      "total_tokens": 1698,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 1684,
+        "total_tokens": 1698,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 163,
+    "run_seconds": 4.29,
+    "content": "There is no golf course listed in the provided data located in Livingston County, Michigan.",
+    "usage_metadata": {
+      "input_tokens": 1629,
+      "output_tokens": 18,
+      "total_tokens": 1647,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 1629,
+        "total_tokens": 1647,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 164,
+    "run_seconds": 8.12,
+    "content": "The question is about a golf course, but none of the provided records mention a golf course in Berkshire County, Massachusetts. Therefore, there is no answer available from the given data.",
+    "usage_metadata": {
+      "input_tokens": 906,
+      "output_tokens": 37,
+      "total_tokens": 943,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 37,
+        "prompt_tokens": 906,
+        "total_tokens": 943,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 165,
+    "run_seconds": 4.332,
+    "content": "There is no record of a reservoir in Washington Township, Westmoreland County, Pennsylvania.",
+    "usage_metadata": {
+      "input_tokens": 1215,
+      "output_tokens": 19,
+      "total_tokens": 1234,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 1215,
+        "total_tokens": 1234,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 166,
+    "run_seconds": 3.634,
+    "content": "None of the provided records mention a reservoir in Mayes County, Oklahoma.",
+    "usage_metadata": {
+      "input_tokens": 941,
+      "output_tokens": 16,
+      "total_tokens": 957,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 941,
+        "total_tokens": 957,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 167,
+    "run_seconds": 0.703,
+    "content": "None",
+    "usage_metadata": {
+      "input_tokens": 1052,
+      "output_tokens": 2,
+      "total_tokens": 1054,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1052,
+        "total_tokens": 1054,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 168,
+    "run_seconds": 2.948,
+    "content": "Richard and Lucile Durrell Edge of Appalachia Preserve",
+    "usage_metadata": {
+      "input_tokens": 776,
+      "output_tokens": 13,
+      "total_tokens": 789,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 776,
+        "total_tokens": 789,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 169,
+    "run_seconds": 3.163,
+    "content": "The largest reservoir in Missouri is the Lake of the Ozarks.",
+    "usage_metadata": {
+      "input_tokens": 815,
+      "output_tokens": 14,
+      "total_tokens": 829,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 815,
+        "total_tokens": 829,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 170,
+    "run_seconds": 0.828,
+    "content": "None",
+    "usage_metadata": {
+      "input_tokens": 1491,
+      "output_tokens": 2,
+      "total_tokens": 1493,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1491,
+        "total_tokens": 1493,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 171,
+    "run_seconds": 3.178,
+    "content": "The largest reservoir within Lane County, Oregon is Dexter Reservoir.",
+    "usage_metadata": {
+      "input_tokens": 824,
+      "output_tokens": 14,
+      "total_tokens": 838,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 824,
+        "total_tokens": 838,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 172,
+    "run_seconds": 4.54,
+    "content": "The largest golf course currently in Virginia is the **Kingston Plantation Golf Club**.",
+    "usage_metadata": {
+      "input_tokens": 1718,
+      "output_tokens": 19,
+      "total_tokens": 1737,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 1718,
+        "total_tokens": 1737,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 173,
+    "run_seconds": 0.908,
+    "content": "Lake George",
+    "usage_metadata": {
+      "input_tokens": 1100,
+      "output_tokens": 3,
+      "total_tokens": 1103,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1100,
+        "total_tokens": 1103,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 174,
+    "run_seconds": 2.969,
+    "content": "The question is unrelated to the provided data.",
+    "usage_metadata": {
+      "input_tokens": 2308,
+      "output_tokens": 10,
+      "total_tokens": 2318,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 2308,
+        "total_tokens": 2318,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 175,
+    "run_seconds": 4.16,
+    "content": "There is no nature reserve listed in the provided data for New York City.",
+    "usage_metadata": {
+      "input_tokens": 2028,
+      "output_tokens": 16,
+      "total_tokens": 2044,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 2028,
+        "total_tokens": 2044,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 176,
+    "run_seconds": 4.047,
+    "content": "East Tawakoni State Park is located on the Tawakoni Lake.",
+    "usage_metadata": {
+      "input_tokens": 817,
+      "output_tokens": 18,
+      "total_tokens": 835,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 817,
+        "total_tokens": 835,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 177,
+    "run_seconds": 3.471,
+    "content": "The officially largest park in Marion County, Indiana is Indianapolis Motor Speedway.",
+    "usage_metadata": {
+      "input_tokens": 1120,
+      "output_tokens": 15,
+      "total_tokens": 1135,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 1120,
+        "total_tokens": 1135,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 178,
+    "run_seconds": 4.334,
+    "content": "The largest reservoir overall in Carver, Massachusetts is the **Mill Pond Reservoir**.",
+    "usage_metadata": {
+      "input_tokens": 1151,
+      "output_tokens": 19,
+      "total_tokens": 1170,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 1151,
+        "total_tokens": 1170,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 179,
+    "run_seconds": 1.887,
+    "content": "Jamesburg County Park Conservation Area",
+    "usage_metadata": {
+      "input_tokens": 854,
+      "output_tokens": 7,
+      "total_tokens": 861,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 854,
+        "total_tokens": 861,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 180,
+    "run_seconds": 2.598,
+    "content": "Negri-Nepote Native Grassland Preserve",
+    "usage_metadata": {
+      "input_tokens": 1683,
+      "output_tokens": 10,
+      "total_tokens": 1693,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 1683,
+        "total_tokens": 1693,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 181,
+    "run_seconds": 1.739,
+    "content": "Cockaponset State Forest",
+    "usage_metadata": {
+      "input_tokens": 1129,
+      "output_tokens": 7,
+      "total_tokens": 1136,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 1129,
+        "total_tokens": 1136,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 182,
+    "run_seconds": 2.966,
+    "content": "The largest reservoir in Carbon County, Utah is Lake Powell.",
+    "usage_metadata": {
+      "input_tokens": 830,
+      "output_tokens": 13,
+      "total_tokens": 843,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 830,
+        "total_tokens": 843,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 183,
+    "run_seconds": 1.585,
+    "content": "Sproul State Forest",
+    "usage_metadata": {
+      "input_tokens": 1180,
+      "output_tokens": 6,
+      "total_tokens": 1186,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 1180,
+        "total_tokens": 1186,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 184,
+    "run_seconds": 3.391,
+    "content": "The question does not provide information about parks in Asheville, North Carolina.",
+    "usage_metadata": {
+      "input_tokens": 867,
+      "output_tokens": 15,
+      "total_tokens": 882,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 867,
+        "total_tokens": 882,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 185,
+    "run_seconds": 3.421,
+    "content": "None of the listed parks are located in Dukes County, Massachusetts.",
+    "usage_metadata": {
+      "input_tokens": 1075,
+      "output_tokens": 15,
+      "total_tokens": 1090,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 1075,
+        "total_tokens": 1090,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 186,
+    "run_seconds": 1.262,
+    "content": "Muskegon Lake",
+    "usage_metadata": {
+      "input_tokens": 895,
+      "output_tokens": 5,
+      "total_tokens": 900,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 895,
+        "total_tokens": 900,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 187,
+    "run_seconds": 3.896,
+    "content": "The United States\u2019s largest marina is located in Islamorada, Florida.",
+    "usage_metadata": {
+      "input_tokens": 1062,
+      "output_tokens": 17,
+      "total_tokens": 1079,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 1062,
+        "total_tokens": 1079,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 188,
+    "run_seconds": 1.246,
+    "content": "East Branch Reservoir",
+    "usage_metadata": {
+      "input_tokens": 814,
+      "output_tokens": 5,
+      "total_tokens": 819,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 814,
+        "total_tokens": 819,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 189,
+    "run_seconds": 2.415,
+    "content": "The biggest reservoir in Kentucky is Lake Cumberland.",
+    "usage_metadata": {
+      "input_tokens": 1102,
+      "output_tokens": 10,
+      "total_tokens": 1112,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 1102,
+        "total_tokens": 1112,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 190,
+    "run_seconds": 0.87,
+    "content": "Lake Superior",
+    "usage_metadata": {
+      "input_tokens": 1037,
+      "output_tokens": 3,
+      "total_tokens": 1040,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1037,
+        "total_tokens": 1040,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 191,
+    "run_seconds": 3.568,
+    "content": "The reservoir officially the largest in Mastodon Township, Michigan is Lake Superior.",
+    "usage_metadata": {
+      "input_tokens": 808,
+      "output_tokens": 16,
+      "total_tokens": 824,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 808,
+        "total_tokens": 824,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 192,
+    "run_seconds": 3.357,
+    "content": "The largest garden in Portland, Maine is the Portland Japanese Garden.",
+    "usage_metadata": {
+      "input_tokens": 1379,
+      "output_tokens": 14,
+      "total_tokens": 1393,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 1379,
+        "total_tokens": 1393,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 193,
+    "run_seconds": 3.324,
+    "content": "The largest reservoir in Pennsylvania is the Raystown Branch Reservoir.",
+    "usage_metadata": {
+      "input_tokens": 1276,
+      "output_tokens": 14,
+      "total_tokens": 1290,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 1276,
+        "total_tokens": 1290,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 194,
+    "run_seconds": 9.87,
+    "content": "The question asks for the largest lake in Freeman Township, Michigan. However, the provided data does not include any information about lakes or their sizes in Freeman Township. Therefore, the answer cannot be determined from the given data.",
+    "usage_metadata": {
+      "input_tokens": 1255,
+      "output_tokens": 45,
+      "total_tokens": 1300,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 45,
+        "prompt_tokens": 1255,
+        "total_tokens": 1300,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 195,
+    "run_seconds": 1.265,
+    "content": "Tenkiller Ferry Lake",
+    "usage_metadata": {
+      "input_tokens": 850,
+      "output_tokens": 5,
+      "total_tokens": 855,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 850,
+        "total_tokens": 855,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 196,
+    "run_seconds": 2.965,
+    "content": "The largest common in Seattle is the **Seattle Commons**.",
+    "usage_metadata": {
+      "input_tokens": 782,
+      "output_tokens": 13,
+      "total_tokens": 795,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 782,
+        "total_tokens": 795,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 197,
+    "run_seconds": 1.717,
+    "content": "Pinckney State Recreation Area",
+    "usage_metadata": {
+      "input_tokens": 931,
+      "output_tokens": 7,
+      "total_tokens": 938,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 931,
+        "total_tokens": 938,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 198,
+    "run_seconds": 3.871,
+    "content": "None of the provided records mention a reservoir in Eaton, New York.",
+    "usage_metadata": {
+      "input_tokens": 1727,
+      "output_tokens": 15,
+      "total_tokens": 1742,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 1727,
+        "total_tokens": 1742,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 199,
+    "run_seconds": 3.625,
+    "content": "The largest nature reserve in Virginia is the Shenandoah National Park.",
+    "usage_metadata": {
+      "input_tokens": 1596,
+      "output_tokens": 15,
+      "total_tokens": 1611,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 1596,
+        "total_tokens": 1611,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  }
+]

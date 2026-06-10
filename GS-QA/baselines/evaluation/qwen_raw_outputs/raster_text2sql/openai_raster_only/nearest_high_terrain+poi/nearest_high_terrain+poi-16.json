@@ -1,0 +1,59 @@
+{
+  "answer_type": "distance",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "distance",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "distance_m": 74321.482836
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "distance_m": 74321.482836
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-122.675993 45.522611)',4326) AS pt\n),\nnearby_tiles AS (\n  SELECT d.rast\n  FROM public.dem_us d, origin o\n  WHERE d.rast && ST_Expand(o.pt, 1.0)\n),\nmasked AS (\n\t  SELECT ST_MapAlgebra(\n\t           rast,\n\t           1,\n\t           '32BF'::text,\n\t           'CASE WHEN [rast.val] > 1800 THEN [rast.val] ELSE NULL END'::text,\n\t           NULL::double precision\n\t         ) AS rast\n  FROM nearby_tiles\n),\nqualifying_pixels AS (\n  SELECT (pp).geom AS geom\n  FROM masked\n  CROSS JOIN LATERAL ST_PixelAsCentroids(rast, 1, TRUE) AS pp\n)\nSELECT MIN(ST_Distance(p.geom::geography, o.pt::geography)) AS distance_m\nFROM qualifying_pixels p, origin o;",
+  "id": "nearest_high_terrain+poi-16",
+  "model_output": "```sql\nWITH poi_location AS (\n  SELECT ST_SetSRID(ST_MakePoint(-122.675993, 45.522611), 4326)::geography AS geom\n),\nhigh_elevation_areas AS (\n  SELECT ST_Union(rast) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, ST_SetSRID(ST_MakePoint(-122.675993, 45.522611), 4326))\n),\nelevation_raster_clipped AS (\n  SELECT ST_Clip(high_elevation_areas.rast, true, ST_Buffer(ST_SetSRID(ST_MakePoint(-122.675993, 45.522611), 4326), 100000)) AS rast\n  FROM high_elevation_areas\n),\nelevation_points AS (\n  SELECT (ST_PixelAsPoints(rast, 1)).*\n  FROM elevation_raster_clipped\n),\nfiltered_elevation_points AS (\n  SELECT geom\n  FROM elevation_points\n  WHERE value > 1800\n),\nclosest_point AS (\n  SELECT MIN(ST_Distance(poi_location.geom, filtered_elevation_points.geom)) AS distance_meters\n  FROM poi_location, filtered_elevation_points\n)\nSELECT closest_point.distance_meters;\n```",
+  "predicted_exec": {
+    "error": "function st_clip(raster, boolean, geometry) does not exist\nLINE 10:   SELECT ST_Clip(high_elevation_areas.rast, true, ST_Buffer(...\n                  ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH poi_location AS (\n  SELECT ST_SetSRID(ST_MakePoint(-122.675993, 45.522611), 4326)::geography AS geom\n),\nhigh_elevation_areas AS (\n  SELECT ST_Union(rast) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, ST_SetSRID(ST_MakePoint(-122.675993, 45.522611), 4326))\n),\nelevation_raster_clipped AS (\n  SELECT ST_Clip(high_elevation_areas.rast, true, ST_Buffer(ST_SetSRID(ST_MakePoint(-122.675993, 45.522611), 4326), 100000)) AS rast\n  FROM high_elevation_areas\n),\nelevation_points AS (\n  SELECT (ST_PixelAsPoints(rast, 1)).*\n  FROM elevation_raster_clipped\n),\nfiltered_elevation_points AS (\n  SELECT geom\n  FROM elevation_points\n  WHERE value > 1800\n),\nclosest_point AS (\n  SELECT MIN(ST_Distance(poi_location.geom, filtered_elevation_points.geom)) AS distance_meters\n  FROM poi_location, filtered_elevation_points\n)\nSELECT closest_point.distance_meters;",
+  "predicted_sql_candidates": [
+    "WITH poi_location AS (\n  SELECT ST_SetSRID(ST_MakePoint(-122.675993, 45.522611), 4326)::geography AS geom\n),\nhigh_elevation_areas AS (\n  SELECT ST_Union(rast) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, ST_SetSRID(ST_MakePoint(-122.675993, 45.522611), 4326))\n),\nelevation_raster_clipped AS (\n  SELECT ST_Clip(high_elevation_areas.rast, true, ST_Buffer(ST_SetSRID(ST_MakePoint(-122.675993, 45.522611), 4326), 100000)) AS rast\n  FROM high_elevation_areas\n),\nelevation_points AS (\n  SELECT (ST_PixelAsPoints(rast, 1)).*\n  FROM elevation_raster_clipped\n),\nfiltered_elevation_points AS (\n  SELECT geom\n  FROM elevation_points\n  WHERE value > 1800\n),\nclosest_point AS (\n  SELECT MIN(ST_Distance(poi_location.geom, filtered_elevation_points.geom)) AS distance_meters\n  FROM poi_location, filtered_elevation_points\n)\nSELECT closest_point.distance_meters;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the distance from Portland City Grill, Portland, OR to the closest point higher than 1800 meters in elevation?",
+  "source_file": "nearest_high_terrain+poi.jsonl",
+  "source_stem": "nearest_high_terrain+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 69.226,
+    "total_seconds": 69.227
+  },
+  "usage": {
+    "completion_tokens": 306,
+    "prompt_tokens": 1641,
+    "total_tokens": 1947
+  }
+}

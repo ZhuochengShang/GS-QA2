@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 26.885128
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 26.885128
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-92.51857 45.191132, -92.518534 45.187514, -92.525592 45.187502, -92.526792 45.187493, -92.52913 45.187476, -92.529196 45.187475, -92.529185 45.186749, -92.529153 45.184571, -92.529172 45.183933, -92.529222 45.183935, -92.530654 45.183915, -92.534144 45.183868, -92.543789 45.183902, -92.544673 45.183906, -92.544584 45.187463, -92.544603 45.187966, -92.544689 45.190222, -92.544678 45.190285, -92.54467 45.190313, -92.544655 45.190374, -92.544648 45.190398, -92.544641 45.190427, -92.544625 45.190504, -92.544601 45.190616, -92.544608 45.191828, -92.544612 45.192501, -92.544623 45.194208, -92.544649 45.198424, -92.544651 45.198737, -92.544651 45.198799, -92.544655 45.199388, -92.544659 45.199908, -92.544665 45.200816, -92.544693 45.202185, -92.544703 45.202671, -92.544758 45.205359, -92.544794 45.207126, -92.544817 45.208238, -92.544854 45.210005, -92.544855 45.210052, -92.518677 45.209684, -92.518677 45.209603, -92.518677 45.209519, -92.518651 45.206844, -92.518642 45.205618, -92.518627 45.203516, -92.518619 45.202364, -92.518613 45.201875, -92.518613 45.201848, -92.518613 45.201819, -92.518587 45.199736, -92.518577 45.19836, -92.518566 45.19701, -92.518572 45.196446, -92.518589 45.194809, -92.518589 45.194751, -92.51857 45.191132))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).max AS slope\nFROM region_slope;",
+  "id": "max_slope+area-5",
+  "model_output": "```sql\nWITH star_prairie_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Star Prairie' AND addr_state ILIKE 'Wisconsin'\n),\nraster_subset AS (\n  SELECT\n    ST_Clip(\n      r.rast,\n      (SELECT geom FROM star_prairie_geom),\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast,\n    (SELECT geom FROM star_prairie_geom)\n  )\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM raster_subset\n)\nSELECT\n  (ST_DumpAsPolygons(slope_rast)).val AS max_slope_degrees\nFROM slope_raster\nORDER BY val DESC\nLIMIT 1;\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 4:   WHERE region_name ILIKE 'Star Prairie' AND addr_state ILIK...\n                                                     ^",
+    "output": []
+  },
+  "predicted_sql": "WITH star_prairie_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Star Prairie' AND addr_state ILIKE 'Wisconsin'\n),\nraster_subset AS (\n  SELECT\n    ST_Clip(\n      r.rast,\n      (SELECT geom FROM star_prairie_geom),\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast,\n    (SELECT geom FROM star_prairie_geom)\n  )\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM raster_subset\n)\nSELECT\n  (ST_DumpAsPolygons(slope_rast)).val AS max_slope_degrees\nFROM slope_raster\nORDER BY val DESC\nLIMIT 1;",
+  "predicted_sql_candidates": [
+    "WITH star_prairie_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Star Prairie' AND addr_state ILIKE 'Wisconsin'\n),\nraster_subset AS (\n  SELECT\n    ST_Clip(\n      r.rast,\n      (SELECT geom FROM star_prairie_geom),\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast,\n    (SELECT geom FROM star_prairie_geom)\n  )\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM raster_subset\n)\nSELECT\n  (ST_DumpAsPolygons(slope_rast)).val AS max_slope_degrees\nFROM slope_raster\nORDER BY val DESC\nLIMIT 1;"
+  ],
+  "query_type": "raster_only",
+  "question": "How steep is the steepest part of Star Prairie, Wisconsin?",
+  "source_file": "max_slope+area.jsonl",
+  "source_stem": "max_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 40.268,
+    "total_seconds": 40.269
+  },
+  "usage": {
+    "completion_tokens": 189,
+    "prompt_tokens": 1518,
+    "total_tokens": 1707
+  }
+}

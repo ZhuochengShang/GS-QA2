@@ -1,0 +1,123 @@
+{
+  "answer_type": "row/s",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "row/s",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "rowset_f1",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "addr_city": "Afton",
+      "addr_housenumber": "901",
+      "addr_postcode": "83110",
+      "addr_state": "WY",
+      "addr_street": "Adams Street",
+      "amenity": "hospital",
+      "buf": "0103000020E610000001000000210000002D5A024610BA5BC0C61B5B85D65B4540B453DCA817BA5BC0CC976B26695B4540DDE4A95E2DBA5BC0668F6801005B45404CB8579150BA5BC06ADC7B209F5A4540E3604BE67FBA5BC0D2025F3C4A5A45404BF5C18BB9BA5BC05D6ACC97045A4540D198BA4AFBBA5BC0F6E87BDFD05945403006BC9C42BB5BC0740CE30FB1594540D4A09FC48CBB5BC07BDEB861A6594540FF1870E9D6BB5BC0C8B6FA3DB1594540123756321EBC5BC0E291E639D1594540DB8484E25FBC5BC04001121B055A4540C695127499BC5BC07DFA75E34A5A4540D7A0C2B0C8BC5BC0F46FFAE49F5A4540A3AABFC7EBBC5BC0F689C3DB005B4540C0077F5F01BD5BC0F241400E6A5B45409FA014A308BD5BC02F82C171D75B45401FE3744A01BD5BC003F333D2445C4540C439509DEBBC5BC0691177FBAD5C4540F4786870C8BC5BC0D95CBBE20E5D4540DF07771D99BC5BC0E42350CE635D4540E186F0755FBC5BC0F0EB577AA95D4540CC3126B11DBC5BC01037F838DD5D4540B6187456D6BB5BC0397AC50CFD5D4540D28753248CBB5BC06DCC64BC075E454070D348F541BB5BC03C07A0DEFC5D45407CCDB9A3FABA5BC0081674DEDC5D4540266DC5EDB8BA5BC01D0EF1F6A85D4540EA24355A7FBA5BC064271527635D45409D06951F50BA5BC061821B1E0E5D454075AE690E2DBA5BC0BC9E0221AD5C4540FCFC5A7F17BA5BC0348051EA435C45402D5A024610BA5BC0C61B5B85D65B4540",
+      "geometry": "POINT (-110.930448 42.717501)",
+      "healthcare": "hospital",
+      "id": 35308,
+      "max_elev": 2144.0,
+      "osm_id": 7996602515,
+      "phone": "+1-307-885-5800",
+      "poi_name": "Star Valley Health Hospital",
+      "pt": "0101000020E6100000DC8882748CBB5BC021EE450FD75B4540"
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "addr_city": "Afton",
+        "addr_housenumber": "901",
+        "addr_postcode": "83110",
+        "addr_state": "WY",
+        "addr_street": "Adams Street",
+        "amenity": "hospital",
+        "artwork_type": null,
+        "buf": "0103000020E610000001000000210000002D5A024610BA5BC0C61B5B85D65B4540B453DCA817BA5BC0CC976B26695B4540DDE4A95E2DBA5BC0668F6801005B45404CB8579150BA5BC06ADC7B209F5A4540E3604BE67FBA5BC0D2025F3C4A5A45404BF5C18BB9BA5BC05D6ACC97045A4540D198BA4AFBBA5BC0F6E87BDFD05945403006BC9C42BB5BC0740CE30FB1594540D4A09FC48CBB5BC07BDEB861A6594540FF1870E9D6BB5BC0C8B6FA3DB1594540123756321EBC5BC0E291E639D1594540DB8484E25FBC5BC04001121B055A4540C695127499BC5BC07DFA75E34A5A4540D7A0C2B0C8BC5BC0F46FFAE49F5A4540A3AABFC7EBBC5BC0F689C3DB005B4540C0077F5F01BD5BC0F241400E6A5B45409FA014A308BD5BC02F82C171D75B45401FE3744A01BD5BC003F333D2445C4540C439509DEBBC5BC0691177FBAD5C4540F4786870C8BC5BC0D95CBBE20E5D4540DF07771D99BC5BC0E42350CE635D4540E186F0755FBC5BC0F0EB577AA95D4540CC3126B11DBC5BC01037F838DD5D4540B6187456D6BB5BC0397AC50CFD5D4540D28753248CBB5BC06DCC64BC075E454070D348F541BB5BC03C07A0DEFC5D45407CCDB9A3FABA5BC0081674DEDC5D4540266DC5EDB8BA5BC01D0EF1F6A85D4540EA24355A7FBA5BC064271527635D45409D06951F50BA5BC061821B1E0E5D454075AE690E2DBA5BC0BC9E0221AD5C4540FCFC5A7F17BA5BC0348051EA435C45402D5A024610BA5BC0C61B5B85D65B4540",
+        "building": null,
+        "capacity": null,
+        "cuisine": null,
+        "delivery": null,
+        "description": null,
+        "drive_through": null,
+        "emergency": null,
+        "fast_food": null,
+        "fee": null,
+        "geometry": "0101000020E6100000DC8882748CBB5BC021EE450FD75B4540",
+        "hairdresser": null,
+        "healthcare": "hospital",
+        "historic": null,
+        "id": 35308,
+        "information": null,
+        "internet_access": null,
+        "leisure": null,
+        "max_elev": 2144.0,
+        "museum": null,
+        "official_name": null,
+        "opening_hours": null,
+        "operator": null,
+        "osm_id": 7996602515,
+        "outdoor_seating": null,
+        "parking": null,
+        "pastry_shop": null,
+        "phone": "+1-307-885-5800",
+        "poi_name": "Star Valley Health Hospital",
+        "pt": "0101000020E6100000DC8882748CBB5BC021EE450FD75B4540",
+        "resort": null,
+        "restaurant": null,
+        "school_type": null,
+        "shop": null,
+        "sport": null,
+        "sports": null,
+        "takeaway": null,
+        "toilets": null,
+        "tourism": null,
+        "website": null,
+        "wheelchair": null,
+        "wholesale": null,
+        "wikidata": null,
+        "zoo": null
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_UnaryUnion(\n           ST_CollectionExtract(\n             ST_MakeValid(ST_GeomFromText('MULTIPOLYGON (((-110.948236 42.742391, -110.943444 42.74246, -110.943472 42.744536, -110.943472 42.746376, -110.943372 42.747251, -110.943452 42.749646, -110.943462 42.750796, -110.943446 42.754357, -110.934901 42.754399, -110.934943 42.757995, -110.933378 42.758002, -110.933372 42.757666, -110.933382 42.757366, -110.933369 42.756208, -110.928278 42.756234, -110.928264 42.754692, -110.923612 42.754714, -110.922395 42.754713, -110.921247 42.754698, -110.918463 42.754744, -110.918417 42.750838, -110.918386 42.747406, -110.920228 42.747404, -110.923572 42.747388, -110.923597 42.74355, -110.923517 42.740021, -110.918866 42.740047, -110.91607 42.740054, -110.916038 42.736204, -110.913495 42.736226, -110.913501 42.732918, -110.917701 42.732886, -110.917715 42.732635, -110.917731 42.732551, -110.917731 42.732478, -110.917708 42.732409, -110.917662 42.732322, -110.917631 42.732227, -110.917616 42.732085, -110.917585 42.731933, -110.91757 42.731692, -110.91754 42.731452, -110.91754 42.731364, -110.917555 42.731265, -110.917601 42.731162, -110.917639 42.731059, -110.917662 42.730956, -110.917669 42.730826, -110.917662 42.730686, -110.917662 42.730468, -110.917654 42.730437, -110.9176 42.72922, -110.917552 42.729216, -110.917342 42.729146, -110.917092 42.729016, -110.916722 42.728756, -110.916568 42.728642, -110.916372 42.728496, -110.915992 42.728266, -110.915572 42.728076, -110.915232 42.727856, -110.914969 42.727708, -110.914772 42.727596, -110.914452 42.727306, -110.913922 42.726846, -110.91351 42.726444, -110.913522 42.721837, -110.919583 42.72184, -110.919639 42.72091, -110.921461 42.720925, -110.922552 42.720966, -110.923302 42.720986, -110.924802 42.721016, -110.924942 42.721016, -110.924996 42.719579, -110.923383 42.71951, -110.923292 42.719524, -110.923292 42.719472, -110.923293 42.719396, -110.923297 42.719122, -110.923298 42.719082, -110.923302 42.718926, -110.923303 42.718495, -110.922259 42.71849, -110.922259 42.718087, -110.923308 42.718089, -110.923312 42.717836, -110.923262 42.717041, -110.923271 42.715324, -110.924039 42.715329, -110.924055 42.715247, -110.924101 42.715141, -110.924276 42.714889, -110.924421 42.714656, -110.924482 42.714503, -110.924505 42.714378, -110.92462 42.714233, -110.924757 42.714019, -110.924925 42.71389, -110.92526 42.713679, -110.925856 42.713466, -110.925975 42.713428, -110.925939 42.712133, -110.925935 42.71106, -110.925984 42.710846, -110.926316 42.710855, -110.933444 42.710997, -110.933362 42.708106, -110.933372 42.707796, -110.933362 42.707326, -110.925705 42.707324, -110.925691 42.707202, -110.923498 42.707202, -110.923308 42.700007, -110.926036 42.700024, -110.926092 42.700016, -110.929699 42.700047, -110.930409 42.700768, -110.932781 42.700762, -110.932781 42.700094, -110.933342 42.700106, -110.933332 42.699444, -110.933332 42.697726, -110.933322 42.696806, -110.933314 42.696509, -110.933181 42.696506, -110.924056 42.696558, -110.923777 42.694734, -110.932606 42.694676, -110.932944 42.694694, -110.933268 42.6947, -110.933278 42.694322, -110.935207 42.694302, -110.93648 42.693725, -110.935705 42.692806, -110.936852 42.692796, -110.93746 42.692796, -110.937484 42.693944, -110.93827 42.693973, -110.93825 42.695585, -110.939374 42.695555, -110.939417 42.700062, -110.947604 42.700059, -110.947579 42.707276, -110.94736 42.707298, -110.947352 42.707299, -110.947214 42.707307, -110.945935 42.707299, -110.945748 42.707303, -110.945165 42.707305, -110.945012 42.707299, -110.944949 42.707301, -110.944866 42.707301, -110.944079 42.707312, -110.943168 42.707312, -110.94289 42.70707, -110.942847 42.721776, -110.943192 42.724315, -110.94267 42.724315, -110.94267 42.725096, -110.940398 42.725088, -110.940409 42.724421, -110.939713 42.724437, -110.939893 42.72181, -110.939042 42.721807, -110.938774 42.721814, -110.938767 42.72253, -110.938318 42.722512, -110.93825 42.729515, -110.942093 42.729538, -110.942085 42.729574, -110.942094 42.72973, -110.940729 42.729726, -110.940748 42.730357, -110.938903 42.730353, -110.938896 42.729761, -110.938248 42.729747, -110.938214 42.73367, -110.938204 42.7344, -110.935656 42.73436, -110.935571 42.739974, -110.942984 42.739984, -110.943082 42.735236, -110.945162 42.736036, -110.946012 42.736336, -110.946552 42.736456, -110.947513 42.736621, -110.948162 42.736727, -110.948173 42.738112, -110.948236 42.742391)), ((-110.933358 42.700095, -110.933362 42.70073, -110.933995 42.700734, -110.934 42.70011, -110.933358 42.700095)), ((-110.937831 42.705708, -110.937281 42.705703, -110.937281 42.706255, -110.93648 42.706255, -110.936469 42.707322, -110.937827 42.707318, -110.937831 42.705708)), ((-110.940569 42.711205, -110.939875 42.711194, -110.939805 42.711344, -110.939837 42.713586, -110.940539 42.71359, -110.940545 42.713057, -110.940569 42.711205)), ((-110.927024 42.701828, -110.926665 42.701809, -110.926456 42.702227, -110.926304 42.702227, -110.926447 42.702699, -110.927024 42.70264, -110.927024 42.701828)))', 4326)),\n             3\n           )\n         ) AS g\n),\ncandidates AS (\n  SELECT\n    p.*,\n    ST_PointOnSurface(p.geometry::geometry) AS pt,\n    ST_Buffer(ST_PointOnSurface(p.geometry::geometry)::geography, 1900)::geometry AS buf\n  FROM pois p\n  JOIN region r\n    ON ST_Intersects(p.geometry::geometry, r.g)\n  WHERE p.\"amenity\" = 'hospital'\n),\npoi_nearby AS (\n  SELECT c.*,\n         nearby.max_elev\n  FROM candidates c\n  JOIN LATERAL (\n    SELECT MAX((s.stats).max) AS max_elev\n    FROM (\n      SELECT ST_SummaryStats(\n               ST_Clip(\n                 d.rast,\n                 ST_Intersection(\n                   c.buf,\n                   r.g\n                 )\n               )\n             ) AS stats\n      FROM public.dem_us d\n      JOIN region r ON ST_Intersects(d.rast, r.g)\n      WHERE ST_Intersects(d.rast, c.buf)\n    ) s\n  ) nearby ON nearby.max_elev IS NOT NULL\n)\nSELECT DISTINCT ON (id) *\nFROM poi_nearby\nWHERE max_elev >= 1000;",
+  "id": "elevation_proximity_zone+name-14",
+  "model_output": "```sql\nWITH hospital_geom AS (\n  SELECT \n    id,\n    geometry\n  FROM pois\n  WHERE poi_name ILIKE 'Star Valley Health Hospital'\n    AND addr_city = 'Afton'\n    AND addr_state = 'WY'\n    AND amenity = 'hospital'\n),\nelevated_areas AS (\n  SELECT \n    ST_Union(rast) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(\n    rast,\n    ST_SetSRID(ST_MakeEnvelope(-110.930448 - 0.01, 42.717501 - 0.01, -110.930448 + 0.01, 42.717501 + 0.01, 4326), 4326)\n  )\n),\nelevated_raster_clipped AS (\n  SELECT \n    ST_Clip(\n      rast,\n      ST_SetSRID(ST_MakeEnvelope(-110.930448 - 0.01, 42.717501 - 0.01, -110.930448 + 0.01, 42.717501 + 0.01, 4326), 4326),\n      true\n    ) AS rast\n  FROM elevated_areas\n),\nelevation_mask AS (\n  SELECT \n    ST_MapAlgebra(\n      rast,\n      1,\n      '([rast] >= 1000)::INT',\n      '32BF'\n    ) AS rast\n  FROM elevated_raster_clipped\n),\nelevation_mask_geom AS (\n  SELECT \n    ST_Polygon(rast) AS geom\n  FROM elevation_mask\n),\nfinal_result AS (\n  SELECT \n    h.poi_name,\n    h.geometry\n  FROM hospital_geom h\n  JOIN elevation_mask_geom emg\n    ON ST_DWithin(\n      h.geometry::geometry,\n      emg.geom::geometry,\n      1900\n    )\n)\nSELECT \n  poi_name\nFROM final_result;\n```",
+  "predicted_exec": {
+    "error": "column h.poi_name does not exist\nLINE 46:     h.poi_name,\n             ^",
+    "output": []
+  },
+  "predicted_sql": "WITH hospital_geom AS (\n  SELECT \n    id,\n    geometry\n  FROM pois\n  WHERE poi_name ILIKE 'Star Valley Health Hospital'\n    AND addr_city = 'Afton'\n    AND addr_state = 'WY'\n    AND amenity = 'hospital'\n),\nelevated_areas AS (\n  SELECT \n    ST_Union(rast) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(\n    rast,\n    ST_SetSRID(ST_MakeEnvelope(-110.930448 - 0.01, 42.717501 - 0.01, -110.930448 + 0.01, 42.717501 + 0.01, 4326), 4326)\n  )\n),\nelevated_raster_clipped AS (\n  SELECT \n    ST_Clip(\n      rast,\n      ST_SetSRID(ST_MakeEnvelope(-110.930448 - 0.01, 42.717501 - 0.01, -110.930448 + 0.01, 42.717501 + 0.01, 4326), 4326),\n      true\n    ) AS rast\n  FROM elevated_areas\n),\nelevation_mask AS (\n  SELECT \n    ST_MapAlgebra(\n      rast,\n      1,\n      '([rast] >= 1000)::INT',\n      '32BF'\n    ) AS rast\n  FROM elevated_raster_clipped\n),\nelevation_mask_geom AS (\n  SELECT \n    ST_Polygon(rast) AS geom\n  FROM elevation_mask\n),\nfinal_result AS (\n  SELECT \n    h.poi_name,\n    h.geometry\n  FROM hospital_geom h\n  JOIN elevation_mask_geom emg\n    ON ST_DWithin(\n      h.geometry::geometry,\n      emg.geom::geometry,\n      1900\n    )\n)\nSELECT \n  poi_name\nFROM final_result;",
+  "predicted_sql_candidates": [
+    "WITH hospital_geom AS (\n  SELECT \n    id,\n    geometry\n  FROM pois\n  WHERE poi_name ILIKE 'Star Valley Health Hospital'\n    AND addr_city = 'Afton'\n    AND addr_state = 'WY'\n    AND amenity = 'hospital'\n),\nelevated_areas AS (\n  SELECT \n    ST_Union(rast) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(\n    rast,\n    ST_SetSRID(ST_MakeEnvelope(-110.930448 - 0.01, 42.717501 - 0.01, -110.930448 + 0.01, 42.717501 + 0.01, 4326), 4326)\n  )\n),\nelevated_raster_clipped AS (\n  SELECT \n    ST_Clip(\n      rast,\n      ST_SetSRID(ST_MakeEnvelope(-110.930448 - 0.01, 42.717501 - 0.01, -110.930448 + 0.01, 42.717501 + 0.01, 4326), 4326),\n      true\n    ) AS rast\n  FROM elevated_areas\n),\nelevation_mask AS (\n  SELECT \n    ST_MapAlgebra(\n      rast,\n      1,\n      '([rast] >= 1000)::INT',\n      '32BF'\n    ) AS rast\n  FROM elevated_raster_clipped\n),\nelevation_mask_geom AS (\n  SELECT \n    ST_Polygon(rast) AS geom\n  FROM elevation_mask\n),\nfinal_result AS (\n  SELECT \n    h.poi_name,\n    h.geometry\n  FROM hospital_geom h\n  JOIN elevation_mask_geom emg\n    ON ST_DWithin(\n      h.geometry::geometry,\n      emg.geom::geometry,\n      1900\n    )\n)\nSELECT \n  poi_name\nFROM final_result;"
+  ],
+  "query_type": "raster_vector",
+  "question": "Which hospitals in Afton, Wyoming are within 1900 meters of areas with elevation at least 1000 m?",
+  "source_file": "elevation_proximity_zone+name.jsonl",
+  "source_stem": "elevation_proximity_zone+name",
+  "timing": {
+    "execution_seconds": 0.002,
+    "generation_seconds": 101.008,
+    "total_seconds": 101.01
+  },
+  "usage": {
+    "completion_tokens": 473,
+    "prompt_tokens": 1700,
+    "total_tokens": 2173
+  }
+}

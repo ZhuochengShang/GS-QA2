@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation - point based",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation - point based",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 313.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 313.0
+      }
+    ]
+  },
+  "gold_sql": "SELECT ST_Value(rast, 1, ST_GeomFromText('POINT (-81.097893 35.629208)',4326)) AS elevation\nFROM public.dem_us\nWHERE ST_Intersects(rast, ST_GeomFromText('POINT (-81.097893 35.629208)',4326))\nLIMIT 1;",
+  "id": "elevation+poi-15",
+  "model_output": "```sql\nWITH geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-81.097893, 35.629208), 4326)::geography AS point_geom\n)\nSELECT \n  ST_Value(r.rast, ST_Transform(point_geom, 4326)) AS elevation\nFROM \n  geom,\n  public.dem_us r\nWHERE \n  ST_Intersects(r.rast, ST_Transform(point_geom, 4326));\n```",
+  "predicted_exec": {
+    "error": "function st_transform(geography, integer) does not exist\nLINE 5:   ST_Value(r.rast, ST_Transform(point_geom, 4326)) AS elevat...\n                           ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-81.097893, 35.629208), 4326)::geography AS point_geom\n)\nSELECT \n  ST_Value(r.rast, ST_Transform(point_geom, 4326)) AS elevation\nFROM \n  geom,\n  public.dem_us r\nWHERE \n  ST_Intersects(r.rast, ST_Transform(point_geom, 4326));",
+  "predicted_sql_candidates": [
+    "WITH geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-81.097893, 35.629208), 4326)::geography AS point_geom\n)\nSELECT \n  ST_Value(r.rast, ST_Transform(point_geom, 4326)) AS elevation\nFROM \n  geom,\n  public.dem_us r\nWHERE \n  ST_Intersects(r.rast, ST_Transform(point_geom, 4326));"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the elevation at Balls Creek Campground, Catawba, NC?",
+  "source_file": "elevation+poi.jsonl",
+  "source_stem": "elevation+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 23.913,
+    "total_seconds": 23.914
+  },
+  "usage": {
+    "completion_tokens": 112,
+    "prompt_tokens": 1615,
+    "total_tokens": 1727
+  }
+}

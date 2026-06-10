@@ -1,0 +1,70 @@
+{
+  "answer_type": "aspect",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "aspect",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "max_abs_numeric_delta": 311.185925,
+    "mean_abs_numeric_delta": 311.185925,
+    "numeric_deltas": [
+      311.185925
+    ],
+    "predicted_row_count": 1,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "absolute_error": 311.185925,
+      "gold_field": "aspect_degrees",
+      "gold_value": 3.814075,
+      "metric_family": "primary_numeric",
+      "predicted_field": "aspect_degrees",
+      "predicted_value": 315.0,
+      "relative_error": 81.588837,
+      "within_tolerance": false
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "aspect_degrees": 3.814075
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "aspect_degrees": 3.814075
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-83.696429 40.238092)',4326) AS pt\n),\npatch AS (\n  SELECT ST_Buffer(pt::geography, 100)::geometry AS g FROM origin\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, p.g)) AS rast\n  FROM public.dem_us d\n  JOIN patch p ON ST_Intersects(d.rast, p.g)\n),\naspect_rast AS (\n  SELECT ST_Aspect(rast, 1, '32BF', 'DEGREES') AS rast\n  FROM clipped_dem\n)\nSELECT ST_Value(a.rast, 1, o.pt) AS aspect_degrees\nFROM aspect_rast a, origin o;",
+  "id": "aspect+poi-12",
+  "model_output": "```sql\nWITH geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-83.696429, 40.238092), 4326)::geography AS geometry\n),\naspect_raster AS (\n  SELECT \n    ST_Aspect(\n      ST_Clip(\n        r.rast, \n        (g.geometry::geometry), \n        TRUE\n      ), \n      1\n    ) AS aspect_rast\n  FROM \n    geom g,\n    public.dem_us r\n  WHERE \n    ST_Intersects(r.rast, g.geometry::geometry)\n)\nSELECT \n  ST_Value(aspect_rast, 1, 1) AS aspect_degrees\nFROM \n  aspect_raster;\n```",
+  "predicted_exec": {
+    "error": "",
+    "output": [
+      {
+        "aspect_degrees": 315.0
+      }
+    ]
+  },
+  "predicted_sql": "WITH geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-83.696429, 40.238092), 4326)::geography AS geometry\n),\naspect_raster AS (\n  SELECT \n    ST_Aspect(\n      ST_Clip(\n        r.rast, \n        (g.geometry::geometry), \n        TRUE\n      ), \n      1\n    ) AS aspect_rast\n  FROM \n    geom g,\n    public.dem_us r\n  WHERE \n    ST_Intersects(r.rast, g.geometry::geometry)\n)\nSELECT \n  ST_Value(aspect_rast, 1, 1) AS aspect_degrees\nFROM \n  aspect_raster;",
+  "predicted_sql_candidates": [
+    "WITH geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-83.696429, 40.238092), 4326)::geography AS geometry\n),\naspect_raster AS (\n  SELECT \n    ST_Aspect(\n      ST_Clip(\n        r.rast, \n        (g.geometry::geometry), \n        TRUE\n      ), \n      1\n    ) AS aspect_rast\n  FROM \n    geom g,\n    public.dem_us r\n  WHERE \n    ST_Intersects(r.rast, g.geometry::geometry)\n)\nSELECT \n  ST_Value(aspect_rast, 1, 1) AS aspect_degrees\nFROM \n  aspect_raster;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the slope orientation in degrees at Ohio Caverns, West Liberty, OH?",
+  "source_file": "aspect+poi.jsonl",
+  "source_stem": "aspect+poi",
+  "timing": {
+    "execution_seconds": 0.036,
+    "generation_seconds": 34.312,
+    "total_seconds": 34.348
+  },
+  "usage": {
+    "completion_tokens": 161,
+    "prompt_tokens": 1606,
+    "total_tokens": 1767
+  }
+}

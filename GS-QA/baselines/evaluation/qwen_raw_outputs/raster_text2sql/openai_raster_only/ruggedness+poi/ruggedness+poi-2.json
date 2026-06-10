@@ -1,0 +1,59 @@
+{
+  "answer_type": "ruggedness_index",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "ruggedness_index",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "tri_value": 2.125
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "tri_value": 2.125
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-89.670723 39.765282)',4326) AS pt\n),\npatch AS (\n  SELECT ST_Buffer(pt::geography, 100)::geometry AS g FROM origin\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, p.g)) AS rast\n  FROM public.dem_us d\n  JOIN patch p ON ST_Intersects(d.rast, p.g)\n),\ntri_rast AS (\n  SELECT ST_TRI(rast, 1) AS rast\n  FROM clipped_dem\n)\nSELECT ST_Value(t.rast, 1, o.pt) AS tri_value\nFROM tri_rast t, origin o;",
+  "id": "ruggedness+poi-2",
+  "model_output": "```sql\nWITH geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-89.670723, 39.765282), 4326)::geography AS point_geom\n),\nbuffered_geom AS (\n  SELECT ST_Buffer(point_geom::geometry, 100) AS buffered_geom\n  FROM geom\n),\nclipped_raster AS (\n  SELECT ST_Clip(r.rast, 1, buffered_geom.buffered_geom, true) AS clipped_rast\n  FROM public.dem_us r, buffered_geom\n  WHERE ST_Intersects(r.rast, buffered_geom.buffered_geom)\n),\nruggedness_index AS (\n  SELECT ST_RuggednessIndex(clipped_rast) AS ruggedness\n  FROM clipped_raster\n)\nSELECT ruggedness AS elevation_fluctuation_ruggedness_index\nFROM ruggedness_index;\n```",
+  "predicted_exec": {
+    "error": "function st_ruggednessindex(raster) does not exist\nLINE 14:   SELECT ST_RuggednessIndex(clipped_rast) AS ruggedness\n                  ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-89.670723, 39.765282), 4326)::geography AS point_geom\n),\nbuffered_geom AS (\n  SELECT ST_Buffer(point_geom::geometry, 100) AS buffered_geom\n  FROM geom\n),\nclipped_raster AS (\n  SELECT ST_Clip(r.rast, 1, buffered_geom.buffered_geom, true) AS clipped_rast\n  FROM public.dem_us r, buffered_geom\n  WHERE ST_Intersects(r.rast, buffered_geom.buffered_geom)\n),\nruggedness_index AS (\n  SELECT ST_RuggednessIndex(clipped_rast) AS ruggedness\n  FROM clipped_raster\n)\nSELECT ruggedness AS elevation_fluctuation_ruggedness_index\nFROM ruggedness_index;",
+  "predicted_sql_candidates": [
+    "WITH geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-89.670723, 39.765282), 4326)::geography AS point_geom\n),\nbuffered_geom AS (\n  SELECT ST_Buffer(point_geom::geometry, 100) AS buffered_geom\n  FROM geom\n),\nclipped_raster AS (\n  SELECT ST_Clip(r.rast, 1, buffered_geom.buffered_geom, true) AS clipped_rast\n  FROM public.dem_us r, buffered_geom\n  WHERE ST_Intersects(r.rast, buffered_geom.buffered_geom)\n),\nruggedness_index AS (\n  SELECT ST_RuggednessIndex(clipped_rast) AS ruggedness\n  FROM clipped_raster\n)\nSELECT ruggedness AS elevation_fluctuation_ruggedness_index\nFROM ruggedness_index;"
+  ],
+  "query_type": "raster_only",
+  "question": "How much does elevation fluctuate near Moroleon Tropical, Springfield, IL?",
+  "source_file": "ruggedness+poi.jsonl",
+  "source_stem": "ruggedness+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 42.067,
+    "total_seconds": 42.068
+  },
+  "usage": {
+    "completion_tokens": 187,
+    "prompt_tokens": 1613,
+    "total_tokens": 1800
+  }
+}

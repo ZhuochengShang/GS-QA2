@@ -1,0 +1,73 @@
+{
+  "answer_type": "name",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "name",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "max_abs_numeric_delta": 53.0,
+    "mean_abs_numeric_delta": 53.0,
+    "numeric_deltas": [
+      53.0
+    ],
+    "predicted_row_count": 1,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "exact_match": false,
+      "gold_field": "higher_poi",
+      "gold_value": "Chicago Portage National Historic Site, Lyons, IL",
+      "metric_family": "primary_text",
+      "predicted_field": "higher_elevation_entity",
+      "predicted_value": "[4]"
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "higher_poi": "Chicago Portage National Historic Site, Lyons, IL",
+      "poi1_elevation_m": 126.0,
+      "poi2_elevation_m": 179.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "higher_poi": "Chicago Portage National Historic Site, Lyons, IL",
+        "poi1_elevation_m": 126.0,
+        "poi2_elevation_m": 179.0
+      }
+    ]
+  },
+  "gold_sql": "WITH p1 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-87.53358 38.672428)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-87.53358 38.672428)',4326))\n  LIMIT 1\n),\np2 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-87.802535 41.805303)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-87.802535 41.805303)',4326))\n  LIMIT 1\n)\nSELECT\n  CASE\n    WHEN p1.elev > p2.elev THEN 'Good Samaritan Hospital, Vincennes, IN'\n    WHEN p2.elev > p1.elev THEN 'Chicago Portage National Historic Site, Lyons, IL'\n    ELSE 'equal'\n  END AS higher_poi,\n  p1.elev AS poi1_elevation_m,\n  p2.elev AS poi2_elevation_m\nFROM p1, p2;",
+  "id": "elevation_compare+two_pois-6",
+  "model_output": "```sql\nWITH points_of_interest AS (\n  SELECT \n    '[3]' AS id,\n    ST_SetSRID(ST_MakePoint(-87.53358, 38.672428), 4326)::geometry AS geom\n  UNION ALL\n  SELECT \n    '[4]' AS id,\n    ST_SetSRID(ST_MakePoint(-87.802535, 41.805303), 4326)::geometry AS geom\n),\nelevation_values AS (\n  SELECT \n    p.id,\n    ST_Value(r.rast, p.geom) AS elevation\n  FROM \n    points_of_interest p\n  JOIN \n    public.dem_us r\n  ON \n    ST_Intersects(r.rast, p.geom)\n)\nSELECT \n  MAX(CASE WHEN elevation = (SELECT MAX(elevation) FROM elevation_values) THEN id END) AS higher_elevation_entity,\n  MAX(elevation) AS max_elevation\nFROM \n  elevation_values;\n```",
+  "predicted_exec": {
+    "error": "",
+    "output": [
+      {
+        "higher_elevation_entity": "[4]",
+        "max_elevation": 179.0
+      }
+    ]
+  },
+  "predicted_sql": "WITH points_of_interest AS (\n  SELECT \n    '[3]' AS id,\n    ST_SetSRID(ST_MakePoint(-87.53358, 38.672428), 4326)::geometry AS geom\n  UNION ALL\n  SELECT \n    '[4]' AS id,\n    ST_SetSRID(ST_MakePoint(-87.802535, 41.805303), 4326)::geometry AS geom\n),\nelevation_values AS (\n  SELECT \n    p.id,\n    ST_Value(r.rast, p.geom) AS elevation\n  FROM \n    points_of_interest p\n  JOIN \n    public.dem_us r\n  ON \n    ST_Intersects(r.rast, p.geom)\n)\nSELECT \n  MAX(CASE WHEN elevation = (SELECT MAX(elevation) FROM elevation_values) THEN id END) AS higher_elevation_entity,\n  MAX(elevation) AS max_elevation\nFROM \n  elevation_values;",
+  "predicted_sql_candidates": [
+    "WITH points_of_interest AS (\n  SELECT \n    '[3]' AS id,\n    ST_SetSRID(ST_MakePoint(-87.53358, 38.672428), 4326)::geometry AS geom\n  UNION ALL\n  SELECT \n    '[4]' AS id,\n    ST_SetSRID(ST_MakePoint(-87.802535, 41.805303), 4326)::geometry AS geom\n),\nelevation_values AS (\n  SELECT \n    p.id,\n    ST_Value(r.rast, p.geom) AS elevation\n  FROM \n    points_of_interest p\n  JOIN \n    public.dem_us r\n  ON \n    ST_Intersects(r.rast, p.geom)\n)\nSELECT \n  MAX(CASE WHEN elevation = (SELECT MAX(elevation) FROM elevation_values) THEN id END) AS higher_elevation_entity,\n  MAX(elevation) AS max_elevation\nFROM \n  elevation_values;"
+  ],
+  "query_type": "raster_only",
+  "question": "Of Good Samaritan Hospital, Vincennes, IN and Chicago Portage National Historic Site, Lyons, IL, which sits at a greater elevation?",
+  "source_file": "elevation_compare+two_pois.jsonl",
+  "source_stem": "elevation_compare+two_pois",
+  "timing": {
+    "execution_seconds": 0.038,
+    "generation_seconds": 47.17,
+    "total_seconds": 47.208
+  },
+  "usage": {
+    "completion_tokens": 221,
+    "prompt_tokens": 1749,
+    "total_tokens": 1970
+  }
+}

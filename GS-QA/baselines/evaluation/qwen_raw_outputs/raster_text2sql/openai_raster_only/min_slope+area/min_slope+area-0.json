@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 0.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 0.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-76.691614 41.487021, -76.710351 41.492271, -76.701705 41.506343, -76.702211 41.514289, -76.692065 41.526427, -76.691759 41.534977, -76.704409 41.539964, -76.702735 41.542222, -76.678824 41.57862, -76.603912 41.572486, -76.555171 41.568498, -76.606674 41.49821, -76.61999 41.492918, -76.61891 41.4912, -76.618626 41.490734, -76.6177 41.489254, -76.619083 41.488642, -76.619421 41.488518, -76.619651 41.488514, -76.61984 41.488552, -76.620139 41.488666, -76.621298 41.489851, -76.621761 41.49041, -76.622973 41.492522, -76.62317 41.4929, -76.623483 41.493005, -76.624051 41.492974, -76.624326 41.492722, -76.625096 41.492161, -76.626845 41.490585, -76.630469 41.488416, -76.631398 41.487926, -76.632076 41.487463, -76.632437 41.487167, -76.632995 41.486633, -76.633364 41.486119, -76.63363 41.485605, -76.63387 41.485116, -76.634033 41.484634, -76.634042 41.484235, -76.634042 41.483862, -76.633973 41.483373, -76.633888 41.483071, -76.633836 41.482441, -76.633682 41.48185, -76.63357 41.481245, -76.633338 41.480673, -76.633072 41.480075, -76.632978 41.47965, -76.632909 41.479168, -76.632858 41.478789, -76.632858 41.478384, -76.632909 41.477869, -76.632898 41.477766, -76.632872 41.477518, -76.634071 41.477192, -76.634319 41.476965, -76.634789 41.475616, -76.635144 41.474842, -76.635334 41.474225, -76.635553 41.473818, -76.635672 41.473618, -76.635913 41.473213, -76.636686 41.472454, -76.637393 41.471936, -76.639976 41.472902, -76.658915 41.465755, -76.659035 41.465806, -76.659148 41.465926, -76.659671 41.466132, -76.660246 41.466422, -76.660761 41.466705, -76.661353 41.466981, -76.661731 41.467206, -76.662194 41.467425, -76.662916 41.467631, -76.663473 41.467843, -76.66392 41.467972, -76.664435 41.468081, -76.66483 41.468178, -76.665224 41.468171, -76.665499 41.46812, -76.665945 41.468158, -76.66634 41.467991, -76.666795 41.467586, -76.667301 41.467155, -76.667808 41.466628, -76.668263 41.466177, -76.668572 41.465862, -76.668898 41.465515, -76.669207 41.465103, -76.669464 41.464788, -76.669627 41.464364, -76.669739 41.463907, -76.669934 41.463446, -76.67003 41.463488, -76.688998 41.471934, -76.688857 41.472057, -76.688846 41.472242, -76.689306 41.472456, -76.689631 41.472696, -76.689892 41.473231, -76.690033 41.473568, -76.690265 41.473884, -76.690495 41.474319, -76.690665 41.474932, -76.690868 41.475346, -76.691105 41.475739, -76.691229 41.476307, -76.691378 41.476712, -76.691497 41.477353, -76.691519 41.478034, -76.691544 41.478636, -76.691501 41.47918, -76.69155 41.479804, -76.691578 41.480204, -76.691795 41.480667, -76.692098 41.481147, -76.692346 41.481857, -76.692325 41.482483, -76.692478 41.48293, -76.692631 41.483441, -76.692682 41.483871, -76.69252 41.484212, -76.692467 41.484738, -76.692428 41.485356, -76.692118 41.486, -76.691934 41.486567, -76.691614 41.487021))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).min AS slope\nFROM region_slope;",
+  "id": "min_slope+area-0",
+  "model_output": "```sql\nWITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Elkland Township'\n    AND border_type ILIKE 'township'\n    AND addr_state ILIKE 'Pennsylvania'\n    AND addr_county ILIKE 'Sullivan'\n)\n, clipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM region_geom), true) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM region_geom))\n)\n, slope_raster AS (\n  SELECT ST_Slope(rast, 1, '32BF') AS rast\n  FROM clipped_dem\n)\nSELECT MIN(rast_value) AS least_steep_slope\nFROM (\n  SELECT (ST_DumpAsPolygons(rast)).*\n  FROM slope_raster\n) subquery(rastgeom, rast_value);\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 6:     AND addr_state ILIKE 'Pennsylvania'\n                ^",
+    "output": []
+  },
+  "predicted_sql": "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Elkland Township'\n    AND border_type ILIKE 'township'\n    AND addr_state ILIKE 'Pennsylvania'\n    AND addr_county ILIKE 'Sullivan'\n)\n, clipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM region_geom), true) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM region_geom))\n)\n, slope_raster AS (\n  SELECT ST_Slope(rast, 1, '32BF') AS rast\n  FROM clipped_dem\n)\nSELECT MIN(rast_value) AS least_steep_slope\nFROM (\n  SELECT (ST_DumpAsPolygons(rast)).*\n  FROM slope_raster\n) subquery(rastgeom, rast_value);",
+  "predicted_sql_candidates": [
+    "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Elkland Township'\n    AND border_type ILIKE 'township'\n    AND addr_state ILIKE 'Pennsylvania'\n    AND addr_county ILIKE 'Sullivan'\n)\n, clipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM region_geom), true) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM region_geom))\n)\n, slope_raster AS (\n  SELECT ST_Slope(rast, 1, '32BF') AS rast\n  FROM clipped_dem\n)\nSELECT MIN(rast_value) AS least_steep_slope\nFROM (\n  SELECT (ST_DumpAsPolygons(rast)).*\n  FROM slope_raster\n) subquery(rastgeom, rast_value);"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the least steep slope across Elkland Township, Sullivan County, Pennsylvania?",
+  "source_file": "min_slope+area.jsonl",
+  "source_stem": "min_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 40.701,
+    "total_seconds": 40.702
+  },
+  "usage": {
+    "completion_tokens": 191,
+    "prompt_tokens": 1520,
+    "total_tokens": 1711
+  }
+}

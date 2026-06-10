@@ -1,0 +1,117 @@
+{
+  "answer_type": "row/s",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "row/s",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "rowset_f1",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "addr_city": "Austell",
+      "addr_housenumber": "10101",
+      "addr_postcode": "30168",
+      "addr_state": "GA",
+      "addr_street": "Veterans Memorial Highway",
+      "elevation": 263.0,
+      "geometry": "POINT (-84.639472 33.800157)",
+      "id": 246962,
+      "leisure": "park",
+      "osm_id": 5863460931,
+      "poi_name": "Frog Rock"
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "addr_city": "Austell",
+        "addr_housenumber": "10101",
+        "addr_postcode": "30168",
+        "addr_state": "GA",
+        "addr_street": "Veterans Memorial Highway",
+        "amenity": null,
+        "artwork_type": null,
+        "building": null,
+        "capacity": null,
+        "cuisine": null,
+        "delivery": null,
+        "description": null,
+        "drive_through": null,
+        "elevation": 263.0,
+        "emergency": null,
+        "fast_food": null,
+        "fee": null,
+        "geometry": "0101000020E6100000EC8DB51AED2855C02E55698B6BE64040",
+        "hairdresser": null,
+        "healthcare": null,
+        "historic": null,
+        "id": 246962,
+        "information": null,
+        "internet_access": null,
+        "leisure": "park",
+        "museum": null,
+        "official_name": null,
+        "opening_hours": null,
+        "operator": null,
+        "osm_id": 5863460931,
+        "outdoor_seating": null,
+        "parking": null,
+        "pastry_shop": null,
+        "phone": null,
+        "poi_name": "Frog Rock",
+        "resort": null,
+        "restaurant": null,
+        "school_type": null,
+        "shop": null,
+        "sport": null,
+        "sports": null,
+        "takeaway": null,
+        "toilets": null,
+        "tourism": null,
+        "website": null,
+        "wheelchair": null,
+        "wholesale": null,
+        "wikidata": null,
+        "zoo": null
+      }
+    ]
+  },
+  "gold_sql": "SELECT p.*, elev.z AS elevation\nFROM pois p\nJOIN LATERAL (\n  SELECT ST_Value(d.rast, 1, p.geometry::geometry) AS z\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, p.geometry::geometry)\n  LIMIT 1\n) elev ON elev.z IS NOT NULL\nWHERE ST_DWithin(p.geometry::geography, ST_GeomFromText('POINT (-84.639472 33.800157)',4326)::geography, 1900)\n  AND p.leisure = 'park'\n  AND elev.z >= 100;",
+  "id": "range+loc+elevation_condition-11",
+  "model_output": "```sql\nWITH frog_rock AS (\n  SELECT \n    ST_Buffer(ST_SetSRID(ST_MakePoint(-84.639472, 33.800157), 4326)::geography, 1900)::geometry AS search_area\n),\ndem_clip AS (\n  SELECT \n    ST_Union(rast) AS clipped_rast\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(rast, (SELECT search_area FROM frog_rock))\n),\nparks_in_range AS (\n  SELECT \n    p.park_name,\n    p.geometry\n  FROM \n    parks p\n  WHERE \n    p.addr_city = 'Austell' AND \n    p.addr_state = 'GA' AND \n    ST_DWithin(p.geometry::geometry, (SELECT search_area FROM frog_rock), 0)\n),\nfinal_result AS (\n  SELECT \n    pr.park_name,\n    ST_Value(dc.clipped_rast, pr.geometry::geometry) AS elevation\n  FROM \n    parks_in_range pr\n  CROSS JOIN \n    dem_clip dc\n  WHERE \n    ST_Contains(dc.clipped_rast, pr.geometry::geometry)\n)\nSELECT \n  park_name\nFROM \n  final_result\nWHERE \n  elevation >= 100;\n```",
+  "predicted_exec": {
+    "error": "function st_contains(raster, geometry) does not exist\nLINE 33:     ST_Contains(dc.clipped_rast, pr.geometry::geometry)\n             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH frog_rock AS (\n  SELECT \n    ST_Buffer(ST_SetSRID(ST_MakePoint(-84.639472, 33.800157), 4326)::geography, 1900)::geometry AS search_area\n),\ndem_clip AS (\n  SELECT \n    ST_Union(rast) AS clipped_rast\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(rast, (SELECT search_area FROM frog_rock))\n),\nparks_in_range AS (\n  SELECT \n    p.park_name,\n    p.geometry\n  FROM \n    parks p\n  WHERE \n    p.addr_city = 'Austell' AND \n    p.addr_state = 'GA' AND \n    ST_DWithin(p.geometry::geometry, (SELECT search_area FROM frog_rock), 0)\n),\nfinal_result AS (\n  SELECT \n    pr.park_name,\n    ST_Value(dc.clipped_rast, pr.geometry::geometry) AS elevation\n  FROM \n    parks_in_range pr\n  CROSS JOIN \n    dem_clip dc\n  WHERE \n    ST_Contains(dc.clipped_rast, pr.geometry::geometry)\n)\nSELECT \n  park_name\nFROM \n  final_result\nWHERE \n  elevation >= 100;",
+  "predicted_sql_candidates": [
+    "WITH frog_rock AS (\n  SELECT \n    ST_Buffer(ST_SetSRID(ST_MakePoint(-84.639472, 33.800157), 4326)::geography, 1900)::geometry AS search_area\n),\ndem_clip AS (\n  SELECT \n    ST_Union(rast) AS clipped_rast\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(rast, (SELECT search_area FROM frog_rock))\n),\nparks_in_range AS (\n  SELECT \n    p.park_name,\n    p.geometry\n  FROM \n    parks p\n  WHERE \n    p.addr_city = 'Austell' AND \n    p.addr_state = 'GA' AND \n    ST_DWithin(p.geometry::geometry, (SELECT search_area FROM frog_rock), 0)\n),\nfinal_result AS (\n  SELECT \n    pr.park_name,\n    ST_Value(dc.clipped_rast, pr.geometry::geometry) AS elevation\n  FROM \n    parks_in_range pr\n  CROSS JOIN \n    dem_clip dc\n  WHERE \n    ST_Contains(dc.clipped_rast, pr.geometry::geometry)\n)\nSELECT \n  park_name\nFROM \n  final_result\nWHERE \n  elevation >= 100;"
+  ],
+  "query_type": "extended",
+  "question": "Could you locate a park within 1900 meters of Frog Rock, Austell, GA with elevation at least 100 m?",
+  "source_file": "range+loc+elevation_condition.jsonl",
+  "source_stem": "range+loc+elevation_condition",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 59.358,
+    "total_seconds": 59.359
+  },
+  "usage": {
+    "completion_tokens": 278,
+    "prompt_tokens": 1780,
+    "total_tokens": 2058
+  }
+}

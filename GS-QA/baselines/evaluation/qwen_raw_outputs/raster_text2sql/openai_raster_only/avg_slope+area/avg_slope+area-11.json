@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 3.31954
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 3.31954
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-90.269199 38.60501, -90.266812 38.605126, -90.266697 38.605128, -90.263013 38.604787, -90.252297 38.603776, -90.242763 38.602887, -90.242656 38.602869, -90.242259 38.602742, -90.242261 38.602731, -90.24239 38.601894, -90.242934 38.598246, -90.243381 38.595363, -90.243774 38.592956, -90.243842 38.59248, -90.244174 38.590171, -90.244481 38.588364, -90.246038 38.588554, -90.258074 38.589815, -90.258293 38.589828, -90.258584 38.589845, -90.258751 38.589859, -90.259738 38.589959, -90.261389 38.590128, -90.26204 38.590218, -90.26407 38.590457, -90.269815 38.591092, -90.273297 38.591489, -90.271922 38.593431, -90.271778 38.593636, -90.271402 38.594169, -90.271349 38.594286, -90.271309 38.594431, -90.269672 38.602338, -90.269319 38.604269, -90.269199 38.60501))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).mean AS slope\nFROM region_slope;",
+  "id": "avg_slope+area-11",
+  "model_output": "```sql\nWITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Tower Grove South'\n    AND wikipedia ILIKE '%St. Louis%'\n)\n, clipped_raster AS (\n  SELECT\n    ST_Clip(\n      r.rast,\n      (SELECT geom FROM region_geom),\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast,\n    (SELECT geom FROM region_geom)\n  )\n)\n, slope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM clipped_raster\n)\nSELECT\n  ROUND(AVG(value), 2) AS mean_slope_degrees\nFROM (\n  SELECT\n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM slope_raster\n) AS dump;\n```",
+  "predicted_exec": {
+    "error": "column \"value\" does not exist\nLINE 26:   ROUND(AVG(value), 2) AS mean_slope_degrees\n                     ^\nHINT:  Perhaps you meant to reference the column \"dump.val\".",
+    "output": []
+  },
+  "predicted_sql": "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Tower Grove South'\n    AND wikipedia ILIKE '%St. Louis%'\n)\n, clipped_raster AS (\n  SELECT\n    ST_Clip(\n      r.rast,\n      (SELECT geom FROM region_geom),\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast,\n    (SELECT geom FROM region_geom)\n  )\n)\n, slope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM clipped_raster\n)\nSELECT\n  ROUND(AVG(value), 2) AS mean_slope_degrees\nFROM (\n  SELECT\n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM slope_raster\n) AS dump;",
+  "predicted_sql_candidates": [
+    "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Tower Grove South'\n    AND wikipedia ILIKE '%St. Louis%'\n)\n, clipped_raster AS (\n  SELECT\n    ST_Clip(\n      r.rast,\n      (SELECT geom FROM region_geom),\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast,\n    (SELECT geom FROM region_geom)\n  )\n)\n, slope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM clipped_raster\n)\nSELECT\n  ROUND(AVG(value), 2) AS mean_slope_degrees\nFROM (\n  SELECT\n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM slope_raster\n) AS dump;"
+  ],
+  "query_type": "raster_only",
+  "question": "In Tower Grove South, St. Louis, what is the mean slope?",
+  "source_file": "avg_slope+area.jsonl",
+  "source_stem": "avg_slope+area",
+  "timing": {
+    "execution_seconds": 0.002,
+    "generation_seconds": 41.841,
+    "total_seconds": 41.843
+  },
+  "usage": {
+    "completion_tokens": 195,
+    "prompt_tokens": 1518,
+    "total_tokens": 1713
+  }
+}

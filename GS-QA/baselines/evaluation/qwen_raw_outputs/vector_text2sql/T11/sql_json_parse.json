@@ -1,0 +1,502 @@
+[
+  {
+    "id": 100,
+    "content": "```json\n{\n    \"name\": \"Philadelphia\"\n}\n```",
+    "run_seconds": 3.19
+  },
+  {
+    "id": 101,
+    "content": "```json\n{\n    \"name\": \"Pheasant Ridge Golf Course\"\n}\n```",
+    "run_seconds": 4.255
+  },
+  {
+    "id": 102,
+    "content": "```json\n{\n    \"name\": \"Lake Miguel\"\n}\n```",
+    "run_seconds": 3.404
+  },
+  {
+    "id": 103,
+    "content": "```json\n{\n    \"name\": \"Matthaei Botanical Gardens and Nichols Arboretum\"\n}\n```",
+    "run_seconds": 5.531
+  },
+  {
+    "id": 104,
+    "content": "```json\n{\n    \"name\": \"Farm Neck Golf Club\"\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 105,
+    "content": "```json\n{\n    \"name\": \"Virginia Beach Sportsplex\"\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 106,
+    "content": "```json\n{\n    \"name\": \"Freiberger Field\"\n}\n```",
+    "run_seconds": 3.828
+  },
+  {
+    "id": 107,
+    "content": "```json\n{\n    \"name\": \"Big Ditch Wildlife Management Area\"\n}\n```",
+    "run_seconds": 4.255
+  },
+  {
+    "id": 108,
+    "content": "```json\n{\n    \"name\": \"Blue River Reservoir\"\n}\n```",
+    "run_seconds": 3.828
+  },
+  {
+    "id": 109,
+    "content": "```json\n{\n    \"name\": \"park\"\n}\n```",
+    "run_seconds": 3.19
+  },
+  {
+    "id": 110,
+    "content": "```json\n{\n    \"name\": \"Sage Valley Golf Club\"\n}\n```",
+    "run_seconds": 4.043
+  },
+  {
+    "id": 111,
+    "content": "```json\n{\n    \"name\": \"Port of Los Angeles\"\n}\n```",
+    "run_seconds": 3.828
+  },
+  {
+    "id": 112,
+    "content": "```json\n{\n    \"name\": \"Arctic National Wildlife Refuge\"\n}\n```",
+    "run_seconds": 4.041
+  },
+  {
+    "id": 113,
+    "content": "```json\n{\n    \"name\": \"Tuxedo Park Golf Club\"\n}\n```",
+    "run_seconds": 4.255
+  },
+  {
+    "id": 114,
+    "content": "```json\n{\n    \"name\": \"Waynesboro Country Club\"\n}\n```",
+    "run_seconds": 4.041
+  },
+  {
+    "id": 115,
+    "content": "```json\n{\n    \"name\": \"Commissioners Garden\"\n}\n```",
+    "run_seconds": 3.615
+  },
+  {
+    "id": 116,
+    "content": "```json\n{\n    \"name\": \"Wells Lake\"\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 117,
+    "content": "```json\n{\n    \"name\": \"Quabbin Reservoir\"\n}\n```",
+    "run_seconds": 4.042
+  },
+  {
+    "id": 118,
+    "content": "```json\n{\n    \"name\": \"Hawthorn Woods Country Club\"\n}\n```",
+    "run_seconds": 4.467
+  },
+  {
+    "id": 119,
+    "content": "```json\n{\n    \"name\": \"Arnold Palmer Signature Golf Course at Stonewall Resort\"\n}\n```",
+    "run_seconds": 5.319
+  },
+  {
+    "id": 120,
+    "content": "```json\n{\n    \"name\": \"Lake George\"\n}\n```",
+    "run_seconds": 3.404
+  },
+  {
+    "id": 121,
+    "content": "```json\n{\n    \"name\": \"Wayne National Forest Reservoir\"\n}\n```",
+    "run_seconds": 4.254
+  },
+  {
+    "id": 122,
+    "content": "```json\n{\n    \"name\": \"Quabbin Reservoir\"\n}\n```",
+    "run_seconds": 4.041
+  },
+  {
+    "id": 123,
+    "content": "```json\n{\n    \"name\": \"Portland Maples State Natural Area\"\n}\n```",
+    "run_seconds": 4.255
+  },
+  {
+    "id": 124,
+    "content": "```json\n{\n    \"name\": \"Union Bay Natural Area\"\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 125,
+    "content": "```json\n{\n    \"name\": \"Grand Coulee Dam\"\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 126,
+    "content": "```json\n{\n    \"name\": \"Morris Arboretum of the University of Pennsylvania\"\n}\n```",
+    "run_seconds": 5.106
+  },
+  {
+    "id": 127,
+    "content": "```json\n{\n    \"name\": \"Arctic National Wildlife Refuge\"\n}\n```",
+    "run_seconds": 4.042
+  },
+  {
+    "id": 128,
+    "content": "```json\n{\n    \"name\": \"Gifford Pinchot National Forest\"\n}\n```",
+    "run_seconds": 4.68
+  },
+  {
+    "id": 129,
+    "content": "```json\n{\n    \"name\": \"Wheelock Conservation Area\"\n}\n```",
+    "run_seconds": 3.831
+  },
+  {
+    "id": 130,
+    "content": "```json\n{\n    \"name\": \"Horsetooth Reservoir\"\n}\n```",
+    "run_seconds": 4.043
+  },
+  {
+    "id": 131,
+    "content": "```json\n{\n    \"name\": \"Bear Creek Lake\"\n}\n```",
+    "run_seconds": 3.616
+  },
+  {
+    "id": 132,
+    "content": "```json\n{\n    \"name\": \"West Tennessee National Wildlife Refuge Complex\"\n}\n```",
+    "run_seconds": 4.254
+  },
+  {
+    "id": 133,
+    "content": "```json\n{\n    \"name\": \"Rockcastle Golf Club\",\n    \"address\": \"1000 S Rockcastle Rd, Lena, IL 61050\"\n}\n```",
+    "run_seconds": 8.938
+  },
+  {
+    "id": 134,
+    "content": "```json\n{\n    \"name\": \"Big Ditch Wildlife Management Area\"\n}\n```",
+    "run_seconds": 4.255
+  },
+  {
+    "id": 135,
+    "content": "```json\n{\n    \"name\": \"Waco Lake\"\n}\n```",
+    "run_seconds": 3.616
+  },
+  {
+    "id": 136,
+    "content": "```json\n{\n    \"name\": \"Bidwell House Museum, Gardens and Trails\"\n}\n```",
+    "run_seconds": 4.681
+  },
+  {
+    "id": 137,
+    "content": "```json\n{\n    \"name\": \"Delaware State Forest\"\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 138,
+    "content": "```json\n{\n    \"name\": \"Bethpage State Park Golf Course\"\n}\n```",
+    "run_seconds": 4.255
+  },
+  {
+    "id": 139,
+    "content": "```json\n{\n    \"name\": \"DeSoto National Forest\"\n}\n```",
+    "run_seconds": 4.041
+  },
+  {
+    "id": 140,
+    "content": "```json\n{\n    \"name\": \"Lake Jackson\"\n}\n```",
+    "run_seconds": 3.403
+  },
+  {
+    "id": 141,
+    "content": "```json\n{\n    \"name\": \"Chesapeake Bay\"\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 142,
+    "content": "```json\n{\n    \"name\": \"Mystic Rock Golf Club\"\n}\n```",
+    "run_seconds": 4.255
+  },
+  {
+    "id": 143,
+    "content": "```json\n{\n    \"name\": \"Grand Traverse Bay\"\n}\n```",
+    "run_seconds": 3.616
+  },
+  {
+    "id": 144,
+    "content": "```json\n{\n    \"name\": \"Lake Mohawk\"\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 145,
+    "content": "```json\n{\n    \"name\": \"Lake George\",\n    \"address\": \"Chisago City, Minnesota\"\n}\n```",
+    "run_seconds": 5.957
+  },
+  {
+    "id": 146,
+    "content": "```json\n{\n    \"name\": \"Lewis Ginter Botanical Garden\"\n}\n```",
+    "run_seconds": 4.254
+  },
+  {
+    "id": 147,
+    "content": "```json\n{\n    \"name\": \"Chesapeake Bay\"\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 148,
+    "content": "```json\n{}\n```",
+    "run_seconds": 1.488
+  },
+  {
+    "id": 149,
+    "content": "```json\n{\n    \"name\": \"Manuel F. Correllus State Forest\"\n}\n```",
+    "run_seconds": 4.894
+  },
+  {
+    "id": 150,
+    "content": "```json\n{\n    \"name\": \"Caddo Lake\"\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 151,
+    "content": "```json\n{\n    \"name\": \"Magnolia Botanical Garden\"\n}\n```",
+    "run_seconds": 4.042
+  },
+  {
+    "id": 152,
+    "content": "```json\n{\n    \"name\": \"Paugussett State Forest\"\n}\n```",
+    "run_seconds": 4.255
+  },
+  {
+    "id": 153,
+    "content": "```json\n{\n    \"name\": \"Lake Hefner\"\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 154,
+    "content": "```json\n{\n    \"name\": \"Rothrock State Forest\"\n}\n```",
+    "run_seconds": 4.042
+  },
+  {
+    "id": 155,
+    "content": "```json\n{\n    \"name\": \"Lake George\",\n    \"address\": \"Lake George, New York, USA\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 7.875
+  },
+  {
+    "id": 156,
+    "content": "```json\n{\n    \"name\": \"Middlefield State Forest\"\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 157,
+    "content": "```json\n{\n    \"name\": \"Muskegon Lake\"\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 158,
+    "content": "```json\n{\n    \"name\": \"Deer Island Open Space Preserve\"\n}\n```",
+    "run_seconds": 4.254
+  },
+  {
+    "id": 159,
+    "content": "```json\n{\n    \"name\": \"Chehalis River Reservoir\"\n}\n```",
+    "run_seconds": 4.255
+  },
+  {
+    "id": 160,
+    "content": "```json\n{\n    \"name\": \"Deland Forest\"\n}\n```",
+    "run_seconds": 3.616
+  },
+  {
+    "id": 161,
+    "content": "```json\n{\n    \"name\": \"Lake Mead\"\n}\n```",
+    "run_seconds": 3.616
+  },
+  {
+    "id": 162,
+    "content": "```json\n{\n    \"name\": \"Hershey Country Club\"\n}\n```",
+    "run_seconds": 4.042
+  },
+  {
+    "id": 163,
+    "content": "```json\n{\n    \"name\": \"Conesus Golf Club\"\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 164,
+    "content": "```json\n{\n    \"name\": \"Wyndhurst Golf and Club\"\n}\n```",
+    "run_seconds": 4.255
+  },
+  {
+    "id": 165,
+    "content": "```json\n{\n    \"name\": \"Green Ridge Reservoir\"\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 166,
+    "content": "```json\n{\n    \"name\": \"Grand Lake\"\n}\n```",
+    "run_seconds": 3.403
+  },
+  {
+    "id": 167,
+    "content": "```json\n{\n    \"name\": \"Di-Lane WMA\"\n}\n```",
+    "run_seconds": 4.042
+  },
+  {
+    "id": 168,
+    "content": "```json\n{\n    \"name\": \"Crawford Path\"\n}\n```",
+    "run_seconds": 3.83
+  },
+  {
+    "id": 169,
+    "content": "```json\n{\n    \"name\": \"Lake of the Ozarks\"\n}\n```",
+    "run_seconds": 4.041
+  },
+  {
+    "id": 170,
+    "content": "```json\n{\n    \"name\": \"Country Club of Asheville\"\n}\n```",
+    "run_seconds": 3.83
+  },
+  {
+    "id": 171,
+    "content": "```json\n{\n    \"name\": \"Dexter Reservoir\"\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 172,
+    "content": "```json\n{\n    \"name\": \"King and Prince Golf Club\"\n}\n```",
+    "run_seconds": 4.042
+  },
+  {
+    "id": 173,
+    "content": "```json\n{\n    \"name\": \"Lake Ontario\"\n}\n```",
+    "run_seconds": 3.403
+  },
+  {
+    "id": 174,
+    "content": "```json\n{\n    \"name\": \"The golf course\",\n    \"address\": \"Not available in the provided data\"\n}\n```",
+    "run_seconds": 6.171
+  },
+  {
+    "id": 175,
+    "content": "```json\n{\n    \"name\": \"Jamaica Bay Wildlife Refuge\"\n}\n```",
+    "run_seconds": 4.255
+  },
+  {
+    "id": 176,
+    "content": "```json\n{\n    \"name\": \"Tawakoni Lake\"\n}\n```",
+    "run_seconds": 4.042
+  },
+  {
+    "id": 177,
+    "content": "```json\n{\n    \"name\": \"Caddo Lake Wildlife Management Area\"\n}\n```",
+    "run_seconds": 4.468
+  },
+  {
+    "id": 178,
+    "content": "```json\n{\n    \"name\": \"Little River Reservoir\"\n}\n```",
+    "run_seconds": 3.83
+  },
+  {
+    "id": 179,
+    "content": "```json\n{\n    \"name\": \"Dow Gardens\"\n}\n```",
+    "run_seconds": 3.616
+  },
+  {
+    "id": 180,
+    "content": "```json\n{\n    \"name\": \"Delaware State Forest\"\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 181,
+    "content": "```json\n{\n    \"name\": \"Pachaug State Forest\"\n}\n```",
+    "run_seconds": 4.042
+  },
+  {
+    "id": 182,
+    "content": "```json\n{\n    \"name\": \"Bluebell Reservoir\"\n}\n```",
+    "run_seconds": 3.831
+  },
+  {
+    "id": 183,
+    "content": "```json\n{\n    \"name\": \"Lamplighter Park\"\n}\n```",
+    "run_seconds": 4.042
+  },
+  {
+    "id": 184,
+    "content": "```json\n{\n    \"name\": \"Blue Ridge Parkway\"\n}\n```",
+    "run_seconds": 3.616
+  },
+  {
+    "id": 185,
+    "content": "```json\n{\n    \"name\": \"Manuel F. Correllus State Forest\"\n}\n```",
+    "run_seconds": 4.894
+  },
+  {
+    "id": 186,
+    "content": "```json\n{\n    \"name\": \"Muskegon Lake\"\n}\n```",
+    "run_seconds": 3.83
+  },
+  {
+    "id": 187,
+    "content": "```json\n{\n    \"name\": \"Oak Orchard State Marine Park\"\n}\n```",
+    "run_seconds": 4.042
+  },
+  {
+    "id": 188,
+    "content": "```json\n{\n    \"name\": \"Candlewood Lake\"\n}\n```",
+    "run_seconds": 3.83
+  },
+  {
+    "id": 189,
+    "content": "```json\n{\n    \"name\": \"Cumberland Falls\"\n}\n```",
+    "run_seconds": 3.616
+  },
+  {
+    "id": 190,
+    "content": "```json\n{\n    \"name\": \"Superior\"\n}\n```",
+    "run_seconds": 3.403
+  },
+  {
+    "id": 191,
+    "content": "```json\n{\n    \"name\": \"Lake Winona\"\n}\n```",
+    "run_seconds": 3.616
+  },
+  {
+    "id": 192,
+    "content": "```json\n{\n    \"name\": \"Front and Curry Community Garden\"\n}\n```",
+    "run_seconds": 4.042
+  },
+  {
+    "id": 193,
+    "content": "```json\n{\n    \"name\": \"Raystown Lake\"\n}\n```",
+    "run_seconds": 3.616
+  },
+  {
+    "id": 194,
+    "content": "```json\n{\n    \"name\": \"Muskegon Lake\"\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 195,
+    "content": "```json\n{\n    \"name\": \"Tenkiller Ferry Lake\"\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 196,
+    "content": "```json\n{\n    \"name\": \"The Green\"\n}\n```",
+    "run_seconds": 3.401
+  },
+  {
+    "id": 197,
+    "content": "```json\n{\n    \"name\": \"Wendell State Forest\"\n}\n```",
+    "run_seconds": 4.043
+  },
+  {
+    "id": 198,
+    "content": "```json\n{\n    \"name\": \"Conesus Lake\"\n}\n```",
+    "run_seconds": 3.616
+  },
+  {
+    "id": 199,
+    "content": "```json\n{\n    \"name\": \"George Washington National Forest\"\n}\n```",
+    "run_seconds": 3.83
+  }
+]

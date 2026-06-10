@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 443.758226
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 443.758226
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-78.400626 42.070985, -78.400562 42.076013, -78.400547 42.079035, -78.400527 42.079634, -78.400519 42.083885, -78.405277 42.083895, -78.405247 42.086922, -78.412462 42.086942, -78.415196 42.086974, -78.415111 42.090536, -78.415052 42.09602, -78.414883 42.101782, -78.422861 42.101612, -78.429221 42.101556, -78.434077 42.101478, -78.434246 42.101517, -78.434304 42.101547, -78.434503 42.101706, -78.435197 42.102472, -78.435376 42.102854, -78.435414 42.102967, -78.43542 42.103146, -78.435391 42.103237, -78.435321 42.103357, -78.434833 42.103998, -78.434618 42.104186, -78.434499 42.104251, -78.435204 42.104406, -78.438057 42.102702, -78.447928 42.09688, -78.458255 42.090847, -78.458306 42.087027, -78.458266 42.083346, -78.45822 42.081023, -78.463291 42.080979, -78.463266 42.078581, -78.46324 42.077851, -78.463252 42.077013, -78.463196 42.076871, -78.46319 42.076639, -78.463183 42.075567, -78.463203 42.074542, -78.463161 42.073155, -78.463084 42.066594, -78.463079 42.066162, -78.461686 42.066436, -78.458846 42.067052, -78.45744 42.067373, -78.456669 42.06762, -78.456396 42.06773, -78.456004 42.067934, -78.455792 42.068068, -78.454646 42.069074, -78.453732 42.070046, -78.453005 42.07079, -78.452457 42.071235, -78.45184 42.071569, -78.451018 42.071944, -78.450464 42.072141, -78.449762 42.072342, -78.449224 42.072473, -78.448721 42.072516, -78.44843 42.072575, -78.447994 42.07264, -78.447604 42.072655, -78.445844 42.072625, -78.444476 42.072575, -78.443077 42.072447, -78.44194 42.072316, -78.441138 42.072174, -78.440828 42.072087, -78.440042 42.071771, -78.44004 42.070298, -78.440145 42.061345, -78.425489 42.061321, -78.425426 42.064813, -78.415659 42.064838, -78.415661 42.069086, -78.413168 42.068572, -78.412494 42.06847, -78.412122 42.068437, -78.411779 42.068433, -78.410973 42.068532, -78.409599 42.068747, -78.409154 42.068834, -78.40825 42.069133, -78.408162 42.069176, -78.407845 42.06941, -78.407462 42.069621, -78.406011 42.070266, -78.404961 42.070655, -78.404846 42.070678, -78.40456 42.070699, -78.404126 42.070794, -78.403754 42.070852, -78.40149 42.071034, -78.401206 42.071031, -78.400626 42.070985))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).mean AS elevation\nFROM clipped;",
+  "id": "elevation_mean+region-11",
+  "model_output": "```sql\nWITH olean_geometry AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Olean' AND border_type = 'city'\n)\nSELECT\n  ST_ValueCount(\n    ST_Clip(\n      r.rast,\n      olean.geom,\n      TRUE\n    ),\n    1\n  ) AS elevation_stats\nFROM\n  public.dem_us r,\n  olean_geometry olean\nWHERE\n  ST_Intersects(r.rast, olean.geom);\n```",
+  "predicted_exec": {
+    "error": "",
+    "output": []
+  },
+  "predicted_sql": "WITH olean_geometry AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Olean' AND border_type = 'city'\n)\nSELECT\n  ST_ValueCount(\n    ST_Clip(\n      r.rast,\n      olean.geom,\n      TRUE\n    ),\n    1\n  ) AS elevation_stats\nFROM\n  public.dem_us r,\n  olean_geometry olean\nWHERE\n  ST_Intersects(r.rast, olean.geom);",
+  "predicted_sql_candidates": [
+    "WITH olean_geometry AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Olean' AND border_type = 'city'\n)\nSELECT\n  ST_ValueCount(\n    ST_Clip(\n      r.rast,\n      olean.geom,\n      TRUE\n    ),\n    1\n  ) AS elevation_stats\nFROM\n  public.dem_us r,\n  olean_geometry olean\nWHERE\n  ST_Intersects(r.rast, olean.geom);"
+  ],
+  "query_type": "raster_only",
+  "question": "In Olean, New York, what is the mean elevation?",
+  "source_file": "elevation_mean+region.jsonl",
+  "source_stem": "elevation_mean+region",
+  "timing": {
+    "execution_seconds": 0.053,
+    "generation_seconds": 23.131,
+    "total_seconds": 23.184
+  },
+  "usage": {
+    "completion_tokens": 108,
+    "prompt_tokens": 1518,
+    "total_tokens": 1626
+  }
+}

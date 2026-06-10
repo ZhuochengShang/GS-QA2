@@ -1,0 +1,63 @@
+{
+  "answer_type": "name",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "name",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer_name": "Tunnel System",
+      "slope_deg_3": 2.075804,
+      "slope_deg_4": 1.052733
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer_name": "Tunnel System",
+        "slope_deg_3": 2.075804,
+        "slope_deg_4": 1.052733
+      }
+    ]
+  },
+  "gold_sql": "WITH route3 AS (\n  SELECT ST_GeomFromText('LINESTRING (-95.980531 36.750176, -95.980432 36.750269, -95.978962 36.750097, -95.979067 36.749607, -95.97871 36.749564, -95.978764 36.749291)', 4326)::geometry AS geom\n),\nroute4 AS (\n  SELECT ST_GeomFromText('LINESTRING (-84.491906 33.849766, -84.491975 33.849735, -84.492002 33.849655, -84.491999 33.849551, -84.491991 33.849313)', 4326)::geometry AS geom\n),\ndem_clip3 AS (\n  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast\n  FROM public.dem_us d, route3 r\n  WHERE ST_Intersects(d.rast, r.geom)\n),\ndem_clip4 AS (\n  SELECT ST_Union(ST_Clip(d.rast, ST_Envelope(r.geom))) AS rast\n  FROM public.dem_us d, route4 r\n  WHERE ST_Intersects(d.rast, r.geom)\n),\nsegments AS (\n  SELECT 1 AS route_id, (ST_DumpSegments(r.geom)).geom AS seg FROM route3 r\n  UNION ALL\n  SELECT 2 AS route_id, (ST_DumpSegments(r.geom)).geom AS seg FROM route4 r\n),\nendpoints AS (\n  SELECT\n    route_id,\n    ST_StartPoint(seg)         AS p1,\n    ST_EndPoint(seg)           AS p2,\n    ST_Length(seg::geography)  AS seg_len_m\n  FROM segments\n),\nelev AS (\n  SELECT\n    e.route_id,\n    e.seg_len_m,\n    CASE WHEN e.route_id = 1 THEN ST_Value(dc3.rast, 1, e.p1)\n         ELSE ST_Value(dc4.rast, 1, e.p1) END AS z1,\n    CASE WHEN e.route_id = 1 THEN ST_Value(dc3.rast, 1, e.p2)\n         ELSE ST_Value(dc4.rast, 1, e.p2) END AS z2\n  FROM endpoints e, dem_clip3 dc3, dem_clip4 dc4\n),\ngrades AS (\n  SELECT\n    route_id,\n    seg_len_m,\n    CASE WHEN seg_len_m > 0 THEN ABS(z2 - z1) / seg_len_m END AS grade\n  FROM elev\n  WHERE z1 IS NOT NULL AND z2 IS NOT NULL\n),\navg_grade AS (\n  SELECT\n    route_id,\n    SUM(grade * seg_len_m) / NULLIF(SUM(seg_len_m), 0) AS g\n  FROM grades\n  WHERE grade IS NOT NULL\n  GROUP BY route_id\n)\nSELECT\n  CASE WHEN a1.g >= a2.g THEN 'Tunnel System' ELSE 'Edgartown Lane Southeast' END AS answer_name,\n  DEGREES(ATAN(a1.g)) AS slope_deg_3,\n  DEGREES(ATAN(a2.g)) AS slope_deg_4\nFROM avg_grade a1\nJOIN avg_grade a2\n  ON a1.route_id = 1 AND a2.route_id = 2\nWHERE a1.g IS NOT NULL AND a2.g IS NOT NULL;",
+  "id": "slope+compare_route-10",
+  "model_output": "```sql\nWITH tunnel_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-95.980531 36.750176, -95.980432 36.750269, -95.978962 36.750097, -95.979067 36.749607, -95.97871 36.749564, -95.978764 36.749291)', 4326)::geometry AS geom\n),\nedgartown_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-84.491906 33.849766, -84.491975 33.849735, -84.492002 33.849655, -84.491999 33.849551, -84.491991 33.849313)', 4326)::geometry AS geom\n),\ntunnel_slope AS (\n  SELECT \n    ST_ValueCount(ST_Slope(ST_Clip(r.rast, t.geom, true))) AS slope_stats\n  FROM \n    public.dem_us r,\n    tunnel_geom t\n  WHERE \n    ST_Intersects(r.rast, t.geom)\n),\nedgartown_slope AS (\n  SELECT \n    ST_ValueCount(ST_Slope(ST_Clip(r.rast, e.geom, true))) AS slope_stats\n  FROM \n    public.dem_us r,\n    edgartown_geom e\n  WHERE \n    ST_Intersects(r.rast, e.geom)\n)\nSELECT \n  CASE \n    WHEN t.slope_stats.avg > e.slope_stats.avg THEN 'Tunnel System'\n    WHEN t.slope_stats.avg < e.slope_stats.avg THEN 'Edgartown Lane Southeast'\n    ELSE 'Equal'\n  END AS steeper_feature,\n  t.slope_stats.avg AS tunnel_avg_slope,\n  e.slope_stats.avg AS edgartown_avg_slope\nFROM \n  tunnel_slope t,\n  edgartown_slope e;\n```",
+  "predicted_exec": {
+    "error": "missing FROM-clause entry for table \"slope_stats\"\nLINE 27:     WHEN t.slope_stats.avg > e.slope_stats.avg THEN 'Tunnel ...\n                  ^",
+    "output": []
+  },
+  "predicted_sql": "WITH tunnel_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-95.980531 36.750176, -95.980432 36.750269, -95.978962 36.750097, -95.979067 36.749607, -95.97871 36.749564, -95.978764 36.749291)', 4326)::geometry AS geom\n),\nedgartown_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-84.491906 33.849766, -84.491975 33.849735, -84.492002 33.849655, -84.491999 33.849551, -84.491991 33.849313)', 4326)::geometry AS geom\n),\ntunnel_slope AS (\n  SELECT \n    ST_ValueCount(ST_Slope(ST_Clip(r.rast, t.geom, true))) AS slope_stats\n  FROM \n    public.dem_us r,\n    tunnel_geom t\n  WHERE \n    ST_Intersects(r.rast, t.geom)\n),\nedgartown_slope AS (\n  SELECT \n    ST_ValueCount(ST_Slope(ST_Clip(r.rast, e.geom, true))) AS slope_stats\n  FROM \n    public.dem_us r,\n    edgartown_geom e\n  WHERE \n    ST_Intersects(r.rast, e.geom)\n)\nSELECT \n  CASE \n    WHEN t.slope_stats.avg > e.slope_stats.avg THEN 'Tunnel System'\n    WHEN t.slope_stats.avg < e.slope_stats.avg THEN 'Edgartown Lane Southeast'\n    ELSE 'Equal'\n  END AS steeper_feature,\n  t.slope_stats.avg AS tunnel_avg_slope,\n  e.slope_stats.avg AS edgartown_avg_slope\nFROM \n  tunnel_slope t,\n  edgartown_slope e;",
+  "predicted_sql_candidates": [
+    "WITH tunnel_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-95.980531 36.750176, -95.980432 36.750269, -95.978962 36.750097, -95.979067 36.749607, -95.97871 36.749564, -95.978764 36.749291)', 4326)::geometry AS geom\n),\nedgartown_geom AS (\n  SELECT ST_GeomFromText('LINESTRING (-84.491906 33.849766, -84.491975 33.849735, -84.492002 33.849655, -84.491999 33.849551, -84.491991 33.849313)', 4326)::geometry AS geom\n),\ntunnel_slope AS (\n  SELECT \n    ST_ValueCount(ST_Slope(ST_Clip(r.rast, t.geom, true))) AS slope_stats\n  FROM \n    public.dem_us r,\n    tunnel_geom t\n  WHERE \n    ST_Intersects(r.rast, t.geom)\n),\nedgartown_slope AS (\n  SELECT \n    ST_ValueCount(ST_Slope(ST_Clip(r.rast, e.geom, true))) AS slope_stats\n  FROM \n    public.dem_us r,\n    edgartown_geom e\n  WHERE \n    ST_Intersects(r.rast, e.geom)\n)\nSELECT \n  CASE \n    WHEN t.slope_stats.avg > e.slope_stats.avg THEN 'Tunnel System'\n    WHEN t.slope_stats.avg < e.slope_stats.avg THEN 'Edgartown Lane Southeast'\n    ELSE 'Equal'\n  END AS steeper_feature,\n  t.slope_stats.avg AS tunnel_avg_slope,\n  e.slope_stats.avg AS edgartown_avg_slope\nFROM \n  tunnel_slope t,\n  edgartown_slope e;"
+  ],
+  "query_type": "raster_only",
+  "question": "Is Tunnel System steeper than Edgartown Lane Southeast?",
+  "source_file": "slope+compare_route.jsonl",
+  "source_stem": "slope+compare_route",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 112.278,
+    "total_seconds": 112.279
+  },
+  "usage": {
+    "completion_tokens": 510,
+    "prompt_tokens": 1772,
+    "total_tokens": 2282
+  }
+}

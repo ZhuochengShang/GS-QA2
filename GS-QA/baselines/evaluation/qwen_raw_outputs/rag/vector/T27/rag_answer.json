@@ -1,0 +1,2102 @@
+[
+  {
+    "id": 200,
+    "run_seconds": 2.016,
+    "content": "Fifty-one million square meters.",
+    "usage_metadata": {
+      "input_tokens": 1168,
+      "output_tokens": 8,
+      "total_tokens": 1176,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 1168,
+        "total_tokens": 1176,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 201,
+    "run_seconds": 3.936,
+    "content": "None of the provided data includes the area of gardens in Washington County, Maryland.",
+    "usage_metadata": {
+      "input_tokens": 1263,
+      "output_tokens": 17,
+      "total_tokens": 1280,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 1263,
+        "total_tokens": 1280,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 202,
+    "run_seconds": 3.218,
+    "content": "None of the provided records mention golf courses or their area.",
+    "usage_metadata": {
+      "input_tokens": 1644,
+      "output_tokens": 13,
+      "total_tokens": 1657,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 1644,
+        "total_tokens": 1657,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 203,
+    "run_seconds": 5.181,
+    "content": "The total surface area of all parks in Port Richey, Florida is not available in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 1070,
+      "output_tokens": 23,
+      "total_tokens": 1093,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 1070,
+        "total_tokens": 1093,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 204,
+    "run_seconds": 4.029,
+    "content": "The area occupied by all reservoirs collectively in Aberdeen, Washington is approximately thirty hectares.",
+    "usage_metadata": {
+      "input_tokens": 830,
+      "output_tokens": 18,
+      "total_tokens": 848,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 830,
+        "total_tokens": 848,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 205,
+    "run_seconds": 1.289,
+    "content": "Twenty thousand square meters",
+    "usage_metadata": {
+      "input_tokens": 910,
+      "output_tokens": 5,
+      "total_tokens": 915,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 910,
+        "total_tokens": 915,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 206,
+    "run_seconds": 4.275,
+    "content": "None of the provided records contain information about the total footprint of all reservoirs in Connecticut.",
+    "usage_metadata": {
+      "input_tokens": 986,
+      "output_tokens": 19,
+      "total_tokens": 1005,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 986,
+        "total_tokens": 1005,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 207,
+    "run_seconds": 3.905,
+    "content": "The surface area of all lakes in New York is approximately one hundred thousand hectares.",
+    "usage_metadata": {
+      "input_tokens": 1095,
+      "output_tokens": 17,
+      "total_tokens": 1112,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 1095,
+        "total_tokens": 1112,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 208,
+    "run_seconds": 4.328,
+    "content": "The aggregate area of all commons in the United States is not provided in the given data.",
+    "usage_metadata": {
+      "input_tokens": 1063,
+      "output_tokens": 19,
+      "total_tokens": 1082,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 1063,
+        "total_tokens": 1082,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 209,
+    "run_seconds": 6.778,
+    "content": "None of the provided records mention Lincoln County, Oklahoma, or any reservoirs located there. Therefore, no area can be determined from the given data.",
+    "usage_metadata": {
+      "input_tokens": 894,
+      "output_tokens": 31,
+      "total_tokens": 925,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 31,
+        "prompt_tokens": 894,
+        "total_tokens": 925,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 210,
+    "run_seconds": 4.652,
+    "content": "The area coverage of all lakes in Grand Traverse County, Michigan combined is approximately thirty-two thousand hectares.",
+    "usage_metadata": {
+      "input_tokens": 861,
+      "output_tokens": 21,
+      "total_tokens": 882,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 861,
+        "total_tokens": 882,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 211,
+    "run_seconds": 2.187,
+    "content": "Eight million eight hundred ten thousand square meters",
+    "usage_metadata": {
+      "input_tokens": 1113,
+      "output_tokens": 9,
+      "total_tokens": 1122,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 1113,
+        "total_tokens": 1122,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 212,
+    "run_seconds": 3.831,
+    "content": "The combined land area of parks in New York City is approximately three thousand hectares.",
+    "usage_metadata": {
+      "input_tokens": 850,
+      "output_tokens": 17,
+      "total_tokens": 867,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 850,
+        "total_tokens": 867,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 213,
+    "run_seconds": 0.624,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 868,
+      "output_tokens": 2,
+      "total_tokens": 870,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 868,
+        "total_tokens": 870,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 214,
+    "run_seconds": 5.163,
+    "content": "The total area spanned by all sports centers in the United States is not available in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 1719,
+      "output_tokens": 22,
+      "total_tokens": 1741,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 1719,
+        "total_tokens": 1741,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 215,
+    "run_seconds": 5.3,
+    "content": "The total area taken up by parks in Tobyhanna Township, Pennsylvania is not available in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 1471,
+      "output_tokens": 23,
+      "total_tokens": 1494,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 1471,
+        "total_tokens": 1494,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 216,
+    "run_seconds": 7.652,
+    "content": "None of the provided records pertain to Steuben County, Indiana, and no information about the total land area of lakes in this county is available in the given data.",
+    "usage_metadata": {
+      "input_tokens": 835,
+      "output_tokens": 35,
+      "total_tokens": 870,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 35,
+        "prompt_tokens": 835,
+        "total_tokens": 870,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 217,
+    "run_seconds": 4.209,
+    "content": "The area covered by all lakes within Bear Creek Township, Michigan is approximately thirty square kilometers.",
+    "usage_metadata": {
+      "input_tokens": 809,
+      "output_tokens": 19,
+      "total_tokens": 828,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 809,
+        "total_tokens": 828,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 218,
+    "run_seconds": 5.949,
+    "content": "The overall land coverage of lakes in Grant Township, Keweenaw County, Michigan is not available in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 1541,
+      "output_tokens": 26,
+      "total_tokens": 1567,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 26,
+        "prompt_tokens": 1541,
+        "total_tokens": 1567,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 219,
+    "run_seconds": 4.853,
+    "content": "The total surface area of all bays in Virginia Beach, Virginia is approximately thirty-five thousand hectares.",
+    "usage_metadata": {
+      "input_tokens": 1428,
+      "output_tokens": 21,
+      "total_tokens": 1449,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 1428,
+        "total_tokens": 1449,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 220,
+    "run_seconds": 5.372,
+    "content": "The exact size of the area covered by all reservoirs within the United States is not provided in the given data.",
+    "usage_metadata": {
+      "input_tokens": 1073,
+      "output_tokens": 24,
+      "total_tokens": 1097,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 1073,
+        "total_tokens": 1097,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 221,
+    "run_seconds": 4.532,
+    "content": "There is no available data on the summed area of all gardens in Berkshire County, Massachusetts.",
+    "usage_metadata": {
+      "input_tokens": 1190,
+      "output_tokens": 19,
+      "total_tokens": 1209,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 1190,
+        "total_tokens": 1209,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 222,
+    "run_seconds": 1.325,
+    "content": "sixty thousand hectares",
+    "usage_metadata": {
+      "input_tokens": 1025,
+      "output_tokens": 5,
+      "total_tokens": 1030,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1025,
+        "total_tokens": 1030,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 223,
+    "run_seconds": 4.296,
+    "content": "The provided data does not include information about the area of harbors in the United States.",
+    "usage_metadata": {
+      "input_tokens": 960,
+      "output_tokens": 19,
+      "total_tokens": 979,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 960,
+        "total_tokens": 979,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 224,
+    "run_seconds": 3.106,
+    "content": "None of the provided records pertain to nature reserves in Ohio.",
+    "usage_metadata": {
+      "input_tokens": 1156,
+      "output_tokens": 14,
+      "total_tokens": 1170,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 1156,
+        "total_tokens": 1170,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 225,
+    "run_seconds": 1.524,
+    "content": "Fifty thousand hectares",
+    "usage_metadata": {
+      "input_tokens": 1036,
+      "output_tokens": 5,
+      "total_tokens": 1041,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1036,
+        "total_tokens": 1041,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 226,
+    "run_seconds": 5.349,
+    "content": "The summed land area of all golf courses in Volusia County, Florida is not available in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 913,
+      "output_tokens": 24,
+      "total_tokens": 937,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 913,
+        "total_tokens": 937,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 227,
+    "run_seconds": 4.661,
+    "content": "None of the provided data pertains to parks in Tuxedo, New York.",
+    "usage_metadata": {
+      "input_tokens": 2215,
+      "output_tokens": 18,
+      "total_tokens": 2233,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 2215,
+        "total_tokens": 2233,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 228,
+    "run_seconds": 4.03,
+    "content": "The total geographic area of all nature reserves in Virginia is approximately thirty thousand square kilometers.",
+    "usage_metadata": {
+      "input_tokens": 839,
+      "output_tokens": 18,
+      "total_tokens": 857,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 839,
+        "total_tokens": 857,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 229,
+    "run_seconds": 4.019,
+    "content": "The overall area covered by parks in Mississippi is not provided in the given data.",
+    "usage_metadata": {
+      "input_tokens": 878,
+      "output_tokens": 17,
+      "total_tokens": 895,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 878,
+        "total_tokens": 895,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 230,
+    "run_seconds": 0.872,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1616,
+      "output_tokens": 2,
+      "total_tokens": 1618,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1616,
+        "total_tokens": 1618,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 231,
+    "run_seconds": 3.587,
+    "content": "The overall area covered by reservoirs in Kentucky is approximately thirty thousand hectares.",
+    "usage_metadata": {
+      "input_tokens": 829,
+      "output_tokens": 16,
+      "total_tokens": 845,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 829,
+        "total_tokens": 845,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 232,
+    "run_seconds": 4.246,
+    "content": "The cumulative area of recreation grounds in New York City is approximately one hundred thousand hectares.",
+    "usage_metadata": {
+      "input_tokens": 1479,
+      "output_tokens": 18,
+      "total_tokens": 1497,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 1479,
+        "total_tokens": 1497,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 233,
+    "run_seconds": 1.057,
+    "content": "None.",
+    "usage_metadata": {
+      "input_tokens": 1922,
+      "output_tokens": 3,
+      "total_tokens": 1925,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1922,
+        "total_tokens": 1925,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 234,
+    "run_seconds": 3.409,
+    "content": "None of the provided records mention gardens or Dukes County, Massachusetts.",
+    "usage_metadata": {
+      "input_tokens": 913,
+      "output_tokens": 15,
+      "total_tokens": 928,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 913,
+        "total_tokens": 928,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 235,
+    "run_seconds": 4.355,
+    "content": "None of the provided records pertain to Benton County, Oregon, or its nature reserves.",
+    "usage_metadata": {
+      "input_tokens": 1173,
+      "output_tokens": 19,
+      "total_tokens": 1192,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 1173,
+        "total_tokens": 1192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 236,
+    "run_seconds": 4.669,
+    "content": "The total area of all the reservoirs in Summit County, Colorado is approximately thirty thousand square metres.",
+    "usage_metadata": {
+      "input_tokens": 835,
+      "output_tokens": 21,
+      "total_tokens": 856,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 835,
+        "total_tokens": 856,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 237,
+    "run_seconds": 0.733,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1225,
+      "output_tokens": 2,
+      "total_tokens": 1227,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1225,
+        "total_tokens": 1227,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 238,
+    "run_seconds": 0.885,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1680,
+      "output_tokens": 2,
+      "total_tokens": 1682,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1680,
+        "total_tokens": 1682,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 239,
+    "run_seconds": 1.268,
+    "content": "Zero hectares.",
+    "usage_metadata": {
+      "input_tokens": 2078,
+      "output_tokens": 4,
+      "total_tokens": 2082,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 2078,
+        "total_tokens": 2082,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 240,
+    "run_seconds": 4.5,
+    "content": "There is no available data on the overall spatial coverage of all lakes in Freeman Township, Michigan.",
+    "usage_metadata": {
+      "input_tokens": 1106,
+      "output_tokens": 20,
+      "total_tokens": 1126,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 1106,
+        "total_tokens": 1126,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 241,
+    "run_seconds": 4.219,
+    "content": "The total footprint of all recreation grounds across Connecticut is not provided in the given data.",
+    "usage_metadata": {
+      "input_tokens": 1477,
+      "output_tokens": 18,
+      "total_tokens": 1495,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 1477,
+        "total_tokens": 1495,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 242,
+    "run_seconds": 3.015,
+    "content": "There are no reservoirs recorded in Greene County, Georgia.",
+    "usage_metadata": {
+      "input_tokens": 913,
+      "output_tokens": 13,
+      "total_tokens": 926,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 913,
+        "total_tokens": 926,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 243,
+    "run_seconds": 4.432,
+    "content": "The total surface area of all gardens in Boston is not available in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 2053,
+      "output_tokens": 18,
+      "total_tokens": 2071,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 2053,
+        "total_tokens": 2071,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 244,
+    "run_seconds": 5.14,
+    "content": "The total area taken up by golf courses in Dukes County, Massachusetts is not available in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 930,
+      "output_tokens": 23,
+      "total_tokens": 953,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 930,
+        "total_tokens": 953,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 245,
+    "run_seconds": 0.939,
+    "content": "zero",
+    "usage_metadata": {
+      "input_tokens": 1203,
+      "output_tokens": 2,
+      "total_tokens": 1205,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1203,
+        "total_tokens": 1205,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 246,
+    "run_seconds": 0.696,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1131,
+      "output_tokens": 2,
+      "total_tokens": 1133,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1131,
+        "total_tokens": 1133,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 247,
+    "run_seconds": 4.007,
+    "content": "The area covered by all lakes within Curry County, Oregon is approximately thirty square kilometers.",
+    "usage_metadata": {
+      "input_tokens": 831,
+      "output_tokens": 18,
+      "total_tokens": 849,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 831,
+        "total_tokens": 849,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 248,
+    "run_seconds": 4.275,
+    "content": "The overall area covered by lakes in Mathias Township, Michigan is approximately thirty square kilometers.",
+    "usage_metadata": {
+      "input_tokens": 1069,
+      "output_tokens": 19,
+      "total_tokens": 1088,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 1069,
+        "total_tokens": 1088,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 249,
+    "run_seconds": 4.128,
+    "content": "The provided data does not include information about the area covered by sports centers in Virginia.",
+    "usage_metadata": {
+      "input_tokens": 1117,
+      "output_tokens": 18,
+      "total_tokens": 1135,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 1117,
+        "total_tokens": 1135,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 250,
+    "run_seconds": 4.014,
+    "content": "None of the provided records specify the area covered by parks within Berkshire County, Massachusetts.",
+    "usage_metadata": {
+      "input_tokens": 884,
+      "output_tokens": 18,
+      "total_tokens": 902,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 884,
+        "total_tokens": 902,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 251,
+    "run_seconds": 4.696,
+    "content": "The total area of all parks in Lewis County, New York is approximately one hundred and twenty hectares.",
+    "usage_metadata": {
+      "input_tokens": 882,
+      "output_tokens": 21,
+      "total_tokens": 903,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 882,
+        "total_tokens": 903,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 252,
+    "run_seconds": 4.986,
+    "content": "The total land area of all recreation grounds in Boston is approximately one hundred and twenty thousand meters squared.",
+    "usage_metadata": {
+      "input_tokens": 1808,
+      "output_tokens": 21,
+      "total_tokens": 1829,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 1808,
+        "total_tokens": 1829,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 253,
+    "run_seconds": 4.692,
+    "content": "The overall spatial coverage of all gardens in the United States is approximately two hundred thousand square kilometers.",
+    "usage_metadata": {
+      "input_tokens": 1609,
+      "output_tokens": 20,
+      "total_tokens": 1629,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 1609,
+        "total_tokens": 1629,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 254,
+    "run_seconds": 4.396,
+    "content": "The combined land coverage of all gardens in New York City is approximately one hundred thousand hectares.",
+    "usage_metadata": {
+      "input_tokens": 2107,
+      "output_tokens": 19,
+      "total_tokens": 2126,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 2107,
+        "total_tokens": 2126,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 255,
+    "run_seconds": 4.272,
+    "content": "The aggregate area of all nature reserves in San Diego is approximately one hundred forty thousand hectares.",
+    "usage_metadata": {
+      "input_tokens": 933,
+      "output_tokens": 19,
+      "total_tokens": 952,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 933,
+        "total_tokens": 952,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 256,
+    "run_seconds": 1.031,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 2124,
+      "output_tokens": 2,
+      "total_tokens": 2126,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 2124,
+        "total_tokens": 2126,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 257,
+    "run_seconds": 4.258,
+    "content": "The area covered by all golf courses in Berkshire County, Massachusetts is approximately one hundred hectares.",
+    "usage_metadata": {
+      "input_tokens": 907,
+      "output_tokens": 19,
+      "total_tokens": 926,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 907,
+        "total_tokens": 926,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 258,
+    "run_seconds": 4.561,
+    "content": "The summed land area of all reservoirs in Boston is approximately one hundred and fifty square kilometers.",
+    "usage_metadata": {
+      "input_tokens": 1239,
+      "output_tokens": 20,
+      "total_tokens": 1259,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 1239,
+        "total_tokens": 1259,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 259,
+    "run_seconds": 1.006,
+    "content": "None.",
+    "usage_metadata": {
+      "input_tokens": 1449,
+      "output_tokens": 3,
+      "total_tokens": 1452,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1449,
+        "total_tokens": 1452,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 260,
+    "run_seconds": 5.317,
+    "content": "The combined area of every lake in Geneva (town), New York is approximately one hundred forty square kilometers.",
+    "usage_metadata": {
+      "input_tokens": 1606,
+      "output_tokens": 22,
+      "total_tokens": 1628,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 1606,
+        "total_tokens": 1628,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 261,
+    "run_seconds": 5.166,
+    "content": "None of the provided data includes information about parks in Burke County, North Carolina, or their total land coverage.",
+    "usage_metadata": {
+      "input_tokens": 1073,
+      "output_tokens": 23,
+      "total_tokens": 1096,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 1073,
+        "total_tokens": 1096,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 262,
+    "run_seconds": 2.355,
+    "content": "Twenty million six hundred fifty thousand square meters.",
+    "usage_metadata": {
+      "input_tokens": 910,
+      "output_tokens": 10,
+      "total_tokens": 920,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 910,
+        "total_tokens": 920,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 263,
+    "run_seconds": 4.886,
+    "content": "The total area taken up by reservoirs in Carver, Massachusetts is not available in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 861,
+      "output_tokens": 22,
+      "total_tokens": 883,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 861,
+        "total_tokens": 883,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 264,
+    "run_seconds": 5.095,
+    "content": "The total size of all reservoirs in El Paso County, Colorado is approximately six hundred and forty square kilometers.",
+    "usage_metadata": {
+      "input_tokens": 833,
+      "output_tokens": 23,
+      "total_tokens": 856,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 833,
+        "total_tokens": 856,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 265,
+    "run_seconds": 4.653,
+    "content": "The overall spatial coverage of all reservoirs in Mayes County, Oklahoma is approximately seventy thousand hectares.",
+    "usage_metadata": {
+      "input_tokens": 847,
+      "output_tokens": 21,
+      "total_tokens": 868,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 847,
+        "total_tokens": 868,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 266,
+    "run_seconds": 4.091,
+    "content": "The data provided does not include information about parks in Boston or their total area.",
+    "usage_metadata": {
+      "input_tokens": 1897,
+      "output_tokens": 17,
+      "total_tokens": 1914,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 1897,
+        "total_tokens": 1914,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 267,
+    "run_seconds": 1.073,
+    "content": "Zero.",
+    "usage_metadata": {
+      "input_tokens": 1705,
+      "output_tokens": 3,
+      "total_tokens": 1708,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1705,
+        "total_tokens": 1708,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 268,
+    "run_seconds": 0.72,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1110,
+      "output_tokens": 2,
+      "total_tokens": 1112,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1110,
+        "total_tokens": 1112,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 269,
+    "run_seconds": 3.917,
+    "content": "The total footprint of all gardens across Connecticut is not available in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 2104,
+      "output_tokens": 17,
+      "total_tokens": 2121,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 2104,
+        "total_tokens": 2121,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 270,
+    "run_seconds": 5.123,
+    "content": "The total area spanned by all lakes in Santa Rosa, New Mexico is approximately one hundred and twenty hectares.",
+    "usage_metadata": {
+      "input_tokens": 970,
+      "output_tokens": 23,
+      "total_tokens": 993,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 970,
+        "total_tokens": 993,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 271,
+    "run_seconds": 0.828,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1464,
+      "output_tokens": 2,
+      "total_tokens": 1466,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1464,
+        "total_tokens": 1466,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 272,
+    "run_seconds": 1.964,
+    "content": "Eighty eight million square meters.",
+    "usage_metadata": {
+      "input_tokens": 1039,
+      "output_tokens": 8,
+      "total_tokens": 1047,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 1039,
+        "total_tokens": 1047,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 273,
+    "run_seconds": 1.946,
+    "content": "Seventy thousand square kilometers.",
+    "usage_metadata": {
+      "input_tokens": 1166,
+      "output_tokens": 8,
+      "total_tokens": 1174,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 1166,
+        "total_tokens": 1174,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 274,
+    "run_seconds": 4.219,
+    "content": "The combined area of reservoirs in Eaton, New York is approximately seventy square kilometers.",
+    "usage_metadata": {
+      "input_tokens": 1464,
+      "output_tokens": 18,
+      "total_tokens": 1482,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 1464,
+        "total_tokens": 1482,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 275,
+    "run_seconds": 0.644,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1134,
+      "output_tokens": 2,
+      "total_tokens": 1136,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1134,
+        "total_tokens": 1136,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 276,
+    "run_seconds": 4.628,
+    "content": "There is no information available about the summed area of nature reserves in Lewis County, New York.",
+    "usage_metadata": {
+      "input_tokens": 1439,
+      "output_tokens": 20,
+      "total_tokens": 1459,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 1439,
+        "total_tokens": 1459,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 277,
+    "run_seconds": 1.493,
+    "content": "Zero.",
+    "usage_metadata": {
+      "input_tokens": 2353,
+      "output_tokens": 3,
+      "total_tokens": 2356,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2353,
+        "total_tokens": 2356,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 278,
+    "run_seconds": 5.328,
+    "content": "There is no specific data on the overall land coverage of lakes in Chesapeake, Virginia, in the provided records.",
+    "usage_metadata": {
+      "input_tokens": 887,
+      "output_tokens": 24,
+      "total_tokens": 911,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 887,
+        "total_tokens": 911,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 279,
+    "run_seconds": 5.373,
+    "content": "None of the provided records pertain to gardens in Mississippi, so no area can be determined from the given data.",
+    "usage_metadata": {
+      "input_tokens": 1067,
+      "output_tokens": 24,
+      "total_tokens": 1091,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 1067,
+        "total_tokens": 1091,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 280,
+    "run_seconds": 4.927,
+    "content": "The combined surface area of reservoirs in Hart County, Georgia is approximately one hundred and fifty square kilometers.",
+    "usage_metadata": {
+      "input_tokens": 881,
+      "output_tokens": 22,
+      "total_tokens": 903,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 881,
+        "total_tokens": 903,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 281,
+    "run_seconds": 5.092,
+    "content": "There is no specific data provided in the given records about the combined land coverage of all reservoirs in Pennsylvania.",
+    "usage_metadata": {
+      "input_tokens": 867,
+      "output_tokens": 23,
+      "total_tokens": 890,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 867,
+        "total_tokens": 890,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 282,
+    "run_seconds": 4.438,
+    "content": "The combined area of lakes in Lincoln County, Oregon is approximately one hundred and twenty square kilometers.",
+    "usage_metadata": {
+      "input_tokens": 848,
+      "output_tokens": 20,
+      "total_tokens": 868,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 848,
+        "total_tokens": 868,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 283,
+    "run_seconds": 5.27,
+    "content": "The total area covered by all lakes in Highlands County, Florida is approximately one hundred and twenty square kilometers.",
+    "usage_metadata": {
+      "input_tokens": 1530,
+      "output_tokens": 22,
+      "total_tokens": 1552,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 1530,
+        "total_tokens": 1552,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 284,
+    "run_seconds": 3.0,
+    "content": "None of the provided records pertain to parks in Seattle.",
+    "usage_metadata": {
+      "input_tokens": 1088,
+      "output_tokens": 13,
+      "total_tokens": 1101,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 1088,
+        "total_tokens": 1101,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 285,
+    "run_seconds": 0.852,
+    "content": "zero",
+    "usage_metadata": {
+      "input_tokens": 1158,
+      "output_tokens": 2,
+      "total_tokens": 1160,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1158,
+        "total_tokens": 1160,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 286,
+    "run_seconds": 1.235,
+    "content": "zero",
+    "usage_metadata": {
+      "input_tokens": 2170,
+      "output_tokens": 2,
+      "total_tokens": 2172,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 2170,
+        "total_tokens": 2172,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 287,
+    "run_seconds": 1.252,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 2183,
+      "output_tokens": 2,
+      "total_tokens": 2185,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 2183,
+        "total_tokens": 2185,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 288,
+    "run_seconds": 3.06,
+    "content": "None of the provided data refers to Asheville, North Carolina.",
+    "usage_metadata": {
+      "input_tokens": 1112,
+      "output_tokens": 13,
+      "total_tokens": 1125,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 13,
+        "prompt_tokens": 1112,
+        "total_tokens": 1125,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 289,
+    "run_seconds": 4.633,
+    "content": "The area covered by all golf courses within Livingston County, Michigan is approximately one hundred and twenty hectares.",
+    "usage_metadata": {
+      "input_tokens": 707,
+      "output_tokens": 21,
+      "total_tokens": 728,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 707,
+        "total_tokens": 728,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 290,
+    "run_seconds": 4.175,
+    "content": "The total area covered by every nature reserve in New York is approximately one hundred thousand hectares.",
+    "usage_metadata": {
+      "input_tokens": 1463,
+      "output_tokens": 19,
+      "total_tokens": 1482,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 1463,
+        "total_tokens": 1482,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 291,
+    "run_seconds": 1.349,
+    "content": "fifty-one hectares",
+    "usage_metadata": {
+      "input_tokens": 1115,
+      "output_tokens": 5,
+      "total_tokens": 1120,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1115,
+        "total_tokens": 1120,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 292,
+    "run_seconds": 0.717,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1083,
+      "output_tokens": 2,
+      "total_tokens": 1085,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1083,
+        "total_tokens": 1085,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 293,
+    "run_seconds": 4.285,
+    "content": "The total area of all parks in the United States is not provided in the given data.",
+    "usage_metadata": {
+      "input_tokens": 914,
+      "output_tokens": 19,
+      "total_tokens": 933,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 914,
+        "total_tokens": 933,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 294,
+    "run_seconds": 7.744,
+    "content": "None of the provided records specify gardens located in Cedar Falls, Iowa. Therefore, the total area covered by every garden in Cedar Falls cannot be determined from the given data.",
+    "usage_metadata": {
+      "input_tokens": 1096,
+      "output_tokens": 35,
+      "total_tokens": 1131,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 35,
+        "prompt_tokens": 1096,
+        "total_tokens": 1131,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 295,
+    "run_seconds": 5.712,
+    "content": "There is no information available about the area coverage of reservoirs in Belchertown, Massachusetts in the provided records.",
+    "usage_metadata": {
+      "input_tokens": 1631,
+      "output_tokens": 25,
+      "total_tokens": 1656,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 1631,
+        "total_tokens": 1656,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 296,
+    "run_seconds": 4.215,
+    "content": "The summed land area of all parks in Cowen, West Virginia is forty hectares.",
+    "usage_metadata": {
+      "input_tokens": 1156,
+      "output_tokens": 18,
+      "total_tokens": 1174,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 1156,
+        "total_tokens": 1174,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 297,
+    "run_seconds": 0.815,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1462,
+      "output_tokens": 2,
+      "total_tokens": 1464,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1462,
+        "total_tokens": 1464,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 298,
+    "run_seconds": 0.884,
+    "content": "Zero",
+    "usage_metadata": {
+      "input_tokens": 1776,
+      "output_tokens": 2,
+      "total_tokens": 1778,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1776,
+        "total_tokens": 1778,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 299,
+    "run_seconds": 4.439,
+    "content": "The combined land coverage of all lakes in the United States is approximately two hundred thousand square kilometers.",
+    "usage_metadata": {
+      "input_tokens": 826,
+      "output_tokens": 20,
+      "total_tokens": 846,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 826,
+        "total_tokens": 846,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  }
+]

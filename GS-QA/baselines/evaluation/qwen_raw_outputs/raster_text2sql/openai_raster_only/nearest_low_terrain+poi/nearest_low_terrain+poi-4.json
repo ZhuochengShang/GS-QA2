@@ -1,0 +1,59 @@
+{
+  "answer_type": "distance",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "distance",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "distance_m": 7.088552
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "distance_m": 7.088552
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-68.806064 44.383943)',4326) AS pt\n),\nnearby_tiles AS (\n  SELECT d.rast\n  FROM public.dem_us d, origin o\n  WHERE d.rast && ST_Expand(o.pt, 1.0)\n),\nmasked AS (\n\t  SELECT ST_MapAlgebra(\n\t           rast,\n\t           1,\n\t           '32BF'::text,\n\t           'CASE WHEN [rast.val] < 160 THEN [rast.val] ELSE NULL END'::text,\n\t           NULL::double precision\n\t         ) AS rast\n  FROM nearby_tiles\n),\nqualifying_pixels AS (\n  SELECT (pp).geom AS geom\n  FROM masked\n  CROSS JOIN LATERAL ST_PixelAsCentroids(rast, 1, TRUE) AS pp\n)\nSELECT MIN(ST_Distance(p.geom::geography, o.pt::geography)) AS distance_m\nFROM qualifying_pixels p, origin o;",
+  "id": "nearest_low_terrain+poi-4",
+  "model_output": "```sql\nWITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-68.806064, 44.383943), 4326)::geography AS geom\n),\ndem_below_160 AS (\n  SELECT ST_Union(rast) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(\n    rast,\n    ST_Buffer(ST_Transform(poi_geom.geom, 32619), 100000) -- buffer to include nearby terrain\n  )\n),\nclipped_dem AS (\n  SELECT ST_Clip(dem_below_160.rast, ST_Transform(poi_geom.geom, 32619), true) AS rast\n  FROM dem_below_160, poi_geom\n),\nterrain_below_160 AS (\n  SELECT ST_Union(rast) AS rast\n  FROM clipped_dem\n  WHERE ST_Value(rast, 1) < 160\n),\nnearest_point AS (\n  SELECT ST_ClosestPoint(\n    ST_Transform(poi_geom.geom, 32619),\n    ST_Transform(ST_Union(terrain_below_160.rast), 32619)\n  ) AS nearest_point\n  FROM poi_geom, terrain_below_160\n)\nSELECT ST_Distance(poi_geom.geom, nearest_point::geography) AS distance_meters\nFROM poi_geom, nearest_point;\n```",
+  "predicted_exec": {
+    "error": "missing FROM-clause entry for table \"poi_geom\"\nLINE 9:     ST_Buffer(ST_Transform(poi_geom.geom, 32619), 100000) --...\n                                   ^",
+    "output": []
+  },
+  "predicted_sql": "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-68.806064, 44.383943), 4326)::geography AS geom\n),\ndem_below_160 AS (\n  SELECT ST_Union(rast) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(\n    rast,\n    ST_Buffer(ST_Transform(poi_geom.geom, 32619), 100000) -- buffer to include nearby terrain\n  )\n),\nclipped_dem AS (\n  SELECT ST_Clip(dem_below_160.rast, ST_Transform(poi_geom.geom, 32619), true) AS rast\n  FROM dem_below_160, poi_geom\n),\nterrain_below_160 AS (\n  SELECT ST_Union(rast) AS rast\n  FROM clipped_dem\n  WHERE ST_Value(rast, 1) < 160\n),\nnearest_point AS (\n  SELECT ST_ClosestPoint(\n    ST_Transform(poi_geom.geom, 32619),\n    ST_Transform(ST_Union(terrain_below_160.rast), 32619)\n  ) AS nearest_point\n  FROM poi_geom, terrain_below_160\n)\nSELECT ST_Distance(poi_geom.geom, nearest_point::geography) AS distance_meters\nFROM poi_geom, nearest_point;",
+  "predicted_sql_candidates": [
+    "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-68.806064, 44.383943), 4326)::geography AS geom\n),\ndem_below_160 AS (\n  SELECT ST_Union(rast) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(\n    rast,\n    ST_Buffer(ST_Transform(poi_geom.geom, 32619), 100000) -- buffer to include nearby terrain\n  )\n),\nclipped_dem AS (\n  SELECT ST_Clip(dem_below_160.rast, ST_Transform(poi_geom.geom, 32619), true) AS rast\n  FROM dem_below_160, poi_geom\n),\nterrain_below_160 AS (\n  SELECT ST_Union(rast) AS rast\n  FROM clipped_dem\n  WHERE ST_Value(rast, 1) < 160\n),\nnearest_point AS (\n  SELECT ST_ClosestPoint(\n    ST_Transform(poi_geom.geom, 32619),\n    ST_Transform(ST_Union(terrain_below_160.rast), 32619)\n  ) AS nearest_point\n  FROM poi_geom, terrain_below_160\n)\nSELECT ST_Distance(poi_geom.geom, nearest_point::geography) AS distance_meters\nFROM poi_geom, nearest_point;"
+  ],
+  "query_type": "raster_only",
+  "question": "How far is The Wilson Museum, Castine, ME from the nearest terrain below 160 meters?",
+  "source_file": "nearest_low_terrain+poi.jsonl",
+  "source_stem": "nearest_low_terrain+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 72.465,
+    "total_seconds": 72.466
+  },
+  "usage": {
+    "completion_tokens": 320,
+    "prompt_tokens": 1628,
+    "total_tokens": 1948
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 0.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 0.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-100.191844 40.001658, -100.196465 40.350086, -100.311089 40.349854, -100.327988 40.351173, -100.419678 40.350449, -100.553001 40.350388, -100.652534 40.349911, -100.662186 40.349861, -100.703812 40.349636, -100.70623 40.349625, -100.71949 40.349094, -100.756889 40.348877, -100.756854 40.002214, -100.739866 40.002172, -100.645205 40.001914, -100.566525 40.001926, -100.519014 40.001851, -100.477509 40.001843, -100.346168 40.001778, -100.271564 40.001705, -100.191844 40.001658))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).min AS slope\nFROM region_slope;",
+  "id": "min_slope+area-14",
+  "model_output": "```sql\nWITH red_willow_county AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Red Willow County' AND border_type = 'county'\n),\nflattest_area AS (\n  SELECT\n    ST_Clip(\n      r.rast,\n      (SELECT geom FROM red_willow_county),\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast,\n    (SELECT geom FROM red_willow_county)\n  )\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n),\nflattest_value AS (\n  SELECT\n    MIN(ST_Value(slope_rast, 1)) AS min_slope\n  FROM slope_raster\n)\nSELECT\n  min_slope AS flattest_slope_degrees\nFROM flattest_value;\n```",
+  "predicted_exec": {
+    "error": "column \"clipped_rast\" does not exist\nLINE 21:     ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n                      ^",
+    "output": []
+  },
+  "predicted_sql": "WITH red_willow_county AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Red Willow County' AND border_type = 'county'\n),\nflattest_area AS (\n  SELECT\n    ST_Clip(\n      r.rast,\n      (SELECT geom FROM red_willow_county),\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast,\n    (SELECT geom FROM red_willow_county)\n  )\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n),\nflattest_value AS (\n  SELECT\n    MIN(ST_Value(slope_rast, 1)) AS min_slope\n  FROM slope_raster\n)\nSELECT\n  min_slope AS flattest_slope_degrees\nFROM flattest_value;",
+  "predicted_sql_candidates": [
+    "WITH red_willow_county AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Red Willow County' AND border_type = 'county'\n),\nflattest_area AS (\n  SELECT\n    ST_Clip(\n      r.rast,\n      (SELECT geom FROM red_willow_county),\n      TRUE\n    ) AS clipped_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(\n    r.rast,\n    (SELECT geom FROM red_willow_county)\n  )\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n),\nflattest_value AS (\n  SELECT\n    MIN(ST_Value(slope_rast, 1)) AS min_slope\n  FROM slope_raster\n)\nSELECT\n  min_slope AS flattest_slope_degrees\nFROM flattest_value;"
+  ],
+  "query_type": "raster_only",
+  "question": "How flat is the flattest part of Red Willow County, Nebraska?",
+  "source_file": "min_slope+area.jsonl",
+  "source_stem": "min_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 42.572,
+    "total_seconds": 42.573
+  },
+  "usage": {
+    "completion_tokens": 197,
+    "prompt_tokens": 1517,
+    "total_tokens": 1714
+  }
+}

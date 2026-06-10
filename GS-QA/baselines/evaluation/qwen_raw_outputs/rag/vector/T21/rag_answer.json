@@ -1,0 +1,2102 @@
+[
+  {
+    "id": 1700,
+    "run_seconds": 0.949,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1094,
+      "output_tokens": 3,
+      "total_tokens": 1097,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1094,
+        "total_tokens": 1097,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1701,
+    "run_seconds": 0.936,
+    "content": "northeast",
+    "usage_metadata": {
+      "input_tokens": 1140,
+      "output_tokens": 3,
+      "total_tokens": 1143,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1140,
+        "total_tokens": 1143,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1702,
+    "run_seconds": 0.983,
+    "content": "Northeast",
+    "usage_metadata": {
+      "input_tokens": 1316,
+      "output_tokens": 3,
+      "total_tokens": 1319,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1316,
+        "total_tokens": 1319,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1703,
+    "run_seconds": 1.143,
+    "content": "northwest",
+    "usage_metadata": {
+      "input_tokens": 1809,
+      "output_tokens": 3,
+      "total_tokens": 1812,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1809,
+        "total_tokens": 1812,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1704,
+    "run_seconds": 1.556,
+    "content": "The bearing is southwest.",
+    "usage_metadata": {
+      "input_tokens": 1169,
+      "output_tokens": 6,
+      "total_tokens": 1175,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 1169,
+        "total_tokens": 1175,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1705,
+    "run_seconds": 0.938,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1192,
+      "output_tokens": 3,
+      "total_tokens": 1195,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1192,
+        "total_tokens": 1195,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1706,
+    "run_seconds": 0.865,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 959,
+      "output_tokens": 3,
+      "total_tokens": 962,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 959,
+        "total_tokens": 962,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1707,
+    "run_seconds": 1.017,
+    "content": "Northeast",
+    "usage_metadata": {
+      "input_tokens": 1457,
+      "output_tokens": 3,
+      "total_tokens": 1460,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1457,
+        "total_tokens": 1460,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1708,
+    "run_seconds": 0.921,
+    "content": "southwest",
+    "usage_metadata": {
+      "input_tokens": 1194,
+      "output_tokens": 3,
+      "total_tokens": 1197,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1194,
+        "total_tokens": 1197,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1709,
+    "run_seconds": 0.881,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 964,
+      "output_tokens": 3,
+      "total_tokens": 967,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 964,
+        "total_tokens": 967,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1710,
+    "run_seconds": 1.11,
+    "content": "northeast",
+    "usage_metadata": {
+      "input_tokens": 1761,
+      "output_tokens": 3,
+      "total_tokens": 1764,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1761,
+        "total_tokens": 1764,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1711,
+    "run_seconds": 1.517,
+    "content": "Northeast",
+    "usage_metadata": {
+      "input_tokens": 2478,
+      "output_tokens": 3,
+      "total_tokens": 2481,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2478,
+        "total_tokens": 2481,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1712,
+    "run_seconds": 0.603,
+    "content": "west",
+    "usage_metadata": {
+      "input_tokens": 732,
+      "output_tokens": 2,
+      "total_tokens": 734,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 732,
+        "total_tokens": 734,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1713,
+    "run_seconds": 1.013,
+    "content": "East",
+    "usage_metadata": {
+      "input_tokens": 2145,
+      "output_tokens": 2,
+      "total_tokens": 2147,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 2145,
+        "total_tokens": 2147,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1714,
+    "run_seconds": 0.92,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1150,
+      "output_tokens": 3,
+      "total_tokens": 1153,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1150,
+        "total_tokens": 1153,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1715,
+    "run_seconds": 1.242,
+    "content": "Observatory Overlook",
+    "usage_metadata": {
+      "input_tokens": 772,
+      "output_tokens": 5,
+      "total_tokens": 777,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 772,
+        "total_tokens": 777,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1716,
+    "run_seconds": 2.804,
+    "content": "None of the given data points indicate a beach resort.",
+    "usage_metadata": {
+      "input_tokens": 961,
+      "output_tokens": 12,
+      "total_tokens": 973,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 961,
+        "total_tokens": 973,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1717,
+    "run_seconds": 4.59,
+    "content": "There is no hospital within 40 kilometers of SeaQuest in Lynchburg, VA.",
+    "usage_metadata": {
+      "input_tokens": 1906,
+      "output_tokens": 19,
+      "total_tokens": 1925,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 1906,
+        "total_tokens": 1925,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1718,
+    "run_seconds": 1.165,
+    "content": "northeast",
+    "usage_metadata": {
+      "input_tokens": 1940,
+      "output_tokens": 3,
+      "total_tokens": 1943,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1940,
+        "total_tokens": 1943,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1719,
+    "run_seconds": 0.708,
+    "content": "West",
+    "usage_metadata": {
+      "input_tokens": 1040,
+      "output_tokens": 2,
+      "total_tokens": 1042,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1040,
+        "total_tokens": 1042,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1720,
+    "run_seconds": 2.242,
+    "content": "The bearing is three hundred twenty degrees.",
+    "usage_metadata": {
+      "input_tokens": 1308,
+      "output_tokens": 9,
+      "total_tokens": 1317,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 1308,
+        "total_tokens": 1317,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1721,
+    "run_seconds": 0.856,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 828,
+      "output_tokens": 3,
+      "total_tokens": 831,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 828,
+        "total_tokens": 831,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1722,
+    "run_seconds": 0.924,
+    "content": "Northwest",
+    "usage_metadata": {
+      "input_tokens": 1197,
+      "output_tokens": 3,
+      "total_tokens": 1200,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1197,
+        "total_tokens": 1200,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1723,
+    "run_seconds": 0.863,
+    "content": "southwest",
+    "usage_metadata": {
+      "input_tokens": 963,
+      "output_tokens": 3,
+      "total_tokens": 966,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 963,
+        "total_tokens": 966,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1724,
+    "run_seconds": 1.363,
+    "content": "Two hundred thirty degrees",
+    "usage_metadata": {
+      "input_tokens": 1155,
+      "output_tokens": 5,
+      "total_tokens": 1160,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1155,
+        "total_tokens": 1160,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1725,
+    "run_seconds": 2.0,
+    "content": "Illick's Mill Road.",
+    "usage_metadata": {
+      "input_tokens": 1804,
+      "output_tokens": 7,
+      "total_tokens": 1811,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 1804,
+        "total_tokens": 1811,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1726,
+    "run_seconds": 5.616,
+    "content": "None of the provided records contain information about a hospital near Edinburg Municipal Park or directional paths within the specified range.",
+    "usage_metadata": {
+      "input_tokens": 1111,
+      "output_tokens": 25,
+      "total_tokens": 1136,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 1111,
+        "total_tokens": 1136,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1727,
+    "run_seconds": 1.532,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 2447,
+      "output_tokens": 3,
+      "total_tokens": 2450,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2447,
+        "total_tokens": 2450,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1728,
+    "run_seconds": 0.983,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1291,
+      "output_tokens": 3,
+      "total_tokens": 1294,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1291,
+        "total_tokens": 1294,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1729,
+    "run_seconds": 1.063,
+    "content": "Northeast",
+    "usage_metadata": {
+      "input_tokens": 1522,
+      "output_tokens": 3,
+      "total_tokens": 1525,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1522,
+        "total_tokens": 1525,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1730,
+    "run_seconds": 0.625,
+    "content": "East",
+    "usage_metadata": {
+      "input_tokens": 806,
+      "output_tokens": 2,
+      "total_tokens": 808,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 806,
+        "total_tokens": 808,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1731,
+    "run_seconds": 5.48,
+    "content": "There is no aquarium within 70 kilometers of Beltzville State Park - Parking Lot B.",
+    "usage_metadata": {
+      "input_tokens": 2177,
+      "output_tokens": 21,
+      "total_tokens": 2198,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 2177,
+        "total_tokens": 2198,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1732,
+    "run_seconds": 1.378,
+    "content": "220 degrees",
+    "usage_metadata": {
+      "input_tokens": 1217,
+      "output_tokens": 5,
+      "total_tokens": 1222,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1217,
+        "total_tokens": 1222,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1733,
+    "run_seconds": 0.881,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 889,
+      "output_tokens": 3,
+      "total_tokens": 892,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 889,
+        "total_tokens": 892,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1734,
+    "run_seconds": 0.916,
+    "content": "Northeast",
+    "usage_metadata": {
+      "input_tokens": 1016,
+      "output_tokens": 3,
+      "total_tokens": 1019,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1016,
+        "total_tokens": 1019,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1735,
+    "run_seconds": 0.864,
+    "content": "Northeast",
+    "usage_metadata": {
+      "input_tokens": 918,
+      "output_tokens": 3,
+      "total_tokens": 921,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 918,
+        "total_tokens": 921,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1736,
+    "run_seconds": 0.953,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1235,
+      "output_tokens": 3,
+      "total_tokens": 1238,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1235,
+        "total_tokens": 1238,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1737,
+    "run_seconds": 1.188,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1985,
+      "output_tokens": 3,
+      "total_tokens": 1988,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1985,
+        "total_tokens": 1988,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1738,
+    "run_seconds": 0.899,
+    "content": "Northeast",
+    "usage_metadata": {
+      "input_tokens": 1011,
+      "output_tokens": 3,
+      "total_tokens": 1014,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1011,
+        "total_tokens": 1014,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1739,
+    "run_seconds": 0.885,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 980,
+      "output_tokens": 3,
+      "total_tokens": 983,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 980,
+        "total_tokens": 983,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1740,
+    "run_seconds": 1.028,
+    "content": "Northeast",
+    "usage_metadata": {
+      "input_tokens": 1414,
+      "output_tokens": 3,
+      "total_tokens": 1417,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1414,
+        "total_tokens": 1417,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1741,
+    "run_seconds": 0.883,
+    "content": "Southwest",
+    "usage_metadata": {
+      "input_tokens": 896,
+      "output_tokens": 3,
+      "total_tokens": 899,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 896,
+        "total_tokens": 899,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1742,
+    "run_seconds": 2.592,
+    "content": "The heading is 245 degrees.",
+    "usage_metadata": {
+      "input_tokens": 1679,
+      "output_tokens": 10,
+      "total_tokens": 1689,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 1679,
+        "total_tokens": 1689,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1743,
+    "run_seconds": 0.927,
+    "content": "southwest",
+    "usage_metadata": {
+      "input_tokens": 1081,
+      "output_tokens": 3,
+      "total_tokens": 1084,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1081,
+        "total_tokens": 1084,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1744,
+    "run_seconds": 1.071,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1571,
+      "output_tokens": 3,
+      "total_tokens": 1574,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1571,
+        "total_tokens": 1574,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1745,
+    "run_seconds": 1.167,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1914,
+      "output_tokens": 3,
+      "total_tokens": 1917,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1914,
+        "total_tokens": 1917,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1746,
+    "run_seconds": 1.134,
+    "content": "None found.",
+    "usage_metadata": {
+      "input_tokens": 1113,
+      "output_tokens": 4,
+      "total_tokens": 1117,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1113,
+        "total_tokens": 1117,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1747,
+    "run_seconds": 0.866,
+    "content": "northeast",
+    "usage_metadata": {
+      "input_tokens": 926,
+      "output_tokens": 3,
+      "total_tokens": 929,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 926,
+        "total_tokens": 929,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1748,
+    "run_seconds": 1.073,
+    "content": "southwest",
+    "usage_metadata": {
+      "input_tokens": 1574,
+      "output_tokens": 3,
+      "total_tokens": 1577,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1574,
+        "total_tokens": 1577,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1749,
+    "run_seconds": 1.221,
+    "content": "southwest",
+    "usage_metadata": {
+      "input_tokens": 2134,
+      "output_tokens": 3,
+      "total_tokens": 2137,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2134,
+        "total_tokens": 2137,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1750,
+    "run_seconds": 6.032,
+    "content": "None of the provided records mention a golf course near Residence Inn, Los Angeles, CA within a 100 kilometers range.",
+    "usage_metadata": {
+      "input_tokens": 1063,
+      "output_tokens": 27,
+      "total_tokens": 1090,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 27,
+        "prompt_tokens": 1063,
+        "total_tokens": 1090,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1751,
+    "run_seconds": 1.187,
+    "content": "southwest",
+    "usage_metadata": {
+      "input_tokens": 1919,
+      "output_tokens": 3,
+      "total_tokens": 1922,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1919,
+        "total_tokens": 1922,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1752,
+    "run_seconds": 1.557,
+    "content": "Northeast",
+    "usage_metadata": {
+      "input_tokens": 2522,
+      "output_tokens": 3,
+      "total_tokens": 2525,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2522,
+        "total_tokens": 2525,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1753,
+    "run_seconds": 1.19,
+    "content": "Southwest",
+    "usage_metadata": {
+      "input_tokens": 1993,
+      "output_tokens": 3,
+      "total_tokens": 1996,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1993,
+        "total_tokens": 1996,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1754,
+    "run_seconds": 0.955,
+    "content": "northwest",
+    "usage_metadata": {
+      "input_tokens": 1303,
+      "output_tokens": 3,
+      "total_tokens": 1306,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1303,
+        "total_tokens": 1306,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1755,
+    "run_seconds": 0.869,
+    "content": "southwest",
+    "usage_metadata": {
+      "input_tokens": 966,
+      "output_tokens": 3,
+      "total_tokens": 969,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 966,
+        "total_tokens": 969,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1756,
+    "run_seconds": 0.939,
+    "content": "Northeast",
+    "usage_metadata": {
+      "input_tokens": 1165,
+      "output_tokens": 3,
+      "total_tokens": 1168,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1165,
+        "total_tokens": 1168,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1757,
+    "run_seconds": 1.233,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 2122,
+      "output_tokens": 3,
+      "total_tokens": 2125,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2122,
+        "total_tokens": 2125,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1758,
+    "run_seconds": 4.906,
+    "content": "None of the provided records mention a nature reserve near Chehalis, WA or relevant directional information.",
+    "usage_metadata": {
+      "input_tokens": 1604,
+      "output_tokens": 21,
+      "total_tokens": 1625,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 1604,
+        "total_tokens": 1625,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1759,
+    "run_seconds": 1.096,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1626,
+      "output_tokens": 3,
+      "total_tokens": 1629,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1626,
+        "total_tokens": 1629,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1760,
+    "run_seconds": 1.248,
+    "content": "southwest",
+    "usage_metadata": {
+      "input_tokens": 2102,
+      "output_tokens": 3,
+      "total_tokens": 2105,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2102,
+        "total_tokens": 2105,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1761,
+    "run_seconds": 9.697,
+    "content": "Perkins Restaurant and Bakery is located in Colonia, NJ, and is within 140 kilometers of Strayer University, Charlotte, NC. The direction to Perkins is approximately 202 degrees.",
+    "usage_metadata": {
+      "input_tokens": 2122,
+      "output_tokens": 43,
+      "total_tokens": 2165,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 43,
+        "prompt_tokens": 2122,
+        "total_tokens": 2165,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1762,
+    "run_seconds": 1.065,
+    "content": "Northeast",
+    "usage_metadata": {
+      "input_tokens": 927,
+      "output_tokens": 3,
+      "total_tokens": 930,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 927,
+        "total_tokens": 930,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1763,
+    "run_seconds": 1.071,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1616,
+      "output_tokens": 3,
+      "total_tokens": 1619,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1616,
+        "total_tokens": 1619,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1764,
+    "run_seconds": 1.149,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1874,
+      "output_tokens": 3,
+      "total_tokens": 1877,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1874,
+        "total_tokens": 1877,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1765,
+    "run_seconds": 0.871,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 965,
+      "output_tokens": 3,
+      "total_tokens": 968,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 965,
+        "total_tokens": 968,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1766,
+    "run_seconds": 1.149,
+    "content": "North-east",
+    "usage_metadata": {
+      "input_tokens": 1844,
+      "output_tokens": 3,
+      "total_tokens": 1847,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1844,
+        "total_tokens": 1847,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1767,
+    "run_seconds": 1.432,
+    "content": "185 degrees",
+    "usage_metadata": {
+      "input_tokens": 1443,
+      "output_tokens": 5,
+      "total_tokens": 1448,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1443,
+        "total_tokens": 1448,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1768,
+    "run_seconds": 1.447,
+    "content": "Northeast",
+    "usage_metadata": {
+      "input_tokens": 2184,
+      "output_tokens": 3,
+      "total_tokens": 2187,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2184,
+        "total_tokens": 2187,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1769,
+    "run_seconds": 1.19,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1381,
+      "output_tokens": 3,
+      "total_tokens": 1384,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1381,
+        "total_tokens": 1384,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1770,
+    "run_seconds": 1.494,
+    "content": "Southwest",
+    "usage_metadata": {
+      "input_tokens": 2393,
+      "output_tokens": 3,
+      "total_tokens": 2396,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2393,
+        "total_tokens": 2396,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1771,
+    "run_seconds": 1.475,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 2283,
+      "output_tokens": 3,
+      "total_tokens": 2286,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2283,
+        "total_tokens": 2286,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1772,
+    "run_seconds": 1.064,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 917,
+      "output_tokens": 3,
+      "total_tokens": 920,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 917,
+        "total_tokens": 920,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1773,
+    "run_seconds": 5.053,
+    "content": "No hotel is within 60 kilometers of I-20 Wildlife Preserve, Midland, TX.",
+    "usage_metadata": {
+      "input_tokens": 1429,
+      "output_tokens": 22,
+      "total_tokens": 1451,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 1429,
+        "total_tokens": 1451,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1774,
+    "run_seconds": 1.153,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1814,
+      "output_tokens": 3,
+      "total_tokens": 1817,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1814,
+        "total_tokens": 1817,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1775,
+    "run_seconds": 1.233,
+    "content": "Northeast",
+    "usage_metadata": {
+      "input_tokens": 2078,
+      "output_tokens": 3,
+      "total_tokens": 2081,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2078,
+        "total_tokens": 2081,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1776,
+    "run_seconds": 1.152,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1898,
+      "output_tokens": 3,
+      "total_tokens": 1901,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1898,
+        "total_tokens": 1901,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1777,
+    "run_seconds": 0.82,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 873,
+      "output_tokens": 3,
+      "total_tokens": 876,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 873,
+        "total_tokens": 876,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1778,
+    "run_seconds": 0.953,
+    "content": "southwest",
+    "usage_metadata": {
+      "input_tokens": 1213,
+      "output_tokens": 3,
+      "total_tokens": 1216,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1213,
+        "total_tokens": 1216,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1779,
+    "run_seconds": 1.163,
+    "content": "northwest",
+    "usage_metadata": {
+      "input_tokens": 1884,
+      "output_tokens": 3,
+      "total_tokens": 1887,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1884,
+        "total_tokens": 1887,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1780,
+    "run_seconds": 0.92,
+    "content": "Southwest",
+    "usage_metadata": {
+      "input_tokens": 1063,
+      "output_tokens": 3,
+      "total_tokens": 1066,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1063,
+        "total_tokens": 1066,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1781,
+    "run_seconds": 0.968,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1206,
+      "output_tokens": 3,
+      "total_tokens": 1209,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1206,
+        "total_tokens": 1209,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1782,
+    "run_seconds": 0.607,
+    "content": "West",
+    "usage_metadata": {
+      "input_tokens": 800,
+      "output_tokens": 2,
+      "total_tokens": 802,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 800,
+        "total_tokens": 802,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1783,
+    "run_seconds": 1.085,
+    "content": "southwest",
+    "usage_metadata": {
+      "input_tokens": 1648,
+      "output_tokens": 3,
+      "total_tokens": 1651,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1648,
+        "total_tokens": 1651,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1784,
+    "run_seconds": 1.034,
+    "content": "southeast",
+    "usage_metadata": {
+      "input_tokens": 879,
+      "output_tokens": 4,
+      "total_tokens": 883,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 879,
+        "total_tokens": 883,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1785,
+    "run_seconds": 1.205,
+    "content": "Southwest",
+    "usage_metadata": {
+      "input_tokens": 1442,
+      "output_tokens": 3,
+      "total_tokens": 1445,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1442,
+        "total_tokens": 1445,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1786,
+    "run_seconds": 0.868,
+    "content": "Northwest",
+    "usage_metadata": {
+      "input_tokens": 982,
+      "output_tokens": 3,
+      "total_tokens": 985,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 982,
+        "total_tokens": 985,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1787,
+    "run_seconds": 0.884,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 964,
+      "output_tokens": 3,
+      "total_tokens": 967,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 964,
+        "total_tokens": 967,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1788,
+    "run_seconds": 1.049,
+    "content": "northwest",
+    "usage_metadata": {
+      "input_tokens": 1536,
+      "output_tokens": 3,
+      "total_tokens": 1539,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1536,
+        "total_tokens": 1539,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1789,
+    "run_seconds": 0.887,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 955,
+      "output_tokens": 3,
+      "total_tokens": 958,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 955,
+        "total_tokens": 958,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1790,
+    "run_seconds": 1.07,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 1594,
+      "output_tokens": 3,
+      "total_tokens": 1597,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1594,
+        "total_tokens": 1597,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1791,
+    "run_seconds": 1.103,
+    "content": "Any direction",
+    "usage_metadata": {
+      "input_tokens": 1707,
+      "output_tokens": 3,
+      "total_tokens": 1710,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1707,
+        "total_tokens": 1710,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1792,
+    "run_seconds": 4.953,
+    "content": "None of the provided records mention a golf course near Lonely Red Caboose, Wabash, IN.",
+    "usage_metadata": {
+      "input_tokens": 1079,
+      "output_tokens": 22,
+      "total_tokens": 1101,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 1079,
+        "total_tokens": 1101,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1793,
+    "run_seconds": 0.82,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 798,
+      "output_tokens": 3,
+      "total_tokens": 801,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 798,
+        "total_tokens": 801,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1794,
+    "run_seconds": 6.373,
+    "content": "Deadman Lookout Tower is the closest gallery within 180 kilometers. You should head northeast from Audubon Insectarium.",
+    "usage_metadata": {
+      "input_tokens": 851,
+      "output_tokens": 29,
+      "total_tokens": 880,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 29,
+        "prompt_tokens": 851,
+        "total_tokens": 880,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1795,
+    "run_seconds": 1.204,
+    "content": "Northeast",
+    "usage_metadata": {
+      "input_tokens": 2030,
+      "output_tokens": 3,
+      "total_tokens": 2033,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2030,
+        "total_tokens": 2033,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1796,
+    "run_seconds": 0.901,
+    "content": "southwest",
+    "usage_metadata": {
+      "input_tokens": 1053,
+      "output_tokens": 3,
+      "total_tokens": 1056,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1053,
+        "total_tokens": 1056,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1797,
+    "run_seconds": 0.856,
+    "content": "Southeast",
+    "usage_metadata": {
+      "input_tokens": 939,
+      "output_tokens": 3,
+      "total_tokens": 942,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 939,
+        "total_tokens": 942,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1798,
+    "run_seconds": 1.077,
+    "content": "thirty degrees",
+    "usage_metadata": {
+      "input_tokens": 912,
+      "output_tokens": 4,
+      "total_tokens": 916,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 912,
+        "total_tokens": 916,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 1799,
+    "run_seconds": 0.937,
+    "content": "East",
+    "usage_metadata": {
+      "input_tokens": 1869,
+      "output_tokens": 2,
+      "total_tokens": 1871,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1869,
+        "total_tokens": 1871,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  }
+]

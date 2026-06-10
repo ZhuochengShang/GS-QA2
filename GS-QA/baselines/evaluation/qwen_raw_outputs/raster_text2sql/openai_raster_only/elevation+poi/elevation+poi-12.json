@@ -1,0 +1,70 @@
+{
+  "answer_type": "elevation - point based",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation - point based",
+    "exact_match": true,
+    "gold_row_count": 1,
+    "max_abs_numeric_delta": 0.0,
+    "mean_abs_numeric_delta": 0.0,
+    "numeric_deltas": [
+      0.0
+    ],
+    "predicted_row_count": 1,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "absolute_error": 0.0,
+      "gold_field": "elevation",
+      "gold_value": 19.0,
+      "metric_family": "primary_numeric",
+      "predicted_field": "elevation",
+      "predicted_value": 19.0,
+      "relative_error": 0.0,
+      "within_tolerance": true
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 19.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 19.0
+      }
+    ]
+  },
+  "gold_sql": "SELECT ST_Value(rast, 1, ST_GeomFromText('POINT (-73.923036 42.060111)',4326)) AS elevation\nFROM public.dem_us\nWHERE ST_Intersects(rast, ST_GeomFromText('POINT (-73.923036 42.060111)',4326))\nLIMIT 1;",
+  "id": "elevation+poi-12",
+  "model_output": "```sql\nWITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-73.923036, 42.060111), 4326)::geography AS geom\n)\nSELECT \n  ST_Value(r.rast, p.geom::geometry, true) AS elevation\nFROM \n  poi_geom p,\n  public.dem_us r\nWHERE \n  ST_Intersects(r.rast, p.geom::geometry);\n```",
+  "predicted_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 19.0
+      }
+    ]
+  },
+  "predicted_sql": "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-73.923036, 42.060111), 4326)::geography AS geom\n)\nSELECT \n  ST_Value(r.rast, p.geom::geometry, true) AS elevation\nFROM \n  poi_geom p,\n  public.dem_us r\nWHERE \n  ST_Intersects(r.rast, p.geom::geometry);",
+  "predicted_sql_candidates": [
+    "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-73.923036, 42.060111), 4326)::geography AS geom\n)\nSELECT \n  ST_Value(r.rast, p.geom::geometry, true) AS elevation\nFROM \n  poi_geom p,\n  public.dem_us r\nWHERE \n  ST_Intersects(r.rast, p.geom::geometry);"
+  ],
+  "query_type": "raster_only",
+  "question": "How high is The Suminski Innski, Tivoli, NY above sea level?",
+  "source_file": "elevation+poi.jsonl",
+  "source_stem": "elevation+poi",
+  "timing": {
+    "execution_seconds": 0.034,
+    "generation_seconds": 21.778,
+    "total_seconds": 21.812
+  },
+  "usage": {
+    "completion_tokens": 102,
+    "prompt_tokens": 1618,
+    "total_tokens": 1720
+  }
+}

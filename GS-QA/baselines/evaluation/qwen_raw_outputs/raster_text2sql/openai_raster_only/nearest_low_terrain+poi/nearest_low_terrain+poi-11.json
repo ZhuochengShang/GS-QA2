@@ -1,0 +1,59 @@
+{
+  "answer_type": "distance",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "distance",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "distance_m": 16.424473
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "distance_m": 16.424473
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-71.070095 42.36737)',4326) AS pt\n),\nnearby_tiles AS (\n  SELECT d.rast\n  FROM public.dem_us d, origin o\n  WHERE d.rast && ST_Expand(o.pt, 1.0)\n),\nmasked AS (\n\t  SELECT ST_MapAlgebra(\n\t           rast,\n\t           1,\n\t           '32BF'::text,\n\t           'CASE WHEN [rast.val] < 480 THEN [rast.val] ELSE NULL END'::text,\n\t           NULL::double precision\n\t         ) AS rast\n  FROM nearby_tiles\n),\nqualifying_pixels AS (\n  SELECT (pp).geom AS geom\n  FROM masked\n  CROSS JOIN LATERAL ST_PixelAsCentroids(rast, 1, TRUE) AS pp\n)\nSELECT MIN(ST_Distance(p.geom::geography, o.pt::geography)) AS distance_m\nFROM qualifying_pixels p, origin o;",
+  "id": "nearest_low_terrain+poi-11",
+  "model_output": "```sql\nWITH point_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-71.070095, 42.36737), 4326)::geography AS geom\n),\ndem_subset AS (\n  SELECT\n    rast\n  FROM\n    public.dem_us\n  WHERE\n    ST_Intersects(\n      rast,\n      ST_Envelope(ST_Transform(point_geom.geom, 3857))\n    )\n),\nnearest_low_elevation AS (\n  SELECT\n    MIN(ST_Distance(point_geom.geom, ST_PointN(ST_ExteriorRing(ST_Buffer(ST_SetSRID(ST_MakePoint(x, y), 4326), 0.0001)), 1))) AS distance\n  FROM\n    dem_subset,\n    LATERAL ST_DumpAsPolygons(rast, 1) AS dump(x, y, val)\n  WHERE\n    val < 480\n)\nSELECT\n  distance\nFROM\n  nearest_low_elevation;\n```",
+  "predicted_exec": {
+    "error": "missing FROM-clause entry for table \"point_geom\"\nLINE 12:       ST_Envelope(ST_Transform(point_geom.geom, 3857))\n                                        ^",
+    "output": []
+  },
+  "predicted_sql": "WITH point_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-71.070095, 42.36737), 4326)::geography AS geom\n),\ndem_subset AS (\n  SELECT\n    rast\n  FROM\n    public.dem_us\n  WHERE\n    ST_Intersects(\n      rast,\n      ST_Envelope(ST_Transform(point_geom.geom, 3857))\n    )\n),\nnearest_low_elevation AS (\n  SELECT\n    MIN(ST_Distance(point_geom.geom, ST_PointN(ST_ExteriorRing(ST_Buffer(ST_SetSRID(ST_MakePoint(x, y), 4326), 0.0001)), 1))) AS distance\n  FROM\n    dem_subset,\n    LATERAL ST_DumpAsPolygons(rast, 1) AS dump(x, y, val)\n  WHERE\n    val < 480\n)\nSELECT\n  distance\nFROM\n  nearest_low_elevation;",
+  "predicted_sql_candidates": [
+    "WITH point_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-71.070095, 42.36737), 4326)::geography AS geom\n),\ndem_subset AS (\n  SELECT\n    rast\n  FROM\n    public.dem_us\n  WHERE\n    ST_Intersects(\n      rast,\n      ST_Envelope(ST_Transform(point_geom.geom, 3857))\n    )\n),\nnearest_low_elevation AS (\n  SELECT\n    MIN(ST_Distance(point_geom.geom, ST_PointN(ST_ExteriorRing(ST_Buffer(ST_SetSRID(ST_MakePoint(x, y), 4326), 0.0001)), 1))) AS distance\n  FROM\n    dem_subset,\n    LATERAL ST_DumpAsPolygons(rast, 1) AS dump(x, y, val)\n  WHERE\n    val < 480\n)\nSELECT\n  distance\nFROM\n  nearest_low_elevation;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the distance to the nearest elevation below 480 meters from Boston Duck Tours, Boston, MA?",
+  "source_file": "nearest_low_terrain+poi.jsonl",
+  "source_stem": "nearest_low_terrain+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 49.551,
+    "total_seconds": 49.552
+  },
+  "usage": {
+    "completion_tokens": 220,
+    "prompt_tokens": 1627,
+    "total_tokens": 1847
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 0.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 0.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-90.311616 38.689168, -90.3121 38.689491, -90.313555 38.690461, -90.31404 38.690785, -90.314114 38.690834, -90.314338 38.690984, -90.314413 38.691034, -90.314604 38.691138, -90.314766 38.691227, -90.315145 38.691504, -90.315322 38.691633, -90.315383 38.691678, -90.315569 38.691813, -90.315631 38.691859, -90.315782 38.69197, -90.316235 38.692303, -90.316386 38.692415, -90.316516 38.692511, -90.316623 38.69259, -90.316686 38.692636, -90.316907 38.692799, -90.317038 38.692896, -90.316893 38.693166, -90.316781 38.693376, -90.316778 38.693382, -90.316457 38.693976, -90.316312 38.694246, -90.316222 38.694409, -90.315955 38.6949, -90.315867 38.695064, -90.315776 38.695229, -90.315506 38.695725, -90.315416 38.695891, -90.315301 38.696101, -90.315181 38.696323, -90.314962 38.696736, -90.31485 38.696949, -90.314685 38.697258, -90.314478 38.697651, -90.314193 38.698187, -90.31403 38.698497, -90.313924 38.698695, -90.313609 38.699289, -90.3136 38.699308, -90.313505 38.699488, -90.312926 38.6992, -90.311192 38.698338, -90.310614 38.698051, -90.310334 38.697851, -90.309494 38.697251, -90.309214 38.697051, -90.309307 38.695641, -90.309514 38.692551, -90.309514 38.691409, -90.309514 38.690551, -90.30896 38.690551, -90.309034 38.690026, -90.309258 38.688454, -90.309333 38.687931, -90.309793 38.688172, -90.311173 38.688897, -90.311347 38.688989, -90.311616 38.689168))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).min AS slope\nFROM region_slope;",
+  "id": "min_slope+area-3",
+  "model_output": "```sql\nWITH greendale_geometry AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE '%Greendale%' AND addr_state = 'Missouri'\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM greendale_geometry)),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM greendale_geometry))\n)\nSELECT\n  MIN(value) AS lowest_slope\nFROM (\n  SELECT\n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM slope_raster\n) AS dump;\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 4:   WHERE region_name ILIKE '%Greendale%' AND addr_state = 'Mi...\n                                                    ^",
+    "output": []
+  },
+  "predicted_sql": "WITH greendale_geometry AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE '%Greendale%' AND addr_state = 'Missouri'\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM greendale_geometry)),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM greendale_geometry))\n)\nSELECT\n  MIN(value) AS lowest_slope\nFROM (\n  SELECT\n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM slope_raster\n) AS dump;",
+  "predicted_sql_candidates": [
+    "WITH greendale_geometry AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE '%Greendale%' AND addr_state = 'Missouri'\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(\n      ST_Clip(rast, (SELECT geom FROM greendale_geometry)),\n      1,\n      '32BF'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM greendale_geometry))\n)\nSELECT\n  MIN(value) AS lowest_slope\nFROM (\n  SELECT\n    (ST_DumpAsPolygons(slope_rast)).*\n  FROM slope_raster\n) AS dump;"
+  ],
+  "query_type": "raster_only",
+  "question": "In Greendale, Missouri, what is the lowest slope?",
+  "source_file": "min_slope+area.jsonl",
+  "source_stem": "min_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 33.01,
+    "total_seconds": 33.011
+  },
+  "usage": {
+    "completion_tokens": 150,
+    "prompt_tokens": 1516,
+    "total_tokens": 1666
+  }
+}

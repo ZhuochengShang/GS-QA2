@@ -1,0 +1,59 @@
+{
+  "answer_type": "ruggedness_index",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "ruggedness_index",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "tri_value": 1.125
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "tri_value": 1.125
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-71.12152 42.372407)',4326) AS pt\n),\npatch AS (\n  SELECT ST_Buffer(pt::geography, 100)::geometry AS g FROM origin\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, p.g)) AS rast\n  FROM public.dem_us d\n  JOIN patch p ON ST_Intersects(d.rast, p.g)\n),\ntri_rast AS (\n  SELECT ST_TRI(rast, 1) AS rast\n  FROM clipped_dem\n)\nSELECT ST_Value(t.rast, 1, o.pt) AS tri_value\nFROM tri_rast t, origin o;",
+  "id": "ruggedness+poi-18",
+  "model_output": "```sql\nWITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-71.12152, 42.372407), 4326)::geography AS geom\n),\nruggedness AS (\n  SELECT\n    ST_TerrainRuggednessIndex(\n      ST_Clip(\n        r.rast,\n        ST_Buffer(p.geom::geometry, 1000), -- 1 km buffer for ruggedness index\n        TRUE\n      ),\n      1\n    ) AS ruggedness_index\n  FROM\n    public.dem_us r,\n    poi_geom p\n  WHERE\n    ST_Intersects(r.rast, p.geom::geometry)\n)\nSELECT\n  ruggedness_index\nFROM\n  ruggedness;\n```",
+  "predicted_exec": {
+    "error": "function st_terrainruggednessindex(raster, integer) does not exist\nLINE 6:     ST_TerrainRuggednessIndex(\n            ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-71.12152, 42.372407), 4326)::geography AS geom\n),\nruggedness AS (\n  SELECT\n    ST_TerrainRuggednessIndex(\n      ST_Clip(\n        r.rast,\n        ST_Buffer(p.geom::geometry, 1000), -- 1 km buffer for ruggedness index\n        TRUE\n      ),\n      1\n    ) AS ruggedness_index\n  FROM\n    public.dem_us r,\n    poi_geom p\n  WHERE\n    ST_Intersects(r.rast, p.geom::geometry)\n)\nSELECT\n  ruggedness_index\nFROM\n  ruggedness;",
+  "predicted_sql_candidates": [
+    "WITH poi_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-71.12152, 42.372407), 4326)::geography AS geom\n),\nruggedness AS (\n  SELECT\n    ST_TerrainRuggednessIndex(\n      ST_Clip(\n        r.rast,\n        ST_Buffer(p.geom::geometry, 1000), -- 1 km buffer for ruggedness index\n        TRUE\n      ),\n      1\n    ) AS ruggedness_index\n  FROM\n    public.dem_us r,\n    poi_geom p\n  WHERE\n    ST_Intersects(r.rast, p.geom::geometry)\n)\nSELECT\n  ruggedness_index\nFROM\n  ruggedness;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the terrain ruggedness index at Charlie's Kitchen, Cambridge, MA?",
+  "source_file": "ruggedness+poi.jsonl",
+  "source_stem": "ruggedness+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 35.71,
+    "total_seconds": 35.711
+  },
+  "usage": {
+    "completion_tokens": 166,
+    "prompt_tokens": 1613,
+    "total_tokens": 1779
+  }
+}

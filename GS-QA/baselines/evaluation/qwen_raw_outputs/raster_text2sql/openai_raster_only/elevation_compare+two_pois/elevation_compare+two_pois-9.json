@@ -1,0 +1,75 @@
+{
+  "answer_type": "name",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "name",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "max_abs_numeric_delta": 0.0,
+    "mean_abs_numeric_delta": 0.0,
+    "numeric_deltas": [
+      0.0,
+      0.0
+    ],
+    "predicted_row_count": 1,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "exact_match": true,
+      "gold_field": "higher_poi",
+      "gold_value": "AAAS / Science, Washington, DC",
+      "metric_family": "primary_text",
+      "predicted_field": "higher_elevation",
+      "predicted_value": "AAAS / Science, Washington, DC"
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "higher_poi": "AAAS / Science, Washington, DC",
+      "poi1_elevation_m": 39.0,
+      "poi2_elevation_m": 29.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "higher_poi": "AAAS / Science, Washington, DC",
+        "poi1_elevation_m": 39.0,
+        "poi2_elevation_m": 29.0
+      }
+    ]
+  },
+  "gold_sql": "WITH p1 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-77.02832 38.900025)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-77.02832 38.900025)',4326))\n  LIMIT 1\n),\np2 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-118.37225 33.967599)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-118.37225 33.967599)',4326))\n  LIMIT 1\n)\nSELECT\n  CASE\n    WHEN p1.elev > p2.elev THEN 'AAAS / Science, Washington, DC'\n    WHEN p2.elev > p1.elev THEN 'Centinela Adobe, Los Angeles, CA'\n    ELSE 'equal'\n  END AS higher_poi,\n  p1.elev AS poi1_elevation_m,\n  p2.elev AS poi2_elevation_m\nFROM p1, p2;",
+  "id": "elevation_compare+two_pois-9",
+  "model_output": "```sql\nWITH aaas_point AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-77.02832 38.900025)'), 4326)::geometry AS geom\n),\ncentinela_point AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-118.37225 33.967599)'), 4326)::geometry AS geom\n),\naaas_elevation AS (\n  SELECT ST_Value(rast, (SELECT geom FROM aaas_point)) AS elevation\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM aaas_point))\n),\ncentinela_elevation AS (\n  SELECT ST_Value(rast, (SELECT geom FROM centinela_point)) AS elevation\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM centinela_point))\n)\nSELECT \n  (SELECT elevation FROM aaas_elevation) AS aaas_elevation,\n  (SELECT elevation FROM centinela_elevation) AS centinela_elevation,\n  CASE\n    WHEN (SELECT elevation FROM aaas_elevation) > (SELECT elevation FROM centinela_elevation) THEN 'AAAS / Science, Washington, DC'\n    ELSE 'Centinela Adobe, Los Angeles, CA'\n  END AS higher_elevation\n```",
+  "predicted_exec": {
+    "error": "",
+    "output": [
+      {
+        "aaas_elevation": 39.0,
+        "centinela_elevation": 29.0,
+        "higher_elevation": "AAAS / Science, Washington, DC"
+      }
+    ]
+  },
+  "predicted_sql": "WITH aaas_point AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-77.02832 38.900025)'), 4326)::geometry AS geom\n),\ncentinela_point AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-118.37225 33.967599)'), 4326)::geometry AS geom\n),\naaas_elevation AS (\n  SELECT ST_Value(rast, (SELECT geom FROM aaas_point)) AS elevation\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM aaas_point))\n),\ncentinela_elevation AS (\n  SELECT ST_Value(rast, (SELECT geom FROM centinela_point)) AS elevation\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM centinela_point))\n)\nSELECT \n  (SELECT elevation FROM aaas_elevation) AS aaas_elevation,\n  (SELECT elevation FROM centinela_elevation) AS centinela_elevation,\n  CASE\n    WHEN (SELECT elevation FROM aaas_elevation) > (SELECT elevation FROM centinela_elevation) THEN 'AAAS / Science, Washington, DC'\n    ELSE 'Centinela Adobe, Los Angeles, CA'\n  END AS higher_elevation",
+  "predicted_sql_candidates": [
+    "WITH aaas_point AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-77.02832 38.900025)'), 4326)::geometry AS geom\n),\ncentinela_point AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-118.37225 33.967599)'), 4326)::geometry AS geom\n),\naaas_elevation AS (\n  SELECT ST_Value(rast, (SELECT geom FROM aaas_point)) AS elevation\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM aaas_point))\n),\ncentinela_elevation AS (\n  SELECT ST_Value(rast, (SELECT geom FROM centinela_point)) AS elevation\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM centinela_point))\n)\nSELECT \n  (SELECT elevation FROM aaas_elevation) AS aaas_elevation,\n  (SELECT elevation FROM centinela_elevation) AS centinela_elevation,\n  CASE\n    WHEN (SELECT elevation FROM aaas_elevation) > (SELECT elevation FROM centinela_elevation) THEN 'AAAS / Science, Washington, DC'\n    ELSE 'Centinela Adobe, Los Angeles, CA'\n  END AS higher_elevation"
+  ],
+  "query_type": "raster_only",
+  "question": "Of the two, AAAS / Science, Washington, DC and Centinela Adobe, Los Angeles, CA, which lies at a greater elevation?",
+  "source_file": "elevation_compare+two_pois.jsonl",
+  "source_stem": "elevation_compare+two_pois",
+  "timing": {
+    "execution_seconds": 0.882,
+    "generation_seconds": 63.813,
+    "total_seconds": 64.695
+  },
+  "usage": {
+    "completion_tokens": 299,
+    "prompt_tokens": 1734,
+    "total_tokens": 2033
+  }
+}

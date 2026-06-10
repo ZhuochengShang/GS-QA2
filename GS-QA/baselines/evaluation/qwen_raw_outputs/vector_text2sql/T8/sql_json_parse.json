@@ -1,0 +1,502 @@
+[
+  {
+    "id": 900,
+    "content": "```json\n{\n    \"name\": \"Chase Field\",\n    \"address\": \"401 E Jefferson St, Phoenix, AZ 85004\",\n    \"count\": 10000,\n    \"distance\": 10,\n    \"azimuth_angle\": 90\n}\n```",
+    "run_seconds": 14.598
+  },
+  {
+    "id": 901,
+    "content": "```json\n{\n    \"name\": \"Denmark Industrial School Museum\",\n    \"address\": \"Denmark, SC\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 8.336
+  },
+  {
+    "id": 902,
+    "content": "```json\n{\n    \"name\": \"Herb Garden\"\n}\n```",
+    "run_seconds": 3.848
+  },
+  {
+    "id": 903,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.657
+  },
+  {
+    "id": 904,
+    "content": "```json\n{\n    \"name\": \"Invesco Field at Mile High\",\n    \"address\": \"1700 Sports Authority Field Dr, Denver, CO 80215, USA\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 12.492
+  },
+  {
+    "id": 905,
+    "content": "```json\n{\n    \"name\": \"Herb Garden\"\n}\n```",
+    "run_seconds": 3.87
+  },
+  {
+    "id": 906,
+    "content": "```json\n{\n    \"name\": \"Jacksonville Arboretum and Gardens\",\n    \"address\": \"1710 W 8th St, Jacksonville, FL 32204\",\n    \"distance\": 10,\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 14.567
+  },
+  {
+    "id": 907,
+    "content": "```json\n{\n    \"name\": \"Manitowoc Zoo\",\n    \"address\": \"400 S 8th St, Manitowoc, WI 54220\"\n}\n```",
+    "run_seconds": 10.246
+  },
+  {
+    "id": 908,
+    "content": "```json\n{\n    \"name\": \"FLUXSpace\",\n    \"distance\": 10000\n}\n```",
+    "run_seconds": 6.344
+  },
+  {
+    "id": 909,
+    "content": "```json\n{\n    \"name\": \"Arizona State University\",\n    \"address\": \"810 S Palm Ave, Tempe, AZ 85281\",\n    \"distance\": 10\n}\n```",
+    "run_seconds": 10.943
+  },
+  {
+    "id": 910,
+    "content": "```json\n{\n    \"name\": \"North Carolina Aquarium on Roanoke Island\",\n    \"address\": \"100 Tighes Hill Road, Manteo, NC 27954\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 12.622
+  },
+  {
+    "id": 911,
+    "content": "```json\n{\n    \"name\": \"Simmons Bank Liberty Stadium\",\n    \"address\": \"1955 E. High Street, Memphis, TN 38117\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 11.218
+  },
+  {
+    "id": 912,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 6315,\n    \"distance\": 0,\n    \"length\": 0,\n    \"area\": 0,\n    \"azimuth_angle\": 0\n}\n```",
+    "run_seconds": 12.812
+  },
+  {
+    "id": 913,
+    "content": "```json\n{\n    \"name\": \"Space Center Houston\"\n}\n```",
+    "run_seconds": 3.634
+  },
+  {
+    "id": 914,
+    "content": "```json\n{\n    \"name\": \"Jacksonville University\"\n}\n```",
+    "run_seconds": 3.654
+  },
+  {
+    "id": 915,
+    "content": "```json\n{\n    \"name\": \"Cleveland Botanical Garden\"\n}\n```",
+    "run_seconds": 4.103
+  },
+  {
+    "id": 916,
+    "content": "```json\n{\n    \"name\": \"Best Western Plus Eau Claire Hotel\",\n    \"address\": \"100 N Gordon St, Eau Claire, WI 54701\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 11.402
+  },
+  {
+    "id": 917,
+    "content": "```json\n{\n    \"name\": \"Hermann Park\"\n}\n```",
+    "run_seconds": 3.635
+  },
+  {
+    "id": 918,
+    "content": "```json\n{\n    \"name\": \"Southern National Speedway\",\n    \"address\": \"Lucama, NC\"\n}\n```",
+    "run_seconds": 5.774
+  },
+  {
+    "id": 919,
+    "content": "```json\n{\n    \"name\": \"The Cornish Pasty Company\"\n}\n```",
+    "run_seconds": 4.277
+  },
+  {
+    "id": 920,
+    "content": "```json\n{\n    \"name\": null,\n    \"address\": null,\n    \"count\": null,\n    \"distance\": null,\n    \"length\": null,\n    \"area\": null,\n    \"azimuth_angle\": null\n}\n```",
+    "run_seconds": 11.125
+  },
+  {
+    "id": 921,
+    "content": "```json\n{\n    \"name\": \"Minuteman Park\"\n}\n```",
+    "run_seconds": 4.027
+  },
+  {
+    "id": 922,
+    "content": "```json\n{\n    \"name\": \"Texas State Aquarium\"\n}\n```",
+    "run_seconds": 3.637
+  },
+  {
+    "id": 923,
+    "content": "```json\n{}\n```",
+    "run_seconds": 1.495
+  },
+  {
+    "id": 924,
+    "content": "```json\n{\n    \"name\": \"Cherokee Park\",\n    \"address\": \"100 W Chestnut St, Louisville, KY 40202, USA\",\n    \"count\": 6600,\n    \"distance\": 10,\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 15.203
+  },
+  {
+    "id": 925,
+    "content": "```json\n{\n    \"name\": null,\n    \"address\": null,\n    \"count\": null,\n    \"distance\": null,\n    \"length\": null,\n    \"area\": null,\n    \"azimuth_angle\": null\n}\n```",
+    "run_seconds": 11.176
+  },
+  {
+    "id": 926,
+    "content": "```json\n{\n    \"name\": \"The closest restaurant\",\n    \"distance\": 10\n}\n```",
+    "run_seconds": 5.346
+  },
+  {
+    "id": 927,
+    "content": "```json\n{\n    \"name\": \"There is no caf\u00e9 in Phoenix, AZ, that can hold 10,000 spectators.\"\n}\n```",
+    "run_seconds": 7.305
+  },
+  {
+    "id": 928,
+    "content": "```json\n{\n    \"name\": \"Wayland University\"\n}\n```",
+    "run_seconds": 3.686
+  },
+  {
+    "id": 929,
+    "content": "```json\n{\n    \"name\": \"Fenway Park\"\n}\n```",
+    "run_seconds": 3.909
+  },
+  {
+    "id": 930,
+    "content": "```json\n{\n    \"name\": \"Panaewa Rainforest Zoo\",\n    \"address\": \"Panaewa Rainforest Zoo, Elkins Park, PA\",\n    \"distance\": 130\n}\n```",
+    "run_seconds": 10.739
+  },
+  {
+    "id": 931,
+    "content": "```json\n{\n    \"name\": \"Riverview Stadium\"\n}\n```",
+    "run_seconds": 4.004
+  },
+  {
+    "id": 932,
+    "content": "```json\n{\n    \"name\": \"Pelham Bay Park\"\n}\n```",
+    "run_seconds": 4.012
+  },
+  {
+    "id": 933,
+    "content": "```json\n{\n    \"name\": \"Tasting Room\"\n}\n```",
+    "run_seconds": 3.702
+  },
+  {
+    "id": 934,
+    "content": "```json\n{\n    \"name\": \"Homewood Suites\"\n}\n```",
+    "run_seconds": 3.634
+  },
+  {
+    "id": 935,
+    "content": "```json\n{\n    \"name\": \"Denmark Beach Resort\"\n}\n```",
+    "run_seconds": 3.984
+  },
+  {
+    "id": 936,
+    "content": "```json\n{\n    \"name\": \"Colorado Convention Center\",\n    \"address\": \"14415 W 14th Ave, Wheat Ridge, CO 80038, USA\",\n    \"distance\": 20\n}\n```",
+    "run_seconds": 11.743
+  },
+  {
+    "id": 937,
+    "content": "```json\n{\n    \"name\": \"La Salle University campus garden\",\n    \"address\": \"1900 West Olney Avenue, Elkins Park, PA 19038\",\n    \"distance\": 20\n}\n```",
+    "run_seconds": 11.744
+  },
+  {
+    "id": 938,
+    "content": "```json\n{\n    \"name\": \"The nearest fast food restaurant\",\n    \"address\": \"Not available due to an error in the data query\"\n}\n```",
+    "run_seconds": 7.813
+  },
+  {
+    "id": 939,
+    "content": "```json\n{\n    \"name\": \"Elkins Park Hospital\"\n}\n```",
+    "run_seconds": 3.975
+  },
+  {
+    "id": 940,
+    "content": "```json\n{\n    \"name\": \"University of Alaska Museum of the North\"\n}\n```",
+    "run_seconds": 4.49
+  },
+  {
+    "id": 941,
+    "content": "```json\n{\n    \"name\": \"There is no known stadium that can hold 14,500 spectators in Wichita Falls, Texas. Therefore, there is no nature reserve associated with such a stadium.\"\n}\n```",
+    "run_seconds": 10.246
+  },
+  {
+    "id": 942,
+    "content": "```json\n{\n    \"name\": \"Herb Garden\"\n}\n```",
+    "run_seconds": 3.676
+  },
+  {
+    "id": 943,
+    "content": "```json\n{\n    \"name\": \"Frazier History Museum\",\n    \"address\": \"901 W Main St, Louisville, KY 40202\",\n    \"distance\": 40\n}\n```",
+    "run_seconds": 10.736
+  },
+  {
+    "id": 944,
+    "content": "```json\n{\n    \"distance\": 30\n}\n```",
+    "run_seconds": 3.631
+  },
+  {
+    "id": 945,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 5.89
+  },
+  {
+    "id": 946,
+    "content": "```json\n{\n    \"name\": \"KFC Yum! Center\"\n}\n```",
+    "run_seconds": 4.482
+  },
+  {
+    "id": 947,
+    "content": "```json\n{\n    \"name\": \"Prairy Wind Animal Refuge\"\n}\n```",
+    "run_seconds": 4.375
+  },
+  {
+    "id": 948,
+    "content": "```json\n{\n    \"name\": \"Lambeau Field\",\n    \"address\": \"1414 Lombardi Ave, Green Bay, WI 54301, USA\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 11.516
+  },
+  {
+    "id": 949,
+    "content": "```json\n{\n    \"name\": \"Wissahickon Valley Park\",\n    \"address\": \"1001 Wissahickon Valley Park, Philadelphia, PA 19104\",\n    \"distance\": 20\n}\n```",
+    "run_seconds": 12.413
+  },
+  {
+    "id": 950,
+    "content": "```json\n{\n    \"name\": \"University of Louisville Hospital\"\n}\n```",
+    "run_seconds": 3.909
+  },
+  {
+    "id": 951,
+    "content": "```json\n{\n    \"name\": \"Bergen County Zoological Park\"\n}\n```",
+    "run_seconds": 4.515
+  },
+  {
+    "id": 952,
+    "content": "```json\n{\n    \"name\": \"Elkins Park High School\"\n}\n```",
+    "run_seconds": 4.097
+  },
+  {
+    "id": 953,
+    "content": "```json\n{\n    \"name\": \"Herb Garden\"\n}\n```",
+    "run_seconds": 3.664
+  },
+  {
+    "id": 954,
+    "content": "```json\n{\n    \"name\": \"University of Tennessee Knoxville\"\n}\n```",
+    "run_seconds": 3.905
+  },
+  {
+    "id": 955,
+    "content": "```json\n{\n    \"distance\": 30\n}\n```",
+    "run_seconds": 3.487
+  },
+  {
+    "id": 956,
+    "content": "```json\n{\n    \"name\": \"Ventura Beach\",\n    \"address\": \"Ventura, CA\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 7.563
+  },
+  {
+    "id": 957,
+    "content": "```json\n{\n    \"name\": \"There is no known theme park near the stadium constructed in Eau Claire, WI.\"\n}\n```",
+    "run_seconds": 6.42
+  },
+  {
+    "id": 958,
+    "content": "```json\n{\n    \"name\": null,\n    \"address\": null,\n    \"count\": null,\n    \"distance\": null,\n    \"length\": null,\n    \"area\": null,\n    \"azimuth_angle\": null\n}\n```",
+    "run_seconds": 11.091
+  },
+  {
+    "id": 959,
+    "content": "```json\n{\n    \"name\": \"No attraction found\",\n    \"address\": \"Eau Claire, WI\",\n    \"count\": 2856\n}\n```",
+    "run_seconds": 8.104
+  },
+  {
+    "id": 960,
+    "content": "```json\n{\n    \"name\": \"There is no stadium found near the university established in 1969 in Chicago, IL.\"\n}\n```",
+    "run_seconds": 7.04
+  },
+  {
+    "id": 961,
+    "content": "```json\n{\n    \"name\": \"Ridges Sanctuary\"\n}\n```",
+    "run_seconds": 3.626
+  },
+  {
+    "id": 962,
+    "content": "```json\n{\n    \"name\": \"Galt House Hotel\",\n    \"address\": \"500 W Main St, Louisville, KY 40202\",\n    \"count\": 6600\n}\n```",
+    "run_seconds": 10.667
+  },
+  {
+    "id": 963,
+    "content": "```json\n{\n    \"name\": \"Lincoln Park Zoo\"\n}\n```",
+    "run_seconds": 3.839
+  },
+  {
+    "id": 964,
+    "content": "```json\n{\n    \"name\": \"University of New Hampshire\",\n    \"address\": \"Durham, NH\",\n    \"distance\": 10\n}\n```",
+    "run_seconds": 7.682
+  },
+  {
+    "id": 965,
+    "content": "```json\n{\n    \"name\": \"Chugach State Park\"\n}\n```",
+    "run_seconds": 4.051
+  },
+  {
+    "id": 966,
+    "content": "```json\n{\n    \"name\": \"Denmark Industrial School for African Americans Museum and Cultural Center\",\n    \"address\": \"Denmark, South Carolina\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 9.494
+  },
+  {
+    "id": 967,
+    "content": "```json\n{\n    \"name\": \"There is no beach resort near the stadium in Wichita Falls, TX.\"\n}\n```",
+    "run_seconds": 5.766
+  },
+  {
+    "id": 968,
+    "content": "```json\n{\n    \"name\": null,\n    \"address\": null,\n    \"count\": null,\n    \"distance\": null,\n    \"length\": null,\n    \"area\": null,\n    \"azimuth_angle\": null\n}\n```",
+    "run_seconds": 11.336
+  },
+  {
+    "id": 969,
+    "content": "```json\n{\n    \"name\": null,\n    \"address\": null,\n    \"count\": null,\n    \"distance\": null,\n    \"length\": null,\n    \"area\": null,\n    \"azimuth_angle\": null\n}\n```",
+    "run_seconds": 11.501
+  },
+  {
+    "id": 970,
+    "content": "```json\n{\n    \"name\": \"New Mexico Museum of Natural History and Science\",\n    \"address\": \"1801 Mountain Rd NW, Albuquerque, NM 87104, USA\",\n    \"distance\": 10\n}\n```",
+    "run_seconds": 12.105
+  },
+  {
+    "id": 971,
+    "content": "```json\n{\n    \"name\": \"No fast food restaurant found\",\n    \"address\": \"Manitowoc, WI\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 8.566
+  },
+  {
+    "id": 972,
+    "content": "```json\n{\n    \"name\": \"Hermann Park Golf Course\"\n}\n```",
+    "run_seconds": 4.268
+  },
+  {
+    "id": 973,
+    "content": "```json\n{\n    \"name\": \"Aquarium of the Americas\",\n    \"address\": \"New Orleans, Louisiana\",\n    \"distance\": 40\n}\n```",
+    "run_seconds": 8.343
+  },
+  {
+    "id": 974,
+    "content": "```json\n{\n    \"name\": \"There is no known aquarium near the zoo in Fresno, CA, that was opened in 1929.\"\n}\n```",
+    "run_seconds": 8.101
+  },
+  {
+    "id": 975,
+    "content": "```json\n{\n    \"name\": \"Prairy Wind Animal Refuge\"\n}\n```",
+    "run_seconds": 4.486
+  },
+  {
+    "id": 976,
+    "content": "```json\n{\n    \"name\": \"Clemson University Golf Course\",\n    \"address\": \"320 University Ave, Clemson, SC 29631, USA\",\n    \"distance\": 20\n}\n```",
+    "run_seconds": 11.403
+  },
+  {
+    "id": 977,
+    "content": "```json\n{\n    \"name\": \"Six Flags Fiesta Texas\"\n}\n```",
+    "run_seconds": 4.047
+  },
+  {
+    "id": 978,
+    "content": "```json\n{\n    \"name\": \"There is no attraction meeting the criteria near the stadium in Wichita Falls, TX.\"\n}\n```",
+    "run_seconds": 6.426
+  },
+  {
+    "id": 979,
+    "content": "```json\n{\n    \"name\": \"south lawn area\",\n    \"azimuth_angle\": 180\n}\n```",
+    "run_seconds": 6.12
+  },
+  {
+    "id": 980,
+    "content": "```json\n{\n    \"name\": \"Fresno Yosemite\"\n}\n```",
+    "run_seconds": 3.962
+  },
+  {
+    "id": 981,
+    "content": "```json\n{}\n```",
+    "run_seconds": 1.488
+  },
+  {
+    "id": 982,
+    "content": "```json\n{\n    \"name\": \"Botanic Garden\",\n    \"address\": \"Wichita Falls, TX\",\n    \"distance\": 20,\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 10.039
+  },
+  {
+    "id": 983,
+    "content": "```json\n{\n    \"name\": \"Jane M. Byrne Plaza\",\n    \"address\": \"140 N State St, Chicago, IL 60601\",\n    \"distance\": 20\n}\n```",
+    "run_seconds": 10.447
+  },
+  {
+    "id": 984,
+    "content": "```json\n{\n    \"name\": \"Denmark Industrial School for African Americans\",\n    \"address\": \"Denmark, SC\",\n    \"distance\": 10\n}\n```",
+    "run_seconds": 8.344
+  },
+  {
+    "id": 985,
+    "content": "```json\n{\n    \"name\": \"Yankee Stadium\"\n}\n```",
+    "run_seconds": 3.95
+  },
+  {
+    "id": 986,
+    "content": "```json\n{\n    \"name\": \"University of Washington School of Medicine Spokane\",\n    \"distance\": 130\n}\n```",
+    "run_seconds": 6.764
+  },
+  {
+    "id": 987,
+    "content": "```json\n{\n    \"name\": \"Rocky Mountain National Park\",\n    \"address\": \"40 km northwest of Denver, CO\",\n    \"distance\": 40\n}\n```",
+    "run_seconds": 9.227
+  },
+  {
+    "id": 988,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0,\n    \"distance\": 30,\n    \"length\": 0,\n    \"area\": 0,\n    \"azimuth_angle\": 0\n}\n```",
+    "run_seconds": 12.883
+  },
+  {
+    "id": 989,
+    "content": "```json\n{\n    \"name\": \"Texas Heart Institute - Denton A. Cooley Building\",\n    \"distance\": 420\n}\n```",
+    "run_seconds": 7.832
+  },
+  {
+    "id": 990,
+    "content": "```json\n{\n    \"name\": \"The Westin Boston Tunnel Restaurant\",\n    \"address\": \"135 Clarendon St, Boston, MA 02116, USA\"\n}\n```",
+    "run_seconds": 10.31
+  },
+  {
+    "id": 991,
+    "content": "```json\n{\n    \"name\": \"restaurant\",\n    \"distance\": 20\n}\n```",
+    "run_seconds": 5.323
+  },
+  {
+    "id": 992,
+    "content": "```json\n{\n    \"name\": \"nearest restaurant\",\n    \"address\": \"Richmond City, VA\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 8.094
+  },
+  {
+    "id": 993,
+    "content": "```json\n{\n    \"name\": \"Mount Rushmore National Memorial\"\n}\n```",
+    "run_seconds": 4.398
+  },
+  {
+    "id": 994,
+    "content": "```json\n{\n    \"name\": \"Minuteman Press\",\n    \"address\": \"1320 Mass Ave, Arlington, MA 02476\"\n}\n```",
+    "run_seconds": 9.221
+  },
+  {
+    "id": 995,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 5.951
+  },
+  {
+    "id": 996,
+    "content": "```json\n{\n    \"name\": \"Warren County Park District\",\n    \"address\": \"1200 Park District Dr, Bowling Green, KY 42371\",\n    \"distance\": 200\n}\n```",
+    "run_seconds": 11.806
+  },
+  {
+    "id": 997,
+    "content": "```json\n{\n    \"name\": \"Houston Arboretum and Nature Center\"\n}\n```",
+    "run_seconds": 4.769
+  },
+  {
+    "id": 998,
+    "content": "```json\n{\n    \"name\": \"Harney Peak\"\n}\n```",
+    "run_seconds": 3.858
+  },
+  {
+    "id": 999,
+    "content": "```json\n{\n    \"name\": null,\n    \"address\": null,\n    \"count\": null,\n    \"distance\": null,\n    \"length\": null,\n    \"area\": null,\n    \"azimuth_angle\": null\n}\n```",
+    "run_seconds": 11.809
+  }
+]

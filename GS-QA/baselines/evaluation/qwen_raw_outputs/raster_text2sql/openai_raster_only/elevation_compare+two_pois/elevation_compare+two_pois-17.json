@@ -1,0 +1,75 @@
+{
+  "answer_type": "name",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "name",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "max_abs_numeric_delta": 41.0,
+    "mean_abs_numeric_delta": 41.0,
+    "numeric_deltas": [
+      41.0,
+      -41.0
+    ],
+    "predicted_row_count": 1,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "exact_match": true,
+      "gold_field": "higher_poi",
+      "gold_value": "Sonoratown, Los Angeles, CA",
+      "metric_family": "primary_text",
+      "predicted_field": "higher_elevation",
+      "predicted_value": "Sonoratown, Los Angeles, CA"
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "higher_poi": "Sonoratown, Los Angeles, CA",
+      "poi1_elevation_m": 46.0,
+      "poi2_elevation_m": 87.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "higher_poi": "Sonoratown, Los Angeles, CA",
+        "poi1_elevation_m": 46.0,
+        "poi2_elevation_m": 87.0
+      }
+    ]
+  },
+  "gold_sql": "WITH p1 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-71.21808 42.606947)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-71.21808 42.606947)',4326))\n  LIMIT 1\n),\np2 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-118.252172 34.041563)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-118.252172 34.041563)',4326))\n  LIMIT 1\n)\nSELECT\n  CASE\n    WHEN p1.elev > p2.elev THEN 'Tewksbury Hospital, Tewksbury, MA'\n    WHEN p2.elev > p1.elev THEN 'Sonoratown, Los Angeles, CA'\n    ELSE 'equal'\n  END AS higher_poi,\n  p1.elev AS poi1_elevation_m,\n  p2.elev AS poi2_elevation_m\nFROM p1, p2;",
+  "id": "elevation_compare+two_pois-17",
+  "model_output": "```sql\nWITH tewksbury_hospital_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-71.21808, 42.606947), 4326)::geography AS geom\n),\nsonoratown_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-118.252172, 34.041563), 4326)::geography AS geom\n),\ntewksbury_elevation AS (\n  SELECT \n    ST_Value(r.rast, ST_Transform(t.geom::geometry, 4326)) AS elevation\n  FROM \n    public.dem_us r,\n    tewksbury_hospital_geom t\n  WHERE \n    ST_Intersects(r.rast, ST_Transform(t.geom::geometry, 4326))\n),\nsonoratown_elevation AS (\n  SELECT \n    ST_Value(r.rast, ST_Transform(s.geom::geometry, 4326)) AS elevation\n  FROM \n    public.dem_us r,\n    sonoratown_geom s\n  WHERE \n    ST_Intersects(r.rast, ST_Transform(s.geom::geometry, 4326))\n)\nSELECT \n  CASE\n    WHEN te.elevation > se.elevation THEN 'Tewksbury Hospital, Tewksbury, MA'\n    WHEN se.elevation > te.elevation THEN 'Sonoratown, Los Angeles, CA'\n    ELSE 'Equal'\n  END AS higher_elevation,\n  te.elevation AS tewksbury_elevation,\n  se.elevation AS sonoratown_elevation\nFROM \n  tewksbury_elevation te,\n  sonoratown_elevation se;\n```",
+  "predicted_exec": {
+    "error": "",
+    "output": [
+      {
+        "higher_elevation": "Sonoratown, Los Angeles, CA",
+        "sonoratown_elevation": 87.0,
+        "tewksbury_elevation": 46.0
+      }
+    ]
+  },
+  "predicted_sql": "WITH tewksbury_hospital_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-71.21808, 42.606947), 4326)::geography AS geom\n),\nsonoratown_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-118.252172, 34.041563), 4326)::geography AS geom\n),\ntewksbury_elevation AS (\n  SELECT \n    ST_Value(r.rast, ST_Transform(t.geom::geometry, 4326)) AS elevation\n  FROM \n    public.dem_us r,\n    tewksbury_hospital_geom t\n  WHERE \n    ST_Intersects(r.rast, ST_Transform(t.geom::geometry, 4326))\n),\nsonoratown_elevation AS (\n  SELECT \n    ST_Value(r.rast, ST_Transform(s.geom::geometry, 4326)) AS elevation\n  FROM \n    public.dem_us r,\n    sonoratown_geom s\n  WHERE \n    ST_Intersects(r.rast, ST_Transform(s.geom::geometry, 4326))\n)\nSELECT \n  CASE\n    WHEN te.elevation > se.elevation THEN 'Tewksbury Hospital, Tewksbury, MA'\n    WHEN se.elevation > te.elevation THEN 'Sonoratown, Los Angeles, CA'\n    ELSE 'Equal'\n  END AS higher_elevation,\n  te.elevation AS tewksbury_elevation,\n  se.elevation AS sonoratown_elevation\nFROM \n  tewksbury_elevation te,\n  sonoratown_elevation se;",
+  "predicted_sql_candidates": [
+    "WITH tewksbury_hospital_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-71.21808, 42.606947), 4326)::geography AS geom\n),\nsonoratown_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-118.252172, 34.041563), 4326)::geography AS geom\n),\ntewksbury_elevation AS (\n  SELECT \n    ST_Value(r.rast, ST_Transform(t.geom::geometry, 4326)) AS elevation\n  FROM \n    public.dem_us r,\n    tewksbury_hospital_geom t\n  WHERE \n    ST_Intersects(r.rast, ST_Transform(t.geom::geometry, 4326))\n),\nsonoratown_elevation AS (\n  SELECT \n    ST_Value(r.rast, ST_Transform(s.geom::geometry, 4326)) AS elevation\n  FROM \n    public.dem_us r,\n    sonoratown_geom s\n  WHERE \n    ST_Intersects(r.rast, ST_Transform(s.geom::geometry, 4326))\n)\nSELECT \n  CASE\n    WHEN te.elevation > se.elevation THEN 'Tewksbury Hospital, Tewksbury, MA'\n    WHEN se.elevation > te.elevation THEN 'Sonoratown, Los Angeles, CA'\n    ELSE 'Equal'\n  END AS higher_elevation,\n  te.elevation AS tewksbury_elevation,\n  se.elevation AS sonoratown_elevation\nFROM \n  tewksbury_elevation te,\n  sonoratown_elevation se;"
+  ],
+  "query_type": "raster_only",
+  "question": "Which is at a higher elevation, Tewksbury Hospital, Tewksbury, MA or Sonoratown, Los Angeles, CA?",
+  "source_file": "elevation_compare+two_pois.jsonl",
+  "source_stem": "elevation_compare+two_pois",
+  "timing": {
+    "execution_seconds": 0.035,
+    "generation_seconds": 78.932,
+    "total_seconds": 78.967
+  },
+  "usage": {
+    "completion_tokens": 370,
+    "prompt_tokens": 1755,
+    "total_tokens": 2125
+  }
+}

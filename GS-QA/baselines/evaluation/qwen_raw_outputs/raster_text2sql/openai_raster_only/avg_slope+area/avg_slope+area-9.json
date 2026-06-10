@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 2.754412
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 2.754412
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-75.783054 39.036974, -75.775461 39.035038, -75.77536 39.034896, -75.775243 39.034502, -75.774238 39.03401, -75.773052 39.034077, -75.772404 39.033795, -75.772161 39.033271, -75.771804 39.03313, -75.772143 39.03245, -75.772168 39.031997, -75.772105 39.031124, -75.772915 39.030288, -75.77384 39.028773, -75.774026 39.027395, -75.776686 39.023737, -75.778318 39.024074, -75.778721 39.024006, -75.779472 39.023724, -75.780853 39.023581, -75.781655 39.023534, -75.784985 39.023522, -75.785766 39.023385, -75.786916 39.022921, -75.787198 39.022922, -75.786993 39.028337, -75.787953 39.028348, -75.788133 39.030805, -75.78929 39.032407, -75.79033 39.033649, -75.790542 39.039686, -75.789567 39.039662, -75.789677 39.040964, -75.787941 39.040212, -75.785595 39.039827, -75.785217 39.041854, -75.783625 39.041744, -75.78289 39.041128, -75.783029 39.03765, -75.783054 39.036974))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).mean AS slope\nFROM region_slope;",
+  "id": "avg_slope+area-9",
+  "model_output": "```sql\nWITH goldsboro_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Goldsboro' AND border_type = 'city'\n  LIMIT 1\n)\nSELECT\n  ROUND(AVG(ST_Slope(r.rast, 1))::numeric, 2) AS avg_slope_degrees\nFROM\n  public.dem_us,\n  goldsboro_geom g\nWHERE\n  ST_Intersects(dem_us.rast, g.geom)\n  AND dem_us.rast IS NOT NULL;\n```",
+  "predicted_exec": {
+    "error": "missing FROM-clause entry for table \"r\"\nLINE 8:   ROUND(AVG(ST_Slope(r.rast, 1))::numeric, 2) AS avg_slope_d...\n                             ^",
+    "output": []
+  },
+  "predicted_sql": "WITH goldsboro_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Goldsboro' AND border_type = 'city'\n  LIMIT 1\n)\nSELECT\n  ROUND(AVG(ST_Slope(r.rast, 1))::numeric, 2) AS avg_slope_degrees\nFROM\n  public.dem_us,\n  goldsboro_geom g\nWHERE\n  ST_Intersects(dem_us.rast, g.geom)\n  AND dem_us.rast IS NOT NULL;",
+  "predicted_sql_candidates": [
+    "WITH goldsboro_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Goldsboro' AND border_type = 'city'\n  LIMIT 1\n)\nSELECT\n  ROUND(AVG(ST_Slope(r.rast, 1))::numeric, 2) AS avg_slope_degrees\nFROM\n  public.dem_us,\n  goldsboro_geom g\nWHERE\n  ST_Intersects(dem_us.rast, g.geom)\n  AND dem_us.rast IS NOT NULL;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the average slope in Goldsboro, Maryland?",
+  "source_file": "avg_slope+area.jsonl",
+  "source_stem": "avg_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 24.956,
+    "total_seconds": 24.957
+  },
+  "usage": {
+    "completion_tokens": 116,
+    "prompt_tokens": 1515,
+    "total_tokens": 1631
+  }
+}

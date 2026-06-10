@@ -1,0 +1,63 @@
+{
+  "answer_type": "name",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "name",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "answer_name": "restaurant",
+      "avg_elev_1": 239.4,
+      "avg_elev_2": 229.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "answer_name": "restaurant",
+        "avg_elev_1": 239.4,
+        "avg_elev_2": 229.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-88.939219 42.413862, -88.939186 42.415363, -88.940367 42.495018, -88.894547 42.494185, -88.835385 42.492669, -88.819903 42.492357, -88.804014 42.492036, -88.776488 42.491952, -88.765572 42.492076, -88.737146 42.492821, -88.719482 42.493283, -88.707592 42.493595, -88.705981 42.493638, -88.705946 42.414981, -88.705587 42.327889, -88.705654 42.240766, -88.705708 42.237822, -88.705617 42.153569, -88.716339 42.153547, -88.784229 42.153475, -88.822419 42.153435, -88.822451 42.153435, -88.860901 42.153068, -88.939707 42.152329, -88.940418 42.222617, -88.940573 42.237945, -88.94058 42.238676, -88.940586 42.239399, -88.94059 42.240005, -88.940573 42.259215, -88.940526 42.312363, -88.94052 42.319192, -88.94052 42.319649, -88.940326 42.326649, -88.940328 42.327758, -88.940224 42.333727, -88.939219 42.413862))', 4326) AS g\n),\ncat1 AS (\n  SELECT p.id, ST_PointOnSurface(p.geometry::geometry) AS pt\n  FROM pois p\n  JOIN region r ON ST_Intersects(p.geometry::geometry, r.g)\n  WHERE p.\"amenity\" = 'restaurant'\n),\ncat2 AS (\n  SELECT p.id, ST_PointOnSurface(p.geometry::geometry) AS pt\n  FROM pois p\n  JOIN region r ON ST_Intersects(p.geometry::geometry, r.g)\n  WHERE p.\"leisure\" = 'golf_course'\n),\navg1 AS (\n  SELECT AVG(elev.z) AS avg_elev\n  FROM cat1 c\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, c.pt) AS z\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, c.pt)\n    LIMIT 1\n  ) elev ON elev.z IS NOT NULL\n),\navg2 AS (\n  SELECT AVG(elev.z) AS avg_elev\n  FROM cat2 c\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, c.pt) AS z\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, c.pt)\n    LIMIT 1\n  ) elev ON elev.z IS NOT NULL\n)\nSELECT\n  CASE WHEN a1.avg_elev >= a2.avg_elev THEN 'restaurant' ELSE 'golf_course' END AS answer_name,\n  a1.avg_elev AS avg_elev_1,\n  a2.avg_elev AS avg_elev_2\nFROM avg1 a1, avg2 a2\nWHERE a1.avg_elev IS NOT NULL AND a2.avg_elev IS NOT NULL;",
+  "id": "elevation_compare_categories+name-4",
+  "model_output": "```sql\nWITH boone_county AS (\n  SELECT geometry\n  FROM regions\n  WHERE region_name ILIKE 'Boone County' AND border_type = 'county'\n),\nrestaurants_in_county AS (\n  SELECT id, geometry\n  FROM pois\n  WHERE amenity = 'restaurant'\n    AND ST_Within(geometry::geometry, (SELECT geometry FROM boone_county))\n),\ngolf_courses_in_county AS (\n  SELECT id, geometry\n  FROM pois\n  WHERE leisure = 'golf_course'\n    OR tourism = 'golf_course'\n    OR \"leisure\" = 'golf'\n    OR \"tourism\" = 'golf'\n    AND ST_Within(geometry::geometry, (SELECT geometry FROM boone_county))\n),\nrestaurant_elevations AS (\n  SELECT\n    p.id,\n    ST_Value(r.rast, p.geometry::geometry) AS elevation\n  FROM restaurants_in_county p\n  JOIN public.dem_us r\n    ON ST_Intersects(r.rast, p.geometry::geometry)\n),\ngolf_course_elevations AS (\n  SELECT\n    p.id,\n    ST_Value(r.rast, p.geometry::geometry) AS elevation\n  FROM golf_courses_in_county p\n  JOIN public.dem_us r\n    ON ST_Intersects(r.rast, p.geometry::geometry)\n)\nSELECT\n  'restaurants' AS category,\n  AVG(elevation) AS avg_elevation\nFROM restaurant_elevations\nUNION ALL\nSELECT\n  'golf_courses' AS category,\n  AVG(elevation) AS avg_elevation\nFROM golf_course_elevations\nORDER BY avg_elevation DESC\nLIMIT 1;\n```",
+  "predicted_exec": {
+    "error": "function st_within(geometry, geography) does not exist\nLINE 10:     AND ST_Within(geometry::geometry, (SELECT geometry FROM ...\n                 ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH boone_county AS (\n  SELECT geometry\n  FROM regions\n  WHERE region_name ILIKE 'Boone County' AND border_type = 'county'\n),\nrestaurants_in_county AS (\n  SELECT id, geometry\n  FROM pois\n  WHERE amenity = 'restaurant'\n    AND ST_Within(geometry::geometry, (SELECT geometry FROM boone_county))\n),\ngolf_courses_in_county AS (\n  SELECT id, geometry\n  FROM pois\n  WHERE leisure = 'golf_course'\n    OR tourism = 'golf_course'\n    OR \"leisure\" = 'golf'\n    OR \"tourism\" = 'golf'\n    AND ST_Within(geometry::geometry, (SELECT geometry FROM boone_county))\n),\nrestaurant_elevations AS (\n  SELECT\n    p.id,\n    ST_Value(r.rast, p.geometry::geometry) AS elevation\n  FROM restaurants_in_county p\n  JOIN public.dem_us r\n    ON ST_Intersects(r.rast, p.geometry::geometry)\n),\ngolf_course_elevations AS (\n  SELECT\n    p.id,\n    ST_Value(r.rast, p.geometry::geometry) AS elevation\n  FROM golf_courses_in_county p\n  JOIN public.dem_us r\n    ON ST_Intersects(r.rast, p.geometry::geometry)\n)\nSELECT\n  'restaurants' AS category,\n  AVG(elevation) AS avg_elevation\nFROM restaurant_elevations\nUNION ALL\nSELECT\n  'golf_courses' AS category,\n  AVG(elevation) AS avg_elevation\nFROM golf_course_elevations\nORDER BY avg_elevation DESC\nLIMIT 1;",
+  "predicted_sql_candidates": [
+    "WITH boone_county AS (\n  SELECT geometry\n  FROM regions\n  WHERE region_name ILIKE 'Boone County' AND border_type = 'county'\n),\nrestaurants_in_county AS (\n  SELECT id, geometry\n  FROM pois\n  WHERE amenity = 'restaurant'\n    AND ST_Within(geometry::geometry, (SELECT geometry FROM boone_county))\n),\ngolf_courses_in_county AS (\n  SELECT id, geometry\n  FROM pois\n  WHERE leisure = 'golf_course'\n    OR tourism = 'golf_course'\n    OR \"leisure\" = 'golf'\n    OR \"tourism\" = 'golf'\n    AND ST_Within(geometry::geometry, (SELECT geometry FROM boone_county))\n),\nrestaurant_elevations AS (\n  SELECT\n    p.id,\n    ST_Value(r.rast, p.geometry::geometry) AS elevation\n  FROM restaurants_in_county p\n  JOIN public.dem_us r\n    ON ST_Intersects(r.rast, p.geometry::geometry)\n),\ngolf_course_elevations AS (\n  SELECT\n    p.id,\n    ST_Value(r.rast, p.geometry::geometry) AS elevation\n  FROM golf_courses_in_county p\n  JOIN public.dem_us r\n    ON ST_Intersects(r.rast, p.geometry::geometry)\n)\nSELECT\n  'restaurants' AS category,\n  AVG(elevation) AS avg_elevation\nFROM restaurant_elevations\nUNION ALL\nSELECT\n  'golf_courses' AS category,\n  AVG(elevation) AS avg_elevation\nFROM golf_course_elevations\nORDER BY avg_elevation DESC\nLIMIT 1;"
+  ],
+  "query_type": "raster_vector",
+  "question": "In Boone County, Illinois, which category is higher on average: restaurants or golf courses?",
+  "source_file": "elevation_compare_categories+name.jsonl",
+  "source_stem": "elevation_compare_categories+name",
+  "timing": {
+    "execution_seconds": 0.002,
+    "generation_seconds": 74.277,
+    "total_seconds": 74.279
+  },
+  "usage": {
+    "completion_tokens": 348,
+    "prompt_tokens": 1781,
+    "total_tokens": 2129
+  }
+}

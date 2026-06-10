@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope_degrees": 3.294122
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope_degrees": 3.294122
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-71.409129 41.811862)',4326) AS pt\n),\npatch AS (\n  SELECT ST_Buffer(pt::geography, 100)::geometry AS g FROM origin\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, p.g)) AS rast\n  FROM public.dem_us d\n  JOIN patch p ON ST_Intersects(d.rast, p.g)\n),\nslope_rast AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n)\nSELECT ST_Value(s.rast, 1, o.pt) AS slope_degrees\nFROM slope_rast s, origin o;",
+  "id": "slope+poi-4",
+  "model_output": "```sql\nWITH hospital_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-71.409129, 41.811862), 4326)::geography AS geom\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(\n      ST_Clip(\n        r.rast, \n        true, \n        ST_Transform(h.geom, 4326)::geometry\n      ), \n      1, \n      '32BF'\n    ) AS slope_rast\n  FROM \n    public.dem_us r,\n    hospital_geom h\n  WHERE \n    ST_Intersects(\n      r.rast, \n      ST_Transform(h.geom, 4326)::geometry\n    )\n)\nSELECT \n  ST_Value(slope_rast, 1, 1) AS slope_angle_degrees\nFROM \n  slope_raster;\n```",
+  "predicted_exec": {
+    "error": "function st_transform(geography, integer) does not exist\nLINE 10:         ST_Transform(h.geom, 4326)::geometry\n                 ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH hospital_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-71.409129, 41.811862), 4326)::geography AS geom\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(\n      ST_Clip(\n        r.rast, \n        true, \n        ST_Transform(h.geom, 4326)::geometry\n      ), \n      1, \n      '32BF'\n    ) AS slope_rast\n  FROM \n    public.dem_us r,\n    hospital_geom h\n  WHERE \n    ST_Intersects(\n      r.rast, \n      ST_Transform(h.geom, 4326)::geometry\n    )\n)\nSELECT \n  ST_Value(slope_rast, 1, 1) AS slope_angle_degrees\nFROM \n  slope_raster;",
+  "predicted_sql_candidates": [
+    "WITH hospital_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-71.409129, 41.811862), 4326)::geography AS geom\n),\nslope_raster AS (\n  SELECT \n    ST_Slope(\n      ST_Clip(\n        r.rast, \n        true, \n        ST_Transform(h.geom, 4326)::geometry\n      ), \n      1, \n      '32BF'\n    ) AS slope_rast\n  FROM \n    public.dem_us r,\n    hospital_geom h\n  WHERE \n    ST_Intersects(\n      r.rast, \n      ST_Transform(h.geom, 4326)::geometry\n    )\n)\nSELECT \n  ST_Value(slope_rast, 1, 1) AS slope_angle_degrees\nFROM \n  slope_raster;"
+  ],
+  "query_type": "raster_only",
+  "question": "What slope angle does the surface have at Rhode Island Hospital, Providence, RI?",
+  "source_file": "slope+poi.jsonl",
+  "source_stem": "slope+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 43.252,
+    "total_seconds": 43.253
+  },
+  "usage": {
+    "completion_tokens": 194,
+    "prompt_tokens": 1614,
+    "total_tokens": 1808
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "answer_type": "name",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "name",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "max_abs_numeric_delta": 0.0,
+    "mean_abs_numeric_delta": 0.0,
+    "numeric_deltas": [
+      0.0,
+      0.0
+    ],
+    "predicted_row_count": 2,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "exact_match": true,
+      "gold_field": "higher_poi",
+      "gold_value": "Wilmington & Western Railroad, Wilmington, DE",
+      "metric_family": "primary_text",
+      "predicted_field": "display_name",
+      "predicted_value": "Wilmington & Western Railroad, Wilmington, DE"
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "higher_poi": "Wilmington & Western Railroad, Wilmington, DE",
+      "poi1_elevation_m": 28.0,
+      "poi2_elevation_m": 12.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "higher_poi": "Wilmington & Western Railroad, Wilmington, DE",
+        "poi1_elevation_m": 28.0,
+        "poi2_elevation_m": 12.0
+      }
+    ]
+  },
+  "gold_sql": "WITH p1 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-75.632218 39.738888)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-75.632218 39.738888)',4326))\n  LIMIT 1\n),\np2 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-71.122317 42.376159)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-71.122317 42.376159)',4326))\n  LIMIT 1\n)\nSELECT\n  CASE\n    WHEN p1.elev > p2.elev THEN 'Wilmington & Western Railroad, Wilmington, DE'\n    WHEN p2.elev > p1.elev THEN 'Radcliffe Institute for Advanced Studies, MA'\n    ELSE 'equal'\n  END AS higher_poi,\n  p1.elev AS poi1_elevation_m,\n  p2.elev AS poi2_elevation_m\nFROM p1, p2;",
+  "id": "elevation_compare+two_pois-5",
+  "model_output": "```sql\nWITH points_of_interest AS (\n  SELECT \n    '[3]' AS entity_id,\n    'Wilmington & Western Railroad, Wilmington, DE' AS display_name,\n    ST_SetSRID(ST_MakePoint(-75.632218, 39.738888), 4326)::geography AS geom\n  UNION ALL\n  SELECT \n    '[4]' AS entity_id,\n    'Radcliffe Institute for Advanced Studies, MA' AS display_name,\n    ST_SetSRID(ST_MakePoint(-71.122317, 42.376159), 4326)::geography AS geom\n)\nSELECT \n  entity_id,\n  display_name,\n  ROUND(ST_Value(r.rast, ST_Transform(p.geom::geometry, 4326))::numeric, 2) AS elevation\nFROM \n  points_of_interest p\n  CROSS JOIN public.dem_us r\nWHERE \n  ST_Intersects(ST_Transform(p.geom::geometry, 4326), r.rast)\n  AND ST_Value(r.rast, ST_Transform(p.geom::geometry, 4326)) IS NOT NULL\nORDER BY \n  elevation DESC;\n```",
+  "predicted_exec": {
+    "error": "",
+    "output": [
+      {
+        "display_name": "Wilmington & Western Railroad, Wilmington, DE",
+        "elevation": 28.0,
+        "entity_id": "[3]"
+      },
+      {
+        "display_name": "Radcliffe Institute for Advanced Studies, MA",
+        "elevation": 12.0,
+        "entity_id": "[4]"
+      }
+    ]
+  },
+  "predicted_sql": "WITH points_of_interest AS (\n  SELECT \n    '[3]' AS entity_id,\n    'Wilmington & Western Railroad, Wilmington, DE' AS display_name,\n    ST_SetSRID(ST_MakePoint(-75.632218, 39.738888), 4326)::geography AS geom\n  UNION ALL\n  SELECT \n    '[4]' AS entity_id,\n    'Radcliffe Institute for Advanced Studies, MA' AS display_name,\n    ST_SetSRID(ST_MakePoint(-71.122317, 42.376159), 4326)::geography AS geom\n)\nSELECT \n  entity_id,\n  display_name,\n  ROUND(ST_Value(r.rast, ST_Transform(p.geom::geometry, 4326))::numeric, 2) AS elevation\nFROM \n  points_of_interest p\n  CROSS JOIN public.dem_us r\nWHERE \n  ST_Intersects(ST_Transform(p.geom::geometry, 4326), r.rast)\n  AND ST_Value(r.rast, ST_Transform(p.geom::geometry, 4326)) IS NOT NULL\nORDER BY \n  elevation DESC;",
+  "predicted_sql_candidates": [
+    "WITH points_of_interest AS (\n  SELECT \n    '[3]' AS entity_id,\n    'Wilmington & Western Railroad, Wilmington, DE' AS display_name,\n    ST_SetSRID(ST_MakePoint(-75.632218, 39.738888), 4326)::geography AS geom\n  UNION ALL\n  SELECT \n    '[4]' AS entity_id,\n    'Radcliffe Institute for Advanced Studies, MA' AS display_name,\n    ST_SetSRID(ST_MakePoint(-71.122317, 42.376159), 4326)::geography AS geom\n)\nSELECT \n  entity_id,\n  display_name,\n  ROUND(ST_Value(r.rast, ST_Transform(p.geom::geometry, 4326))::numeric, 2) AS elevation\nFROM \n  points_of_interest p\n  CROSS JOIN public.dem_us r\nWHERE \n  ST_Intersects(ST_Transform(p.geom::geometry, 4326), r.rast)\n  AND ST_Value(r.rast, ST_Transform(p.geom::geometry, 4326)) IS NOT NULL\nORDER BY \n  elevation DESC;"
+  ],
+  "query_type": "raster_only",
+  "question": "Which of Wilmington & Western Railroad, Wilmington, DE and Radcliffe Institute for Advanced Studies, MA stands at the higher elevation?",
+  "source_file": "elevation_compare+two_pois.jsonl",
+  "source_stem": "elevation_compare+two_pois",
+  "timing": {
+    "execution_seconds": 19.037,
+    "generation_seconds": 57.333,
+    "total_seconds": 76.37
+  },
+  "usage": {
+    "completion_tokens": 268,
+    "prompt_tokens": 1735,
+    "total_tokens": 2003
+  }
+}

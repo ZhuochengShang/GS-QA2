@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 38.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 38.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-99.903765 38.458674, -99.903771 38.4591, -99.902344 38.459102, -99.902304 38.459297, -99.900035 38.459232, -99.900063 38.45752, -99.895553 38.457741, -99.89563 38.458706, -99.893666 38.458736, -99.893498 38.457515, -99.895149 38.457499, -99.895098 38.454499, -99.892626 38.454408, -99.892886 38.452333, -99.895164 38.452638, -99.895223 38.451889, -99.898942 38.45189, -99.898898 38.450492, -99.900112 38.450533, -99.900124 38.446197, -99.900649 38.4462, -99.900755 38.442852, -99.903563 38.441798, -99.904994 38.441763, -99.905026 38.442843, -99.90622 38.442908, -99.90631 38.443046, -99.906396 38.448428, -99.908132 38.448437, -99.908085 38.445167, -99.911151 38.445141, -99.911241 38.446535, -99.910647 38.446523, -99.910496 38.447006, -99.910117 38.447052, -99.910379 38.450095, -99.911905 38.450488, -99.912558 38.450503, -99.912602 38.451902, -99.917313 38.451889, -99.917082 38.452962, -99.917359 38.452946, -99.917466 38.453738, -99.921218 38.453726, -99.922244 38.454624, -99.917014 38.454679, -99.917023 38.457832, -99.913311 38.457796, -99.913265 38.457286, -99.912239 38.457293, -99.912221 38.458244, -99.913053 38.459047, -99.913037 38.45957, -99.912981 38.461373, -99.912528 38.461356, -99.912557 38.464981, -99.907944 38.464935, -99.907907 38.462058, -99.905131 38.462099, -99.904867 38.45787, -99.904246 38.457979, -99.904341 38.458298, -99.904357 38.45867, -99.903765 38.458674))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n),\nstats AS (\n  SELECT ST_SummaryStats(ST_Union(rast)) AS s\n  FROM clipped\n)\nSELECT (s).max - (s).min AS elevation\nFROM stats;",
+  "id": "elevation_range+region-14",
+  "model_output": "```sql\nWITH ness_city_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Ness City' AND border_type ILIKE 'city'\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM ness_city_geom), TRUE) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM ness_city_geom))\n)\nSELECT \n  MAX((ST_Value(rast, 1))::numeric) - MIN((ST_Value(rast, 1))::numeric) AS elevation_difference\nFROM clipped_dem;\n```",
+  "predicted_exec": {
+    "error": "function st_value(raster, integer) does not exist\nLINE 12:   MAX((ST_Value(rast, 1))::numeric) - MIN((ST_Value(rast, 1)...\n                ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH ness_city_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Ness City' AND border_type ILIKE 'city'\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM ness_city_geom), TRUE) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM ness_city_geom))\n)\nSELECT \n  MAX((ST_Value(rast, 1))::numeric) - MIN((ST_Value(rast, 1))::numeric) AS elevation_difference\nFROM clipped_dem;",
+  "predicted_sql_candidates": [
+    "WITH ness_city_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Ness City' AND border_type ILIKE 'city'\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM ness_city_geom), TRUE) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM ness_city_geom))\n)\nSELECT \n  MAX((ST_Value(rast, 1))::numeric) - MIN((ST_Value(rast, 1))::numeric) AS elevation_difference\nFROM clipped_dem;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the difference between highest and lowest elevation in Ness City, Kansas?",
+  "source_file": "elevation_range+region.jsonl",
+  "source_stem": "elevation_range+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 28.135,
+    "total_seconds": 28.136
+  },
+  "usage": {
+    "completion_tokens": 132,
+    "prompt_tokens": 1520,
+    "total_tokens": 1652
+  }
+}

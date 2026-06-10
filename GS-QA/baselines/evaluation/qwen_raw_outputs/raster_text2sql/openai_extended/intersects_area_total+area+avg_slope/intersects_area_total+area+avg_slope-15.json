@@ -1,0 +1,61 @@
+{
+  "answer_type": "area+slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "area+slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "area": 457235863.729707,
+      "slope": 4.738424
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "area": 457235863.729707,
+        "slope": 4.738424
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_CollectionExtract(ST_MakeValid(ST_GeomFromText('POLYGON ((-89.734217 45.193436, -89.733567 45.193442, -89.733563 45.193015, -89.731668 45.193028, -89.731633 45.192437, -89.73037 45.192444, -89.729183 45.192423, -89.729156 45.19242, -89.729165 45.192676, -89.729164 45.193291, -89.729221 45.196056, -89.729332 45.196918, -89.719009 45.198854, -89.714953 45.199276, -89.714916 45.199183, -89.713752 45.199363, -89.713752 45.199549, -89.712573 45.199622, -89.712566 45.200185, -89.712559 45.2008, -89.713802 45.200832, -89.713876 45.203227, -89.713877 45.204691, -89.712687 45.204699, -89.712807 45.206552, -89.712187 45.206563, -89.709031 45.206658, -89.708295 45.206657, -89.706632 45.203032, -89.704896 45.20383, -89.704041 45.204123, -89.70389 45.201113, -89.703678 45.197863, -89.703676 45.197616, -89.703678 45.197463, -89.703656 45.196131, -89.703591 45.193897, -89.703589 45.193706, -89.704612 45.193758, -89.704605 45.193413, -89.704828 45.193426, -89.706211 45.19342, -89.70993 45.193433, -89.71047 45.193434, -89.712307 45.193437, -89.713006 45.193438, -89.71377 45.193439, -89.713766 45.192462, -89.713226 45.192468, -89.712324 45.192436, -89.711834 45.192426, -89.710546 45.192427, -89.710226 45.192424, -89.708671 45.192404, -89.707595 45.192388, -89.706489 45.192368, -89.705277 45.192372, -89.703585 45.192364, -89.702359 45.192365, -89.70102 45.192366, -89.700814 45.192364, -89.699898 45.192355, -89.698122 45.192357, -89.696303 45.192363, -89.69621 45.192355, -89.693931 45.192378, -89.693527 45.192375, -89.693377 45.19237, -89.693417 45.193724, -89.693368 45.19517, -89.69337 45.195847, -89.693339 45.195983, -89.690752 45.195992, -89.688942 45.195986, -89.688942 45.195911, -89.688988 45.195757, -89.689342 45.195232, -89.689448 45.194882, -89.689717 45.194509, -89.690018 45.194159, -89.690064 45.194005, -89.690218 45.193786, -89.690472 45.1936, -89.690511 45.193501, -89.690502 45.193392, -89.690531 45.193337, -89.692312 45.193346, -89.692356 45.192364, -89.692649 45.192265, -89.692165 45.192271, -89.691938 45.192251, -89.691405 45.192408, -89.691131 45.192251, -89.689835 45.192332, -89.689777 45.192276, -89.689756 45.192199, -89.689445 45.192283, -89.689373 45.192224, -89.689212 45.192092, -89.688267 45.192254, -89.687338 45.192196, -89.684843 45.192208, -89.684476 45.192201, -89.68318 45.192206, -89.680503 45.192222, -89.679553 45.192016, -89.678063 45.191998, -89.677344 45.192019, -89.676827 45.192019, -89.676367 45.192026, -89.675962 45.192049, -89.675321 45.192035, -89.67409 45.192088, -89.672858 45.192121, -89.67266 45.192123, -89.67085 45.192134, -89.670858 45.192171, -89.669837 45.192192, -89.669202 45.192198, -89.669079 45.192203, -89.66717 45.192224, -89.664767 45.192248, -89.661936 45.192287, -89.657872 45.19233, -89.655854 45.192352, -89.652369 45.192397, -89.652093 45.192396, -89.647003 45.192405, -89.631234 45.192434, -89.631192 45.199586, -89.630956 45.206541, -89.620162 45.206571, -89.610442 45.206284, -89.597696 45.206193, -89.5898 45.206299, -89.589809 45.213525, -89.589894 45.235394, -89.589894 45.257254, -89.589913 45.260957, -89.589959 45.270076, -89.589966 45.271744, -89.589985 45.27548, -89.590002 45.279046, -89.589937 45.288059, -89.589937 45.290013, -89.589937 45.293841, -89.600228 45.293861, -89.610678 45.293882, -89.61537 45.293901, -89.62602 45.293881, -89.636097 45.293862, -89.639987 45.293859, -89.657336 45.293791, -89.671863 45.293828, -89.682077 45.293949, -89.716538 45.294138, -89.718009 45.294147, -89.728468 45.294213, -89.733382 45.294244, -89.733661 45.266738, -89.733875 45.249972, -89.734331 45.235483, -89.750151 45.235551, -89.796864 45.235838, -89.796942 45.232302, -89.796979 45.23054, -89.797019 45.228641, -89.797126 45.223685, -89.796911 45.223544, -89.796016 45.222808, -89.795396 45.222342, -89.793978 45.221316, -89.792958 45.220963, -89.792008 45.22081, -89.790437 45.2206, -89.789904 45.220549, -89.788448 45.220339, -89.787607 45.220029, -89.786324 45.219543, -89.785332 45.218434, -89.784918 45.217354, -89.785277 45.216114, -89.785377 45.21543, -89.785049 45.214746, -89.784305 45.214224, -89.782852 45.213643, -89.780233 45.213484, -89.777185 45.213356, -89.775462 45.212995, -89.773137 45.212846, -89.771787 45.212994, -89.770294 45.212935, -89.768206 45.212765, -89.764283 45.211775, -89.763058 45.211332, -89.759936 45.21011, -89.758078 45.208924, -89.756508 45.20747, -89.75593 45.206658, -89.755678 45.206303, -89.755286 45.204263, -89.755431 45.202722, -89.755341 45.201391, -89.755196 45.200818, -89.754804 45.200318, -89.75415 45.199962, -89.753404 45.199382, -89.752916 45.198652, -89.752427 45.197305, -89.752408 45.196142, -89.752563 45.194334, -89.752851 45.193122, -89.753483 45.192296, -89.754339 45.191823, -89.755244 45.1913, -89.755806 45.190505, -89.755745 45.189703, -89.755477 45.188764, -89.754752 45.18788, -89.75461 45.187744, -89.754438 45.187515, -89.754008 45.186988, -89.752464 45.185726, -89.752383 45.185609, -89.752139 45.185279, -89.751783 45.184813, -89.75167 45.184671, -89.75038 45.183509, -89.749323 45.182677, -89.748495 45.181921, -89.747597 45.181108, -89.746541 45.180319, -89.745496 45.179635, -89.744775 45.179342, -89.743413 45.178836, -89.742244 45.178457, -89.741249 45.17814, -89.739454 45.178062, -89.737418 45.177976, -89.735544 45.17814, -89.734172 45.178389, -89.734166 45.178536, -89.734174 45.179488, -89.734223 45.184983, -89.734224 45.186703, -89.734239 45.188409, -89.734223 45.191866, -89.734243 45.192439, -89.734226 45.192836, -89.73423 45.192932, -89.734216 45.193019, -89.734276 45.193331, -89.734272 45.193439, -89.734217 45.193436))',4326)), 3) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\narea_sum AS (\n  SELECT SUM(ST_Area(parks.geometry::geography)) AS area\n  FROM parks\n  WHERE leisure = 'nature_reserve'\n    AND ST_Intersects(parks.geometry::geography, (SELECT g::geography FROM region))\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d, buffered_region r\n  WHERE ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n),\nslope_agg AS (\n  SELECT (ST_SummaryStats(rast, 1, TRUE)).mean AS slope\n  FROM region_slope\n)\nSELECT a.area, s.slope\nFROM area_sum a, slope_agg s;",
+  "id": "intersects_area_total+area+avg_slope-15",
+  "model_output": "```sql\nWITH merrill_region AS (\n  SELECT geometry\n  FROM regions\n  WHERE region_name ILIKE 'Merrill' AND border_type = 'town'\n),\nnature_reserves AS (\n  SELECT parks.geometry\n  FROM parks\n  JOIN merrill_region\n    ON ST_Intersects(parks.geometry::geometry, merrill_region.geometry::geometry)\n  WHERE parks.leisure = 'nature reserve'\n),\nslope_raster AS (\n  SELECT\n    ST_MapAlgebra(\n      public.dem_us.rast,\n      'slope',\n      '32BF',\n      'ST_Slope(public.dem_us.rast, 1, \"degrees\")'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(public.dem_us.rast, merrill_region.geometry::geometry)\n),\nclipped_slope_raster AS (\n  SELECT\n    ST_Clip(slope_raster.slope_rast, merrill_region.geometry::geometry) AS clipped_rast\n  FROM slope_raster, merrill_region\n),\nnature_reserves_slope AS (\n  SELECT\n    ST_Clip(clipped_slope_raster.clipped_rast, nature_reserves.geometry::geometry) AS clipped_rast\n  FROM clipped_slope_raster, nature_reserves\n)\nSELECT\n  ROUND(ST_Area(ST_Union(nature_reserves.geometry)) / 1000000, 2) AS total_area_sq_km,\n  ROUND(AVG(ST_Value(nature_reserves_slope.clipped_rast, 1, true)), 2) AS average_slope_degrees\nFROM nature_reserves, nature_reserves_slope;\n```",
+  "predicted_exec": {
+    "error": "function st_mapalgebra(raster, unknown, unknown, unknown) is not unique\nLINE 15:     ST_MapAlgebra(\n             ^\nHINT:  Could not choose a best candidate function. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH merrill_region AS (\n  SELECT geometry\n  FROM regions\n  WHERE region_name ILIKE 'Merrill' AND border_type = 'town'\n),\nnature_reserves AS (\n  SELECT parks.geometry\n  FROM parks\n  JOIN merrill_region\n    ON ST_Intersects(parks.geometry::geometry, merrill_region.geometry::geometry)\n  WHERE parks.leisure = 'nature reserve'\n),\nslope_raster AS (\n  SELECT\n    ST_MapAlgebra(\n      public.dem_us.rast,\n      'slope',\n      '32BF',\n      'ST_Slope(public.dem_us.rast, 1, \"degrees\")'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(public.dem_us.rast, merrill_region.geometry::geometry)\n),\nclipped_slope_raster AS (\n  SELECT\n    ST_Clip(slope_raster.slope_rast, merrill_region.geometry::geometry) AS clipped_rast\n  FROM slope_raster, merrill_region\n),\nnature_reserves_slope AS (\n  SELECT\n    ST_Clip(clipped_slope_raster.clipped_rast, nature_reserves.geometry::geometry) AS clipped_rast\n  FROM clipped_slope_raster, nature_reserves\n)\nSELECT\n  ROUND(ST_Area(ST_Union(nature_reserves.geometry)) / 1000000, 2) AS total_area_sq_km,\n  ROUND(AVG(ST_Value(nature_reserves_slope.clipped_rast, 1, true)), 2) AS average_slope_degrees\nFROM nature_reserves, nature_reserves_slope;",
+  "predicted_sql_candidates": [
+    "WITH merrill_region AS (\n  SELECT geometry\n  FROM regions\n  WHERE region_name ILIKE 'Merrill' AND border_type = 'town'\n),\nnature_reserves AS (\n  SELECT parks.geometry\n  FROM parks\n  JOIN merrill_region\n    ON ST_Intersects(parks.geometry::geometry, merrill_region.geometry::geometry)\n  WHERE parks.leisure = 'nature reserve'\n),\nslope_raster AS (\n  SELECT\n    ST_MapAlgebra(\n      public.dem_us.rast,\n      'slope',\n      '32BF',\n      'ST_Slope(public.dem_us.rast, 1, \"degrees\")'\n    ) AS slope_rast\n  FROM public.dem_us\n  WHERE ST_Intersects(public.dem_us.rast, merrill_region.geometry::geometry)\n),\nclipped_slope_raster AS (\n  SELECT\n    ST_Clip(slope_raster.slope_rast, merrill_region.geometry::geometry) AS clipped_rast\n  FROM slope_raster, merrill_region\n),\nnature_reserves_slope AS (\n  SELECT\n    ST_Clip(clipped_slope_raster.clipped_rast, nature_reserves.geometry::geometry) AS clipped_rast\n  FROM clipped_slope_raster, nature_reserves\n)\nSELECT\n  ROUND(ST_Area(ST_Union(nature_reserves.geometry)) / 1000000, 2) AS total_area_sq_km,\n  ROUND(AVG(ST_Value(nature_reserves_slope.clipped_rast, 1, true)), 2) AS average_slope_degrees\nFROM nature_reserves, nature_reserves_slope;"
+  ],
+  "query_type": "extended",
+  "question": "Can you tell me the total area of all nature reserves in Merrill (town), Wisconsin and the average slope of Merrill (town), Wisconsin?",
+  "source_file": "intersects_area_total+area+avg_slope.jsonl",
+  "source_stem": "intersects_area_total+area+avg_slope",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 73.777,
+    "total_seconds": 73.778
+  },
+  "usage": {
+    "completion_tokens": 346,
+    "prompt_tokens": 1561,
+    "total_tokens": 1907
+  }
+}

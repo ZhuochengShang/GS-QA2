@@ -1,0 +1,502 @@
+[
+  {
+    "id": 400,
+    "content": "```json\n{\n    \"length\": 20000\n}\n```",
+    "run_seconds": 4.058
+  },
+  {
+    "id": 401,
+    "content": "```json\n{\n    \"length\": 15000\n}\n```",
+    "run_seconds": 4.127
+  },
+  {
+    "id": 402,
+    "content": "```json\n{\n    \"distance\": 700\n}\n```",
+    "run_seconds": 3.619
+  },
+  {
+    "id": 403,
+    "content": "```json\n{\n    \"name\": \"Schuyler\",\n    \"address\": \"Schuyler, New York\",\n    \"length\": 0\n}\n```",
+    "run_seconds": 7.823
+  },
+  {
+    "id": 404,
+    "content": "```json\n{\n    \"length\": 130\n}\n```",
+    "run_seconds": 3.733
+  },
+  {
+    "id": 405,
+    "content": "```json\n{\n    \"length\": 330\n}\n```",
+    "run_seconds": 3.765
+  },
+  {
+    "id": 406,
+    "content": "```json\n{\n    \"length\": 1300\n}\n```",
+    "run_seconds": 4.099
+  },
+  {
+    "id": 407,
+    "content": "```json\n{\n    \"distance\": 130\n}\n```",
+    "run_seconds": 3.785
+  },
+  {
+    "id": 408,
+    "content": "```json\n{\n    \"length\": 0\n}\n```",
+    "run_seconds": 3.372
+  },
+  {
+    "id": 409,
+    "content": "```json\n{\n    \"name\": \"canals\",\n    \"address\": \"Bluffton, South Carolina\",\n    \"distance\": 35\n}\n```",
+    "run_seconds": 8.354
+  },
+  {
+    "id": 410,
+    "content": "```json\n{\n    \"length\": 335\n}\n```",
+    "run_seconds": 3.743
+  },
+  {
+    "id": 411,
+    "content": "```json\n{\n    \"length\": 30\n}\n```",
+    "run_seconds": 3.533
+  },
+  {
+    "id": 412,
+    "content": "```json\n{\n    \"length\": 380000\n}\n```",
+    "run_seconds": 4.389
+  },
+  {
+    "id": 413,
+    "content": "```json\n{\n    \"name\": \"rivers in Halifax County\",\n    \"address\": \"Halifax County, North Carolina\",\n    \"distance\": 200\n}\n```",
+    "run_seconds": 8.57
+  },
+  {
+    "id": 414,
+    "content": "```json\n{\n    \"length\": 130\n}\n```",
+    "run_seconds": 3.616
+  },
+  {
+    "id": 415,
+    "content": "```json\n{\n    \"length\": 0\n}\n```",
+    "run_seconds": 3.191
+  },
+  {
+    "id": 416,
+    "content": "```json\n{\n    \"length\": 16000\n}\n```",
+    "run_seconds": 4.042
+  },
+  {
+    "id": 417,
+    "content": "```json\n{\n    \"length\": 29000\n}\n```",
+    "run_seconds": 4.042
+  },
+  {
+    "id": 418,
+    "content": "```json\n{\n    \"length\": 130\n}\n```",
+    "run_seconds": 3.618
+  },
+  {
+    "id": 419,
+    "content": "```json\n{\n    \"length\": 17230\n}\n```",
+    "run_seconds": 4.043
+  },
+  {
+    "id": 420,
+    "content": "```json\n{\n    \"length\": 410\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 421,
+    "content": "```json\n{\n    \"length\": 2000\n}\n```",
+    "run_seconds": 3.83
+  },
+  {
+    "id": 422,
+    "content": "```json\n{\n    \"name\": \"Cibola County\",\n    \"distance\": 1300\n}\n```",
+    "run_seconds": 5.96
+  },
+  {
+    "id": 423,
+    "content": "```json\n{\n    \"distance\": 2400\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 424,
+    "content": "```json\n{\n    \"length\": 1260000\n}\n```",
+    "run_seconds": 4.468
+  },
+  {
+    "id": 425,
+    "content": "```json\n{\n    \"length\": 5000\n}\n```",
+    "run_seconds": 3.83
+  },
+  {
+    "id": 426,
+    "content": "```json\n{\n    \"length\": 1000000\n}\n```",
+    "run_seconds": 4.467
+  },
+  {
+    "id": 427,
+    "content": "```json\n{\n    \"length\": 270000\n}\n```",
+    "run_seconds": 4.257
+  },
+  {
+    "id": 428,
+    "content": "```json\n{\n    \"distance\": 200\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 429,
+    "content": "```json\n{\n    \"length\": 140\n}\n```",
+    "run_seconds": 3.618
+  },
+  {
+    "id": 430,
+    "content": "```json\n{\n    \"name\": \"canals\",\n    \"address\": \"Albion, Michigan\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 7.449
+  },
+  {
+    "id": 431,
+    "content": "```json\n{\n    \"distance\": 130\n}\n```",
+    "run_seconds": 3.616
+  },
+  {
+    "id": 432,
+    "content": "```json\n{\n    \"length\": 230\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 433,
+    "content": "```json\n{\n    \"distance\": 230\n}\n```",
+    "run_seconds": 3.615
+  },
+  {
+    "id": 434,
+    "content": "```json\n{\n    \"distance\": 30000\n}\n```",
+    "run_seconds": 4.042
+  },
+  {
+    "id": 435,
+    "content": "```json\n{\n    \"length\": 130\n}\n```",
+    "run_seconds": 3.616
+  },
+  {
+    "id": 436,
+    "content": "```json\n{\n    \"length\": 1040\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 437,
+    "content": "```json\n{\n    \"name\": \"Cuba\",\n    \"address\": \"Cuba, New York\",\n    \"length\": 0\n}\n```",
+    "run_seconds": 7.234
+  },
+  {
+    "id": 438,
+    "content": "```json\n{\n    \"distance\": 230\n}\n```",
+    "run_seconds": 3.615
+  },
+  {
+    "id": 439,
+    "content": "```json\n{\n    \"length\": 2950\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 440,
+    "content": "```json\n{\n    \"length\": 130\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 441,
+    "content": "```json\n{\n    \"name\": \"roads in Norwich\",\n    \"address\": \"Norwich, Vermont\",\n    \"length\": 1040\n}\n```",
+    "run_seconds": 7.874
+  },
+  {
+    "id": 442,
+    "content": "```json\n{\n    \"length\": 20000\n}\n```",
+    "run_seconds": 4.043
+  },
+  {
+    "id": 443,
+    "content": "```json\n{\n    \"name\": \"canals\",\n    \"address\": \"Dania Beach, Florida\",\n    \"length\": 100\n}\n```",
+    "run_seconds": 7.663
+  },
+  {
+    "id": 444,
+    "content": "```json\n{\n    \"distance\": 230\n}\n```",
+    "run_seconds": 3.616
+  },
+  {
+    "id": 445,
+    "content": "```json\n{\n    \"length\": 2000\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 446,
+    "content": "```json\n{\n    \"name\": \"footways\",\n    \"address\": \"Connecticut\",\n    \"length\": 0\n}\n```",
+    "run_seconds": 6.597
+  },
+  {
+    "id": 447,
+    "content": "```json\n{\n    \"name\": \"Umatilla County\",\n    \"address\": \"Umatilla County, Oregon\",\n    \"length\": 20000\n}\n```",
+    "run_seconds": 8.726
+  },
+  {
+    "id": 448,
+    "content": "```json\n{\n    \"length\": 2000\n}\n```",
+    "run_seconds": 3.83
+  },
+  {
+    "id": 449,
+    "content": "```json\n{\n    \"distance\": 290\n}\n```",
+    "run_seconds": 3.616
+  },
+  {
+    "id": 450,
+    "content": "```json\n{\n    \"length\": 2000\n}\n```",
+    "run_seconds": 3.831
+  },
+  {
+    "id": 451,
+    "content": "```json\n{\n    \"length\": 0\n}\n```",
+    "run_seconds": 3.19
+  },
+  {
+    "id": 452,
+    "content": "```json\n{\n    \"length\": 230\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 453,
+    "content": "```json\n{\n    \"name\": \"Ithaca\",\n    \"address\": \"Ithaca, New York\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 7.663
+  },
+  {
+    "id": 454,
+    "content": "```json\n{\n    \"length\": 230\n}\n```",
+    "run_seconds": 3.616
+  },
+  {
+    "id": 455,
+    "content": "```json\n{\n    \"length\": 2000\n}\n```",
+    "run_seconds": 3.831
+  },
+  {
+    "id": 456,
+    "content": "```json\n{\n    \"distance\": 50000\n}\n```",
+    "run_seconds": 4.041
+  },
+  {
+    "id": 457,
+    "content": "```json\n{\n    \"length\": 20000\n}\n```",
+    "run_seconds": 4.042
+  },
+  {
+    "id": 458,
+    "content": "```json\n{\n    \"length\": 20000\n}\n```",
+    "run_seconds": 4.042
+  },
+  {
+    "id": 459,
+    "content": "```json\n{\n    \"length\": 50\n}\n```",
+    "run_seconds": 3.405
+  },
+  {
+    "id": 460,
+    "content": "```json\n{\n    \"length\": 1040\n}\n```",
+    "run_seconds": 3.83
+  },
+  {
+    "id": 461,
+    "content": "```json\n{\n    \"length\": 50000\n}\n```",
+    "run_seconds": 4.042
+  },
+  {
+    "id": 462,
+    "content": "```json\n{\n    \"length\": 4000000\n}\n```",
+    "run_seconds": 4.468
+  },
+  {
+    "id": 463,
+    "content": "```json\n{\n    \"length\": 1030\n}\n```",
+    "run_seconds": 3.828
+  },
+  {
+    "id": 464,
+    "content": "```json\n{\n    \"length\": 1020\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 465,
+    "content": "```json\n{\n    \"length\": 160\n}\n```",
+    "run_seconds": 3.616
+  },
+  {
+    "id": 466,
+    "content": "```json\n{\n    \"name\": \"cycleways in Anaheim\",\n    \"length\": 120\n}\n```",
+    "run_seconds": 5.745
+  },
+  {
+    "id": 467,
+    "content": "```json\n{\n    \"length\": 1020\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 468,
+    "content": "```json\n{\n    \"length\": 2000\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 469,
+    "content": "```json\n{\n    \"length\": 230\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 470,
+    "content": "```json\n{\n    \"length\": 2000\n}\n```",
+    "run_seconds": 3.83
+  },
+  {
+    "id": 471,
+    "content": "```json\n{\n    \"length\": 230\n}\n```",
+    "run_seconds": 3.616
+  },
+  {
+    "id": 472,
+    "content": "```json\n{\n    \"length\": 2000\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 473,
+    "content": "```json\n{\n    \"length\": 1000\n}\n```",
+    "run_seconds": 3.83
+  },
+  {
+    "id": 474,
+    "content": "```json\n{\n    \"distance\": 2000\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 475,
+    "content": "```json\n{\n    \"length\": 50000\n}\n```",
+    "run_seconds": 4.041
+  },
+  {
+    "id": 476,
+    "content": "```json\n{\n    \"name\": \"cycleways\",\n    \"address\": \"St. Louis Park, Minnesota\",\n    \"length\": 100\n}\n```",
+    "run_seconds": 7.875
+  },
+  {
+    "id": 477,
+    "content": "```json\n{\n    \"length\": 2000000\n}\n```",
+    "run_seconds": 4.468
+  },
+  {
+    "id": 478,
+    "content": "```json\n{\n    \"distance\": 230\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 479,
+    "content": "```json\n{\n    \"distance\": 180\n}\n```",
+    "run_seconds": 3.615
+  },
+  {
+    "id": 480,
+    "content": "```json\n{\n    \"length\": 100\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 481,
+    "content": "```json\n{\n    \"length\": 200\n}\n```",
+    "run_seconds": 3.631
+  },
+  {
+    "id": 482,
+    "content": "```json\n{\n    \"length\": 2000\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 483,
+    "content": "```json\n{\n    \"length\": 2000\n}\n```",
+    "run_seconds": 3.83
+  },
+  {
+    "id": 484,
+    "content": "```json\n{\n    \"length\": 30000\n}\n```",
+    "run_seconds": 4.042
+  },
+  {
+    "id": 485,
+    "content": "```json\n{\n    \"name\": \"Dobbs Ferry footways\",\n    \"length\": 1030\n}\n```",
+    "run_seconds": 6.384
+  },
+  {
+    "id": 486,
+    "content": "```json\n{\n    \"length\": 2000\n}\n```",
+    "run_seconds": 3.83
+  },
+  {
+    "id": 487,
+    "content": "```json\n{\n    \"name\": \"rivers\",\n    \"count\": 2000,\n    \"length\": 2000\n}\n```",
+    "run_seconds": 7.672
+  },
+  {
+    "id": 488,
+    "content": "```json\n{\n    \"distance\": 200\n}\n```",
+    "run_seconds": 3.616
+  },
+  {
+    "id": 489,
+    "content": "```json\n{\n    \"length\": 20000\n}\n```",
+    "run_seconds": 4.045
+  },
+  {
+    "id": 490,
+    "content": "```json\n{\n    \"length\": 40000\n}\n```",
+    "run_seconds": 4.042
+  },
+  {
+    "id": 491,
+    "content": "```json\n{\n    \"length\": 3219\n}\n```",
+    "run_seconds": 3.829
+  },
+  {
+    "id": 492,
+    "content": "```json\n{\n    \"distance\": 250000\n}\n```",
+    "run_seconds": 4.254
+  },
+  {
+    "id": 493,
+    "content": "```json\n{\n    \"distance\": 1030\n}\n```",
+    "run_seconds": 3.83
+  },
+  {
+    "id": 494,
+    "content": "```json\n{\n    \"length\": 230\n}\n```",
+    "run_seconds": 3.615
+  },
+  {
+    "id": 495,
+    "content": "```json\n{\n    \"length\": 20000\n}\n```",
+    "run_seconds": 4.042
+  },
+  {
+    "id": 496,
+    "content": "```json\n{\n    \"name\": \"canals\",\n    \"address\": \"Palm Bay, Florida\",\n    \"length\": 130\n}\n```",
+    "run_seconds": 7.661
+  },
+  {
+    "id": 497,
+    "content": "```json\n{\n    \"length\": 230\n}\n```",
+    "run_seconds": 3.616
+  },
+  {
+    "id": 498,
+    "content": "```json\n{\n    \"length\": 130\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 499,
+    "content": "```json\n{\n    \"length\": 2000\n}\n```",
+    "run_seconds": 3.828
+  }
+]

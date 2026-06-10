@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 214.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 214.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-92.1766 42.326355, -92.176651 42.323395, -92.176672 42.320081, -92.176696 42.318702, -92.17672 42.311894, -92.176713 42.307807, -92.176766 42.30106, -92.181457 42.301091, -92.186352 42.301073, -92.196503 42.301104, -92.20591 42.301154, -92.205944 42.311975, -92.205866 42.325876, -92.206078 42.325882, -92.206637 42.3265, -92.1766 42.326355))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).min AS elevation\nFROM clipped;",
+  "id": "elevation_min+region-16",
+  "model_output": "```sql\nWITH la_porte_city AS (\n  SELECT ST_GeomFromText('POLYGON ((-92.1766 42.326355, -92.176651 42.323395, -92.176672 42.320081, -92.176696 42.318702, -92.17672 42.311894, -92.176713 42.307807, -92.176766 42.30106, -92.181457 42.301091, -92.186352 42.301073, -92.196503 42.301104, -92.20591 42.301154, -92.205944 42.311975, -92.205866 42.325876, -92.206078 42.325882, -92.206637 42.3265, -92.1766 42.326355))', 4326)::geometry AS geom\n)\nSELECT \n  ST_Value(rast, 1, (ST_Clip(rast, (la_porte_city.geom), true)).geom) AS floor_elevation\nFROM \n  public.dem_us,\n  la_porte_city\nWHERE \n  ST_Intersects(rast, la_porte_city.geom);\n```",
+  "predicted_exec": {
+    "error": "column notation .geom applied to type raster, which is not a composite type\nLINE 5:   ST_Value(rast, 1, (ST_Clip(rast, (la_porte_city.geom), tru...\n                             ^",
+    "output": []
+  },
+  "predicted_sql": "WITH la_porte_city AS (\n  SELECT ST_GeomFromText('POLYGON ((-92.1766 42.326355, -92.176651 42.323395, -92.176672 42.320081, -92.176696 42.318702, -92.17672 42.311894, -92.176713 42.307807, -92.176766 42.30106, -92.181457 42.301091, -92.186352 42.301073, -92.196503 42.301104, -92.20591 42.301154, -92.205944 42.311975, -92.205866 42.325876, -92.206078 42.325882, -92.206637 42.3265, -92.1766 42.326355))', 4326)::geometry AS geom\n)\nSELECT \n  ST_Value(rast, 1, (ST_Clip(rast, (la_porte_city.geom), true)).geom) AS floor_elevation\nFROM \n  public.dem_us,\n  la_porte_city\nWHERE \n  ST_Intersects(rast, la_porte_city.geom);",
+  "predicted_sql_candidates": [
+    "WITH la_porte_city AS (\n  SELECT ST_GeomFromText('POLYGON ((-92.1766 42.326355, -92.176651 42.323395, -92.176672 42.320081, -92.176696 42.318702, -92.17672 42.311894, -92.176713 42.307807, -92.176766 42.30106, -92.181457 42.301091, -92.186352 42.301073, -92.196503 42.301104, -92.20591 42.301154, -92.205944 42.311975, -92.205866 42.325876, -92.206078 42.325882, -92.206637 42.3265, -92.1766 42.326355))', 4326)::geometry AS geom\n)\nSELECT \n  ST_Value(rast, 1, (ST_Clip(rast, (la_porte_city.geom), true)).geom) AS floor_elevation\nFROM \n  public.dem_us,\n  la_porte_city\nWHERE \n  ST_Intersects(rast, la_porte_city.geom);"
+  ],
+  "query_type": "raster_only",
+  "question": "What floor elevation does La Porte City, Iowa have?",
+  "source_file": "elevation_min+region.jsonl",
+  "source_stem": "elevation_min+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 91.06,
+    "total_seconds": 91.061
+  },
+  "usage": {
+    "completion_tokens": 426,
+    "prompt_tokens": 1832,
+    "total_tokens": 2258
+  }
+}

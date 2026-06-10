@@ -1,0 +1,66 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 1,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "absolute_error": null,
+      "gold_field": "elevation",
+      "gold_value": 171.0,
+      "metric_family": "primary_numeric",
+      "predicted_field": null,
+      "predicted_value": null,
+      "relative_error": null,
+      "within_tolerance": false
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 171.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 171.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-91.075246 38.234031, -91.075077 38.239777, -91.073531 38.241084, -91.072841 38.241622, -91.072823 38.241937, -91.072701 38.242571, -91.072342 38.243008, -91.071742 38.243339, -91.070763 38.243859, -91.070382 38.244015, -91.069706 38.244314, -91.067742 38.244025, -91.066486 38.243572, -91.065738 38.243343, -91.065433 38.24323, -91.065127 38.243117, -91.06455 38.242891, -91.063572 38.242307, -91.063001 38.241838, -91.0626 38.24148, -91.062344 38.24124, -91.062066 38.240911, -91.061956 38.240754, -91.061711 38.240189, -91.06153 38.239837, -91.061574 38.239424, -91.062014 38.238573, -91.06233 38.237611, -91.062437 38.237162, -91.062685 38.236649, -91.062759 38.236592, -91.062931 38.236158, -91.063043 38.235959, -91.063332 38.235842, -91.063613 38.235643, -91.06417 38.235427, -91.064986 38.235278, -91.066299 38.235166, -91.068892 38.234799, -91.07363 38.234061, -91.074305 38.234045, -91.075246 38.234031))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).min AS elevation\nFROM clipped;",
+  "id": "elevation_min+region-3",
+  "model_output": "```sql\nWITH park_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM parks\n  WHERE park_name ILIKE 'Miramiguoa Park' AND addr_state ILIKE 'Missouri'\n)\nSELECT MIN(rast_val) AS min_elevation\nFROM (\n  SELECT ST_Value(rast, 1, (ST_DumpAsPolygons(ST_Clip(rast, (SELECT geom FROM park_geom), TRUE))).geom) AS rast_val\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM park_geom))\n) subquery;\n```",
+  "predicted_exec": {
+    "error": "",
+    "output": [
+      {
+        "min_elevation": null
+      }
+    ]
+  },
+  "predicted_sql": "WITH park_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM parks\n  WHERE park_name ILIKE 'Miramiguoa Park' AND addr_state ILIKE 'Missouri'\n)\nSELECT MIN(rast_val) AS min_elevation\nFROM (\n  SELECT ST_Value(rast, 1, (ST_DumpAsPolygons(ST_Clip(rast, (SELECT geom FROM park_geom), TRUE))).geom) AS rast_val\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM park_geom))\n) subquery;",
+  "predicted_sql_candidates": [
+    "WITH park_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM parks\n  WHERE park_name ILIKE 'Miramiguoa Park' AND addr_state ILIKE 'Missouri'\n)\nSELECT MIN(rast_val) AS min_elevation\nFROM (\n  SELECT ST_Value(rast, 1, (ST_DumpAsPolygons(ST_Clip(rast, (SELECT geom FROM park_geom), TRUE))).geom) AS rast_val\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM park_geom))\n) subquery;"
+  ],
+  "query_type": "raster_only",
+  "question": "In Miramiguoa Park, Missouri, what is the minimum elevation?",
+  "source_file": "elevation_min+region.jsonl",
+  "source_stem": "elevation_min+region",
+  "timing": {
+    "execution_seconds": 1.607,
+    "generation_seconds": 26.216,
+    "total_seconds": 27.823
+  },
+  "usage": {
+    "completion_tokens": 123,
+    "prompt_tokens": 1519,
+    "total_tokens": 1642
+  }
+}

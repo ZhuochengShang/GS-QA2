@@ -1,0 +1,59 @@
+{
+  "answer_type": "count, POIs -> Points",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "count, POIs -> Points",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "count": 0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "count": 0
+      }
+    ]
+  },
+  "gold_sql": "WITH candidates AS (\n  SELECT p.id, p.geometry\n  FROM pois p\n  WHERE ST_DWithin(p.geometry::geography, ST_GeomFromText('POINT (-84.504606 38.061259)',4326)::geography, 2800)\n    AND p.amenity = 'hospital'\n),\npoi_elev AS (\n  SELECT c.id, elev.z\n  FROM candidates c\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, c.geometry::geometry) AS z\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, c.geometry::geometry)\n    LIMIT 1\n  ) elev ON elev.z IS NOT NULL\n)\nSELECT COUNT(*) AS count\nFROM poi_elev\nWHERE z <= 240;",
+  "id": "range+count+elevation_condition-18",
+  "model_output": "```sql\nWITH garden_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM pois\n  WHERE poi_name ILIKE 'Whitney Avenue Community Garden'\n    AND addr_city = 'Lexington'\n    AND addr_state = 'KY'\n),\ndem_clipped AS (\n  SELECT\n    ST_Clip(\n      rast,\n      (ST_Buffer(garden_geom.geom, 2800)),\n      true\n    ) AS clipped_rast\n  FROM\n    public.dem_us,\n    garden_geom\n  WHERE\n    ST_Intersects(rast, ST_Buffer(garden_geom.geom, 2800))\n),\nelevation_filtered_hospitals AS (\n  SELECT\n    p.id\n  FROM\n    pois p,\n    dem_clipped d\n  WHERE\n    p.amenity = 'hospital'\n    AND ST_DWithin(p.geometry::geometry, garden_geom.geom, 2800)\n    AND ST_Value(d.clipped_rast, p.geometry::geometry) <= 240\n)\nSELECT COUNT(*) AS hospital_count\nFROM elevation_filtered_hospitals;\n```",
+  "predicted_exec": {
+    "error": "missing FROM-clause entry for table \"garden_geom\"\nLINE 29:     AND ST_DWithin(p.geometry::geometry, garden_geom.geom, 2...\n                                                  ^",
+    "output": []
+  },
+  "predicted_sql": "WITH garden_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM pois\n  WHERE poi_name ILIKE 'Whitney Avenue Community Garden'\n    AND addr_city = 'Lexington'\n    AND addr_state = 'KY'\n),\ndem_clipped AS (\n  SELECT\n    ST_Clip(\n      rast,\n      (ST_Buffer(garden_geom.geom, 2800)),\n      true\n    ) AS clipped_rast\n  FROM\n    public.dem_us,\n    garden_geom\n  WHERE\n    ST_Intersects(rast, ST_Buffer(garden_geom.geom, 2800))\n),\nelevation_filtered_hospitals AS (\n  SELECT\n    p.id\n  FROM\n    pois p,\n    dem_clipped d\n  WHERE\n    p.amenity = 'hospital'\n    AND ST_DWithin(p.geometry::geometry, garden_geom.geom, 2800)\n    AND ST_Value(d.clipped_rast, p.geometry::geometry) <= 240\n)\nSELECT COUNT(*) AS hospital_count\nFROM elevation_filtered_hospitals;",
+  "predicted_sql_candidates": [
+    "WITH garden_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM pois\n  WHERE poi_name ILIKE 'Whitney Avenue Community Garden'\n    AND addr_city = 'Lexington'\n    AND addr_state = 'KY'\n),\ndem_clipped AS (\n  SELECT\n    ST_Clip(\n      rast,\n      (ST_Buffer(garden_geom.geom, 2800)),\n      true\n    ) AS clipped_rast\n  FROM\n    public.dem_us,\n    garden_geom\n  WHERE\n    ST_Intersects(rast, ST_Buffer(garden_geom.geom, 2800))\n),\nelevation_filtered_hospitals AS (\n  SELECT\n    p.id\n  FROM\n    pois p,\n    dem_clipped d\n  WHERE\n    p.amenity = 'hospital'\n    AND ST_DWithin(p.geometry::geometry, garden_geom.geom, 2800)\n    AND ST_Value(d.clipped_rast, p.geometry::geometry) <= 240\n)\nSELECT COUNT(*) AS hospital_count\nFROM elevation_filtered_hospitals;"
+  ],
+  "query_type": "extended",
+  "question": "What's the count of hospitals within 2800 meters from the location Whitney Avenue Community Garden, Lexington, KY at no more than 240 m elevation?",
+  "source_file": "range+count+elevation_condition.jsonl",
+  "source_stem": "range+count+elevation_condition",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 48.722,
+    "total_seconds": 48.723
+  },
+  "usage": {
+    "completion_tokens": 228,
+    "prompt_tokens": 1805,
+    "total_tokens": 2033
+  }
+}

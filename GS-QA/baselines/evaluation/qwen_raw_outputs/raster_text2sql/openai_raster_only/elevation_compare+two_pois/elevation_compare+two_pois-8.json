@@ -1,0 +1,75 @@
+{
+  "answer_type": "name",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "name",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "max_abs_numeric_delta": 0.0,
+    "mean_abs_numeric_delta": 0.0,
+    "numeric_deltas": [
+      0.0,
+      0.0
+    ],
+    "predicted_row_count": 1,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_text_exact",
+    "typed_metrics": {
+      "exact_match": false,
+      "gold_field": "higher_poi",
+      "gold_value": "The University of Tennessee Health Science Center, Memphis, TN",
+      "metric_family": "primary_text",
+      "predicted_field": "more_elevated",
+      "predicted_value": "[4]"
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "higher_poi": "The University of Tennessee Health Science Center, Memphis, TN",
+      "poi1_elevation_m": 65.0,
+      "poi2_elevation_m": 88.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "higher_poi": "The University of Tennessee Health Science Center, Memphis, TN",
+        "poi1_elevation_m": 65.0,
+        "poi2_elevation_m": 88.0
+      }
+    ]
+  },
+  "gold_sql": "WITH p1 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-73.967704 41.049287)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-73.967704 41.049287)',4326))\n  LIMIT 1\n),\np2 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-90.031353 35.139317)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-90.031353 35.139317)',4326))\n  LIMIT 1\n)\nSELECT\n  CASE\n    WHEN p1.elev > p2.elev THEN 'Rockland Psychiatric Center, Orangeburg, NY'\n    WHEN p2.elev > p1.elev THEN 'The University of Tennessee Health Science Center, Memphis, TN'\n    ELSE 'equal'\n  END AS higher_poi,\n  p1.elev AS poi1_elevation_m,\n  p2.elev AS poi2_elevation_m\nFROM p1, p2;",
+  "id": "elevation_compare+two_pois-8",
+  "model_output": "```sql\nWITH locations AS (\n  SELECT \n    '[3]' AS id,\n    ST_SetSRID(ST_MakePoint(-73.967704, 41.049287), 4326)::geography AS geom\n  UNION ALL\n  SELECT \n    '[4]' AS id,\n    ST_SetSRID(ST_MakePoint(-90.031353, 35.139317), 4326)::geography AS geom\n),\nelevations AS (\n  SELECT \n    l.id,\n    ST_Value(\n      r.rast,\n      ST_Transform(l.geom::geometry, 4326)\n    ) AS elevation\n  FROM locations l\n  JOIN public.dem_us r\n    ON ST_Intersects(\n      r.rast,\n      ST_Transform(l.geom::geometry, 4326)\n    )\n)\nSELECT \n  CASE\n    WHEN e1.elevation > e2.elevation THEN e1.id\n    WHEN e2.elevation > e1.elevation THEN e2.id\n    ELSE 'Equal'\n  END AS more_elevated,\n  e1.elevation AS rockland_elevation,\n  e2.elevation AS ut_hsc_elevation\nFROM elevations e1\nJOIN elevations e2\n  ON e1.id = '[3]' AND e2.id = '[4]';\n```",
+  "predicted_exec": {
+    "error": "",
+    "output": [
+      {
+        "more_elevated": "[4]",
+        "rockland_elevation": 65.0,
+        "ut_hsc_elevation": 88.0
+      }
+    ]
+  },
+  "predicted_sql": "WITH locations AS (\n  SELECT \n    '[3]' AS id,\n    ST_SetSRID(ST_MakePoint(-73.967704, 41.049287), 4326)::geography AS geom\n  UNION ALL\n  SELECT \n    '[4]' AS id,\n    ST_SetSRID(ST_MakePoint(-90.031353, 35.139317), 4326)::geography AS geom\n),\nelevations AS (\n  SELECT \n    l.id,\n    ST_Value(\n      r.rast,\n      ST_Transform(l.geom::geometry, 4326)\n    ) AS elevation\n  FROM locations l\n  JOIN public.dem_us r\n    ON ST_Intersects(\n      r.rast,\n      ST_Transform(l.geom::geometry, 4326)\n    )\n)\nSELECT \n  CASE\n    WHEN e1.elevation > e2.elevation THEN e1.id\n    WHEN e2.elevation > e1.elevation THEN e2.id\n    ELSE 'Equal'\n  END AS more_elevated,\n  e1.elevation AS rockland_elevation,\n  e2.elevation AS ut_hsc_elevation\nFROM elevations e1\nJOIN elevations e2\n  ON e1.id = '[3]' AND e2.id = '[4]';",
+  "predicted_sql_candidates": [
+    "WITH locations AS (\n  SELECT \n    '[3]' AS id,\n    ST_SetSRID(ST_MakePoint(-73.967704, 41.049287), 4326)::geography AS geom\n  UNION ALL\n  SELECT \n    '[4]' AS id,\n    ST_SetSRID(ST_MakePoint(-90.031353, 35.139317), 4326)::geography AS geom\n),\nelevations AS (\n  SELECT \n    l.id,\n    ST_Value(\n      r.rast,\n      ST_Transform(l.geom::geometry, 4326)\n    ) AS elevation\n  FROM locations l\n  JOIN public.dem_us r\n    ON ST_Intersects(\n      r.rast,\n      ST_Transform(l.geom::geometry, 4326)\n    )\n)\nSELECT \n  CASE\n    WHEN e1.elevation > e2.elevation THEN e1.id\n    WHEN e2.elevation > e1.elevation THEN e2.id\n    ELSE 'Equal'\n  END AS more_elevated,\n  e1.elevation AS rockland_elevation,\n  e2.elevation AS ut_hsc_elevation\nFROM elevations e1\nJOIN elevations e2\n  ON e1.id = '[3]' AND e2.id = '[4]';"
+  ],
+  "query_type": "raster_only",
+  "question": "Between Rockland Psychiatric Center, Orangeburg, NY and The University of Tennessee Health Science Center, Memphis, TN, which one is more elevated?",
+  "source_file": "elevation_compare+two_pois.jsonl",
+  "source_stem": "elevation_compare+two_pois",
+  "timing": {
+    "execution_seconds": 0.646,
+    "generation_seconds": 64.647,
+    "total_seconds": 65.293
+  },
+  "usage": {
+    "completion_tokens": 303,
+    "prompt_tokens": 1763,
+    "total_tokens": 2066
+  }
+}

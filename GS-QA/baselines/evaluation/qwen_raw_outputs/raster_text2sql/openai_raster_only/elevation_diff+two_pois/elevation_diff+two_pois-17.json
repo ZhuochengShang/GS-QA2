@@ -1,0 +1,63 @@
+{
+  "answer_type": "elevation difference",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation difference",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation_difference_m": 1638.0,
+      "poi1_elevation_m": 1666.0,
+      "poi2_elevation_m": 28.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation_difference_m": 1638.0,
+        "poi1_elevation_m": 1666.0,
+        "poi2_elevation_m": 28.0
+      }
+    ]
+  },
+  "gold_sql": "WITH p1 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-109.984017 38.166652)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-109.984017 38.166652)',4326))\n  LIMIT 1\n),\np2 AS (\n  SELECT ST_Value(d.rast, 1, ST_GeomFromText('POINT (-74.004968 40.749576)',4326)) AS elev\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, ST_GeomFromText('POINT (-74.004968 40.749576)',4326))\n  LIMIT 1\n)\nSELECT\n  ABS(p1.elev - p2.elev) AS elevation_difference_m,\n  p1.elev AS poi1_elevation_m,\n  p2.elev AS poi2_elevation_m\nFROM p1, p2;",
+  "id": "elevation_diff+two_pois-17",
+  "model_output": "```sql\nWITH park_point AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-109.984017 38.166652)'), 4326)::geometry AS geom\n),\ngallery_point AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-74.004968 40.749576)'), 4326)::geometry AS geom\n),\npark_elevation AS (\n  SELECT (ST_Value(r.rast, p.geom, 1)) AS elevation\n  FROM public.dem_us r, park_point p\n  WHERE ST_Intersects(r.rast, p.geom)\n),\ngallery_elevation AS (\n  SELECT (ST_Value(r.rast, g.geom, 1)) AS elevation\n  FROM public.dem_us r, gallery_point g\n  WHERE ST_Intersects(r.rast, g.geom)\n)\nSELECT ABS(p.elevation - g.elevation) AS elevation_difference\nFROM park_elevation p, gallery_elevation g;\n```",
+  "predicted_exec": {
+    "error": "function st_value(raster, geometry, integer) does not exist\nLINE 8:   SELECT (ST_Value(r.rast, p.geom, 1)) AS elevation\n                  ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH park_point AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-109.984017 38.166652)'), 4326)::geometry AS geom\n),\ngallery_point AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-74.004968 40.749576)'), 4326)::geometry AS geom\n),\npark_elevation AS (\n  SELECT (ST_Value(r.rast, p.geom, 1)) AS elevation\n  FROM public.dem_us r, park_point p\n  WHERE ST_Intersects(r.rast, p.geom)\n),\ngallery_elevation AS (\n  SELECT (ST_Value(r.rast, g.geom, 1)) AS elevation\n  FROM public.dem_us r, gallery_point g\n  WHERE ST_Intersects(r.rast, g.geom)\n)\nSELECT ABS(p.elevation - g.elevation) AS elevation_difference\nFROM park_elevation p, gallery_elevation g;",
+  "predicted_sql_candidates": [
+    "WITH park_point AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-109.984017 38.166652)'), 4326)::geometry AS geom\n),\ngallery_point AS (\n  SELECT ST_SetSRID(ST_GeomFromText('POINT (-74.004968 40.749576)'), 4326)::geometry AS geom\n),\npark_elevation AS (\n  SELECT (ST_Value(r.rast, p.geom, 1)) AS elevation\n  FROM public.dem_us r, park_point p\n  WHERE ST_Intersects(r.rast, p.geom)\n),\ngallery_elevation AS (\n  SELECT (ST_Value(r.rast, g.geom, 1)) AS elevation\n  FROM public.dem_us r, gallery_point g\n  WHERE ST_Intersects(r.rast, g.geom)\n)\nSELECT ABS(p.elevation - g.elevation) AS elevation_difference\nFROM park_elevation p, gallery_elevation g;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the absolute elevation difference between Canyonlands National Park, UT and Pace Gallery, New York, NY?",
+  "source_file": "elevation_diff+two_pois.jsonl",
+  "source_stem": "elevation_diff+two_pois",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 48.648,
+    "total_seconds": 48.649
+  },
+  "usage": {
+    "completion_tokens": 228,
+    "prompt_tokens": 1722,
+    "total_tokens": 1950
+  }
+}

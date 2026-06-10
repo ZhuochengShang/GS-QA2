@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 30.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 30.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-73.673277 40.751527, -73.67321 40.751187, -73.673147 40.750667, -73.673134 40.750195, -73.673062 40.749755, -73.672711 40.748346, -73.672124 40.746626, -73.672057 40.746285, -73.671841 40.744638, -73.671566 40.743413, -73.671611 40.742222, -73.671726 40.741723, -73.671742 40.741338, -73.671647 40.74014, -73.671432 40.738994, -73.671369 40.738413, -73.671184 40.737081, -73.671156 40.736468, -73.671208 40.734804, -73.671207 40.7342, -73.671196 40.734111, -73.651422 40.737203, -73.651795 40.737641, -73.651886 40.737721, -73.652824 40.738888, -73.654034 40.740326, -73.654786 40.741141, -73.655798 40.742307, -73.657144 40.743796, -73.657512 40.744255, -73.657633 40.744631, -73.657758 40.745215, -73.65789 40.746218, -73.657922 40.74668, -73.65788 40.747113, -73.657814 40.747478, -73.657665 40.748244, -73.657516 40.748852, -73.657433 40.749568, -73.657433 40.75029, -73.6575 40.751006, -73.657961 40.753263, -73.659464 40.752968, -73.661101 40.752813, -73.661307 40.752782, -73.661327 40.75288, -73.664074 40.752631, -73.664966 40.752537, -73.673277 40.751527))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n),\nstats AS (\n  SELECT ST_SummaryStats(ST_Union(rast)) AS s\n  FROM clipped\n)\nSELECT (s).max - (s).min AS elevation\nFROM stats;",
+  "id": "elevation_range+region-1",
+  "model_output": "```sql\nWITH park_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM parks\n  WHERE park_name ILIKE 'Garden City Park' AND addr_city ILIKE 'New York'\n)\n, clipped_raster AS (\n  SELECT ST_Clip(public.dem_us.rast, 1, park_geom.geom, TRUE) AS clipped_rast\n  FROM public.dem_us\n  JOIN park_geom ON ST_Intersects(public.dem_us.rast, park_geom.geom)\n)\nSELECT \n  MAX(rast_val) - MIN(rast_val) AS elevation_range\nFROM (\n  SELECT (ST_SummaryStats(clipped_rast, 1)).*\n  FROM clipped_raster\n) AS stats;\n```",
+  "predicted_exec": {
+    "error": "column \"rast_val\" does not exist\nLINE 12:   MAX(rast_val) - MIN(rast_val) AS elevation_range\n               ^",
+    "output": []
+  },
+  "predicted_sql": "WITH park_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM parks\n  WHERE park_name ILIKE 'Garden City Park' AND addr_city ILIKE 'New York'\n)\n, clipped_raster AS (\n  SELECT ST_Clip(public.dem_us.rast, 1, park_geom.geom, TRUE) AS clipped_rast\n  FROM public.dem_us\n  JOIN park_geom ON ST_Intersects(public.dem_us.rast, park_geom.geom)\n)\nSELECT \n  MAX(rast_val) - MIN(rast_val) AS elevation_range\nFROM (\n  SELECT (ST_SummaryStats(clipped_rast, 1)).*\n  FROM clipped_raster\n) AS stats;",
+  "predicted_sql_candidates": [
+    "WITH park_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM parks\n  WHERE park_name ILIKE 'Garden City Park' AND addr_city ILIKE 'New York'\n)\n, clipped_raster AS (\n  SELECT ST_Clip(public.dem_us.rast, 1, park_geom.geom, TRUE) AS clipped_rast\n  FROM public.dem_us\n  JOIN park_geom ON ST_Intersects(public.dem_us.rast, park_geom.geom)\n)\nSELECT \n  MAX(rast_val) - MIN(rast_val) AS elevation_range\nFROM (\n  SELECT (ST_SummaryStats(clipped_rast, 1)).*\n  FROM clipped_raster\n) AS stats;"
+  ],
+  "query_type": "raster_only",
+  "question": "In Garden City Park, New York, what is max minus min elevation?",
+  "source_file": "elevation_range+region.jsonl",
+  "source_stem": "elevation_range+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 32.118,
+    "total_seconds": 32.119
+  },
+  "usage": {
+    "completion_tokens": 150,
+    "prompt_tokens": 1520,
+    "total_tokens": 1670
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "answer_type": "row/s",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "row/s",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "rowset_f1",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "addr_city": "Jetmore",
+      "addr_housenumber": "809",
+      "addr_postcode": "67854",
+      "addr_state": "KS",
+      "addr_street": "West Bramley Street",
+      "amenity": "hospital",
+      "elevation": 703.0,
+      "emergency": "yes",
+      "geometry": "POINT (-99.903421 38.083364)",
+      "id": 29102,
+      "osm_id": 4025273875,
+      "phone": "+1-620-357-8361",
+      "poi_name": "Hodgeman County Health Center",
+      "website": "https://hchconline.org/"
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "addr_city": "Jetmore",
+        "addr_housenumber": "809",
+        "addr_postcode": "67854",
+        "addr_state": "KS",
+        "addr_street": "West Bramley Street",
+        "amenity": "hospital",
+        "artwork_type": null,
+        "building": null,
+        "capacity": null,
+        "cuisine": null,
+        "delivery": null,
+        "description": null,
+        "drive_through": null,
+        "elevation": 703.0,
+        "emergency": "yes",
+        "fast_food": null,
+        "fee": null,
+        "geometry": "0101000020E6100000E2410EA5D1F958C0A2D68FA8AB0A4340",
+        "hairdresser": null,
+        "healthcare": null,
+        "historic": null,
+        "id": 29102,
+        "information": null,
+        "internet_access": null,
+        "leisure": null,
+        "museum": null,
+        "official_name": null,
+        "opening_hours": null,
+        "operator": null,
+        "osm_id": 4025273875,
+        "outdoor_seating": null,
+        "parking": null,
+        "pastry_shop": null,
+        "phone": "+1-620-357-8361",
+        "poi_name": "Hodgeman County Health Center",
+        "resort": null,
+        "restaurant": null,
+        "school_type": null,
+        "shop": null,
+        "sport": null,
+        "sports": null,
+        "takeaway": null,
+        "toilets": null,
+        "tourism": null,
+        "website": "https://hchconline.org/",
+        "wheelchair": null,
+        "wholesale": null,
+        "wikidata": null,
+        "zoo": null
+      }
+    ]
+  },
+  "gold_sql": "SELECT p.*, elev.z AS elevation\nFROM pois p\nJOIN LATERAL (\n  SELECT ST_Value(d.rast, 1, p.geometry::geometry) AS z\n  FROM public.dem_us d\n  WHERE ST_Intersects(d.rast, p.geometry::geometry)\n  LIMIT 1\n) elev ON elev.z IS NOT NULL\nWHERE ST_DWithin(p.geometry::geography, ST_GeomFromText('POINT (-99.903421 38.083364)',4326)::geography, 4900)\n  AND p.amenity = 'hospital'\n  AND elev.z >= 420;",
+  "id": "range+name+elevation_condition-3",
+  "model_output": "```sql\nWITH reference_hospital AS (\n  SELECT \n    ST_SetSRID(ST_GeomFromText('[3].geo_wkt'), 4326)::geography AS geom\n),\nelevation_filter AS (\n  SELECT \n    rast\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(\n      rast,\n      ST_Buffer(reference_hospital.geom, 4900)\n    )\n),\ncandidate_hospitals AS (\n  SELECT \n    poi.poi_name,\n    poi.addr_city,\n    poi.addr_state,\n    ST_Distance(poi.geometry::geometry, reference_hospital.geom::geometry) AS distance_meters,\n    ST_Value(elevation_filter.rast, poi.geometry::geometry) AS elevation_meters\n  FROM \n    pois poi\n  CROSS JOIN \n    reference_hospital\n  CROSS JOIN \n    elevation_filter\n  WHERE \n    poi.amenity = 'hospital'\n    AND ST_DWithin(poi.geometry::geometry, reference_hospital.geom::geometry, 4900)\n    AND ST_Value(elevation_filter.rast, poi.geometry::geometry) >= 420\n    AND poi.poi_name != 'Hodgeman County Health Center'\n)\nSELECT \n  poi_name,\n  addr_city,\n  addr_state,\n  distance_meters,\n  elevation_meters\nFROM \n  candidate_hospitals\nORDER BY \n  distance_meters ASC;\n```",
+  "predicted_exec": {
+    "error": "missing FROM-clause entry for table \"reference_hospital\"\nLINE 13:       ST_Buffer(reference_hospital.geom, 4900)\n                         ^",
+    "output": []
+  },
+  "predicted_sql": "WITH reference_hospital AS (\n  SELECT \n    ST_SetSRID(ST_GeomFromText('[3].geo_wkt'), 4326)::geography AS geom\n),\nelevation_filter AS (\n  SELECT \n    rast\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(\n      rast,\n      ST_Buffer(reference_hospital.geom, 4900)\n    )\n),\ncandidate_hospitals AS (\n  SELECT \n    poi.poi_name,\n    poi.addr_city,\n    poi.addr_state,\n    ST_Distance(poi.geometry::geometry, reference_hospital.geom::geometry) AS distance_meters,\n    ST_Value(elevation_filter.rast, poi.geometry::geometry) AS elevation_meters\n  FROM \n    pois poi\n  CROSS JOIN \n    reference_hospital\n  CROSS JOIN \n    elevation_filter\n  WHERE \n    poi.amenity = 'hospital'\n    AND ST_DWithin(poi.geometry::geometry, reference_hospital.geom::geometry, 4900)\n    AND ST_Value(elevation_filter.rast, poi.geometry::geometry) >= 420\n    AND poi.poi_name != 'Hodgeman County Health Center'\n)\nSELECT \n  poi_name,\n  addr_city,\n  addr_state,\n  distance_meters,\n  elevation_meters\nFROM \n  candidate_hospitals\nORDER BY \n  distance_meters ASC;",
+  "predicted_sql_candidates": [
+    "WITH reference_hospital AS (\n  SELECT \n    ST_SetSRID(ST_GeomFromText('[3].geo_wkt'), 4326)::geography AS geom\n),\nelevation_filter AS (\n  SELECT \n    rast\n  FROM \n    public.dem_us\n  WHERE \n    ST_Intersects(\n      rast,\n      ST_Buffer(reference_hospital.geom, 4900)\n    )\n),\ncandidate_hospitals AS (\n  SELECT \n    poi.poi_name,\n    poi.addr_city,\n    poi.addr_state,\n    ST_Distance(poi.geometry::geometry, reference_hospital.geom::geometry) AS distance_meters,\n    ST_Value(elevation_filter.rast, poi.geometry::geometry) AS elevation_meters\n  FROM \n    pois poi\n  CROSS JOIN \n    reference_hospital\n  CROSS JOIN \n    elevation_filter\n  WHERE \n    poi.amenity = 'hospital'\n    AND ST_DWithin(poi.geometry::geometry, reference_hospital.geom::geometry, 4900)\n    AND ST_Value(elevation_filter.rast, poi.geometry::geometry) >= 420\n    AND poi.poi_name != 'Hodgeman County Health Center'\n)\nSELECT \n  poi_name,\n  addr_city,\n  addr_state,\n  distance_meters,\n  elevation_meters\nFROM \n  candidate_hospitals\nORDER BY \n  distance_meters ASC;"
+  ],
+  "query_type": "extended",
+  "question": "Can you recommend a hospital that's not too far from Hodgeman County Health Center, Jetmore, KS? Maximum distance: 4900 meters, elevation at least 420 m.",
+  "source_file": "range+name+elevation_condition.jsonl",
+  "source_stem": "range+name+elevation_condition",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 63.288,
+    "total_seconds": 63.289
+  },
+  "usage": {
+    "completion_tokens": 296,
+    "prompt_tokens": 1810,
+    "total_tokens": 2106
+  }
+}

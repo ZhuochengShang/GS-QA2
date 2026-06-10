@@ -1,0 +1,123 @@
+{
+  "answer_type": "row/s",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "row/s",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "rowset_f1",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "addr_city": "Bowling Green",
+      "addr_housenumber": "300",
+      "addr_postcode": "42101",
+      "addr_state": "KY",
+      "addr_street": "East 8th Avenue",
+      "geometry": "POINT (-86.441176 36.996563)",
+      "id": 247686,
+      "leisure": "stadium",
+      "mean": -3653.440137,
+      "osm_id": 4514482625,
+      "poi_name": "Bowling Green Ballpark",
+      "pt": "0101000020E6100000F9122A383C9C55C0FEB1B5638F7F4240",
+      "sport": "baseball",
+      "wikidata": "Q4951144",
+      "z": 154.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "addr_city": "Bowling Green",
+        "addr_housenumber": "300",
+        "addr_postcode": "42101",
+        "addr_state": "KY",
+        "addr_street": "East 8th Avenue",
+        "amenity": null,
+        "artwork_type": null,
+        "building": null,
+        "capacity": null,
+        "cuisine": null,
+        "delivery": null,
+        "description": null,
+        "drive_through": null,
+        "emergency": null,
+        "fast_food": null,
+        "fee": null,
+        "geometry": "0101000020E6100000F9122A383C9C55C0FEB1B5638F7F4240",
+        "hairdresser": null,
+        "healthcare": null,
+        "historic": null,
+        "id": 247686,
+        "information": null,
+        "internet_access": null,
+        "leisure": "stadium",
+        "mean": -3653.440137,
+        "museum": null,
+        "official_name": null,
+        "opening_hours": null,
+        "operator": null,
+        "osm_id": 4514482625,
+        "outdoor_seating": null,
+        "parking": null,
+        "pastry_shop": null,
+        "phone": null,
+        "poi_name": "Bowling Green Ballpark",
+        "pt": "0101000020E6100000F9122A383C9C55C0FEB1B5638F7F4240",
+        "resort": null,
+        "restaurant": null,
+        "school_type": null,
+        "shop": null,
+        "sport": "baseball",
+        "sports": null,
+        "takeaway": null,
+        "toilets": null,
+        "tourism": null,
+        "website": null,
+        "wheelchair": null,
+        "wholesale": null,
+        "wikidata": "Q4951144",
+        "z": 154.0,
+        "zoo": null
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-86.674332 36.999805, -86.611511 36.882961, -86.58313 36.830166, -86.500214 36.820454, -86.400604 36.807182, -86.405403 36.77631, -86.263321 36.872971, -86.265076 36.875683, -86.262291 36.884769, -86.267487 36.886547, -86.26812 36.891983, -86.265266 36.893818, -86.261215 36.892029, -86.259506 36.893852, -86.256027 36.891155, -86.251434 36.891636, -86.249176 36.896637, -86.239952 36.894428, -86.239418 36.898968, -86.23481 36.898087, -86.234314 36.906704, -86.229141 36.907188, -86.225739 36.912197, -86.219398 36.911331, -86.215302 36.904556, -86.212418 36.903667, -86.206696 36.90733, -86.2033 36.913242, -86.203911 36.916866, -86.207954 36.918655, -86.210327 36.925896, -86.205788 36.932724, -86.198906 36.935486, -86.198288 36.931408, -86.195374 36.927341, -86.191307 36.923286, -86.187836 36.921494, -86.181526 36.924248, -86.170685 36.934738, -86.166077 36.934311, -86.113571 37.061085, -86.192146 37.07653, -86.218361 37.104031, -86.230453 37.101242, -86.241951 37.096634, -86.244225 37.092995, -86.255692 37.08567, -86.268341 37.081963, -86.278137 37.080994, -86.279869 37.080982, -86.399193 37.169472, -86.410706 37.16621, -86.411827 37.163937, -86.408241 37.153534, -86.411682 37.151695, -86.433167 37.161507, -86.43959 37.166897, -86.443024 37.164604, -86.443489 37.155533, -86.444618 37.153709, -86.448624 37.150959, -86.458435 37.150425, -86.467712 37.153526, -86.468384 37.160774, -86.483627 37.177879, -86.48542 37.182854, -86.491798 37.184616, -86.495346 37.190479, -86.500504 37.187717, -86.507988 37.185841, -86.519547 37.185745, -86.522972 37.182995, -86.527496 37.176155, -86.534515 37.182446, -86.538528 37.180141, -86.540779 37.176044, -86.545403 37.176003, -86.557556 37.177711, -86.563377 37.180832, -86.564003 37.184456, -86.561714 37.185837, -86.562889 37.187183, -86.573822 37.183914, -86.5802 37.185673, -86.581284 37.180676, -86.58876 37.178795, -86.593468 37.184647, -86.606194 37.185436, -86.611893 37.180397, -86.617722 37.183971, -86.62117 37.182579, -86.623451 37.180744, -86.62394 37.174847, -86.61982 37.169899, -86.613419 37.166328, -86.613235 37.153637, -86.618362 37.149055, -86.616592 37.146351, -86.674332 36.999805))', 4326) AS g\n),\nmean_elev AS (\n  SELECT SUM(stats.sum) / NULLIF(SUM(stats.count), 0) AS mean\n  FROM public.dem_us d\n  JOIN region r ON ST_Intersects(d.rast, r.g)\n  JOIN LATERAL ST_SummaryStats(ST_Clip(d.rast, r.g)) AS stats ON stats.count > 0\n),\ncandidates AS (\n  SELECT p.*, ST_PointOnSurface(p.geometry::geometry) AS pt\n  FROM pois p\n  JOIN region r\n    ON ST_Intersects(p.geometry::geometry, r.g)\n  WHERE p.\"leisure\" = 'stadium'\n),\npoi_elev AS (\n  SELECT c.*, elev.z\n  FROM candidates c\n  JOIN LATERAL (\n    SELECT ST_Value(d.rast, 1, c.pt) AS z\n    FROM public.dem_us d\n    WHERE ST_Intersects(d.rast, c.pt)\n    LIMIT 1\n  ) elev ON elev.z IS NOT NULL\n)\nSELECT DISTINCT ON (id) *\nFROM poi_elev\nCROSS JOIN mean_elev\nWHERE z > mean;",
+  "id": "elevation_average+name-4",
+  "model_output": "```sql\nWITH county_geom AS (\n  SELECT geometry\n  FROM regions\n  WHERE region_name ILIKE 'Warren County'\n    AND border_type = 'county'\n    AND addr_state = 'KY'\n),\nmean_elevation AS (\n  SELECT\n    ST_Union(rast) AS rast\n  FROM\n    public.dem_us\n  WHERE\n    ST_Intersects(rast, geometry::geometry)\n    AND EXISTS (\n      SELECT 1\n      FROM regions\n      WHERE region_name ILIKE 'Warren County'\n        AND border_type = 'county'\n        AND addr_state = 'KY'\n    )\n),\nmean_elevation_value AS (\n  SELECT\n    ST_ValueCount(ST_Clip(mean_elevation.rast, geometry::geometry)) AS stats\n  FROM\n    mean_elevation,\n    (SELECT geometry FROM county_geom) geom\n),\nstadium_above_mean AS (\n  SELECT\n    poi.poi_name,\n    ST_Value(ST_Clip(public.dem_us.rast, poi.geometry::geometry), 1) AS elevation\n  FROM\n    pois poi,\n    public.dem_us\n  WHERE\n    ST_Intersects(poi.geometry::geometry, public.dem_us.rast)\n    AND poi.poi_name = 'Bowling Green Ballpark'\n    AND poi.addr_city = 'Bowling Green'\n    AND poi.addr_state = 'KY'\n    AND ST_Value(ST_Clip(public.dem_us.rast, poi.geometry::geometry), 1) > (SELECT stats.mean FROM mean_elevation_value)\n)\nSELECT * FROM stadium_above_mean;\n```",
+  "predicted_exec": {
+    "error": "column \"addr_state\" does not exist\nLINE 6:     AND addr_state = 'KY'\n                ^",
+    "output": []
+  },
+  "predicted_sql": "WITH county_geom AS (\n  SELECT geometry\n  FROM regions\n  WHERE region_name ILIKE 'Warren County'\n    AND border_type = 'county'\n    AND addr_state = 'KY'\n),\nmean_elevation AS (\n  SELECT\n    ST_Union(rast) AS rast\n  FROM\n    public.dem_us\n  WHERE\n    ST_Intersects(rast, geometry::geometry)\n    AND EXISTS (\n      SELECT 1\n      FROM regions\n      WHERE region_name ILIKE 'Warren County'\n        AND border_type = 'county'\n        AND addr_state = 'KY'\n    )\n),\nmean_elevation_value AS (\n  SELECT\n    ST_ValueCount(ST_Clip(mean_elevation.rast, geometry::geometry)) AS stats\n  FROM\n    mean_elevation,\n    (SELECT geometry FROM county_geom) geom\n),\nstadium_above_mean AS (\n  SELECT\n    poi.poi_name,\n    ST_Value(ST_Clip(public.dem_us.rast, poi.geometry::geometry), 1) AS elevation\n  FROM\n    pois poi,\n    public.dem_us\n  WHERE\n    ST_Intersects(poi.geometry::geometry, public.dem_us.rast)\n    AND poi.poi_name = 'Bowling Green Ballpark'\n    AND poi.addr_city = 'Bowling Green'\n    AND poi.addr_state = 'KY'\n    AND ST_Value(ST_Clip(public.dem_us.rast, poi.geometry::geometry), 1) > (SELECT stats.mean FROM mean_elevation_value)\n)\nSELECT * FROM stadium_above_mean;",
+  "predicted_sql_candidates": [
+    "WITH county_geom AS (\n  SELECT geometry\n  FROM regions\n  WHERE region_name ILIKE 'Warren County'\n    AND border_type = 'county'\n    AND addr_state = 'KY'\n),\nmean_elevation AS (\n  SELECT\n    ST_Union(rast) AS rast\n  FROM\n    public.dem_us\n  WHERE\n    ST_Intersects(rast, geometry::geometry)\n    AND EXISTS (\n      SELECT 1\n      FROM regions\n      WHERE region_name ILIKE 'Warren County'\n        AND border_type = 'county'\n        AND addr_state = 'KY'\n    )\n),\nmean_elevation_value AS (\n  SELECT\n    ST_ValueCount(ST_Clip(mean_elevation.rast, geometry::geometry)) AS stats\n  FROM\n    mean_elevation,\n    (SELECT geometry FROM county_geom) geom\n),\nstadium_above_mean AS (\n  SELECT\n    poi.poi_name,\n    ST_Value(ST_Clip(public.dem_us.rast, poi.geometry::geometry), 1) AS elevation\n  FROM\n    pois poi,\n    public.dem_us\n  WHERE\n    ST_Intersects(poi.geometry::geometry, public.dem_us.rast)\n    AND poi.poi_name = 'Bowling Green Ballpark'\n    AND poi.addr_city = 'Bowling Green'\n    AND poi.addr_state = 'KY'\n    AND ST_Value(ST_Clip(public.dem_us.rast, poi.geometry::geometry), 1) > (SELECT stats.mean FROM mean_elevation_value)\n)\nSELECT * FROM stadium_above_mean;"
+  ],
+  "query_type": "raster_vector",
+  "question": "Return a stadium in Warren County, Kentucky located above Warren County, Kentucky's mean elevation.",
+  "source_file": "elevation_average+name.jsonl",
+  "source_stem": "elevation_average+name",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 72.371,
+    "total_seconds": 72.372
+  },
+  "usage": {
+    "completion_tokens": 324,
+    "prompt_tokens": 1644,
+    "total_tokens": 1968
+  }
+}

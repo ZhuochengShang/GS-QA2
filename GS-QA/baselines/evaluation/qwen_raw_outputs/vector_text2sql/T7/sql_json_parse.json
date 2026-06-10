@@ -1,0 +1,502 @@
+[
+  {
+    "id": 800,
+    "content": "```json\n{\n    \"name\": \"Prairie Fruits Farm and Kitchen\",\n    \"address\": \"Hickory Grove Riverfront, Cary, IL\",\n    \"Established\": \"twenty-thirties\"\n}\n```",
+    "run_seconds": 10.439
+  },
+  {
+    "id": 801,
+    "content": "```json\n{\n    \"name\": \"Brigham Young University\",\n    \"Established\": \"eighteen ninety\"\n}\n```",
+    "run_seconds": 5.96
+  },
+  {
+    "id": 802,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"Alta Vista Gardens, Vista, California\",\n    \"distance\": 10\n}\n```",
+    "run_seconds": 7.457
+  },
+  {
+    "id": 803,
+    "content": "```json\n{\n    \"name\": \"nearest hospital\",\n    \"address\": \"Hellsgate Farms, Astoria, NY\",\n    \"Opened\": \"third quarter of 2ousand and sixteen\"\n}\n```",
+    "run_seconds": 9.583
+  },
+  {
+    "id": 804,
+    "content": "```json\n{\n    \"name\": \"Hersheypark\",\n    \"Opening date\": \"1960\"\n}\n```",
+    "run_seconds": 6.392
+  },
+  {
+    "id": 805,
+    "content": "```json\n{\n    \"name\": \"Bayfront Health St. Petersburg\",\n    \"address\": \"Eddy Lookout Tower, Sanderson, FL\",\n    \"distance\": 30,\n    \"Opened\": \"1960\"\n}\n```",
+    "run_seconds": 11.501
+  },
+  {
+    "id": 806,
+    "content": "```json\n{\n    \"name\": \"Pennsylvania State University\",\n    \"address\": \"Shavers Creek Environmental Center, Petersburg, PA\",\n    \"Established\": \"eighteen ninety\"\n}\n```",
+    "run_seconds": 9.153
+  },
+  {
+    "id": 807,
+    "content": "```json\n{\n    \"name\": \"nearest stadium\",\n    \"address\": \"Strawberry Hill, San Francisco, CA\",\n    \"count\": 40000\n}\n```",
+    "run_seconds": 8.947
+  },
+  {
+    "id": 808,
+    "content": "```json\n{\n    \"name\": \"California Museum of Science and Industry\",\n    \"address\": \"Los Angeles, California\",\n    \"Built\": \"nineteen hundred thirty\"\n}\n```",
+    "run_seconds": 8.735
+  },
+  {
+    "id": 809,
+    "content": "```json\n{\n    \"name\": \"Golden Gate National Recreation Area\",\n    \"address\": \"House of Air, San Francisco, CA\",\n    \"Opened\": \"The nearest park from House of Air, San Francisco, CA is the Golden Gate National Recreation Area.\"\n}\n```",
+    "run_seconds": 12.35
+  },
+  {
+    "id": 810,
+    "content": "```json\n{\n    \"name\": \"nearest attraction\",\n    \"address\": \"Hungry Valley SVRA, Gorman, CA\",\n    \"Capacity\": \"ten thousand\"\n}\n```",
+    "run_seconds": 8.515
+  },
+  {
+    "id": 811,
+    "content": "```json\n{\n    \"name\": \"LaBahn Arena\",\n    \"address\": \"1200 E College Ave, Platteville, WI 55846\",\n    \"Built\": \"twenty-twenty\"\n}\n```",
+    "run_seconds": 11.07
+  },
+  {
+    "id": 812,
+    "content": "```json\n{\n    \"name\": \"It's A Zoo Life\",\n    \"address\": \"Macclesville, NC\"\n}\n```",
+    "run_seconds": 6.605
+  },
+  {
+    "id": 813,
+    "content": "```json\n{\n    \"name\": \"Steinhart Aquarium\",\n    \"address\": \"California, USA\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 7.237
+  },
+  {
+    "id": 814,
+    "content": "```json\n{\n    \"name\": \"Six Flags Great America\",\n    \"address\": \"1600 Seven Flags Parkway, Gurnee, IL 60034\",\n    \"distance\": 40\n}\n```",
+    "run_seconds": 10.857
+  },
+  {
+    "id": 815,
+    "content": "```json\n{\n    \"name\": \"Cleveland State University\",\n    \"address\": \"1589 Euclid Avenue, Cleveland, OH 44115, USA\",\n    \"Established\": \"1946\"\n}\n```",
+    "run_seconds": 11.506
+  },
+  {
+    "id": 816,
+    "content": "```json\n{\n    \"name\": \"Buffalo and Erie County Botanical Gardens\",\n    \"address\": \"Niagara Amusement Park & Splash World, Grand Island, NY\",\n    \"distance\": 40,\n    \"Built\": \"nineteen hundred twenty\"\n}\n```",
+    "run_seconds": 12.78
+  },
+  {
+    "id": 817,
+    "content": "```json\n{\n    \"name\": \"Porte des Morts Park\",\n    \"address\": \"Ellison Bay, WI\",\n    \"distance\": 10,\n    \"azimuth_angle\": 45,\n    \"Opened\": \"fifty-eight\"\n}\n```",
+    "run_seconds": 12.348
+  },
+  {
+    "id": 818,
+    "content": "```json\n{\n    \"distance\": 10,\n    \"azimuth_angle\": 45,\n    \"Opening date\": \"two thousand and four\"\n}\n```",
+    "run_seconds": 7.882
+  },
+  {
+    "id": 819,
+    "content": "```json\n{\n    \"name\": \"There is no relevant information available to answer the question.\"\n}\n```",
+    "run_seconds": 5.107
+  },
+  {
+    "id": 820,
+    "content": "```json\n{\n    \"Established\": \"twenty-eight hundred\"\n}\n```",
+    "run_seconds": 3.83
+  },
+  {
+    "id": 821,
+    "content": "```json\n{\n    \"name\": \"Columbia University\",\n    \"Established\": \"1796\"\n}\n```",
+    "run_seconds": 5.959
+  },
+  {
+    "id": 822,
+    "content": "```json\n{\n    \"name\": \"Big Springs Park - Historic Cherokee Trail of Tears\",\n    \"address\": \"Big Springs Park - Historic Cherokee Trail of Tears, Princeton, KY\",\n    \"Built\": \"There is no museum listed near Big Springs Park - Historic Cherokee Trail of Tears in Princeton, KY.\"\n}\n```",
+    "run_seconds": 14.264
+  },
+  {
+    "id": 823,
+    "content": "```json\n{\n    \"name\": \"Weidner Field\",\n    \"address\": \"Children's Hospital Colorado at Memorial Hospital, Colorado Springs, CO\",\n    \"distance\": 30,\n    \"Opened\": \"two thousand and three\"\n}\n```",
+    "run_seconds": 11.503
+  },
+  {
+    "id": 824,
+    "content": "```json\n{\n    \"name\": \"Stone Mountain Park\",\n    \"Opening date\": \"1960\"\n}\n```",
+    "run_seconds": 5.96
+  },
+  {
+    "id": 825,
+    "content": "```json\n{\n    \"name\": \"Funkmeyer New Reality Garden\",\n    \"address\": \"Los Angeles, CA\",\n    \"distance\": 10\n}\n```",
+    "run_seconds": 8.308
+  },
+  {
+    "id": 826,
+    "content": "```json\n{\n    \"name\": \"Pittsburgh Zoo and PPG Aquarium\",\n    \"address\": \"Main Street Art, Girard, PA\",\n    \"distance\": 40,\n    \"azimuth_angle\": 225,\n    \"Date opened\": \"1920\"\n}\n```",
+    "run_seconds": 14.058
+  },
+  {
+    "id": 827,
+    "content": "```json\n{\n    \"Established\": \"one thousand nine hundred forty\"\n}\n```",
+    "run_seconds": 4.257
+  },
+  {
+    "id": 828,
+    "content": "```json\n{\n    \"Nearest\u00a0city\": \"Rochester\"\n}\n```",
+    "run_seconds": 4.263
+  },
+  {
+    "id": 829,
+    "content": "```json\n{\n    \"name\": \"Seabrook Beach Museum\",\n    \"address\": \"Blue Ocean Discovery Center, Hampton, NH\",\n    \"distance\": 20,\n    \"azimuth_angle\": 45,\n    \"Established\": \"two thousand and two\"\n}\n```",
+    "run_seconds": 13.419
+  },
+  {
+    "id": 830,
+    "content": "```json\n{\n    \"name\": \"nearest park\",\n    \"address\": \"Strawberry Hill, San Francisco, CA\",\n    \"count\": 10000,\n    \"Capacity\": \"approximately ten thousand spectators\"\n}\n```",
+    "run_seconds": 11.084
+  },
+  {
+    "id": 831,
+    "content": "```json\n{\n    \"name\": \"The nearest stadium from the Plaza at the Shops by HTA\",\n    \"address\": \"Hoonah, AK\",\n    \"Capacity\": \"The nearest stadium from the Plaza at the Shops by HTA, Hoonah, AK cannot be determined due to an error in the data retrieval process.\"\n}\n```",
+    "run_seconds": 15.698
+  },
+  {
+    "id": 832,
+    "content": "```json\n{\n    \"name\": \"Alcorn State University\",\n    \"Established\": \"1892\"\n}\n```",
+    "run_seconds": 6.634
+  },
+  {
+    "id": 833,
+    "content": "```json\n{\n    \"Established\": \"two thousand ten\"\n}\n```",
+    "run_seconds": 4.053
+  },
+  {
+    "id": 834,
+    "content": "```json\n{\n    \"Affiliated university\": \"School of Medicine\"\n}\n```",
+    "run_seconds": 4.175
+  },
+  {
+    "id": 835,
+    "content": "```json\n{\n    \"name\": \"Crystal Lake Historical Society Museum\",\n    \"address\": \"Mercyhealth Hospital and Physician Clinic, Crystal Lake, IL\",\n    \"distance\": 40,\n    \"Established\": \"nineteen ninety\"\n}\n```",
+    "run_seconds": 12.417
+  },
+  {
+    "id": 836,
+    "content": "```json\n{\n    \"Architect\": \"not available\"\n}\n```",
+    "run_seconds": 3.826
+  },
+  {
+    "id": 837,
+    "content": "```json\n{\n    \"name\": \"Mokup\u0101papa Discovery Center\",\n    \"address\": \"120 Kilauea Ave, Hilo, HI 96720\",\n    \"Date opened\": \"The requested information could not be retrieved due to a database error.\"\n}\n```",
+    "run_seconds": 14.655
+  },
+  {
+    "id": 838,
+    "content": "```json\n{\n    \"name\": \"Museum of the Moving Image\",\n    \"Director\": \"David H. Rosenthal\"\n}\n```",
+    "run_seconds": 7.018
+  },
+  {
+    "id": 839,
+    "content": "```json\n{\n    \"name\": \"DoubleTree by Hilton Hotel\",\n    \"address\": \"Bedford, MA\",\n    \"distance\": 10\n}\n```",
+    "run_seconds": 8.371
+  },
+  {
+    "id": 840,
+    "content": "```json\n{\n    \"name\": \"Cape Fear Valley Medical Center\",\n    \"address\": \"2001 S College Rd, Fayetteville, NC 28301\",\n    \"Built\": \"1990\"\n}\n```",
+    "run_seconds": 11.921
+  },
+  {
+    "id": 841,
+    "content": "```json\n{\n    \"name\": \"North Carolina Zoo\",\n    \"distance\": 50,\n    \"Date opened\": \"1980\"\n}\n```",
+    "run_seconds": 8.094
+  },
+  {
+    "id": 842,
+    "content": "```json\n{\n    \"Established\": \"twenty-two hundred\"\n}\n```",
+    "run_seconds": 3.922
+  },
+  {
+    "id": 843,
+    "content": "```json\n{\n    \"name\": \"Indianapolis Zoo\",\n    \"Date opened\": \"twenty\"\n}\n```",
+    "run_seconds": 5.521
+  },
+  {
+    "id": 844,
+    "content": "```json\n{\n    \"name\": \"Portland Art Museum\",\n    \"Founder\": \"Portland Art Association\"\n}\n```",
+    "run_seconds": 5.786
+  },
+  {
+    "id": 845,
+    "content": "```json\n{\n    \"Nearest\u00a0city\": \"Denmark\"\n}\n```",
+    "run_seconds": 4.206
+  },
+  {
+    "id": 846,
+    "content": "```json\n{\n    \"Nickname\": \"International Residential College\"\n}\n```",
+    "run_seconds": 3.767
+  },
+  {
+    "id": 847,
+    "content": "```json\n{\n    \"Mascot\": \"Roadrunner\"\n}\n```",
+    "run_seconds": 3.977
+  },
+  {
+    "id": 848,
+    "content": "```json\n{\n    \"name\": \"Valencia Country Club\",\n    \"distance\": 10,\n    \"Established\": \"nineteen seventy\"\n}\n```",
+    "run_seconds": 8.23
+  },
+  {
+    "id": 849,
+    "content": "```json\n{\n    \"name\": \"Outdoor Biological Research Facility\",\n    \"address\": \"Vestal, NY\",\n    \"Built\": \"twenty ten\"\n}\n```",
+    "run_seconds": 8.223
+  },
+  {
+    "id": 850,
+    "content": "```json\n{\n    \"Nickname\": \"Gannon University\"\n}\n```",
+    "run_seconds": 3.778
+  },
+  {
+    "id": 851,
+    "content": "```json\n{\n    \"Director\": \"not available\"\n}\n```",
+    "run_seconds": 3.574
+  },
+  {
+    "id": 852,
+    "content": "```json\n{\n    \"Affiliated university\": \"American College of Traditional Chinese Medicine\"\n}\n```",
+    "run_seconds": 4.851
+  },
+  {
+    "id": 853,
+    "content": "```json\n{\n    \"name\": \"Disneyland Resort\",\n    \"Founder\": \"Walt Disney\"\n}\n```",
+    "run_seconds": 5.814
+  },
+  {
+    "id": 854,
+    "content": "```json\n{\n    \"name\": \"University of California, Santa Barbara\",\n    \"Established\": \"nineteen sixty\"\n}\n```",
+    "run_seconds": 6.906
+  },
+  {
+    "id": 855,
+    "content": "```json\n{\n    \"name\": \"Dinosaur Place at Nature's Art Village\",\n    \"address\": \"111 Nature's Art Village, Montville, CT 06401\",\n    \"Opened\": \"not available\"\n}\n```",
+    "run_seconds": 12.016
+  },
+  {
+    "id": 856,
+    "content": "```json\n{\n    \"name\": \"Lambeau Field\",\n    \"Former names\": \"Norm Murphy Field\"\n}\n```",
+    "run_seconds": 6.456
+  },
+  {
+    "id": 857,
+    "content": "```json\n{\n    \"name\": \"Rupp Arena\",\n    \"address\": \"Somerset, KY\",\n    \"distance\": 30,\n    \"Opened\": \"1990\"\n}\n```",
+    "run_seconds": 10.059
+  },
+  {
+    "id": 858,
+    "content": "```json\n{\n    \"name\": \"Downtown Art Place\",\n    \"address\": \"Ironwood, MI\",\n    \"distance\": 10\n}\n```",
+    "run_seconds": 7.936
+  },
+  {
+    "id": 859,
+    "content": "```json\n{\n    \"Established\": \"twenty ten\"\n}\n```",
+    "run_seconds": 3.618
+  },
+  {
+    "id": 860,
+    "content": "```json\n{\n    \"Volume of largest tank\": \"approximately one thousand cubic meters\"\n}\n```",
+    "run_seconds": 4.689
+  },
+  {
+    "id": 861,
+    "content": "```json\n{\n    \"name\": \"Richland County University of Illinois Extension\",\n    \"address\": \"1200 W Main St, Olney, IL 62450\",\n    \"Opened\": \"There is no recent specific information available about the nearest hospital to Richland County University of Illinois Extension in Olney, IL, or when it first opened.\"\n}\n```",
+    "run_seconds": 17.254
+  },
+  {
+    "id": 862,
+    "content": "```json\n{\n    \"name\": \"Erie Art Museum\",\n    \"address\": \"530 State Street, Erie, PA 16507\",\n    \"Built\": \"2000\"\n}\n```",
+    "run_seconds": 10.513
+  },
+  {
+    "id": 863,
+    "content": "```json\n{\n    \"name\": \"Ellison Bay Town Hall\",\n    \"address\": \"Porte des Morts Park, Ellison Bay, WI\",\n    \"Built\": \"nineteen twenty\"\n}\n```",
+    "run_seconds": 10.356
+  },
+  {
+    "id": 864,
+    "content": "```json\n{\n    \"Motto\": \"Motto not available in the database.\"\n}\n```",
+    "run_seconds": 4.933
+  },
+  {
+    "id": 865,
+    "content": "```json\n{\n    \"name\": \"College of Saint Joseph\",\n    \"address\": \"1 College Drive, Weybridge, VT 05783\",\n    \"Motto\": \"Not specified\"\n}\n```",
+    "run_seconds": 10.482
+  },
+  {
+    "id": 866,
+    "content": "```json\n{\n    \"name\": \"Cleveland Metroparks Zoo\",\n    \"distance\": 10,\n    \"azimuth_angle\": 135,\n    \"Date opened\": \"1970\"\n}\n```",
+    "run_seconds": 10.698
+  },
+  {
+    "id": 867,
+    "content": "```json\n{\n    \"name\": \"nearest stadium\",\n    \"address\": \"Lander Trail, Afton, WY\",\n    \"count\": 2000\n}\n```",
+    "run_seconds": 9.022
+  },
+  {
+    "id": 868,
+    "content": "```json\n{\n    \"name\": \"University of Tennessee at Chattanooga\",\n    \"Former names\": \"University of Chattanooga\"\n}\n```",
+    "run_seconds": 6.268
+  },
+  {
+    "id": 869,
+    "content": "```json\n{\n    \"name\": \"North Carolina Central University\",\n    \"Established\": \"nineteen twenty-one\"\n}\n```",
+    "run_seconds": 6.487
+  },
+  {
+    "id": 870,
+    "content": "```json\n{\n    \"name\": \"Ducks Unlimited National Headquarters\",\n    \"address\": \"1100 N Main St, Memphis, TN 38103\",\n    \"Established\": \"There is no relevant information available to answer the question.\"\n}\n```",
+    "run_seconds": 12.974
+  },
+  {
+    "id": 871,
+    "content": "```json\n{\n    \"distance\": 10,\n    \"azimuth_angle\": 45,\n    \"Opening date\": \"1980\"\n}\n```",
+    "run_seconds": 7.901
+  },
+  {
+    "id": 872,
+    "content": "```json\n{\n    \"Architect\": \"The American Club\"\n}\n```",
+    "run_seconds": 3.839
+  },
+  {
+    "id": 873,
+    "content": "```json\n{\n    \"name\": \"University of Southern California\",\n    \"address\": \"Los Angeles, California\",\n    \"Established\": \"1896\"\n}\n```",
+    "run_seconds": 8.321
+  },
+  {
+    "id": 874,
+    "content": "```json\n{\n    \"name\": \"Greensboro Coliseum\",\n    \"address\": \"223 N Elm St, Greensboro, NC 27401\",\n    \"count\": 2000,\n    \"Capacity\": \"approximately two thousand spectators\"\n}\n```",
+    "run_seconds": 13.303
+  },
+  {
+    "id": 875,
+    "content": "```json\n{\n    \"name\": \"Arrowhead Stadium\",\n    \"Capacity\": \"thirty five thousand\"\n}\n```",
+    "run_seconds": 5.975
+  },
+  {
+    "id": 876,
+    "content": "```json\n{\n    \"Former names\": \"Missouri State University-West Plains\"\n}\n```",
+    "run_seconds": 4.776
+  },
+  {
+    "id": 877,
+    "content": "```json\n{\n    \"Architect\": \"not available\"\n}\n```",
+    "run_seconds": 3.855
+  },
+  {
+    "id": 878,
+    "content": "```json\n{\n    \"name\": \"UniSea Inn\",\n    \"address\": \"Dutch Harbor, AK\",\n    \"distance\": 10\n}\n```",
+    "run_seconds": 8.131
+  },
+  {
+    "id": 879,
+    "content": "```json\n{\n    \"name\": \"nearest theme park\",\n    \"address\": \"Burlington, Vermont\",\n    \"Opened\": \"nineteen ninety\"\n}\n```",
+    "run_seconds": 8.473
+  },
+  {
+    "id": 880,
+    "content": "```json\n{\n    \"name\": \"Tacoma Dome\",\n    \"address\": \"851 S 4th St, Tacoma, WA 98405\",\n    \"Former names\": \"Washington Dome\"\n}\n```",
+    "run_seconds": 10.825
+  },
+  {
+    "id": 881,
+    "content": "```json\n{\n    \"Affiliated university\": \"University of California, San Francisco\"\n}\n```",
+    "run_seconds": 4.697
+  },
+  {
+    "id": 882,
+    "content": "```json\n{\n    \"name\": \"Mission Hills Church Park\",\n    \"address\": \"1234 Church Park Drive, San Marcos, CA 92069\",\n    \"Emergency department\": \"general\"\n}\n```",
+    "run_seconds": 11.151
+  },
+  {
+    "id": 883,
+    "content": "```json\n{\n    \"name\": \"Cyrus Dallin Art Museum\",\n    \"address\": \"10 Art Museum Way, Arlington, MA 02476\",\n    \"distance\": 10000\n}\n```",
+    "run_seconds": 12.115
+  },
+  {
+    "id": 884,
+    "content": "```json\n{\n    \"name\": \"Springfield Riverfront Nature Park\",\n    \"address\": \"UIS Greenhouse, Springfield, Illinois\",\n    \"Established\": \"two thousand and five\"\n}\n```",
+    "run_seconds": 9.921
+  },
+  {
+    "id": 885,
+    "content": "```json\n{\n    \"name\": \"University of Illinois Springfield\",\n    \"address\": \"UIS Greenhouse, Springfield, IL\",\n    \"Established\": \"1980\"\n}\n```",
+    "run_seconds": 9.379
+  },
+  {
+    "id": 886,
+    "content": "```json\n{\n    \"Mascot\": \"a coyote\"\n}\n```",
+    "run_seconds": 4.131
+  },
+  {
+    "id": 887,
+    "content": "```json\n{\n    \"name\": \"Minneapolis Institute of Art\",\n    \"distance\": 30,\n    \"azimuth_angle\": 45,\n    \"Established\": \"1939\"\n}\n```",
+    "run_seconds": 10.814
+  },
+  {
+    "id": 888,
+    "content": "```json\n{\n    \"name\": \"Ohio University\",\n    \"Established\": \"1797\"\n}\n```",
+    "run_seconds": 6.086
+  },
+  {
+    "id": 889,
+    "content": "```json\n{\n    \"name\": \"Cleveland State University\",\n    \"Established\": \"nineteen seventy\"\n}\n```",
+    "run_seconds": 6.471
+  },
+  {
+    "id": 890,
+    "content": "```json\n{\n    \"distance\": 2100\n}\n```",
+    "run_seconds": 3.926
+  },
+  {
+    "id": 891,
+    "content": "```json\n{\n    \"name\": \"nearest stadium\",\n    \"address\": \"\",\n    \"count\": 30000\n}\n```",
+    "run_seconds": 7.181
+  },
+  {
+    "id": 892,
+    "content": "```json\n{\n    \"Mascot\": \"Saints\"\n}\n```",
+    "run_seconds": 4.049
+  },
+  {
+    "id": 893,
+    "content": "```json\n{\n    \"name\": \"Memphis Zoo\",\n    \"Date opened\": \"1965\"\n}\n```",
+    "run_seconds": 6.296
+  },
+  {
+    "id": 894,
+    "content": "```json\n{\n    \"name\": \"Bronx Museum of the Arts\",\n    \"address\": \"1046 Grand Concourse, Bronx, NY 10451\",\n    \"Built\": \"twenty\"\n}\n```",
+    "run_seconds": 11.246
+  },
+  {
+    "id": 895,
+    "content": "```json\n{\n    \"name\": \"North Carolina Agricultural and Technical State University\",\n    \"address\": \"North Carolina\",\n    \"distance\": 30,\n    \"Established\": \"eighteen ninety-one\"\n}\n```",
+    "run_seconds": 10.796
+  },
+  {
+    "id": 896,
+    "content": "```json\n{\n    \"name\": \"University of Alaska\",\n    \"address\": \"UniSea Inn, Dutch Harbor, AK\",\n    \"distance\": 130,\n    \"Established\": \"nineteen twenty\"\n}\n```",
+    "run_seconds": 11.465
+  },
+  {
+    "id": 897,
+    "content": "```json\n{\n    \"name\": \"College of Mount Saint Vincent\",\n    \"address\": \"44 East 77th Street, New York, NY 10075\",\n    \"Established\": \"1970\"\n}\n```",
+    "run_seconds": 12.271
+  },
+  {
+    "id": 898,
+    "content": "```json\n{\n    \"name\": \"Cleveland Metroparks Zoo\",\n    \"distance\": 10,\n    \"azimuth_angle\": 45,\n    \"Date opened\": \"1930\"\n}\n```",
+    "run_seconds": 10.628
+  },
+  {
+    "id": 899,
+    "content": "```json\n{\n    \"name\": \"stadium\",\n    \"address\": \"English Street Community Garden, New Haven, CT\",\n    \"distance\": 30,\n    \"azimuth_angle\": 180,\n    \"Opened\": \"nineteen twenty-two\"\n}\n```",
+    "run_seconds": 13.745
+  }
+]

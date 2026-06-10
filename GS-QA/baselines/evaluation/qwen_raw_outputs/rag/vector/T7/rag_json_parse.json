@@ -1,0 +1,2102 @@
+[
+  {
+    "id": 800,
+    "run_seconds": 10.043,
+    "content": "```json\n{\n    \"name\": \"McHenry County Historical Society Museum\",\n    \"address\": \"Hickory Grove Riverfront, Cary, IL\",\n    \"Established\": \"1970\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 207,
+      "output_tokens": 46,
+      "total_tokens": 253,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 46,
+        "prompt_tokens": 207,
+        "total_tokens": 253,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 801,
+    "run_seconds": 5.958,
+    "content": "```json\n{\n    \"name\": \"University of Utah\",\n    \"Established\": \"1850\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 208,
+      "output_tokens": 27,
+      "total_tokens": 235,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 27,
+        "prompt_tokens": 208,
+        "total_tokens": 235,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 802,
+    "run_seconds": 11.074,
+    "content": "```json\n{\n    \"name\": \"The nearest theme park from Alta Vista Gardens, Vista, CA\",\n    \"address\": \"Alta Vista Gardens, Vista, CA\",\n    \"Opened\": \"not listed in the provided data\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 196,
+      "output_tokens": 51,
+      "total_tokens": 247,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 51,
+        "prompt_tokens": 196,
+        "total_tokens": 247,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 803,
+    "run_seconds": 15.965,
+    "content": "```json\n{\n    \"name\": \"The nearest hospital from Hellsgate Farms, Astoria, NY\",\n    \"address\": \"Hellsgate Farms, Astoria, NY\",\n    \"Opened\": \"The information about the opening date of the nearest hospital from Hellsgate Farms, Astoria, NY is not available in the provided records.\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 205,
+      "output_tokens": 74,
+      "total_tokens": 279,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 74,
+        "prompt_tokens": 205,
+        "total_tokens": 279,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 804,
+    "run_seconds": 5.771,
+    "content": "```json\n{\n    \"name\": \"Captain Mike's Fun Park\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 226,
+      "output_tokens": 26,
+      "total_tokens": 252,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 26,
+        "prompt_tokens": 226,
+        "total_tokens": 252,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 805,
+    "run_seconds": 9.152,
+    "content": "```json\n{\n    \"name\": \"Eddy Lookout Tower\",\n    \"address\": \"Sanderson, FL\",\n    \"Opened\": \"The information provided does not include any hospitals.\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 42,
+      "total_tokens": 229,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 42,
+        "prompt_tokens": 187,
+        "total_tokens": 229,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 806,
+    "run_seconds": 13.195,
+    "content": "```json\n{\n    \"name\": \"Pennsylvania State University\",\n    \"address\": \"Shavers Creek Environmental Center, Petersburg, PA\",\n    \"distance\": 30,\n    \"azimuth_angle\": 45,\n    \"Established\": \"1880\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 199,
+      "output_tokens": 61,
+      "total_tokens": 260,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 61,
+        "prompt_tokens": 199,
+        "total_tokens": 260,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 807,
+    "run_seconds": 8.306,
+    "content": "```json\n{\n    \"name\": \"nearest stadium\",\n    \"address\": \"Strawberry Hill, San Francisco, CA\",\n    \"count\": 70\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 193,
+      "output_tokens": 38,
+      "total_tokens": 231,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 38,
+        "prompt_tokens": 193,
+        "total_tokens": 231,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 808,
+    "run_seconds": 8.306,
+    "content": "```json\n{\n    \"name\": \"Santa Clarita Museum\",\n    \"address\": \"Santa Clarita, California\",\n    \"Built\": \"2002\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 216,
+      "output_tokens": 38,
+      "total_tokens": 254,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 38,
+        "prompt_tokens": 216,
+        "total_tokens": 254,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 809,
+    "run_seconds": 3.83,
+    "content": "```json\n{\n    \"name\": \"Henry-Duffy Park\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 185,
+      "output_tokens": 17,
+      "total_tokens": 202,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 185,
+        "total_tokens": 202,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 810,
+    "run_seconds": 11.066,
+    "content": "```json\n{\n    \"name\": \"Lucille's Smokehouse BBQ\",\n    \"address\": \"12345 Main Street, Gorman, CA 93026\",\n    \"count\": 40\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 197,
+      "output_tokens": 51,
+      "total_tokens": 248,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 51,
+        "prompt_tokens": 197,
+        "total_tokens": 248,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 811,
+    "run_seconds": 10.853,
+    "content": "```json\n{\n    \"name\": \"Alliant Energy Center\",\n    \"address\": \"401 N Seminole Hwy, Madison, WI 53714\",\n    \"Built\": \"two thousand eleven\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 201,
+      "output_tokens": 50,
+      "total_tokens": 251,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 50,
+        "prompt_tokens": 201,
+        "total_tokens": 251,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 812,
+    "run_seconds": 11.925,
+    "content": "```json\n{\n    \"name\": \"Greensboro Grasshoppers Stadium\",\n    \"address\": \"333 N Elm St, Greensboro, NC 27401\",\n    \"Former names\": \"Greensboro Baseball Park\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 223,
+      "output_tokens": 55,
+      "total_tokens": 278,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 55,
+        "prompt_tokens": 223,
+        "total_tokens": 278,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 813,
+    "run_seconds": 9.15,
+    "content": "```json\n{\n    \"name\": \"Steinhart Aquarium\",\n    \"address\": \"California, USA\",\n    \"Capacity\": \"The requested information is not available in the provided data.\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 42,
+      "total_tokens": 228,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 42,
+        "prompt_tokens": 186,
+        "total_tokens": 228,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 814,
+    "run_seconds": 16.175,
+    "content": "```json\n{\n    \"name\": \"Kindred Hospital Chicago Northlake\",\n    \"address\": \"1234 N Northlake Dr, Northlake, IL 60164\",\n    \"Opened\": \"The information about the opening date of the nearest theme park from Kindred Hospital Chicago Northlake is not available in the provided records.\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 206,
+      "output_tokens": 75,
+      "total_tokens": 281,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 75,
+        "prompt_tokens": 206,
+        "total_tokens": 281,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 815,
+    "run_seconds": 11.065,
+    "content": "```json\n{\n    \"name\": \"Cleveland State University\",\n    \"address\": \"1589 Euclid Avenue, Cleveland, OH 44115\",\n    \"Established\": \"1965\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 208,
+      "output_tokens": 51,
+      "total_tokens": 259,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 51,
+        "prompt_tokens": 208,
+        "total_tokens": 259,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 816,
+    "run_seconds": 10.22,
+    "content": "```json\n{\n    \"name\": \"Seymour Historical Society Museum\",\n    \"address\": \"Niagara Amusement Park & Splash World, Grand Island, NY\",\n    \"distance\": 150\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 213,
+      "output_tokens": 47,
+      "total_tokens": 260,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 47,
+        "prompt_tokens": 213,
+        "total_tokens": 260,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 817,
+    "run_seconds": 3.402,
+    "content": "```json\n{\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 202,
+      "output_tokens": 15,
+      "total_tokens": 217,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 202,
+        "total_tokens": 217,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 818,
+    "run_seconds": 11.711,
+    "content": "```json\n{\n    \"name\": \"Six Flags White Oak\",\n    \"address\": \"Yellow River Game Ranch, Lilburn, GA\",\n    \"distance\": 12,\n    \"Opening date\": \"twenty-three april two thousand and one\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 227,
+      "output_tokens": 54,
+      "total_tokens": 281,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 54,
+        "prompt_tokens": 227,
+        "total_tokens": 281,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 819,
+    "run_seconds": 12.768,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0,\n    \"distance\": 0,\n    \"length\": 0,\n    \"area\": 0,\n    \"azimuth_angle\": 0,\n    \"Capacity\": \"\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 204,
+      "output_tokens": 59,
+      "total_tokens": 263,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 59,
+        "prompt_tokens": 204,
+        "total_tokens": 263,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 820,
+    "run_seconds": 9.796,
+    "content": "```json\n{\n    \"name\": \"University of Southern California\",\n    \"address\": \"Monrovia Canyon Park, Monrovia, CA\",\n    \"Established\": \"1896\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 209,
+      "output_tokens": 45,
+      "total_tokens": 254,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 45,
+        "prompt_tokens": 209,
+        "total_tokens": 254,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 821,
+    "run_seconds": 9.363,
+    "content": "```json\n{\n    \"name\": \"Columbia University\",\n    \"address\": \"Hall des Lumi\u00e8res, New York, NY\",\n    \"Established\": \"1770\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 204,
+      "output_tokens": 43,
+      "total_tokens": 247,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 43,
+        "prompt_tokens": 204,
+        "total_tokens": 247,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 822,
+    "run_seconds": 11.285,
+    "content": "```json\n{\n    \"name\": \"Big Springs Park - Historic Cherokee Trail of Tears\",\n    \"address\": \"100 Park Rd, Princeton, KY 42445\",\n    \"Built\": \"Information not available\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 235,
+      "output_tokens": 52,
+      "total_tokens": 287,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 52,
+        "prompt_tokens": 235,
+        "total_tokens": 287,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 823,
+    "run_seconds": 14.045,
+    "content": "```json\n{\n    \"name\": \"Children's Hospital Colorado at Memorial Hospital\",\n    \"address\": \"2100 S Memorial Dr, Colorado Springs, CO 80904, USA\",\n    \"Opened\": \"The information provided does not include the opening date of the nearest stadium.\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 207,
+      "output_tokens": 65,
+      "total_tokens": 272,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 65,
+        "prompt_tokens": 207,
+        "total_tokens": 272,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 824,
+    "run_seconds": 9.156,
+    "content": "```json\n{\n    \"name\": \"Six Flags Over Georgia\",\n    \"distance\": 30,\n    \"Opening date\": \"24th of June 1960\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 227,
+      "output_tokens": 42,
+      "total_tokens": 269,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 42,
+        "prompt_tokens": 227,
+        "total_tokens": 269,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 825,
+    "run_seconds": 6.602,
+    "content": "```json\n{\n    \"name\": \"Funkmeyer New Reality Garden\",\n    \"address\": \"Los Angeles, CA\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 217,
+      "output_tokens": 30,
+      "total_tokens": 247,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 30,
+        "prompt_tokens": 217,
+        "total_tokens": 247,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 826,
+    "run_seconds": 3.409,
+    "content": "```json\n{\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 194,
+      "output_tokens": 15,
+      "total_tokens": 209,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 194,
+        "total_tokens": 209,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 827,
+    "run_seconds": 10.641,
+    "content": "```json\n{\n    \"name\": \"Oak Ridge Children's Museum\",\n    \"address\": \"315 Wongs Road, Oak Ridge, TN 37830\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 195,
+      "output_tokens": 49,
+      "total_tokens": 244,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 49,
+        "prompt_tokens": 195,
+        "total_tokens": 244,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 828,
+    "run_seconds": 4.26,
+    "content": "```json\n{\n    \"Nearest\u00a0city\": \"Dartmouth\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 183,
+      "output_tokens": 19,
+      "total_tokens": 202,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 183,
+        "total_tokens": 202,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 829,
+    "run_seconds": 8.298,
+    "content": "```json\n{\n    \"name\": \"Washington Museum\",\n    \"address\": \"Blue Ocean Discovery Center, Hampton, NH\",\n    \"distance\": 150\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 203,
+      "output_tokens": 38,
+      "total_tokens": 241,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 38,
+        "prompt_tokens": 203,
+        "total_tokens": 241,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 830,
+    "run_seconds": 14.259,
+    "content": "```json\n{\n    \"name\": \"Strawberry Hill\",\n    \"address\": \"1250 19th Ave, San Francisco, CA 94114\",\n    \"Capacity\": \"The question does not provide sufficient information to determine the number of spectators a park can hold.\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 194,
+      "output_tokens": 66,
+      "total_tokens": 260,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 66,
+        "prompt_tokens": 194,
+        "total_tokens": 260,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 831,
+    "run_seconds": 7.021,
+    "content": "```json\n{\n    \"name\": \"The nearest stadium\",\n    \"Capacity\": \"The nearest stadium cannot be determined from the provided data.\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 194,
+      "output_tokens": 32,
+      "total_tokens": 226,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 32,
+        "prompt_tokens": 194,
+        "total_tokens": 226,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 832,
+    "run_seconds": 3.828,
+    "content": "```json\n{\n    \"Established\": \"two thousand ten\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 197,
+      "output_tokens": 17,
+      "total_tokens": 214,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 197,
+        "total_tokens": 214,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 833,
+    "run_seconds": 11.71,
+    "content": "```json\n{\n    \"name\": \"Shawnee National Forest\",\n    \"address\": \"1870 National Forest Drive, Carbondale, IL 62901\",\n    \"Established\": \"1934\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 210,
+      "output_tokens": 54,
+      "total_tokens": 264,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 54,
+        "prompt_tokens": 210,
+        "total_tokens": 264,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 834,
+    "run_seconds": 4.049,
+    "content": "```json\n{\n    \"Affiliated university\": \"Yale University\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 18,
+      "total_tokens": 206,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 188,
+        "total_tokens": 206,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 835,
+    "run_seconds": 10.221,
+    "content": "```json\n{\n    \"name\": \"Crystal Lake Historical Society Museum\",\n    \"address\": \"Mercyhealth Hospital and Physician Clinic, Crystal Lake, IL\",\n    \"Established\": \"1970\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 216,
+      "output_tokens": 47,
+      "total_tokens": 263,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 47,
+        "prompt_tokens": 216,
+        "total_tokens": 263,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 836,
+    "run_seconds": 5.75,
+    "content": "```json\n{\n    \"Architect\": \"The name of the architect is not provided in the available data.\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 196,
+      "output_tokens": 26,
+      "total_tokens": 222,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 26,
+        "prompt_tokens": 196,
+        "total_tokens": 222,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 837,
+    "run_seconds": 9.362,
+    "content": "```json\n{\n    \"name\": \"nearest zoo\",\n    \"address\": \"Mokup\u0101papa Discovery Center, Hilo, HI\",\n    \"distance\": 310\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 206,
+      "output_tokens": 43,
+      "total_tokens": 249,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 43,
+        "prompt_tokens": 206,
+        "total_tokens": 249,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 838,
+    "run_seconds": 4.898,
+    "content": "```json\n{\n    \"name\": \"C. E. Smith Museum of Anthropology\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 217,
+      "output_tokens": 22,
+      "total_tokens": 239,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 217,
+        "total_tokens": 239,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 839,
+    "run_seconds": 6.807,
+    "content": "```json\n{\n    \"name\": \"DoubleTree by Hilton Hotel, Bedford, MA\",\n    \"Built\": \"Information not available\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 205,
+      "output_tokens": 31,
+      "total_tokens": 236,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 31,
+        "prompt_tokens": 205,
+        "total_tokens": 236,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 840,
+    "run_seconds": 12.342,
+    "content": "```json\n{\n    \"name\": \"J P Riddle Stadium\",\n    \"address\": \"2001 Henderson St, Fayetteville, NC 28301\",\n    \"Built\": \"The requested information is not available in the provided records.\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 189,
+      "output_tokens": 57,
+      "total_tokens": 246,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 57,
+        "prompt_tokens": 189,
+        "total_tokens": 246,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 841,
+    "run_seconds": 8.51,
+    "content": "```json\n{\n    \"name\": \"Aquarium Outfitters\",\n    \"address\": \"Carolina, Wake Forest, NC\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 199,
+      "output_tokens": 39,
+      "total_tokens": 238,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 39,
+        "prompt_tokens": 199,
+        "total_tokens": 238,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 842,
+    "run_seconds": 9.971,
+    "content": "```json\n{\n    \"name\": \"Museum of Northern Arizona\",\n    \"address\": \"48000000000\",\n    \"Established\": \"1939\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 212,
+      "output_tokens": 46,
+      "total_tokens": 258,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 46,
+        "prompt_tokens": 212,
+        "total_tokens": 258,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 843,
+    "run_seconds": 5.531,
+    "content": "```json\n{\n    \"name\": \"Indianapolis Zoo\",\n    \"Date opened\": \"twenty-eight\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 206,
+      "output_tokens": 25,
+      "total_tokens": 231,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 206,
+        "total_tokens": 231,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 844,
+    "run_seconds": 9.582,
+    "content": "```json\n{\n    \"name\": \"C. E. Smith Museum of Anthropology\",\n    \"distance\": 20000,\n    \"Founder\": \"C. E. Smith\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 196,
+      "output_tokens": 44,
+      "total_tokens": 240,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 44,
+        "prompt_tokens": 196,
+        "total_tokens": 240,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 845,
+    "run_seconds": 4.041,
+    "content": "```json\n{\n    \"Nearest\u00a0city\": \"Denmark\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 188,
+      "output_tokens": 18,
+      "total_tokens": 206,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 188,
+        "total_tokens": 206,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 846,
+    "run_seconds": 3.409,
+    "content": "```json\n{\n    \"Nickname\": \"Virginia Tech\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 180,
+      "output_tokens": 15,
+      "total_tokens": 195,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 180,
+        "total_tokens": 195,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 847,
+    "run_seconds": 6.816,
+    "content": "```json\n{\n    \"name\": \"University of Colorado Anschutz Medical Campus\",\n    \"Mascot\": \"buffalo\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 218,
+      "output_tokens": 31,
+      "total_tokens": 249,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 31,
+        "prompt_tokens": 218,
+        "total_tokens": 249,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 848,
+    "run_seconds": 9.787,
+    "content": "```json\n{\n    \"name\": \"Valencia Country Club\",\n    \"address\": \"Hasley Canyon Equestrian Center, Valencia, CA\",\n    \"Established\": \"nineteen ninety\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 207,
+      "output_tokens": 45,
+      "total_tokens": 252,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 45,
+        "prompt_tokens": 207,
+        "total_tokens": 252,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 849,
+    "run_seconds": 8.723,
+    "content": "```json\n{\n    \"name\": \"Old Fort Museum\",\n    \"address\": \"Outdoor Biological Research Facility, Vestal, NY\",\n    \"distance\": 140\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 207,
+      "output_tokens": 40,
+      "total_tokens": 247,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 40,
+        "prompt_tokens": 207,
+        "total_tokens": 247,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 850,
+    "run_seconds": 6.171,
+    "content": "```json\n{\n    \"name\": \"Lehigh University Mountaintop Campus\",\n    \"Nickname\": \"The Mountain\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 195,
+      "output_tokens": 28,
+      "total_tokens": 223,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 28,
+        "prompt_tokens": 195,
+        "total_tokens": 223,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 851,
+    "run_seconds": 9.576,
+    "content": "```json\n{\n    \"name\": \"Southern California Institute of Architecture\",\n    \"address\": \"Residence Inn, Los Angeles, CA\",\n    \"Director\": \"not specified in the available data\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 207,
+      "output_tokens": 44,
+      "total_tokens": 251,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 44,
+        "prompt_tokens": 207,
+        "total_tokens": 251,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 852,
+    "run_seconds": 4.679,
+    "content": "```json\n{\n    \"Affiliated university\": \"University of California, San Francisco\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 191,
+      "output_tokens": 21,
+      "total_tokens": 212,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 191,
+        "total_tokens": 212,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 853,
+    "run_seconds": 7.234,
+    "content": "```json\n{\n    \"name\": \"The requested information is not available in the provided data.\",\n    \"address\": \"\",\n    \"Founder\": \"\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 191,
+      "output_tokens": 33,
+      "total_tokens": 224,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 33,
+        "prompt_tokens": 191,
+        "total_tokens": 224,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 854,
+    "run_seconds": 3.403,
+    "content": "```json\n{\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 199,
+      "output_tokens": 15,
+      "total_tokens": 214,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 199,
+        "total_tokens": 214,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 855,
+    "run_seconds": 3.404,
+    "content": "```json\n{\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 191,
+      "output_tokens": 15,
+      "total_tokens": 206,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 191,
+        "total_tokens": 206,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 856,
+    "run_seconds": 8.298,
+    "content": "```json\n{\n    \"name\": \"Marshy Ruins of the Vintage Greentree Baseball Park\",\n    \"Former names\": \"Vintage Greentree Baseball Park\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 214,
+      "output_tokens": 38,
+      "total_tokens": 252,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 38,
+        "prompt_tokens": 214,
+        "total_tokens": 252,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 857,
+    "run_seconds": 8.085,
+    "content": "```json\n{\n    \"name\": \"School of Cosmetology\",\n    \"address\": \"Somerset, KY\",\n    \"distance\": 100\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 197,
+      "output_tokens": 37,
+      "total_tokens": 234,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 37,
+        "prompt_tokens": 197,
+        "total_tokens": 234,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 858,
+    "run_seconds": 3.404,
+    "content": "```json\n{\n    \"distance\": 32\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 195,
+      "output_tokens": 15,
+      "total_tokens": 210,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 195,
+        "total_tokens": 210,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 859,
+    "run_seconds": 5.956,
+    "content": "```json\n{\n    \"name\": \"New York University\",\n    \"Established\": \"1831\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 201,
+      "output_tokens": 27,
+      "total_tokens": 228,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 27,
+        "prompt_tokens": 201,
+        "total_tokens": 228,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 860,
+    "run_seconds": 1.495,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 206,
+      "output_tokens": 6,
+      "total_tokens": 212,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 206,
+        "total_tokens": 212,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 861,
+    "run_seconds": 10.008,
+    "content": "```json\n{\n    \"name\": \"Olney Regional Medical Center\",\n    \"address\": \"Richland County University of Illinois Extension, Olney, IL\",\n    \"Opened\": \"nineteen sixty\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 210,
+      "output_tokens": 46,
+      "total_tokens": 256,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 46,
+        "prompt_tokens": 210,
+        "total_tokens": 256,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 862,
+    "run_seconds": 5.958,
+    "content": "```json\n{\n    \"name\": \"Wyck Museum\",\n    \"Built\": \"nineteen hundred thirty\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 203,
+      "output_tokens": 27,
+      "total_tokens": 230,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 27,
+        "prompt_tokens": 203,
+        "total_tokens": 230,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 863,
+    "run_seconds": 8.723,
+    "content": "```json\n{\n    \"name\": \"nearest attraction\",\n    \"address\": \"Porte des Morts Park, Ellison Bay, WI\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 200,
+      "output_tokens": 40,
+      "total_tokens": 240,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 40,
+        "prompt_tokens": 200,
+        "total_tokens": 240,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 864,
+    "run_seconds": 6.389,
+    "content": "```json\n{\n    \"name\": \"University of North Carolina at Chapel Hill\",\n    \"Motto\": \"Carolina\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 196,
+      "output_tokens": 29,
+      "total_tokens": 225,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 29,
+        "prompt_tokens": 196,
+        "total_tokens": 225,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 865,
+    "run_seconds": 5.956,
+    "content": "```json\n{\n    \"name\": \"University of Vermont\",\n    \"Motto\": \"Motto not provided\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 183,
+      "output_tokens": 27,
+      "total_tokens": 210,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 27,
+        "prompt_tokens": 183,
+        "total_tokens": 210,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 866,
+    "run_seconds": 11.073,
+    "content": "```json\n{\n    \"name\": \"Cleveland Metroparks Zoo\",\n    \"address\": \"10800 Euclid Ave, Cleveland, OH 44106\",\n    \"distance\": 40\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 212,
+      "output_tokens": 51,
+      "total_tokens": 263,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 51,
+        "prompt_tokens": 212,
+        "total_tokens": 263,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 867,
+    "run_seconds": 8.723,
+    "content": "```json\n{\n    \"name\": \"nearest stadium\",\n    \"address\": \"Lander Trail, Afton, WY\",\n    \"Capacity\": \"thirty thousand\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 200,
+      "output_tokens": 40,
+      "total_tokens": 240,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 40,
+        "prompt_tokens": 200,
+        "total_tokens": 240,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 868,
+    "run_seconds": 6.17,
+    "content": "```json\n{\n    \"name\": \"University of Tennessee at Chattanooga\",\n    \"Former names\": \"University of Chattanooga\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 192,
+      "output_tokens": 28,
+      "total_tokens": 220,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 28,
+        "prompt_tokens": 192,
+        "total_tokens": 220,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 869,
+    "run_seconds": 3.405,
+    "content": "```json\n{\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 192,
+      "output_tokens": 15,
+      "total_tokens": 207,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 192,
+        "total_tokens": 207,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 870,
+    "run_seconds": 10.639,
+    "content": "```json\n{\n    \"name\": \"African American Heritage Museum of Southern New Jersey\",\n    \"distance\": 45,\n    \"azimuth_angle\": 45,\n    \"Established\": \"not specified\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 203,
+      "output_tokens": 49,
+      "total_tokens": 252,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 49,
+        "prompt_tokens": 203,
+        "total_tokens": 252,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 871,
+    "run_seconds": 5.107,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"Opening date\": \"\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 198,
+      "output_tokens": 23,
+      "total_tokens": 221,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 23,
+        "prompt_tokens": 198,
+        "total_tokens": 221,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 872,
+    "run_seconds": 1.487,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 193,
+      "output_tokens": 6,
+      "total_tokens": 199,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 193,
+        "total_tokens": 199,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 873,
+    "run_seconds": 4.042,
+    "content": "```json\n{\n    \"Established\": \"nineteen ninety\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 192,
+      "output_tokens": 18,
+      "total_tokens": 210,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 192,
+        "total_tokens": 210,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 874,
+    "run_seconds": 7.873,
+    "content": "```json\n{\n    \"name\": \"nearest stadium\",\n    \"address\": \"Benson, North Carolina\",\n    \"count\": 2000\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 193,
+      "output_tokens": 36,
+      "total_tokens": 229,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 36,
+        "prompt_tokens": 193,
+        "total_tokens": 229,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 875,
+    "run_seconds": 12.557,
+    "content": "```json\n{\n    \"name\": \"Sea Life Aquarium Kansas City\",\n    \"address\": \"1 Discovery Way, Kansas City, MO 64106\",\n    \"Capacity\": \"None of the provided records indicate a stadium near Sea Life Aquarium Kansas City.\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 194,
+      "output_tokens": 58,
+      "total_tokens": 252,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 58,
+        "prompt_tokens": 194,
+        "total_tokens": 252,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 876,
+    "run_seconds": 6.171,
+    "content": "```json\n{\n    \"name\": \"University of Central Missouri\",\n    \"Former names\": \"University of Central Missouri\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 186,
+      "output_tokens": 28,
+      "total_tokens": 214,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 28,
+        "prompt_tokens": 186,
+        "total_tokens": 214,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 877,
+    "run_seconds": 1.488,
+    "content": "```json\n{}\n```",
+    "usage_metadata": {
+      "input_tokens": 198,
+      "output_tokens": 6,
+      "total_tokens": 204,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 198,
+        "total_tokens": 204,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 878,
+    "run_seconds": 7.661,
+    "content": "```json\n{\n    \"name\": \"UniSea Inn\",\n    \"address\": \"Dutch Harbor, AK\",\n    \"distance\": 71\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 195,
+      "output_tokens": 35,
+      "total_tokens": 230,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 35,
+        "prompt_tokens": 195,
+        "total_tokens": 230,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 879,
+    "run_seconds": 12.556,
+    "content": "```json\n{\n    \"name\": \"The nearest theme park from Missisquoi National Wildlife Refuge, Swanton, VT\",\n    \"address\": \"Missisquoi National Wildlife Refuge, Swanton, VT\",\n    \"Opened\": \"not listed in the provided data\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 204,
+      "output_tokens": 58,
+      "total_tokens": 262,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 58,
+        "prompt_tokens": 204,
+        "total_tokens": 262,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 880,
+    "run_seconds": 12.13,
+    "content": "```json\n{\n    \"name\": \"Greentree Baseball Park\",\n    \"address\": \"Debbie Doolittle's Petting Zoo, Tacoma, WA\",\n    \"Former names\": \"Marshy Ruins of the Vintage Greentree Baseball Park\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 199,
+      "output_tokens": 56,
+      "total_tokens": 255,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 56,
+        "prompt_tokens": 199,
+        "total_tokens": 255,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 881,
+    "run_seconds": 4.466,
+    "content": "```json\n{\n    \"Affiliated university\": \"Weill Cornell Medical College\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 190,
+      "output_tokens": 20,
+      "total_tokens": 210,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 190,
+        "total_tokens": 210,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 882,
+    "run_seconds": 10.86,
+    "content": "```json\n{\n    \"name\": \"Mission Hills Church Park\",\n    \"address\": \"1234 Church Park Drive, San Marcos, CA 92069\",\n    \"Emergency department\": \"not available\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 202,
+      "output_tokens": 50,
+      "total_tokens": 252,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 50,
+        "prompt_tokens": 202,
+        "total_tokens": 252,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 883,
+    "run_seconds": 10.212,
+    "content": "```json\n{\n    \"name\": \"Massachusetts General Hospital\",\n    \"address\": \"55 Fruit St, Boston, MA 02114\",\n    \"Opened\": \"1811\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 208,
+      "output_tokens": 47,
+      "total_tokens": 255,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 47,
+        "prompt_tokens": 208,
+        "total_tokens": 255,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 884,
+    "run_seconds": 11.279,
+    "content": "```json\n{\n    \"name\": \"UIS Greenhouse\",\n    \"address\": \"Springfield, IL\",\n    \"Established\": \"The nearest nature reserve from UIS Greenhouse, Springfield, IL is not listed in the provided data.\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 196,
+      "output_tokens": 52,
+      "total_tokens": 248,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 52,
+        "prompt_tokens": 196,
+        "total_tokens": 248,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 885,
+    "run_seconds": 9.149,
+    "content": "```json\n{\n    \"name\": \"University of Illinois Springfield\",\n    \"address\": \"UIS Greenhouse, Springfield, IL\",\n    \"Established\": \"nineteen ninety-five\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 201,
+      "output_tokens": 42,
+      "total_tokens": 243,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 42,
+        "prompt_tokens": 201,
+        "total_tokens": 243,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 886,
+    "run_seconds": 4.041,
+    "content": "```json\n{\n    \"Mascot\": \"a coyote\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 187,
+      "output_tokens": 18,
+      "total_tokens": 205,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 187,
+        "total_tokens": 205,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 887,
+    "run_seconds": 9.368,
+    "content": "```json\n{\n    \"name\": \"Weisman Art Museum\",\n    \"address\": \"Nokomis Naturescape Garden, Minneapolis, MN\",\n    \"distance\": 30\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 215,
+      "output_tokens": 43,
+      "total_tokens": 258,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 43,
+        "prompt_tokens": 215,
+        "total_tokens": 258,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 888,
+    "run_seconds": 3.616,
+    "content": "```json\n{\n    \"Established\": \"the ten\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 194,
+      "output_tokens": 16,
+      "total_tokens": 210,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 194,
+        "total_tokens": 210,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 889,
+    "run_seconds": 7.879,
+    "content": "```json\n{\n    \"name\": \"Barons Bus Arena\",\n    \"address\": \"Parma, OH\",\n    \"Established\": \"Not available\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 209,
+      "output_tokens": 36,
+      "total_tokens": 245,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 36,
+        "prompt_tokens": 209,
+        "total_tokens": 245,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 890,
+    "run_seconds": 11.705,
+    "content": "```json\n{\n    \"name\": \"Elyria Arts Council\",\n    \"address\": \"121 W 7th St, Elyria, OH 44035\",\n    \"Date opened\": \"Information not available\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 189,
+      "output_tokens": 54,
+      "total_tokens": 243,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 54,
+        "prompt_tokens": 189,
+        "total_tokens": 243,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 891,
+    "run_seconds": 5.744,
+    "content": "```json\n{\n    \"name\": \"Brisbane Stadium\",\n    \"Capacity\": \"thirty thousand\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 204,
+      "output_tokens": 26,
+      "total_tokens": 230,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 26,
+        "prompt_tokens": 204,
+        "total_tokens": 230,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 892,
+    "run_seconds": 5.957,
+    "content": "```json\n{\n    \"name\": \"Rutgers University\",\n    \"Mascot\": \"a chicken\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 196,
+      "output_tokens": 27,
+      "total_tokens": 223,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 27,
+        "prompt_tokens": 196,
+        "total_tokens": 223,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 893,
+    "run_seconds": 5.958,
+    "content": "```json\n{\n    \"name\": \"Memphis Zoo\",\n    \"Date opened\": \"1990\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 206,
+      "output_tokens": 27,
+      "total_tokens": 233,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 27,
+        "prompt_tokens": 206,
+        "total_tokens": 233,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 894,
+    "run_seconds": 6.602,
+    "content": "```json\n{\n    \"name\": \"Bronx Museum of the Arts\",\n    \"Built\": \"nineteen seventy one\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 210,
+      "output_tokens": 30,
+      "total_tokens": 240,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 30,
+        "prompt_tokens": 210,
+        "total_tokens": 240,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 895,
+    "run_seconds": 6.815,
+    "content": "```json\n{\n    \"name\": \"North Carolina Agricultural and Technical State University\",\n    \"Established\": \"1891\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 211,
+      "output_tokens": 31,
+      "total_tokens": 242,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 31,
+        "prompt_tokens": 211,
+        "total_tokens": 242,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 896,
+    "run_seconds": 8.943,
+    "content": "```json\n{\n    \"name\": \"University of Alaska\",\n    \"address\": \"UniSea Inn, Dutch Harbor, AK\",\n    \"Established\": \"1920\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 211,
+      "output_tokens": 41,
+      "total_tokens": 252,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 41,
+        "prompt_tokens": 211,
+        "total_tokens": 252,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 897,
+    "run_seconds": 8.937,
+    "content": "```json\n{\n    \"name\": \"nearest university\",\n    \"address\": \"Hellsgate Farms, Astoria, NY\",\n    \"Established\": \"two thousand and four\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 198,
+      "output_tokens": 41,
+      "total_tokens": 239,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 41,
+        "prompt_tokens": 198,
+        "total_tokens": 239,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 898,
+    "run_seconds": 6.602,
+    "content": "```json\n{\n    \"name\": \"Cleveland Metroparks Zoo\",\n    \"Date opened\": \"1960\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 210,
+      "output_tokens": 30,
+      "total_tokens": 240,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 30,
+        "prompt_tokens": 210,
+        "total_tokens": 240,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 899,
+    "run_seconds": 14.047,
+    "content": "```json\n{\n    \"name\": \"English Street Community Garden\",\n    \"address\": \"English Street Community Garden, New Haven, CT\",\n    \"Opened\": \"The information about the nearest stadium from English Street Community Garden, New Haven, CT and its opening date is not available in the provided records.\"\n}\n```",
+    "usage_metadata": {
+      "input_tokens": 205,
+      "output_tokens": 65,
+      "total_tokens": 270,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 65,
+        "prompt_tokens": 205,
+        "total_tokens": 270,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  }
+]

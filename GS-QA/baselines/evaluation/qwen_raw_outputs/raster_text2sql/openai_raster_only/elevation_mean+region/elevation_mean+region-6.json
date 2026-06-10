@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 176.525316
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 176.525316
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-85.650612 38.266066, -85.654114 38.264469, -85.654139 38.264504, -85.655037 38.265495, -85.65558 38.266093, -85.655674 38.26623, -85.655787 38.26639, -85.655513 38.266522, -85.655401 38.266574, -85.655084 38.266714, -85.654233 38.267108, -85.654056 38.267189, -85.653433 38.267478, -85.654115 38.268193, -85.653608 38.268452, -85.652949 38.268788, -85.652131 38.268962, -85.651688 38.269447, -85.651658 38.269422, -85.651613 38.269378, -85.651364 38.269173, -85.651262 38.269107, -85.651242 38.269097, -85.651135 38.269045, -85.651069 38.269023, -85.650979 38.268993, -85.650854 38.268968, -85.650806 38.268959, -85.650776 38.268953, -85.650726 38.268947, -85.650603 38.268933, -85.650493 38.26892, -85.650778 38.268816, -85.65081 38.268811, -85.651603 38.268405, -85.651614 38.268323, -85.651646 38.268089, -85.652195 38.267836, -85.652108 38.267764, -85.651933 38.267567, -85.650612 38.266066))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).mean AS elevation\nFROM clipped;",
+  "id": "elevation_mean+region-6",
+  "model_output": "```sql\nWITH geometry_source AS (\n  SELECT 'Maryhill Estates, Kentucky'::text AS name, ST_GeomFromText('omitted_large_wkt_907_chars', 4326)::geography AS geom\n)\nSELECT\n  ROUND(AVG(rast_val), 2) AS typical_elevation\nFROM\n  geometry_source,\n  LATERAL ST_DumpAsPolygons(public.dem_us.rast, 1) AS rast(rast_val, geom)\nWHERE\n  ST_Intersects(rast.geom, geometry_source.geom::geometry)\n  AND ST_Contains(geometry_source.geom::geometry, rast.geom);\n```",
+  "predicted_exec": {
+    "error": "missing FROM-clause entry for table \"dem_us\"\nLINE 8:   LATERAL ST_DumpAsPolygons(public.dem_us.rast, 1) AS rast(r...\n                                    ^",
+    "output": []
+  },
+  "predicted_sql": "WITH geometry_source AS (\n  SELECT 'Maryhill Estates, Kentucky'::text AS name, ST_GeomFromText('omitted_large_wkt_907_chars', 4326)::geography AS geom\n)\nSELECT\n  ROUND(AVG(rast_val), 2) AS typical_elevation\nFROM\n  geometry_source,\n  LATERAL ST_DumpAsPolygons(public.dem_us.rast, 1) AS rast(rast_val, geom)\nWHERE\n  ST_Intersects(rast.geom, geometry_source.geom::geometry)\n  AND ST_Contains(geometry_source.geom::geometry, rast.geom);",
+  "predicted_sql_candidates": [
+    "WITH geometry_source AS (\n  SELECT 'Maryhill Estates, Kentucky'::text AS name, ST_GeomFromText('omitted_large_wkt_907_chars', 4326)::geography AS geom\n)\nSELECT\n  ROUND(AVG(rast_val), 2) AS typical_elevation\nFROM\n  geometry_source,\n  LATERAL ST_DumpAsPolygons(public.dem_us.rast, 1) AS rast(rast_val, geom)\nWHERE\n  ST_Intersects(rast.geom, geometry_source.geom::geometry)\n  AND ST_Contains(geometry_source.geom::geometry, rast.geom);"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the typical elevation across Maryhill Estates, Kentucky?",
+  "source_file": "elevation_mean+region.jsonl",
+  "source_stem": "elevation_mean+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 29.412,
+    "total_seconds": 29.413
+  },
+  "usage": {
+    "completion_tokens": 138,
+    "prompt_tokens": 1516,
+    "total_tokens": 1654
+  }
+}

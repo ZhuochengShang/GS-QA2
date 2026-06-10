@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope_degrees": 8.243968
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope_degrees": 8.243968
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-73.963954 40.77439)',4326) AS pt\n),\npatch AS (\n  SELECT ST_Buffer(pt::geography, 100)::geometry AS g FROM origin\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, p.g)) AS rast\n  FROM public.dem_us d\n  JOIN patch p ON ST_Intersects(d.rast, p.g)\n),\nslope_rast AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n)\nSELECT ST_Value(s.rast, 1, o.pt) AS slope_degrees\nFROM slope_rast s, origin o;",
+  "id": "slope+poi-2",
+  "model_output": "```sql\nWITH cafe_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-73.963954, 40.77439), 4326)::geography AS geom\n),\nraster_slope AS (\n  SELECT \n    ST_Slope(\n      ST_Clip(\n        rast, \n        true, \n        ST_Transform(cafe_geom.geom, 4326)::geometry\n      ), \n      1, \n      '32BF'\n    ) AS slope_rast\n  FROM \n    public.dem_us,\n    cafe_geom\n  WHERE \n    ST_Intersects(\n      rast, \n      ST_Transform(cafe_geom.geom, 4326)::geometry\n    )\n)\nSELECT \n  ST_Value(slope_rast, 1) AS slope_angle_degrees\nFROM \n  raster_slope;\n```",
+  "predicted_exec": {
+    "error": "function st_transform(geography, integer) does not exist\nLINE 10:         ST_Transform(cafe_geom.geom, 4326)::geometry\n                 ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH cafe_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-73.963954, 40.77439), 4326)::geography AS geom\n),\nraster_slope AS (\n  SELECT \n    ST_Slope(\n      ST_Clip(\n        rast, \n        true, \n        ST_Transform(cafe_geom.geom, 4326)::geometry\n      ), \n      1, \n      '32BF'\n    ) AS slope_rast\n  FROM \n    public.dem_us,\n    cafe_geom\n  WHERE \n    ST_Intersects(\n      rast, \n      ST_Transform(cafe_geom.geom, 4326)::geometry\n    )\n)\nSELECT \n  ST_Value(slope_rast, 1) AS slope_angle_degrees\nFROM \n  raster_slope;",
+  "predicted_sql_candidates": [
+    "WITH cafe_geom AS (\n  SELECT ST_SetSRID(ST_MakePoint(-73.963954, 40.77439), 4326)::geography AS geom\n),\nraster_slope AS (\n  SELECT \n    ST_Slope(\n      ST_Clip(\n        rast, \n        true, \n        ST_Transform(cafe_geom.geom, 4326)::geometry\n      ), \n      1, \n      '32BF'\n    ) AS slope_rast\n  FROM \n    public.dem_us,\n    cafe_geom\n  WHERE \n    ST_Intersects(\n      rast, \n      ST_Transform(cafe_geom.geom, 4326)::geometry\n    )\n)\nSELECT \n  ST_Value(slope_rast, 1) AS slope_angle_degrees\nFROM \n  raster_slope;"
+  ],
+  "query_type": "raster_only",
+  "question": "What slope angle does the surface have at Cafe Boulud, New York, NY?",
+  "source_file": "slope+poi.jsonl",
+  "source_stem": "slope+poi",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 42.74,
+    "total_seconds": 42.741
+  },
+  "usage": {
+    "completion_tokens": 189,
+    "prompt_tokens": 1617,
+    "total_tokens": 1806
+  }
+}

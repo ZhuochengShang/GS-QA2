@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 67.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 67.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-76.391122 43.300062, -76.413144 43.299305, -76.413752 43.301287, -76.415677 43.301201, -76.415703 43.301271, -76.426945 43.300895, -76.427253 43.306605, -76.445745 43.306184, -76.446204 43.313492, -76.436496 43.313819, -76.436616 43.317707, -76.436699 43.319233, -76.436799 43.322152, -76.437005 43.326001, -76.438548 43.325967, -76.438753 43.329913, -76.430784 43.330148, -76.423326 43.330317, -76.420213 43.330349, -76.419789 43.331766, -76.419994 43.333128, -76.419929 43.333545, -76.421535 43.333358, -76.42217 43.333241, -76.422154 43.333378, -76.423041 43.335131, -76.426002 43.334484, -76.426408 43.335121, -76.425811 43.335222, -76.426048 43.335592, -76.4258 43.335635, -76.425926 43.335839, -76.423582 43.336233, -76.42313 43.338065, -76.421274 43.338399, -76.41851 43.338325, -76.416983 43.338369, -76.415827 43.338424, -76.405349 43.338709, -76.405337 43.338695, -76.404985 43.332507, -76.404831 43.330532, -76.404771 43.330513, -76.404687 43.330447, -76.404593 43.330275, -76.404542 43.330238, -76.404426 43.330229, -76.404314 43.330263, -76.404248 43.330326, -76.404219 43.330383, -76.404201 43.330542, -76.404117 43.33071, -76.404156 43.33092, -76.404147 43.33098, -76.404114 43.331026, -76.403974 43.331109, -76.403892 43.331123, -76.403736 43.331109, -76.403674 43.331083, -76.403622 43.331028, -76.403324 43.33043, -76.403172 43.330298, -76.40297 43.330075, -76.402948 43.330013, -76.402993 43.32982, -76.402942 43.329709, -76.402891 43.32967, -76.402163 43.32948, -76.402027 43.329474, -76.401973 43.329445, -76.40188 43.329342, -76.401789 43.329321, -76.401707 43.329366, -76.401621 43.329518, -76.401592 43.32954, -76.401468 43.329565, -76.401334 43.329638, -76.401275 43.329636, -76.401157 43.329586, -76.400886 43.329293, -76.400829 43.329258, -76.400686 43.329249, -76.400543 43.329221, -76.400352 43.329273, -76.400155 43.329233, -76.399916 43.329214, -76.399676 43.329249, -76.399569 43.329207, -76.399324 43.32906, -76.399108 43.328901, -76.398994 43.328872, -76.398892 43.328693, -76.398809 43.328642, -76.398551 43.328623, -76.398379 43.328483, -76.398216 43.328424, -76.398134 43.328428, -76.397994 43.328477, -76.397839 43.328461, -76.39767 43.328276, -76.397355 43.32778, -76.397334 43.327695, -76.39725 43.327522, -76.397228 43.327385, -76.39723 43.32709, -76.397267 43.32685, -76.397002 43.3265, -76.396932 43.326446, -76.396858 43.326428, -76.396717 43.326471, -76.396669 43.326509, -76.396605 43.326698, -76.396537 43.326804, -76.396374 43.326953, -76.396326 43.326959, -76.396269 43.326932, -76.396162 43.326818, -76.395948 43.326532, -76.395749 43.326417, -76.395698 43.326408, -76.395662 43.326434, -76.395633 43.326526, -76.395566 43.326605, -76.395267 43.326733, -76.395137 43.326732, -76.395036 43.326678, -76.394996 43.326603, -76.394996 43.326551, -76.395041 43.326427, -76.395016 43.326323, -76.394862 43.326244, -76.394655 43.32595, -76.394345 43.325634, -76.394261 43.325521, -76.394289 43.32525, -76.393984 43.324602, -76.393993 43.324504, -76.394035 43.324451, -76.394265 43.324262, -76.394326 43.324188, -76.394298 43.32404, -76.394214 43.3239, -76.394156 43.323748, -76.394222 43.323598, -76.394251 43.32357, -76.394301 43.323397, -76.394342 43.323344, -76.394429 43.323298, -76.394435 43.323101, -76.394376 43.322912, -76.394293 43.32276, -76.394212 43.322707, -76.394016 43.322638, -76.393905 43.32262, -76.393735 43.322713, -76.393688 43.3227, -76.39366 43.322591, -76.393713 43.322454, -76.393715 43.322402, -76.393686 43.322373, -76.393595 43.322354, -76.393504 43.322354, -76.393341 43.322395, -76.393244 43.322382, -76.393174 43.322345, -76.393077 43.322323, -76.393151 43.3222, -76.394151 43.321163, -76.394313 43.320959, -76.394754 43.320499, -76.395361 43.319962, -76.395769 43.31965, -76.396056 43.319465, -76.398762 43.317933, -76.399525 43.317471, -76.399379 43.314858, -76.399109 43.311182, -76.399047 43.309807, -76.398971 43.308727, -76.397946 43.307992, -76.397165 43.308308, -76.397462 43.308539, -76.3973 43.308639, -76.397006 43.308421, -76.396852 43.308525, -76.396826 43.308505, -76.396449 43.30873, -76.39615 43.308538, -76.395998 43.308656, -76.396408 43.308956, -76.39619 43.308989, -76.395936 43.309001, -76.395519 43.309067, -76.395338 43.309069, -76.395379 43.309093, -76.393687 43.30947, -76.393121 43.309819, -76.392146 43.308974, -76.391799 43.308934, -76.391555 43.309075, -76.39076 43.308987, -76.390536 43.306231, -76.39297 43.306539, -76.395616 43.306992, -76.395843 43.306854, -76.396045 43.306698, -76.395624 43.306433, -76.394382 43.30575, -76.390506 43.305866, -76.390169 43.301147, -76.391122 43.300062))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n),\nstats AS (\n  SELECT ST_SummaryStats(ST_Union(rast)) AS s\n  FROM clipped\n)\nSELECT (s).max - (s).min AS elevation\nFROM stats;",
+  "id": "elevation_range+region-8",
+  "model_output": "```sql\nWITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Fulton'\n    AND border_type = 'municipality'\n    AND ST_Intersects(geometry, ST_GeomFromText('POLYGON((...omitted_large_wkt_4605_chars...))', 4326)::geometry)\n),\nclipped_dem AS (\n  SELECT ST_Clip(r.rast, 1, r.geom, true) AS rast\n  FROM public.dem_us r, region_geom\n  WHERE ST_Intersects(r.rast, region_geom.geom)\n),\nelevation_stats AS (\n  SELECT\n    MIN(ST_Value(rast, 1)) AS min_elevation,\n    MAX(ST_Value(rast, 1)) AS max_elevation\n  FROM clipped_dem\n)\nSELECT\n  (max_elevation - min_elevation) AS elevation_spread\nFROM elevation_stats;\n```",
+  "predicted_exec": {
+    "error": "column r.geom does not exist\nLINE 9:   SELECT ST_Clip(r.rast, 1, r.geom, true) AS rast\n                                    ^",
+    "output": []
+  },
+  "predicted_sql": "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Fulton'\n    AND border_type = 'municipality'\n    AND ST_Intersects(geometry, ST_GeomFromText('POLYGON((...omitted_large_wkt_4605_chars...))', 4326)::geometry)\n),\nclipped_dem AS (\n  SELECT ST_Clip(r.rast, 1, r.geom, true) AS rast\n  FROM public.dem_us r, region_geom\n  WHERE ST_Intersects(r.rast, region_geom.geom)\n),\nelevation_stats AS (\n  SELECT\n    MIN(ST_Value(rast, 1)) AS min_elevation,\n    MAX(ST_Value(rast, 1)) AS max_elevation\n  FROM clipped_dem\n)\nSELECT\n  (max_elevation - min_elevation) AS elevation_spread\nFROM elevation_stats;",
+  "predicted_sql_candidates": [
+    "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Fulton'\n    AND border_type = 'municipality'\n    AND ST_Intersects(geometry, ST_GeomFromText('POLYGON((...omitted_large_wkt_4605_chars...))', 4326)::geometry)\n),\nclipped_dem AS (\n  SELECT ST_Clip(r.rast, 1, r.geom, true) AS rast\n  FROM public.dem_us r, region_geom\n  WHERE ST_Intersects(r.rast, region_geom.geom)\n),\nelevation_stats AS (\n  SELECT\n    MIN(ST_Value(rast, 1)) AS min_elevation,\n    MAX(ST_Value(rast, 1)) AS max_elevation\n  FROM clipped_dem\n)\nSELECT\n  (max_elevation - min_elevation) AS elevation_spread\nFROM elevation_stats;"
+  ],
+  "query_type": "raster_only",
+  "question": "How much elevation spread does Fulton, Oswego County, New York have?",
+  "source_file": "elevation_range+region.jsonl",
+  "source_stem": "elevation_range+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 42.408,
+    "total_seconds": 42.409
+  },
+  "usage": {
+    "completion_tokens": 199,
+    "prompt_tokens": 1520,
+    "total_tokens": 1719
+  }
+}

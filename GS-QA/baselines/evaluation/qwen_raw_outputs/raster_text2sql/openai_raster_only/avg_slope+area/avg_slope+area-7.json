@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 5.411852
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 5.411852
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-87.431229 41.348168, -87.430556 41.310883, -87.430538 41.310076, -87.430511 41.308642, -87.430445 41.307637, -87.430381 41.304476, -87.430372 41.304169, -87.430367 41.303997, -87.430355 41.30325, -87.430351 41.302944, -87.430345 41.302525, -87.430327 41.301269, -87.430322 41.300851, -87.430321 41.300838, -87.430321 41.3008, -87.430321 41.300788, -87.43032 41.300753, -87.430319 41.300648, -87.430319 41.300614, -87.430297 41.2988, -87.430297 41.298786, -87.430297 41.298774, -87.430294 41.298744, -87.430293 41.298731, -87.430277 41.298575, -87.430246 41.298272, -87.430243 41.298109, -87.430241 41.297954, -87.429818 41.283543, -87.429811 41.283339, -87.42979 41.282727, -87.429783 41.282524, -87.429184 41.260717, -87.429333 41.260308, -87.429472 41.246197, -87.429434 41.246146, -87.429083 41.18814, -87.42887 41.188143, -87.428969 41.173439, -87.429182 41.173439, -87.429201 41.168078, -87.441078 41.173096, -87.447274 41.174433, -87.448476 41.174151, -87.45874 41.170242, -87.480095 41.170082, -87.526588 41.165892, -87.526509 41.177383, -87.526453 41.189784, -87.526705 41.298068, -87.526381 41.348431, -87.455577 41.348257, -87.450634 41.348241, -87.450171 41.348191, -87.449201 41.348235, -87.444905 41.348217, -87.443473 41.348212, -87.441024 41.348203, -87.434207 41.348179, -87.433677 41.348177, -87.431229 41.348168))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).mean AS slope\nFROM region_slope;",
+  "id": "avg_slope+area-7",
+  "model_output": "```sql\nWITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'West Creek Township'\n    AND border_type ILIKE 'township'\n    AND ST_Intersects(geometry, ST_GeomFromText('POLYGON((...omitted_large_wkt_1342_chars...))', 4326)::geometry)\n),\nraster_subset AS (\n  SELECT\n    ST_Clip(r.rast, (SELECT geom FROM region_geom), TRUE) AS clipped_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(r.rast, (SELECT geom FROM region_geom))\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM raster_subset\n)\nSELECT\n  ST_Stats(slope_rast).mean AS avg_slope\nFROM slope_raster s;\n```",
+  "predicted_exec": {
+    "error": "syntax error at or near \".\"\nLINE 20:   ST_Stats(slope_rast).mean AS avg_slope\n                               ^",
+    "output": []
+  },
+  "predicted_sql": "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'West Creek Township'\n    AND border_type ILIKE 'township'\n    AND ST_Intersects(geometry, ST_GeomFromText('POLYGON((...omitted_large_wkt_1342_chars...))', 4326)::geometry)\n),\nraster_subset AS (\n  SELECT\n    ST_Clip(r.rast, (SELECT geom FROM region_geom), TRUE) AS clipped_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(r.rast, (SELECT geom FROM region_geom))\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM raster_subset\n)\nSELECT\n  ST_Stats(slope_rast).mean AS avg_slope\nFROM slope_raster s;",
+  "predicted_sql_candidates": [
+    "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'West Creek Township'\n    AND border_type ILIKE 'township'\n    AND ST_Intersects(geometry, ST_GeomFromText('POLYGON((...omitted_large_wkt_1342_chars...))', 4326)::geometry)\n),\nraster_subset AS (\n  SELECT\n    ST_Clip(r.rast, (SELECT geom FROM region_geom), TRUE) AS clipped_rast\n  FROM public.dem_us r\n  WHERE ST_Intersects(r.rast, (SELECT geom FROM region_geom))\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(clipped_rast, 1, '32BF') AS slope_rast\n  FROM raster_subset\n)\nSELECT\n  ST_Stats(slope_rast).mean AS avg_slope\nFROM slope_raster s;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the avg slope value within West Creek Township, Lake County, Indiana?",
+  "source_file": "avg_slope+area.jsonl",
+  "source_stem": "avg_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 42.589,
+    "total_seconds": 42.59
+  },
+  "usage": {
+    "completion_tokens": 197,
+    "prompt_tokens": 1520,
+    "total_tokens": 1717
+  }
+}

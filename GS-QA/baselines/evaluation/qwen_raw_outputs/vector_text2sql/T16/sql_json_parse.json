@@ -1,0 +1,502 @@
+[
+  {
+    "id": 2600,
+    "content": "```json\n{\n    \"name\": \"Cafe Peanut\",\n    \"address\": \"Jersey City, NJ\"\n}\n```",
+    "run_seconds": 5.997
+  },
+  {
+    "id": 2601,
+    "content": "```json\n{\n    \"name\": \"Hampton Inn & Suites by Hilton Peachtree City\",\n    \"address\": \"1000 Industrial Park Dr, Peachtree City, GA 30269\",\n    \"distance\": 20\n}\n```",
+    "run_seconds": 12.138
+  },
+  {
+    "id": 2602,
+    "content": "```json\n{\n    \"name\": \"No hotel found\",\n    \"address\": \"\",\n    \"distance\": 170\n}\n```",
+    "run_seconds": 6.602
+  },
+  {
+    "id": 2603,
+    "content": "```json\n{\n    \"name\": \"Institute of Contemporary Art\",\n    \"address\": \"201 S 12th St, Philadelphia, PA 19107\",\n    \"distance\": 60,\n    \"azimuth_angle\": 135\n}\n```",
+    "run_seconds": 13.416
+  },
+  {
+    "id": 2604,
+    "content": "```json\n{\n    \"name\": \"Cyrus Dallin Art Museum\",\n    \"address\": \"1525 Mass. Ave, Arlington, MA 02476\",\n    \"distance\": 170\n}\n```",
+    "run_seconds": 11.497
+  },
+  {
+    "id": 2605,
+    "content": "```json\n{\n    \"name\": \"Aleo\"\n}\n```",
+    "run_seconds": 3.403
+  },
+  {
+    "id": 2606,
+    "content": "```json\n{\n    \"name\": \"Art Clinic\",\n    \"address\": \"New York, NY\",\n    \"distance\": 130\n}\n```",
+    "run_seconds": 7.453
+  },
+  {
+    "id": 2607,
+    "content": "```json\n{\n    \"name\": \"Maryland Science Center\",\n    \"address\": \"Baltimore, MD\",\n    \"distance\": 20\n}\n```",
+    "run_seconds": 7.666
+  },
+  {
+    "id": 2608,
+    "content": "```json\n{\n    \"name\": \"The Waterfront Restaurant\",\n    \"address\": \"New London, CT\",\n    \"distance\": 150\n}\n```",
+    "run_seconds": 7.879
+  },
+  {
+    "id": 2609,
+    "content": "```json\n{\n    \"name\": \"Shavers Creek Environmental Center\",\n    \"address\": \"1200 Shavers Creek Road, Petersburg, PA 17569\",\n    \"distance\": 100\n}\n```",
+    "run_seconds": 11.075
+  },
+  {
+    "id": 2610,
+    "content": "```json\n{\n    \"address\": \"San Francisco\"\n}\n```",
+    "run_seconds": 3.404
+  },
+  {
+    "id": 2611,
+    "content": "```json\n{\n    \"name\": \"Holiday Inn Express & Suites Ashtabula-Geneva\",\n    \"address\": \"1100 W Main St, Austinburg, OH 44906\",\n    \"distance\": 90\n}\n```",
+    "run_seconds": 12.351
+  },
+  {
+    "id": 2612,
+    "content": "```json\n{\n    \"name\": \"McDonald's\",\n    \"address\": \"Intersection of Campus Drive and Jamboree Road, Irvine\",\n    \"distance\": 100\n}\n```",
+    "run_seconds": 9.37
+  },
+  {
+    "id": 2613,
+    "content": "```json\n{\n    \"name\": \"Willamette University\",\n    \"address\": \"1285 Lincoln St, Portland, OR 97202, USA\",\n    \"distance\": 30\n}\n```",
+    "run_seconds": 10.648
+  },
+  {
+    "id": 2614,
+    "content": "```json\n{\n    \"name\": \"Aquarium Outfitters Carolina\",\n    \"address\": \"Wake Forest, NC\",\n    \"azimuth_angle\": 225\n}\n```",
+    "run_seconds": 8.731
+  },
+  {
+    "id": 2615,
+    "content": "```json\n{\n    \"name\": \"American Folk Art Museum\",\n    \"address\": \"New York, NY\"\n}\n```",
+    "run_seconds": 5.956
+  },
+  {
+    "id": 2616,
+    "content": "```json\n{\n    \"name\": \"gallery\",\n    \"azimuth_angle\": 125\n}\n```",
+    "run_seconds": 5.538
+  },
+  {
+    "id": 2617,
+    "content": "```json\n{\n    \"name\": \"Fairfield Inn & Suites Baltimore Downtown/Inner Harbor\"\n}\n```",
+    "run_seconds": 5.106
+  },
+  {
+    "id": 2618,
+    "content": "```json\n{\n    \"name\": \"McDonald's\",\n    \"address\": \"Siler City, North Carolina\"\n}\n```",
+    "run_seconds": 6.177
+  },
+  {
+    "id": 2619,
+    "content": "```json\n{\n    \"name\": \"A fast food restaurant\",\n    \"address\": \"Los Angeles, California\"\n}\n```",
+    "run_seconds": 5.963
+  },
+  {
+    "id": 2620,
+    "content": "```json\n{\n    \"name\": \"caf\u00e9\",\n    \"address\": \"Springfield\",\n    \"distance\": 120\n}\n```",
+    "run_seconds": 7.022
+  },
+  {
+    "id": 2621,
+    "content": "```json\n{\n    \"name\": \"\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 5.325
+  },
+  {
+    "id": 2622,
+    "content": "```json\n{\n    \"name\": \"Holiday Inn Express & Suites Chicago O'Hare Airport North\"\n}\n```",
+    "run_seconds": 5.317
+  },
+  {
+    "id": 2623,
+    "content": "```json\n{\n    \"name\": \"Caf\u00e9\",\n    \"address\": \"Providence, RI\"\n}\n```",
+    "run_seconds": 5.754
+  },
+  {
+    "id": 2624,
+    "content": "```json\n{\n    \"name\": \"The Restaurant at the Atherton Hotel\",\n    \"address\": \"Atherton, CA\"\n}\n```",
+    "run_seconds": 6.605
+  },
+  {
+    "id": 2625,
+    "content": "```json\n{\n    \"name\": \"Caf\u00e9 at Stroudsburg\"\n}\n```",
+    "run_seconds": 4.47
+  },
+  {
+    "id": 2626,
+    "content": "```json\n{\n    \"name\": \"International Circus Hall of Fame\",\n    \"address\": \"Peru, IN\",\n    \"distance\": 40\n}\n```",
+    "run_seconds": 7.883
+  },
+  {
+    "id": 2627,
+    "content": "```json\n{\n    \"name\": \"The Sausalito House\",\n    \"address\": \"1250 Bridgeway, Sausalito, CA 94965, USA\"\n}\n```",
+    "run_seconds": 9.799
+  },
+  {
+    "id": 2628,
+    "content": "```json\n{\n    \"name\": \"McDonald's\"\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 2629,
+    "content": "```json\n{\n    \"name\": \"The Drought Tolerant Garden Caf\u00e9\",\n    \"address\": \"Drought Tolerant Garden, Glendora, CA\"\n}\n```",
+    "run_seconds": 8.521
+  },
+  {
+    "id": 2630,
+    "content": "```json\n{\n    \"name\": \"Lucama, North Carolina\",\n    \"address\": \"Lucama, North Carolina\"\n}\n```",
+    "run_seconds": 6.385
+  },
+  {
+    "id": 2631,
+    "content": "```json\n{\n    \"name\": \"Caf\u00e9 locations\",\n    \"address\": \"David C. Driskell Center, College Park, MD to Montrose Woods Park, Rockville, MD\",\n    \"distance\": 80\n}\n```",
+    "run_seconds": 11.502
+  },
+  {
+    "id": 2632,
+    "content": "```json\n{\n    \"name\": \"gallery\",\n    \"address\": \"Lancaster, Pennsylvania\"\n}\n```",
+    "run_seconds": 5.533
+  },
+  {
+    "id": 2633,
+    "content": "```json\n{\n    \"name\": \"Ogunquit Museum of Art\"\n}\n```",
+    "run_seconds": 4.256
+  },
+  {
+    "id": 2634,
+    "content": "```json\n{\n    \"name\": \"Cyrus Dallin Art Museum\"\n}\n```",
+    "run_seconds": 4.682
+  },
+  {
+    "id": 2635,
+    "content": "```json\n{\n    \"name\": \"Albuquerque Museum\",\n    \"address\": \"1000 Mountain Rd NW, Albuquerque, NM 87104\"\n}\n```",
+    "run_seconds": 8.518
+  },
+  {
+    "id": 2636,
+    "content": "```json\n{\n    \"name\": \"Museum of North Carolina Art\",\n    \"address\": \"2110 Blue Ridge Road, Asheville, NC 28803\",\n    \"distance\": 68\n}\n```",
+    "run_seconds": 10.858
+  },
+  {
+    "id": 2637,
+    "content": "```json\n{\n    \"name\": \"Hershey Art Gallery\",\n    \"address\": \"Harrisburg, Pennsylvania\",\n    \"distance\": 80\n}\n```",
+    "run_seconds": 8.097
+  },
+  {
+    "id": 2638,
+    "content": "```json\n{\n    \"name\": \"University of the Pacific\",\n    \"address\": \"3501 Pacific Ave, Stockton, CA 95211, USA\"\n}\n```",
+    "run_seconds": 9.159
+  },
+  {
+    "id": 2639,
+    "content": "```json\n{\n    \"name\": \"Bayonne Museum\",\n    \"address\": \"233 Washington Street, Bayonne, NJ 07002\"\n}\n```",
+    "run_seconds": 8.309
+  },
+  {
+    "id": 2640,
+    "content": "```json\n{\n    \"name\": \"Red Robin Gourmet Burgers\",\n    \"address\": \"Bel Air, MD\",\n    \"distance\": 110,\n    \"azimuth_angle\": 45\n}\n```",
+    "run_seconds": 10.439
+  },
+  {
+    "id": 2641,
+    "content": "```json\n{\n    \"name\": \"Dinosaur Rock\",\n    \"address\": \"English Street Community Garden, New Haven, CT\"\n}\n```",
+    "run_seconds": 6.812
+  },
+  {
+    "id": 2642,
+    "content": "```json\n{\n    \"name\": \"No fast food restaurants found\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 6.605
+  },
+  {
+    "id": 2643,
+    "content": "```json\n{\n    \"name\": \"Chipotle\"\n}\n```",
+    "run_seconds": 3.405
+  },
+  {
+    "id": 2644,
+    "content": "```json\n{\n    \"name\": \"hotel\",\n    \"address\": \"Rosedale, Maryland\",\n    \"distance\": 130\n}\n```",
+    "run_seconds": 7.45
+  },
+  {
+    "id": 2645,
+    "content": "```json\n{\n    \"name\": \"Caf\u00e9\",\n    \"address\": \"Not specified\",\n    \"distance\": 160\n}\n```",
+    "run_seconds": 7.243
+  },
+  {
+    "id": 2646,
+    "content": "```json\n{\n    \"name\": \"Starbucks\",\n    \"address\": \"Miami Shores, FL\",\n    \"distance\": 9,\n    \"azimuth_angle\": 180\n}\n```",
+    "run_seconds": 9.587
+  },
+  {
+    "id": 2647,
+    "content": "```json\n{\n    \"name\": \"McDonald's\",\n    \"address\": \"1234 Peachtree Road, Atlanta, GA\"\n}\n```",
+    "run_seconds": 7.243
+  },
+  {
+    "id": 2648,
+    "content": "```json\n{\n    \"name\": \"Umstead State Park\",\n    \"address\": \"4400 Park Office Rd, Cary, NC 27513\"\n}\n```",
+    "run_seconds": 8.728
+  },
+  {
+    "id": 2649,
+    "content": "```json\n{\n    \"name\": \"McDonald's\",\n    \"address\": \"New York, NY\"\n}\n```",
+    "run_seconds": 5.753
+  },
+  {
+    "id": 2650,
+    "content": "```json\n{\n    \"name\": \"A fast food restaurant\",\n    \"address\": \"Cary, Illinois\"\n}\n```",
+    "run_seconds": 5.96
+  },
+  {
+    "id": 2651,
+    "content": "```json\n{\n    \"name\": \"One\",\n    \"address\": \"1000 Main Street, New York, NY\",\n    \"distance\": 180\n}\n```",
+    "run_seconds": 8.73
+  },
+  {
+    "id": 2652,
+    "content": "```json\n{\n    \"name\": \"Morristown & Jefferson Township Museum\",\n    \"address\": \"Morris Plains, New Jersey\"\n}\n```",
+    "run_seconds": 7.031
+  },
+  {
+    "id": 2653,
+    "content": "```json\n{\n    \"name\": \"LEGOLAND Discovery Center Dallas/Fort Worth\",\n    \"address\": \"1000 Birdville Pkwy, Grapevine, TX 75301\",\n    \"distance\": 10\n}\n```",
+    "run_seconds": 12.143
+  },
+  {
+    "id": 2654,
+    "content": "```json\n{\n    \"name\": \"A fast food restaurant\",\n    \"address\": \"Philadelphia, Pennsylvania\",\n    \"distance\": 160\n}\n```",
+    "run_seconds": 7.67
+  },
+  {
+    "id": 2655,
+    "content": "```json\n{\n    \"name\": \"McAlister\u2019s Deli\",\n    \"address\": \"Address not provided\",\n    \"distance\": 8\n}\n```",
+    "run_seconds": 7.669
+  },
+  {
+    "id": 2656,
+    "content": "```json\n{\n    \"name\": \"Cafe Two07\"\n}\n```",
+    "run_seconds": 4.043
+  },
+  {
+    "id": 2657,
+    "content": "```json\n{\n    \"name\": \"Five Wells Roping Rodeo Arena\"\n}\n```",
+    "run_seconds": 4.682
+  },
+  {
+    "id": 2658,
+    "content": "```json\n{\n    \"name\": \"restaurant\",\n    \"address\": \"along the travel path toward Paintball Jungle, American Canyon, CA from the View Lounge, San Francisco, CA\",\n    \"distance\": 8\n}\n```",
+    "run_seconds": 10.646
+  },
+  {
+    "id": 2659,
+    "content": "```json\n{\n    \"name\": \"A fast food restaurant\",\n    \"address\": \"Newark, New Jersey\",\n    \"distance\": 40\n}\n```",
+    "run_seconds": 7.884
+  },
+  {
+    "id": 2660,
+    "content": "```json\n{\n    \"name\": \"restaurant\"\n}\n```",
+    "run_seconds": 3.192
+  },
+  {
+    "id": 2661,
+    "content": "```json\n{\n    \"name\": \"Fred Crabtree Park\",\n    \"address\": \"Herndon, Virginia\"\n}\n```",
+    "run_seconds": 5.96
+  },
+  {
+    "id": 2662,
+    "content": "```json\n{\n    \"name\": \"Bristol History Museum\"\n}\n```",
+    "run_seconds": 3.83
+  },
+  {
+    "id": 2663,
+    "content": "```json\n{\n    \"name\": \"Nyack Museum\"\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 2664,
+    "content": "```json\n{\n    \"name\": \"hotel near Route 128\",\n    \"address\": \"Wrentham, MA\"\n}\n```",
+    "run_seconds": 7.024
+  },
+  {
+    "id": 2665,
+    "content": "```json\n{\n    \"name\": \"restaurant\",\n    \"address\": \"along the route towards MVMCC, Novato, CA\",\n    \"distance\": 130\n}\n```",
+    "run_seconds": 8.947
+  },
+  {
+    "id": 2666,
+    "content": "```json\n{\n    \"name\": \"Money Museum\",\n    \"address\": \"224 South Columbus Drive, Chicago, IL 60604\",\n    \"distance\": 60,\n    \"azimuth_angle\": 315\n}\n```",
+    "run_seconds": 12.141
+  },
+  {
+    "id": 2667,
+    "content": "```json\n[\n    {\n        \"name\": \"The Foundry\",\n        \"address\": \"Athens, GA\"\n    },\n    {\n        \"name\": \"The Varsity\",\n        \"address\": \"Atlanta, GA\"\n    },\n    {\n        \"name\": \"Baja Fresh\",\n        \"address\": \"Atlanta, GA\"\n    }\n]\n```",
+    "run_seconds": 15.977
+  },
+  {
+    "id": 2668,
+    "content": "```json\n{\n    \"name\": \"Restaurant in Staunton\",\n    \"address\": \"Staunton, VA\",\n    \"distance\": 170\n}\n```",
+    "run_seconds": 8.522
+  },
+  {
+    "id": 2669,
+    "content": "```json\n{\n    \"name\": \"Covid Testing (PCR 30 mins)\",\n    \"address\": \"Los Angeles, CA\",\n    \"distance\": 100\n}\n```",
+    "run_seconds": 8.947
+  },
+  {
+    "id": 2670,
+    "content": "```json\n{\n    \"name\": \"aquarium\",\n    \"address\": \"along the travel path toward Forest Glen Historic Railroad Station, Silver Spring, MD from Cal, Sr.'s Yard, Aberdeen, MD\",\n    \"distance\": 40\n}\n```",
+    "run_seconds": 11.922
+  },
+  {
+    "id": 2671,
+    "content": "```json\n{\n    \"name\": \"A fast food restaurant\",\n    \"address\": \"Springfield, Massachusetts\",\n    \"distance\": 20\n}\n```",
+    "run_seconds": 7.67
+  },
+  {
+    "id": 2672,
+    "content": "```json\n{\n    \"name\": \"Port City Java Coffeehouse Caf\u00e8\"\n}\n```",
+    "run_seconds": 4.47
+  },
+  {
+    "id": 2673,
+    "content": "```json\n{\n    \"name\": \"La Playa Taqueria\",\n    \"address\": \"\"\n}\n```",
+    "run_seconds": 5.383
+  },
+  {
+    "id": 2674,
+    "content": "```json\n{\n    \"name\": \"Jacksonville\"\n}\n```",
+    "run_seconds": 3.405
+  },
+  {
+    "id": 2675,
+    "content": "```json\n{\n    \"name\": \"museum\",\n    \"address\": \"Malvern, Pennsylvania\"\n}\n```",
+    "run_seconds": 5.534
+  },
+  {
+    "id": 2676,
+    "content": "```json\n{\n    \"name\": \"Hotel\",\n    \"address\": \"Not specified\",\n    \"distance\": 12,\n    \"azimuth_angle\": 90\n}\n```",
+    "run_seconds": 8.728
+  },
+  {
+    "id": 2677,
+    "content": "```json\n{\n    \"name\": \"de Saissure Gallery\"\n}\n```",
+    "run_seconds": 4.05
+  },
+  {
+    "id": 2678,
+    "content": "```json\n{\n    \"name\": \"museum\",\n    \"address\": \"Freeport, Nassau County, New York\"\n}\n```",
+    "run_seconds": 6.599
+  },
+  {
+    "id": 2679,
+    "content": "```json\n{\n    \"name\": \"McDonald's\",\n    \"address\": \"Waterbury, Connecticut\"\n}\n```",
+    "run_seconds": 5.754
+  },
+  {
+    "id": 2680,
+    "content": "```json\n{\n    \"name\": \"Kalamazoo, Michigan\",\n    \"address\": \"Kalamazoo, MI, USA\"\n}\n```",
+    "run_seconds": 7.238
+  },
+  {
+    "id": 2681,
+    "content": "```json\n{\n    \"name\": \"The Corner Store\",\n    \"address\": \"Berryville, Virginia\"\n}\n```",
+    "run_seconds": 5.753
+  },
+  {
+    "id": 2682,
+    "content": "```json\n{\n    \"name\": \"Alta Vista Museum of Art\"\n}\n```",
+    "run_seconds": 4.256
+  },
+  {
+    "id": 2683,
+    "content": "```json\n{\n    \"name\": \"Gary Lapelusa Landscaping LLC\",\n    \"address\": \"Bayonne, NJ\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 8.301
+  },
+  {
+    "id": 2684,
+    "content": "```json\n{\n    \"name\": \"gallery\",\n    \"address\": \"New York, NY\"\n}\n```",
+    "run_seconds": 5.323
+  },
+  {
+    "id": 2685,
+    "content": "```json\n{\n    \"name\": \"No results available\",\n    \"address\": \"\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 6.172
+  },
+  {
+    "id": 2686,
+    "content": "```json\n{\n    \"name\": \"Top of the Rock\",\n    \"address\": \"30 Rockefeller Center, New York, NY 10112\",\n    \"distance\": 20000,\n    \"azimuth_angle\": 315\n}\n```",
+    "run_seconds": 12.986
+  },
+  {
+    "id": 2687,
+    "content": "```json\n{\n    \"name\": \"Caf\u00e9\",\n    \"address\": \"Not specified\",\n    \"distance\": 45\n}\n```",
+    "run_seconds": 7.024
+  },
+  {
+    "id": 2688,
+    "content": "```json\n{\n    \"name\": \"Bronx Zoo\",\n    \"address\": \"2300 Southern Blvd, Bronx, NY 10460\",\n    \"count\": 1,\n    \"distance\": 60\n}\n```",
+    "run_seconds": 11.496
+  },
+  {
+    "id": 2689,
+    "content": "```json\n{\n    \"name\": \"Odessa\",\n    \"address\": \"Odessa, TX\"\n}\n```",
+    "run_seconds": 5.534
+  },
+  {
+    "id": 2690,
+    "content": "```json\n{\n    \"name\": \"Children's Hospital at Montefiore\",\n    \"address\": \"2950 Bedford Park Blvd, Bronx, NY 10467\",\n    \"distance\": 90\n}\n```",
+    "run_seconds": 11.076
+  },
+  {
+    "id": 2691,
+    "content": "```json\n{\n    \"name\": \"Stransky Nature Trails\",\n    \"address\": \"Stransky Nature Trails, Warren Township, NJ\",\n    \"distance\": 110\n}\n```",
+    "run_seconds": 9.366
+  },
+  {
+    "id": 2692,
+    "content": "```json\n{\n    \"name\": \"Caf\u00e9\"\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 2693,
+    "content": "```json\n{\n    \"name\": \"Wolfeboro Chamber of Commerce\",\n    \"address\": \"Wolfeboro Chamber of Commerce, NH\"\n}\n```",
+    "run_seconds": 7.667
+  },
+  {
+    "id": 2694,
+    "content": "```json\n{\n    \"address\": \"Somers, NY\"\n}\n```",
+    "run_seconds": 3.83
+  },
+  {
+    "id": 2695,
+    "content": "```json\n{\n    \"name\": \"Annapolis\"\n}\n```",
+    "run_seconds": 3.617
+  },
+  {
+    "id": 2696,
+    "content": "```json\n{\n    \"name\": \"Hyatt Regency San Francisco\",\n    \"address\": \"100 Mission Street, San Francisco, CA 94105, USA\"\n}\n```",
+    "run_seconds": 9.372
+  },
+  {
+    "id": 2697,
+    "content": "```json\n{\n    \"name\": \"restaurant\",\n    \"address\": \"Los Angeles, CA\"\n}\n```",
+    "run_seconds": 5.321
+  },
+  {
+    "id": 2698,
+    "content": "```json\n{\n    \"name\": \"The Slanted Door\",\n    \"address\": \"1886 Post St, San Francisco, CA 94115, USA\"\n}\n```",
+    "run_seconds": 9.161
+  },
+  {
+    "id": 2699,
+    "content": "```json\n{\n    \"name\": \"No relevant results\",\n    \"address\": \"N/A\",\n    \"count\": 0\n}\n```",
+    "run_seconds": 6.812
+  }
+]

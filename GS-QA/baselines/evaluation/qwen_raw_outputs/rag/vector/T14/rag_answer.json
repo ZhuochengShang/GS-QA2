@@ -1,0 +1,2102 @@
+[
+  {
+    "id": 2400,
+    "run_seconds": 3.006,
+    "content": "There is no coffee shop listed in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 1600,
+      "output_tokens": 12,
+      "total_tokens": 1612,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1600,
+        "total_tokens": 1612,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2401,
+    "run_seconds": 0.981,
+    "content": "Troy",
+    "usage_metadata": {
+      "input_tokens": 1311,
+      "output_tokens": 3,
+      "total_tokens": 1314,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1311,
+        "total_tokens": 1314,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2402,
+    "run_seconds": 1.115,
+    "content": "No.",
+    "usage_metadata": {
+      "input_tokens": 1819,
+      "output_tokens": 3,
+      "total_tokens": 1822,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1819,
+        "total_tokens": 1822,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2403,
+    "run_seconds": 5.373,
+    "content": "There is no emergency hospital within 50 kilometers from Blue Ocean Discovery Center, Hampton, NH.",
+    "usage_metadata": {
+      "input_tokens": 2535,
+      "output_tokens": 21,
+      "total_tokens": 2556,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 2535,
+        "total_tokens": 2556,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2404,
+    "run_seconds": 1.55,
+    "content": "Regina's Mediterranean Restaurant",
+    "usage_metadata": {
+      "input_tokens": 1018,
+      "output_tokens": 6,
+      "total_tokens": 1024,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 1018,
+        "total_tokens": 1024,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2405,
+    "run_seconds": 1.295,
+    "content": "Irvington",
+    "usage_metadata": {
+      "input_tokens": 1599,
+      "output_tokens": 4,
+      "total_tokens": 1603,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1599,
+        "total_tokens": 1603,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2406,
+    "run_seconds": 2.022,
+    "content": "Tony Rigatoni's Italian Kitchen",
+    "usage_metadata": {
+      "input_tokens": 1317,
+      "output_tokens": 8,
+      "total_tokens": 1325,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 1317,
+        "total_tokens": 1325,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2407,
+    "run_seconds": 1.457,
+    "content": "No.",
+    "usage_metadata": {
+      "input_tokens": 2206,
+      "output_tokens": 3,
+      "total_tokens": 2209,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2206,
+        "total_tokens": 2209,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2408,
+    "run_seconds": 2.777,
+    "content": "There is no emergency hospital listed in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 987,
+      "output_tokens": 12,
+      "total_tokens": 999,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 987,
+        "total_tokens": 999,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2409,
+    "run_seconds": 0.941,
+    "content": "Yes.",
+    "usage_metadata": {
+      "input_tokens": 1181,
+      "output_tokens": 3,
+      "total_tokens": 1184,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1181,
+        "total_tokens": 1184,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2410,
+    "run_seconds": 2.686,
+    "content": "None of the provided records indicate an emergency hospital.",
+    "usage_metadata": {
+      "input_tokens": 1286,
+      "output_tokens": 11,
+      "total_tokens": 1297,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1286,
+        "total_tokens": 1297,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2411,
+    "run_seconds": 2.712,
+    "content": "None of the provided records indicate a Belgian restaurant.",
+    "usage_metadata": {
+      "input_tokens": 1336,
+      "output_tokens": 11,
+      "total_tokens": 1347,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1336,
+        "total_tokens": 1347,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2412,
+    "run_seconds": 1.393,
+    "content": "McDonald's",
+    "usage_metadata": {
+      "input_tokens": 1973,
+      "output_tokens": 4,
+      "total_tokens": 1977,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1973,
+        "total_tokens": 1977,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2413,
+    "run_seconds": 1.771,
+    "content": "Charlton Historical Society Museum",
+    "usage_metadata": {
+      "input_tokens": 1026,
+      "output_tokens": 7,
+      "total_tokens": 1033,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 1026,
+        "total_tokens": 1033,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2414,
+    "run_seconds": 2.78,
+    "content": "None of the provided records indicate an emergency hospital.",
+    "usage_metadata": {
+      "input_tokens": 1706,
+      "output_tokens": 11,
+      "total_tokens": 1717,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1706,
+        "total_tokens": 1717,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2415,
+    "run_seconds": 2.947,
+    "content": "None of the provided records indicate an emergency hospital.",
+    "usage_metadata": {
+      "input_tokens": 1567,
+      "output_tokens": 11,
+      "total_tokens": 1578,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1567,
+        "total_tokens": 1578,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2416,
+    "run_seconds": 2.674,
+    "content": "None of the provided records indicate an Indian restaurant.",
+    "usage_metadata": {
+      "input_tokens": 1286,
+      "output_tokens": 11,
+      "total_tokens": 1297,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1286,
+        "total_tokens": 1297,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2417,
+    "run_seconds": 5.299,
+    "content": "No emergency hospital found within 190 kilometers of Smokestack Pottery, Fort Collins, CO.",
+    "usage_metadata": {
+      "input_tokens": 2121,
+      "output_tokens": 22,
+      "total_tokens": 2143,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 2121,
+        "total_tokens": 2143,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2418,
+    "run_seconds": 1.503,
+    "content": "Children's Museum of Houston",
+    "usage_metadata": {
+      "input_tokens": 942,
+      "output_tokens": 6,
+      "total_tokens": 948,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 942,
+        "total_tokens": 948,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2419,
+    "run_seconds": 0.892,
+    "content": "Yes.",
+    "usage_metadata": {
+      "input_tokens": 998,
+      "output_tokens": 3,
+      "total_tokens": 1001,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 998,
+        "total_tokens": 1001,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2420,
+    "run_seconds": 0.88,
+    "content": "No.",
+    "usage_metadata": {
+      "input_tokens": 914,
+      "output_tokens": 3,
+      "total_tokens": 917,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 914,
+        "total_tokens": 917,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2421,
+    "run_seconds": 3.368,
+    "content": "There is no emergency hospital listed in the provided data.",
+    "usage_metadata": {
+      "input_tokens": 2280,
+      "output_tokens": 12,
+      "total_tokens": 2292,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 2280,
+        "total_tokens": 2292,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2422,
+    "run_seconds": 1.77,
+    "content": "None found.",
+    "usage_metadata": {
+      "input_tokens": 2515,
+      "output_tokens": 4,
+      "total_tokens": 2519,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 2515,
+        "total_tokens": 2519,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2423,
+    "run_seconds": 1.083,
+    "content": "No.",
+    "usage_metadata": {
+      "input_tokens": 1663,
+      "output_tokens": 3,
+      "total_tokens": 1666,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1663,
+        "total_tokens": 1666,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2424,
+    "run_seconds": 1.742,
+    "content": "San Diego Children's Discovery Museum",
+    "usage_metadata": {
+      "input_tokens": 956,
+      "output_tokens": 7,
+      "total_tokens": 963,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 956,
+        "total_tokens": 963,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2425,
+    "run_seconds": 2.596,
+    "content": "None of the provided records indicate an emergency hospital.",
+    "usage_metadata": {
+      "input_tokens": 979,
+      "output_tokens": 11,
+      "total_tokens": 990,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 979,
+        "total_tokens": 990,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2426,
+    "run_seconds": 0.925,
+    "content": "Yes",
+    "usage_metadata": {
+      "input_tokens": 1982,
+      "output_tokens": 2,
+      "total_tokens": 1984,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1982,
+        "total_tokens": 1984,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2427,
+    "run_seconds": 6.134,
+    "content": "There is no emergency hospital listed in the provided data within 150 kilometers of Forty Oaks, Clarkston, GA.",
+    "usage_metadata": {
+      "input_tokens": 2086,
+      "output_tokens": 26,
+      "total_tokens": 2112,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 26,
+        "prompt_tokens": 2086,
+        "total_tokens": 2112,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2428,
+    "run_seconds": 0.718,
+    "content": "None",
+    "usage_metadata": {
+      "input_tokens": 1135,
+      "output_tokens": 2,
+      "total_tokens": 1137,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1135,
+        "total_tokens": 1137,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2429,
+    "run_seconds": 1.371,
+    "content": "yes",
+    "usage_metadata": {
+      "input_tokens": 2649,
+      "output_tokens": 2,
+      "total_tokens": 2651,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 2649,
+        "total_tokens": 2651,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2430,
+    "run_seconds": 4.668,
+    "content": "None of the provided records mention a history museum near Montefiore Medical Center - Wakefield Campus.",
+    "usage_metadata": {
+      "input_tokens": 906,
+      "output_tokens": 21,
+      "total_tokens": 927,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 906,
+        "total_tokens": 927,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2431,
+    "run_seconds": 1.405,
+    "content": "Fortune Buffet",
+    "usage_metadata": {
+      "input_tokens": 1268,
+      "output_tokens": 5,
+      "total_tokens": 1273,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1268,
+        "total_tokens": 1273,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2432,
+    "run_seconds": 1.046,
+    "content": "Fairfax",
+    "usage_metadata": {
+      "input_tokens": 1502,
+      "output_tokens": 3,
+      "total_tokens": 1505,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1502,
+        "total_tokens": 1505,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2433,
+    "run_seconds": 0.827,
+    "content": "None",
+    "usage_metadata": {
+      "input_tokens": 1469,
+      "output_tokens": 2,
+      "total_tokens": 1471,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1469,
+        "total_tokens": 1471,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2434,
+    "run_seconds": 1.296,
+    "content": "No",
+    "usage_metadata": {
+      "input_tokens": 2432,
+      "output_tokens": 2,
+      "total_tokens": 2434,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 2432,
+        "total_tokens": 2434,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2435,
+    "run_seconds": 5.389,
+    "content": "None of the listed records indicate a Hawaiian restaurant within 120 kilometers of Silver Point Interpretive Overlook.",
+    "usage_metadata": {
+      "input_tokens": 1017,
+      "output_tokens": 24,
+      "total_tokens": 1041,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 1017,
+        "total_tokens": 1041,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2436,
+    "run_seconds": 1.44,
+    "content": "New Jersey Botanical Garden",
+    "usage_metadata": {
+      "input_tokens": 907,
+      "output_tokens": 6,
+      "total_tokens": 913,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 907,
+        "total_tokens": 913,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2437,
+    "run_seconds": 10.654,
+    "content": "The nearest local museum within 80 kilometers is the **Rhode Island Museum of Science and Technology**, located in **Cranston, Rhode Island**. It is approximately **ten kilometers** from the Cardiovascular Institute of New England.",
+    "usage_metadata": {
+      "input_tokens": 887,
+      "output_tokens": 49,
+      "total_tokens": 936,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 49,
+        "prompt_tokens": 887,
+        "total_tokens": 936,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2438,
+    "run_seconds": 0.865,
+    "content": "No.",
+    "usage_metadata": {
+      "input_tokens": 934,
+      "output_tokens": 3,
+      "total_tokens": 937,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 934,
+        "total_tokens": 937,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2439,
+    "run_seconds": 0.923,
+    "content": "No.",
+    "usage_metadata": {
+      "input_tokens": 1144,
+      "output_tokens": 3,
+      "total_tokens": 1147,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1144,
+        "total_tokens": 1147,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2440,
+    "run_seconds": 1.254,
+    "content": "No.",
+    "usage_metadata": {
+      "input_tokens": 2109,
+      "output_tokens": 3,
+      "total_tokens": 2112,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2109,
+        "total_tokens": 2112,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2441,
+    "run_seconds": 2.869,
+    "content": "There is no relevant information provided to answer the question.",
+    "usage_metadata": {
+      "input_tokens": 1276,
+      "output_tokens": 12,
+      "total_tokens": 1288,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1276,
+        "total_tokens": 1288,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2442,
+    "run_seconds": 10.979,
+    "content": "Treetop Zoofari Zip line and Adventure Park is located in Moseley, Virginia. A local museum within 170 kilometers of this location is the Virginia Museum of Natural History. It is located in Martinsville, Virginia.",
+    "usage_metadata": {
+      "input_tokens": 1232,
+      "output_tokens": 50,
+      "total_tokens": 1282,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 50,
+        "prompt_tokens": 1232,
+        "total_tokens": 1282,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2443,
+    "run_seconds": 1.345,
+    "content": "Simon's Sushi",
+    "usage_metadata": {
+      "input_tokens": 1039,
+      "output_tokens": 5,
+      "total_tokens": 1044,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1039,
+        "total_tokens": 1044,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2444,
+    "run_seconds": 1.026,
+    "content": "No.",
+    "usage_metadata": {
+      "input_tokens": 1393,
+      "output_tokens": 3,
+      "total_tokens": 1396,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1393,
+        "total_tokens": 1396,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2445,
+    "run_seconds": 3.21,
+    "content": "Concord Historical Museum is situated within 190 kilometers.",
+    "usage_metadata": {
+      "input_tokens": 994,
+      "output_tokens": 14,
+      "total_tokens": 1008,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 994,
+        "total_tokens": 1008,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2446,
+    "run_seconds": 5.796,
+    "content": "None of the provided records indicate an emergency hospital within 110 kilometers of Getting's Garden, Sanborn, IA.",
+    "usage_metadata": {
+      "input_tokens": 1034,
+      "output_tokens": 26,
+      "total_tokens": 1060,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 26,
+        "prompt_tokens": 1034,
+        "total_tokens": 1060,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2447,
+    "run_seconds": 3.463,
+    "content": "Holyoke Children's Museum is located within 140 kilometers.",
+    "usage_metadata": {
+      "input_tokens": 1100,
+      "output_tokens": 15,
+      "total_tokens": 1115,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 1100,
+        "total_tokens": 1115,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2448,
+    "run_seconds": 3.15,
+    "content": "Noah's Cafe is located in Petersburg, KY.",
+    "usage_metadata": {
+      "input_tokens": 2058,
+      "output_tokens": 12,
+      "total_tokens": 2070,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 2058,
+        "total_tokens": 2070,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2449,
+    "run_seconds": 2.712,
+    "content": "None of the provided records indicate an emergency hospital.",
+    "usage_metadata": {
+      "input_tokens": 1367,
+      "output_tokens": 11,
+      "total_tokens": 1378,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1367,
+        "total_tokens": 1378,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2450,
+    "run_seconds": 0.864,
+    "content": "Yes.",
+    "usage_metadata": {
+      "input_tokens": 899,
+      "output_tokens": 3,
+      "total_tokens": 902,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 899,
+        "total_tokens": 902,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2451,
+    "run_seconds": 1.088,
+    "content": "No.",
+    "usage_metadata": {
+      "input_tokens": 1634,
+      "output_tokens": 3,
+      "total_tokens": 1637,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1634,
+        "total_tokens": 1637,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2452,
+    "run_seconds": 2.533,
+    "content": "Carrabba's Italian Grill",
+    "usage_metadata": {
+      "input_tokens": 2201,
+      "output_tokens": 8,
+      "total_tokens": 2209,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 2201,
+        "total_tokens": 2209,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2453,
+    "run_seconds": 5.404,
+    "content": "Cowan Railroad Museum is located within 190 kilometers of Mount Washington Boat Terminal, Wolfeboro, NH.",
+    "usage_metadata": {
+      "input_tokens": 1102,
+      "output_tokens": 24,
+      "total_tokens": 1126,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 1102,
+        "total_tokens": 1126,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2454,
+    "run_seconds": 5.85,
+    "content": "Beneski Museum of Natural History is within 190 kilometers of Brigham and Women's, Foxborough, MA.",
+    "usage_metadata": {
+      "input_tokens": 1225,
+      "output_tokens": 26,
+      "total_tokens": 1251,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 26,
+        "prompt_tokens": 1225,
+        "total_tokens": 1251,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2455,
+    "run_seconds": 5.544,
+    "content": "Los Angeles Community Hospital is an emergency hospital. It is located within seven thousand meters of Dolphins Plus Bayside.",
+    "usage_metadata": {
+      "input_tokens": 1637,
+      "output_tokens": 24,
+      "total_tokens": 1661,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 24,
+        "prompt_tokens": 1637,
+        "total_tokens": 1661,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2456,
+    "run_seconds": 6.737,
+    "content": "None of the provided records indicate the presence of an emergency hospital within 160 kilometers of White Memorial Foundation, Litchfield, CT.",
+    "usage_metadata": {
+      "input_tokens": 1313,
+      "output_tokens": 30,
+      "total_tokens": 1343,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 30,
+        "prompt_tokens": 1313,
+        "total_tokens": 1343,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2457,
+    "run_seconds": 2.618,
+    "content": "No emergency hospital was identified in the provided records.",
+    "usage_metadata": {
+      "input_tokens": 1022,
+      "output_tokens": 11,
+      "total_tokens": 1033,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1022,
+        "total_tokens": 1033,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2458,
+    "run_seconds": 2.833,
+    "content": "A steak house is situated in Richmond, Virginia.",
+    "usage_metadata": {
+      "input_tokens": 1726,
+      "output_tokens": 11,
+      "total_tokens": 1737,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1726,
+        "total_tokens": 1737,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2459,
+    "run_seconds": 5.585,
+    "content": "There is no emergency hospital listed within 150 kilometers from Post University, Waterbury, CT.",
+    "usage_metadata": {
+      "input_tokens": 2523,
+      "output_tokens": 22,
+      "total_tokens": 2545,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 2523,
+        "total_tokens": 2545,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2460,
+    "run_seconds": 1.233,
+    "content": "Yes.",
+    "usage_metadata": {
+      "input_tokens": 2051,
+      "output_tokens": 3,
+      "total_tokens": 2054,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 2051,
+        "total_tokens": 2054,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2461,
+    "run_seconds": 0.663,
+    "content": "No",
+    "usage_metadata": {
+      "input_tokens": 2079,
+      "output_tokens": 2,
+      "total_tokens": 2081,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 2079,
+        "total_tokens": 2081,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2462,
+    "run_seconds": 7.062,
+    "content": "Cyrus Dallin Art Museum is located in Arlington, Massachusetts. An emergency hospital within 30 kilometers of it is Massachusetts General Hospital.",
+    "usage_metadata": {
+      "input_tokens": 1121,
+      "output_tokens": 31,
+      "total_tokens": 1152,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 31,
+        "prompt_tokens": 1121,
+        "total_tokens": 1152,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2463,
+    "run_seconds": 6.775,
+    "content": "Arianna's Italian Grill and Pizzeria is located in Richmond City, Virginia, which is approximately one hundred and sixty kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 2121,
+      "output_tokens": 29,
+      "total_tokens": 2150,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 29,
+        "prompt_tokens": 2121,
+        "total_tokens": 2150,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2464,
+    "run_seconds": 3.158,
+    "content": "None of the provided records indicate an emergency hospital.",
+    "usage_metadata": {
+      "input_tokens": 2246,
+      "output_tokens": 11,
+      "total_tokens": 2257,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 2246,
+        "total_tokens": 2257,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2465,
+    "run_seconds": 0.888,
+    "content": "Yes.",
+    "usage_metadata": {
+      "input_tokens": 949,
+      "output_tokens": 3,
+      "total_tokens": 952,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 949,
+        "total_tokens": 952,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2466,
+    "run_seconds": 2.162,
+    "content": "Rancho Cucamonga",
+    "usage_metadata": {
+      "input_tokens": 1661,
+      "output_tokens": 8,
+      "total_tokens": 1669,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 1661,
+        "total_tokens": 1669,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2467,
+    "run_seconds": 4.963,
+    "content": "Forbes Mill Museum is located within a 40 kilometers proximity. It is approximately forty kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1024,
+      "output_tokens": 22,
+      "total_tokens": 1046,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 1024,
+        "total_tokens": 1046,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2468,
+    "run_seconds": 0.908,
+    "content": "Yes.",
+    "usage_metadata": {
+      "input_tokens": 1135,
+      "output_tokens": 3,
+      "total_tokens": 1138,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1135,
+        "total_tokens": 1138,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2469,
+    "run_seconds": 1.532,
+    "content": "Beaumont.",
+    "usage_metadata": {
+      "input_tokens": 1702,
+      "output_tokens": 5,
+      "total_tokens": 1707,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1702,
+        "total_tokens": 1707,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2470,
+    "run_seconds": 2.953,
+    "content": "None of the provided records indicate an emergency hospital.",
+    "usage_metadata": {
+      "input_tokens": 2140,
+      "output_tokens": 11,
+      "total_tokens": 2151,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 2140,
+        "total_tokens": 2151,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2471,
+    "run_seconds": 1.992,
+    "content": "Underground Railroad Museum at Belmont Mansion",
+    "usage_metadata": {
+      "input_tokens": 1116,
+      "output_tokens": 8,
+      "total_tokens": 1124,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 1116,
+        "total_tokens": 1124,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2472,
+    "run_seconds": 2.092,
+    "content": "No relevant record found.",
+    "usage_metadata": {
+      "input_tokens": 2226,
+      "output_tokens": 6,
+      "total_tokens": 2232,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 2226,
+        "total_tokens": 2232,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2473,
+    "run_seconds": 1.019,
+    "content": "Yes.",
+    "usage_metadata": {
+      "input_tokens": 1435,
+      "output_tokens": 3,
+      "total_tokens": 1438,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1435,
+        "total_tokens": 1438,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2474,
+    "run_seconds": 2.749,
+    "content": "Pinecrest Restaurant is approximately thirty kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1511,
+      "output_tokens": 11,
+      "total_tokens": 1522,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1511,
+        "total_tokens": 1522,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2475,
+    "run_seconds": 1.021,
+    "content": "yes",
+    "usage_metadata": {
+      "input_tokens": 2160,
+      "output_tokens": 2,
+      "total_tokens": 2162,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 2160,
+        "total_tokens": 2162,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2476,
+    "run_seconds": 2.146,
+    "content": "The Houdini Museum of New York",
+    "usage_metadata": {
+      "input_tokens": 958,
+      "output_tokens": 9,
+      "total_tokens": 967,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 958,
+        "total_tokens": 967,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2477,
+    "run_seconds": 1.171,
+    "content": "No.",
+    "usage_metadata": {
+      "input_tokens": 1849,
+      "output_tokens": 3,
+      "total_tokens": 1852,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1849,
+        "total_tokens": 1852,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2478,
+    "run_seconds": 2.893,
+    "content": "Chuck E. Cheese in Greensboro, North Carolina.",
+    "usage_metadata": {
+      "input_tokens": 1205,
+      "output_tokens": 12,
+      "total_tokens": 1217,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 1205,
+        "total_tokens": 1217,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2479,
+    "run_seconds": 2.855,
+    "content": "Arianna's Italian Grill and Pizzeria",
+    "usage_metadata": {
+      "input_tokens": 1864,
+      "output_tokens": 11,
+      "total_tokens": 1875,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1864,
+        "total_tokens": 1875,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2480,
+    "run_seconds": 7.912,
+    "content": "C. E. Smith Museum of Anthropology is located within 50 kilometers of Maryvale Baseball Park, Phoenix, AZ. It is approximately 20 kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 979,
+      "output_tokens": 36,
+      "total_tokens": 1015,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 36,
+        "prompt_tokens": 979,
+        "total_tokens": 1015,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2481,
+    "run_seconds": 5.669,
+    "content": "There is no hot pot restaurant within 100 kilometers from Schoolhouse Gallery, Provincetown, MA.",
+    "usage_metadata": {
+      "input_tokens": 1270,
+      "output_tokens": 25,
+      "total_tokens": 1295,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 1270,
+        "total_tokens": 1295,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2482,
+    "run_seconds": 1.564,
+    "content": "Thomson Medical Center",
+    "usage_metadata": {
+      "input_tokens": 1194,
+      "output_tokens": 6,
+      "total_tokens": 1200,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 1194,
+        "total_tokens": 1200,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2483,
+    "run_seconds": 1.18,
+    "content": "Greenway Pizza",
+    "usage_metadata": {
+      "input_tokens": 1277,
+      "output_tokens": 4,
+      "total_tokens": 1281,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 1277,
+        "total_tokens": 1281,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2484,
+    "run_seconds": 4.332,
+    "content": "No emergency hospital was found within sixty kilometers of Taswira, Seattle, WA.",
+    "usage_metadata": {
+      "input_tokens": 1717,
+      "output_tokens": 18,
+      "total_tokens": 1735,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 1717,
+        "total_tokens": 1735,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2485,
+    "run_seconds": 0.837,
+    "content": "none",
+    "usage_metadata": {
+      "input_tokens": 1567,
+      "output_tokens": 2,
+      "total_tokens": 1569,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 1567,
+        "total_tokens": 1569,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2486,
+    "run_seconds": 0.9,
+    "content": "No.",
+    "usage_metadata": {
+      "input_tokens": 1046,
+      "output_tokens": 3,
+      "total_tokens": 1049,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1046,
+        "total_tokens": 1049,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2487,
+    "run_seconds": 2.731,
+    "content": "SoCal K9 Clinic City of Industry",
+    "usage_metadata": {
+      "input_tokens": 2225,
+      "output_tokens": 9,
+      "total_tokens": 2234,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 2225,
+        "total_tokens": 2234,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2488,
+    "run_seconds": 0.9,
+    "content": "No.",
+    "usage_metadata": {
+      "input_tokens": 1033,
+      "output_tokens": 3,
+      "total_tokens": 1036,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 1033,
+        "total_tokens": 1036,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2489,
+    "run_seconds": 2.003,
+    "content": "Crown Fried Chicken & Pizza",
+    "usage_metadata": {
+      "input_tokens": 1884,
+      "output_tokens": 7,
+      "total_tokens": 1891,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 1884,
+        "total_tokens": 1891,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2490,
+    "run_seconds": 2.659,
+    "content": "None of the provided records indicate an emergency hospital.",
+    "usage_metadata": {
+      "input_tokens": 1260,
+      "output_tokens": 11,
+      "total_tokens": 1271,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1260,
+        "total_tokens": 1271,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2491,
+    "run_seconds": 0.838,
+    "content": "No.",
+    "usage_metadata": {
+      "input_tokens": 878,
+      "output_tokens": 3,
+      "total_tokens": 881,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 878,
+        "total_tokens": 881,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2492,
+    "run_seconds": 1.578,
+    "content": "No relevant information provided.",
+    "usage_metadata": {
+      "input_tokens": 1152,
+      "output_tokens": 6,
+      "total_tokens": 1158,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 1152,
+        "total_tokens": 1158,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2493,
+    "run_seconds": 1.279,
+    "content": "No",
+    "usage_metadata": {
+      "input_tokens": 2333,
+      "output_tokens": 2,
+      "total_tokens": 2335,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 2333,
+        "total_tokens": 2335,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2494,
+    "run_seconds": 3.936,
+    "content": "Andros Greek Grill & Pan Pizza is located approximately 74 kilometers away.",
+    "usage_metadata": {
+      "input_tokens": 1223,
+      "output_tokens": 17,
+      "total_tokens": 1240,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 1223,
+        "total_tokens": 1240,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2495,
+    "run_seconds": 1.35,
+    "content": "Forbes Mill Museum",
+    "usage_metadata": {
+      "input_tokens": 1101,
+      "output_tokens": 5,
+      "total_tokens": 1106,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 1101,
+        "total_tokens": 1106,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2496,
+    "run_seconds": 1.776,
+    "content": "No relevant information found.",
+    "usage_metadata": {
+      "input_tokens": 1771,
+      "output_tokens": 6,
+      "total_tokens": 1777,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 1771,
+        "total_tokens": 1777,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2497,
+    "run_seconds": 1.937,
+    "content": "Brazos Restaurant",
+    "usage_metadata": {
+      "input_tokens": 2426,
+      "output_tokens": 5,
+      "total_tokens": 2431,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 2426,
+        "total_tokens": 2431,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2498,
+    "run_seconds": 2.711,
+    "content": "Sanford Medical Center Bemidji Emergency Room",
+    "usage_metadata": {
+      "input_tokens": 1446,
+      "output_tokens": 11,
+      "total_tokens": 1457,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 1446,
+        "total_tokens": 1457,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  },
+  {
+    "id": 2499,
+    "run_seconds": 1.894,
+    "content": "No hospital found.",
+    "usage_metadata": {
+      "input_tokens": 2248,
+      "output_tokens": 5,
+      "total_tokens": 2253,
+      "input_token_details": {},
+      "output_token_details": {}
+    },
+    "response_metadata": {
+      "token_usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 2248,
+        "total_tokens": 2253,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    }
+  }
+]

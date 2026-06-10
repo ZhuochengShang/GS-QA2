@@ -1,0 +1,59 @@
+{
+  "answer_type": "slope",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "slope",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "slope": 0.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "slope": 0.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-73.926017 42.133334, -73.925916 42.133353, -73.925777 42.133396, -73.925645 42.133468, -73.925459 42.133638, -73.925235 42.133877, -73.925037 42.134124, -73.924823 42.134406, -73.924722 42.134547, -73.924676 42.134637, -73.924637 42.13474, -73.924491 42.135192, -73.924414 42.135369, -73.924025 42.136475, -73.923867 42.13685, -73.923549 42.137547, -73.923023 42.138619, -73.92285 42.139006, -73.922613 42.13951, -73.922378 42.140032, -73.922029 42.14085, -73.921942 42.141028, -73.921751 42.141385, -73.921614 42.141699, -73.9215 42.142042, -73.919558 42.141513, -73.918268 42.141032, -73.917192 42.140186, -73.916424 42.139248, -73.916056 42.139065, -73.916086 42.138882, -73.916147 42.138833, -73.915846 42.138689, -73.915479 42.138495, -73.915087 42.138317, -73.914766 42.138209, -73.914418 42.13801, -73.914247 42.137745, -73.914173 42.137415, -73.913972 42.137284, -73.913585 42.137311, -73.913262 42.137415, -73.912801 42.137531, -73.912704 42.137572, -73.912463 42.137532, -73.912485 42.137484, -73.912668 42.137251, -73.91269 42.137208, -73.912704 42.137076, -73.912672 42.136979, -73.912399 42.136733, -73.912284 42.13654, -73.912266 42.136447, -73.912245 42.136232, -73.912263 42.136131, -73.912331 42.136031, -73.912543 42.135866, -73.912647 42.135848, -73.913224 42.135843, -73.913317 42.135803, -73.913407 42.135746, -73.913472 42.135689, -73.913572 42.135578, -73.913626 42.135481, -73.913676 42.135431, -73.913769 42.135363, -73.913891 42.135287, -73.913963 42.135205, -73.914035 42.135067, -73.914078 42.134938, -73.914096 42.134784, -73.914085 42.134414, -73.914121 42.134101, -73.914121 42.133997, -73.914178 42.133793, -73.914257 42.133613, -73.914271 42.133531, -73.914261 42.133466, -73.914221 42.133352, -73.914178 42.133323, -73.914103 42.133316, -73.914071 42.133305, -73.914035 42.133269, -73.914042 42.133187, -73.914221 42.132927, -73.9143 42.132716, -73.914408 42.132594, -73.914487 42.132454, -73.914555 42.132386, -73.914601 42.132368, -73.914709 42.132361, -73.914813 42.132382, -73.914971 42.132382, -73.915287 42.132294, -73.915412 42.132244, -73.915531 42.132183, -73.915656 42.132079, -73.915789 42.131914, -73.915853 42.131796, -73.915929 42.131778, -73.915957 42.131757, -73.916008 42.131646, -73.916018 42.131578, -73.916069 42.131563, -73.916302 42.131581, -73.916478 42.131621, -73.916643 42.131784, -73.916779 42.131859, -73.916883 42.131877, -73.917514 42.131877, -73.917625 42.131863, -73.917988 42.13176, -73.918558 42.131488, -73.918773 42.131398, -73.918888 42.131373, -73.919028 42.131406, -73.919229 42.131402, -73.919236 42.131359, -73.919225 42.131341, -73.919114 42.131255, -73.919092 42.131212, -73.919071 42.130992, -73.918877 42.130529, -73.91892 42.130305, -73.91891 42.130162, -73.918834 42.130065, -73.918777 42.129854, -73.918759 42.129389, -73.918786 42.129143, -73.921863 42.13094, -73.926017 42.133334))', 4326) AS g\n),\nbuffered_region AS (\n  SELECT\n    g,\n    ST_Buffer(g::geography, 100)::geometry AS g_buffer\n  FROM region\n),\nclipped_dem AS (\n  SELECT ST_Union(ST_Clip(d.rast, r.g_buffer)) AS rast\n  FROM public.dem_us d\n  JOIN buffered_region r\n    ON ST_Intersects(d.rast, r.g_buffer)\n),\nslope AS (\n  SELECT ST_Slope(rast, 1, '32BF', 'DEGREES', 111120) AS rast\n  FROM clipped_dem\n),\nregion_slope AS (\n  SELECT ST_Clip(s.rast, r.g) AS rast\n  FROM slope s, buffered_region r\n)\nSELECT (ST_SummaryStats(rast, 1, TRUE)).min AS slope\nFROM region_slope;",
+  "id": "min_slope+area-15",
+  "model_output": "```sql\nWITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Cementon'\n    AND border_type = 'city'\n    AND ST_GeometryType(geometry) = 'ST_Polygon'\n  LIMIT 1\n),\nraster_clip AS (\n  SELECT\n    ST_Union(rast) AS rast\n  FROM\n    public.dem_us\n  WHERE\n    ST_Intersects(rast, (SELECT geom FROM region_geom))\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(raster_clip.rast, 1, '32BF') AS slope_rast\n),\nflattest_value AS (\n  SELECT\n    MIN(ST_Value(slope_rast, 1)) AS flattest_slope\n  FROM\n    slope_raster\n)\nSELECT\n  flattest_slope AS flattest_slope_degrees\nFROM\n  flattest_value;\n```",
+  "predicted_exec": {
+    "error": "function st_geometrytype(geography) does not exist\nLINE 6:     AND ST_GeometryType(geometry) = 'ST_Polygon'\n                ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Cementon'\n    AND border_type = 'city'\n    AND ST_GeometryType(geometry) = 'ST_Polygon'\n  LIMIT 1\n),\nraster_clip AS (\n  SELECT\n    ST_Union(rast) AS rast\n  FROM\n    public.dem_us\n  WHERE\n    ST_Intersects(rast, (SELECT geom FROM region_geom))\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(raster_clip.rast, 1, '32BF') AS slope_rast\n),\nflattest_value AS (\n  SELECT\n    MIN(ST_Value(slope_rast, 1)) AS flattest_slope\n  FROM\n    slope_raster\n)\nSELECT\n  flattest_slope AS flattest_slope_degrees\nFROM\n  flattest_value;",
+  "predicted_sql_candidates": [
+    "WITH region_geom AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Cementon'\n    AND border_type = 'city'\n    AND ST_GeometryType(geometry) = 'ST_Polygon'\n  LIMIT 1\n),\nraster_clip AS (\n  SELECT\n    ST_Union(rast) AS rast\n  FROM\n    public.dem_us\n  WHERE\n    ST_Intersects(rast, (SELECT geom FROM region_geom))\n),\nslope_raster AS (\n  SELECT\n    ST_Slope(raster_clip.rast, 1, '32BF') AS slope_rast\n),\nflattest_value AS (\n  SELECT\n    MIN(ST_Value(slope_rast, 1)) AS flattest_slope\n  FROM\n    slope_raster\n)\nSELECT\n  flattest_slope AS flattest_slope_degrees\nFROM\n  flattest_value;"
+  ],
+  "query_type": "raster_only",
+  "question": "How flat is the flattest part of Cementon, New York?",
+  "source_file": "min_slope+area.jsonl",
+  "source_stem": "min_slope+area",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 41.641,
+    "total_seconds": 41.642
+  },
+  "usage": {
+    "completion_tokens": 195,
+    "prompt_tokens": 1518,
+    "total_tokens": 1713
+  }
+}

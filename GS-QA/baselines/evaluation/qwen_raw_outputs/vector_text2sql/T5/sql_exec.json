@@ -1,0 +1,1163 @@
+[
+  {
+    "id": 1000,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "John's FootLong",
+            "amenity": "fast_food",
+            "distance_meters": 967.08123374
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.114
+  },
+  {
+    "id": 1001,
+    "records": [
+      {
+        "output": [],
+        "error": "syntax error at or near \"WHERE\"\nLINE 7: WHERE t1.tourism = 'gallery' AND t1.poi_name IS NOT NULL\n        ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1002,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 2.343
+  },
+  {
+    "id": 1003,
+    "records": [
+      {
+        "output": [],
+        "error": "syntax error at or near \"WHERE\"\nLINE 11: WHERE p.amenity = 'fast_food';\n         ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1004,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.039
+  },
+  {
+    "id": 1005,
+    "records": [
+      {
+        "output": [],
+        "error": "column t1.wikipedia does not exist\nLINE 2: SELECT t1.poi_name, t1.wikidata, t1.wikipedia, t1.addr_state...\n                                         ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1006,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Dairy Queen"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.06
+  },
+  {
+    "id": 1007,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.039
+  },
+  {
+    "id": 1008,
+    "records": [
+      {
+        "output": [
+          {
+            "park_name": "Village Green",
+            "distance_meters": 3490.74000342
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.431
+  },
+  {
+    "id": 1009,
+    "records": [
+      {
+        "output": [],
+        "error": "syntax error at or near \"WHERE\"\nLINE 9: WHERE p.tourism = 'zoo'\n        ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1010,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Cedar Point"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.055
+  },
+  {
+    "id": 1011,
+    "records": [
+      {
+        "output": [],
+        "error": "missing FROM-clause entry for table \"p\"\nLINE 2: SELECT poi_name, ST_Distance(p.geometry::geography, (SELECT ...\n                                     ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1012,
+    "records": [
+      {
+        "output": [],
+        "error": "column r.addr_state does not exist\nLINE 12: ...       WHERE r.region_name ILIKE '%Beaumont%' AND r.addr_sta...\n                                                              ^\nHINT:  Perhaps you meant to reference the column \"p2.addr_state\" or the column \"p1.addr_state\"."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1013,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Dobbins Dining Hall"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.053
+  },
+  {
+    "id": 1014,
+    "records": [
+      {
+        "output": [],
+        "error": "syntax error at or near \"WHERE\"\nLINE 12: WHERE p.amenity = 'university'\n         ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1015,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.068
+  },
+  {
+    "id": 1016,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Van Andel Living Shores",
+            "distance_meters": 136321.22238267
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.021
+  },
+  {
+    "id": 1017,
+    "records": [
+      {
+        "output": [
+          {
+            "park_name": "Gogebic Country Club",
+            "distance_meters": 1464620.06072252
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 1.864
+  },
+  {
+    "id": 1018,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.047
+  },
+  {
+    "id": 1019,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.054
+  },
+  {
+    "id": 1020,
+    "records": [
+      {
+        "output": [],
+        "error": "syntax error at or near \"WHERE\"\nLINE 11: WHERE p.tourism = 'aquarium';\n         ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1021,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Tampa's Lowry Park Zoo",
+            "tourism": "zoo"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.055
+  },
+  {
+    "id": 1022,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.066
+  },
+  {
+    "id": 1023,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.011
+  },
+  {
+    "id": 1024,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.06
+  },
+  {
+    "id": 1025,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.125
+  },
+  {
+    "id": 1026,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.09
+  },
+  {
+    "id": 1027,
+    "records": [
+      {
+        "output": [
+          {
+            "park_name": "Pikeville City Park"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 8.855
+  },
+  {
+    "id": 1028,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.081
+  },
+  {
+    "id": 1029,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.16
+  },
+  {
+    "id": 1030,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Healthy Hippy"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.141
+  },
+  {
+    "id": 1031,
+    "records": [
+      {
+        "output": [],
+        "error": "column t1.wikipedia does not exist\nLINE 2: SELECT t1.poi_name, t1.wikidata, t1.wikipedia\n                                         ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1032,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT wikipedia\n               ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1033,
+    "records": [
+      {
+        "output": [
+          {
+            "park_name": "Birch Park"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 8.825
+  },
+  {
+    "id": 1034,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 153.051
+  },
+  {
+    "id": 1035,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.136
+  },
+  {
+    "id": 1036,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.11
+  },
+  {
+    "id": 1037,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Ashland Historical Society"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.056
+  },
+  {
+    "id": 1038,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.083
+  },
+  {
+    "id": 1039,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Midnight Oil",
+            "amenity": "cafe"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.084
+  },
+  {
+    "id": 1040,
+    "records": [
+      {
+        "output": [],
+        "error": "syntax error at or near \"WHERE\"\nLINE 9: WHERE p.amenity = 'hospital'\n        ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1041,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Short Cakes"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.127
+  },
+  {
+    "id": 1042,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikipedia, ST_Distance(p.geometry::geograph...\n                         ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1043,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "The Obelisk"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.05
+  },
+  {
+    "id": 1044,
+    "records": [
+      {
+        "output": [],
+        "error": "syntax error at or near \"WHERE\"\nLINE 10: WHERE p.amenity = 'stadium'\n         ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1045,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.042
+  },
+  {
+    "id": 1046,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Berea Falls Scenic Overlook",
+            "distance_meters": 6271.29563346
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.056
+  },
+  {
+    "id": 1047,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.019
+  },
+  {
+    "id": 1048,
+    "records": [
+      {
+        "output": [
+          {
+            "park_name": "Hillcrest Country Club"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.316
+  },
+  {
+    "id": 1049,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.061
+  },
+  {
+    "id": 1050,
+    "records": [
+      {
+        "output": [
+          {
+            "park_name": "Elizabeth Street Garden"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 15.705
+  },
+  {
+    "id": 1051,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Firehouse Subs",
+            "amenity": "fast_food",
+            "distance_meters": 2991.79067909
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.109
+  },
+  {
+    "id": 1052,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.139
+  },
+  {
+    "id": 1053,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.048
+  },
+  {
+    "id": 1054,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.153
+  },
+  {
+    "id": 1055,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Mule Hospital"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.019
+  },
+  {
+    "id": 1056,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.442
+  },
+  {
+    "id": 1057,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.048
+  },
+  {
+    "id": 1058,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "McDonald's"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.108
+  },
+  {
+    "id": 1059,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 4.445
+  },
+  {
+    "id": 1060,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Leedy-Voulkos Art Center"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.05
+  },
+  {
+    "id": 1061,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.059
+  },
+  {
+    "id": 1062,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Chicago Behavioral Hospital"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.061
+  },
+  {
+    "id": 1063,
+    "records": [
+      {
+        "output": [],
+        "error": "syntax error at or near \"WHERE\"\nLINE 12: WHERE p.tourism = 'zoo'\n         ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1064,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Ridgely's Fun Park"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.051
+  },
+  {
+    "id": 1065,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikidata, wikipedia\n                                   ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1066,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.05
+  },
+  {
+    "id": 1067,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Bob Evans",
+            "amenity": "restaurant"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.143
+  },
+  {
+    "id": 1068,
+    "records": [
+      {
+        "output": [],
+        "error": "column r.addr_state does not exist\nLINE 9:     AND r.addr_state ILIKE '%VA%' AND r.addr_city ILIKE '%Ch...\n                ^\nHINT:  Perhaps you meant to reference the column \"p.addr_state\"."
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1069,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.016
+  },
+  {
+    "id": 1070,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Krust",
+            "amenity": "restaurant",
+            "distance_meters": 64.74539613
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.137
+  },
+  {
+    "id": 1071,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.084
+  },
+  {
+    "id": 1072,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 8.785
+  },
+  {
+    "id": 1073,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.081
+  },
+  {
+    "id": 1074,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.102
+  },
+  {
+    "id": 1075,
+    "records": [
+      {
+        "output": [],
+        "error": "column \"wikipedia\" does not exist\nLINE 2: SELECT poi_name, wikipedia, ST_Distance(p.geometry::geograph...\n                         ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1076,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.662
+  },
+  {
+    "id": 1077,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Mountain View Golf Course",
+            "distance_meters": 116470.90049278
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.055
+  },
+  {
+    "id": 1078,
+    "records": [
+      {
+        "output": [],
+        "error": "syntax error at or near \"WHERE\"\nLINE 11: WHERE p.amenity = 'fast_food';\n         ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1079,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.084
+  },
+  {
+    "id": 1080,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.069
+  },
+  {
+    "id": 1081,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Altavista Medical Center"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.049
+  },
+  {
+    "id": 1082,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Copper Door Coffee Roasters"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.07
+  },
+  {
+    "id": 1083,
+    "records": [
+      {
+        "output": [
+          {
+            "park_name": "Bagley Nature Area"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 173.825
+  },
+  {
+    "id": 1084,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.05
+  },
+  {
+    "id": 1085,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.047
+  },
+  {
+    "id": 1086,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Scenic Overlook / Bridge Crossing",
+            "distance_meters": 8914.2164216
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.048
+  },
+  {
+    "id": 1087,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.073
+  },
+  {
+    "id": 1088,
+    "records": [
+      {
+        "output": [
+          {}
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.137
+  },
+  {
+    "id": 1089,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.077
+  },
+  {
+    "id": 1090,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.092
+  },
+  {
+    "id": 1091,
+    "records": [
+      {
+        "output": [],
+        "error": "column t1.wikipedia does not exist\nLINE 2: SELECT t1.poi_name, t1.wikipedia\n                            ^"
+      }
+    ],
+    "run_seconds": 0.001
+  },
+  {
+    "id": 1092,
+    "records": [
+      {
+        "output": [],
+        "error": "syntax error at or near \"WHERE\"\nLINE 10: WHERE t1.tourism = 'theme_park'\n         ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1093,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Enoteca"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.052
+  },
+  {
+    "id": 1094,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Funny Farm Coffee Company"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.074
+  },
+  {
+    "id": 1095,
+    "records": [
+      {
+        "output": [],
+        "error": "argument of JOIN/ON must be type boolean, not type double precision\nLINE 4: JOIN pois t ON p.geometry <-> t.geometry\n                       ^"
+      }
+    ],
+    "run_seconds": 0.0
+  },
+  {
+    "id": 1096,
+    "records": [
+      {
+        "output": [
+          {
+            "distance_meters": 4260.78302047
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.515
+  },
+  {
+    "id": 1097,
+    "records": [
+      {
+        "output": [
+          {
+            "poi_name": "Simply Golf"
+          }
+        ],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.055
+  },
+  {
+    "id": 1098,
+    "records": [
+      {
+        "output": [],
+        "error": ""
+      }
+    ],
+    "run_seconds": 0.045
+  },
+  {
+    "id": 1099,
+    "records": [
+      {
+        "output": [],
+        "error": "syntax error at or near \"WHERE\"\nLINE 13: WHERE p.amenity = 'museum';\n         ^"
+      }
+    ],
+    "run_seconds": 0.001
+  }
+]

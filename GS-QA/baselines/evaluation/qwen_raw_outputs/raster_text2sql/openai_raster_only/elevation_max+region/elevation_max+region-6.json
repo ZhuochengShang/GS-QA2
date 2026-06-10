@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 335.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 335.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-90.90066 42.771108, -90.939037 42.771256, -90.941338 42.843364, -90.941816 42.858317, -90.902064 42.858184, -90.783699 42.857787, -90.780969 42.770701, -90.90066 42.771108))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).max AS elevation\nFROM clipped;",
+  "id": "elevation_max+region-6",
+  "model_output": "```sql\nWITH beetown_geom AS (\n  SELECT ST_GeomFromText('POLYGON ((-90.90066 42.771108, -90.939037 42.771256, -90.941338 42.843364, -90.941816 42.858317, -90.902064 42.858184, -90.783699 42.857787, -90.780969 42.770701, -90.90066 42.771108))', 4326)::geometry AS geom\n)\nSELECT \n  MAX((ST_Value(r.rast, 1, ST_Transform(b.geom, 4326)))::numeric) AS peak_elevation\nFROM beetown_geom b\nJOIN public.dem_us r\n  ON ST_Intersects(ST_Transform(b.geom, 4326), r.rast);\n```",
+  "predicted_exec": {
+    "error": "Attempting to get the value of a pixel with a non-point geometry",
+    "output": []
+  },
+  "predicted_sql": "WITH beetown_geom AS (\n  SELECT ST_GeomFromText('POLYGON ((-90.90066 42.771108, -90.939037 42.771256, -90.941338 42.843364, -90.941816 42.858317, -90.902064 42.858184, -90.783699 42.857787, -90.780969 42.770701, -90.90066 42.771108))', 4326)::geometry AS geom\n)\nSELECT \n  MAX((ST_Value(r.rast, 1, ST_Transform(b.geom, 4326)))::numeric) AS peak_elevation\nFROM beetown_geom b\nJOIN public.dem_us r\n  ON ST_Intersects(ST_Transform(b.geom, 4326), r.rast);",
+  "predicted_sql_candidates": [
+    "WITH beetown_geom AS (\n  SELECT ST_GeomFromText('POLYGON ((-90.90066 42.771108, -90.939037 42.771256, -90.941338 42.843364, -90.941816 42.858317, -90.902064 42.858184, -90.783699 42.857787, -90.780969 42.770701, -90.90066 42.771108))', 4326)::geometry AS geom\n)\nSELECT \n  MAX((ST_Value(r.rast, 1, ST_Transform(b.geom, 4326)))::numeric) AS peak_elevation\nFROM beetown_geom b\nJOIN public.dem_us r\n  ON ST_Intersects(ST_Transform(b.geom, 4326), r.rast);"
+  ],
+  "query_type": "raster_only",
+  "question": "What peak elevation does Beetown, Wisconsin reach?",
+  "source_file": "elevation_max+region.jsonl",
+  "source_stem": "elevation_max+region",
+  "timing": {
+    "execution_seconds": 0.036,
+    "generation_seconds": 57.38,
+    "total_seconds": 57.416
+  },
+  "usage": {
+    "completion_tokens": 269,
+    "prompt_tokens": 1669,
+    "total_tokens": 1938
+  }
+}

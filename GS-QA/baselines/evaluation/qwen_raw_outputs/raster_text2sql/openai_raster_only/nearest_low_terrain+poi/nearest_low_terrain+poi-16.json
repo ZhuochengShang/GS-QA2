@@ -1,0 +1,59 @@
+{
+  "answer_type": "distance",
+  "comparison": {
+    "abs_tolerance_used": 1e-06,
+    "answer_type": "distance",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 0.05,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "distance_m": 9.201156
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "distance_m": 9.201156
+      }
+    ]
+  },
+  "gold_sql": "WITH origin AS (\n  SELECT ST_GeomFromText('POINT (-89.072332 42.453627)',4326) AS pt\n),\nnearby_tiles AS (\n  SELECT d.rast\n  FROM public.dem_us d, origin o\n  WHERE d.rast && ST_Expand(o.pt, 1.0)\n),\nmasked AS (\n\t  SELECT ST_MapAlgebra(\n\t           rast,\n\t           1,\n\t           '32BF'::text,\n\t           'CASE WHEN [rast.val] < 240 THEN [rast.val] ELSE NULL END'::text,\n\t           NULL::double precision\n\t         ) AS rast\n  FROM nearby_tiles\n),\nqualifying_pixels AS (\n  SELECT (pp).geom AS geom\n  FROM masked\n  CROSS JOIN LATERAL ST_PixelAsCentroids(rast, 1, TRUE) AS pp\n)\nSELECT MIN(ST_Distance(p.geom::geography, o.pt::geography)) AS distance_m\nFROM qualifying_pixels p, origin o;",
+  "id": "nearest_low_terrain+poi-16",
+  "model_output": "```sql\nWITH target_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-89.072332, 42.453627), 4326)::geography AS geom\n),\ndem_clip AS (\n  SELECT\n    ST_Clip(rast, 1, ST_Buffer(target_point.geom::geometry, 10000, 'quad_segs=8')) AS clipped_rast\n  FROM\n    public.dem_us,\n    target_point\n  WHERE\n    ST_Intersects(rast, ST_Buffer(target_point.geom::geometry, 10000, 'quad_segs=8'))\n),\nelevation_analysis AS (\n  SELECT\n    (ST_DumpAsPolygons(clipped_rast, 1)).*,\n    ST_Distance(target_point.geom, ST_SetSRID(ST_Point(x, y), 4326)::geography) AS distance_meters\n  FROM\n    dem_clip,\n    target_point\n),\nnearest_below_240 AS (\n  SELECT\n    MIN(distance_meters) AS nearest_distance\n  FROM\n    elevation_analysis\n  WHERE\n    val < 240\n)\nSELECT\n  nearest_distance\nFROM\n  nearest_below_240;\n```",
+  "predicted_exec": {
+    "error": "column \"x\" does not exist\nLINE 16: ...T_Distance(target_point.geom, ST_SetSRID(ST_Point(x, y), 432...\n                                                              ^",
+    "output": []
+  },
+  "predicted_sql": "WITH target_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-89.072332, 42.453627), 4326)::geography AS geom\n),\ndem_clip AS (\n  SELECT\n    ST_Clip(rast, 1, ST_Buffer(target_point.geom::geometry, 10000, 'quad_segs=8')) AS clipped_rast\n  FROM\n    public.dem_us,\n    target_point\n  WHERE\n    ST_Intersects(rast, ST_Buffer(target_point.geom::geometry, 10000, 'quad_segs=8'))\n),\nelevation_analysis AS (\n  SELECT\n    (ST_DumpAsPolygons(clipped_rast, 1)).*,\n    ST_Distance(target_point.geom, ST_SetSRID(ST_Point(x, y), 4326)::geography) AS distance_meters\n  FROM\n    dem_clip,\n    target_point\n),\nnearest_below_240 AS (\n  SELECT\n    MIN(distance_meters) AS nearest_distance\n  FROM\n    elevation_analysis\n  WHERE\n    val < 240\n)\nSELECT\n  nearest_distance\nFROM\n  nearest_below_240;",
+  "predicted_sql_candidates": [
+    "WITH target_point AS (\n  SELECT ST_SetSRID(ST_MakePoint(-89.072332, 42.453627), 4326)::geography AS geom\n),\ndem_clip AS (\n  SELECT\n    ST_Clip(rast, 1, ST_Buffer(target_point.geom::geometry, 10000, 'quad_segs=8')) AS clipped_rast\n  FROM\n    public.dem_us,\n    target_point\n  WHERE\n    ST_Intersects(rast, ST_Buffer(target_point.geom::geometry, 10000, 'quad_segs=8'))\n),\nelevation_analysis AS (\n  SELECT\n    (ST_DumpAsPolygons(clipped_rast, 1)).*,\n    ST_Distance(target_point.geom, ST_SetSRID(ST_Point(x, y), 4326)::geography) AS distance_meters\n  FROM\n    dem_clip,\n    target_point\n),\nnearest_below_240 AS (\n  SELECT\n    MIN(distance_meters) AS nearest_distance\n  FROM\n    elevation_analysis\n  WHERE\n    val < 240\n)\nSELECT\n  nearest_distance\nFROM\n  nearest_below_240;"
+  ],
+  "query_type": "raster_only",
+  "question": "What is the distance to the nearest elevation below 240 meters from Rockton Historic District, Rockton, IL?",
+  "source_file": "nearest_low_terrain+poi.jsonl",
+  "source_stem": "nearest_low_terrain+poi",
+  "timing": {
+    "execution_seconds": 0.002,
+    "generation_seconds": 59.816,
+    "total_seconds": 59.818
+  },
+  "usage": {
+    "completion_tokens": 270,
+    "prompt_tokens": 1634,
+    "total_tokens": 1904
+  }
+}

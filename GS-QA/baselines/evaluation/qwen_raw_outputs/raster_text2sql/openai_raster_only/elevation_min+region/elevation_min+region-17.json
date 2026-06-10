@@ -1,0 +1,59 @@
+{
+  "answer_type": "elevation",
+  "comparison": {
+    "abs_tolerance_used": 10.0,
+    "answer_type": "elevation",
+    "exact_match": false,
+    "gold_row_count": 1,
+    "numeric_deltas": [],
+    "predicted_row_count": 0,
+    "rel_tolerance_used": 1e-06,
+    "selected_metric": "primary_numeric_tolerance",
+    "typed_metrics": {
+      "f1": 0.0,
+      "metric_family": "rowset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "true_positives": 0
+    }
+  },
+  "generation_error": "",
+  "gold_answers": [
+    {
+      "elevation": 273.0
+    }
+  ],
+  "gold_exec": {
+    "error": "",
+    "output": [
+      {
+        "elevation": 273.0
+      }
+    ]
+  },
+  "gold_sql": "WITH region AS (\n  SELECT ST_GeomFromText('POLYGON ((-82.881263 40.557098, -82.881397 40.557104, -82.882073 40.557116, -82.882682 40.557127, -82.884679 40.557155, -82.885477 40.557176, -82.886142 40.557198, -82.887748 40.557224, -82.889074 40.557253, -82.890853 40.557266, -82.891189 40.557269, -82.892516 40.557282, -82.893977 40.557291, -82.894868 40.557299, -82.896741 40.557316, -82.898717 40.557339, -82.90037 40.557355, -82.903894 40.557405, -82.904552 40.557407, -82.905612 40.557423, -82.906142 40.557437, -82.906798 40.557439, -82.907326 40.557446, -82.907855 40.557445, -82.90931 40.557472, -82.91251 40.557512, -82.912688 40.557514, -82.914494 40.557537, -82.914618 40.557541, -82.914894 40.557537, -82.915423 40.557545, -82.916484 40.557565, -82.918867 40.557594, -82.919391 40.557603, -82.919911 40.557603, -82.920701 40.557609, -82.921492 40.557624, -82.922286 40.557632, -82.923345 40.557636, -82.924008 40.557646, -82.924934 40.557651, -82.925629 40.557656, -82.926518 40.557663, -82.929043 40.557701, -82.929574 40.557706, -82.930638 40.55772, -82.931435 40.557724, -82.932758 40.557742, -82.933681 40.55774, -82.934608 40.557754, -82.936718 40.557769, -82.936982 40.557756, -82.937113 40.557755, -82.937773 40.557783, -82.938447 40.557797, -82.938825 40.557796, -82.939434 40.557803, -82.939619 40.557805, -82.940151 40.557804, -82.940549 40.557799, -82.941216 40.557805, -82.941745 40.557811, -82.942538 40.55782, -82.944911 40.557843, -82.945972 40.557856, -82.94677 40.557856, -82.947565 40.557861, -82.947699 40.557865, -82.947962 40.557864, -82.948323 40.557861, -82.94849 40.55786, -82.949016 40.557868, -82.949287 40.55787, -82.950688 40.55788, -82.95275 40.557894, -82.95564 40.557919, -82.956572 40.557921, -82.957577 40.557934, -82.957932 40.586439, -82.957862 40.601531, -82.957801 40.616105, -82.957673 40.630676, -82.957714 40.635652, -82.957742 40.637915, -82.957781 40.641661, -82.957788 40.645189, -82.951538 40.645257, -82.91466 40.645874, -82.913024 40.645905, -82.906534 40.645945, -82.906268 40.64595, -82.904015 40.645983, -82.901218 40.646009, -82.897897 40.646048, -82.896437 40.64607, -82.895109 40.646083, -82.894847 40.646087, -82.894551 40.646091, -82.892984 40.646113, -82.8898 40.646166, -82.889139 40.646173, -82.888874 40.646177, -82.888329 40.646185, -82.888238 40.646186, -82.88754 40.646197, -82.88673 40.646207, -82.886218 40.646213, -82.885967 40.646216, -82.883148 40.646251, -82.881964 40.646264, -82.880669 40.646277, -82.878656 40.646298, -82.876789 40.64631, -82.87667 40.646311, -82.876398 40.646313, -82.871183 40.646356, -82.864248 40.646384, -82.861583 40.646395, -82.859749 40.646416, -82.860758 40.608254, -82.88043 40.608477, -82.881205 40.586233, -82.88112 40.579321, -82.881263 40.557098))', 4326) AS g\n),\nclipped AS (\n  SELECT ST_Clip(d.rast, r.g) AS rast\n  FROM public.dem_us d\n  JOIN region r\n    ON ST_Intersects(d.rast, r.g)\n)\nSELECT (ST_SummaryStats(ST_Union(rast))).min AS elevation\nFROM clipped;",
+  "id": "elevation_min+region-17",
+  "model_output": "```sql\nWITH canaan_township AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Canaan Township'\n    AND border_type = 'township'\n    AND wikidata IS NOT NULL\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM canaan_township), true) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM canaan_township))\n)\nSELECT MIN((ST_Value(rast, 1))::numeric) AS min_elevation\nFROM clipped_dem;\n```",
+  "predicted_exec": {
+    "error": "function st_value(raster, integer) does not exist\nLINE 13: SELECT MIN((ST_Value(rast, 1))::numeric) AS min_elevation\n                     ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.",
+    "output": []
+  },
+  "predicted_sql": "WITH canaan_township AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Canaan Township'\n    AND border_type = 'township'\n    AND wikidata IS NOT NULL\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM canaan_township), true) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM canaan_township))\n)\nSELECT MIN((ST_Value(rast, 1))::numeric) AS min_elevation\nFROM clipped_dem;",
+  "predicted_sql_candidates": [
+    "WITH canaan_township AS (\n  SELECT geometry::geometry AS geom\n  FROM regions\n  WHERE region_name ILIKE 'Canaan Township'\n    AND border_type = 'township'\n    AND wikidata IS NOT NULL\n),\nclipped_dem AS (\n  SELECT ST_Clip(rast, (SELECT geom FROM canaan_township), true) AS rast\n  FROM public.dem_us\n  WHERE ST_Intersects(rast, (SELECT geom FROM canaan_township))\n)\nSELECT MIN((ST_Value(rast, 1))::numeric) AS min_elevation\nFROM clipped_dem;"
+  ],
+  "query_type": "raster_only",
+  "question": "In Canaan Township, Morrow County, Ohio, what is the minimum elevation?",
+  "source_file": "elevation_min+region.jsonl",
+  "source_stem": "elevation_min+region",
+  "timing": {
+    "execution_seconds": 0.001,
+    "generation_seconds": 28.337,
+    "total_seconds": 28.338
+  },
+  "usage": {
+    "completion_tokens": 133,
+    "prompt_tokens": 1521,
+    "total_tokens": 1654
+  }
+}

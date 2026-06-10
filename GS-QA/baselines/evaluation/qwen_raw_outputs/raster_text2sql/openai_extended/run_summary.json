@@ -1,0 +1,271 @@
+{
+  "query_type": "extended",
+  "provider": "openai",
+  "model": "Qwen/Qwen3-32B-AWQ",
+  "workers": 1,
+  "stems_processed": 8,
+  "total_questions": 160,
+  "total_timeouts": 0,
+  "total_sql_ok": 160,
+  "total_exec_ok": 14,
+  "total_tokens": 313395,
+  "total_wall_seconds": 9531.3,
+  "stems": [
+    {
+      "stem": "intersects_area_max+name+max_elevation",
+      "query_type": "extended",
+      "model": "Qwen/Qwen3-32B-AWQ",
+      "provider": "openai",
+      "question_count": 20,
+      "generation_timeouts": 0,
+      "successful_sql_generation": 20,
+      "successful_sql_execution": 0,
+      "timing": {
+        "total_wall_seconds": 885.078,
+        "mean_generation_seconds": 44.249,
+        "mean_execution_seconds": 0.005,
+        "mean_total_seconds": 44.254,
+        "max_total_seconds": 56.72
+      },
+      "tokens": {
+        "total_prompt_tokens": 31058,
+        "total_completion_tokens": 4150,
+        "total_tokens": 35208,
+        "mean_prompt_tokens": 1552.9,
+        "mean_completion_tokens": 207.5,
+        "mean_total_tokens": 1760.4
+      },
+      "evaluation": {
+        "exact_matches": 0,
+        "numeric_tolerance_accuracy": null,
+        "mean_absolute_error": null,
+        "text_exact_accuracy": null,
+        "mean_rowset_f1": 0.0
+      }
+    },
+    {
+      "stem": "intersects_area_total+area+avg_slope",
+      "query_type": "extended",
+      "model": "Qwen/Qwen3-32B-AWQ",
+      "provider": "openai",
+      "question_count": 20,
+      "generation_timeouts": 0,
+      "successful_sql_generation": 20,
+      "successful_sql_execution": 0,
+      "timing": {
+        "total_wall_seconds": 1232.593,
+        "mean_generation_seconds": 61.629,
+        "mean_execution_seconds": 0.001,
+        "mean_total_seconds": 61.63,
+        "max_total_seconds": 99.635
+      },
+      "tokens": {
+        "total_prompt_tokens": 31433,
+        "total_completion_tokens": 5781,
+        "total_tokens": 37214,
+        "mean_prompt_tokens": 1571.7,
+        "mean_completion_tokens": 289.1,
+        "mean_total_tokens": 1860.7
+      },
+      "evaluation": {
+        "exact_matches": 0,
+        "numeric_tolerance_accuracy": null,
+        "mean_absolute_error": null,
+        "text_exact_accuracy": null,
+        "mean_rowset_f1": 0.0
+      }
+    },
+    {
+      "stem": "intersects_length_max+name+slope",
+      "query_type": "extended",
+      "model": "Qwen/Qwen3-32B-AWQ",
+      "provider": "openai",
+      "question_count": 20,
+      "generation_timeouts": 0,
+      "successful_sql_generation": 20,
+      "successful_sql_execution": 1,
+      "timing": {
+        "total_wall_seconds": 1340.786,
+        "mean_generation_seconds": 58.035,
+        "mean_execution_seconds": 9.004,
+        "mean_total_seconds": 67.039,
+        "max_total_seconds": 236.715
+      },
+      "tokens": {
+        "total_prompt_tokens": 31006,
+        "total_completion_tokens": 5444,
+        "total_tokens": 36450,
+        "mean_prompt_tokens": 1550.3,
+        "mean_completion_tokens": 272.2,
+        "mean_total_tokens": 1822.5
+      },
+      "evaluation": {
+        "exact_matches": 0,
+        "numeric_tolerance_accuracy": null,
+        "mean_absolute_error": null,
+        "text_exact_accuracy": null,
+        "mean_rowset_f1": 0.0
+      }
+    },
+    {
+      "stem": "knn+distance+slope",
+      "query_type": "extended",
+      "model": "Qwen/Qwen3-32B-AWQ",
+      "provider": "openai",
+      "question_count": 20,
+      "generation_timeouts": 0,
+      "successful_sql_generation": 20,
+      "successful_sql_execution": 1,
+      "timing": {
+        "total_wall_seconds": 1530.278,
+        "mean_generation_seconds": 76.309,
+        "mean_execution_seconds": 0.205,
+        "mean_total_seconds": 76.514,
+        "max_total_seconds": 100.889
+      },
+      "tokens": {
+        "total_prompt_tokens": 33131,
+        "total_completion_tokens": 7156,
+        "total_tokens": 40287,
+        "mean_prompt_tokens": 1656.5,
+        "mean_completion_tokens": 357.8,
+        "mean_total_tokens": 2014.3
+      },
+      "evaluation": {
+        "exact_matches": 0,
+        "numeric_tolerance_accuracy": null,
+        "mean_absolute_error": null,
+        "text_exact_accuracy": 0.0,
+        "mean_rowset_f1": 0.0
+      }
+    },
+    {
+      "stem": "range+count+elevation_condition",
+      "query_type": "extended",
+      "model": "Qwen/Qwen3-32B-AWQ",
+      "provider": "openai",
+      "question_count": 20,
+      "generation_timeouts": 0,
+      "successful_sql_generation": 20,
+      "successful_sql_execution": 3,
+      "timing": {
+        "total_wall_seconds": 1068.629,
+        "mean_generation_seconds": 53.415,
+        "mean_execution_seconds": 0.016,
+        "mean_total_seconds": 53.431,
+        "max_total_seconds": 66.946
+      },
+      "tokens": {
+        "total_prompt_tokens": 35945,
+        "total_completion_tokens": 4999,
+        "total_tokens": 40944,
+        "mean_prompt_tokens": 1797.2,
+        "mean_completion_tokens": 249.9,
+        "mean_total_tokens": 2047.2
+      },
+      "evaluation": {
+        "exact_matches": 1,
+        "numeric_tolerance_accuracy": 0.6667,
+        "mean_absolute_error": 38.0,
+        "text_exact_accuracy": null,
+        "mean_rowset_f1": 0.0
+      }
+    },
+    {
+      "stem": "range+distance+elevation",
+      "query_type": "extended",
+      "model": "Qwen/Qwen3-32B-AWQ",
+      "provider": "openai",
+      "question_count": 20,
+      "generation_timeouts": 0,
+      "successful_sql_generation": 20,
+      "successful_sql_execution": 3,
+      "timing": {
+        "total_wall_seconds": 1100.603,
+        "mean_generation_seconds": 55.023,
+        "mean_execution_seconds": 0.007,
+        "mean_total_seconds": 55.03,
+        "max_total_seconds": 84.084
+      },
+      "tokens": {
+        "total_prompt_tokens": 35431,
+        "total_completion_tokens": 5151,
+        "total_tokens": 40582,
+        "mean_prompt_tokens": 1771.5,
+        "mean_completion_tokens": 257.6,
+        "mean_total_tokens": 2029.1
+      },
+      "evaluation": {
+        "exact_matches": 0,
+        "numeric_tolerance_accuracy": 0.0,
+        "mean_absolute_error": 3788102.9302,
+        "text_exact_accuracy": null,
+        "mean_rowset_f1": 0.0
+      }
+    },
+    {
+      "stem": "range+loc+elevation_condition",
+      "query_type": "extended",
+      "model": "Qwen/Qwen3-32B-AWQ",
+      "provider": "openai",
+      "question_count": 20,
+      "generation_timeouts": 0,
+      "successful_sql_generation": 20,
+      "successful_sql_execution": 3,
+      "timing": {
+        "total_wall_seconds": 1195.325,
+        "mean_generation_seconds": 59.75,
+        "mean_execution_seconds": 0.016,
+        "mean_total_seconds": 59.766,
+        "max_total_seconds": 72.162
+      },
+      "tokens": {
+        "total_prompt_tokens": 35894,
+        "total_completion_tokens": 5594,
+        "total_tokens": 41488,
+        "mean_prompt_tokens": 1794.7,
+        "mean_completion_tokens": 279.7,
+        "mean_total_tokens": 2074.4
+      },
+      "evaluation": {
+        "exact_matches": 0,
+        "numeric_tolerance_accuracy": null,
+        "mean_absolute_error": null,
+        "text_exact_accuracy": null,
+        "mean_rowset_f1": 0.0
+      }
+    },
+    {
+      "stem": "range+name+elevation_condition",
+      "query_type": "extended",
+      "model": "Qwen/Qwen3-32B-AWQ",
+      "provider": "openai",
+      "question_count": 20,
+      "generation_timeouts": 0,
+      "successful_sql_generation": 20,
+      "successful_sql_execution": 3,
+      "timing": {
+        "total_wall_seconds": 1178.001,
+        "mean_generation_seconds": 58.137,
+        "mean_execution_seconds": 0.763,
+        "mean_total_seconds": 58.9,
+        "max_total_seconds": 83.243
+      },
+      "tokens": {
+        "total_prompt_tokens": 35782,
+        "total_completion_tokens": 5440,
+        "total_tokens": 41222,
+        "mean_prompt_tokens": 1789.1,
+        "mean_completion_tokens": 272,
+        "mean_total_tokens": 2061.1
+      },
+      "evaluation": {
+        "exact_matches": 0,
+        "numeric_tolerance_accuracy": null,
+        "mean_absolute_error": null,
+        "text_exact_accuracy": null,
+        "mean_rowset_f1": 0.0
+      }
+    }
+  ]
+}
