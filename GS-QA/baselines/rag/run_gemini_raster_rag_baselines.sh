@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -u
-BASE="${BASE:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}"
+BASE="${BASE:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)}"
 export GSQA_RASTER_RAG_ROOT="${GSQA_RASTER_RAG_ROOT:-$BASE}"
 
 PY="${PY:-python3}"

@@ -13,7 +13,7 @@ set -euo pipefail
 # Defaults — edit these or override via env
 # ---------------------------------------------------------------------------
 SESSION="gsqa"
-SCRIPT="baselines/run_raster_text2sql.py"
+SCRIPT="baselines/text2sql/run_raster_text2sql.py"
 BENCHMARK_DIR="${BENCHMARK_DIR:-benchmark/qa2}"
 CACHE_DIR="baselines/cache"
 WORKERS="${WORKERS:-6}"

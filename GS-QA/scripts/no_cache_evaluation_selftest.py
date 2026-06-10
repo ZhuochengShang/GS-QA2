@@ -1,4 +1,4 @@
-from baselines.evaluate_raster import COMPONENT_SPECS, _component_result, evaluate_question
+from baselines.evaluators.evaluate_raster import COMPONENT_SPECS, _component_result, evaluate_question
 
 
 def value_for(metric, alias):

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-BASE="${BASE:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}"
+BASE="${BASE:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)}"
 PYTHON_BIN="${PYTHON_BIN:-python3}"
 MODEL_PATH="${MODEL_PATH:-/path/to/Qwen3-32B-AWQ}"
 OPENAI_BASE_URL="${OPENAI_BASE_URL:-http://localhost:8000/v1}"
@@ -12,14 +12,14 @@ ENTITY_STORE="${ENTITY_STORE:-$BASE/shared_embeddings/vector_entities_chroma}"
 DEM_STORE="${DEM_STORE:-$BASE/shared_embeddings/dem_patches_gdal_chroma}"
 OUT_ROOT="${OUT_ROOT:-$BASE/baselines/cache/qwen_rag_raster}"
 
-cd "$BASE/baselines"
+cd "$BASE"
 
 run_one() {
   local subset="$1"
   mkdir -p "$OUT_ROOT/$subset"
   echo "===== qwen raster_rag ${subset} $(date) ====="
   OPENAI_BASE_URL="$OPENAI_BASE_URL" OPENAI_API_KEY="$OPENAI_API_KEY" \
-    "$PYTHON_BIN" run_raster_rag.py \
+    "$PYTHON_BIN" baselines/rag/run_raster_rag.py \
       --input-dir "$BASE/benchmark/qa2/$subset" \
       --output "$OUT_ROOT/$subset/raster_rag.jsonl" \
       --dem-persist-directory "$DEM_STORE" \

@@ -1,4 +1,4 @@
-from baselines.evaluate_raster import (
+from baselines.evaluators.evaluate_raster import (
     _component_result,
     evaluate_vector_row,
 )

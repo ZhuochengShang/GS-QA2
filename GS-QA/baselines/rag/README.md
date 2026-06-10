@@ -94,7 +94,7 @@ python baselines/rag/build_vector_entity_embeddings.py \
 Build the DEM patch store from a question-relevant patch list:
 
 ```bash
-python baselines/build_question_dem_patch_embeddings.py \
+python baselines/rag/build_question_dem_patch_embeddings.py \
   --patches shared_embeddings/dem_patches_gdal_chroma/question_dem_patches.jsonl \
   --persist-directory shared_embeddings/dem_patches_gdal_chroma \
   --collection-name dem_patches \
@@ -105,7 +105,7 @@ python baselines/build_question_dem_patch_embeddings.py \
 Run raster RAG:
 
 ```bash
-python baselines/run_raster_rag.py \
+python baselines/rag/run_raster_rag.py \
   --input-dir benchmark/qa2/raster_only \
   --input-dir benchmark/qa2/raster_vector \
   --input-dir benchmark/qa2/extended \

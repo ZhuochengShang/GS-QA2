@@ -1,7 +1,7 @@
 # Qwen Raw Outputs
 
 Raw Qwen3-32B-AWQ outputs used to produce the Qwen evaluation summaries in
-`GS-QA/baselines/evaluation`.
+`GS-QA/baselines/evaluation/qwen`.
 
 Generation setup:
 
@@ -23,11 +23,11 @@ Directory layout:
 
 Derived evaluation files:
 
-- `../qwen_vector/`
-- `../qwen_text2sql_raster/`
-- `../qwen_raster_rag/`
-- `../qwen_combined_summary.csv`
-- `../qwen_leaf_metrics.csv`
+- `../../vector/`
+- `../../text2sql/raster/`
+- `../../rag/raster/`
+- `../../tables/qwen_combined_summary.csv`
+- `../../tables/qwen_leaf_metrics.csv`
 
 The paper raster table uses the 25 selected raster-related stems from
-`qwen_leaf_metrics.csv`, corresponding to 500 questions total.
+`../../tables/qwen_leaf_metrics.csv`, corresponding to 500 questions total.

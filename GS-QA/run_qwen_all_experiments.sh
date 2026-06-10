@@ -3,7 +3,11 @@ set -euo pipefail
 
 BASE="${BASE:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}"
 SHARE_ROOT="${SHARE_ROOT:-$(cd "$BASE/../.." && pwd)}"
-CHESS_ROOT="${CHESS_ROOT:-$SHARE_ROOT/CHESS/CHESS}"
+DEFAULT_CHESS_ROOT="$BASE/baselines/chess/runtime/CHESS/CHESS"
+if [[ ! -d "$DEFAULT_CHESS_ROOT" && -d "$SHARE_ROOT/CHESS/CHESS" ]]; then
+  DEFAULT_CHESS_ROOT="$SHARE_ROOT/CHESS/CHESS"
+fi
+CHESS_ROOT="${CHESS_ROOT:-$DEFAULT_CHESS_ROOT}"
 PYTHON_BIN="${PYTHON_BIN:-python}"
 MODEL_PATH="${MODEL_PATH:-}"
 OPENAI_BASE_URL="${OPENAI_BASE_URL:-http://localhost:8000/v1}"
@@ -104,13 +108,13 @@ if [[ "$RUN_RAG_QA2" == "1" ]]; then
   MODEL_PATH="$MODEL_PATH" \
   OPENAI_BASE_URL="$OPENAI_BASE_URL" \
   OPENAI_API_KEY="$OPENAI_API_KEY" \
-  bash baselines/run_qwen_raster_rag_baselines.sh $QA2_SPLITS
+  bash baselines/rag/run_qwen_raster_rag_baselines.sh $QA2_SPLITS
 fi
 
 if [[ "$RUN_TEXT2SQL_QA2" == "1" ]]; then
   echo "[run] raster Text2SQL qa2"
   cd "$BASE"
-  OPENAI_API_KEY="$OPENAI_API_KEY" "$PYTHON_BIN" baselines/run_raster_text2sql.py \
+  OPENAI_API_KEY="$OPENAI_API_KEY" "$PYTHON_BIN" baselines/text2sql/run_raster_text2sql.py \
     --benchmark-dir "$BASE/benchmark/qa2" \
     --query-types $QA2_SPLITS \
     --provider openai \
