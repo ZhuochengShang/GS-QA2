@@ -10,6 +10,9 @@ config.ini
 # Generated outputs and caches
 cache/
 baselines/cache/
+GS-QA/baselines/cache/
+GS-QA/baselines/text2sql_gemini/
+GS-QA/baselines/evaluation/qwen_leaf_tables.tex
 results/
 chess_sql_results/
 address_cache/
