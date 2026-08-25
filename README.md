@@ -1,6 +1,6 @@
-# QARV
+# GS-QA2
 
-QARV is a release repository for GS-QA2, a geospatial question-answering
+This is a release repository for GS-QA2, a geospatial question-answering
 benchmark over vector and raster data. The main contribution is the benchmark
 construction pipeline: natural-language templates, executable SQL templates,
 ground-truth answer generation, and evaluation artifacts for vector-only,
